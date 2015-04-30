@@ -37,8 +37,6 @@
                                 "scale": 1.2,
                                 "scaleByValue": true,
                                 "imageUrl": "test/images/pow32.png",
-                                "minDisplayValue": 2,
-                                "maxDisplayValue": 5,
                                 "colorMap": [
                                     { "offset": 0.0, "color": "rgba(100,0,0,1.00)" },
                                     { "offset": 1.0, "color": "rgba(255,0,0,1.0)" }
