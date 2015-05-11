@@ -1249,7 +1249,9 @@
                             "type": "wms",
                             "url": "http://www.ga.gov.au/gis/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer/WMSServer",
                             "layers": "0,1,2,3,4",
-                            "getFeatureInfoAsGeoJson": false
+                            "getFeatureInfoFormats": [{
+                                "type": "html"
+                            }]
                         },
                         {
                             "name": "Taxation Statistics 2011-2012",
