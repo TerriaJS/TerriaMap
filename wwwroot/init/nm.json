@@ -1976,6 +1976,87 @@
 
                         },
                         {
+                            "name": "Water Observations from Space",
+                            "type": "group",
+                            "items": [
+                                {
+                                    "name": "1 - Detections",
+                                    "description": "This web service shows layer 1 of 5 of the Water Observations from Space product. This layer depicts the number of times that water was detected across Australia between 1987 and 2014, as produced by the Water Observation from Space analysis procedure.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                                    "rectangle": [
+                                        111.0,
+                                        -45.0,
+                                        155.0,
+                                        -10.0
+                                    ],
+                                    "type": "wms",
+                                    "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                                    "layers": "WaterObservations",
+                                    "dataUrlType": "none"
+                                },
+                                {
+                                    "name": "2 - Clear Observations",
+                                    "description": "This web service shows layer 2 of 5 of the Water Observations from Space product. This layer depicts the number of times that a satellite observation was clear for the 1987 to 2014 period, as produced by the Water Observation from Space analysis procedure. A clear observation is defined as one where the observation was not disrupted by cloud, shadows (including terrain shadows) or satellite sensor issues.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                                    "rectangle": [
+                                        111.0,
+                                        -45.0,
+                                        155.0,
+                                        -10.0
+                                    ],
+                                    "type": "wms",
+                                    "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                                    "layers": "ClearObservations",
+                                    "dataUrlType": "none"
+                                },
+                                {
+                                    "name": "3 - Summary",
+                                    "description": "This web service shows layer 3 of 5 of the Water Observations from Space product. This layer depicts the ratio of the number of times that water was detected across Australia between 1987 and 2014, with the number of times that a clear observation of each location was made. The ratio is displayed as a percentage. The calculation is produced by the Water Observation from Space analysis procedure.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                                    "rectangle": [
+                                        111.0,
+                                        -45.0,
+                                        155.0,
+                                        -10.0
+                                    ],
+                                    "type": "wms",
+                                    "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                                    "layers": "WaterSummary",
+                                    "dataUrlType": "none"
+                                },
+                                {
+                                    "name": "4 - Confidence",
+                                    "description": "This web service shows layer 4 of 5 of the Water Observations from Space product. This layer depicts the confidence in the water observations displayed in the water summary layer according to comparison with other national data.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                                    "rectangle": [
+                                        112.0,
+                                        -45.0,
+                                        154.0,
+                                        -10.0
+                                    ],
+                                    "type": "wms",
+                                    "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                                    "layers": "Confidence",
+                                    "dataUrlType": "none"
+                                },
+                                {
+                                    "name": "5 - Filtered Summary",
+                                    "description": "This web service shows layer 5 of 5 of the Water Observations from Space product. This layer shows the water summary information (layer 3 of 5) filtered to mask out areas where confidence is zero according to layer 4 of 5. As for the water summary layer, this layer shows the ratio of water observations to clear observations, with the ratio is displayed as a percentage. The calculation is produced by the Water Observation from Space analysis procedure.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                                    "rectangle": [
+                                        111.0,
+                                        -45.0,
+                                        155.0,
+                                        -10.0
+                                    ],
+                                    "type": "wms",
+                                    "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                                    "layers": "WaterSummaryFiltered",
+                                    "dataUrlType": "none"
+                                }
+                            ]
+                        },
+                        {
                             "name": "Water Points",
                             "description": "[Licence](http://www.ga.gov.au/copyright)",
                             "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
