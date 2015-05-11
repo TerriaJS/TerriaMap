@@ -245,7 +245,9 @@ terria.start({
         terria: terria,
         dropTarget: document,
         allowDropInitFiles: true,
-        allowDropDataFiles: true
+        allowDropDataFiles: true,
+        validDropElements: ['ui', 'cesiumContainer'],
+        invalidDropClasses: ['modal-background']
     });
 
     // Make sure only one panel is open in the top right at any time.
