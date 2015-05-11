@@ -11,7 +11,9 @@ Change Log
 * Elminated distracting "jumping" of the selection indicator when picking point features while zoomed in very close to the surface.
 * Fixed a bug that caused features to be picked from all layers in an Esri MapServer, instead of just the visible ones.
 * Added support for the WMS MinScaleDenominator property and the Esri MapServer maxScale property, preventing layers from disappearing when zoomed in to close to the surface.
+* The Bing Maps API key can now be specified in config.json.
 * Fixed a bug that could cause the "Drop a data file anywhere" message to get stuck on when dragging a file over the application while a modal dialog was open.
+
 
 ### 2015-04-15
 
