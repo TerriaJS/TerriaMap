@@ -37,7 +37,7 @@
                                 "-9.142175976703609"
                             ],
                             "type": "wms",
-                            "url": "http://geoserver-nm.nicta.com.au/admin_bnds_abs/ows",
+                            "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
                             "layers": "admin_bnds:NA_MASK",
                             "isShown": true,
                             "opacity": 1.0,
