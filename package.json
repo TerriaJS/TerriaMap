@@ -20,7 +20,7 @@
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#htmlGetFeatureInfo",
-    "terriajs-cesium": "^1.8.5",
+    "terriajs-cesium": "^1.8.6",
     "yargs": "^3.8.0"
   },
   "devDependencies": {
