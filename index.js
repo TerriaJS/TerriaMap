@@ -41,6 +41,7 @@ var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindin
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
+var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
 var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel');
 var BrandBarViewModel = require('terriajs/lib/ViewModels/BrandBarViewModel');
 var CatalogItemNameSearchProviderViewModel = require('terriajs/lib/ViewModels/CatalogItemNameSearchProviderViewModel');
@@ -200,6 +201,12 @@ terria.start({
 
     // Create the navigation controls.
     NavigationViewModel.create({
+        container: ui,
+        terria: terria
+    });
+
+    // Create the animation controls.
+    AnimationViewModel.create({
         container: ui,
         terria: terria
     });
