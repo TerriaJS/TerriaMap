@@ -141,6 +141,20 @@
                             "name": "Large feature info box (CZML)",
                             "type": "czml",
                             "url": "test/bigInfobox.czml"
+                        },
+                        {
+                            "name": "State Mask Test",
+                            "type": "csv",
+                            "url": "test/states_stem_2013.csv",
+                            "tableStyle": {
+                                "dataVariable": "Mask",
+                                "colorMap": [
+                                    { "offset": 0.0, "color": "rgba(0,0,0,0.0)" },
+                                    { "offset": 1.0, "color": "rgba(0,0,0,1.0)" }
+                                ]
+                            },
+                            "keepOnTop": true,
+                            "opacity": 1.0
                         }
                     ]
                 },
