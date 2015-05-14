@@ -9,6 +9,9 @@
     ],
     "initializationUrls" : [
         "nm"
-    ]
+    ],
+    "parameters": {
+        "bingMapsKey": null
+    }
 }
 
