@@ -320,5 +320,10 @@ if (cluster.isMaster) {
         });
     });
 
+    // Redirect unknown pages back home. We don't actually have a 404 page, for starters.
+    app.use(function(req, res, next) {
+        res.redirect(303, '/');
+    });
+
     app.listen(argv.port, argv.public ? undefined : 'localhost');
 }
