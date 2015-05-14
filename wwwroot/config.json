@@ -11,7 +11,11 @@
         "nm"
     ],
     "parameters": {
-        "bingMapsKey": null
+        "bingMapsKey": null,
+        "disclaimer": { 
+            "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
+            "url": "help/About.html"
+        }
     }
 }
 
