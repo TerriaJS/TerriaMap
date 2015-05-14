@@ -2640,6 +2640,11 @@
                     "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                     "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
                     "type": "wms-getCapabilities"
+                },
+                {
+                    "name": "Australian Urban Research Infrastructure Network (AURIN)",
+                    "url": "https://geoserver.aurin.org.au/nm/wms",
+                    "type": "wms-getCapabilities"
                 }
             ]
         },
