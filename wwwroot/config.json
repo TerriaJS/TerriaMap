@@ -5,14 +5,15 @@
         "csiro.au",
         "arcgis.com",
         "argo.jcommops.org",
-        "www.abc.net.au"
+        "www.abc.net.au",
+        "geoserver.aurin.org.au"
     ],
     "initializationUrls" : [
         "nm"
     ],
     "parameters": {
         "bingMapsKey": null,
-        "disclaimer": { 
+        "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
             "url": "help/About.html"
         }
