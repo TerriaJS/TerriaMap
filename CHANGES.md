@@ -3,17 +3,30 @@ Change Log
 
 ### 2015-05-15
 
-* Added support for region mapping based on region names instead of region numbers (example in `public/test/countries.csv`).
-* Added support for time-dynamic region mapping (example in `public/test/droughts.csv`).
-* Added the ability to specify CSV styling in the init file (example in `public/init/test.json`).
-* Improved the appearance of the legends generating with region mapping.
-* Added the ability to region-map countries (example in `public/test/countries.csv`).
-* Elminated distracting "jumping" of the selection indicator when picking point features while zoomed in very close to the surface.
-* Fixed a bug that caused features to be picked from all layers in an Esri MapServer, instead of just the visible ones.
-* Added support for the WMS MinScaleDenominator property and the Esri MapServer maxScale property, preventing layers from disappearing when zoomed in to close to the surface.
+* Dataset changes:
+  * Added New South Wales Government
+  * Added National Data Sets -> Surface Water -> Water Observations from Space
+  * Added National Data Sets -> Social and Economic -> Housing Stress
+  * Data Providers -> Water (Bureau of Meteorology Geofabric) now has sensible groups instead of a flat list.
+* National Map is now built on [TerriaJS](http://www.github.com/TerriaJS/terriajs).  See the [changelog](https://github.com/TerriaJS/terriajs/blob/1.0.11/CHANGES.md) for the complete list of changes since TerriaJS split off from National Map.  Significant changes relevant to National Map users include:
+  * The Search tab now searches the names of all datasets in the catalogue, including those in delay-loaded groups.
+  * The 2D view once again correctly shows imagery attribution.
+  * The catalog item info page now renders a much more complete set of Markdown and HTML elements.
+  * Added support for region mapping based on region names instead of region numbers (example in `wwwroot/test/countries.csv`).
+  * Added support for time-dynamic region mapping (example in `wwwroot/test/droughts.csv`).
+  * Added the ability to region-map countries (example in `wwwroot/test/countries.csv`).
+  * Esri ArcGIS MapServer datasets now show much more information when the user clicks the Info button.
+  * Improved the appearance of the legends generating with region mapping.
+  * Fixed a bug that caused features to be picked from all layers in an Esri MapServer, instead of just the visible ones.
+  * Added support for the WMS MinScaleDenominator property and the Esri MapServer maxScale property, preventing layers using these properties from disappearing when zoomed in to close to the surface.
+  * Fixed a bug that could cause the "Drop a data file anywhere" message to get stuck on when dragging a file over the application while a modal dialog was open.
+  * Elminated distracting "jumping" of the selection indicator when picking point features while zoomed in very close to the surface.
+  * The 3D viewer now shows Bing Maps imagery unmodified, matching the 2D viewer. Previously, it applied a gamma correction.
+  * Polygons loaded from KML files are now placed on the terrain surface.
+  * We no longer automatically fly to the first location when pressing Enter in the Search input box, because this was surprising and often didn't work well.
+  * Checkboxes in the Data Catalogue and Search tabs now have a larger clickable area, which is especially helpful on touch screens.
+  * The Feature Information functionality now works with servers that can only return HTML, and displays it appropriately.  This is especially useful for Google Maps Engine (GME) WMS servers.
 * The Bing Maps API key can now be specified in config.json.
-* Fixed a bug that could cause the "Drop a data file anywhere" message to get stuck on when dragging a file over the application while a modal dialog was open.
-
 
 ### 2015-04-15
 
