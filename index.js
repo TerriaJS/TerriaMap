@@ -140,7 +140,7 @@ terria.start({
     // Create the brand bar.
     BrandBarViewModel.create(ui, {
         elements: [
-            '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text.png" height="50" alt="National Map" /></a>',
+            '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" /></a>',
             '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
         ]
     });
