@@ -34,6 +34,7 @@ var configuration = {
 var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
 checkBrowserCompatibility('ui');
 
+var Credit = require('terriajs-cesium/Source/Core/Credit');
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
 var AusGlobeViewer = require('terriajs/lib/viewer/AusGlobeViewer');
@@ -111,7 +112,12 @@ terria.start({
     updateApplicationOnHashChange(terria, window);
 
     // Create the map/globe.
-    AusGlobeViewer.create(terria);
+    AusGlobeViewer.create(terria, {
+        developerAttribution: {
+            text: 'NICTA',
+            link: 'http://www.nicta.com.au'
+        }
+    });
 
     // We'll put the entire user interface into a DOM element called 'ui'.
     var ui = document.getElementById('ui');
@@ -135,8 +141,7 @@ terria.start({
     BrandBarViewModel.create(ui, {
         elements: [
             '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text.png" height="50" alt="National Map" /></a>',
-            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>',
-            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/nicta.png" height="60" alt="NICTA" /></a>'
+            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
         ]
     });
 
