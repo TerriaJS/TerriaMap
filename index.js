@@ -40,6 +40,7 @@ var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 var AusGlobeViewer = require('terriajs/lib/viewer/AusGlobeViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
+var defined = require('terriajs-cesium/Source/Core/defined');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
 var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel');
@@ -126,15 +127,13 @@ terria.start({
     var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
-    // Use the first global base map (Bing Maps Aerial with Labels) as the default one.
-    terria.baseMap = globalBaseMaps[0].catalogItem;
-
-    // Create the Settings / Map panel.
+    // Create the Settings / Map panel.  Sets baseMap
     var settingsPanel = SettingsPanelViewModel.create({
         container: ui,
         terria: terria,
         isVisible: false,
-        baseMaps: australiaBaseMaps.concat(globalBaseMaps)
+        baseMaps: australiaBaseMaps.concat(globalBaseMaps),
+        baseMapName: terria.baseMapName || globalBaseMaps[0].catalogItem.name
     });
 
     // Create the brand bar.
