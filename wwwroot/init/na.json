@@ -23,7 +23,7 @@
         },
         {
             "name": "National Data Sets",
-            "isOpen": true,
+            "isOpen": false,
             "type": "group",
             "items": [
                 {
