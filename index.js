@@ -34,7 +34,6 @@ var configuration = {
 var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
 checkBrowserCompatibility('ui');
 
-var Credit = require('terriajs-cesium/Source/Core/Credit');
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
 var AusGlobeViewer = require('terriajs/lib/viewer/AusGlobeViewer');
@@ -70,6 +69,7 @@ var Terria = require('terriajs/lib/Models/Terria');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
+var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
 // Configure the base URL for the proxy service used to work around CORS restrictions.
 corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
@@ -126,15 +126,15 @@ terria.start({
     var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
-    // Use the first global base map (Bing Maps Aerial with Labels) as the default one.
-    terria.baseMap = globalBaseMaps[0].catalogItem;
+    var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({
         container: ui,
         terria: terria,
         isVisible: false,
-        baseMaps: australiaBaseMaps.concat(globalBaseMaps)
+        baseMaps: allBaseMaps
     });
 
     // Create the brand bar.
