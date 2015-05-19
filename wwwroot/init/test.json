@@ -33,15 +33,17 @@
                             "type": "csv",
                             "url": "test/incidents.csv",
                             "tableStyle": {
-                                "dataVariable": "incident_severity",
+                                "dataVariable": "incident_duration",
                                 "scale": 1.2,
                                 "scaleByValue": true,
                                 "imageUrl": "test/images/pow32.png",
-                                "minDisplayValue": 2,
-                                "maxDisplayValue": 5,
+                                "minDisplayValue": 0,
+                                "maxDisplayValue": 1500,
+                                "legendTicks": 4,
                                 "colorMap": [
-                                    { "offset": 0.0, "color": "rgba(100,0,0,1.00)" },
-                                    { "offset": 1.0, "color": "rgba(255,0,0,1.0)" }
+                                    { "offset": 0.0, "color": "rgba(0,0,200,1.0)" },
+                                    { "offset": 0.5, "color": "rgba(200,200,200,1.00)" },
+                                    { "offset": 1.0, "color": "rgba(200,0,0,1.00)" }
                                 ]
                             }
                         },
@@ -134,7 +136,7 @@
                             "url": "test/droughts.csv",
                             "tableStyle": {
                                 "dataVariable": "Total affected",
-                                "displayTime" : 525600
+                                "displayDuration" : 525600
                             }
                         },
                         {
