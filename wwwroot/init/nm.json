@@ -1249,7 +1249,9 @@
                             "type": "wms",
                             "url": "http://www.ga.gov.au/gis/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer/WMSServer",
                             "layers": "0,1,2,3,4",
-                            "getFeatureInfoAsGeoJson": false
+                            "getFeatureInfoFormats": [{
+                                "type": "html"
+                            }]
                         },
                         {
                             "name": "Taxation Statistics 2011-2012",
@@ -1266,7 +1268,16 @@
                             "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
                             "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12",
                             "dataUrlType": "direct"
+                        },
+                        {
+                            "name": "Housing Stress",
+                            "url": "https://geoserver.aurin.org.au/nm/wms",
+                            "layers": "housingstress",
+                            "type": "wms",
+                            "description": "The dataset contains data about the housing stress indicator (taken in 2006 and 2010), and the income distribution of households at Statistical Loal Area level.\n\nThe source of this dataset is a merge of two datasets; \n\n## 1) ABS: Statistical Local Area Digital Boundaries (ASGC 2006) \nSocio-economic variables of Statistical Local Areas in Australia (1996-2006). The variables were derived from 2006, 2001 and 1996 census. \n\nCite as: Socio-economic variables by SLA for Australia. Retrieved from portal.aurin.org.au on 2015-03-06.\n## 2) Socio-economic variables by SLA for Australia.\nThe National Centre for Social and Economic Modelling (NATSEM) estimates of housing stress and estimates of poverty variables SLAs for Australia.\n\nNATSEM estimates of housing stress (2006 and 2010) and estimates of poverty variables (2006) of SLAs, excluding SLAs in Brisbane and Canberra, in Australia. These data were derived from spatial microsimulation using 2006 Census benchmarks (SPATIALMSM08b) applied to Australian Bureau of Statistics (ABS) Confidentialised Unit Record File data. For housing stress, the indicator is based on a commonly used measure of housing stress known as the 30/40 rule. Using this definition, a household is said to be in housing stress if it spends more than 30 per cent of its gross income on housing costs and if it also falls into the bottom 40 per cent of the equivalised disposable household income distribution. The poverty indicator represents the percentage of people in households where income is below the poverty line. The poverty line has been set at half the median OECD equivalised household disposable income. \n\nCite as: undefined: The National Centre for Social and Economic Modelling (NATSEM) estimates of housing stress and estimates of poverty variables SLAs for Australia.\n\n# Attribute Description\n\n## sla_code\nsla_code Code of Statistical Local Area, as per ABS\n## sla_name\nsla_name Name of Statistical Local Area, as per ABS\n## housingstress_06\nPerc. of households in housing stress (2006)\n## housingstress_2010\nPerc. of households in housing stress (2010)\n## difference\nDifference of perc. of households in housing stress between 206 and 2010 (housingstress_2010 - housingstress_2006)\n## income_low \nPerc. of low income households (less than 65.000 AUD p.a.)\n## income_medium \nPerc. of middle income households (between 65.000 and 200.000 AUD p.a.)\n## income_high\nPerc. of high income households (more than 200.000 AUD p.a.)",
+                            "dataCustodian": "The AURIN project\n\nadmin@aurin.org.au"
                         }
+
                     ]
                 },
                 {
@@ -2640,6 +2651,84 @@
                     "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                     "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
                     "type": "wms-getCapabilities"
+                }
+            ]
+        },
+        {
+            "name": "New South Wales Government",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Administrative Boundaries",
+                    "type": "esri-mapServer-group",
+                    "url": "http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Administrative_Boundaries/MapServer",
+                    "itemProperties": {
+                        "dataCustodian": "[New South Wales Land and Property Information](mailto:sds.services@lpi.nsw.gov.au)",
+                        "info": [
+                            {
+                                "name": "Service Description",
+                                "content": "The NSW Administrative Boundaries Web Service is a dynamic map of administrative and property boundaries. Administrative Areas Boundaries depict a polygon feature class within the NSW Digital Cadastral Database maintained by LPI. The administrative boundaries provided through this web service includes: Counties, Suburbs, Parishes, Local Government Areas,    State Forests, National Parks, State Electoral Districts. For detailed information, for each individual dataset contained in this web services, please see the Digital Cadastre Database Dictionary published at http://www.lpi.nsw.gov.au/mapping_and_imagery/spatial_data."
+                            },
+                            {
+                                "name": "Legal Constraints",
+                                "content": "Accessible through LPI Spatial Data Services. To the extent that Creative Commons licensing applies, all data and other material produced by LPI constitutes Crown copyright. Save for the content on this website supplied by third parties, the LPI logo, NSW Government logo, the Commonwealth Coat of Arms, and any material protected by a trade mark. LPI has applied the Creative Commons Attribution 3.0 Australia Licence. LPI asserts the right to be attributed as author of the original material in the following manner: © Land and Property Information [2015]. As far as practicable, material for which the copyright is owned by a third party will be clearly labelled. LPI has made all reasonable efforts to ensure that this material has been reproduced on this website with the full consent of the copyright owners."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Aerial Imagery",
+                    "type": "esri-mapServer",
+                    "description": "The NSW Imagery web service provides access to a repository of the Land and Property Information's (LPI) standard imagery covering NSW, plus additional sourced imagery. It depicts an imagery map of NSW showing a selection of LPI’s imagery repository of LandSat 2014® satellite imagery, LPI’s standard coverage ADS sensor orthorectified imagery, LPI’s high resolution ADS sensor town imagery, LPI’s high resolution ADS sensor project imagery, AAM 2011 Sydney conurbation 10 cm GSD orthorectified imagery, AAM 2012 Tweed orthorectified imagery, Jacobs 2009 Upper Hunter AUSIMAGE® orthophoto imagery, Jacobs 2004 Queanbeyan AUSIMAGE® orthophoto imagery, Jacobs 2006 Yass AUSIMAGE® orthophoto Imagery and Jacobs 2002 Goulburn AUSIMAGE® orthophoto imagery. The characteristics of each image such as accuracy, resolution, viewing scale, image format etc varies by sensor, location, capture methodology, source and processing. The imagery web service provides access to authoritative and timely imagery covering the whole of NSW. The service ensures users are able to consume LPI's imagery without the requirement of hosting the imagery files within thier local system. The service is in a cached environment only. This dataset is compliant with the NSW FSDF and its specifications.",
+                    "dataCustodian": "[New South Wales Land and Property Information](mailto:sds.services@lpi.nsw.gov.au)",
+                    "url": "http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer",
+                    "info": [
+                        {
+                            "name": "Legal Constraints",
+                            "content": "Accessible through LPI Spatial Data Services, to the extent that Creative Commons licensing applies, all data and other material produced by LPI constitutes Crown copyright. Save for the content on this website supplied by third parties, the LPI logo, NSW Government logo, the Commonwealth Coat of Arms, and any material protected by a trade mark. LPI has applied the Creative Commons Attribution 3.0 Australia Licence. LPI asserts the right to be attributed as author of the original material in the following manner: © Land and Property Information [2015]. As far as practicable, material for which the copyright is owned by a third party will be clearly labelled. LPI has made all reasonable efforts to ensure that this material has been reproduced on this website with the full consent of the copyright owners."
+                        }
+                    ],
+                    "opacity": 1.0
+                },
+                {
+                    "name": "Aerial Imagery Dates",
+                    "type": "esri-mapServer",
+                    "description": "The NSW Imagery date web service provides access to a repository of the footprint Land and Property Information (LPI) standard imagery covering NSW, plus additional sourced imagery. It contains the footprint of LPI’s imagery repository of LandSat 2014® satellite imagery, LPI’s standard coverage ADS sensor orthorectified imagery, LPI’s high resolution ADS sensor town imagery, LPI’s high resolution ADS sensor project imagery, AAM 2012 Tweed orthorectified imagery, AAM 2012 (previously VEKTA) Sydney conurbation 10 cm GSD orthorectified imagery, Jacobs 2009 Upper Hunter AUSIMAGE® orthophoto imagery, Jacobs 2004 Queanbeyan AUSIMAGE® orthophoto imagery, Jacobs 2006 Yass AUSIMAGE® orthophoto Imagery and Jacobs 2002 Goulburn AUSIMAGE® orthophoto imagery. The footprint provides an approximate imagery capture date for all the image categories stated above. The service is available in a cached environment only. This dataset is compliant with the NSW FSDF and its specifications.",
+                    "dataCustodian": "[New South Wales Land and Property Information](mailto:sds.services@lpi.nsw.gov.au)",
+                    "url": "http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery_Dates/MapServer",
+                    "info": [
+                        {
+                            "name": "Legal Constraints",
+                            "content": "Accessible through LPI Spatial Data Services, to the extent that Creative Commons licensing applies, all data and other material produced by LPI constitutes Crown copyright. Save for the content on this website supplied by third parties, the LPI logo, NSW Government logo, the Commonwealth Coat of Arms, and any material protected by a trade mark. LPI has applied the Creative Commons Attribution 3.0 Australia Licence. LPI asserts the right to be attributed as author of the original material in the following manner: © Land and Property Information [2015]. As far as practicable, material for which the copyright is owned by a third party will be clearly labelled. LPI has made all reasonable efforts to ensure that this material has been reproduced on this website with the full consent of the copyright owners."
+                        }
+                    ]
+                },
+                {
+                    "name": "Points of Interest",
+                    "type": "esri-mapServer",
+                    "description": "The Points of Interest (POI) web service provides the identification and location of a feature, service or activity that people may want to see, know about or visit. POI features for this service are primarily derived from features maintained within the Digital Topographic Database (DTDB). The POI feature class is maintained programmatically (automated) by sourcing spatial and aspatial attributes from other feature classes in the DTDB that contain POI features. The midpoint of a line or polygon features is used to define the POI. Points of Interest include features related to Community, Education, Recreation, Transportation, Utility, or Hydrography, Physiography and Place, and defined as a place with a prescribed name. The attribute information for an individual dataset may have been thinned or modifed to cater for the service. The service is available in a cached environment only. This dataset is compliant with the NSW FSDF and its specifications. For details information for each individual dataset contained in this web services, please see the Digital Topographic Database Dictionary, published at http://www.lpi.nsw.gov.au/mapping_and_imagery/spatial_data.",
+                    "dataCustodian": "[New South Wales Land and Property Information](mailto:sds.services@lpi.nsw.gov.au)",
+                    "url": "http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_POI/MapServer",
+                    "info": [
+                        {
+                            "name": "Legal Constraints",
+                            "content": "Accessible through LPI Spatial Data Services, to the extent that Creative Commons licensing applies, all data and other material produced by LPI constitutes Crown copyright. Save for the content on this website supplied by third parties, the LPI logo, NSW Government logo, the Commonwealth Coat of Arms, and any material protected by a trade mark. LPI has applied the Creative Commons Attribution 3.0 Australia Licence. LPI asserts the right to be attributed as author of the original material in the following manner: © Land and Property Information [2015]. As far as practicable, material for which the copyright is owned by a third party will be clearly labelled. LPI has made all reasonable efforts to ensure that this material has been reproduced on this website with the full consent of the copyright owners."
+                        }
+                    ]
+                },
+                {
+                    "name": "Topographic Base Map",
+                    "type": "esri-mapServer",
+                    "description": "The NSW Base Map Web Service depicts a map of New South Wales (NSW) using layers from the Digital Topographic Database, the Geocoded Urban and Rural Addressing System database and the Digital Cadastral Database. This base map includes: Roads, Points of Interest, Localities, Landform, Drainage, Cultural data, Parks and forests, Property boundaries and Street address numbers.",
+                    "dataCustodian": "[New South Wales Land and Property Information](mailto:sds.services@lpi.nsw.gov.au)",
+                    "url": "http://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer",
+                    "info": [
+                        {
+                            "name": "Legal Constraints",
+                            "content": "Accessible through LPI Spatial Data Services. To the extent that Creative Commons licensing applies, all data and other material produced by LPI constitutes Crown copyright. Save for the content on this website supplied by third parties, the LPI logo, NSW Government logo, the Commonwealth Coat of Arms, and any material protected by a trade mark. LPI has applied the Creative Commons Attribution 3.0 Australia Licence. LPI asserts the right to be attributed as author of the original material in the following manner: © Land and Property Information [2015]. As far as practicable, material for which the copyright is owned by a third party will be clearly labelled. LPI has made all reasonable efforts to ensure that this material has been reproduced on this website with the full consent of the copyright owners."
+                        }
+                    ],
+                    "opacity": 1.0
                 }
             ]
         },

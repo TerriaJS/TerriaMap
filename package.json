@@ -1,6 +1,6 @@
 {
   "name": "nationalmap",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Geospatial visualization application for Australian government and open data.",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#timeline",
-    "terriajs-cesium": "^1.8.3",
+    "terriajs-cesium": "^1.8.7",
     "yargs": "^3.8.0"
   },
   "devDependencies": {
