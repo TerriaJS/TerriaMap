@@ -69,7 +69,7 @@ var Terria = require('terriajs/lib/Models/Terria');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
-var selectBaseMap = require('terriajs/lib/Models/selectBaseMap');
+var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
 // Configure the base URL for the proxy service used to work around CORS restrictions.
 corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
