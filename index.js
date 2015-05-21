@@ -214,6 +214,7 @@ terria.start({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
+        isOpen: !terria.userProperties.hideExplorerPanel,
         tabs: [
             new DataCatalogTabViewModel({
                 catalog: terria.catalog
