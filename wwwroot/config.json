@@ -14,8 +14,8 @@
     "parameters": {
         "bingMapsKey": null,
         "disclaimer": {
-            "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
-            "url": "help/About.html"
+            "text": "Disclaimer: The Terria Map must not be used for navigation or precise spatial analysis",
+            "url": ""
         }
     }
 }

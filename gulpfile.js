@@ -21,9 +21,9 @@ var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 
 
-var appJSName = 'nationalmap.js';
-var appCssName = 'nationalmap.css';
-var specJSName = 'nationalmap-tests.js';
+var appJSName = 'terria.js';
+var appCssName = 'terria.css';
+var specJSName = 'terria-tests.js';
 var appEntryJSName = './index.js';
 var testGlob = './test/**/*.js';
 
