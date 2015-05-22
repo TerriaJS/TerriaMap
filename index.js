@@ -140,9 +140,9 @@ terria.start({
     // Create the brand bar.
     BrandBarViewModel.create(ui, {
         elements: [
+            '',
             '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" /></a>',
-            '<div class="brand-bar-name"><strong>MAP</strong> <small>beta</small></a></div>',
-            '<div style="width:100px">&nbsp;</div>'
+            ''
         ]
     });
 
