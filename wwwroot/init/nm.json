@@ -2733,6 +2733,99 @@
             ]
         },
         {
+            "name": "Queensland Government",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Resources",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/Resources/MapServer"
+                },
+                {
+                    "name": "Administrative Areas",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/AdministrativeAreas/MapServer"
+                },
+                {
+                    "name": "Boreholes",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/Boreholes/MapServer"
+                },
+                {
+                    "name": "Detailed Geology",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/GeologyDetailed/MapServer"
+                },
+                {
+                    "name": "Regional Geology",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/GeologyRegional/MapServer"
+                },
+                {
+                    "name": "State Geology",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/GeologyState/MapServer"
+                },
+                {
+                    "name": "Geophysics",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/Geophysics/MapServer"
+                },
+                {
+                    "name": "Current Mines Permits",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/MinesPermitsCurrent/MapServer"
+                },
+                {
+                    "name": "Historic Mines Permits",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/MinesPermitsHistoric/MapServer"
+                },
+                {
+                    "name": "Structural Framework",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/StructuralFramework/MapServer"
+                },
+                {
+                    "name": "Floodlines",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/MINES/StructuralFramework/MapServer"
+                },
+                {
+                    "name": "Administrative Boundaries",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/QLD/AdminBoundaries/MapServer"
+                },
+                {
+                    "name": "Agricultural Land Audit",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/QLD/AgriculturalLandAudit/MapServer"
+                },
+                {
+                    "name": "Current Land Use",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/QLD/CurrentLandUse/MapServer"
+                },
+                {
+                    "name": "QTopo",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/QLD/QTopo_WebM/MapServer"
+                },
+                {
+                    "name": "Weather and Extreme Event Risk",
+                    "type": "esri-mapServer-group",
+                    "url": "https://geospatial.information.qld.gov.au/ArcGIS/rest/services/QLD/WeatherAndExtremeEventRisk/MapServer"
+                }
+            ]
+        },
+        {
+            "name": "South Australian Government",
+            "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+            "dataCustodian": "[South Australian Government](http://www.sa.gov.au/)",
+            "url": "http://geoserver.nationalmap.nicta.com.au/sa_gov_au/ows",
+            "type": "wms-getCapabilities"
+        },
+        {
             "name": "Tasmanian Government",
             "type": "group",
             "items": [
@@ -2974,6 +3067,170 @@
                     "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/WealthFromWater/MapServer/WMSServer",
                     "type": "wms-getCapabilities",
                     "blacklist": { "Service Layer was Removed": true }
+                }
+            ]
+        },
+        {
+            "name": "Victorian Government",
+            "type": "ckan",
+            "url": "http://www.data.vic.gov.au/data",
+            "filterQuery": ["fq=res_format%3awms"],
+            "filterByWmsGetCapabilities": true,
+            "minimumMaxScaleDenominator": 1e10,
+            "blacklist": {
+                "Atmosphere & Climate": true,
+                "Vicmap Property layers": true,
+                "Vicmap Property datasets": true,
+
+                "Bioregional Conservation Status - Endangered (EVC_2005)": true,
+                "Native Vegetation - Modelled Extent 2005": true,
+                "Heathy Woodlands - Dry and/or better drained (EVC_2005)": true,
+                "Heathy Woodlands - Damp and/or less well-drained (EVC_2005)": true,
+                "Riparian Forests or Woodlands (EVC_2005)": true,
+                "Sub-alpine Grasslands, Shrublands or Woodlands - Shrublands or Grasslands (EVC_2005)": true,
+                "Montane Grasslands,  Shrublands or Woodlands - Woodlands (EVC_2005)": true,
+                "Plains Grasslands and Chenopod Shrublands - Clay soils (EVC_2005)": true,
+                "Plains Woodlands or Forests - Poorly-draining (EVC_2005)": true,
+                "Plains Woodlands or Forests - Lunettes or beach ridges or shallow sands (EVC_2005)": true,
+                "Herb-rich Woodlands - Alluvial terraces and/or creeklines (EVC_2005)": true,
+                "Herb-rich Woodlands - Damp Sands (EVC_2005)": true,
+                "Riparian Forests or Woodlands (EVC_2005)": true,
+                "Dry Forests - Exposed and/or lower altitude (EVC_2005)": true,
+                "Lower Slopes or Hills Woodlands - Seasonally inundated and/or shrubby (EVC_2005)": true,
+                "Mallee - Clay plains (EVC_2005)": true,
+                "Mallee - Sandstone ridges and rises (EVC_1750)": true,
+                "Vicmap Vegetation - Tree Density - Scattered": true,
+                "Vicmap Vegetation - Tree Density - Medium": true,
+                "Vicmap Vegetation - Tree Density - Dense": true,
+                "Vicmap Elevation - Contours": true,
+                "Vicmap Transport - Foot Bridges": true,
+                "Vicmap Transport - Highways": true,
+                "Vicmap Transport - Local Roads": true,
+                "Vicmap Transport - Tracks": true,
+                "Vicmap Transport - 4wd Tracks": true,
+                "Coal Seam and Haunted Hills Formation Floor": true,
+                "Coal Seam and Overburden Thickness": true,
+                "Seismic Survey Points": true,
+                "Vicmap Property Map Polygons": true,
+                "Vicmap Property Address Map Polygons": true,
+                "Vicmap Property Map Polygons": true,
+                "Vicmap Property Annotation Text": true,
+                "Alluvial mineralisation and mined alluvial workings line (1:100,00)": true,
+                "Borehole geology": true,
+                "Vicmap Elevation - Ground Type Sand": true,
+                "Vicmap Elevation - Ground Type Rock Outcrop": true,
+                "Tailings Licences - Expired": true,
+                "Geological polygons (1:100,000)": true,
+                "Geologically Significant Features": true,
+
+                "Statewide Landuse (1:100,000)": true,
+                "Vicmap Hydro - Watercourse Streams": true,
+                "Mallee - Calcareous dunefields (EVC_2005)": true,
+                "Coastal Scrubs Grasslands and Woodlands (EVC_2005)": true,
+                "Riparian Forests or Woodlands (EVC_1750)": true,
+                "Vicmap Transport - Road Network": true,
+                "Rainforests (EVC_2005)": true
+            }
+        },
+        {
+            "name": "Western Australian Government",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Locate Public",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-00913315481290556980-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Cultural and Society",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-03311849775732631692-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Environment",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-11920815285354965867-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Infrastructure and Utilities",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-14702451115530212229-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Property and Planning",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-17372459662889040700-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Resources",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-11493353092997567468-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Cultural and Society",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-03311849775732631692-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
+                },
+                {
+                    "name": "Locate Pilbara",
+                    "dataCustodian": "[Landgate](http://slip.landgate.wa.gov.au/Pages/AboutUs.aspx)",
+                    "url": "https://mapsengine.google.com/09372590152434720789-09499575881840677463-4/wms/",
+                    "type": "wms-getCapabilities",
+                    "clipToRectangle": true,
+                    "itemProperties": {
+                        "ignoreUnknownTileErrors": true,
+                        "opacity": 0.8,
+                        "legendUrl": ""
+                    }
                 }
             ]
         }
