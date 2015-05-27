@@ -1,0 +1,22 @@
+{
+    "homeCamera": {
+        "west": 148.751,
+        "south": -35.936,
+        "east": 149.409,
+        "north": -35.111
+    },
+    "services": [],
+    "catalog": [
+        {
+            "name": "ACT Government",
+            "type": "group",
+            "isPromoted": true,
+            "isOpen": true
+        },
+        {
+            "name": "National Data Sets",
+            "type": "group",
+            "isOpen": false
+        }
+    ]
+}
