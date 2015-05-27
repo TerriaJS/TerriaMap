@@ -6,7 +6,10 @@
         "arcgis.com",
         "argo.jcommops.org",
         "www.abc.net.au",
-        "geoserver.aurin.org.au"
+        "geoserver.aurin.org.au",
+        "arcgisonline.com",
+        "esri.com",
+        "geocommunicator.gov"
     ],
     "initializationUrls" : [
         "nm"
