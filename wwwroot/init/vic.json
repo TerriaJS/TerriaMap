@@ -14,6 +14,8 @@
             "filterQuery": ["fq=res_format%3awms"],
             "filterByWmsGetCapabilities": true,
             "minimumMaxScaleDenominator": 1e10,
+            "isPromoted": true,
+            "isOpen": true,
             "blacklist": {
                 "Atmosphere & Climate": true,
                 "Vicmap Property layers": true,
@@ -68,6 +70,11 @@
                 "Vicmap Transport - Road Network": true,
                 "Rainforests (EVC_2005)": true
             }
+        },
+        {
+            "name": "National Data Sets",
+            "type": "group",
+            "isOpen": false
         }
     ]
 }
