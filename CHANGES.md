@@ -4,7 +4,7 @@ Change Log
 ### 2015-05-28
 
 * To hide the Explorer Panel at startup, the url can contain the parameter `hideEplorerPanel=1`.
-* Upgraded to [TerriaJS 1.0.13].  Significant changes relevant to National Map users include:
+* Upgraded to [TerriaJS 1.0.13](https://github.com/TerriaJS/terriajs/blob/1.0.13/CHANGES.md).  Significant changes relevant to National Map users include:
   * Esri ArcGIS MapServers can now be added via the "Add Data" panel.
   * We now support discovery of ArcGIS MapServer "Raster Layers" in addition to "Feature Layers".
   * Sharing now preserves the base map and view mode (2D/3D) selection.
