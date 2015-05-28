@@ -1,9 +1,15 @@
 Change Log
 ==========
 
-### 2015-06-15
+### 2015-05-28
 
-* To hide the Explorer Panel at startup, the url can containt the parameter `hideEplorerPanel=1`.
+* To hide the Explorer Panel at startup, the url can contain the parameter `hideEplorerPanel=1`.
+* Upgraded to [TerriaJS 1.0.13].  Significant changes relevant to National Map users include:
+  * Esri ArcGIS MapServers can now be added via the "Add Data" panel.
+  * We now support discovery of ArcGIS MapServer "Raster Layers" in addition to "Feature Layers".
+  * Sharing now preserves the base map and view mode (2D/3D) selection.
+  * Improved error handling in `CzmlCatalogItem`, `GeoJsonCatalogItem`, and `KmlCatalogItem`.
+  * We now raise an error and hide the dataset when asked to show a layer in Leaflet and that layer does not use the Web Mercator (EPSG:3857) projection. Previously, the dataset would silently fail to display.
 
 ### 2015-05-15
 
