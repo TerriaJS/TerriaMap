@@ -164,7 +164,12 @@ function watch(name, files, minify) {
         packageCache: {}
     }));
 
-    function rebundle() {
+    function rebundle(ids) {
+        // Don't rebundle if only the version changed.
+        if (ids && ids.length === 1 && /\/version\.js$/.test(ids[0])) {
+            return;
+        }
+
         var start = new Date();
 
         var result = bundle(name, bundler, minify, true);
