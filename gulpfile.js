@@ -3,6 +3,7 @@
 /*global require*/
 
 var fs = require('fs');
+var spawnSync = require('spawn-sync');
 var glob = require('glob-all');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -104,6 +105,15 @@ gulp.task('prepare-terriajs', function() {
 gulp.task('default', ['lint', 'build']);
 
 function bundle(name, bundler, minify, catchErrors) {
+    // Get a version string from "git describe".
+    var version = spawnSync('git', ['describe']).stdout.toString().trim();
+    var isClean = spawnSync('git', ['diff-index', '--quiet', 'HEAD']).status === 0;
+    if (!isClean) {
+        version += ' (plus local modifications)';
+    }
+
+    fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
+
     // Combine main.js and its dependencies into a single file.
     // The poorly-named "debug: true" causes Browserify to generate a source map.
     var result = bundler.bundle();
