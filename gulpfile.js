@@ -107,7 +107,7 @@ gulp.task('default', ['lint', 'build']);
 function bundle(name, bundler, minify, catchErrors) {
     // Get a version string from "git describe".
     var version = spawnSync('git', ['describe']).stdout.toString().trim();
-    var isClean = spawnSync('git', ['diff-index', '--quiet', 'HEAD']).status === 0;
+    var isClean = spawnSync('git', ['status', '--porcelain']).stdout.toString().length === 0;
     if (!isClean) {
         version += ' (plus local modifications)';
     }
