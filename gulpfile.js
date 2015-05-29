@@ -112,6 +112,8 @@ function bundle(name, bundler, minify, catchErrors) {
         version += ' (plus local modifications)';
     }
 
+    console.log('Version is: ' + version);
+
     fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
 
     // Combine main.js and its dependencies into a single file.
