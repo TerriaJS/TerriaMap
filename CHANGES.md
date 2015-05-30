@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-06-15
+
+* National Map now shows its version number when hovering the mouse over the logo on the top left corner.
+
 ### 2015-05-28
 
 * To hide the Explorer Panel at startup, the url can contain the parameter `hideEplorerPanel=1`.
