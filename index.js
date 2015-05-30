@@ -214,7 +214,7 @@ terria.start({
 
     // Create the animation controls.
     AnimationViewModel.create({
-        container: ui,
+        container: document.getElementById('cesiumContainer'),
         terria: terria
     });
 
