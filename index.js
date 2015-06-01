@@ -20,6 +20,8 @@
 
 /*global require*/
 
+var version = require('./version');
+
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
@@ -205,6 +207,7 @@ terria.start({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
+        isOpen: !terria.userProperties.hideExplorerPanel,
         tabs: [
             new DataCatalogTabViewModel({
                 catalog: terria.catalog
