@@ -6,10 +6,11 @@
         "arcgis.com",
         "argo.jcommops.org",
         "www.abc.net.au",
-        "geoserver.aurin.org.au"
+        "geoserver.aurin.org.au",
+        "discomap.eea.europa.eu"
     ],
     "initializationUrls" : [
-        "nm"
+        "eea"
     ],
     "parameters": {
         "bingMapsKey": null,
