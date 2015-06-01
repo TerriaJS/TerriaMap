@@ -5,10 +5,10 @@
         "www.asris.csiro.au"
     ],
     "homeCamera": {
-        "west": 105,
+        "west": 109,
         "south": -45,
-        "east": 155,
-        "north": -5
+        "east": 158,
+        "north": -8
     },
     "services": [],
     "catalog": [
