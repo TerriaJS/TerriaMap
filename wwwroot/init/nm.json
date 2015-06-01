@@ -2740,9 +2740,10 @@
         },
         {
             "name": "Northern Territory Government",
-            "type": "group",
-            "items": [
-            ]
+            "description": "[Licence](http://www.ga.gov.au/copyright)",
+            "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+            "url": "http://wms1.ntlis.nt.gov.au/ilismap",
+            "type": "wms-getCapabilities"
         },
         {
             "name": "Queensland Government",
