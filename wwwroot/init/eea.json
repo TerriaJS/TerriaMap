@@ -1,0 +1,40 @@
+{
+    "homeCamera": {
+        "west": -10,
+        "south": 32,
+        "east": 35,
+        "north": 60
+    },
+    "catalog": [
+        {
+            "name": "Water",
+            "type": "esri-group",
+            "url": "http://water.discomap.eea.europa.eu/arcgis/rest/services"
+        },
+        {
+            "name": "Air",
+            "type": "esri-group",
+            "url": "http://air.discomap.eea.europa.eu/arcgis/rest/services"
+        },
+        {
+            "name": "Bio",
+            "type": "esri-group",
+            "url": "http://bio.discomap.eea.europa.eu/arcgis/rest/services"
+        },
+        {
+            "name": "Land",
+            "type": "esri-group",
+            "url": "http://land.discomap.eea.europa.eu/arcgis/rest/services"
+        },
+        {
+            "name": "Noise",
+            "type": "esri-group",
+            "url": "http://noise.discomap.eea.europa.eu/arcgis/rest/services"
+        },
+        {
+            "name": "Discomap",
+            "type": "esri-group",
+            "url": "http://discomap.eea.europa.eu/ArcGis/rest/services"
+        }
+    ]
+}
