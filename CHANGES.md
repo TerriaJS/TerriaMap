@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-06-15
+
+* To hide the Explorer Panel at startup, the url can containt the parameter `hideEplorerPanel=1`.
+
 ### 2015-05-15
 
 * Dataset changes:
