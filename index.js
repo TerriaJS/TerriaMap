@@ -215,8 +215,16 @@ terria.start({
     // Create the animation controls.
     AnimationViewModel.create({
         container: document.getElementById('cesiumContainer'),
-        terria: terria
+        terria: terria,
+        locale: "en-GB",
+        mapElementsToDisplace: [
+            'cesium-widget-credits',
+            'leaflet-control-attribution',
+            'distance-legend',
+            'location-bar'
+        ]
     });
+
 
     // Create the explorer panel.
     ExplorerPanelViewModel.create({
