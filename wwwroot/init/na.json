@@ -5,11 +5,13 @@
         "www.asris.csiro.au"
     ],
     "homeCamera": {
-        "west": 105,
-        "south": -45,
-        "east": 155,
-        "north": -5
+        "west": 116,
+        "south": -27,
+        "east": 149,
+        "north": -8
     },
+    "baseMapName": "Australian Topography",
+    "initialViewerMode": "3d",
     "services": [],
     "catalog": [
         {
@@ -21,7 +23,7 @@
         },
         {
             "name": "National Data Sets",
-            "isOpen": true,
+            "isOpen": false,
             "type": "group",
             "items": [
                 {
@@ -40,7 +42,7 @@
                             "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
                             "layers": "admin_bnds:NA_MASK",
                             "isShown": true,
-                            "opacity": 1.0,
+                            "opacity": 0.9,
                             "keepOnTop": true
                         }
                     ]

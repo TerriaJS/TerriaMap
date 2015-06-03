@@ -24,7 +24,6 @@ body {
 	position: fixed;
 	top: 0px;
 	color: #E5E5E5;
-	background-image: url(img/globe_img.png);
 	background-position: 100% 0%;
 	background-repeat: no-repeat;
 }
@@ -124,4 +123,4 @@ expl { /* Used in <h2> for explaining TOC items */
   font-weight: normal;
   font-size: smaller;
 }
-    
+

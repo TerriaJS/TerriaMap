@@ -20,12 +20,15 @@
 
 /*global require*/
 
+var version = require('./version');
+
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
     bingMapsKey: undefined, // use Cesium key
     proxyBaseUrl: 'proxy/',
-    conversionServiceBaseUrl: 'convert'
+    conversionServiceBaseUrl: 'convert',
+    regionMappingDefinitionsUrl: 'data/regionMapping.json'
 };
 
 // Check browser compatibility early on.
@@ -69,6 +72,7 @@ var Terria = require('terriajs/lib/Models/Terria');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
+var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
 // Configure the base URL for the proxy service used to work around CORS restrictions.
 corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
@@ -87,7 +91,8 @@ registerCatalogMembers();
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria({
     baseUrl: configuration.terriaBaseUrl,
-    cesiumBaseUrl: configuration.cesiumBaseUrl
+    cesiumBaseUrl: configuration.cesiumBaseUrl,
+    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
 });
 
 terria.error.addEventListener(function(e) {
@@ -111,7 +116,12 @@ terria.start({
     updateApplicationOnHashChange(terria, window);
 
     // Create the map/globe.
-    AusGlobeViewer.create(terria);
+    AusGlobeViewer.create(terria, {
+        developerAttribution: {
+            text: 'NICTA',
+            link: 'http://www.nicta.com.au'
+        }
+    });
 
     // We'll put the entire user interface into a DOM element called 'ui'.
     var ui = document.getElementById('ui');
@@ -120,23 +130,22 @@ terria.start({
     var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
-    // Use the first global base map (Bing Maps Aerial with Labels) as the default one.
-    terria.baseMap = globalBaseMaps[0].catalogItem;
+    var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({
         container: ui,
         terria: terria,
         isVisible: false,
-        baseMaps: australiaBaseMaps.concat(globalBaseMaps)
+        baseMaps: allBaseMaps
     });
 
     // Create the brand bar.
     BrandBarViewModel.create(ui, {
         elements: [
-            '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text.png" height="50" alt="National Map" /></a>',
-            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>',
-            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/nicta.png" height="60" alt="NICTA" /></a>'
+            '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
+            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
         ]
     });
 
@@ -209,6 +218,7 @@ terria.start({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
+        isOpen: !terria.userProperties.hideExplorerPanel,
         tabs: [
             new DataCatalogTabViewModel({
                 catalog: terria.catalog

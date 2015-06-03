@@ -32,6 +32,7 @@
 // Brand bar
 @brand-bar-background-color: @panel-section-background-color;
 @brand-bar-width: @left-side-panels-width;
+@brand-bar-height: 68px;
 
 // Floating elements
 @floating-background-color: rgba(47,53,60,80%);
@@ -50,7 +51,16 @@
 // Modals
 @modal-bg-color: @panel-background-color;
 
+// Disclaimer in the attribution box
+span.cesium-credit-text:first-child,.leaflet-disclaimer {
+    font-size: 12px;
+    display: block;
+    padding-bottom: 3px;
+}
 
+span.cesium-credit-delimiter:nth-child(2) {
+    display: none;
+}
 
 @import "npm://terriajs/lib/Styles/Reset.less";
 @import "npm://terriajs/lib/Styles/Core.less";
