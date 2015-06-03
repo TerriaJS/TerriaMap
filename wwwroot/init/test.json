@@ -1,8 +1,14 @@
 {
     "catalog": [
         {
+            "name": "National Data Sets",
+            "type": "group",
+            "isOpen": false
+        },
+        {
             "name": "Test Data",
             "type": "group",
+            "isOpen": true,
             "items": [
                 {
                     "name": "Files",
