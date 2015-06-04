@@ -20,12 +20,15 @@
 
 /*global require*/
 
+var version = require('./version');
+
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
     bingMapsKey: undefined, // use Cesium key
     proxyBaseUrl: 'proxy/',
-    conversionServiceBaseUrl: 'convert'
+    conversionServiceBaseUrl: 'convert',
+    regionMappingDefinitionsUrl: 'data/regionMapping.json'
 };
 
 // Check browser compatibility early on.
@@ -41,6 +44,7 @@ var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindin
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
+var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
 var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel');
 var BrandBarViewModel = require('terriajs/lib/ViewModels/BrandBarViewModel');
 var CatalogItemNameSearchProviderViewModel = require('terriajs/lib/ViewModels/CatalogItemNameSearchProviderViewModel');
@@ -88,7 +92,8 @@ registerCatalogMembers();
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria({
     baseUrl: configuration.terriaBaseUrl,
-    cesiumBaseUrl: configuration.cesiumBaseUrl
+    cesiumBaseUrl: configuration.cesiumBaseUrl,
+    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
 });
 
 terria.error.addEventListener(function(e) {
@@ -140,7 +145,7 @@ terria.start({
     // Create the brand bar.
     BrandBarViewModel.create(ui, {
         elements: [
-            '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" /></a>',
+            '<a target="_blank" href="help/About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
             '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
         ]
     });
@@ -208,6 +213,20 @@ terria.start({
         container: ui,
         terria: terria
     });
+
+    // Create the animation controls.
+    AnimationViewModel.create({
+        container: document.getElementById('cesiumContainer'),
+        terria: terria,
+        locale: "en-GB",
+        mapElementsToDisplace: [
+            'cesium-widget-credits',
+            'leaflet-control-attribution',
+            'distance-legend',
+            'location-bar'
+        ]
+    });
+
 
     // Create the explorer panel.
     ExplorerPanelViewModel.create({
