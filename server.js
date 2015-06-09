@@ -41,7 +41,7 @@ function filterHeaders(req, headers) {
         if (!dontProxyHeaderRegex.test(name)) {
             result[name] = headers[name];
         }
-    }); 
+    });
 
     result['Cache-Control'] = 'public,max-age=315360000';
     result['Expires'] = 'Thu, 31 Dec 2037 23:55:55 GMT';
@@ -53,7 +53,7 @@ function filterHeaders(req, headers) {
 
 var proxyDomains = configSettings.proxyDomains;
 
-    
+
 //Non CORS hosts and domains we proxy to
 function proxyAllowedHost(host) {
     host = host.toLowerCase();
@@ -74,7 +74,7 @@ if (cluster.isMaster) {
 
     // Count the machine's CPUs
     var cpuCount = require('os').cpus().length;
-    
+
 //    cpuCount = 1;  //testing
 
     console.log('Cores Used:', cpuCount);
@@ -165,7 +165,7 @@ if (cluster.isMaster) {
     app.get('/ping', function(req, res){
       res.status(200).send('OK');
     });
-    
+
     app.get('/proxy/*', function(req, res, next) {
         // look for request like http://localhost:8080/proxy/http://example.com/file?query=1
         var remoteUrl = getRemoteUrlFromParam(req);
@@ -195,10 +195,17 @@ if (cluster.isMaster) {
             res.status(400).send('Host is not in list of allowed hosts: ' + remoteUrl.host);
             return;
         }
- 
-         // encoding : null means "body" passed to the callback will be raw bytes
 
-        request.get({
+        // encoding : null means "body" passed to the callback will be raw bytes
+
+        var proxiedRequest;
+        req.on('close', function() {
+            if (proxiedRequest) {
+                proxiedRequest.abort();
+            }
+        });
+
+        proxiedRequest = request.get({
             url : url.format(remoteUrl),
             headers : filterHeaders(req, req.headers),
             encoding : null,
@@ -281,7 +288,7 @@ if (cluster.isMaster) {
                             .options(['-t_srs', 'EPSG:4326']);
 
             ogr.exec(function (er, data) {
-                if (er) { 
+                if (er) {
                     console.error(er);
                 }
                 if (data !== undefined) {
@@ -298,7 +305,7 @@ if (cluster.isMaster) {
     app.post('/upload', function(req, res, next) {
     });
 
-    
+
     app.get('/get/:id', function(req, res, next) {
     });
 
@@ -310,8 +317,8 @@ if (cluster.isMaster) {
         form.parse(req, function(err, fields, files) {
             //create a layer for NM to display
             var obj = {
-                name: 'Bikes Available', 
-                type: 'DATA', 
+                name: 'Bikes Available',
+                type: 'DATA',
                 proxy: false,
                 url: 'http://nationalmap.nicta.com.au/test/bike_racks.geojson'
             };
