@@ -2,7 +2,8 @@
     "corsDomains" : [
         "corsproxy.com",
         "programs.communications.gov.au",
-        "www.asris.csiro.au"
+        "www.asris.csiro.au",
+        "mapsengine.google.com"
     ],
     "homeCamera": {
         "west": 109,
