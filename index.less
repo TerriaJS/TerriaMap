@@ -90,3 +90,17 @@ span.cesium-credit-delimiter:nth-child(2) {
 @import "npm://terriajs/lib/Styles/DataCatalogTab.less";
 @import "npm://terriajs/lib/Styles/NowViewingTab.less";
 @import "npm://terriajs/lib/Styles/SearchTab.less";
+
+.nationalmap-print-disclaimer {
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+@media print {
+    .nationalmap-print-disclaimer {
+        background-color: blue;
+        color: white;
+        display: block;
+    }
+}
