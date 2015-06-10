@@ -5,6 +5,7 @@ Change Log
 
 * Replaced the Cesium animation and timeline controller with the new TerriaJS animation and timeline controller.
 * National Map now shows its version number when hovering the mouse over the logo on the top left corner.
+* Added a longer disclaimer to printed versions of the map.
 
 ### 2015-05-28
 
