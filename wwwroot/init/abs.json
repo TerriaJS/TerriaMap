@@ -15,13 +15,13 @@
         {
             "name": "Australian Bureau of Statistics",
             "type": "group",
-            "initialMessage": "This section includes datasets provided by services at the Australian Bureau of Statistics.",
+            "initialMessage": "This section includes datasets provided by services at the Australian Bureau of Statistics.  National Map provides a very simple viewer for these datasets and the ability to look at different slices of the data in the Now Viewing panel on the left.  For deeper analysis of their data you should go to the ABS for datasets and viewing tools.",
             "items": [
                 {
                     "name": "ABS Data Service",
                     "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                     "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-                    "initialMessage": "You are entering the wild west.",
+                    "initialMessage": "You are entering the wild west.  May be quite slow to load the available datasets list.",
                     "rectangle": [
                         "112.93529999999998",
                         "-38.208809999082796",
@@ -32,17 +32,20 @@
                     "url": "http://stat.abs.gov.au/itt/query.jsp",
                     "regionType": "SA4",
                     "blacklist": {
-                        "?LGA": true,
-                        "?SA1": true,
-                        "?GCCSA": true,
-                        "Aboriginal and Torres Strait Islander Population Projections, Remoteness Area": true,
-                        "Annual Turnover Size Ranges": true,
-                        "Tourist Accommodation": true
+                        "?_LGA": true,
+                        "?_SA1": true,
+                        "?_GCCSA": true,
+                        "?_T": true,
+                        "?PROJ_": true
+                    },
+                    "whitelist": {
+                        "?CENSUS2011_B": true
                     }
                 },
                 {
                     "name": "2011 Census (Selected Datasets)",
                     "type": "group",
+                    "isOpen": true,
                     "items": [
                         {
                             "name": "Total Personal Income (weekly)",
@@ -164,11 +167,41 @@
                             "url": "http://stat.abs.gov.au/itt/query.jsp",
                             "dataSetID": "ABS_CENSUS2011_B15",
                             "regionType": "SA4"
+                        },
+                        {
+                            "name": "Highest year of school completed",
+                            "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                            "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+                            "rectangle": [
+                                "112.93529999999998",
+                                "-38.208809999082796",
+                                "152.06206",
+                                "-11.05104999964455"
+                            ],
+                            "type": "abs-itt",
+                            "url": "http://stat.abs.gov.au/itt/query.jsp",
+                            "dataSetID": "ABS_CENSUS2011_B16",
+                            "regionType": "SA4"
+                        },
+                        {
+                            "name": "Religious Affiliation",
+                            "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                            "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+                            "rectangle": [
+                                "112.93529999999998",
+                                "-38.208809999082796",
+                                "152.06206",
+                                "-11.05104999964455"
+                            ],
+                            "type": "abs-itt",
+                            "url": "http://stat.abs.gov.au/itt/query.jsp",
+                            "dataSetID": "ABS_CENSUS2011_B14",
+                            "regionType": "SA3"
                         }
                     ]
                 },
                 {
-                    "name": "",
+                    "name": "Other selected ABS datasets",
                     "type": "group",
                     "items": [
                         {
@@ -183,9 +216,9 @@
                             ],
                             "type": "abs-itt",
                             "url": "http://stat.abs.gov.au/itt/query.jsp",
-                            "dataSetID": "ABS_SEIFA_LGA",
-                            "regionType": "LGA",
-                            "regionConcept": "LGA_2011"
+                            "dataSetID": "ABS_SEIFA_SLA",
+                            "regionType": "SA4",
+                            "regionConcept": "SLA_2011"
                         }
                     ]
                 },
