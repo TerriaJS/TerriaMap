@@ -6,7 +6,8 @@
         "arcgis.com",
         "argo.jcommops.org",
         "www.abc.net.au",
-        "geoserver.aurin.org.au"
+        "geoserver.aurin.org.au",
+        "mapsengine.google.com"
     ],
     "initializationUrls" : [
         "nm"

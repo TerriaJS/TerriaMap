@@ -1,13 +1,14 @@
 {
     "homeCamera": {
-        "west": 137,
-        "south": -31,
-        "east": 153,
-        "north": -10
+        "west": 143.7,
+        "south": -43.7,
+        "east": 148.6,
+        "north": -39.4
     },
+    "services": [],
     "catalog": [
         {
-            "name": "Queensland Government",
+            "name": "Tasmanian Government",
             "type": "group",
             "isPromoted": true,
             "isOpen": true
