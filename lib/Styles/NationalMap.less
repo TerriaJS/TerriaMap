@@ -1,0 +1,48 @@
+.nationalmap-print-disclaimer {
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+@media print {
+    .nationalmap-print-disclaimer {
+        background-color: blue;
+        color: white;
+        display: block;
+    }
+}
+
+// Disclaimer in the attribution box
+span.cesium-credit-text:first-child,.leaflet-disclaimer {
+    font-size: 12px;
+    display: block;
+    padding-bottom: 3px;
+}
+
+span.cesium-credit-delimiter:nth-child(2) {
+    display: none;
+}
+
+.nationalmap-related-maps-intro {
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+.nationalmap-related-maps-table {
+
+}
+
+.nationalmap-related-maps-table td {
+    vertical-align: top;
+    padding: 5px;
+}
+
+.nationalmap-related-maps-table h2 {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.nationalmap-related-maps-table h2 a {
+    color: white;
+}
