@@ -7,6 +7,8 @@ Change Log
 * National Map now shows its version number when hovering the mouse over the logo on the top left corner.
 * Added a longer disclaimer to printed versions of the map.
 * Added a Related Maps button and panel.  It currently contains links to AREMI and to the Northern Australia map.
+* Renamed the Now Viewing tab to Legend.
+* Added a small popup to call attention to the Legend tab the first time a catalog item is enabled.
 
 ### 2015-05-28
 
