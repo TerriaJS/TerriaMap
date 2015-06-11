@@ -62,6 +62,7 @@ var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel
 var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
 var MutuallyExclusivePanels = require('terriajs/lib/ViewModels/MutuallyExclusivePanels');
 var NavigationViewModel = require('terriajs/lib/ViewModels/NavigationViewModel');
+var NowViewingAttentionGrabberViewModel = require('terriajs/lib/ViewModels/NowViewingAttentionGrabberViewModel');
 var NowViewingTabViewModel = require('terriajs/lib/ViewModels/NowViewingTabViewModel');
 var PopupMessageViewModel = require('terriajs/lib/ViewModels/PopupMessageViewModel');
 var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
@@ -258,6 +259,10 @@ terria.start({
         ]
     });
 
+    var nowViewingTab = new NowViewingTabViewModel({
+        name: 'Legend',
+        nowViewing: terria.nowViewing
+    });
 
     // Create the explorer panel.
     ExplorerPanelViewModel.create({
@@ -269,9 +274,7 @@ terria.start({
             new DataCatalogTabViewModel({
                 catalog: terria.catalog
             }),
-            new NowViewingTabViewModel({
-                nowViewing: terria.nowViewing
-            }),
+            nowViewingTab,
             new SearchTabViewModel({
                 searchProviders: [
                     new CatalogItemNameSearchProviderViewModel({
@@ -304,6 +307,14 @@ terria.start({
         allowDropDataFiles: true,
         validDropElements: ['ui', 'cesiumContainer'],
         invalidDropClasses: ['modal-background']
+    });
+
+    // Add a popup that appears the first time a catalog item is enabled,
+    // calling the user's attention to the Now Viewing tab.
+    NowViewingAttentionGrabberViewModel.create({
+        container: ui,
+        terria: terria,
+        nowViewingTabViewModel: nowViewingTab
     });
 
     // Make sure only one panel is open in the top right at any time.
