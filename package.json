@@ -49,6 +49,11 @@
     "vinyl-transform": "^1.0.0",
     "watchify": "^3.2.0"
   },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
   "scripts": {
     "start": "node_modules/.bin/supervisor server"
   }

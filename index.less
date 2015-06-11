@@ -1,3 +1,36 @@
+// TerriaJS styles
+@import "npm://terriajs/lib/Styles/Reset.less";
+@import "npm://terriajs/lib/Styles/Core.less";
+@import "npm://terriajs/lib/Styles/Panels.less";
+@import "npm://terriajs/lib/Styles/Map.less";
+@import "npm://terriajs/lib/Styles/Floating.less";
+
+// Individual TerriaJS widgets
+@import "npm://terriajs/lib/Styles/AddDataPanel.less";
+@import "npm://terriajs/lib/Styles/Animation.less";
+@import "npm://terriajs/lib/Styles/BrandBar.less";
+@import "npm://terriajs/lib/Styles/CatalogItemInfo.less";
+@import "npm://terriajs/lib/Styles/DistanceLegend.less";
+@import "npm://terriajs/lib/Styles/DragDrop.less";
+@import "npm://terriajs/lib/Styles/ExplorerPanel.less";
+@import "npm://terriajs/lib/Styles/FeatureInfoPanel.less";
+@import "npm://terriajs/lib/Styles/LocationBar.less";
+@import "npm://terriajs/lib/Styles/MenuBar.less";
+@import "npm://terriajs/lib/Styles/Navigation.less";
+@import "npm://terriajs/lib/Styles/PopupMessage.less";
+@import "npm://terriajs/lib/Styles/SelectionIndicator.less";
+@import "npm://terriajs/lib/Styles/SettingsPanel.less";
+@import "npm://terriajs/lib/Styles/SharePopup.less";
+@import "npm://terriajs/lib/Styles/ToolsPanel.less";
+
+// Tabs on the Explorer Panel
+@import "npm://terriajs/lib/Styles/DataCatalogTab.less";
+@import "npm://terriajs/lib/Styles/NowViewingTab.less";
+@import "npm://terriajs/lib/Styles/SearchTab.less";
+
+// Styles specific to National Map
+@import "lib/Styles/NationalMap.less";
+
 @terriajs-path: "./TerriaJS";
 @cesium-path: "@{terriajs-path}/build/Cesium";
 
@@ -50,57 +83,3 @@
 
 // Modals
 @modal-bg-color: @panel-background-color;
-
-// Disclaimer in the attribution box
-span.cesium-credit-text:first-child,.leaflet-disclaimer {
-    font-size: 12px;
-    display: block;
-    padding-bottom: 3px;
-}
-
-span.cesium-credit-delimiter:nth-child(2) {
-    display: none;
-}
-
-@import "npm://terriajs/lib/Styles/Reset.less";
-@import "npm://terriajs/lib/Styles/Core.less";
-@import "npm://terriajs/lib/Styles/Panels.less";
-@import "npm://terriajs/lib/Styles/Map.less";
-@import "npm://terriajs/lib/Styles/Floating.less";
-
-// Individual widgets
-@import "npm://terriajs/lib/Styles/AddDataPanel.less";
-@import "npm://terriajs/lib/Styles/Animation.less";
-@import "npm://terriajs/lib/Styles/BrandBar.less";
-@import "npm://terriajs/lib/Styles/CatalogItemInfo.less";
-@import "npm://terriajs/lib/Styles/DistanceLegend.less";
-@import "npm://terriajs/lib/Styles/DragDrop.less";
-@import "npm://terriajs/lib/Styles/ExplorerPanel.less";
-@import "npm://terriajs/lib/Styles/FeatureInfoPanel.less";
-@import "npm://terriajs/lib/Styles/LocationBar.less";
-@import "npm://terriajs/lib/Styles/MenuBar.less";
-@import "npm://terriajs/lib/Styles/Navigation.less";
-@import "npm://terriajs/lib/Styles/PopupMessage.less";
-@import "npm://terriajs/lib/Styles/SelectionIndicator.less";
-@import "npm://terriajs/lib/Styles/SettingsPanel.less";
-@import "npm://terriajs/lib/Styles/SharePopup.less";
-@import "npm://terriajs/lib/Styles/ToolsPanel.less";
-
-// Tabs on the Explorer Panel
-@import "npm://terriajs/lib/Styles/DataCatalogTab.less";
-@import "npm://terriajs/lib/Styles/NowViewingTab.less";
-@import "npm://terriajs/lib/Styles/SearchTab.less";
-
-.nationalmap-print-disclaimer {
-    position: absolute;
-    bottom: 0;
-    display: none;
-}
-
-@media print {
-    .nationalmap-print-disclaimer {
-        background-color: blue;
-        color: white;
-        display: block;
-    }
-}
