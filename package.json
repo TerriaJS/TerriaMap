@@ -20,7 +20,7 @@
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#abs",
-    "terriajs-cesium": "^1.10.1",
+    "terriajs-cesium": "^1.10.5",
     "yargs": "^3.8.0"
   },
   "devDependencies": {
@@ -48,6 +48,11 @@
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
     "watchify": "^3.2.0"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
   },
   "scripts": {
     "start": "node_modules/.bin/supervisor server"
