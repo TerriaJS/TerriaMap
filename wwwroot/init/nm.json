@@ -2467,7 +2467,6 @@
                     "?_LGA": true,
                     "?_SA1": true,
                     "?_GCCSA": true,
-                    "?_T": true,
                     "?PROJ_": true
                 },
                 "whitelist": {
