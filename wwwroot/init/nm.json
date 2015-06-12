@@ -2466,8 +2466,7 @@
                 "blacklist": {
                     "?_LGA": true,
                     "?_SA1": true,
-                    "?_GCCSA": true,
-                    "?PROJ_": true
+                    "?_GCCSA": true
                 },
                 "whitelist": {
                     "?CENSUS2011_B": true
@@ -2491,7 +2490,8 @@
                         "type": "abs-itt",
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B04",
-                        "regionType": "SA4"
+                        "regionType": "SA4",
+                        "filter": ["MEASURE.3", "AGE.A04", "AGE.A10", "AGE.A15", "AGE.A59"]
                     },
                     {
                         "name": "Country of Birth",
@@ -2506,7 +2506,8 @@
                         "type": "abs-itt",
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B09",
-                        "regionType": "SA4"
+                        "regionType": "SA4",
+                        "filter": ["BPLP.1101", "MEASURE.3"]
                     },
                     {
                         "name": "Highest year of school completed",
@@ -2521,7 +2522,8 @@
                         "type": "abs-itt",
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B16",
-                        "regionType": "SA4"
+                        "regionType": "SA4",
+                        "filter": ["AGE.O15", "HSCP.1", "MEASURE.3"]
                     },
                     {
                         "name": "Occupation",
@@ -2536,7 +2538,8 @@
                         "type": "abs-itt",
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B45",
-                        "regionType": "SA4"
+                        "regionType": "SA4",
+                        "filter": ["MEASURE.O15", "OCCP.TOT", "SEX.3"]
                     },
                     {
                         "name": "Personal Income (weekly)",
