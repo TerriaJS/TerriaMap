@@ -32,7 +32,8 @@
                         {
                             "name": "Pacific Earthquakes (CSV)",
                             "type": "csv",
-                            "url": "test/earthquakes.csv"
+                            "url": "test/earthquakes.csv",
+                            "disableUserChanges": true
                         },
                         {
                             "name": "Auto Incidents (CSV)",
