@@ -260,7 +260,6 @@ terria.start({
     });
 
     var nowViewingTab = new NowViewingTabViewModel({
-        name: 'Legend',
         nowViewing: terria.nowViewing
     });
 
