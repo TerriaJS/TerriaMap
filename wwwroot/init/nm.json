@@ -2445,9 +2445,9 @@
         }]
     },
     {
-        "name": "Australian Bureau of Statistics",
+        "name": "Australian Bureau of Statistics (BETA)",
         "type": "group",
-        "initialMessage": "This section includes datasets provided by online services at the Australian Bureau of Statistics.<br> National Map provides a very simple viewer for these datasets and the ability to look at different slices of the data in the Now Viewing panel on the left.  For deeper analysis of their data you should go to the ABS for datasets and viewing tools.",
+        "initialMessage": "This section includes datasets provided by online services at the Australian Bureau of Statistics.<br> National Map provides a very simple viewer for these datasets and the ability to look at different slices of the data in the Now Viewing panel on the left.<br>  For deeper analysis of their data you should go to the ABS for datasets and viewing tools.",
         "items": [
             {
                 "name": "ABS Data Service",
@@ -2569,7 +2569,7 @@
                         "type": "abs-itt",
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B14",
-                        "regionType": "SA3"
+                        "regionType": "SA4"
                     },
                     {
                         "name": "Rent (weekly)",
