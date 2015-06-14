@@ -15,7 +15,6 @@
         {
             "name": "Australian Bureau of Statistics",
             "type": "group",
-            "initialMessage": "This section includes datasets provided by services at the Australian Bureau of Statistics.  National Map provides a very simple viewer for these datasets and the ability to look at different slices of the data in the Now Viewing panel on the left.  For deeper analysis of their data you should go to the ABS for datasets and viewing tools.",
             "items": [
                 {
                     "name": "Selected ABS datasets",

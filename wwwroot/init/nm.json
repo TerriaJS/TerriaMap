@@ -2448,16 +2448,20 @@
         "name": "Australian Bureau of Statistics (BETA)",
         "type": "group",
         "initialMessage": {
-            "title": "Data Provider Information",
+            "title": "ABS Data Provider Information",
             "content": "This section includes datasets provided by online services at the Australian Bureau of Statistics.<br> National Map provides a very simple viewer for these datasets and the ability to look at different slices of the data in the Now Viewing panel on the left.<br>  For deeper analysis of their data you should go to the ABS for datasets and viewing tools.",
-            "key": "AbsDataSetsWarning"
+            "key": "AbsDataProviderWarning"
         },
         "items": [
             {
                 "name": "ABS Data Service",
                 "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                 "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-                "initialMessage": "This gives you access to datasets from the ABS data service.  We have not curated the appearance of these datasets in any way, so you may need to use the Now Viewing panel to find what you're looking for in each dataset.  Also the data catalog and datasets may be quite slow to load.",
+                "initialMessage": {
+                    "title": "ABS Data Service Information",
+                    "content": "This gives you access to datasets from the ABS data service.  We have not curated the appearance of these datasets in any way, so you may need to use the Now Viewing panel to find what you're looking for in each dataset.  Also the data catalog and datasets may be quite slow to load.",
+                    "key": "AbsDataServiceWarning"
+                },
                 "rectangle": [
                     "112.93529999999998",
                     "-38.208809999082796",
