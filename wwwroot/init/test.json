@@ -17,7 +17,12 @@
                         {
                             "name": "Cemeteries (GeoJSON)",
                             "type": "geojson",
-                            "url": "test/cemeteries.geojson"
+                            "url": "test/cemeteries.geojson",
+                            "initialMessage": {
+                                "title": "title",
+                                "content": "testing",
+                                "key": "MyTestingKey"
+                            }
                         },
                         {
                             "name": "Centrelink Sites (GME->GeoJSON)",
