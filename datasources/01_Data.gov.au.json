@@ -1,0 +1,31 @@
+{
+  "catalog": [
+    {
+      "blacklist": {
+        "Rainforests (EVC_2005)": true
+      },
+      "groupBy": "organization",
+      "minimumMaxScaleDenominator": 1e+10,
+      "filterByWmsGetCapabilities": false,
+      "filterQuery": [
+        "fq=res_format%3awms"
+      ],
+      "url": "http://www.data.gov.au",
+      "type": "ckan",
+      "name": "Data.gov.au"
+    }
+  ],
+  "services": [],
+  "homeCamera": {
+    "north": -8,
+    "east": 158,
+    "south": -45,
+    "west": 109
+  },
+  "corsDomains": [
+    "corsproxy.com",
+    "programs.communications.gov.au",
+    "www.asris.csiro.au",
+    "mapsengine.google.com"
+  ]
+}

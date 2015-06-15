@@ -1,0 +1,24 @@
+{
+  "catalog": [
+    {
+      "type": "wms-getCapabilities",
+      "url": "http://wms1.ntlis.nt.gov.au/ilismap",
+      "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+      "description": "[Licence](http://www.ga.gov.au/copyright)",
+      "name": "Northern Territory Government"
+    }
+  ],
+  "services": [],
+  "homeCamera": {
+    "north": -8,
+    "east": 158,
+    "south": -45,
+    "west": 109
+  },
+  "corsDomains": [
+    "corsproxy.com",
+    "programs.communications.gov.au",
+    "www.asris.csiro.au",
+    "mapsengine.google.com"
+  ]
+}

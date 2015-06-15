@@ -1,0 +1,22 @@
+{
+  "catalog": [
+    {
+      "items": [],
+      "type": "group",
+      "name": "ACT Government"
+    }
+  ],
+  "services": [],
+  "homeCamera": {
+    "north": -8,
+    "east": 158,
+    "south": -45,
+    "west": 109
+  },
+  "corsDomains": [
+    "corsproxy.com",
+    "programs.communications.gov.au",
+    "www.asris.csiro.au",
+    "mapsengine.google.com"
+  ]
+}
