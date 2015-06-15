@@ -13,7 +13,7 @@
     "services": [],
     "catalog": [
         {
-            "name": "Australian Bureau of Statistics",
+            "name": "Australian Bureau of Statistics (BETA)",
             "type": "group",
             "items": [
                 {
@@ -50,7 +50,17 @@
                             "url": "./data/2011Census_B15_AUST",
                             "dataSetID": "FILE",
                             "regionType": "SA3",
-                            "filter": ["MEASURE.1", "MEASURE.2", "TYPP.10"]
+                            "opacity": 1.0,
+                            "tableStyle": {
+                                "minDisplayValue": 20,
+                                "maxDisplayValue": 40,
+                                "legendTicks": 4,
+                                "colorMap": [
+                                    { "offset": 0.0, "color": "rgba(0,0,200,1.0)" },
+                                    { "offset": 0.5, "color": "rgba(200,200,200,1.00)" },
+                                    { "offset": 1.0, "color": "rgba(200,0,0,1.00)" }
+                                ]
+                            }
                         }
                     ]
                 }
