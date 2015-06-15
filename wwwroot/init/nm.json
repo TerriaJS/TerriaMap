@@ -2480,7 +2480,7 @@
                     "?CENSUS2011_B": true
                 },
                 "itemProperties": {
-                    "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                    "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                 }
             },
             {
@@ -2503,7 +2503,7 @@
                         "dataSetID": "ABS_CENSUS2011_B04",
                         "regionType": "SA4",
                         "filter": ["MEASURE.3", "AGE.A04", "AGE.A10", "AGE.A15", "AGE.A59"],
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Country of Birth",
@@ -2520,7 +2520,7 @@
                         "dataSetID": "ABS_CENSUS2011_B09",
                         "regionType": "SA4",
                         "filter": ["BPLP.1101", "MEASURE.3"],
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Highest year of school completed",
@@ -2537,7 +2537,7 @@
                         "dataSetID": "ABS_CENSUS2011_B16",
                         "regionType": "SA4",
                         "filter": ["AGE.O15", "HSCP.1", "MEASURE.3"],
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Occupation",
@@ -2554,7 +2554,7 @@
                         "dataSetID": "ABS_CENSUS2011_B45",
                         "regionType": "SA4",
                         "filter": ["MEASURE.O15", "OCCP.TOT", "SEX.3"],
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Personal Income (weekly)",
@@ -2570,7 +2570,7 @@
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B17",
                         "regionType": "SA4",
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Rent (weekly)",
@@ -2586,7 +2586,7 @@
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B34",
                         "regionType": "SA4",
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Type of educational institution",
@@ -2602,7 +2602,7 @@
                         "url": "http://stat.abs.gov.au/itt/query.jsp",
                         "dataSetID": "ABS_CENSUS2011_B15",
                         "regionType": "SA4",
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Type of Internet Connection",
@@ -2619,7 +2619,7 @@
                         "dataSetID": "ABS_CENSUS2011_B35",
                         "regionType": "SA4",
                         "filter": ["MEASURE.OPD", "NEDD.TOT"],
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     },
                     {
                         "name": "Volunteer Work",
@@ -2636,7 +2636,7 @@
                         "dataSetID": "ABS_CENSUS2011_B19",
                         "regionType": "SA4",
                         "filter": ["AGE.O15", "MEASURE.3", "VOLWP.2"],
-                        "nowViewingMessage": "Look here for the *legend* and to interactively *filter* the data based on ABS concepts."
+                        "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
                     }
                 ]
             }
