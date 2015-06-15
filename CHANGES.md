@@ -4,11 +4,18 @@ Change Log
 ### 2015-06-15
 
 * Added a new Australian Bureau of Statistics group to the catalogue.
+* Added all Australian states to the Data Catalogue.
 * Replaced the Cesium animation and timeline controller with the new TerriaJS animation and timeline controller.
 * National Map now shows its version number when hovering the mouse over the logo on the top left corner.
 * Added a longer disclaimer to printed versions of the map.
 * Added a Related Maps button and panel.  It currently contains links to AREMI and to the Northern Australia map.
 * Added a small popup to call attention to the Now Viewing tab the first time a catalog item is enabled.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.21.  Significant changes relevant to NationalMap users include:
+  * Replaced the timeline / animation controller used with time-dynamic datasets.  The new one has a cleaner and simpler interface.
+  * Added the ability to add an entire ArcGIS Server to the catalogue using the Add Data panel.
+  * Improved the capabilities of the hidden Tools panel, accessed by appending `#tools=1` to the URL and clicking the Tools button.
+  * Fixed a bug that caused the 2D / 3D buttons the Maps menu to get out of sync with the actual state of the map after switching automatically to 2D due to a performance problem.
+  * Added support for connecting to Web Map Tile Service (WMTS) servers.
 
 ### 2015-05-28
 
