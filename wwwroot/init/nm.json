@@ -2455,8 +2455,8 @@
         "items": [
             {
                 "name": "ABS Data Service",
-                "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-                "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+                "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)<br>[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                 "initialMessage": {
                     "title": "ABS Data Service Information",
                     "content": "This group provides direct access to datasets from the ABS data service API at <a href=\"http://stat.abs.gov.au/itt/r.jsp?api\">http://stat.abs.gov.au/itt/r.jsp?api</a>.\n\nThese datasets have not been curated for NationalMap, so you will need to use the Now Viewing panel to find what you're looking for in each dataset.\n\nAlso the data catalog and datasets may currently be quite slow to load so please be patient.",
@@ -2490,7 +2490,7 @@
                 "items": [
                     {
                         "name": "Age",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2507,7 +2507,7 @@
                     },
                     {
                         "name": "Country of Birth",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2524,7 +2524,7 @@
                     },
                     {
                         "name": "Highest year of school completed",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2541,7 +2541,7 @@
                     },
                     {
                         "name": "Occupation",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2558,7 +2558,7 @@
                     },
                     {
                         "name": "Personal Income (weekly)",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2574,7 +2574,7 @@
                     },
                     {
                         "name": "Rent (weekly)",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2590,7 +2590,7 @@
                     },
                     {
                         "name": "Type of educational institution",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2606,7 +2606,7 @@
                     },
                     {
                         "name": "Type of Internet Connection",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
@@ -2623,7 +2623,7 @@
                     },
                     {
                         "name": "Volunteer Work",
-                        "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                        "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
                         "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
                         "rectangle": [
                             "112.93529999999998",
