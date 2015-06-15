@@ -7,9 +7,26 @@
     <meta charset="UTF-8">
     <style type="text/css">
     .information {
-    	padding: 50px;
-    	margin-top: 140px;
-      margin-left: 15%;
+      position: absolute;
+      left: 200px;
+      top: 175px;
+      bottom: 0;
+      right: 0;
+      overflow: auto;
+      margin-right: 0;
+      padding-right: 15%;
+    }
+    .logos {
+      position: absolute;
+      left: 0;
+      width: 200px;
+      top: 175px;
+      overflow: auto;
+      padding-top: 45px;
+    }
+    .logo {
+      text-align: center;
+      padding-top: 20px;
     }
     </style>
   </head>
@@ -22,17 +39,16 @@
       <strong>About NationalMap</strong> | <a href="help/Help.html">Help and FAQs </a>| <a href="http://nationalmap.gov.au/">Launch the NationalMap</a>
     </section>
 
+    <section class="logos">
+      <div class="logo"><a href="https://www.communications.gov.au/" target="_blank"><img src="images/Dept_of_Comms-Reg-Stacked-Press_0.jpg" width="200" alt="The Australian Government Department of Communications" /></a></div>
+      <div class="logo"><a href="http://www.ga.gov.au/" target="_blank"><img src="images/geoscience_stacked.jpg" width="165" alt="The Australian Government - Geoscience Australia" /></a></div>
+      <div class="logo"><a href="http://www.nicta.com.au/" target="_blank"><img src="images/nicta-logo.png" width="85" alt="NICTA" /></a></div>
+      <div class="logo"><a href="http://www.cebit.com.au/" target="_blank"><img src="images/Finalist-Innovation.gif" width="175" alt="CeBIT Australia Business Awards 2015 Finalist - Innovation" /></a></div>
+    </section>
+
     <section class="information">
 
       <h1>About the NationalMap</h1>
-
-      <!-- Version Numbers are not yet clear, and the system is not yet split into "Terria" and Nat Map. Re-instante this
-        when it is set up properly. Probably in April.
-      <p style="font-weight: bold;" >
-        NationalMap Version:  <todo>%%%</todo><br>
-        Terria Version:  <todo>%%%<todo>
-      </p>
-      -->
 
       <p>The <strong>NationalMap</strong> is a website for map-based access to spatial data from Australian government agencies.
       It is an initiative of the Australian Commonwealth Government's Department of Communications and the software has been
@@ -54,7 +70,7 @@
       <h2>How to use the NationalMap</h2>
 
       <p>Just go to <a href="http://nationalmap.gov.au/">http://nationalmap.gov.au/</a>. Most operations are obvious,
-      but you can click the <a href="help/Help.html">Help</a> button for specific instructions.</p>
+      but you can click the <a href="help/Help.html">Help and FAQs</a> button near the top of this page for specific instructions.</p>
 
       <p>For further information email <a href="mailto:nationalmap@communications.gov.au">nationalmap@communications.gov.au</a>.
       Feel free to send us feedback and bug reports.
@@ -73,8 +89,8 @@
 
       <h2>NationalMap Software</h2>
 
-      <p>The NationalMap is an Open Source system available as a
-      <a href="https://github.com/NICTA/nationalmap" target="_blank" >Github project</a>. The core software of this system was initially
+      <p>The NationalMap is Open Source software available as a
+      <a href="https://github.com/NICTA/nationalmap" target="_blank" >Github project</a>. The core platform, <a href="https://github.com/TerriaJS/terriajs" target="_blank">TerriaJS</a>, was initially
       developed by NICTA for the NationalMap, but has subsequently been used for other projects. It has been made available
       to assist with the development of other spatial data viewing applications.</p>
 
@@ -87,32 +103,14 @@
 
       <h2>Additional Open Source Software Used</h2>
 
-      <p>In developing the NationalMap, NICTA has used open source software and contributed back to it. Portions of the
-      NationalMap use the following copyrighted open source material, the use of which is hereby acknowledged. For more
-      detail on the licenses see our <a href="https://github.com/NICTA/nationalmap" target="_blank" >Github project</a>.</p>
+      <p>In developing the NationalMap, NICTA has used open source software and contributed back to it.  NationalMap leverages these
+      excellent open source libraries:</p>
 
       <ul>
-        <li><a href="http://cesiumjs.org/" target="_blank" >Cesium</a> (open source under the Apache 2.0 licence)</li>
-        <li>
-          <a href="http://leafletjs.com/" target="_blank" >Leaflet</a>,
-          <a href="https://github.com/shramov/leaflet-plugins" target="_blank" >Leaflet-plugins:Bing.js</a>
-          (open source under the simplified BSD licence)
-        </li>
-        <li><a href="http://geoserver.org/" target="_blank" >Geoserver</a> (open source under the GNU GPL 2.0 licence)</li>
-        <li>
-          <a href="http://jquery.com/" target="_blank" >JQuery</a>,
-          <a href="https://code.google.com/p/jquery-csv/" target="_blank" >jquery-csv</a>,
-          <a href="https://www.fyneworks.com/jquery/xml-to-json/" target="_blank" >jquery-xml2json</a>,
-          <a href="http://medialize.github.io/URI.js/" target="_blank" >URI.js</a>,
-          <a href="http://proj4js.org/" target="_blank" >Proj4.js<a>,
-          <a href="http://html2canvas.hertzen.com/" target="_blank" >html2canvas</a>,
-          <a href="https://github.com/humangeo/leaflet-tilefilter" target="_blank" >Leaflet Tile Filters</a>,
-          <a href="http://knockoutjs.com/" target="_blank" >Knockout</a>,
-          <a href="https://github.com/SteveSanderson/knockout-es5" target="_blank" >Knockout ES5 plugin</a>,
-          <a href="http://github.com/pivotal/jasmine" target="_blank" >Jasmine</a> (all open source under the MIT licence)
-        </li>
-        <li><a href="https://github.com/Esri/esri-leaflet" target="_blank" >esri-leaflet.js</a> (open source under the Apache 2.0 licence)</li>
-        <li><a href="https://github.com/mapbox/togeojson" target="_blank" >togeojson</a>, Tilelayer.Bing.js (open source under the wtfpl ver 2)</li>
+        <li><a href="https://github.com/TerriaJS/terriajs" target="_blank">TerriaJS</a></li>
+        <li><a href="http://cesiumjs.org/" target="_blank" >Cesium</a></li>
+        <li><a href="http://leafletjs.com/" target="_blank" >Leaflet</a></li>
+        <li>The <a href="https://github.com/NICTA/nationalmap/blob/master/LICENSE.md">complete list</a> is available with the <a href="https://github.com/NICTA/nationalmap">NationalMap source code</a>.</li>
       </ul>
       <a name="terms"><h2>Terms & Conditions</h2></a>
       <p>The information displayed on the NationalMap is for general informational purposes only, and is not
