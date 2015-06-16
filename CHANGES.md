@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+### 2015-06-16
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.23.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that prevented features from being pickable from ABS datasets on the 2D map.
+  * Fixed a bug that caused the Explorer Panel tabs to be missing or misaligned in Firefox.
+  * Changed to use JPEG instead of PNG format for the Natural Earth II basemap.  This makes the tile download substantially smaller.
+
 ### 2015-06-15
 
 * Added a new Australian Bureau of Statistics group to the catalogue.
