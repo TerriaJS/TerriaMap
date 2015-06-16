@@ -1,5 +1,5 @@
-SOURCE=wwwroot/init/nm.json
-OUTDIR=datasources
+SOURCE=datasources/00_National_Data_Sets.json
+OUTDIR=datasources/00_National_Data_Sets
 
 if [[ -z `which jq` ]]; then
   echo "You need to install jq, in order to use this. Try one of: "
@@ -9,7 +9,7 @@ if [[ -z `which jq` ]]; then
 fi
 
 
-echo  "Splitting $SOURCE into individual files in ${OUTDIR}/" 
+echo  "Replacing $SOURCE with individual group files split out in ${OUTDIR}/" 
 
 read -p "Continue? (Y/N)" choice
 echo
@@ -19,20 +19,17 @@ case "$choice" in
 esac
 
 mkdir -p $OUTDIR
-   
-jq "del(.catalog)" < $SOURCE > $OUTDIR/000_settings.json
-
+    
 i=0
 while true; do
-  name=`jq -r ".catalog[$i].name" < $SOURCE`
+  name=`jq -r ".catalog[0].items[$i].name" < $SOURCE`
   if [[ $name == "null" ]]; then
     exit
   fi
-  name=`printf "%02d" $i`_${name// /_}.json
+  name=00_`printf "%02d" $i`_${name// /_}.json
   echo $name
-  jq "{catalog:([.catalog[$i]])}" < $SOURCE > $OUTDIR/$name
+  jq ".catalog=([.catalog[0]|.items = [.items[$i]]])" < $SOURCE > $OUTDIR/$name
   ((i++))
 
 done
-
-fi
+rm $SOURCE

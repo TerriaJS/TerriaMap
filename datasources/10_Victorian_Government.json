@@ -322,7 +322,7 @@
         "GSV Published Maps Indexes": true,
         "Historial Mining Activity": true
       },
-      "minimumMaxScaleDenominator": 1e+10,
+      "minimumMaxScaleDenominator": 10000000000,
       "filterByWmsGetCapabilities": true,
       "filterQuery": [
         "fq=res_format%3awms"
@@ -331,18 +331,5 @@
       "type": "ckan",
       "name": "Victorian Government"
     }
-  ],
-  "services": [],
-  "homeCamera": {
-    "north": -8,
-    "east": 158,
-    "south": -45,
-    "west": 109
-  },
-  "corsDomains": [
-    "corsproxy.com",
-    "programs.communications.gov.au",
-    "www.asris.csiro.au",
-    "mapsengine.google.com"
   ]
 }

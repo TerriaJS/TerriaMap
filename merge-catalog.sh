@@ -19,6 +19,6 @@ echo "Merging all these files into $OUTFILE: `ls *.json | xargs`"
 popd > /dev/null
 # Set the first catalog to be the sum of all the catalogs, in order, while retaining other top level properties.
 # Then select only that first catalog
-jq=".[0].catalog=(map(.catalog)|map(add))|.[0]"
+jq=".[0].catalog=(map(.catalog|arrays)|map(add))|.[0]"
 
 cat $SOURCE/*.json | jq --compact-output --slurp $jq > $OUTFILE
