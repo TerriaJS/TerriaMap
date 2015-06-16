@@ -6,11 +6,17 @@ if [[ -z `which jq` ]]; then
   echo "You need to install jq, in order to use this. Try one of: "
   echo "  sudo apt-get install jq"
   echo "  sudo brew install jq"
-  exit
+  exit 1
 fi
-pushd $SOURCE
+
+if ! ls ${SOURCE}/*.json 1> /dev/null 2>&1; then 
+  echo "No source .json files found in $SOURCE/" 
+  exit 1
+fi
+
+pushd $SOURCE > /dev/null
 echo "Merging all these files into $OUTFILE: `ls *.json | xargs`"
-popd
+popd > /dev/null
 # Set the first catalog to be the sum of all the catalogs, in order, while retaining other top level properties.
 # Then select only that first catalog
 jq=".[0].catalog=(map(.catalog)|map(add))|.[0]"
