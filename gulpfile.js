@@ -20,7 +20,6 @@ var transform = require('vinyl-transform');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
-var Combo = require("stream-json/Combo");
 var jsoncombine = require('gulp-jsoncombine');
 
 var appJSName = 'nationalmap.js';
