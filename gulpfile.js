@@ -134,6 +134,10 @@ gulp.task('merge-catalog', ['merge-groups'], function() {
 
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 
+gulp.watch('datasources/00_National_Data_Sets/*.json', [ 'merge-groups', 'merge-catalog' ]);
+gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
+
+
 gulp.task('default', ['lint', 'merge-datasources', 'build']);
 
 function bundle(name, bundler, minify, catchErrors) {
