@@ -1,10 +1,10 @@
 {
-  "name": "nationalmap",
-  "version": "0.0.6",
-  "description": "Geospatial visualization application for Australian government and open data.",
+  "name": "terriajs-map",
+  "version": "0.0.1",
+  "description": "Super cool geospatial visualization application!",
   "repository": {
     "type": "git",
-    "url": "http://github.com/NICTA/nationalmap"
+    "url": "http://github.com/TerriaJS/map"
   },
   "dependencies": {
     "compression": "^1.4.3",

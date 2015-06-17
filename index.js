@@ -76,9 +76,7 @@ var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
-var svgInfo = require('terriajs/lib/SvgPaths/svgInfo');
 var svgPlus = require('terriajs/lib/SvgPaths/svgPlus');
-var svgRelated = require('terriajs/lib/SvgPaths/svgRelated');
 var svgShare = require('terriajs/lib/SvgPaths/svgShare');
 var svgWorld = require('terriajs/lib/SvgPaths/svgWorld');
 
@@ -98,8 +96,8 @@ registerCatalogMembers();
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria({
-    appName: 'NationalMap',
-    supportEmail: 'nationalmap@lists.nicta.com.au',
+    appName: 'Terria USGS National Map Demo',
+    supportEmail: 'kevin.ring@nicta.com.au',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
@@ -154,8 +152,9 @@ terria.start({
     // Create the brand bar.
     BrandBarViewModel.create(ui, {
         elements: [
-            '<a target="_blank" href="About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
-            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
+            '',
+            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" title="Version: ' + version + '" /></a>',
+            ''
         ]
     });
 
@@ -199,30 +198,6 @@ terria.start({
                         terria: terria
                     });
                 }
-            }),
-            new MenuBarItemViewModel({
-                label: 'Related Maps',
-                tooltip: 'View other maps in the NationalMap family.',
-                svgPath: svgRelated,
-                svgPathWidth: 14,
-                svgPathHeight: 13,
-                callback: function() {
-                    PopupMessageViewModel.open(ui, {
-                        title: 'Related Maps',
-                        message: require('fs').readFileSync(__dirname + '/lib/Views/RelatedMaps.html', 'utf8'),
-                        width: 600,
-                        height: 430
-                    });
-                }
-            }),
-            new MenuBarItemViewModel({
-                label: 'About',
-                tooltip: 'About National Map.',
-                svgPath: svgInfo,
-                svgPathWidth: 18,
-                svgPathHeight: 18,
-                svgFillRule: 'evenodd',
-                href: 'About.html'
             })
         ]
     });
@@ -282,9 +257,6 @@ terria.start({
                     new BingMapsSearchProviderViewModel({
                         terria: terria,
                         key: configuration.bingMapsKey
-                    }),
-                    new GazetteerSearchProviderViewModel({
-                        terria: terria
                     })
                 ]
             })
