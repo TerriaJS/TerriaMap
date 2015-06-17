@@ -20,7 +20,8 @@ var transform = require('vinyl-transform');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
-
+var Combo = require("stream-json/Combo");
+var jsoncombine = require('gulp-jsoncombine');
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -102,7 +103,39 @@ gulp.task('prepare-terriajs', function() {
     .pipe(gulp.dest('wwwroot/build/TerriaJS'));
 });
 
-gulp.task('default', ['lint', 'build']);
+gulp.task('merge-groups', function() {
+    var jsonspacing=0;
+    return gulp.src("./datasources/00_National_Data_Sets/*.json")
+    .pipe(jsoncombine("00_National_Data_Sets.json", function(data) {
+        // be absolutely sure we have the files in alphabetical order
+        var keys = Object.keys(data).slice().sort();
+        for (var i = 1; i < keys.length; i++) {
+            data[keys[0]].catalog[0].items.push(data[keys[i]].catalog[0].items[0]);
+        }
+        return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
+    }))
+    .pipe(gulp.dest("./datasources"));
+});
+
+gulp.task('merge-catalog', ['merge-groups'], function() {
+    var jsonspacing=0;
+    return gulp.src("./datasources/*.json")
+        .pipe(jsoncombine("nm.json", function(data) {
+        // be absolutely sure we have the files in alphabetical order, with 000_settings first.
+        var keys = Object.keys(data).slice().sort();
+        data[keys[0]].catalog = [];
+
+        for (var i = 1; i < keys.length; i++) {
+            data[keys[0]].catalog.push(data[keys[i]].catalog[0]);
+        }
+        return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
+    }))
+    .pipe(gulp.dest("./wwwroot/init"));
+});
+
+gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
+
+gulp.task('default', ['lint', 'merge-datasources', 'build']);
 
 function bundle(name, bundler, minify, catchErrors) {
     // Get a version string from "git describe".
