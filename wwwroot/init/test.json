@@ -1,8 +1,14 @@
 {
     "catalog": [
         {
+            "name": "National Data Sets",
+            "type": "group",
+            "isOpen": false
+        },
+        {
             "name": "Test Data",
             "type": "group",
+            "isOpen": true,
             "items": [
                 {
                     "name": "Files",
@@ -11,7 +17,12 @@
                         {
                             "name": "Cemeteries (GeoJSON)",
                             "type": "geojson",
-                            "url": "test/cemeteries.geojson"
+                            "url": "test/cemeteries.geojson",
+                            "initialMessage": {
+                                "title": "title",
+                                "content": "testing",
+                                "key": "MyTestingKey"
+                            }
                         },
                         {
                             "name": "Centrelink Sites (GME->GeoJSON)",
@@ -26,7 +37,8 @@
                         {
                             "name": "Pacific Earthquakes (CSV)",
                             "type": "csv",
-                            "url": "test/earthquakes.csv"
+                            "url": "test/earthquakes.csv",
+                            "disableUserChanges": true
                         },
                         {
                             "name": "Auto Incidents (CSV)",
@@ -40,6 +52,10 @@
                                 "minDisplayValue": 0,
                                 "maxDisplayValue": 1500,
                                 "legendTicks": 4,
+                                "featureInfoFields": {
+                                    "incident_date": "Date", 
+                                    "incident_severity" : "Severity"
+                                },
                                 "colorMap": [
                                     { "offset": 0.0, "color": "rgba(0,0,200,1.0)" },
                                     { "offset": 0.5, "color": "rgba(200,200,200,1.00)" },
@@ -135,6 +151,12 @@
                             "type": "csv",
                             "url": "test/droughts.csv",
                             "tableStyle": {
+                                "featureInfoFields": {
+                                    "Country name" : "Country",
+                                    "date": "Date",
+                                    "Total deaths": "Deaths",
+                                    "Total damage": "Cost"
+                                },
                                 "dataVariable": "Total affected",
                                 "displayDuration" : 525600
                             }

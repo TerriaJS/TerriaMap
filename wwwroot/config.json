@@ -9,10 +9,11 @@
         "geoserver.aurin.org.au",
         "arcgisonline.com",
         "esri.com",
-        "geocommunicator.gov"
+        "geocommunicator.gov",
+        "mapsengine.google.com"
     ],
     "initializationUrls" : [
-        "nm"
+        "usgs"
     ],
     "parameters": {
         "bingMapsKey": null,
@@ -22,4 +23,3 @@
         }
     }
 }
-

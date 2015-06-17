@@ -1,8 +1,9 @@
 {
-    "corsDomains" : [
+    "corsDomains": [
         "corsproxy.com",
         "programs.communications.gov.au",
-        "www.asris.csiro.au"
+        "www.asris.csiro.au",
+        "mapsengine.google.com"
     ],
     "homeCamera": {
         "west": -124,
@@ -88,6 +89,7 @@
                     "type": "esri-mapServer-group",
                     "url": "http://services.nationalmap.gov/arcgis/rest/services/selectable_polygons/MapServer"
                 }
+
             ]
         },
         {

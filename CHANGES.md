@@ -1,9 +1,39 @@
 Change Log
 ==========
 
+### 2015-06-16
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.23.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that prevented features from being pickable from ABS datasets on the 2D map.
+  * Fixed a bug that caused the Explorer Panel tabs to be missing or misaligned in Firefox.
+  * Changed to use JPEG instead of PNG format for the Natural Earth II basemap.  This makes the tile download substantially smaller.
+
 ### 2015-06-15
 
-* To hide the Explorer Panel at startup, the url can containt the parameter `hideEplorerPanel=1`.
+* Added a new Australian Bureau of Statistics group to the catalogue.
+* Added all Australian states to the Data Catalogue.
+* Replaced the Cesium animation and timeline controller with the new TerriaJS animation and timeline controller.
+* National Map now shows its version number when hovering the mouse over the logo on the top left corner.
+* Added a longer disclaimer to printed versions of the map.
+* Added a Related Maps button and panel.  It currently contains links to AREMI and to the Northern Australia map.
+* Added a small popup to call attention to the Now Viewing tab the first time a catalog item is enabled.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.21.  Significant changes relevant to NationalMap users include:
+  * Replaced the timeline / animation controller used with time-dynamic datasets.  The new one has a cleaner and simpler interface.
+  * Added the ability to add an entire ArcGIS Server to the catalogue using the Add Data panel.
+  * Improved the capabilities of the hidden Tools panel, accessed by appending `#tools=1` to the URL and clicking the Tools button.
+  * Fixed a bug that caused the 2D / 3D buttons the Maps menu to get out of sync with the actual state of the map after switching automatically to 2D due to a performance problem.
+  * Added support for connecting to Web Map Tile Service (WMTS) servers.
+
+### 2015-05-28
+
+* To hide the Explorer Panel at startup, the url can contain the parameter `hideEplorerPanel=1`.
+* Upgraded to [TerriaJS 1.0.15](https://github.com/TerriaJS/terriajs/blob/1.0.15/CHANGES.md).  Significant changes relevant to National Map users include:
+  * Esri ArcGIS MapServers can now be added via the "Add Data" panel.
+  * We now support discovery of ArcGIS MapServer "Raster Layers" in addition to "Feature Layers".
+  * Sharing now preserves the base map and view mode (2D/3D) selection.
+  * Improved error handling in `CzmlCatalogItem`, `GeoJsonCatalogItem`, and `KmlCatalogItem`.
+  * We now raise an error and hide the dataset when asked to show a layer in Leaflet and that layer does not use the Web Mercator (EPSG:3857) projection. Previously, the dataset would silently fail to display.
+  * Fixed a bug that caused Internet Explorer 8 users to see a blank page instead of a message saying their browser is incompatible.
 
 ### 2015-05-15
 

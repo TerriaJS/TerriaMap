@@ -1,13 +1,14 @@
 {
     "homeCamera": {
-        "west": 137,
-        "south": -31,
-        "east": 153,
-        "north": -10
+        "west": 148.751,
+        "south": -35.936,
+        "east": 149.409,
+        "north": -35.111
     },
+    "services": [],
     "catalog": [
         {
-            "name": "Queensland Government",
+            "name": "ACT Government",
             "type": "group",
             "isPromoted": true,
             "isOpen": true
