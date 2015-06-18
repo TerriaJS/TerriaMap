@@ -77,7 +77,18 @@ gulp.task('watch-css', ['build-css'], function() {
     return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less'], ['build-css']);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css']);
+gulp.task('watch-datasource-groups', ['merge-groups'], function() {
+    return gulp.watch('datasources/00_National_Data_Sets/*.json', [ 'merge-groups', 'merge-catalog' ]);
+});
+
+gulp.task('watch-datasource-catalog', ['merge-catalog'], function() {
+    return gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
+});
+
+gulp.task('watch-datasources', ['watch-datasource-groups','watch-datasource-catalog']);
+
+
+gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-datasources']);
 
 gulp.task('lint', function(){
     return gulp.src(['lib/**/*.js', 'test/**/*.js'])
@@ -133,10 +144,6 @@ gulp.task('merge-catalog', ['merge-groups'], function() {
 });
 
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
-
-gulp.watch('datasources/00_National_Data_Sets/*.json', [ 'merge-groups', 'merge-catalog' ]);
-gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
-
 
 gulp.task('default', ['lint', 'merge-datasources', 'build']);
 
