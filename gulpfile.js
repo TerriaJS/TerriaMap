@@ -53,7 +53,7 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'build-app', 'build-specs']);
+gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);
@@ -63,7 +63,7 @@ gulp.task('release-specs', ['prepare'], function() {
     return build(specJSName, glob.sync(testGlob), true);
 });
 
-gulp.task('release', ['build-css', 'release-app', 'release-specs']);
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs']);
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
@@ -145,7 +145,7 @@ gulp.task('merge-catalog', ['merge-groups'], function() {
 
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 
-gulp.task('default', ['lint', 'merge-datasources', 'build']);
+gulp.task('default', ['lint', 'build']);
 
 function bundle(name, bundler, minify, catchErrors) {
     // Get a version string from "git describe".
