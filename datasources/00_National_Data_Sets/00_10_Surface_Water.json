@@ -1,0 +1,574 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "Hydrography:bores",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Bores"
+            },
+            {
+              "layers": "Hydrography:canalareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "115.70707",
+                "-38.08189999908377",
+                "145.17220000000003",
+                "-32.253269999147996"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Canal Areas"
+            },
+            {
+              "layers": "Hydrography:canallines",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.35391999999999",
+                "-42.85120999905931",
+                "153.59005",
+                "-12.524599999600033"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Canal Lines"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFEstuary",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.6089684320001",
+                "-43.59020860705779",
+                "153.62495056300006",
+                "-10.835983610651068"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Estuary"
+            },
+            {
+              "layers": "Hydrography:flats",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.00808000000002",
+                "-43.60604999905781",
+                "153.61275",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Flats"
+            },
+            {
+              "layers": "Hydrography:foreshoreflats",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.00706",
+                "-43.511829999057966",
+                "153.57853",
+                "-9.007109999707835"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Foreshore Flats"
+            },
+            {
+              "layers": "Hydrography:lakes",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.99395",
+                "-43.55222999905789",
+                "153.61302",
+                "-8.93787999971001"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Lakes"
+            },
+            {
+              "layers": "Hydrography:locks",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "138.80938",
+                "-35.94260999910306",
+                "144.46688000000003",
+                "-33.996729999124945"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Locks"
+            },
+            {
+              "layers": "Hydrography:marinehazardareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.92034999999998",
+                "-43.5473099990579",
+                "153.54714",
+                "-8.998569999708106"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Reef Areas"
+            },
+            {
+              "layers": "Hydrography:marinehazardpoints",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.11903999999998",
+                "-43.66633999905772",
+                "153.62995",
+                "-9.063349999706077"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Reef Points"
+            },
+            {
+              "layers": "Hydrography:pondageareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.31874",
+                "-42.10062999906144",
+                "153.3509",
+                "-12.191229999610012"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Pondage Areas"
+            },
+            {
+              "layers": "Hydrography:rapidareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "131.03977",
+                "-33.995369999124954",
+                "149.38968999999997",
+                "-12.680119999595398"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Rapid Areas"
+            },
+            {
+              "layers": "Hydrography:rapidlines",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "131.66452",
+                "-43.20146999905853",
+                "149.13695",
+                "-10.70548999965513"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Rapid Lines"
+            },
+            {
+              "layers": "Hydrography:reservoirs",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "114.99601",
+                "-43.19763999905853",
+                "153.56568",
+                "-10.571689999659238"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Reservoirs"
+            },
+            {
+              "layers": "Hydrography:spillways",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "117.10128000000002",
+                "-42.103829999061425",
+                "153.28249",
+                "-20.977869999368615"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Spillways"
+            },
+            {
+              "layers": "Hydrography:springs",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "114.13676",
+                "-38.23244999908261",
+                "147.96741000000003",
+                "-11.523879999630154"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Springs"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFMappedStream",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.37534500000005",
+                "-43.629381999057735",
+                "153.63207400000002",
+                "-9.242297499700408"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Streams"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFMappedNode",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.37534500000005",
+                "-43.629381999057735",
+                "153.6320740000001",
+                "-9.242297499700424"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Stream Nodes"
+            },
+            {
+              "layers": "ahgf_shn:AHGFNetworkStream",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.10056181999998",
+                "-47.81318817937922",
+                "154.86193818000004",
+                "-5.051811819379163"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Stream Network"
+            },
+            {
+              "layers": "ahgf_shn:AHGFNetworkNode",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.33375",
+                "-43.628749999057746",
+                "153.62875000000008",
+                "-9.23624999970059"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Stream Network Nodes"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFStructure",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.76872500000002",
+                "-43.58274499905778",
+                "153.5956600000001",
+                "-10.64324999965701"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Structure"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFWaterbody",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.80691",
+                "-43.00307999905891",
+                "152.89131000000003",
+                "-10.903989999649017"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Waterbodies"
+            },
+            {
+              "layers": "Hydrography:watercourseareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.56261000000002",
+                "-43.58998999905784",
+                "153.58856",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Water Course Areas"
+            },
+            {
+              "layers": "Hydrography:watercourselines",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.37533999999998",
+                "-43.629399999057775",
+                "153.6321",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Water Course Lines"
+            },
+            {
+              "layers": "Hydrography:waterfallpoints",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "115.84323",
+                "-43.49497999905798",
+                "153.04724000000002",
+                "-10.643249999657044"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Waterfall Points"
+            },
+            {
+              "layers": "Hydrography:waterholes",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.89583439399999",
+                "-47.40775060536477",
+                "154.01767560599998",
+                "-6.2859093933647605"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Waterholes"
+            },
+            {
+              "items": [
+                {
+                  "dataUrlType": "none",
+                  "layers": "WaterObservations",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "description": "This web service shows layer 1 of 5 of the Water Observations from Space product. This layer depicts the number of times that water was detected across Australia between 1987 and 2014, as produced by the Water Observation from Space analysis procedure.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                  "name": "1 - Detections"
+                },
+                {
+                  "dataUrlType": "none",
+                  "layers": "ClearObservations",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "description": "This web service shows layer 2 of 5 of the Water Observations from Space product. This layer depicts the number of times that a satellite observation was clear for the 1987 to 2014 period, as produced by the Water Observation from Space analysis procedure. A clear observation is defined as one where the observation was not disrupted by cloud, shadows (including terrain shadows) or satellite sensor issues.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                  "name": "2 - Clear Observations"
+                },
+                {
+                  "dataUrlType": "none",
+                  "layers": "WaterSummary",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "description": "This web service shows layer 3 of 5 of the Water Observations from Space product. This layer depicts the ratio of the number of times that water was detected across Australia between 1987 and 2014, with the number of times that a clear observation of each location was made. The ratio is displayed as a percentage. The calculation is produced by the Water Observation from Space analysis procedure.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                  "name": "3 - Summary"
+                },
+                {
+                  "dataUrlType": "none",
+                  "layers": "Confidence",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    112,
+                    -45,
+                    154,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "description": "This web service shows layer 4 of 5 of the Water Observations from Space product. This layer depicts the confidence in the water observations displayed in the water summary layer according to comparison with other national data.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                  "name": "4 - Confidence"
+                },
+                {
+                  "dataUrlType": "none",
+                  "layers": "WaterSummaryFiltered",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "description": "This web service shows layer 5 of 5 of the Water Observations from Space product. This layer shows the water summary information (layer 3 of 5) filtered to mask out areas where confidence is zero according to layer 4 of 5. As for the water summary layer, this layer shows the ratio of water observations to clear observations, with the ratio is displayed as a percentage. The calculation is produced by the Water Observation from Space analysis procedure.\n\nWater Observations from Space (WOfS) is derived from Landsat-5 and Landsat-7 satellite imagery acquired over Australia between 1987 and 2014. The Landsat data underpinning WOfS is ARG25 standard data located in the Australian Geoscience Data Cube (AGDC) at the National Computational Infrastructure (NCI) in the Australian National University (ANU), Canberra. The WOfS product is calculated from all acceptable Landsat scenes in the Geoscience Australia archive for the time period. The detection process is based on spectral analysis of each pixel in each Landsat scene.\n\nThe water detection algorithm used to detect water from each observed pixel is based on a statistical regression tree analysis of a set of normalised difference indices and corrected band values. The regression is based on a set of water and non-water samples created by visual interpretation of 20 Landsat scenes from across Australia. The sample locations, ensure that the logistic regression is based on the full geographic range of conditions experienced in Australia.\n\nThe regression analysis determined a set of best indices and bands for the analysis and the associated thresholds in each component to derive a final classification tree, producing a water/non-water classification for every pixel in the Data Cube. The final water classification for each pixel is modified by Pixel Quality (see associated RG25 - PQ product information) and terrain.\n\nOnce the water algorithm has completed its process, the water detection for a pixel through time is combined to produce a total number of water observations for each pixel. This is compared to a total number of clear observations for the same pixel, derived from the PQ analysis. The ratio is expressed as a percentage water recurrence.\n\nA separate analysis produces a confidence dataset, providing an assessment on whether a pixel depicted as having had water detected at some time is likely. The layer is computed by combining a set of confidence factors using a weighted sum approach, with the weightings derived by logistic regression.",
+                  "name": "5 - Filtered Summary"
+                }
+              ],
+              "type": "group",
+              "name": "Water Observations from Space"
+            },
+            {
+              "layers": "Hydrography:waterpoints",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.76517999999999",
+                "-38.63448999907962",
+                "153.09347999999997",
+                "-10.072709999674638"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "name": "Water Points"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFWaterPipeline",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.80691",
+                "-43.00307999905891",
+                "152.89131000000003",
+                "-10.903989999649017"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Water Pipeline"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFDam",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9318700000001",
+                "-42.75848999905948",
+                "153.00634000000005",
+                "-9.951769999678337"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Water Storage"
+            },
+            {
+              "layers": "ahgf_hrr:RiverRegion",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.64250000005773",
+                "153.63750000000013",
+                "-9.229999999700832"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "River Region"
+            },
+            {
+              "layers": "ahgf_hrc:AHGFContractedCatchment",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000002",
+                "-9.197499999701808"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Catchment"
+            },
+            {
+              "layers": "ahgf_hrr:AWRADrainageDivision",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "111.24438730279999",
+                "-48.47186269657931",
+                "155.3156126972001",
+                "-4.400637302179204"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": " Drainage Division"
+            },
+            {
+              "layers": "ahgf_shcatch:NCBLevel1DrainageDivision",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000002",
+                "-9.197499999701801"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "NCB Level1 Drainage Division"
+            },
+            {
+              "layers": "ahgf_shcatch:NCBLevel2DrainageBasinGroup",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000013",
+                "-9.197499999701803"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "NCB Level2 Drainage Basin Group"
+            }
+          ],
+          "type": "group",
+          "name": "Surface Water"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

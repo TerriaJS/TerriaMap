@@ -1,0 +1,226 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "itemProperties": {
+            "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data."
+          },
+          "whitelist": {
+            "?CENSUS2011_B": true
+          },
+          "blacklist": {
+            "?_GCCSA": true,
+            "?_SA1": true,
+            "?_LGA": true
+          },
+          "name": "ABS Data Service",
+          "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)<br>[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "initialMessage": {
+            "key": "AbsDataServiceWarning",
+            "content": "This group provides direct access to datasets from the ABS data service API at <a href=\"http://stat.abs.gov.au/itt/r.jsp?api\">http://stat.abs.gov.au/itt/r.jsp?api</a>.\n\nThese datasets have not been curated for NationalMap, so you will need to use the Now Viewing panel to find what you're looking for in each dataset.\n\nAlso the data catalog and datasets may currently be quite slow to load so please be patient.",
+            "title": "ABS Data Service Information"
+          },
+          "rectangle": [
+            "112.93529999999998",
+            "-38.208809999082796",
+            "152.06206",
+            "-11.05104999964455"
+          ],
+          "type": "abs-itt-dataset-list",
+          "url": "http://stat.abs.gov.au/itt/query.jsp",
+          "regionType": "SA4"
+        },
+        {
+          "items": [
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "filter": [
+                "MEASURE.3",
+                "AGE.A04",
+                "AGE.A10",
+                "AGE.A15",
+                "AGE.A59"
+              ],
+              "name": "Age",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B04",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "filter": [
+                "BPLP.1101",
+                "MEASURE.3"
+              ],
+              "name": "Country of Birth",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B09",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "filter": [
+                "AGE.O15",
+                "HSCP.1",
+                "MEASURE.3"
+              ],
+              "name": "Highest year of school completed",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B16",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "filter": [
+                "MEASURE.O15",
+                "OCCP.TOT",
+                "SEX.3"
+              ],
+              "name": "Occupation",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B45",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "name": "Personal Income (weekly)",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B17",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "name": "Rent (weekly)",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B34",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "name": "Type of educational institution",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B15",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "filter": [
+                "MEASURE.OPD",
+                "NEDD.TOT"
+              ],
+              "name": "Type of Internet Connection",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B35",
+              "regionType": "SA4"
+            },
+            {
+              "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+              "filter": [
+                "AGE.O15",
+                "MEASURE.3",
+                "VOLWP.2"
+              ],
+              "name": "Volunteer Work",
+              "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "abs-itt",
+              "url": "http://stat.abs.gov.au/itt/query.jsp",
+              "dataSetID": "ABS_CENSUS2011_B19",
+              "regionType": "SA4"
+            }
+          ],
+          "isOpen": true,
+          "type": "group",
+          "name": "2011 Census (Selected Datasets)"
+        }
+      ],
+      "initialMessage": {
+        "key": "AbsDataProviderWarning",
+        "content": "This is an experimental section providing access to online data services at the Australian Bureau of Statistics (ABS).\n\nNationalMap provides a geospatial viewer for these datasets and the ability to look at different slices of the data using the Now Viewing panel on the left.\n\nFor deeper analysis of the ABS data, visit http://www.abs.gov.au/ for datasets and viewing tools.",
+        "title": "ABS Data Provider Information"
+      },
+      "type": "group",
+      "name": "Australian Bureau of Statistics (BETA)"
+    }
+  ]
+}

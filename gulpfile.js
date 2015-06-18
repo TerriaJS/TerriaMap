@@ -20,7 +20,7 @@ var transform = require('vinyl-transform');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
-
+var jsoncombine = require('gulp-jsoncombine');
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -53,7 +53,7 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'build-app', 'build-specs']);
+gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);
@@ -63,7 +63,7 @@ gulp.task('release-specs', ['prepare'], function() {
     return build(specJSName, glob.sync(testGlob), true);
 });
 
-gulp.task('release', ['build-css', 'release-app', 'release-specs']);
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs']);
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
@@ -77,7 +77,18 @@ gulp.task('watch-css', ['build-css'], function() {
     return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less'], ['build-css']);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css']);
+gulp.task('watch-datasource-groups', ['merge-groups'], function() {
+    return gulp.watch('datasources/00_National_Data_Sets/*.json', [ 'merge-groups', 'merge-catalog' ]);
+});
+
+gulp.task('watch-datasource-catalog', ['merge-catalog'], function() {
+    return gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
+});
+
+gulp.task('watch-datasources', ['watch-datasource-groups','watch-datasource-catalog']);
+
+
+gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-datasources']);
 
 gulp.task('lint', function(){
     return gulp.src(['lib/**/*.js', 'test/**/*.js'])
@@ -101,6 +112,38 @@ gulp.task('prepare-terriajs', function() {
         ], { base: 'node_modules/terriajs/wwwroot' })
     .pipe(gulp.dest('wwwroot/build/TerriaJS'));
 });
+
+gulp.task('merge-groups', function() {
+    var jsonspacing=0;
+    return gulp.src("./datasources/00_National_Data_Sets/*.json")
+    .pipe(jsoncombine("00_National_Data_Sets.json", function(data) {
+        // be absolutely sure we have the files in alphabetical order
+        var keys = Object.keys(data).slice().sort();
+        for (var i = 1; i < keys.length; i++) {
+            data[keys[0]].catalog[0].items.push(data[keys[i]].catalog[0].items[0]);
+        }
+        return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
+    }))
+    .pipe(gulp.dest("./datasources"));
+});
+
+gulp.task('merge-catalog', ['merge-groups'], function() {
+    var jsonspacing=0;
+    return gulp.src("./datasources/*.json")
+        .pipe(jsoncombine("nm.json", function(data) {
+        // be absolutely sure we have the files in alphabetical order, with 000_settings first.
+        var keys = Object.keys(data).slice().sort();
+        data[keys[0]].catalog = [];
+
+        for (var i = 1; i < keys.length; i++) {
+            data[keys[0]].catalog.push(data[keys[i]].catalog[0]);
+        }
+        return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
+    }))
+    .pipe(gulp.dest("./wwwroot/init"));
+});
+
+gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 
 gulp.task('default', ['lint', 'build']);
 
