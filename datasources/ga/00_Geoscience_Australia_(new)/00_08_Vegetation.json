@@ -1,0 +1,40 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Vegetation/MapServer/WMSServer",
+                  "layers": "Cultivated_Areas,No_Data",
+                  "name": "Cultivated Areas (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Cultivated Areas",
+              "type": "group"
+            },
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Vegetation/MapServer/WMSServer",
+                  "layers": "Native_Vegetation_2Mill_to_70K_Scale,Native_Vegetation_60Mill_to_2Mill_Scale,No_Data",
+                  "name": "Native Vegetation (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Native Vegetation",
+              "type": "group"
+            }
+          ],
+          "name": "Vegetation",
+          "type": "group"
+        }
+      ],
+      "type": "group",
+      "name": "Geoscience Australia (new)"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Airports_Point_Features,No_Data",
+                  "name": "Airport Point Features (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Airport_Runway_Centrelines_and_Landing_Grounds_Line_Features,No_Data",
+                  "name": "Airport Runway Centrelines and Landing Grounds Line Features (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Heliports,No_Data",
+                  "name": "Heliports (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Landing_Grounds_Point_Features,No_Data",
+                  "name": "Landing Ground Point Features (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Airfields",
+              "type": "group"
+            },
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Railway_Bridges,No_Data",
+                  "name": "Railway Bridges (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Road_Bridges_and_Fords,No_Data",
+                  "name": "Road Bridges and Fords (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Bridges",
+              "type": "group"
+            },
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Ferry_Routes,No_Data",
+                  "name": "Ferry Routes (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Ferries",
+              "type": "group"
+            },
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Railway_Bridges,No_Data",
+                  "name": "Railway Bridges (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Railway_Crossing_Lines,No_Data",
+                  "name": "Railway Crossing Lines (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Railway_Stations,No_Data",
+                  "name": "Railway Stations (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Railways,No_Data",
+                  "name": "Railways (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Rail",
+              "type": "group"
+            },
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Foot_Tracks,No_Data",
+                  "name": "Foot Tracks (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Road_Bridges_and_Fords,No_Data",
+                  "name": "Road Bridges and Fords (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "Road_Crossings_Lines,No_Data",
+                  "name": "Road Crossings Lines (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "All_Roads,Roads_Scale_600000_to_300000,Roads_Scale_7Million_to_600000,Major_Road_Network,No_Data",
+                  "name": "Roads (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "National_Route_Number_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
+                  "name": "Route Number Labels - National (Geoscience Australia)",
+                  "type": "wms"
+                },
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Transport/MapServer/WMSServer",
+                  "layers": "State_Route_Number_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
+                  "name": "Route Number Labels - State (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Roads",
+              "type": "group"
+            }
+          ],
+          "name": "Transport",
+          "type": "group"
+        }
+      ],
+      "type": "group",
+      "name": "Geoscience Australia (new)"
+    }
+  ]
+}

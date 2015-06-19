@@ -1,0 +1,40 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer/WMSServer",
+                  "layers": "Oil_and_Gas_Pipelines,No_Data",
+                  "name": "Oil and Gas Pipelines (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Pipelines",
+              "type": "group"
+            },
+            {
+              "items": [
+                {
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer/WMSServer",
+                  "layers": "Powerlines,No_Data",
+                  "name": "Powerlines (Geoscience Australia)",
+                  "type": "wms"
+                }
+              ],
+              "name": "Powerlines",
+              "type": "group"
+            }
+          ],
+          "name": "Utility",
+          "type": "group"
+        }
+      ],
+      "type": "group",
+      "name": "Geoscience Australia (new)"
+    }
+  ]
+}
