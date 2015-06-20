@@ -39,7 +39,7 @@ checkBrowserCompatibility('ui');
 
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
-var AusGlobeViewer = require('terriajs/lib/viewer/AusGlobeViewer');
+var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 
@@ -126,7 +126,7 @@ terria.start({
     updateApplicationOnHashChange(terria, window);
 
     // Create the map/globe.
-    AusGlobeViewer.create(terria, {
+    TerriaViewer.create(terria, {
         developerAttribution: {
             text: 'NICTA',
             link: 'http://www.nicta.com.au'
