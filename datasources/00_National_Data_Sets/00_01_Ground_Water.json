@@ -1,0 +1,171 @@
+{
+  "catalog": [
+    {
+      "name": "National Data Sets",
+      "isOpen": true,
+      "type": "group",
+      "items": [
+        {
+          "name": "Ground Water",
+          "type": "group",
+          "items": [
+            {
+              "name": "Aquifer Contours",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "130.9294316820001",
+                "-41.24101109706462",
+                "151.640955901",
+                "-12.157000677611002"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:AHGFAquiferContour"
+            },
+            {
+              "name": "Water Table Aquifer",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "112.92137000000001",
+                "-43.65854999905766",
+                "153.63857000000004",
+                "-9.219939999701113"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:AHGFWaterTableAquifer"
+            },
+            {
+              "name": "Surficial Hydrogeologic Unit",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "112.92137000000001",
+                "-43.65854999905766",
+                "153.63857000000004",
+                "-9.219939999701113"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:AHGFSurficialHydrogeologicUnit"
+            },
+            {
+              "name": "Aquifer Boundary",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "112.92137000000001",
+                "-39.135739999076094",
+                "152.49040280900007",
+                "-12.243238350608436"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:AHGFAquiferBoundary"
+            },
+            {
+              "name": "Aquifer Outcrop",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "113.8055180570001",
+                "-38.755833332078694",
+                "152.49040280900002",
+                "-13.441636424572783"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:AHGFAquiferOutcrop"
+            },
+            {
+              "name": "Aquifer Salinity",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "112.92137000000001",
+                "-38.97436811707721",
+                "148.91107675700005",
+                "-20.97124299936873"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:IGWAquiferSalinity"
+            },
+            {
+              "name": "Aquifer Yield",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "138.73545507400001",
+                "-38.97436810607722",
+                "148.9098995590001",
+                "-31.999839353151554"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:IGWAquiferYield"
+            },
+            {
+              "name": "Water Table Yield",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "129.00048000000004",
+                "-39.135739999076094",
+                "153.63857000000007",
+                "-10.965879999647115"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:IGWWaterTableYield"
+            },
+            {
+              "name": "Water Table Salinity",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "112.92137000000001",
+                "-43.643049999057716",
+                "153.63857000000007",
+                "-10.687579999655645"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:IGWWaterTableSalinity"
+            },
+            {
+              "name": "Water Table Hydraulic Conductivity",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "140.96334594200005",
+                "-37.68073353908695",
+                "152.49056374800008",
+                "-24.586309583285477"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:IGWWaterTableHydraulicConductivity"
+            },
+            {
+              "name": "WaterTableAquifer",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "rectangle": [
+                "112.92137000000001",
+                "-43.65854999905766",
+                "153.63857000000004",
+                "-9.219939999701113"
+              ],
+              "type": "wms",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "layers": "ahgf_gwc:AHGFWaterTableAquifer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

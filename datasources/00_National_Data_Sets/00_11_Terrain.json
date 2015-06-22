@@ -1,0 +1,71 @@
+{
+  "catalog": [
+    {
+      "name": "National Data Sets",
+      "isOpen": true,
+      "type": "group",
+      "items": [
+        {
+          "type": "group",
+          "name": "Terrain",
+          "items": [
+            {
+              "type": "group",
+              "name": "Landscape Features",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Caves (Geoscience Australia)",
+                  "layers": "Caves,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Cliffs (Geoscience Australia)",
+                  "layers": "Cliffs,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Craters (Geoscience Australia)",
+                  "layers": "Craters,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Distorted Surfaces (Geoscience Australia)",
+                  "layers": "Distorted_Surfaces,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Outcrops (Geoscience Australia)",
+                  "layers": "Outcrops,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Pinnacles (Geoscience Australia)",
+                  "layers": "Pinnacles,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Sandridges (Geoscience Australia)",
+                  "layers": "Sandridges_250K_Scale,Sandridges_2_5Million_Scale,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Sands (Geoscience Australia)",
+                  "layers": "Sands,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

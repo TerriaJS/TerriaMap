@@ -1,0 +1,133 @@
+{
+  "catalog": [
+    {
+      "name": "National Data Sets",
+      "isOpen": true,
+      "type": "group",
+      "items": [
+        {
+          "type": "group",
+          "name": "Infrastructure",
+          "items": [
+            {
+              "name": "Waste Management Facilities",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "type": "wms",
+              "url": "http://www.ga.gov.au/gis/services/topography/National_Waste_Management_Facilities/MapServer/WMSServer",
+              "layers": "0"
+            },
+            {
+              "type": "group",
+              "name": "Conveyors",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Conveyors (Geoscience Australia)",
+                  "layers": "Conveyors,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Lighthouses",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Lighthouses - Labels (Geoscience Australia)",
+                  "layers": "Lighthouses_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Lighthouses (Geoscience Australia)",
+                  "layers": "Lighthouses,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Marine Infrastructure",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Marine Infrastructure Lines (Geoscience Australia)",
+                  "layers": "Marine_Infrastructure_Lines,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Mines",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Mine Areas (Geoscience Australia)",
+                  "layers": "Mine_Areas,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Storage Tanks",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Storage Tanks (Geoscience Australia)",
+                  "layers": "Storage_Tanks,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Vertical Obstructions",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Vertical Obstructions (Geoscience Australia)",
+                  "layers": "Vertical_Obstructions,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Water Storage",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Dam Walls - Labels (Geoscience Australia)",
+                  "layers": "Dam_Walls_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Dam Walls (Geoscience Australia)",
+                  "layers": "Dam_Walls,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Spillways (Geoscience Australia)",
+                  "layers": "Spillways,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

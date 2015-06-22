@@ -1,0 +1,159 @@
+{
+  "catalog": [
+    {
+      "name": "National Data Sets",
+      "isOpen": true,
+      "type": "group",
+      "items": [
+        {
+          "type": "group",
+          "name": "Elevation",
+          "items": [
+            {
+              "type": "group",
+              "name": "Contours",
+              "items": [
+                {
+                  "name": "SRTM 1 sec DEM Image",
+                  "description": "[Licence](http://www.ga.gov.au/copyright)",
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                  "rectangle": [
+                    "112.93472",
+                    "-43.657359999057725",
+                    "153.63573999999997",
+                    "-9.004409999707923"
+                  ],
+                  "type": "wms",
+                  "url": "http://www.ga.gov.au/gisimg/services/topography/dem_s_1s/ImageServer/WMSServer",
+                  "layers": "0"
+                },
+                {
+                  "name": "Flow Grid Direction Image",
+                  "description": "[Licence](http://www.ga.gov.au/copyright)",
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                  "rectangle": [
+                    "112.93472",
+                    "-43.657359999057725",
+                    "153.63573999999997",
+                    "-9.004409999707923"
+                  ],
+                  "type": "wms",
+                  "url": "http://www.ga.gov.au/thredds/wms/national_grids/d8-9s.nc",
+                  "layers": "Flow_Direction_Grid_to_accompany_9_Second_Digital_Elevation_Model_of_Australia_Version_3"
+                },
+                {
+                  "type": "wms",
+                  "name": "Contours - Labels (Geoscience Australia)",
+                  "layers": "Contours_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Contours (Geoscience Australia)",
+                  "layers": "Contours_250K_Scale,Contours_2_5Million_Scale,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Cuttings",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Cuttings (Geoscience Australia)",
+                  "layers": "Cuttings,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Embankments",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Embankments (Geoscience Australia)",
+                  "layers": "Embankments,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Horizontal Control Points",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Horizontal Control Points - Labels (Geoscience Australia)",
+                  "layers": "Horizontal_Control_Points_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Horizontal Control Points (Geoscience Australia)",
+                  "layers": "Horizontal_Control_Points,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Offshore Rocks and Wrecks",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Offshore Rocks and Wrecks - Labels (Geoscience Australia)",
+                  "layers": "Offshore_Rocks_and_Wrecks_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Offshore Rocks and Wrecks (Geoscience Australia)",
+                  "layers": "Offshore_Rocks_and_Wrecks,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Reefs and Shoals",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Reefs and Shoals - Labels (Geoscience Australia)",
+                  "layers": "Reefs_and_Shoals_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Reefs and Shoals (Geoscience Australia)",
+                  "layers": "Reefs_and_Shoals,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer/WMSServer"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Spot Elevations",
+              "items": [
+                {
+                  "type": "wms",
+                  "name": "Spot Elevations - Labels (Geoscience Australia)",
+                  "layers": "Spot_Elevations_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                },
+                {
+                  "type": "wms",
+                  "name": "Spot Elevations (Geoscience Australia)",
+                  "layers": "Spot_Elevations_250K_Scale,Spot_Elevations_2_5Million_Scale,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

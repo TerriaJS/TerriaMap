@@ -1,0 +1,233 @@
+{
+  "catalog": [
+    {
+      "name": "National Data Sets",
+      "isOpen": true,
+      "type": "group",
+      "items": [
+        {
+          "items": [
+            {
+              "items": [
+                {
+                  "layers": "Coastline_250K_Scale,Coastline_2_5Million_Scale,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Labelling_and_Boundaries/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Coastline (Geoscience Australia)"
+                },
+                {
+                  "layers": "Islands,Coral_Sea_Islands_Feature_Names,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Labelling_and_Boundaries/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Islands (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Coastline"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Forestry_Reserves_Labels,No_Data,No_Labels_National_Scale_to_3Million_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Forestry Reserves - Labels  (Geoscience Australia)"
+                },
+                {
+                  "layers": "Forestry_Reserves,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Forestry Reserves (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Forestry Reserves"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Indigenous_Reserves_Labels,No_Data,No_Labels_National_Scale_to_3Million_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Indigenous Reserves - Labels (Geoscience Australia)"
+                },
+                {
+                  "layers": "Indigenous_Reserves,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Indigenous Reserves (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Indigenous Reserves"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Australian_Mainland,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Labelling_and_Boundaries/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Australian Mainland (Geoscience Australia)"
+                },
+                {
+                  "layers": "State_Border,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Labelling_and_Boundaries/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "State Border (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Land Borders"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Large_Area_Features,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Labelling_and_Boundaries/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Large Area Features (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Large Area Features"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Nature_Conservation_Reserves_Marine_Labels,No_Data,No_Labels_National_Scale_to_3Million_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Marine Parks - Labels (Geoscience Australia)"
+                },
+                {
+                  "layers": "Nature_Conservation_Reserves_Marine,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Marine Parks (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Marine Parks"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Nature_Conservation_Reserves_Land_Labels,No_Data,No_Labels_National_Scale_to_3Million_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "National Parks and Other Reserves - Labels (Geoscience Australia)"
+                },
+                {
+                  "layers": "Nature_Conservation_Reserves_Land,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "National Parks and Other Reserves (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "National Parks"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Major_Oceans_Names,Major_Oceans,OtherOceans_OtherWatersNames_50Mill_to_5Mill_Scale,OtherOceans_OtherWatersNames_5Mil_to_70K_Scale,OtherOceans_SeaNames_50Mill_to_5Mill_Scale,OtherOceans_SeaNames_5Mil_to_70K_Scale,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Labelling_and_Boundaries/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Ocean and Sea Names (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Ocean and Sea Names"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Prohibited_Areas_Labels,No_Data,No_Labels_National_Scale_to_3Million_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Prohibited Areas - Labels (Geoscience Australia)"
+                },
+                {
+                  "layers": "Prohibited_Areas,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Prohibited Areas (Geoscience Australia)"
+                },
+                {
+                  "layers": "Defence_Practice_Areas",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Defence_Restricted_Areas/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Defence Practice Areas (Defence)"
+                },
+                {
+                  "layers": "Defence_Training_Areas",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Defence_Restricted_Areas/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Defence Training Areas (Defence)"
+                },
+                {
+                  "layers": "Defence_Prohibited_Areas",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Defence_Restricted_Areas/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Defence Prohibited Areas (Defence)"
+                },
+                {
+                  "layers": "National_Electricity_Transmission_Lines",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/National_Electricity_Transmission_Lines/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Electricity Transmission Lines (Geoscience Australia)"
+                },
+                {
+                  "layers": "National_Electricity_Transmission_Substations",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/National_Electricity_Transmission_Substations/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Electricity Transmission Substations (Geoscience Australia)"
+                },
+                {
+                  "layers": "Gas_Pipelines",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/National_Onshore_Gas_Pipelines/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Onshore Gas Pipelines (Geoscience Australia)"
+                },
+                {
+                  "layers": "Oil_Pipelines",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/National_Onshore_Oil_Pipelines/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Onshore Oil Pipelines (Geoscience Australia)"
+                },
+                {
+                  "layers": "National_Waste_Management_Facilities",
+                  "url": "http://www.ga.gov.au/gis/rest/services/topography/National_Waste_Management_Facilities/MapServer",
+                  "type": "esri-mapServer",
+                  "name": "Waste Management Facilities (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Prohibited Areas"
+            },
+            {
+              "items": [
+                {
+                  "layers": "Water_Supply_Reserves_Labels,No_Data,No_Labels_National_Scale_to_3Million_Scale",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Water Supply Reserves - Labels (Geoscience Australia)"
+                },
+                {
+                  "layers": "Water_Supply_Reserves,No_Data",
+                  "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Reserves/MapServer/WMSServer",
+                  "type": "wms",
+                  "name": "Water Supply Reserves (Geoscience Australia)"
+                }
+              ],
+              "type": "group",
+              "name": "Water Supply Reserves"
+            }
+          ],
+          "type": "group",
+          "name": "Framework"
+        }
+      ]
+    }
+  ]
+}
