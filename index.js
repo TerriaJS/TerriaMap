@@ -251,7 +251,6 @@ terria.start({
     AnimationViewModel.create({
         container: document.getElementById('cesiumContainer'),
         terria: terria,
-        locale: "en-GB",
         mapElementsToDisplace: [
             'cesium-widget-credits',
             'leaflet-control-attribution',
