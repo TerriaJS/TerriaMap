@@ -23,7 +23,7 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Conveyors,No_Data",
-                  "name": "Conveyors (Geoscience Australia)",
+                  "name": "Conveyors",
                   "type": "esri-mapServer"
                 }
               ],
@@ -35,13 +35,13 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Lighthouses_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
-                  "name": "Lighthouses - Labels (Geoscience Australia)",
+                  "name": "Lighthouses - Labels",
                   "type": "esri-mapServer"
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Lighthouses,No_Data",
-                  "name": "Lighthouses (Geoscience Australia)",
+                  "name": "Lighthouses",
                   "type": "esri-mapServer"
                 }
               ],
@@ -53,7 +53,7 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Marine_Infrastructure_Lines,No_Data",
-                  "name": "Marine Infrastructure Lines (Geoscience Australia)",
+                  "name": "Marine Infrastructure Lines",
                   "type": "esri-mapServer"
                 }
               ],
@@ -65,7 +65,7 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Mine_Areas,No_Data",
-                  "name": "Mine Areas (Geoscience Australia)",
+                  "name": "Mine Areas",
                   "type": "esri-mapServer"
                 }
               ],
@@ -77,7 +77,7 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Storage_Tanks,No_Data",
-                  "name": "Storage Tanks (Geoscience Australia)",
+                  "name": "Storage Tanks",
                   "type": "esri-mapServer"
                 }
               ],
@@ -89,7 +89,7 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Vertical_Obstructions,No_Data",
-                  "name": "Vertical Obstructions (Geoscience Australia)",
+                  "name": "Vertical Obstructions",
                   "type": "esri-mapServer"
                 }
               ],
@@ -101,19 +101,19 @@
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Dam_Walls_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
-                  "name": "Dam Walls - Labels (Geoscience Australia)",
+                  "name": "Dam Walls - Labels",
                   "type": "esri-mapServer"
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Dam_Walls,No_Data",
-                  "name": "Dam Walls (Geoscience Australia)",
+                  "name": "Dam Walls",
                   "type": "esri-mapServer"
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Spillways,No_Data",
-                  "name": "Spillways (Geoscience Australia)",
+                  "name": "Spillways",
                   "type": "esri-mapServer"
                 }
               ],
