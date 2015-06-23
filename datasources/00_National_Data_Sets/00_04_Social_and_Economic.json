@@ -11,8 +11,8 @@
                 }
               ],
               "layers": "0,1,2,3,4",
-              "url": "http://www.ga.gov.au/gis/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer/WMSServer",
-              "type": "wms",
+              "url": "http://www.ga.gov.au/gis/rest/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer",
+              "type": "esri-mapServer",
               "rectangle": [
                 "112.93529999999998",
                 "-38.208809999082796",
@@ -24,11 +24,6 @@
               "name": "Population Estimates"
             },
             {
-              "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
-              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12",
-              "dataUrlType": "direct",
-              "name": "Taxation Statistics 2011-2012",
-              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
               "dataCustodian": "[data.gov.au](http://www.data.gov.au/)",
               "rectangle": [
                 "112.93529999999998",
@@ -37,7 +32,12 @@
                 "-11.05104999964455"
               ],
               "type": "wms",
-              "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows"
+              "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows",
+              "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
+              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12",
+              "dataUrlType": "direct",
+              "name": "Taxation Statistics 2011-2012",
+              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)"
             },
             {
               "dataCustodian": "The AURIN project\n\nadmin@aurin.org.au",
