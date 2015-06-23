@@ -6,8 +6,8 @@ Change Log
 * Fixed the URL of the Roboto Mono font so that it downloads correctly even over `https`.
 * Improved the styling of the About page.
 * Fixed an incorrect link to the About page from the disclaimer at the bottom of the map.
-* The nm.json file is not created at build time from a number of initialization files in the `datasources` directory.  The individual files are easier to manage and edit than a single large file.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.25.  Significant changes relevant to NationalMap users include:
+* The nm.json file is now created at build time from a number of initialization files in the `datasources` directory.  The individual files are easier to manage and edit than a single large file.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.26.  Significant changes relevant to NationalMap users include:
   * Fixed incorrect date formatting in the timeline and animation controls on Internet Explorer 9.
   * Added support for CSV files with longitude and latitude columns but no numeric value column.  Such datasets are visualized as points with a default color and do not have a legend.
   * The Feature Information popup is now automatically closed when the user changes the `AbsIttCatalogItem` filter.
