@@ -33,7 +33,7 @@
                   "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
                   "description": "[Licence](http://www.ga.gov.au/copyright)",
                   "name": "Flow Grid Direction Image"
-                },              
+                },
                 {
                   "url": "http://www.ga.gov.au/gis/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer/WMSServer",
                   "layers": "Contours_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
@@ -152,7 +152,8 @@
         }
       ],
       "type": "group",
-      "name": "Geoscience Australia (new)"
+      "isOpen": true,
+      "name": "National Data Sets"
     }
   ]
 }

@@ -1,8 +1,6 @@
 {
   "catalog": [
     {
-      "name": "Geoscience Australia (new)",
-      "type": "group",
       "items": [
         {
           "name": "Framework",
@@ -226,7 +224,10 @@
             }
           ]
         }
-      ]
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
     }
   ]
 }

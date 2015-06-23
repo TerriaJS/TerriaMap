@@ -5,6 +5,12 @@
         {
           "items": [
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_Map",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband Map",
@@ -15,15 +21,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_Map",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_Availability",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband Availability",
@@ -34,15 +40,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_Availability",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_Availability_no_outline",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband Availability no Borders",
@@ -53,15 +59,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_Availability_no_outline",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_Quality",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband Quality",
@@ -72,15 +78,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_Quality",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_ADSL_Quality",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband ADSL Quality",
@@ -91,15 +97,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_ADSL_Quality",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_ADSL_Quality_no_outline",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband ADSL Quality no Borders",
@@ -110,15 +116,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_ADSL_Quality_no_outline",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_ADSL_Availability",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband ADSL Availability",
@@ -129,15 +135,15 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_ADSL_Availability",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "parameters": {
+                "tiled": true
+              },
+              "layers": "public:MyBroadband_ADSL_Availability_no_outline",
               "clipToRectangle": true,
               "dataUrlType": "none",
               "name": "Broadband ADSL Availability no Borders",
@@ -148,15 +154,13 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "wms",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "layers": "public:MyBroadband_ADSL_Availability_no_outline",
-              "parameters": {
-                "tiled": true
-              }
+              ]
             },
             {
+              "url": "http://www.data.gov.au/dataset/7be6e3ee-043a-4c47-a6eb-a97702419ccd/resource/c6b211ad-3aa2-4f53-8427-01b52a6433a7/download/mobileblackspotdatabase.csv",
+              "type": "csv",
+              "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage",
+              "legendUrl": "",
               "tableStyle": {
                 "colorMap": [
                   {
@@ -174,11 +178,7 @@
                 "-43.598214999057824",
                 "153.63925700000001",
                 "-9.2159219997013"
-              ],
-              "type": "csv",
-              "url": "http://www.data.gov.au/dataset/7be6e3ee-043a-4c47-a6eb-a97702419ccd/resource/c6b211ad-3aa2-4f53-8427-01b52a6433a7/download/mobileblackspotdatabase.csv",
-              "legendUrl": "",
-              "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage"
+              ]
             }
           ],
           "type": "group",

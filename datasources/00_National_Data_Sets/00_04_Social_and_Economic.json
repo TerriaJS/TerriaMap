@@ -24,6 +24,8 @@
               "name": "Population Estimates"
             },
             {
+              "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
+              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12",
               "dataUrlType": "direct",
               "name": "Taxation Statistics 2011-2012",
               "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
@@ -35,9 +37,7 @@
                 "-11.05104999964455"
               ],
               "type": "wms",
-              "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows",
-              "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
-              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12"
+              "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows"
             },
             {
               "dataCustodian": "The AURIN project\n\nadmin@aurin.org.au",

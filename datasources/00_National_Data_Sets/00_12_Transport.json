@@ -142,7 +142,8 @@
         }
       ],
       "type": "group",
-      "name": "Geoscience Australia (new)"
+      "isOpen": true,
+      "name": "National Data Sets"
     }
   ]
 }
