@@ -57,7 +57,7 @@
                 "imageUrl": "images/square.png",
                 "colorMap": [
                   {
-                    "color": "rgba(64, 64, 255, 1.00)",
+                    "color": "rgba(255, 255, 64, 1.00)",
                     "offset": 0
                   }
                 ]
