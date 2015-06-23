@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+### 2015-06-23
+
+* Fixed the URL of the Roboto Mono font so that it downloads correctly even over `https`.
+* Improved the styling of the About page.
+* Fixed an incorrect link to the About page from the disclaimer at the bottom of the map.
+* The nm.json file is not created at build time from a number of initialization files in the `datasources` directory.  The individual files are easier to manage and edit than a single large file.
+
 ### 2015-06-16
 
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.23.  Significant changes relevant to NationalMap users include:
