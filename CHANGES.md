@@ -3,6 +3,7 @@ Change Log
 
 ### 2015-06-23
 
+* Added "Medicare Offices" dataset under Social and Economic.
 * Fixed the URL of the Roboto Mono font so that it downloads correctly even over `https`.
 * Improved the styling of the About page.
 * Fixed an incorrect link to the About page from the disclaimer at the bottom of the map.
