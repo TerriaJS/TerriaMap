@@ -46,6 +46,22 @@
               "layers": "housingstress",
               "url": "https://geoserver.aurin.org.au/nm/wms",
               "name": "Housing Stress"
+            },
+            {
+              "dataCustodian": "Department of Human Services",
+              "description": "The location of Medicare offices and their hours.",
+              "type": "csv",
+              "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/Medicare-Office-Locations-as-at-4-June-2015.csv",
+              "name": "Medicare Offices",
+              "tableStyle": {
+                "imageUrl": "images/square.png",
+                "colorMap": [
+                  {
+                    "color": "rgba(255, 255, 64, 1.00)",
+                    "offset": 0
+                  }
+                ]
+              }
             }
           ],
           "type": "group",

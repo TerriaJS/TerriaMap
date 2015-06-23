@@ -7,7 +7,8 @@
         "argo.jcommops.org",
         "www.abc.net.au",
         "geoserver.aurin.org.au",
-        "mapsengine.google.com"
+        "mapsengine.google.com",
+        "data.gov.au"
     ],
     "initializationUrls" : [
         "nm"
