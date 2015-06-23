@@ -8,7 +8,7 @@
         "www.abc.net.au",
         "geoserver.aurin.org.au",
         "mapsengine.google.com",
-        "data.gov.au"
+        "s3-ap-southeast-2.amazonaws.com"
     ],
     "initializationUrls" : [
         "nm"
