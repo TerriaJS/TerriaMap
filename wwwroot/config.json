@@ -11,7 +11,7 @@
         "s3-ap-southeast-2.amazonaws.com"
     ],
     "initializationUrls" : [
-        "nm"
+        "nm", "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/bsp.json"
     ],
     "parameters": {
         "bingMapsKey": null,
