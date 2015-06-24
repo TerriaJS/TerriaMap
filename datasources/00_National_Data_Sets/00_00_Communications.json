@@ -196,8 +196,7 @@
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "type": "csv",
               "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/mbsp-fbs.csv",
-              "legendUrl": "",
-              "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage"
+              "legendUrl": ""
             }
           ],
           "type": "group",
