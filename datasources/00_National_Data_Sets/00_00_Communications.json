@@ -196,7 +196,8 @@
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "type": "csv",
               "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/mbsp-fbs.csv",
-              "legendUrl": ""
+              "legendUrl": "",
+              "dataUrlType": "none"
             }
           ],
           "type": "group",
