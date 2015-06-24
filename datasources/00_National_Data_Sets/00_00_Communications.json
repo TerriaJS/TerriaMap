@@ -194,14 +194,8 @@
               "name": "Mobile Black Spot Programme - Funded Base Stations",
               "description": "To be provided",
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
-              "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
-              ],
               "type": "csv",
-              "url": "data/mbsp.csv",
+              "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/mbsp-fbs.csv",
               "legendUrl": "",
               "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage"
             }
