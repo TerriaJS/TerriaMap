@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+### 2015-06-24
+
+* Updated the favicon.
+* Switched the new Medicare Offices dataset to load directly from data.gov.au.
+
 ### 2015-06-23
 
 * Added "Medicare Offices" dataset under Social and Economic.
