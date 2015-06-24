@@ -51,7 +51,7 @@
               "dataCustodian": "Department of Human Services",
               "description": "The location of Medicare offices and their hours.",
               "type": "csv",
-              "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/Medicare-Office-Locations-as-at-4-June-2015.csv",
+              "url": "https://data.gov.au/dataset/70f76a9e-d450-4567-9760-290dea54229c/resource/7eb30338-768e-436c-9dde-dc7a1066c9c9/download/Medicare-Office-Locations-as-at-4-June-2015.csv",
               "name": "Medicare Offices",
               "tableStyle": {
                 "imageUrl": "images/square.png",
