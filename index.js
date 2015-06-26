@@ -39,7 +39,7 @@ checkBrowserCompatibility('ui');
 
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
-var AusGlobeViewer = require('terriajs/lib/viewer/AusGlobeViewer');
+var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 
@@ -126,7 +126,7 @@ terria.start({
     updateApplicationOnHashChange(terria, window);
 
     // Create the map/globe.
-    AusGlobeViewer.create(terria, {
+    TerriaViewer.create(terria, {
         developerAttribution: {
             text: 'NICTA',
             link: 'http://www.nicta.com.au'
@@ -152,7 +152,8 @@ terria.start({
     });
 
     // Create the brand bar.
-    BrandBarViewModel.create(ui, {
+    BrandBarViewModel.create({
+        container: ui,
         elements: [
             '<a target="_blank" href="About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
             '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
@@ -250,7 +251,6 @@ terria.start({
     AnimationViewModel.create({
         container: document.getElementById('cesiumContainer'),
         terria: terria,
-        locale: "en-GB",
         mapElementsToDisplace: [
             'cesium-widget-credits',
             'leaflet-control-attribution',
