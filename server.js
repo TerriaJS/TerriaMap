@@ -206,8 +206,8 @@ if (cluster.isMaster) {
         });
 
         var filteredReqHeaders = filterHeaders(req, req.headers);
-        if (!filteredReqHeaders['X-Forwarded-For']) {
-            filteredReqHeaders['X-Forwarded-For'] = req.connection.remoteAddress;
+        if (!filteredReqHeaders['x-forwarded-for']) {
+            filteredReqHeaders['x-forwarded-for'] = req.connection.remoteAddress;
         }
         proxiedRequest = request.get({
             url : url.format(remoteUrl),
