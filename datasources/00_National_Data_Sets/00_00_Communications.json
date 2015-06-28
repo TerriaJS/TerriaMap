@@ -179,6 +179,25 @@
               "url": "http://www.data.gov.au/dataset/7be6e3ee-043a-4c47-a6eb-a97702419ccd/resource/c6b211ad-3aa2-4f53-8427-01b52a6433a7/download/mobileblackspotdatabase.csv",
               "legendUrl": "",
               "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage"
+            },
+            {
+              "tableStyle": {
+                "imageUrl": "images/square.png",
+                "colorMap": [
+                  {
+                    "color": "rgba(255, 255, 255,1.00)",
+                    "offset": 0
+                  }
+                ]
+              },
+              "name": "Mobile Black Spot Programme - Funded Base Stations",
+              "description": "The Australian Government's $100 million Mobile Black Spot Programme will deliver almost 500 new or upgraded mobile base stations around Australia - 429 Telstra base stations and 70 Vodafone base stations. The first base stations funded under the Programme will be rolled out before the end of 2015 and the rollout will continue for a three year period. The rollout sequence will be determined by Telstra and Vodafone based on various factors including obtaining local government planning approvals. Further information on the Programme is available on the Department of Communications' website www.communications.gov.au/mobile_coverage.",
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "type": "csv",
+              "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/mbsp-fbs.csv",
+              "legendUrl": "",
+              "dataUrlType": "direct",
+              "dataUrl": "http://data.gov.au/dataset/mobile-black-spot-programme-funded-base-stations"
             }
           ],
           "type": "group",
