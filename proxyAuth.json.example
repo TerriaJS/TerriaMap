@@ -1,0 +1,5 @@
+{
+    "www.some.remote.service.example.com": {
+        "authorization": "Basic dGVzdHVzZXI6dGVzdHBhc3MK"
+    }
+}
