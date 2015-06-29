@@ -3,6 +3,7 @@
 
 var url = require('url');
 var configSettings = require('./wwwroot/config.json');
+var proxyAuth = require('./proxyAuth.json');
 
 var protocolRegex = /^\w+:\//;
 
@@ -205,9 +206,20 @@ if (cluster.isMaster) {
             }
         });
 
+        var filteredReqHeaders = filterHeaders(req, req.headers);
+        if (!filteredReqHeaders['x-forwarded-for']) {
+            filteredReqHeaders['x-forwarded-for'] = req.connection.remoteAddress;
+        }
+
+        // http basic auth
+        var authRequired = proxyAuth[remoteUrl.host];
+        if (authRequired) {
+            filteredReqHeaders['authorization'] = authRequired.authorization;
+        }
+
         proxiedRequest = request.get({
             url : url.format(remoteUrl),
-            headers : filterHeaders(req, req.headers),
+            headers : filteredReqHeaders,
             encoding : null,
             proxy : proxy
         }, function(error, response, body) {
