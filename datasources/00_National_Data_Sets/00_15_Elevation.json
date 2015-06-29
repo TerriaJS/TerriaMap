@@ -7,7 +7,7 @@
             {
               "items": [
                 {
-                  "layers": "0",
+                  "layers": "dem_s_1s",
                   "url": "http://www.ga.gov.au/gisimg/services/topography/dem_s_1s/ImageServer/WMSServer",
                   "type": "wms",
                   "rectangle": [

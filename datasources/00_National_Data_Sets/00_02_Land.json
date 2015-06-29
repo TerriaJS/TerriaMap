@@ -21,17 +21,12 @@
               "type": "wms"
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/earth_observation/Gravity_Image_WM/MapServer",
+              "url": "http://www.ga.gov.au/gisimg/rest/services/earth_science/Geoscience_Australia_National_Geophysical_Grids/MapServer",
               "type": "esri-mapServer",
-              "rectangle": [
-                "105.930454436693",
-                "-43.74050960205765",
-                "162.097118856693",
-                "-7.92768801894694"
-              ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Gravity Image"
+              "name": "Gravity Anomaly",
+              "layers": "GravityAnomaly2010_HSI"
             },
             {
               "url": "http://www.ga.gov.au/gis/rest/services/earth_observation/Landcover_WM/MapServer",
@@ -47,17 +42,12 @@
               "name": "Land Cover"
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/earth_observation/Magnetic_Image_WM/MapServer",
+              "url": "http://www.ga.gov.au/gisimg/rest/services/earth_science/Geoscience_Australia_National_Geophysical_Grids/MapServer",
               "type": "esri-mapServer",
-              "rectangle": [
-                "106",
-                "-52",
-                "172",
-                "-8"
-              ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Magnetic Image"
+              "name": "Magnetic Intensity",
+              "layers": "TotalMagneticIntensity2015_HSI"
             },
             {
               "url": "http://www.ga.gov.au/gis/rest/services/earth_science/GA_Surface_Geology_of_Australia_WM/MapServer",
