@@ -13,12 +13,38 @@ backend default {
     .port = "3001";
 }
 
+acl purge {
+  "localhost";
+  "127.0.0.1";
+}
+
+
 sub vcl_recv {
 #  if (req.request == "GET" && req.http.cookie || req.http.authorization) {
 #    return (lookup);
 #  }
+  if (req.request == "PURGE") {
+    if (!client.ip ~ purge) {
+      error 405 "Method Not Allowed";
+    }
+    return(lookup);
+  }
   if (req.url ~ "^/proxy"){
     return (lookup);
+  }
+}
+
+sub vcl_hit {
+  if (req.request == "PURGE") {
+    purge;
+    error 200 "Purged";
+  }
+}
+
+sub vcl_miss {
+  if (req.request == "PURGE") {
+    purge;
+    error 200 "Purged";
   }
 }
 
@@ -41,12 +67,12 @@ sub vcl_fetch
 # appended to your code.
 # sub vcl_recv {
 #     if (req.restarts == 0) {
-# 	if (req.http.x-forwarded-for) {
-# 	    set req.http.X-Forwarded-For =
-# 		req.http.X-Forwarded-For + ", " + client.ip;
-# 	} else {
-# 	    set req.http.X-Forwarded-For = client.ip;
-# 	}
+#   if (req.http.x-forwarded-for) {
+#       set req.http.X-Forwarded-For =
+#     req.http.X-Forwarded-For + ", " + client.ip;
+#   } else {
+#       set req.http.X-Forwarded-For = client.ip;
+#   }
 #     }
 #     if (req.request != "GET" &&
 #       req.request != "HEAD" &&
@@ -105,11 +131,11 @@ sub vcl_fetch
 #     if (beresp.ttl <= 0s ||
 #         beresp.http.Set-Cookie ||
 #         beresp.http.Vary == "*") {
-# 		/*
-# 		 * Mark as "Hit-For-Pass" for the next 2 minutes
-# 		 */
-# 		set beresp.ttl = 120 s;
-# 		return (hit_for_pass);
+#     /*
+#      * Mark as "Hit-For-Pass" for the next 2 minutes
+#      */
+#     set beresp.ttl = 120 s;
+#     return (hit_for_pass);
 #     }
 #     return (deliver);
 # }
@@ -143,9 +169,9 @@ sub vcl_fetch
 # }
 # 
 # sub vcl_init {
-# 	return (ok);
+#   return (ok);
 # }
 # 
 # sub vcl_fini {
-# 	return (ok);
+#   return (ok);
 # }
