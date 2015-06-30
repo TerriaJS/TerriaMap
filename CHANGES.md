@@ -1,11 +1,12 @@
 Change Log
 ==========
 
-### 2015-06-29
+### 2015-07-??
 
 * Renamed "Gravity Image" to "Gravity Anomaly" and updated it to load from the new server (the old one is deprecated).
 * Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
 * Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
+* The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
 
 ### 2015-06-24
 
