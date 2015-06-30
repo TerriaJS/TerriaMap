@@ -25,7 +25,7 @@ sub vcl_recv {
 #  }
   if (req.request == "PURGE") {
     if (!client.ip ~ purge) {
-      error 405 "Not allowed.";
+      error 405 "Method Not Allowed";
     }
     return(lookup);
   }
@@ -36,14 +36,15 @@ sub vcl_recv {
 
 sub vcl_hit {
   if (req.request == "PURGE") {
-    set obj.ttl = 0s;
-    error 200 "Purged.";
+    purge;
+    error 200 "Purged";
   }
 }
 
 sub vcl_miss {
   if (req.request == "PURGE") {
-    error 404 "Not in cache.";
+    purge;
+    error 200 "Purged";
   }
 }
 
