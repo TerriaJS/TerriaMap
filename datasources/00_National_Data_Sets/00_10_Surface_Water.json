@@ -465,6 +465,272 @@
               ],
               "name": "Waterfalls",
               "type": "group"
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFEstuary",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.6089684320001",
+                "-43.59020860705779",
+                "153.62495056300006",
+                "-10.835983610651068"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Estuary",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFMappedStream",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.37534500000005",
+                "-43.629381999057735",
+                "153.63207400000002",
+                "-9.242297499700408"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Streams",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFMappedNode",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.37534500000005",
+                "-43.629381999057735",
+                "153.6320740000001",
+                "-9.242297499700424"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Stream Nodes",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shn:AHGFNetworkStream",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.10056181999998",
+                "-47.81318817937922",
+                "154.86193818000004",
+                "-5.051811819379163"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Stream Network",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shn:AHGFNetworkNode",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.33375",
+                "-43.628749999057746",
+                "153.62875000000008",
+                "-9.23624999970059"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Stream Network Nodes",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFStructure",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.76872500000002",
+                "-43.58274499905778",
+                "153.5956600000001",
+                "-10.64324999965701"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Structure",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFWaterbody",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.80691",
+                "-43.00307999905891",
+                "152.89131000000003",
+                "-10.903989999649017"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Waterbodies",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFWaterPipeline",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.80691",
+                "-43.00307999905891",
+                "152.89131000000003",
+                "-10.903989999649017"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Water Pipeline",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcarto:AHGFDam",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9318700000001",
+                "-42.75848999905948",
+                "153.00634000000005",
+                "-9.951769999678337"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Water Storage",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_hrr:RiverRegion",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.64250000005773",
+                "153.63750000000013",
+                "-9.229999999700832"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "River Region",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_hrc:AHGFContractedCatchment",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000002",
+                "-9.197499999701808"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Catchment",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_hrr:AWRADrainageDivision",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "111.24438730279999",
+                "-48.47186269657931",
+                "155.3156126972001",
+                "-4.400637302179204"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": " Drainage Division",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcatch:NCBLevel1DrainageDivision",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000002",
+                "-9.197499999701801"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "NCB Level1 Drainage Division",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcatch:NCBLevel2DrainageBasinGroup",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000013",
+                "-9.197499999701803"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "NCB Level2 Drainage Basin Group",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
             }
           ],
           "name": "Surface Water",
