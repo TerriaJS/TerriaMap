@@ -32,7 +32,13 @@
                   ],
                   "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
                   "description": "[Licence](http://www.ga.gov.au/copyright)",
-                  "name": "Flow Grid Direction Image"
+                  "name": "Flow Grid Direction Image",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
