@@ -15,8 +15,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "States & Territories"
+              "description": "States & Territories",
+              "name": "States & Territories",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:LGA_2011_AUST",
@@ -29,8 +35,14 @@
                 "-9.142175969703604"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Local Government Areas"
+              "name": "Local Government Areas",
+              "description": "Local Government Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:POA_2011_AUST",
@@ -43,8 +55,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Postal Areas"
+              "name": "Postal Areas",
+              "description": "Postal Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:CED_2011_AUST",
@@ -57,8 +75,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Commonwealth Electoral Divisions"
+              "name": "Commonwealth Electoral Divisions",
+              "description": "Commonwealth Electoral Divisions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SED_2011_AUST",
@@ -71,8 +95,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "State Electoral Divisions"
+              "name": "State Electoral Divisions",
+              "description": "State Electoral Divisions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SSC_2011_AUST",
@@ -85,8 +115,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "State Suburbs"
+              "name": "State Suburbs",
+              "description": "State Suburbs",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:ADD_2011_AUST",
@@ -99,8 +135,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Australian Drainage Divisions"
+              "name": "Australian Drainage Divisions",
+              "description": "Australian Drainage Divisions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:NRMR_2011_AUST",
@@ -113,8 +155,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Natural Resource Management Regions"
+              "name": "Natural Resource Management Regions",
+              "description": "Natural Resource Management Regions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:TR_2011_AUST",
@@ -127,8 +175,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Tourism Regions"
+              "name": "Tourism Regions",
+              "description": "Tourism Regions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             }
           ],
           "type": "group",
