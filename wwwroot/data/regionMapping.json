@@ -1,5 +1,12 @@
 {
     "regionWmsMap": {
+        "AUS": {
+            "layerName":"region_map:FID_AUS_2011_AUST",
+            "server": "http://geoserver-nm.nicta.com.au/region_map/ows",
+            "regionProp": "AUS_CODE",
+            "aliases": ["aus"],
+            "digits": 1
+        },
         "STE": {
             "layerName":"region_map:FID_STE_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
@@ -62,14 +69,6 @@
             "regionProp": "SSC_CODE",
             "aliases": ["ssc", "suburb"],
             "digits": 5
-        },
-        "AUS": {
-            "layerName":"region_map:FID_STE_2011_AUST",
-            "server": "http://geoserver-nm.nicta.com.au/region_map/ows",
-            "regionProp": "0",
-            "aliases": ["aus"],
-            "idMap": ["0","0","0","0","0","0","0","0","0"],
-            "digits": 1
         },
         "CNT2": {
             "layerName":"region_map:FID_TM_WORLD_BORDERS",
