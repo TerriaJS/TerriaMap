@@ -15,8 +15,13 @@
                 "-9.004409999707923"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Waste Management Facilities"
+              "name": "Waste Management Facilities",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
             },
             {
               "items": [
@@ -24,7 +29,13 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Conveyors,No_Data",
                   "name": "Conveyors",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Conveyors",
@@ -36,13 +47,25 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Lighthouses_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Lighthouses - Labels",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Lighthouses,No_Data",
                   "name": "Lighthouses",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Lighthouses",
@@ -54,7 +77,13 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Marine_Infrastructure_Lines,No_Data",
                   "name": "Marine Infrastructure Lines",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Marine Infrastructure",
@@ -66,7 +95,13 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Mine_Areas,No_Data",
                   "name": "Mine Areas",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Mines",
@@ -78,7 +113,13 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Storage_Tanks,No_Data",
                   "name": "Storage Tanks",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Storage Tanks",
@@ -90,7 +131,13 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
                   "layers": "Vertical_Obstructions,No_Data",
                   "name": "Vertical Obstructions",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Vertical Obstructions",
@@ -102,19 +149,37 @@
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Dam_Walls_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Dam Walls - Labels",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Dam_Walls,No_Data",
                   "name": "Dam Walls",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
                   "layers": "Spillways,No_Data",
                   "name": "Spillways",
-                  "type": "esri-mapServer"
+                  "type": "esri-mapServer",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
                 }
               ],
               "name": "Water Storage",
