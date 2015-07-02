@@ -15,8 +15,14 @@
                 "-16.819299999476762"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Aerial Cableways"
+              "description": "Aerial Cableways",
+              "name": "Aerial Cableways",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:conveyors",
@@ -29,8 +35,14 @@
                 "-12.184729999610212"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Conveyors"
+              "description": "Conveyors",
+              "name": "Conveyors",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:damwalls",
@@ -43,8 +55,14 @@
                 "-10.571689999659238"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Damwalls"
+              "description": "Damwalls",
+              "name": "Damwalls",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:fences",
@@ -57,8 +75,14 @@
                 "-10.895739999649303"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Fences"
+              "description": "Fences",
+              "name": "Fences",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:marineinfrastructurelines",
@@ -71,8 +95,14 @@
                 "-9.062449999706104"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Marine Infrastructure Lines"
+              "description": "Marine Infrastructure Lines",
+              "name": "Marine Infrastructure Lines",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:marineinfrastructurepoints",
@@ -85,8 +115,14 @@
                 "-9.140769999703654"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Marine Infrastructure Points"
+              "description": "Marine Infrastructure Points",
+              "name": "Marine Infrastructure Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:mineareas",
@@ -99,8 +135,14 @@
                 "-11.872959999619598"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Mine Areas"
+              "description": "Mine Areas",
+              "name": "Mine Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:minepoints",
@@ -113,8 +155,14 @@
                 "-10.575569999659121"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Mine Points"
+              "description": "Mine Points",
+              "name": "Mine Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:petroleumwells",
@@ -127,8 +175,14 @@
                 "-15.323399999518502"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Petroleum Wells"
+              "description": "Petroleum Wells",
+              "name": "Petroleum Wells",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:storagetanks",
@@ -141,8 +195,14 @@
                 "-12.426089999602983"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Storage Tanks"
+              "description": "Storage Tanks",
+              "name": "Storage Tanks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:verticalobstructions",
@@ -155,8 +215,14 @@
                 "-9.080289999705544"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Vertical Obstructions"
+              "description": "Vertical Obstructions",
+              "name": "Vertical Obstructions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "0",
@@ -169,8 +235,14 @@
                 "-9.004409999707923"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Waste Management Facilities"
+              "description": "Waste Management Facilities",
+              "name": "Waste Management Facilities",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:watertanks",
@@ -183,8 +255,14 @@
                 "-9.951769999678387"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Water Tanks"
+              "description": "Water Tanks",
+              "name": "Water Tanks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:windpumps",
@@ -197,8 +275,14 @@
                 "-11.177569999640692"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Wind Pumps"
+              "description": "Wind Pumps",
+              "name": "Wind Pumps",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Infrastructure:yards",
@@ -211,8 +295,14 @@
                 "-10.624669999657616"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Yards"
+              "description": "Yards",
+              "name": "Yards",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             }
           ],
           "type": "group",
