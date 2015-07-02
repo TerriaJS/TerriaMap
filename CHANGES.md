@@ -7,6 +7,7 @@ Change Log
 * Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
 * Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
 * The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
+* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
 
 ### 2015-06-24
 

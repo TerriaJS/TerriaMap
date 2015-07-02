@@ -11,8 +11,8 @@
                 }
               ],
               "layers": "0,1,2,3,4",
-              "url": "http://www.ga.gov.au/gis/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer/WMSServer",
-              "type": "wms",
+              "url": "http://www.ga.gov.au/gis/rest/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer",
+              "type": "esri-mapServer",
               "rectangle": [
                 "112.93529999999998",
                 "-38.208809999082796",
@@ -20,14 +20,16 @@
                 "-11.05104999964455"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Population Estimates"
+              "name": "Population Estimates",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
-              "dataUrlType": "direct",
-              "name": "Taxation Statistics 2011-2012",
-              "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
-              "dataCustodian": "[data.gov.au](http://www.data.gov.au/)",
+              "dataCustodian": "[Australian Taxation Office](http://www.ato.gov.au)",
               "rectangle": [
                 "112.93529999999998",
                 "-38.208809999082796",
@@ -37,15 +39,29 @@
               "type": "wms",
               "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows",
               "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
-              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12"
+              "description": "Taxation statistics: an overview of the income and tax status of Australian individuals, companies, partnerships, trusts and funds for 2011-12.",
+              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12",
+              "dataUrlType": "direct",
+              "name": "Taxation Statistics 2011-2012",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
             },
             {
               "dataCustodian": "The AURIN project\n\nadmin@aurin.org.au",
-              "description": "The dataset contains data about the housing stress indicator (taken in 2006 and 2010), and the income distribution of households at Statistical Loal Area level.\n\nThe source of this dataset is a merge of two datasets; \n\n## 1) ABS: Statistical Local Area Digital Boundaries (ASGC 2006) \nSocio-economic variables of Statistical Local Areas in Australia (1996-2006). The variables were derived from 2006, 2001 and 1996 census. \n\nCite as: Socio-economic variables by SLA for Australia. Retrieved from portal.aurin.org.au on 2015-03-06.\n## 2) Socio-economic variables by SLA for Australia.\nThe National Centre for Social and Economic Modelling (NATSEM) estimates of housing stress and estimates of poverty variables SLAs for Australia.\n\nNATSEM estimates of housing stress (2006 and 2010) and estimates of poverty variables (2006) of SLAs, excluding SLAs in Brisbane and Canberra, in Australia. These data were derived from spatial microsimulation using 2006 Census benchmarks (SPATIALMSM08b) applied to Australian Bureau of Statistics (ABS) Confidentialised Unit Record File data. For housing stress, the indicator is based on a commonly used measure of housing stress known as the 30/40 rule. Using this definition, a household is said to be in housing stress if it spends more than 30 per cent of its gross income on housing costs and if it also falls into the bottom 40 per cent of the equivalised disposable household income distribution. The poverty indicator represents the percentage of people in households where income is below the poverty line. The poverty line has been set at half the median OECD equivalised household disposable income. \n\nCite as: undefined: The National Centre for Social and Economic Modelling (NATSEM) estimates of housing stress and estimates of poverty variables SLAs for Australia.\n\n# Attribute Description\n\n## sla_code\nsla_code Code of Statistical Local Area, as per ABS\n## sla_name\nsla_name Name of Statistical Local Area, as per ABS\n## housingstress_06\nPerc. of households in housing stress (2006)\n## housingstress_2010\nPerc. of households in housing stress (2010)\n## difference\nDifference of perc. of households in housing stress between 206 and 2010 (housingstress_2010 - housingstress_2006)\n## income_low \nPerc. of low income households (less than 65.000 AUD p.a.)\n## income_medium \nPerc. of middle income households (between 65.000 and 200.000 AUD p.a.)\n## income_high\nPerc. of high income households (more than 200.000 AUD p.a.)",
               "type": "wms",
               "layers": "housingstress",
               "url": "https://geoserver.aurin.org.au/nm/wms",
-              "name": "Housing Stress"
+              "name": "Housing Stress",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "dataCustodian": "Department of Human Services",
@@ -61,7 +77,13 @@
                     "offset": 0
                   }
                 ]
-              }
+              },
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
             }
           ],
           "type": "group",

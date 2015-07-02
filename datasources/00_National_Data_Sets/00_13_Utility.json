@@ -15,8 +15,14 @@
                 "-10.903989999649047"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Pipelines"
+              "description": "Pipelines",
+              "name": "Pipelines",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             }
           ],
           "type": "group",

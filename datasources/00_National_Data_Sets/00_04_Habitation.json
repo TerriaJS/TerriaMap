@@ -15,8 +15,14 @@
                 "-21.102919999365557"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Building Areas"
+              "description": "Building Areas",
+              "name": "Building Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:buildingpoints",
@@ -29,8 +35,14 @@
                 "-9.128069999704051"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Building Points"
+              "description": "Building Points",
+              "name": "Building Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:builtupareas",
@@ -43,8 +55,14 @@
                 "-9.067499999705948"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Builtup Areas"
+              "description": "Builtup Areas",
+              "name": "Builtup Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:cemeteryareas",
@@ -57,8 +75,14 @@
                 "-16.905399999474405"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Cemetery Areas"
+              "description": "Cemetery Areas",
+              "name": "Cemetery Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:cemeterypoints",
@@ -71,8 +95,14 @@
                 "-15.079179999525442"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Cemetery Points"
+              "description": "Cemetery Points",
+              "name": "Cemetery Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:homesteads",
@@ -85,8 +115,14 @@
                 "-11.169479999640936"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Homesteads"
+              "description": "Homesteads",
+              "name": "Homesteads",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:placenames",
@@ -99,8 +135,14 @@
                 "-8.936219999710062"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Placenames"
+              "description": "Placenames",
+              "name": "Placenames",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:populatedplaces",
@@ -113,8 +155,14 @@
                 "-10.183389999671217"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Populated Places"
+              "description": "Populated Places",
+              "name": "Populated Places",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Habitation:recreationareas",
@@ -127,8 +175,14 @@
                 "-11.395799999634049"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Recreation Areas"
+              "description": "Recreation Areas",
+              "name": "Recreation Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             }
           ],
           "type": "group",
