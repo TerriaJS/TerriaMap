@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-### 2015-07-??
+### 2015-07-03
 
 * Renamed "Gravity Image" to "Gravity Anomaly" and updated it to load from the new server (the old one is deprecated).
 * Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
