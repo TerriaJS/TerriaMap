@@ -11,6 +11,7 @@
                   "layers": "Airports_Point_Features,No_Data",
                   "name": "Airport Point Features",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Airports_Point_features.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -23,6 +24,7 @@
                   "layers": "Airport_Runway_Centrelines_and_Landing_Grounds_Line_Features,No_Data",
                   "name": "Airport Runway Centrelines and Landing Grounds Line Features",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Runway_Centreline_and_Landing_Grounds.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -35,6 +37,7 @@
                   "layers": "Heliports,No_Data",
                   "name": "Heliports",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Heliports.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -47,6 +50,7 @@
                   "layers": "Landing_Grounds_Point_Features,No_Data",
                   "name": "Landing Ground Point Features",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Landing_Grounds_Point_features.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -65,6 +69,7 @@
                   "layers": "Railway_Bridges,No_Data",
                   "name": "Railway Bridges",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Railway_Bridges.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -77,6 +82,7 @@
                   "layers": "Road_Bridges_and_Fords,No_Data",
                   "name": "Road Bridges and Fords",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Road_Bridges_and_Fords.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -95,6 +101,7 @@
                   "layers": "Ferry_Routes,No_Data",
                   "name": "Ferry Routes",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Ferry_Routes.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -113,6 +120,7 @@
                   "layers": "Railway_Bridges,No_Data",
                   "name": "Railway Bridges",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Railway_Bridges.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -125,6 +133,7 @@
                   "layers": "Railway_Crossing_Lines,No_Data",
                   "name": "Railway Crossing Lines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Railway_Crossing_Lines.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -137,6 +146,7 @@
                   "layers": "Railway_Stations,No_Data",
                   "name": "Railway Stations",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Railway Stations.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -149,6 +159,7 @@
                   "layers": "Railways,No_Data",
                   "name": "Railways",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Railways.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -167,6 +178,7 @@
                   "layers": "Foot_Tracks,No_Data",
                   "name": "Foot Tracks",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Foot_Tracks.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -179,6 +191,7 @@
                   "layers": "Road_Bridges_and_Fords,No_Data",
                   "name": "Road Bridges and Fords",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Road_Bridges_and_Fords.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -188,9 +201,10 @@
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
-                  "layers": "Road_Crossings_Lines,No_Data",
-                  "name": "Road Crossings Lines",
+                  "layers": "Road_Crossing_Lines,No_Data",
+                  "name": "Road Crossing Lines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Road_Crossing_Lines.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -203,6 +217,7 @@
                   "layers": "All_Roads,Roads_Scale_600000_to_300000,Roads_Scale_7Million_to_600000,Major_Road_Network,No_Data",
                   "name": "Roads",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_Roads.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -215,6 +230,7 @@
                   "layers": "National_Route_Number_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
                   "name": "Route Number Labels - National",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_NRN.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -227,6 +243,7 @@
                   "layers": "State_Route_Number_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
                   "name": "Route Number Labels - State",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Transport_SRN.png",
                   "info": [
                     {
                       "name": "Licence",

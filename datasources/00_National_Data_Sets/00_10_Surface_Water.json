@@ -11,6 +11,7 @@
                   "layers": "Foreshore_Flats,No_Data",
                   "name": "Foreshore Flats",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Foreshore_Flats.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -23,6 +24,7 @@
                   "layers": "Flats_SalineCoastalFlats,No_Data",
                   "name": "Saline Coastal Flats",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Saline_Coastal_Flats.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -41,6 +43,7 @@
                   "layers": "Flats_LandSubjectToInundation,No_Data",
                   "name": "Land Subject to Inundation",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Land_Subject_to_Inundation.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -59,6 +62,7 @@
                   "layers": "Levees,No_Data",
                   "name": "Levees",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Levees.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -77,6 +81,7 @@
                   "layers": "Water_Pipelines,No_Data",
                   "name": "Water Pipelines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Water_Pipelines.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -95,6 +100,7 @@
                   "layers": "Flats_MarineSwamps_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Marine Swamps - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -107,6 +113,7 @@
                   "layers": "Flats_MarineSwamps,No_Data",
                   "name": "Marine Swamps",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Marine_Swamps.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -119,6 +126,7 @@
                   "layers": "Flats_Swamps_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Swamps - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -131,6 +139,7 @@
                   "layers": "Flats_Swamps,No_Data",
                   "name": "Swamps",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Swamps.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -149,6 +158,7 @@
                   "layers": "Bores_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Bores - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -161,6 +171,7 @@
                   "layers": "Bores,No_Data",
                   "name": "Bores",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Bores.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -173,6 +184,7 @@
                   "layers": "Natural_Water_Points_GnammaHoles_Labels,Natural_Water_Points_NativeWells_Labels,Natural_Water_Points_Pools_Labels,Natural_Water_Points_Rockholes_Labels,Natural_Water_Points_Soaks_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Natural Water Points - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -182,9 +194,10 @@
                 },
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Natural_Water_Points_GnammaHoles,Natural_Water_Points_NativeWells,Natural_Water_Points_Pools,Natural_Water_Points_Rockholes,Natural_Water_Points_Soaks,No_Data",
+                  "layers": "Natural_Water_Points_GnammaHole,Natural_Water_Points_NativeWell,Natural_Water_Points_Pool,Natural_Water_Points_Rockhole,Natural_Water_Points_Soak,No_Data",
                   "name": "Natural Water Points",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Natural_Water_Points.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -197,6 +210,7 @@
                   "layers": "Springs_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Springs - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -209,6 +223,7 @@
                   "layers": "Springs,No_Data",
                   "name": "Springs",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Springs.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -221,6 +236,7 @@
                   "layers": "Dams_and_Tanks_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Water Storage Points - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -233,6 +249,7 @@
                   "layers": "Dams_and_Tanks,No_Data",
                   "name": "Water Storage Points",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Water_Storage_Points.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -251,6 +268,7 @@
                   "layers": "Waterbody_All_Flood_Irrigation_Storage_Labels,Waterbody_All_Reservoirs_Labels,Waterbody_All_Lakes_Labels,Waterbody_Extra_Lakes_and_Reservoirs_Labels,Waterbody_Reservoirs_Scale_10Million_to_300000_Labels,Waterbody_Lakes_Scale_5Million_to_300000_Labels,Waterbody_Lakes_Scale_10Million_to_5Million_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
                   "name": "Lakes and Reservoirs - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -263,6 +281,11 @@
                   "layers": "Farm_Dam_Area,Waterbody_All_Flood_Irrigation_Storage,Waterbody_All_Reservoirs,Waterbody_All_Lakes,Waterbody_Extra_Lakes_and_Reservoirs,Waterbody_Reservoirs_National_Scale_to_300000,Waterbody_Lakes_Scale_5Million_to_300000,Waterbody_Lakes_National_Scale_to_5Million,No_Data",
                   "name": "Lakes and Reservoirs",
                   "type": "esri-mapServer",
+                  "legendUrls": [
+                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Farm_Dam_Areas.png",
+                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Reservoirs.png",
+                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lakes.png"
+                  ],
                   "info": [
                     {
                       "name": "Licence",
@@ -275,6 +298,7 @@
                   "layers": "Locks_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Locks - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -287,6 +311,7 @@
                   "layers": "Locks,No_Data",
                   "name": "Locks",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Locks.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -299,6 +324,7 @@
                   "layers": "Pondage_Areas_Settling_Ponds,Pondage_Areas_Salt_Evaporators,PondageArea_AquacultureAreas,No_Data",
                   "name": "Pondage Areas",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Pondage_Areas.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -311,6 +337,7 @@
                   "layers": "Waterholes_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Waterholes - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -323,6 +350,7 @@
                   "layers": "Waterholes,No_Data",
                   "name": "Waterholes",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Waterholes.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -341,6 +369,7 @@
                   "layers": "Canal_Areas,No_Data",
                   "name": "Canal Areas",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Canal_Areas.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -353,6 +382,7 @@
                   "layers": "Canal_Lines,No_Data",
                   "name": "Canal Lines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Canal_Lines.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -365,6 +395,7 @@
                   "layers": "Rapid_Areas,No_Data",
                   "name": "Rapid Areas",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Rapid_Areas.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -377,6 +408,7 @@
                   "layers": "Rapid_Lines,No_Data",
                   "name": "Rapid Lines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Rapid_Lines.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -389,6 +421,7 @@
                   "layers": "Watercourses_All_Rivers_Labels,Watercourses_Major_Rivers_Scale_5Million_to_300000_Labels,Watercourses_Major_Rivers_Scale_10Million_to_5Million_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
                   "name": "Rivers - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -401,6 +434,7 @@
                   "layers": "Watercourses_All_Rivers_Watercourse_Lines,Watercourses_All_Rivers_Connectors,Watercourses_Major_Rivers_Scale_5Million_to_300000,Watercourses_Major_Rivers_National_Scale_to_5Million,No_Data",
                   "name": "Rivers",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Watercourses.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -413,6 +447,7 @@
                   "layers": "Watercourse_Areas_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Watercourse Areas - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -425,6 +460,7 @@
                   "layers": "Watercourse_Areas,No_Data",
                   "name": "Watercourse Areas",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Watercourse_Areas.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -443,6 +479,7 @@
                   "layers": "Waterfalls_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Waterfalls - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -455,6 +492,7 @@
                   "layers": "Waterfalls,No_Data",
                   "name": "Waterfalls",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Waterfalls.png",
                   "info": [
                     {
                       "name": "Licence",

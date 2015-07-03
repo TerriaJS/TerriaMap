@@ -11,6 +11,7 @@
                   "layers": "Oil_and_Gas_Pipelines,No_Data",
                   "name": "Oil and Gas Pipelines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Oil_and_Gas_Pipelines.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -29,6 +30,7 @@
                   "layers": "Powerlines,No_Data",
                   "name": "Powerlines",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Powerlines.png",
                   "info": [
                     {
                       "name": "Licence",

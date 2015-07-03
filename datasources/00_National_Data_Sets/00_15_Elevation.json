@@ -17,7 +17,8 @@
                     "-9.004409999707923"
                   ],
                   "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-                  "name": "SRTM 1 sec DEM Image"
+                  "name": "SRTM 1 sec DEM Image",
+                  "legendUrl": ""
                 },
                 {
                   "layers": "Flow_Direction_Grid_to_accompany_9_Second_Digital_Elevation_Model_of_Australia_Version_3",
@@ -51,6 +52,7 @@
                   "layers": "Contours_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Contours - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -63,6 +65,7 @@
                   "layers": "Contours_250K_Scale,Contours_2_5Million_Scale,No_Data",
                   "name": "Contours",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Contours.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -81,6 +84,7 @@
                   "layers": "Cuttings,No_Data",
                   "name": "Cuttings",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Cuttings.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -99,6 +103,7 @@
                   "layers": "Embankments,No_Data",
                   "name": "Embankments",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Embankments.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -117,6 +122,7 @@
                   "layers": "Horizontal_Control_Points_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Horizontal Control Points - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -129,6 +135,7 @@
                   "layers": "Horizontal_Control_Points,No_Data",
                   "name": "Horizontal Control Points",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Horizontal_Control_Points.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -147,6 +154,7 @@
                   "layers": "Offshore_Rocks_and_Wrecks_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Offshore Rocks and Wrecks - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -159,6 +167,7 @@
                   "layers": "Offshore_Rocks_and_Wrecks,No_Data",
                   "name": "Offshore Rocks and Wrecks",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Offshore_Rocks_and_Wrecks.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -177,6 +186,7 @@
                   "layers": "Reefs_and_Shoals_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Reefs and Shoals - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -189,6 +199,7 @@
                   "layers": "Reefs_and_Shoals,No_Data",
                   "name": "Reefs and Shoals",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Reefs_and_Shoals.png",
                   "info": [
                     {
                       "name": "Licence",
@@ -207,6 +218,7 @@
                   "layers": "Spot_Elevations_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
                   "name": "Spot Elevations - Labels",
                   "type": "esri-mapServer",
+                  "legendUrl": "",
                   "info": [
                     {
                       "name": "Licence",
@@ -219,6 +231,7 @@
                   "layers": "Spot_Elevations_250K_Scale,Spot_Elevations_2_5Million_Scale,No_Data",
                   "name": "Spot Elevations",
                   "type": "esri-mapServer",
+                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Spot_Elevations.png",
                   "info": [
                     {
                       "name": "Licence",

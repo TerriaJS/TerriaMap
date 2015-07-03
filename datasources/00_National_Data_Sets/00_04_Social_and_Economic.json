@@ -21,6 +21,7 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Population Estimates",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/NEXIS_PopDensity_Legend.png",
               "info": [
                 {
                   "name": "Licence",
