@@ -731,6 +731,117 @@
                   "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
+            },
+            {
+              "items": [
+                {
+                  "layers": "WaterObservations",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "name": "1 - Detections",
+                  "dataUrlType": "direct",
+                  "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
+                },
+                {
+                  "layers": "ClearObservations",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "name": "2 - Clear Observations",
+                  "dataUrlType": "direct",
+                  "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
+                },
+                {
+                  "layers": "WaterSummary",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "name": "3 - Summary",
+                  "dataUrlType": "direct",
+                  "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
+                },
+                {
+                  "layers": "Confidence",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    112,
+                    -45,
+                    154,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "name": "4 - Confidence",
+                  "dataUrlType": "direct",
+                  "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
+                },
+                {
+                  "layers": "WaterSummaryFiltered",
+                  "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+                  "type": "wms",
+                  "rectangle": [
+                    111,
+                    -45,
+                    155,
+                    -10
+                  ],
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
+                  "name": "5 - Filtered Summary",
+                  "dataUrlType": "direct",
+                  "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
+                  "info": [
+                    {
+                      "name": "Licence",
+                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                    }
+                  ]
+                }
+              ],
+              "type": "group",
+              "name": "Water Observations from Space"
             }
           ],
           "name": "Surface Water",
