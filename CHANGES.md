@@ -9,8 +9,8 @@ Change Log
 * Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
 * The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
 * Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.31.  Significant changes relevant to NationalMap users include:
-  * Numerous improvements to improve the quality of the catalogue item info page.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.32.  Significant changes relevant to NationalMap users include:
+  * Numerous changes to improve the quality of the catalogue item info page.
   * Added support for `csv-geo-*` (e.g. csv-geo-au) to `CkanCatalogGroup`.
   * `CkanCatalogGroup` now fills the `dataUrl` property of created items by pointing to the dataset's page on CKAN.
   * The catalog item information panel now displays `info` sections in a consistent order.  The order can be overridden by setting `CatalogItemInfoViewModel.infoSectionOrder`.
