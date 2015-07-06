@@ -35,6 +35,13 @@
             "aliases": ["sa2"],
             "digits": 9
         },
+        "SA1": {
+            "layerName":"region_map:FID_SA1_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "SA1_7DIG11",
+            "aliases": ["sa1"],
+            "digits": 7
+        },
         "POA": {
             "layerName":"region_map:FID_POA_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
