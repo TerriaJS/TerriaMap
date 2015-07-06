@@ -282,9 +282,9 @@
                   "name": "Lakes and Reservoirs",
                   "type": "esri-mapServer",
                   "legendUrls": [
-                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Farm_Dam_Areas.png",
                     "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Reservoirs.png",
-                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lakes.png"
+                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lakes.png",
+                    "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Farm_Dam_Areas.png"
                   ],
                   "info": [
                     {
