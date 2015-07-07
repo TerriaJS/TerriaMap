@@ -15,8 +15,14 @@
                 "-9.088949999705271"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Aircraft Facilites"
+              "description": "Aircraft Facilites",
+              "name": "Aircraft Facilites",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:barrierpoints",
@@ -29,8 +35,14 @@
                 "-11.439839999632706"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Barrier Points"
+              "description": "Barrier Points",
+              "name": "Barrier Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:ferryroutelines",
@@ -43,8 +55,14 @@
                 "-10.584439999658853"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Ferry Routes"
+              "description": "Ferry Routes",
+              "name": "Ferry Routes",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:foottracks",
@@ -57,8 +75,14 @@
                 "-14.099749999553625"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Foot Tracks"
+              "description": "Foot Tracks",
+              "name": "Foot Tracks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:railwaybridgepoints",
@@ -71,8 +95,14 @@
                 "-16.387539999488673"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Railway Bridges"
+              "description": "Railway Bridges",
+              "name": "Railway Bridges",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:railwaycrossinglines",
@@ -85,8 +115,14 @@
                 "-12.482379999601294"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Railway Crossings"
+              "description": "Railway Crossings",
+              "name": "Railway Crossings",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:railways",
@@ -99,8 +135,14 @@
                 "-12.435059999602709"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Railways"
+              "description": "Railways",
+              "name": "Railways",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:railwaystoppoints",
@@ -113,8 +155,14 @@
                 "-12.4720799996016"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Railway Stop"
+              "description": "Railway Stop",
+              "name": "Railway Stop",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:railwaytunnellines",
@@ -127,8 +175,14 @@
                 "-16.861979999475594"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Railway Tunnel Lines"
+              "description": "Railway Tunnel Lines",
+              "name": "Railway Tunnel Lines",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:roadcrossinglines",
@@ -141,8 +195,14 @@
                 "-11.161099999641191"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Road Crossing Lines"
+              "description": "Road Crossing Lines",
+              "name": "Road Crossing Lines",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:roadcrossingpoints",
@@ -155,8 +215,14 @@
                 "-10.970479999647017"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Road Crossing Points"
+              "description": "Road Crossing Points",
+              "name": "Road Crossing Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:roads",
@@ -169,8 +235,14 @@
                 "-8.93332999971015"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Roads"
+              "description": "Roads",
+              "name": "Roads",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
               "layers": "Transport:roadtunnellines",
@@ -183,8 +255,14 @@
                 "-25.080719999274965"
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "name": "Road Tunnel Lines"
+              "description": "Road Tunnel Lines",
+              "name": "Road Tunnel Lines",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             }
           ],
           "type": "group",

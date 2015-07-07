@@ -1,11 +1,20 @@
 Change Log
 ==========
 
-### 2015-06-29
+### 2015-07-03
 
+* Changed the support email address from `nationalmap@lists.nicta.com.au` to `nationalmap@communications.gov.au`.
 * Renamed "Gravity Image" to "Gravity Anomaly" and updated it to load from the new server (the old one is deprecated).
 * Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
 * Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
+* The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
+* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.32.  Significant changes relevant to NationalMap users include:
+  * Numerous changes to improve the quality of the catalogue item info page.
+  * Added support for `csv-geo-*` (e.g. csv-geo-au) to `CkanCatalogGroup`.
+  * `CkanCatalogGroup` now fills the `dataUrl` property of created items by pointing to the dataset's page on CKAN.
+  * The catalog item information panel now displays `info` sections in a consistent order.  The order can be overridden by setting `CatalogItemInfoViewModel.infoSectionOrder`.
+  * An empty `description` or `info` section is no longer shown on the catalog item information panel.  This can be used to remove sections that would otherwise be populated from dataset metadata.
 
 ### 2015-06-24
 

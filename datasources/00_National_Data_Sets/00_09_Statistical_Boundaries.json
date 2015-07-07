@@ -15,8 +15,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Statistical Area Level 4 (SA4)"
+              "name": "Statistical Area Level 4 (SA4)",
+              "description": "Statistical Area Level 4 (SA4)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SA3_2011_AUST",
@@ -29,8 +35,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Statistical Area Level 3 (SA3)"
+              "name": "Statistical Area Level 3 (SA3)",
+              "description": "Statistical Area Level 3 (SA3)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SA2_2011_AUST",
@@ -43,8 +55,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Statistical Area Level 2 (SA2)"
+              "name": "Statistical Area Level 2 (SA2)",
+              "description": "Statistical Area Level 2 (SA2)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SA1_2011_AUST",
@@ -57,8 +75,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Statistical Area Level 1 (SA1)"
+              "name": "Statistical Area Level 1 (SA1)",
+              "description": "Statistical Area Level 1 (SA1)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:GCCSA_2011_AUST",
@@ -71,8 +95,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Greater Capital City Statistical Area (GCCSA)"
+              "name": "Greater Capital City Statistical Area (GCCSA)",
+              "description": "Greater Capital City Statistical Area (GCCSA)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_ACT",
@@ -85,8 +115,14 @@
                 "-35.12451727461176"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Australian Capital Territory Mesh Blocks"
+              "name": "Australian Capital Territory Mesh Blocks",
+              "description": "Australian Capital Territory Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_NSW",
@@ -99,8 +135,14 @@
                 "-23.41035087665545"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "New South Wales Mesh Blocks"
+              "name": "New South Wales Mesh Blocks",
+              "description": "New South Wales Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_NT",
@@ -113,8 +155,14 @@
                 "-10.965914264647154"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Northern Territory Mesh Blocks"
+              "name": "Northern Territory Mesh Blocks",
+              "description": "Northern Territory Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_OT",
@@ -127,8 +175,14 @@
                 "-10.412356006664147"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Other Territories Mesh Blocks"
+              "name": "Other Territories Mesh Blocks",
+              "description": "Other Territories Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_QLD",
@@ -141,8 +195,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Queensland Mesh Blocks"
+              "name": "Queensland Mesh Blocks",
+              "description": "Queensland Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_SA",
@@ -155,8 +215,14 @@
                 "-25.996146486756036"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "South Australia Mesh Blocks"
+              "name": "South Australia Mesh Blocks",
+              "description": "South Australia Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_TAS",
@@ -169,8 +235,14 @@
                 "-39.2036616580757"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Tasmania Mesh Blocks"
+              "name": "Tasmania Mesh Blocks",
+              "description": "Tasmania Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_VIC",
@@ -183,8 +255,14 @@
                 "-33.98042558562515"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Victoria Mesh Blocks"
+              "name": "Victoria Mesh Blocks",
+              "description": "Victoria Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:MB_2011_WA",
@@ -197,8 +275,14 @@
                 "-13.689492034565587"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Western Australia Mesh Blocks"
+              "name": "Western Australia Mesh Blocks",
+              "description": "Western Australia Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:IARE_2011_AUST",
@@ -211,8 +295,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Indigenous Areas"
+              "name": "Indigenous Areas",
+              "description": "Indigenous Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:ILOC_2011_AUST",
@@ -225,8 +315,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Indigenous Locations"
+              "name": "Indigenous Locations",
+              "description": "Indigenous Locations",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:IREG_2011_AUST",
@@ -239,8 +335,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Indigenous Regions"
+              "name": "Indigenous Regions",
+              "description": "Indigenous Regions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SOS_2011_AUST",
@@ -253,8 +355,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Section of State"
+              "name": "Section of State",
+              "description": "Section of State",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:SOSR_2011_AUST",
@@ -267,8 +375,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Section of State Range"
+              "name": "Section of State Range",
+              "description": "Section of State Range",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:UCL_2011_AUST",
@@ -281,8 +395,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Urban Centre and Locality"
+              "name": "Urban Centre and Locality",
+              "description": "Urban Centre and Locality",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             },
             {
               "layers": "admin_bnds:RA_2011_AUST",
@@ -295,8 +415,14 @@
                 "-9.142175976703609"
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-              "name": "Remoteness Area"
+              "name": "Remoteness Area",
+              "description": "Remoteness Area",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
             }
           ],
           "type": "group",
