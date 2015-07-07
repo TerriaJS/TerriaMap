@@ -42,6 +42,13 @@
             "aliases": ["ssc", "suburb"],
             "digits": 5
         },
+        "POA": {
+            "layerName":"region_map:FID_POA_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "POA_CODE",
+            "aliases": ["poa", "postcode"],
+            "digits": 4
+        },
         "CED": {
             "layerName":"region_map:FID_CED_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
