@@ -28,9 +28,7 @@ var configuration = {
     bingMapsKey: undefined, // use Cesium key
     proxyBaseUrl: 'proxy/',
     conversionServiceBaseUrl: 'convert',
-    regionMappingDefinitionsUrl: 'data/regionMapping.json',
-    shortenShareUrl: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyBZIS_uRrKShArQfvQtURFZasUpXyAaGDk',
-    expandShareUrl: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyBZIS_uRrKShArQfvQtURFZasUpXyAaGDk&shortUrl=http://goo.gl/'
+    regionMappingDefinitionsUrl: 'data/regionMapping.json'
 };
 
 // Check browser compatibility early on.
@@ -104,9 +102,7 @@ var terria = new Terria({
     supportEmail: 'nationalmap@communications.gov.au',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
-    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
-    shortenShareUrl: configuration.shortenShareUrl,
-    expandShareUrl: configuration.expandShareUrl
+    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
 });
 
 terria.error.addEventListener(function(e) {
