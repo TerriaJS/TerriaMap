@@ -41,6 +41,7 @@ var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
+var KnockoutMarkdownBinding = require('terriajs/lib/Core/KnockoutMarkdownBinding');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
@@ -76,9 +77,7 @@ var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
-var svgInfo = require('terriajs/lib/SvgPaths/svgInfo');
 var svgPlus = require('terriajs/lib/SvgPaths/svgPlus');
-var svgRelated = require('terriajs/lib/SvgPaths/svgRelated');
 var svgShare = require('terriajs/lib/SvgPaths/svgShare');
 var svgWorld = require('terriajs/lib/SvgPaths/svgWorld');
 
@@ -90,6 +89,9 @@ OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl
 
 // Register custom Knockout.js bindings.  If you're not using the TerriaJS user interface, you can remove this.
 registerKnockoutBindings();
+
+// Disable HTML sanitization.  TODO: remove this
+KnockoutMarkdownBinding.allowUnsafeHtml = true;
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -156,7 +158,7 @@ terria.start({
         container: ui,
         elements: [
             '',
-            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" /></a>',
+            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" title="Version: ' + version + '" /></a>',
             ''
         ]
     });

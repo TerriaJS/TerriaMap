@@ -192,6 +192,7 @@
                                     "position": {
                                         "cartographicDegrees": [133.0, -25.0, 0.0]
                                     },
+                                    "description": "<div onclick=\"javascript: alert('foo')\">test</div>",
                                     "point": {
                                         "pixelSize": 5,
                                         "color": {
