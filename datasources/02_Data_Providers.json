@@ -1,0 +1,36 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "type": "wms-getCapabilities",
+          "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "name": "Topography (Geoscience Australia)"
+        },
+        {
+          "blacklist": {
+            "Surface Network 2.1": true,
+            "Surface Cartography": true,
+            "Groundwater Cartography 2.1": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+          "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+          "description": "[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+          "name": "Water (Bureau of Meteorology Geofabric)"
+        },
+        {
+          "type": "wms-getCapabilities",
+          "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+          "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+          "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Boundaries (Australia Bureau of Statistics)"
+        }
+      ],
+      "type": "group",
+      "name": "Data Providers"
+    }
+  ]
+}

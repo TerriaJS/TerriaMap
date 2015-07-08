@@ -1,0 +1,217 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "Framework:frameworkboundaries",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.88333",
+                "-43.99999999905729",
+                "154.1",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Framework Boundaries",
+              "name": "Framework Boundaries",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:geodataindexes",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.88333",
+                "-43.99999999905729",
+                "153.99999999999997",
+                "-8.999999999708061"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Geodata Indexes",
+              "name": "Geodata Indexes",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:islands",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.92137",
+                "-43.74297999905761",
+                "153.5799",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Islands",
+              "name": "Islands",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:largeareafeatures",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "116.04361",
+                "-39.13573999907615",
+                "152.60876000000002",
+                "-10.687579999655679"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Large Area Features",
+              "name": "Large Area Features",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:locations",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.92903",
+                "-43.64227999905775",
+                "153.63850000000002",
+                "-8.95829999970937"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Locations",
+              "name": "Locations",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:mainlands",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.15627999999998",
+                "-43.64304999905776",
+                "153.63857000000004",
+                "-10.687579999655679"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Mainlands",
+              "name": "Mainlands",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:mapindexes",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.88333",
+                "-43.99999999905729",
+                "154.1",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Map Indexes",
+              "name": "Map Indexes",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:prohibitedareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.72448",
+                "-42.67827999905975",
+                "153.45784999999998",
+                "-12.584149999598258"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Prohibited Areas",
+              "name": "Prohibited Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:reserves",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.97143",
+                "-43.74297999905761",
+                "153.60127",
+                "-9.088049999705305"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Reserves",
+              "name": "Reserves",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Framework:seas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.88333",
+                "-43.99999999905729",
+                "154.1",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Seas",
+              "name": "Seas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "name": "Framework"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

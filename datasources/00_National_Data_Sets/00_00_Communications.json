@@ -1,0 +1,272 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "public:MyBroadband_Map",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband Map",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_Availability",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband Availability Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband Availability",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_Availability_no_outline",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband Availability Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband Availability no Borders",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_Quality",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband Quality Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband Quality",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_ADSL_Quality",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband ADSL Quality Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband ADSL Quality",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_ADSL_Quality_no_outline",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband ADSL Quality Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband ADSL Quality no Borders",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_ADSL_Availability",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband ADSL Availability Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband ADSL Availability",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "public:MyBroadband_ADSL_Availability_no_outline",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband ADSL Availability Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband ADSL Availability no Borders",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "legendUrl": "",
+              "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage",
+              "dataUrlType": "direct",
+              "tableStyle": {
+                "colorMap": [
+                  {
+                    "color": "rgba(64, 64, 255,1.00)",
+                    "offset": 0
+                  }
+                ]
+              },
+              "description": "Between December 2013 and August 2014 the Government accepted reports from individuals and community representatives about locations with poor or no mobile coverage. The reported locations have been included in a database that has been shared with mobile network operators and infrastructure providers to assist them in preparing funding proposals for the Mobile Black Spot Programme. Further information on the programme is available on the Department of Communications’ website [www.communications.gov.au/mobile_coverage](http://www.communications.gov.au/mobile_coverage). These locations have not been independently tested to verify the level of mobile coverage.<br/>[Licence](http://creativecommons.org/licenses/by/3.0/au/)",
+              "name": "Mobile Black Spot Database",
+              "rectangle": [
+                "96.799393",
+                "-43.598214999057824",
+                "153.63925700000001",
+                "-9.2159219997013"
+              ],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "http://www.data.gov.au/dataset/7be6e3ee-043a-4c47-a6eb-a97702419ccd/resource/c6b211ad-3aa2-4f53-8427-01b52a6433a7/download/mobileblackspotdatabase.csv",
+              "type": "csv",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "tableStyle": {
+                "imageUrl": "images/square.png",
+                "colorMap": [
+                  {
+                    "color": "rgba(255, 255, 255,1.00)",
+                    "offset": 0
+                  }
+                ]
+              },
+              "name": "Mobile Black Spot Programme - Funded Base Stations",
+              "description": "The Australian Government's $100 million Mobile Black Spot Programme will deliver almost 500 new or upgraded mobile base stations around Australia - 429 Telstra base stations and 70 Vodafone base stations. The first base stations funded under the Programme will be rolled out before the end of 2015 and the rollout will continue for a three year period. The rollout sequence will be determined by Telstra and Vodafone based on various factors including obtaining local government planning approvals. Further information on the Programme is available on the Department of Communications' website www.communications.gov.au/mobile_coverage.",
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "type": "csv",
+              "url": "https://s3-ap-southeast-2.amazonaws.com/nationalmap-data/mbsp-fbs.csv",
+              "legendUrl": "",
+              "dataUrlType": "direct",
+              "dataUrl": "http://data.gov.au/dataset/mobile-black-spot-programme-funded-base-stations",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "name": "Communications"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

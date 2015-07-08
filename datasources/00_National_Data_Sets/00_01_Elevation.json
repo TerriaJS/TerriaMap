@@ -1,0 +1,137 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "Elevation:benchmarks",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.50982",
+                "-38.647199999079525",
+                "149.92117",
+                "-12.41999999960316"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Benchmarks",
+              "name": "Benchmarks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Elevation:contours",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.92137",
+                "-43.74297999905761",
+                "153.63857000000004",
+                "-8.93332999971015"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Contours",
+              "name": "Contours",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Elevation:horizontalcontrolpoints",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.06265",
+                "-43.51730999905795",
+                "153.55039",
+                "-10.462999999662589"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Horizontal Control Points",
+              "name": "Horizontal Control Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Elevation:spotelevations",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Spot Elevations",
+              "name": "Spot Elevations",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "dem_s_1s",
+              "url": "http://www.ga.gov.au/gisimg/services/topography/dem_s_1s/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "name": "SRTM 1 sec DEM Image"
+            },
+            {
+              "layers": "Flow_Direction_Grid_to_accompany_9_Second_Digital_Elevation_Model_of_Australia_Version_3",
+              "url": "http://www.ga.gov.au/thredds/wms/national_grids/d8-9s.nc",
+              "type": "wms",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "name": "Flow Grid Direction Image",
+              "info": [
+                {
+                  "name": "Data Description",
+                  "content": "Flow direction grid to accompany 9 second Digital Elevation Model of Australia version 3"
+                },
+                {
+                  "name": "Service Description",
+                  "content": ""
+                },
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "name": "Elevation"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

@@ -1,9 +1,64 @@
 Change Log
 ==========
 
+### 2015-07-03
+
+* Changed the support email address from `nationalmap@lists.nicta.com.au` to `nationalmap@communications.gov.au`.
+* Renamed "Gravity Image" to "Gravity Anomaly" and updated it to load from the new server (the old one is deprecated).
+* Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
+* Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
+* The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
+* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.32.  Significant changes relevant to NationalMap users include:
+  * Numerous changes to improve the quality of the catalogue item info page.
+  * Added support for `csv-geo-*` (e.g. csv-geo-au) to `CkanCatalogGroup`.
+  * `CkanCatalogGroup` now fills the `dataUrl` property of created items by pointing to the dataset's page on CKAN.
+  * The catalog item information panel now displays `info` sections in a consistent order.  The order can be overridden by setting `CatalogItemInfoViewModel.infoSectionOrder`.
+  * An empty `description` or `info` section is no longer shown on the catalog item information panel.  This can be used to remove sections that would otherwise be populated from dataset metadata.
+
+### 2015-06-24
+
+* Updated the favicon.
+* Switched the new Medicare Offices dataset to load directly from data.gov.au.
+
+### 2015-06-23
+
+* Added "Medicare Offices" dataset under Social and Economic.
+* Fixed the URL of the Roboto Mono font so that it downloads correctly even over `https`.
+* Improved the styling of the About page.
+* Fixed an incorrect link to the About page from the disclaimer at the bottom of the map.
+* The nm.json file is now created at build time from a number of initialization files in the `datasources` directory.  The individual files are easier to manage and edit than a single large file.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.27.  Significant changes relevant to NationalMap users include:
+  * Fixed incorrect date formatting in the timeline and animation controls on Internet Explorer 9.
+  * Added support for CSV files with longitude and latitude columns but no numeric value column.  Such datasets are visualized as points with a default color and do not have a legend.
+  * The Feature Information popup is now automatically closed when the user changes the `AbsIttCatalogItem` filter.
+  * `WebMapServiceCatalogItem` now determines its rectangle from the GetCapabilities metadata even when configured to use multiple WMS layers.
+  * `AbsIttCatalogItem` styles can now be set using the `tableStyle` property, much like `CsvCatalogItem`.
+  * Improved `AbsIttCatalogItem`'s tolerance of errors from the server.
+  * Fixed a bug that caused the brand bar to slide away with the explorer panel on Internet Explorer 9.
+
+### 2015-06-16
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.23.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that prevented features from being pickable from ABS datasets on the 2D map.
+  * Fixed a bug that caused the Explorer Panel tabs to be missing or misaligned in Firefox.
+  * Changed to use JPEG instead of PNG format for the Natural Earth II basemap.  This makes the tile download substantially smaller.
+
 ### 2015-06-15
 
+* Added a new Australian Bureau of Statistics group to the catalogue.
+* Added all Australian states to the Data Catalogue.
+* Replaced the Cesium animation and timeline controller with the new TerriaJS animation and timeline controller.
 * National Map now shows its version number when hovering the mouse over the logo on the top left corner.
+* Added a longer disclaimer to printed versions of the map.
+* Added a Related Maps button and panel.  It currently contains links to AREMI and to the Northern Australia map.
+* Added a small popup to call attention to the Now Viewing tab the first time a catalog item is enabled.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.21.  Significant changes relevant to NationalMap users include:
+  * Replaced the timeline / animation controller used with time-dynamic datasets.  The new one has a cleaner and simpler interface.
+  * Added the ability to add an entire ArcGIS Server to the catalogue using the Add Data panel.
+  * Improved the capabilities of the hidden Tools panel, accessed by appending `#tools=1` to the URL and clicking the Tools button.
+  * Fixed a bug that caused the 2D / 3D buttons the Maps menu to get out of sync with the actual state of the map after switching automatically to 2D due to a performance problem.
+  * Added support for connecting to Web Map Tile Service (WMTS) servers.
 
 ### 2015-05-28
 

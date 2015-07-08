@@ -1,0 +1,317 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "Infrastructure:aerialcableways",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "145.63916",
+                "-37.845019999085665",
+                "153.47854999999998",
+                "-16.819299999476762"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Aerial Cableways",
+              "name": "Aerial Cableways",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:conveyors",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "115.65124",
+                "-41.48786999906365",
+                "151.91119",
+                "-12.184729999610212"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Conveyors",
+              "name": "Conveyors",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:damwalls",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "115.00212",
+                "-43.18769999905856",
+                "153.30629",
+                "-10.571689999659238"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Damwalls",
+              "name": "Damwalls",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:fences",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.92895",
+                "-35.37394999910903",
+                "152.97735999999998",
+                "-10.895739999649303"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Fences",
+              "name": "Fences",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:marineinfrastructurelines",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.32462999999998",
+                "-43.16099999905862",
+                "153.59193",
+                "-9.062449999706104"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Marine Infrastructure Lines",
+              "name": "Marine Infrastructure Lines",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:marineinfrastructurepoints",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.97203",
+                "-43.657359999057725",
+                "153.63569999999999",
+                "-9.140769999703654"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Marine Infrastructure Points",
+              "name": "Marine Infrastructure Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:mineareas",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.36167000000002",
+                "-43.43038999905809",
+                "153.50486000000004",
+                "-11.872959999619598"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Mine Areas",
+              "name": "Mine Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:minepoints",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.36334",
+                "-43.46653999905804",
+                "153.60394",
+                "-10.575569999659121"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Mine Points",
+              "name": "Mine Points",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:petroleumwells",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.9964",
+                "-38.596209999079896",
+                "152.48242000000002",
+                "-15.323399999518502"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Petroleum Wells",
+              "name": "Petroleum Wells",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:storagetanks",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.63004999999998",
+                "-41.127119999065165",
+                "153.16552999999996",
+                "-12.426089999602983"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Storage Tanks",
+              "name": "Storage Tanks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:verticalobstructions",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.52788",
+                "-43.37782999905819",
+                "153.58229000000003",
+                "-9.080289999705544"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Vertical Obstructions",
+              "name": "Vertical Obstructions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "0",
+              "url": "http://www.ga.gov.au/gis/services/topography/National_Waste_Management_Facilities/MapServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Waste Management Facilities",
+              "name": "Waste Management Facilities",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:watertanks",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.93187000000002",
+                "-42.75848999905954",
+                "153.00634",
+                "-9.951769999678387"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Water Tanks",
+              "name": "Water Tanks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:windpumps",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.50105",
+                "-35.85509999910395",
+                "151.48511",
+                "-11.177569999640692"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Wind Pumps",
+              "name": "Wind Pumps",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "layers": "Infrastructure:yards",
+              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "type": "wms",
+              "rectangle": [
+                "113.18122",
+                "-34.994069999113215",
+                "148.48095",
+                "-10.624669999657616"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Yards",
+              "name": "Yards",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "name": "Infrastructure"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

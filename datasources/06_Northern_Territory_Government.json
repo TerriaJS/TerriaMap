@@ -1,0 +1,11 @@
+{
+  "catalog": [
+    {
+      "type": "wms-getCapabilities",
+      "url": "http://wms1.ntlis.nt.gov.au/ilismap",
+      "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+      "description": "[Licence](http://www.ga.gov.au/copyright)",
+      "name": "Northern Territory Government"
+    }
+  ]
+}

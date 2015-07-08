@@ -1,0 +1,98 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "getFeatureInfoFormats": [
+                {
+                  "type": "html"
+                }
+              ],
+              "layers": "0,1,2,3,4",
+              "url": "http://www.ga.gov.au/gis/rest/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer",
+              "type": "esri-mapServer",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "name": "Population Estimates",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "dataCustodian": "[Australian Taxation Office](http://www.ato.gov.au)",
+              "rectangle": [
+                "112.93529999999998",
+                "-38.208809999082796",
+                "152.06206",
+                "-11.05104999964455"
+              ],
+              "type": "wms",
+              "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows",
+              "layers": "95d9e550_8b36_4273_8df7_2b76c140e73a",
+              "description": "Taxation statistics: an overview of the income and tax status of Australian individuals, companies, partnerships, trusts and funds for 2011-12.",
+              "dataUrl": "https://data.gov.au/dataset/taxation-statistics-2011-12",
+              "dataUrlType": "direct",
+              "name": "Taxation Statistics 2011-2012",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "dataCustodian": "The AURIN project\n\nadmin@aurin.org.au",
+              "type": "wms",
+              "layers": "housingstress",
+              "url": "https://geoserver.aurin.org.au/nm/wms",
+              "name": "Housing Stress",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "dataCustodian": "Department of Human Services",
+              "description": "The location of Medicare offices and their hours.",
+              "type": "csv",
+              "url": "https://data.gov.au/dataset/70f76a9e-d450-4567-9760-290dea54229c/resource/7eb30338-768e-436c-9dde-dc7a1066c9c9/download/Medicare-Office-Locations-as-at-4-June-2015.csv",
+              "name": "Medicare Offices",
+              "tableStyle": {
+                "imageUrl": "images/square.png",
+                "colorMap": [
+                  {
+                    "color": "rgba(255, 255, 64, 1.00)",
+                    "offset": 0
+                  }
+                ]
+              },
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "name": "Social and Economic"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

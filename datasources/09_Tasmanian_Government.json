@@ -1,0 +1,281 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Topographic/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Topographic"
+            },
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/TopographicGrayScale/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Topographic Grayscale"
+            },
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Orthophoto/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Orthophoto"
+            },
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap500K/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Tasmania Map 500k Resolution"
+            },
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap250K/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Tasmania Map 250k Resolution"
+            },
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap100K/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Tasmania Map 100k Resolution"
+            },
+            {
+              "opacity": "1.0",
+              "layers": "0",
+              "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap25K/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "141",
+                "-44",
+                "152",
+                "-39"
+              ],
+              "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+              "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+              "name": "Tasmania Map 25k Resolution"
+            }
+          ],
+          "type": "group",
+          "name": "Base Maps"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/ABSdata/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Statistical data sourced from the Australian Bureau of Statistics.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Census Data"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/CadastreParcels/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Cadastral Parcels service including the property address.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Cadastre Parcels"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/ClimateChange/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Climate Futures data including mean temperature change, annual rainfall change, pan evaporation change, relative humidity change, mean frost risk, standard precipitation index and standard precipitation index change.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Climate Change"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/COPpublic/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Road Closures, Blocks and Exclusion Zones in Tasmania extracted form the Commom Operating Platform.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "COP Public"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/EmergencyManagementPublic/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Emergency service layers that are publicly available including fire history and nearby safer places.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Emergency Management Public"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/FloodMappingPublic/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Flood extents that are publicly available showing areas affected (either inundated or surrounded by water) during different flood / dam break scenarios.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Flood Mapping Public"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/GeologicalAndSoils/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Geological and Soil datasets including Soil Types, Geology captured at 1:25,000 or 1:250,000 scale and Exploration license areas.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Geological & Soils"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/Indexes/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Index datasets depicting map series areas, aerial photography coverage and plan indexes.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Indexes"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/MarineAndCoastal/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Marine and coastal values relating to Tasmania. Datasets include marine life observations, coastal fauna and flora observations, surveys, wetland data, marine zoning and bathymetry data.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Marine & Coastal"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/NaturalEnvironment/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Flora and Fauna data including threatened species data, Natural Values Atlas (NVA) observations and vegetation communities.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Natural Environment"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/NVAdata/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for The datastets contained in this service are sourced from the Natural Values Atlas (NVA)  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Natural Value Atlas"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/PlacenamePoints/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Placename points is derived from spatial LIST datasets and will show a single point in the centre of each feature.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Placename Points"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/Planning/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Southern Tasmanian Councils Authority (STCA) planning schemes areas including special areas, planning zones and zone boundaries. Please be aware that the planning scheme data is currently under review and many zones may be currently missing as a consequence. (Last updated 20/03/2014).  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Planning"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/PlanningOnline/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Planning scheme mapping developed under the Land Use Planning and Approval Act, including Planning Zones, Planning Overlays and Planning Zone Boundaries maintained by The Tasmanian Planning Commission (TPC) together with contextual layers of Road Names, Cadastral Boundaries and the Topographic Base Map developed by Information and Land Services (ILS) - DPIPWE.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Planning Online"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/TopographyAndRelief/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Topographic feature typically found on a map such as roads, contours, rivers, points of interest and railway lines.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Topography & Relief"
+        },
+        {
+          "blacklist": {
+            "Service Layer was Removed": true
+          },
+          "type": "wms-getCapabilities",
+          "url": "http://services.thelist.tas.gov.au/arcgis/services/Public/WealthFromWater/MapServer/WMSServer",
+          "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
+          "description": "Service for Wealth from Water program that classifies land according to its suitability for various agricultural enterprises.  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+          "name": "Wealth From Water"
+        }
+      ],
+      "type": "group",
+      "name": "Tasmanian Government"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "catalog": [
+    {
+      "blacklist": {
+        "Rainforests (EVC_2005)": true
+      },
+      "groupBy": "organization",
+      "minimumMaxScaleDenominator": 10000000000,
+      "filterByWmsGetCapabilities": false,
+      "filterQuery": [
+        "fq=+(res_format%3awms%20OR%20res_format%3aWMS%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)"
+      ],
+      "url": "http://www.data.gov.au",
+      "type": "ckan",
+      "name": "Data.gov.au",
+      "includeCsv": true
+    }
+  ]
+}

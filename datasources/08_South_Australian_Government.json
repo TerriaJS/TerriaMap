@@ -1,0 +1,11 @@
+{
+  "catalog": [
+    {
+      "type": "wms-getCapabilities",
+      "url": "http://geoserver.nationalmap.nicta.com.au/sa_gov_au/ows",
+      "dataCustodian": "[South Australian Government](http://www.sa.gov.au/)",
+      "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+      "name": "South Australian Government"
+    }
+  ]
+}
