@@ -53,7 +53,7 @@
                                 "maxDisplayValue": 1500,
                                 "legendTicks": 4,
                                 "featureInfoFields": {
-                                    "incident_date": "Date", 
+                                    "incident_date": "Date",
                                     "incident_severity" : "Severity"
                                 },
                                 "colorMap": [
@@ -179,6 +179,27 @@
                             },
                             "keepOnTop": true,
                             "opacity": 1.0
+                        },
+                        {
+                            "name": "Embedded CZML",
+                            "type": "czml",
+                            "data": [
+                                {
+                                    "id": "document",
+                                    "version": "1.0"
+                                },
+                                {
+                                    "position": {
+                                        "cartographicDegrees": [133.0, -25.0, 0.0]
+                                    },
+                                    "point": {
+                                        "pixelSize": 5,
+                                        "color": {
+                                            "rgba": [255, 0, 0, 255]
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ]
                 },
