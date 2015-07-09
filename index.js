@@ -39,6 +39,7 @@ checkBrowserCompatibility('ui');
 
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
+var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
@@ -116,7 +117,8 @@ terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
-    configUrl: 'config.json'
+    configUrl: 'config.json',
+    defaultTo2D: isCommonMobilePlatform()
 }).otherwise(function(e) {
     raiseErrorToUser(terria, e);
 }).always(function() {

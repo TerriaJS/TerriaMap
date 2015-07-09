@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-07-??
+
+* Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
+
 ### 2015-07-03
 
 * Changed the support email address from `nationalmap@lists.nicta.com.au` to `nationalmap@communications.gov.au`.
