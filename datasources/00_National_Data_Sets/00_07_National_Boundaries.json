@@ -65,7 +65,7 @@
               ]
             },
             {
-              "layers": "admin_bnds:CED_2011_AUST",
+              "layers": "admin_bnds:COM20111216_ELB_region",
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
@@ -74,13 +74,15 @@
                 "159.109219008",
                 "-9.142175976703609"
               ],
-              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "dataCustodian": "[Australian Electoral Commission](http://www.aec.gov.au/)",
               "name": "Commonwealth Electoral Divisions",
-              "description": "Commonwealth Electoral Divisions",
+              "description": "Commonwealth Electoral Divisions\n\n© Commonwealth of Australia (Australian Electoral Commission)2015",
+              "dataUrl": "http://www.aec.gov.au/Electorates/gis/gis_datadownload.htm",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                  "content": "[Australian Electoral Commission Data download licence](http://www.aec.gov.au/Electorates/gis/GIS_Data_Download_Data_Licence.htm)"
                 }
               ]
             },

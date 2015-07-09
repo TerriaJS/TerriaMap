@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-07-??
+
+* Switched the "Commonwealth Electoral Divisions" dataset to use the official boundaries from the Australia Electoral Commission.  Previously it used the Australian Bureau of Statistics versions.
+
 ### 2015-07-03
 
 * Changed the support email address from `nationalmap@lists.nicta.com.au` to `nationalmap@communications.gov.au`.
