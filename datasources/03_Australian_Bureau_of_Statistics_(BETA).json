@@ -41,7 +41,8 @@
                 "AGE.A04",
                 "AGE.A10",
                 "AGE.A15",
-                "AGE.A59"
+                "AGE.A59",
+                "REGIONTYPE.SA3"
               ],
               "name": "Age",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
@@ -55,7 +56,7 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B04",
-              "regionType": "SA4"
+              "regionType": "SA3"
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
