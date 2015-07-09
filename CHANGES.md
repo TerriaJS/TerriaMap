@@ -15,7 +15,7 @@ Change Log
   * `CkanCatalogGroup` now fills the `dataUrl` property of created items by pointing to the dataset's page on CKAN.
   * The catalog item information panel now displays `info` sections in a consistent order.  The order can be overridden by setting `CatalogItemInfoViewModel.infoSectionOrder`.
   * An empty `description` or `info` section is no longer shown on the catalog item information panel.  This can be used to remove sections that would otherwise be populated from dataset metadata.
-  * Additional ABS region support.  Now supported AUS,STE,CED,SED,POA,LGA,SA4,SA1,SA2,SA1.
+  * Additional ABS region support.  Now supported internally AUS,STE,CED,SED,POA,LGA,SA4,SA1,SA2,SA1. Datasets exposing all these not yet available.
   * Changed Commonwealth Electoral Boundaries to official AEC version.
 
 ### 2015-06-24
