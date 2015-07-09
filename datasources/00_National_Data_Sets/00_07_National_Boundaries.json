@@ -74,15 +74,15 @@
                 "159.109219008",
                 "-9.142175976703609"
               ],
-              "dataCustodian": "[(c) Commonwealth of Australia (Australian Electoral Commission)2015](http://www.aec.gov.au/)",
+              "dataCustodian": "[Australian Electoral Commission](http://www.aec.gov.au/)",
               "name": "Commonwealth Electoral Divisions",
-              "description": "Commonwealth Electoral Divisions",
+              "description": "Commonwealth Electoral Divisions\n\n© Commonwealth of Australia (Australian Electoral Commission)2015",
               "dataUrl": "http://www.aec.gov.au/Electorates/gis/gis_datadownload.htm",
               "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[(c) Commonwealth of Australia (Australian Electoral Commission)2015](http://www.aec.gov.au/Electorates/gis/GIS_Data_Download_Data_Licence.htm)"
+                  "content": "[Australian Electoral Commission Data download licence](http://www.aec.gov.au/Electorates/gis/GIS_Data_Download_Data_Licence.htm)"
                 }
               ]
             },
