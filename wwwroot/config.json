@@ -8,7 +8,8 @@
         "www.abc.net.au",
         "geoserver.aurin.org.au",
         "mapsengine.google.com",
-        "s3-ap-southeast-2.amazonaws.com"
+        "s3-ap-southeast-2.amazonaws.com",
+        "adelaidecitycouncil.com"
     ],
     "initializationUrls" : [
         "nm"
