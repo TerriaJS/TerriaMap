@@ -2,7 +2,7 @@
   "catalog": [
     {
       "type": "ckan",
-      "name": "South Australian Government (GeoJSON)",
+      "name": "South Australian Government",
       "url": "https://data.sa.gov.au/data",
       "groupBy": "organization",
       "minimumMaxScaleDenominator": 10000000000,
