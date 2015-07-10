@@ -63,8 +63,14 @@
         "STE": {
             "layerName":"region_map:FID_STE_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "STE_CODE11",
+            "aliases": ["ste"]
+        },
+        "STE2": {
+            "layerName":"region_map:FID_STE_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "STE_ABBREV",
-            "aliases": ["state", "ste"]
+            "aliases": ["state"]
         },
         "AUS": {
             "layerName":"region_map:FID_AUS_2011_AUST",
