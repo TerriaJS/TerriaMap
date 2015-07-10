@@ -5,6 +5,7 @@ Change Log
 
 * Switched the "Commonwealth Electoral Divisions" dataset to use the official boundaries from the Australia Electoral Commission.  Previously it used the Australian Bureau of Statistics versions.
 * Additional ABS region support.  Now supported internally: AUS,STE,CED,SED,POA,LGA,SA4,SA1,SA2,SA1. Datasets exposing all of these are not yet available.
+* The South Australian Government group is now populated by querying the SA CKAN server for GeoJSON and csv-geo-au resources.
 
 ### 2015-07-03
 
