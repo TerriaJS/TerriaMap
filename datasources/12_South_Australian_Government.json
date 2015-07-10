@@ -2,18 +2,18 @@
   "catalog": [
     {
       "type": "ckan",
-      "name": "South Australian Government (GeoJSON)",
+      "name": "South Australian Government (KML)",
       "url": "https://data.sa.gov.au/data",
       "groupBy": "organization",
       "minimumMaxScaleDenominator": 10000000000,
       "filterByWmsGetCapabilities": false,
       "filterQuery": [
-        "fq=+(res_format%3ageojson%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=-organization%3acommonwealth-datasets"
+        "fq=+(res_format%3akml%20OR%20res_format%3aKML%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=-organization%3acommonwealth-datasets"
       ],
       "includeWms": false,
       "includeCsv": true,
-      "includeKml": false,
-      "includeGeoJson": true,
+      "includeKml": true,
+      "includeGeoJson": false,
       "allowEntireWmsServers": true
     }
   ]
