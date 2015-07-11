@@ -4,11 +4,10 @@
       "type": "ckan",
       "name": "South Australian Government",
       "url": "https://data.sa.gov.au/data",
-      "groupBy": "organization",
       "minimumMaxScaleDenominator": 10000000000,
       "filterByWmsGetCapabilities": false,
       "filterQuery": [
-        "fq=+(res_format%3ageojson%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=-organization%3acommonwealth-datasets"
+        "fq=+(res_format%3ageojson%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=jurisdiction%3a\"Government%20of%20South%20Australia\""
       ],
       "includeWms": false,
       "includeCsv": true,
