@@ -265,12 +265,14 @@ terria.start({
         nowViewing: terria.nowViewing
     });
 
+    var isSmallScreen = document.body.clientWidth <= 700 || document.body.clientHeight <= 420;
+
     // Create the explorer panel.
     ExplorerPanelViewModel.create({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
-        isOpen: !terria.userProperties.hideExplorerPanel,
+        isOpen: !isSmallScreen && !terria.userProperties.hideExplorerPanel,
         tabs: [
             new DataCatalogTabViewModel({
                 catalog: terria.catalog
