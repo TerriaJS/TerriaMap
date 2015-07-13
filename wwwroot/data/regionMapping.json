@@ -92,7 +92,13 @@
             "layerName":"region_map:FID_TM_WORLD_BORDERS",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ISO3",
-            "aliases": ["iso3", "country"]
+            "aliases": ["iso3"]
+        },
+        "COUNTRY": {
+            "layerName":"region_map:FID_TM_WORLD_BORDERS",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "NAME",
+            "aliases": ["country"]
         }
     }
 }

@@ -62,7 +62,8 @@
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
               "filter": [
                 "BPLP.1101",
-                "MEASURE.3"
+                "MEASURE.3",
+                "REGIONTYPE.SA4"
               ],
               "name": "Country of Birth",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
