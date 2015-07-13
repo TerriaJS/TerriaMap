@@ -1,24 +1,28 @@
 {
     "regionWmsMap": {
         "SA1": {
+            "description": "Statistical Area Level 1",
             "layerName":"region_map:FID_SA1_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "SA1_7DIG11",
             "aliases": ["sa1"]
         },
         "SA2": {
+            "description": "Statistical Area Level 2",
             "layerName":"region_map:FID_SA2_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "SA2_MAIN11",
             "aliases": ["sa2"]
         },
         "SA3": {
+            "description": "Statistical Area Level 3",
             "layerName":"region_map:FID_SA3_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "SA3_CODE11",
             "aliases": ["sa3"]
         },
         "SA4": {
+            "description": "Statistical Area Level 4",
             "layerName":"region_map:FID_SA4_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "SA4_CODE11",
@@ -66,7 +70,7 @@
             "regionProp": "STE_CODE11",
             "aliases": ["ste"]
         },
-        "STE2": {
+        "STATE": {
             "layerName":"region_map:FID_STE_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "STE_ABBREV",
