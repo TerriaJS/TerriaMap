@@ -3,6 +3,8 @@ Change Log
 
 ### 2015-07-??
 
+* Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
+* Start with the Data Catalogue panel hidden on devices with small screens.
 * Switched the "Commonwealth Electoral Divisions" dataset to use the official boundaries from the Australia Electoral Commission.  Previously it used the Australian Bureau of Statistics versions.
 * Additional ABS region support.  Now supported internally: AUS,STE,CED,SED,POA,LGA,SA4,SA1,SA2,SA1. Datasets exposing all of these are not yet available.
 * The South Australian Government group is now populated by querying the SA CKAN server for GeoJSON and csv-geo-au resources.
