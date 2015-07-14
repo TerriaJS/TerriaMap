@@ -5,7 +5,7 @@
         {
           "items": [
             {
-              "layers": "public:MyBroadband_Map",
+              "layers": "mybroadband:MyBroadband_Map",
               "parameters": {
                 "tiled": true
               },
@@ -30,7 +30,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_Availability",
+              "layers": "mybroadband:MyBroadband_Availability",
               "parameters": {
                 "tiled": true
               },
@@ -55,7 +55,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_Availability_no_outline",
+              "layers": "mybroadband:MyBroadband_Availability_no_outline",
               "parameters": {
                 "tiled": true
               },
@@ -80,7 +80,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_Quality",
+              "layers": "mybroadband:MyBroadband_Quality",
               "parameters": {
                 "tiled": true
               },
@@ -105,7 +105,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_ADSL_Quality",
+              "layers": "mybroadband:MyBroadband_ADSL_Quality",
               "parameters": {
                 "tiled": true
               },
@@ -130,7 +130,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_ADSL_Quality_no_outline",
+              "layers": "mybroadband:MyBroadband_ADSL_Quality_no_outline",
               "parameters": {
                 "tiled": true
               },
@@ -155,7 +155,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_ADSL_Availability",
+              "layers": "mybroadband:MyBroadband_ADSL_Availability",
               "parameters": {
                 "tiled": true
               },
@@ -180,7 +180,7 @@
               ]
             },
             {
-              "layers": "public:MyBroadband_ADSL_Availability_no_outline",
+              "layers": "mybroadband:MyBroadband_ADSL_Availability_no_outline",
               "parameters": {
                 "tiled": true
               },
@@ -217,6 +217,7 @@
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
               "type": "wms",
+              "opacity": 1.0,
               "info": [
                 {
                   "name": "Data Description",
@@ -241,6 +242,7 @@
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
               "type": "wms",
+              "opacity": 1.0,
               "info": [
                 {
                   "name": "Data Description",
