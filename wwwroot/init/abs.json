@@ -75,7 +75,7 @@
                                 "-11.05104999964455"
                             ],
                             "type": "abs-itt",
-                            "url": "./test/2011Census_B15_AUST",
+                            "url": "./test/abs_file/2011Census_B15_AUST",
                             "dataSetID": "FILE",
                             "regionType": "SA3",
                             "opacity": 1.0,
