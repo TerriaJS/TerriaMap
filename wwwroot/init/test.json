@@ -282,11 +282,6 @@
               "name": "Airports (OGR->GeoJSON, zipped)",
               "type": "ogr",
               "url": "test/airports.zip"
-            },
-            {
-              "name": "Styling test",
-              "type": "geojson",
-              "url": "test/test-styles.geojson"
             }
           ]
         },
