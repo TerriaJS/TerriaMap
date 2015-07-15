@@ -217,34 +217,25 @@
               "url": "test/bigInfobox.czml"
             },
             {
-              "name": "Embedded CZML",
-              "type": "czml",
-              "data": [
-                {
-                  "id": "document",
-                  "version": "1.0"
-                },
-                {
-                  "position": {
-                    "cartographicDegrees": [
-                      133,
-                      -25,
-                      ""
-                    ]
-                  },
-                  "point": {
-                    "pixelSize": 5,
-                    "color": {
-                      "rgba": [
-                        255,
-                        "",
-                        "",
-                        255
-                      ]
+                "name": "Embedded CZML",
+                "type": "czml",
+                "data": [
+                    {
+                        "id": "document",
+                        "version": "1.0"
+                    },
+                    {
+                        "position": {
+                            "cartographicDegrees": [133.0, -25.0, 0.0]
+                        },
+                        "point": {
+                            "pixelSize": 5,
+                            "color": {
+                                "rgba": [255, 0, 0, 255]
+                            }
+                        }
                     }
-                  }
-                }
-              ]
+                ]
             }
           ]
         },
