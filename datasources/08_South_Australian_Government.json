@@ -2,7 +2,7 @@
   "catalog": [
     {
       "type": "ckan",
-      "name": "South Australian Government",
+      "name": "South Australian Government (BETA)",
       "url": "https://data.sa.gov.au/data",
       "minimumMaxScaleDenominator": 10000000000,
       "filterByWmsGetCapabilities": false,
