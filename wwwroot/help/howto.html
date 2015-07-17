@@ -38,33 +38,33 @@
             <li><a href="../privacy.html">Privacy</a></li>
             <li><a href="http://nationalmap.gov.au">Launch the National Map</a></li>
         </ul>
-   		
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
         <div class="container">
-            
 
 
-            
+
+
 	<div class="starter-template">
 	<div class="row">
 	<div class="col-md-3" id="sidebar">
-	
+
 	<p><a href="map-navigation.html">Map Navigation and Display</a>
 	<br><expl>Zooming, panning, perspectives and base maps</expl></p>
-	
+
 	<p><a href="data-catalogue.html">Data Catalogue Tab</a>
 	<br><expl>Selecting Data Sets for display</expl></p>
-	
+
 	<p><a href="now-viewing.html">Now Viewing Tab</a>
 	<br><expl>The map legend and tuning the display</expl></p>
-	
+
 	<p><a href="search-tab.html">Search Tab</a>
 	<br><expl>Finding places and Data Sets</expl></p>
-	
+
 	<p><a href="howto.html">How to...</a></p>
 	<ul class="sidebar-list">
 	 <li><a target="_parent" href="#getstarted">- Get started with the NationalMap</a></li>
@@ -73,19 +73,19 @@
 	 <li><a target="_parent" href="#share">- Share my NationalMap view with others</a></li>
 	 <li><a target="_parent" href="#contributedata">- Contribute Data Sets to NationalMap</a></li>
 	</ul>
-	
+
 	<p><a href="../help/faq.html">Frequently Asked Questions</a></p>
 	<ul class="sidebar-list">
 	 <li><a href="faq.html">- About the NationalMap Operation</a></li>
 	 <li><a href="faq.html#nm-systemdata">- About the NationalMap system and data</a></li>
 	 <li><a href="faq.html#nm-reportingissues">- About reporting issues</a></li>
 	</ul>
-	
+
 </div>
-	
+
 	<div class="col-md-8">
 	<h1 class="howto">How to...</h1>
-	
+
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -97,7 +97,7 @@
     </div>
     <div id="getstarted" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        
+
 	  	<p>To launch the NationalMap and display some basic data follow these steps.</p>
 
 	  	<ul>
@@ -126,7 +126,7 @@
     </div>
     <div id="displayedfeature" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        
+
 <p>Click on the feature which is displayed on the map. You can click on Points, on Lines or within Regions to see a display of the information available from the spatial data provider for that particular feature.</p>
 
 <p>For Points and Lines, you need to click quite accurately to identify the feature. For Regions, clicking on the boundary will give ambiguous results. Click within the region.</p>
@@ -145,7 +145,7 @@
     </div>
     <div id="spatialdata" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-        
+
 <p>If you have a data file which contains latitude and longitude information, or contains a column with a region ID which Naitonal Map can identify as a State, Postcode or ABS statistical region, you can display its contents over the NationalMap map view in addition to the NationalMap data.</p>
 
 <p>There are three ways:</p>
@@ -173,7 +173,7 @@ Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude co
     </div>
     <div id="share" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body">
-        
+
 <p>There are three ways:</p>
 
 <ul>
@@ -196,7 +196,7 @@ Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude co
     </div>
     <div id="contributedata" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
       <div class="panel-body">
-        
+
 <p>The NationalMap encourages data providers to publish their spatial data using this platform. There are two routes you can take to publishing.</p>
 
 <ul>
@@ -207,20 +207,20 @@ Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude co
     </div>
   </div>
 </div>
-        
+
     </div>
 	</div> <!-- end row -->
 	</div>
 
-            
+
         </div>
         <!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="col-lg-12">
-        	<p>&copy; Department of Communications & National ICT Australia Limited (NICTA) 2014. All Rights Reserved.</p> 
+        	<p>&copy; Department of Communications & National ICT Australia Limited (NICTA) 2014. All Rights Reserved.</p>
           <p>
-            <strong><a href="../about.html#terms">Terms and conditions</a></strong> – 
+            <strong><a href="../about.html#terms">Terms and conditions</a></strong> –
             <strong><a href="../privacy.html">Privacy</a></strong>
           </p>
         </div>
@@ -228,11 +228,27 @@ Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude co
 </footer>
         <script src="http://code.jquery.com/jquery.min.js"></script>
         <script>
-        	$(document).ready(function () {
-	        	if (location.hash) {
-					location.hash && $(location.hash + '.collapse').collapse('show');
-				}
-			});
+          $(document).ready(function () {
+            var hash = location.hash;
+            var lastHash;
+
+            function updateCollapseFromHash() {
+              if (lastHash) {
+                $(lastHash + '.collapse').collapse('hide');
+              }
+              if (hash) {
+                $(hash + '.collapse').collapse('show');
+                lastHash = hash;
+              }
+            }
+
+            updateCollapseFromHash();
+
+            window.addEventListener('hashchange', function() {
+                hash = location.hash;
+                updateCollapseFromHash();
+            }, false);
+          });
 		</script>
         <script src="../public/js/bootstrap.min.js"></script>
     </body>
