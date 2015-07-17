@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-### 2015-07-??
+### 2015-07-20
 
 * Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
 * Start with the Data Catalogue panel hidden on devices with small screens.
@@ -10,6 +10,7 @@ Change Log
 * The South Australian Government group is now populated by querying the SA CKAN server for GeoJSON and csv-geo-au resources.
 * Use `mybroadband:` layers instead of `public:` layers for Broadband datsets.
 * Access the Mobile Black Spot Programme datasets via WMS instead of CSV.
+* Improved the look and feel of the Help and About pages.
 
 ### 2015-07-03
 
