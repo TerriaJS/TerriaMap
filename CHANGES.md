@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-### 2015-07-20
+### 2015-07-19
 
 * Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
 * Significantly improved the experience on devices with small screens, such as phones.
