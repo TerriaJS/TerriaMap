@@ -11,7 +11,14 @@
             "name": "ACT Government",
             "type": "group",
             "isPromoted": true,
-            "isOpen": true
+            "isOpen": true,
+            "items": [ {
+                "type": "socrata",
+                "name": "data.act.gov.au",
+                "url": "http://www.data.act.gov.au"
+            }
+            ]
+
         },
         {
             "name": "National Data Sets",
