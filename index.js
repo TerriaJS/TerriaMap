@@ -143,7 +143,9 @@ terria.start({
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
     var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
+    if (!selectBaseMap(terria, allBaseMaps, terria.getLocalProperty('basemap'))) {
+        selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
+    }
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({
