@@ -1,4 +1,4 @@
-date,Country iso,Country name,occurrence,Total deaths,Affected,Injured,Homeless,Total affected,Total damage
+date,ISO3,Country name,occurrence,Total deaths,Affected,Injured,Homeless,Total affected,Total damage
 1965-01-01,BWA,Botswana,1,0,60000,0,0,60000,0
 1965-01-01,CHN,China P Rep,1,0,0,0,0,0,27118
 1965-01-01,ETH,Ethiopia,1,2000,1500000,0,0,1500000,0
