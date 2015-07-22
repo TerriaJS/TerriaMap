@@ -143,7 +143,9 @@ terria.start({
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
     var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
+    if (!selectBaseMap(terria, allBaseMaps, terria.getLocalProperty('basemap'))) {
+        selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
+    }
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({
@@ -157,7 +159,7 @@ terria.start({
     BrandBarViewModel.create({
         container: ui,
         elements: [
-            '<a target="_blank" href="About.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
+            '<a target="_blank" href="about.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text_BETA.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
             '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
         ]
     });
@@ -225,7 +227,7 @@ terria.start({
                 svgPathWidth: 18,
                 svgPathHeight: 18,
                 svgFillRule: 'evenodd',
-                href: 'About.html'
+                href: 'about.html'
             })
         ]
     });
