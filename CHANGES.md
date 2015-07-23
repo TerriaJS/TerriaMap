@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-07-??
+
+* Added support for proxying POST requests to the proxy service.
+
 ### 2015-07-19
 
 * Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
