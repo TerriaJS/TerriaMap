@@ -48,9 +48,9 @@ function filterHeaders(req, headers) {
     });
 
     result['Cache-Control'] = 'public,max-age=315360000';
-    result.Expires = 'Thu, 31 Dec 2037 23:55:55 GMT';
+    result['Expires'] = 'Thu, 31 Dec 2037 23:55:55 GMT';
     result['Access-Control-Allow-Origin'] ='*';
-    delete result.pragma;
+    delete result['pragma'];
 
     return result;
 }
@@ -117,7 +117,7 @@ function doProxy(req, res, next, callback) {
     // http basic auth
     var authRequired = proxyAuth[remoteUrl.host];
     if (authRequired) {
-        filteredReqHeaders.authorization = authRequired.authorization;
+        filteredReqHeaders['authorization'] = authRequired.authorization;
     }
 
     proxiedRequest = callback(remoteUrl, filteredReqHeaders);
