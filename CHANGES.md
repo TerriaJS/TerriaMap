@@ -1,5 +1,7 @@
 Change Log
 ==========
+### 2015-07-??
+* Add City of Melbourne and ACT Government data portals, both based on Socrata.
 
 ### 2015-07-??
 
