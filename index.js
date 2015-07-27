@@ -26,6 +26,7 @@ var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
     bingMapsKey: undefined, // use Cesium key
+    urlShortenerKey: undefined, // unavailable if no key provided in config.json
     proxyBaseUrl: 'proxy/',
     conversionServiceBaseUrl: 'convert',
     regionMappingDefinitionsUrl: 'data/regionMapping.json'
@@ -58,6 +59,7 @@ var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
 var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
 var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
+var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var LocationBarViewModel = require('terriajs/lib/ViewModels/LocationBarViewModel');
 var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel');
 var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
@@ -113,12 +115,17 @@ terria.error.addEventListener(function(e) {
     });
 });
 
+var urlShortener = new GoogleUrlShortener({
+    terria: terria
+})
+
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
     configUrl: 'config.json',
-    defaultTo2D: isCommonMobilePlatform()
+    defaultTo2D: isCommonMobilePlatform(),
+    urlShortener: urlShortener
 }).otherwise(function(e) {
     raiseErrorToUser(terria, e);
 }).always(function() {
@@ -201,7 +208,8 @@ terria.start({
                 callback: function() {
                     SharePopupViewModel.open({
                         container: ui,
-                        terria: terria
+                        terria: terria,
+                        urlShortener: urlShortener
                     });
                 }
             }),
