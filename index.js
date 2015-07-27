@@ -26,7 +26,6 @@ var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
     bingMapsKey: undefined, // use Cesium key
-    urlShortenerKey: undefined, // unavailable if no key provided in config.json
     proxyBaseUrl: 'proxy/',
     conversionServiceBaseUrl: 'convert',
     regionMappingDefinitionsUrl: 'data/regionMapping.json'
