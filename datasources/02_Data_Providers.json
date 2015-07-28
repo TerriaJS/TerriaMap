@@ -34,6 +34,11 @@
           "groupBy": "category",
           "filterQuery": ["limitTo=MAPS"],
           "url": "https://data.melbourne.vic.gov.au"
+        },
+        {
+          "type": "esri-mapServer-group",
+          "name": "Sunshine Coast Council (QLD)",
+          "url": "https://gisservices.scc.qld.gov.au/arcgis/rest/services"
         }
       ],
       "type": "group",
