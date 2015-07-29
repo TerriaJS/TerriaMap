@@ -5,7 +5,8 @@ Change Log
 
 * Added URL shortening in the share popup, and support launch with shortened URLs.
 * Added support for proxying POST requests to the proxy service.
-* Added City of Melbourne and ACT Government data portals, both based on Socrata.
+* Populated ACT Government group by querying the ACT Socrata server.
+* Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
 
 ### 2015-07-19
 
