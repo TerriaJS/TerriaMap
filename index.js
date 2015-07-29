@@ -43,6 +43,7 @@ var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform')
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
+var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
 var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
@@ -104,7 +105,8 @@ var terria = new Terria({
     supportEmail: 'nationalmap@communications.gov.au',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
-    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
+    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
+    analytics: new GoogleAnalytics()
 });
 
 terria.error.addEventListener(function(e) {
