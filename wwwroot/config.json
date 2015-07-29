@@ -17,7 +17,7 @@
     ],
     "parameters": {
         "bingMapsKey": null,
-        "googleUrlShortenerKey": "AIzaSyBZIS_uRrKShArQfvQtURFZasUpXyAaGDk",
+        "googleUrlShortenerKey": null,
         "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
             "url": "About.html"

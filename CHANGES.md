@@ -1,12 +1,11 @@
 Change Log
 ==========
-### 2015-07-??
-* Add City of Melbourne and ACT Government data portals, both based on Socrata.
-* Added url Shortening in the share popup and support launch of shortened urls
 
 ### 2015-07-??
 
+* Added URL shortening in the share popup, and support launch with shortened URLs.
 * Added support for proxying POST requests to the proxy service.
+* Added City of Melbourne and ACT Government data portals, both based on Socrata.
 
 ### 2015-07-19
 
