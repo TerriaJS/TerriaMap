@@ -56,6 +56,7 @@
             "layerName":"region_map:FID_COM20111216_ELB_region",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ELECT_DIV",
+            "textCodes": true,
             "aliases": ["divisionnm"]
         },
         "SED": {
