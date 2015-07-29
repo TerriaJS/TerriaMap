@@ -59,6 +59,7 @@ var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
 var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
 var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
+var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var LocationBarViewModel = require('terriajs/lib/ViewModels/LocationBarViewModel');
 var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel');
 var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
@@ -120,7 +121,10 @@ terria.start({
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
     configUrl: 'config.json',
-    defaultTo2D: isCommonMobilePlatform()
+    defaultTo2D: isCommonMobilePlatform(),
+    urlShortener: new GoogleUrlShortener({
+        terria: terria
+    })
 }).otherwise(function(e) {
     raiseErrorToUser(terria, e);
 }).always(function() {
@@ -145,9 +149,7 @@ terria.start({
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
     var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-    if (!selectBaseMap(terria, allBaseMaps, terria.getLocalProperty('basemap'))) {
-        selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
-    }
+    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({

@@ -17,6 +17,7 @@
     ],
     "parameters": {
         "bingMapsKey": null,
+        "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
         "googleAnalyticsOptions": null,
         "disclaimer": {
