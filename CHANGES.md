@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-### 2015-07-??
+### 2015-07-31
 
 * Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
 * Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
@@ -11,6 +11,15 @@ Change Log
 * Populated ACT Government group by querying the ACT Socrata server.
 * Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
 * Added selection of region type (e.g. SA2) for ABS datasets to the Now Viewing tab.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.38.  Significant changes relevant to NationalMap users include:
+  * `CsvCatalogItem` can now have no display variable selected, in which case all points are the same color.
+  * Added `CswCatalogGroup` for populating a catalog by querying an OGC CSW service.
+  * Fixed a bug that prevented WMTS layers with a single `TileMatrixSetLink` from working correctly.
+  * Added support for WMTS layers that can only provide tiles in JPEG format.
+  * Fixed testing and caching of ArcGIS layers from tools and added More information option for imagery layers.
+  * Made polygons drastically faster in 2D.
+  * Added Google Analytics reporting of the application URL.  This is useful for tracking use of share URLs.
+  * Added the ability to specify a specific dynamic layer of an ArcGIS Server using just a URL.
 
 ### 2015-07-19
 
