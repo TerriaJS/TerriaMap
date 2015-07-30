@@ -7,9 +7,7 @@ Change Log
 * Added support for proxying POST requests to the proxy service.
 * Populated ACT Government group by querying the ACT Socrata server.
 * Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
-* Added selection of region for ABS datasets
-* CSV data types now select no display variable by default if one not set.
-* Use of a display variable optional in CSV Now Viewing UI.
+* Added selection of region type (e.g. SA2) for ABS datasets to the Now Viewing tab.
 
 ### 2015-07-19
 
