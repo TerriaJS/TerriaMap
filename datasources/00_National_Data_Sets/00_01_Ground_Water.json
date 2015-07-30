@@ -4,7 +4,7 @@
       "items": [
         {
           "items": [
-{
+            {
               "layers": "ahgf_gwc:AHGFAquiferContour",
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",

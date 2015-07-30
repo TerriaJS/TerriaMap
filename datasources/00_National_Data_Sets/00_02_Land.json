@@ -42,6 +42,7 @@
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Gravity Anomaly",
               "layers": "GravityAnomaly2010_HSI",
+              "legendUrl": "http://www.ga.gov.au/gisimg/server/capabilities/Gravity_HSI_legend.jpg",
               "info": [
                 {
                   "name": "Licence",
@@ -60,6 +61,7 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Land Cover",
+              "legendUrl": "http://www.ga.gov.au/gis/services/earth_observation/Landcover_WM/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0&width=200",
               "info": [
                 {
                   "name": "Licence",
@@ -73,6 +75,7 @@
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Magnetic Intensity",
               "layers": "TotalMagneticIntensity2015_HSI",
+              "legendUrl": "http://www.ga.gov.au/gisimg/server/capabilities/TotalMagneticIntensity_HSI_legend.jpg",
               "info": [
                 {
                   "name": "Licence",
@@ -111,6 +114,7 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Earthquake Hazard",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Earthquake_hazard_legend.jpg",
               "info": [
                 {
                   "name": "Licence",
