@@ -20,6 +20,18 @@
           "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
           "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
           "name": "Boundaries (Australia Bureau of Statistics)"
+        },
+        {
+          "type": "socrata",
+          "name": "City of Melbourne",
+          "groupBy": "category",
+          "filterQuery": ["limitTo=MAPS"],
+          "url": "https://data.melbourne.vic.gov.au"
+        },
+        {
+          "type": "esri-mapServer-group",
+          "name": "Sunshine Coast Council (QLD)",
+          "url": "https://gisservices.scc.qld.gov.au/arcgis/rest/services"
         }
       ],
       "type": "group",

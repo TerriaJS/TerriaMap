@@ -17,6 +17,34 @@
             "type": "group",
             "items": [
                 {
+                    "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
+                    "filter": [
+                        "MEASURE.3",
+                        "AGE.A04",
+                        "AGE.A10",
+                        "AGE.A15",
+                        "AGE.A59"
+                    ],
+                    "name": "Age by State",
+                    "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
+                    "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+                    "rectangle": [
+                        "112.93529999999998",
+                        "-38.208809999082796",
+                        "152.06206",
+                        "-11.05104999964455"
+                    ],
+                    "type": "abs-itt",
+                    "url": "http://stat.abs.gov.au/itt/query.jsp",
+                    "dataSetID": "ABS_CENSUS2011_B04",
+                    "regionType": "AUS",
+                    "tableStyle": {
+                        "minDisplayValue": 0,
+                        "maxDisplayValue": 100,
+                        "legendTicks": 3
+                    }
+                },
+                {
                     "name": "Selected ABS datasets",
                     "type": "group",
                     "items": [
@@ -47,7 +75,7 @@
                                 "-11.05104999964455"
                             ],
                             "type": "abs-itt",
-                            "url": "./data/2011Census_B15_AUST",
+                            "url": "./test/2011Census_B15_AUST",
                             "dataSetID": "FILE",
                             "regionType": "SA3",
                             "opacity": 1.0,

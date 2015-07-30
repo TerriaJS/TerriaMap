@@ -8,13 +8,18 @@
         "www.abc.net.au",
         "geoserver.aurin.org.au",
         "mapsengine.google.com",
-        "s3-ap-southeast-2.amazonaws.com"
+        "s3-ap-southeast-2.amazonaws.com",
+        "adelaidecitycouncil.com",
+        "www.dptiapps.com.au"
     ],
     "initializationUrls" : [
         "nm"
     ],
     "parameters": {
         "bingMapsKey": null,
+        "googleUrlShortenerKey": null,
+        "googleAnalyticsKey": null,
+        "googleAnalyticsOptions": null,
         "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
             "url": "About.html"

@@ -1,6 +1,47 @@
 Change Log
 ==========
 
+### 2015-07-??
+
+* Added URL shortening in the share popup, and support launch with shortened URLs.
+* Added support for proxying POST requests to the proxy service.
+* Populated ACT Government group by querying the ACT Socrata server.
+* Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
+
+### 2015-07-19
+
+* Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
+* Significantly improved the experience on devices with small screens, such as phones.
+* Start with the Data Catalogue panel hidden on devices with small screens.
+* Switched the "Commonwealth Electoral Divisions" dataset to use the official boundaries from the Australia Electoral Commission.  Previously it used the Australian Bureau of Statistics versions.
+* Additional ABS region support.  Now supported internally: AUS,STE,CED,SED,POA,LGA,SA4,SA1,SA2,SA1. Datasets exposing all of these are not yet available.
+* The South Australian Government group is now populated by querying the SA CKAN server for GeoJSON and csv-geo-au resources.
+* Use `mybroadband:` layers instead of `public:` layers for Broadband datsets.
+* Access the Mobile Black Spot Programme datasets via WMS instead of CSV.
+* Improved the look and feel of the Help and About pages.
+* The elevation value displayed in the lower right corner is now a height above mean sea level (above the EGM96 geoid specifically) instead of a height above the WGS84 ellipsoid.
+* Added two new base map options, both from CartoDB: Positron and Dark Matter.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.36.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that caused the 3D view to use significant CPU time even when idle.
+  * Fixed a bug that caused the popup message to appear twice when a dataset failed to load.
+  * Calculate extent of TopoJSON files so that the viewer correctly pans+zooms when a TopoJSON file is loaded.
+  * Added ability to filter catalog search results by type: `is:wms`, `is:esri-mapserver`, `is:geojson` and so on.
+  * Added layer information to the Info popup for WMS datasets.
+  * Polygons from GeoJSON datasets are now filled.
+  * Left-aligned feature info table column and added some space between columns.
+  * Added support for styling GeoJSON files, either in catalog (add .style{} object) or embedded directly in the file following the [SimpleStyle spec](https://github.com/mapbox/simplestyle-spec).
+  * Fixed a bug that prevented catalog items inside groups on the Search tab from being enabled.
+  * Added support for discovering GeoJSON datasets from CKAN.
+  * Added support for zipped GeoJSON files.
+  * Made `KmlCatalogItem` use the proxy when required.
+  * Made `FeatureInfoPanelViewModel` use the white panel background in more cases.
+  * Fixed a bug that caused only the portion of a CKAN group name before the first comma to be used.
+  * Added the `legendUrls` property to allow a catalog item to optionally have multiple legend images.
+  * Added a popup message when zooming in to the "No Data" scales of an `ArcGisMapServerCatalogItem`.
+  * Added a title text when hovering over the label of an enabled catalog item.  The title text informs the user that clicking will zoom to the item.
+  * `CatalogItem.zoomTo` can now zoom to much smaller bounding box rectangles.
+  * Upgraded to Cesium 1.11.
+
 ### 2015-07-03
 
 * Changed the support email address from `nationalmap@lists.nicta.com.au` to `nationalmap@communications.gov.au`.
