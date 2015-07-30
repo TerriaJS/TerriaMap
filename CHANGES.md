@@ -4,7 +4,6 @@ Change Log
 ### 2015-07-31
 
 * Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
-* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
 * Removed the Topography group under Data Providers.
 * Added URL shortening in the share popup, and support launch with shortened URLs.
 * Added support for proxying POST requests to the proxy service.
