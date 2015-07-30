@@ -3,6 +3,9 @@ Change Log
 
 ### 2015-07-??
 
+* Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
+* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
+* Removed the Topography group under Data Providers.
 * Added URL shortening in the share popup, and support launch with shortened URLs.
 * Added support for proxying POST requests to the proxy service.
 * Populated ACT Government group by querying the ACT Socrata server.
@@ -49,9 +52,6 @@ Change Log
 * Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
 * Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
 * The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
-* Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
-* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
-* Removed the Topography group under Data Providers.
 * Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.32.  Significant changes relevant to NationalMap users include:
   * Numerous changes to improve the quality of the catalogue item info page.
