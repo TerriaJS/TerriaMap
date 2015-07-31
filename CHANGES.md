@@ -10,7 +10,7 @@ Change Log
 * Populated ACT Government group by querying the ACT Socrata server.
 * Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
 * Added selection of region type (e.g. SA2) for ABS datasets to the Now Viewing tab.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.38.  Significant changes relevant to NationalMap users include:
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.39.  Significant changes relevant to NationalMap users include:
   * `CsvCatalogItem` can now have no display variable selected, in which case all points are the same color.
   * Added `CswCatalogGroup` for populating a catalog by querying an OGC CSW service.
   * Fixed a bug that prevented WMTS layers with a single `TileMatrixSetLink` from working correctly.
@@ -19,6 +19,8 @@ Change Log
   * Made polygons drastically faster in 2D.
   * Added Google Analytics reporting of the application URL.  This is useful for tracking use of share URLs.
   * Added the ability to specify a specific dynamic layer of an ArcGIS Server using just a URL.
+  * Fixed a race condition in `AbsIttCatalogItem` that could cause the legend and map to show different state than the Now Viewing UI suggested.
+  * Fixed a bug where an ABS concept with a comma in its name (e.g. "South Eastern Europe,nfd(c)" in Country of Birth) would cause values for concept that follow to be misappropriated to the wrong concepts.
 
 ### 2015-07-19
 
