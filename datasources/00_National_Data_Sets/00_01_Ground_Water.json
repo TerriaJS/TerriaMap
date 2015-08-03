@@ -193,25 +193,6 @@
                   "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
-            },
-            {
-              "layers": "ahgf_gwc:AHGFWaterTableAquifer",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.92137000000001",
-                "-43.65854999905766",
-                "153.63857000000004",
-                "-9.219939999701113"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "name": "WaterTableAquifer",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-                }
-              ]
             }
           ],
           "type": "group",

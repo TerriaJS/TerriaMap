@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+### 2015-08-03
+
+* Removed unnecessary folder structure in parts of National Data Sets.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.40.  Significant changes relevant to NationalMap users include:
+  * `ArcGisMapServerCatalogItem` now shows "NoData" tiles by default even after showing the popup message saying that max zoom is exceeded.  This can be disabled by setting its `showTilesAfterMessage` property to false.
+
 ### 2015-07-31
 
 * Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
