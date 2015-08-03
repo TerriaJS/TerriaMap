@@ -19,176 +19,108 @@
               ]
             },
             {
-              "items": [
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
-                  "layers": "Conveyors,No_Data",
-                  "name": "Conveyors",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Conveyors.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                }
-              ],
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "layers": "Conveyors,No_Data",
               "name": "Conveyors",
-              "type": "group"
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Conveyors.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
-              "items": [
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Lighthouses_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
-                  "name": "Lighthouses - Labels",
-                  "type": "esri-mapServer",
-                  "legendUrl": "",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                },
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Lighthouses,No_Data",
-                  "name": "Lighthouses",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lighthouses.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                }
-              ],
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Lighthouses_Labels,Lighthouses,No_Data",
               "name": "Lighthouses",
-              "type": "group"
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lighthouses.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
-              "items": [
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Marine_Infrastructure_Lines,No_Data",
+              "name": "Marine Infrastructure Lines",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Marine_Infrastructure_Lines.png",
+              "info": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Marine_Infrastructure_Lines,No_Data",
-                  "name": "Marine Infrastructure Lines",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Marine_Infrastructure_Lines.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
-              ],
-              "name": "Marine Infrastructure",
-              "type": "group"
+              ]
             },
             {
-              "items": [
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "layers": "Mine_Areas,No_Data",
+              "name": "Mine Areas",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Mine_Areas.png",
+              "info": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
-                  "layers": "Mine_Areas,No_Data",
-                  "name": "Mine Areas",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Mine_Areas.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
-              ],
-              "name": "Mines",
-              "type": "group"
+              ]
             },
             {
-              "items": [
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
-                  "layers": "Storage_Tanks,No_Data",
-                  "name": "Storage Tanks",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Storage_Tanks.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                }
-              ],
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "layers": "Storage_Tanks,No_Data",
               "name": "Storage Tanks",
-              "type": "group"
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Storage_Tanks.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
-              "items": [
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
-                  "layers": "Vertical_Obstructions,No_Data",
-                  "name": "Vertical Obstructions",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Vertical_Obstructions.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                }
-              ],
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "layers": "Vertical_Obstructions,No_Data",
               "name": "Vertical Obstructions",
-              "type": "group"
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Vertical_Obstructions.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             },
             {
-              "items": [
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Dam_Walls_Labels,Dam_Walls,No_Data",
+              "name": "Dam Walls",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Dam_Walls.png",
+              "info": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Dam_Walls_Labels,No_Data,No_Labels_National_Scale_to_300K_Scale",
-                  "name": "Dam Walls - Labels",
-                  "type": "esri-mapServer",
-                  "legendUrl": "",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                },
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Dam_Walls,No_Data",
-                  "name": "Dam Walls",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Dam_Walls.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
-                },
-                {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
-                  "layers": "Spillways,No_Data",
-                  "name": "Spillways",
-                  "type": "esri-mapServer",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Spillways.png",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ]
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
-              ],
-              "name": "Water Storage",
-              "type": "group"
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Spillways,No_Data",
+              "name": "Spillways",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Spillways.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
             }
           ],
           "name": "Infrastructure",
