@@ -3,12 +3,6 @@ Change Log
 
 ### 2015-08-03
 
-* Removed unnecessary folder structure in parts of National Data Sets.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.41.  Significant changes relevant to NationalMap users include:
-  * `ArcGisMapServerCatalogItem` now shows "NoData" tiles by default even after showing the popup message saying that max zoom is exceeded.  This can be disabled by setting its `showTilesAfterMessage` property to false.
-
-### 2015-07-31
-
 * Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
 * Removed the Topography group under Data Providers.
 * Added URL shortening in the share popup, and support launch with shortened URLs.
@@ -16,7 +10,7 @@ Change Log
 * Populated ACT Government group by querying the ACT Socrata server.
 * Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
 * Added selection of region type (e.g. SA2) for ABS datasets to the Now Viewing tab.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.39.  Significant changes relevant to NationalMap users include:
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.41.  Significant changes relevant to NationalMap users include:
   * `CsvCatalogItem` can now have no display variable selected, in which case all points are the same color.
   * Added `CswCatalogGroup` for populating a catalog by querying an OGC CSW service.
   * Fixed a bug that prevented WMTS layers with a single `TileMatrixSetLink` from working correctly.
@@ -27,6 +21,7 @@ Change Log
   * Added the ability to specify a specific dynamic layer of an ArcGIS Server using just a URL.
   * Fixed a race condition in `AbsIttCatalogItem` that could cause the legend and map to show different state than the Now Viewing UI suggested.
   * Fixed a bug where an ABS concept with a comma in its name (e.g. "South Eastern Europe,nfd(c)" in Country of Birth) would cause values for concept that follow to be misappropriated to the wrong concepts.
+  * `ArcGisMapServerCatalogItem` now shows "NoData" tiles by default even after showing the popup message saying that max zoom is exceeded.  This can be disabled by setting its `showTilesAfterMessage` property to false.
 
 ### 2015-07-19
 
