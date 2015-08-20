@@ -1,81 +1,109 @@
 {
     "regionWmsMap": {
-        "STE": {
-            "layerName":"region_map:FID_STE_2011_AUST",
+        "SA1": {
+            "description": "Statistical Area Level 1",
+            "layerName":"region_map:FID_SA1_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-            "regionProp": "STE_CODE11",
-            "aliases": ["state", "ste"],
-            "digits": 1
-        },
-        "SA4": {
-            "layerName":"region_map:FID_SA4_2011_AUST",
-            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-            "regionProp": "SA4_CODE11",
-            "aliases": ["sa4"],
-            "digits": 3
-        },
-        "SA3": {
-            "layerName":"region_map:FID_SA3_2011_AUST",
-            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-            "regionProp": "SA3_CODE11",
-            "aliases": ["sa3"],
-            "digits": 5
+            "regionProp": "SA1_7DIG11",
+            "aliases": ["sa1"]
         },
         "SA2": {
+            "description": "Statistical Area Level 2",
             "layerName":"region_map:FID_SA2_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "SA2_MAIN11",
-            "aliases": ["sa2"],
-            "digits": 9
+            "aliases": ["sa2"]
         },
-        "POA": {
-            "layerName":"region_map:FID_POA_2011_AUST",
+        "SA3": {
+            "description": "Statistical Area Level 3",
+            "layerName":"region_map:FID_SA3_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-            "regionProp": "POA_CODE",
-            "aliases": ["poa", "postcode"],
-            "digits": 4
+            "regionProp": "SA3_CODE11",
+            "aliases": ["sa3"]
         },
-        "CED": {
-            "layerName":"region_map:FID_CED_2011_AUST",
+        "SA4": {
+            "description": "Statistical Area Level 4",
+            "layerName":"region_map:FID_SA4_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-            "regionProp": "CED_CODE",
-            "aliases": ["ced"],
-            "digits": 3
-        },
-        "SED": {
-            "layerName":"region_map:FID_SED_2011_AUST",
-            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-            "regionProp": "SED_CODE",
-            "aliases": ["sed"],
-            "digits": 5
+            "regionProp": "SA4_CODE11",
+            "aliases": ["sa4"]
         },
         "LGA": {
             "layerName":"region_map:FID_LGA_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "LGA_CODE11",
-            "aliases": ["lga"],
-            "digits": 5
+            "aliases": ["lga"]
         },
         "SSC": {
             "layerName":"region_map:FID_SCC_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "SSC_CODE",
-            "aliases": ["ssc", "suburb"],
-            "digits": 5
+            "aliases": ["ssc", "suburb"]
+        },
+        "POA": {
+            "layerName":"region_map:FID_POA_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "POA_CODE",
+            "aliases": ["poa", "postcode"]
+        },
+        "CED": {
+            "layerName":"region_map:FID_CED_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "CED_CODE",
+            "aliases": ["ced"]
+        },
+        "CED2": {
+            "layerName":"region_map:FID_COM20111216_ELB_region",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "ELECT_DIV",
+            "textCodes": true,
+            "aliases": ["divisionnm"]
+        },
+        "SED": {
+            "layerName":"region_map:FID_SED_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "SED_CODE",
+            "aliases": ["sed"]
+        },
+        "STE": {
+            "layerName":"region_map:FID_STE_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "STE_CODE11",
+            "aliases": ["state","ste"]
+        },
+        "STATE": {
+            "layerName":"region_map:FID_STE_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "STE_ABBREV",
+            "textCodes": true,
+            "aliases": ["state","ste"]
+        },
+        "AUS": {
+            "layerName":"region_map:FID_AUS_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "AUS_CODE",
+            "aliases": ["aus"]
         },
         "CNT2": {
             "layerName":"region_map:FID_TM_WORLD_BORDERS",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ISO2",
-            "aliases": ["iso2"],
-            "digits": 2
+            "textCodes": true,
+            "aliases": ["iso2"]
         },
         "CNT3": {
             "layerName":"region_map:FID_TM_WORLD_BORDERS",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ISO3",
-            "aliases": ["iso3", "country"],
-            "digits": 3
+            "textCodes": true,
+            "aliases": ["iso3"]
+        },
+        "COUNTRY": {
+            "layerName":"region_map:FID_TM_WORLD_BORDERS",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "NAME",
+            "textCodes": true,
+            "aliases": ["country"]
         }
     }
 }

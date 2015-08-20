@@ -1,0 +1,149 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "dem_s_1s",
+              "url": "http://www.ga.gov.au/gisimg/services/topography/dem_s_1s/ImageServer/WMSServer",
+              "type": "wms",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "name": "SRTM 1 sec DEM Image",
+              "legendUrl": ""
+            },
+            {
+              "layers": "Flow_Direction_Grid_to_accompany_9_Second_Digital_Elevation_Model_of_Australia_Version_3",
+              "url": "http://www.ga.gov.au/thredds/wms/national_grids/d8-9s.nc",
+              "type": "wms",
+              "rectangle": [
+                "112.93472",
+                "-43.657359999057725",
+                "153.63573999999997",
+                "-9.004409999707923"
+              ],
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "name": "Flow Grid Direction Image",
+              "info": [
+                {
+                  "name": "Data Description",
+                  "content": "Flow direction grid to accompany 9 second Digital Elevation Model of Australia version 3"
+                },
+                {
+                  "name": "Service Description",
+                  "content": ""
+                },
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "layers": "Contours_Labels,Contours_250K_Scale,Contours_2_5Million_Scale,No_Data",
+              "name": "Contours",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Contours.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "layers": "Cuttings,No_Data",
+              "name": "Cuttings",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Cuttings.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "layers": "Embankments,No_Data",
+              "name": "Embankments",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Embankments.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "layers": "Horizontal_Control_Points_Labels,Horizontal_Control_Points,No_Data",
+              "name": "Horizontal Control Points",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Horizontal_Control_Points.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Offshore_Rocks_and_Wrecks_Labels,Offshore_Rocks_and_Wrecks,No_Data",
+              "name": "Offshore Rocks and Wrecks",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Offshore_Rocks_and_Wrecks.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Reefs_and_Shoals_Labels,Reefs_and_Shoals,No_Data",
+              "name": "Reefs and Shoals",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Reefs_and_Shoals.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "layers": "Spot_Elevations_Labels,Spot_Elevations_250K_Scale,Spot_Elevations_2_5Million_Scale,No_Data",
+              "name": "Spot Elevations",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Spot_Elevations.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            }
+          ],
+          "name": "Elevation",
+          "type": "group"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}

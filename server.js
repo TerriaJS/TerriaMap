@@ -3,8 +3,12 @@
 
 var url = require('url');
 var configSettings = require('./wwwroot/config.json');
+var proxyAuth = require('./proxyAuth.json');
 
 var protocolRegex = /^\w+:\//;
+
+var upstreamProxy;
+var bypassUpstreamProxyHosts;
 
 function getRemoteUrlFromParam(req) {
     var remoteUrl = req.params[0];
@@ -64,6 +68,59 @@ function proxyAllowedHost(host) {
         }
     }
     return false;
+}
+
+function doProxy(req, res, next, callback) {
+    // look for request like http://localhost:8080/proxy/http://example.com/file?query=1
+    var remoteUrl = getRemoteUrlFromParam(req);
+    if (!remoteUrl) {
+        // look for request like http://localhost:8080/proxy/?http%3A%2F%2Fexample.com%2Ffile%3Fquery%3D1
+        remoteUrl = Object.keys(req.query)[0];
+        if (remoteUrl) {
+            remoteUrl = url.parse(remoteUrl);
+        }
+    }
+
+    if (!remoteUrl) {
+        return res.status(400).send('No url specified.');
+    }
+
+    if (!remoteUrl.protocol) {
+        remoteUrl.protocol = 'http:';
+    }
+
+    var proxy;
+    if (upstreamProxy && !(remoteUrl.host in bypassUpstreamProxyHosts)) {
+        proxy = upstreamProxy;
+    }
+
+    //If you want to run a CORS proxy to data source, remove this section
+    if (!proxyAllowedHost(remoteUrl.host)) {
+        res.status(400).send('Host is not in list of allowed hosts: ' + remoteUrl.host);
+        return;
+    }
+
+    // encoding : null means "body" passed to the callback will be raw bytes
+
+    var proxiedRequest;
+    req.on('close', function() {
+        if (proxiedRequest) {
+            proxiedRequest.abort();
+        }
+    });
+
+    var filteredReqHeaders = filterHeaders(req, req.headers);
+    if (!filteredReqHeaders['x-forwarded-for']) {
+        filteredReqHeaders['x-forwarded-for'] = req.connection.remoteAddress;
+    }
+
+    // http basic auth
+    var authRequired = proxyAuth[remoteUrl.host];
+    if (authRequired) {
+        filteredReqHeaders['authorization'] = authRequired.authorization;
+    }
+
+    proxiedRequest = callback(remoteUrl, filteredReqHeaders);
 }
 
 // Include the cluster module
@@ -154,8 +211,8 @@ if (cluster.isMaster) {
     app.disable('etag');
     app.use(express.static(path.join(__dirname, 'wwwroot')));
 
-    var upstreamProxy = argv['upstream-proxy'];
-    var bypassUpstreamProxyHosts = {};
+    upstreamProxy = argv['upstream-proxy'];
+    bypassUpstreamProxyHosts = {};
     if (argv['bypass-upstream-proxy-hosts']) {
         argv['bypass-upstream-proxy-hosts'].split(',').forEach(function(host) {
             bypassUpstreamProxyHosts[host.toLowerCase()] = true;
@@ -167,58 +224,42 @@ if (cluster.isMaster) {
     });
 
     app.get('/proxy/*', function(req, res, next) {
-        // look for request like http://localhost:8080/proxy/http://example.com/file?query=1
-        var remoteUrl = getRemoteUrlFromParam(req);
-        if (!remoteUrl) {
-            // look for request like http://localhost:8080/proxy/?http%3A%2F%2Fexample.com%2Ffile%3Fquery%3D1
-            remoteUrl = Object.keys(req.query)[0];
-            if (remoteUrl) {
-                remoteUrl = url.parse(remoteUrl);
-            }
-        }
+        doProxy(req, res, next, function(remoteUrl, filteredRequestHeaders, proxy) {
+            return request.get({
+                url : url.format(remoteUrl),
+                headers : filteredRequestHeaders,
+                encoding : null,
+                proxy : proxy
+            }, function(error, response, body) {
+                var code = 500;
 
-        if (!remoteUrl) {
-            return res.status(400).send('No url specified.');
-        }
+                if (response) {
+                    code = response.statusCode;
+                    res.header(filterHeaders(req, response.headers));
+                }
 
-        if (!remoteUrl.protocol) {
-            remoteUrl.protocol = 'http:';
-        }
-
-        var proxy;
-        if (upstreamProxy && !(remoteUrl.host in bypassUpstreamProxyHosts)) {
-            proxy = upstreamProxy;
-        }
-
-        //If you want to run a CORS proxy to data source, remove this section
-        if (!proxyAllowedHost(remoteUrl.host)) {
-            res.status(400).send('Host is not in list of allowed hosts: ' + remoteUrl.host);
-            return;
-        }
-
-        // encoding : null means "body" passed to the callback will be raw bytes
-
-        var proxiedRequest;
-        req.on('close', function() {
-            if (proxiedRequest) {
-                proxiedRequest.abort();
-            }
+                res.status(code).send(body);
+            });
         });
+    });
 
-        proxiedRequest = request.get({
-            url : url.format(remoteUrl),
-            headers : filterHeaders(req, req.headers),
-            encoding : null,
-            proxy : proxy
-        }, function(error, response, body) {
-            var code = 500;
+    app.post('/proxy/*', function(req, res, next) {
+        doProxy(req, res, next, function(remoteUrl, filteredRequestHeaders, proxy) {
+            req.pipe(request.post({
+                url : url.format(remoteUrl),
+                headers : filteredRequestHeaders,
+                encoding : null,
+                proxy : proxy
+            }, function(error, response, body) {
+                var code = 500;
 
-            if (response) {
-                code = response.statusCode;
-                res.header(filterHeaders(req, response.headers));
-            }
+                if (response) {
+                    code = response.statusCode;
+                    res.header(filterHeaders(req, response.headers));
+                }
 
-            res.status(code).send(body);
+                res.status(code).send(body);
+            }));
         });
     });
 

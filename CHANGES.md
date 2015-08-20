@@ -1,6 +1,98 @@
 Change Log
 ==========
 
+### 2015-08-03
+
+* Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
+* Removed the Topography group under Data Providers.
+* Added URL shortening in the share popup, and support launch with shortened URLs.
+* Added support for proxying POST requests to the proxy service.
+* Populated ACT Government group by querying the ACT Socrata server.
+* Added City of Melbourne and Sunshine Coast Council (QLD) to the Data Providers group.
+* Added selection of region type (e.g. SA2) for ABS datasets to the Now Viewing tab.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.41.  Significant changes relevant to NationalMap users include:
+  * `CsvCatalogItem` can now have no display variable selected, in which case all points are the same color.
+  * Added `CswCatalogGroup` for populating a catalog by querying an OGC CSW service.
+  * Fixed a bug that prevented WMTS layers with a single `TileMatrixSetLink` from working correctly.
+  * Added support for WMTS layers that can only provide tiles in JPEG format.
+  * Fixed testing and caching of ArcGIS layers from tools and added More information option for imagery layers.
+  * Made polygons drastically faster in 2D.
+  * Added Google Analytics reporting of the application URL.  This is useful for tracking use of share URLs.
+  * Added the ability to specify a specific dynamic layer of an ArcGIS Server using just a URL.
+  * Fixed a race condition in `AbsIttCatalogItem` that could cause the legend and map to show different state than the Now Viewing UI suggested.
+  * Fixed a bug where an ABS concept with a comma in its name (e.g. "South Eastern Europe,nfd(c)" in Country of Birth) would cause values for concept that follow to be misappropriated to the wrong concepts.
+  * `ArcGisMapServerCatalogItem` now shows "NoData" tiles by default even after showing the popup message saying that max zoom is exceeded.  This can be disabled by setting its `showTilesAfterMessage` property to false.
+
+### 2015-07-19
+
+* Default to 2D on common mobile devices in order to make the app more performant, especially on older mobile devices.
+* Significantly improved the experience on devices with small screens, such as phones.
+* Start with the Data Catalogue panel hidden on devices with small screens.
+* Switched the "Commonwealth Electoral Divisions" dataset to use the official boundaries from the Australia Electoral Commission.  Previously it used the Australian Bureau of Statistics versions.
+* Additional ABS region support.  Now supported internally: AUS,STE,CED,SED,POA,LGA,SA4,SA1,SA2,SA1. Datasets exposing all of these are not yet available.
+* The South Australian Government group is now populated by querying the SA CKAN server for GeoJSON and csv-geo-au resources.
+* Use `mybroadband:` layers instead of `public:` layers for Broadband datsets.
+* Access the Mobile Black Spot Programme datasets via WMS instead of CSV.
+* Improved the look and feel of the Help and About pages.
+* The elevation value displayed in the lower right corner is now a height above mean sea level (above the EGM96 geoid specifically) instead of a height above the WGS84 ellipsoid.
+* Added two new base map options, both from CartoDB: Positron and Dark Matter.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.36.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that caused the 3D view to use significant CPU time even when idle.
+  * Fixed a bug that caused the popup message to appear twice when a dataset failed to load.
+  * Calculate extent of TopoJSON files so that the viewer correctly pans+zooms when a TopoJSON file is loaded.
+  * Added ability to filter catalog search results by type: `is:wms`, `is:esri-mapserver`, `is:geojson` and so on.
+  * Added layer information to the Info popup for WMS datasets.
+  * Polygons from GeoJSON datasets are now filled.
+  * Left-aligned feature info table column and added some space between columns.
+  * Added support for styling GeoJSON files, either in catalog (add .style{} object) or embedded directly in the file following the [SimpleStyle spec](https://github.com/mapbox/simplestyle-spec).
+  * Fixed a bug that prevented catalog items inside groups on the Search tab from being enabled.
+  * Added support for discovering GeoJSON datasets from CKAN.
+  * Added support for zipped GeoJSON files.
+  * Made `KmlCatalogItem` use the proxy when required.
+  * Made `FeatureInfoPanelViewModel` use the white panel background in more cases.
+  * Fixed a bug that caused only the portion of a CKAN group name before the first comma to be used.
+  * Added the `legendUrls` property to allow a catalog item to optionally have multiple legend images.
+  * Added a popup message when zooming in to the "No Data" scales of an `ArcGisMapServerCatalogItem`.
+  * Added a title text when hovering over the label of an enabled catalog item.  The title text informs the user that clicking will zoom to the item.
+  * `CatalogItem.zoomTo` can now zoom to much smaller bounding box rectangles.
+  * Upgraded to Cesium 1.11.
+
+### 2015-07-03
+
+* Changed the support email address from `nationalmap@lists.nicta.com.au` to `nationalmap@communications.gov.au`.
+* Renamed "Gravity Image" to "Gravity Anomaly" and updated it to load from the new server (the old one is deprecated).
+* Renamed "Magnetic Image" to "Magnetic Intensity" and updated it to load from the new server (the old one is deprecated).
+* Updated the layer name used to access "SRTM 1 sec DEM Image".  The old one worked but was not advertised in the WMS server's GetCapabilities, which limited the quality of the metadata.
+* The Data.gov.au group now includes CKAN resources with the `csv-geo-au` format.
+* Improved the metadata, including descriptions and licence information, for many of the data sets in National Data Sets.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.32.  Significant changes relevant to NationalMap users include:
+  * Numerous changes to improve the quality of the catalogue item info page.
+  * Added support for `csv-geo-*` (e.g. csv-geo-au) to `CkanCatalogGroup`.
+  * `CkanCatalogGroup` now fills the `dataUrl` property of created items by pointing to the dataset's page on CKAN.
+  * The catalog item information panel now displays `info` sections in a consistent order.  The order can be overridden by setting `CatalogItemInfoViewModel.infoSectionOrder`.
+  * An empty `description` or `info` section is no longer shown on the catalog item information panel.  This can be used to remove sections that would otherwise be populated from dataset metadata.
+
+### 2015-06-24
+
+* Updated the favicon.
+* Switched the new Medicare Offices dataset to load directly from data.gov.au.
+
+### 2015-06-23
+
+* Added "Medicare Offices" dataset under Social and Economic.
+* Fixed the URL of the Roboto Mono font so that it downloads correctly even over `https`.
+* Improved the styling of the About page.
+* Fixed an incorrect link to the About page from the disclaimer at the bottom of the map.
+* The nm.json file is now created at build time from a number of initialization files in the `datasources` directory.  The individual files are easier to manage and edit than a single large file.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.27.  Significant changes relevant to NationalMap users include:
+  * Fixed incorrect date formatting in the timeline and animation controls on Internet Explorer 9.
+  * Added support for CSV files with longitude and latitude columns but no numeric value column.  Such datasets are visualized as points with a default color and do not have a legend.
+  * The Feature Information popup is now automatically closed when the user changes the `AbsIttCatalogItem` filter.
+  * `WebMapServiceCatalogItem` now determines its rectangle from the GetCapabilities metadata even when configured to use multiple WMS layers.
+  * `AbsIttCatalogItem` styles can now be set using the `tableStyle` property, much like `CsvCatalogItem`.
+  * Improved `AbsIttCatalogItem`'s tolerance of errors from the server.
+  * Fixed a bug that caused the brand bar to slide away with the explorer panel on Internet Explorer 9.
+
 ### 2015-06-16
 
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.23.  Significant changes relevant to NationalMap users include:

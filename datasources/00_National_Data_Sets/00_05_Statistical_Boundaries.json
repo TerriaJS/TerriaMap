@@ -1,0 +1,437 @@
+{
+  "catalog": [
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "layers": "admin_bnds:SA4_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.74050960205765",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Statistical Area Level 4 (SA4)",
+              "description": "Statistical Area Level 4 (SA4)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:SA3_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.74050960205765",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Statistical Area Level 3 (SA3)",
+              "description": "Statistical Area Level 3 (SA3)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:SA2_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.74050960205765",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Statistical Area Level 2 (SA2)",
+              "description": "Statistical Area Level 2 (SA2)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:SA1_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.74050960205765",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Statistical Area Level 1 (SA1)",
+              "description": "Statistical Area Level 1 (SA1)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:GCCSA_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.74050960205765",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Greater Capital City Statistical Area (GCCSA)",
+              "description": "Greater Capital City Statistical Area (GCCSA)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_ACT",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "148.76267481599996",
+                "-35.92076221410328",
+                "149.3992872",
+                "-35.12451727461176"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Australian Capital Territory Mesh Blocks",
+              "description": "Australian Capital Territory Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_NSW",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "140.633657689504",
+                "-42.25172903364744",
+                "159.475035846496",
+                "-23.41035087665545"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "New South Wales Mesh Blocks",
+              "description": "New South Wales Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_NT",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "129.00043971199997",
+                "-25.99948233275597",
+                "138.001197856",
+                "-10.965914264647154"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Northern Territory Mesh Blocks",
+              "description": "Northern Territory Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_OT",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-35.20087199161092",
+                "150.772826016",
+                "-10.412356006664147"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Other Territories Mesh Blocks",
+              "description": "Other Territories Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_QLD",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "137.99595744000004",
+                "-29.177897698696302",
+                "153.552171232",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Queensland Mesh Blocks",
+              "description": "Queensland Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_SA",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "129.00133699200003",
+                "-38.06260298858392",
+                "141.002955616",
+                "-25.996146486756036"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "South Australia Mesh Blocks",
+              "description": "South Australia Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_TAS",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "143.81892271999996",
+                "-43.740509602057614",
+                "148.49867360000002",
+                "-39.2036616580757"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Tasmania Mesh Blocks",
+              "description": "Tasmania Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_VIC",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "140.961681984",
+                "-39.15918952657599",
+                "149.976679008",
+                "-33.98042558562515"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Victoria Mesh Blocks",
+              "description": "Victoria Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:MB_2011_WA",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.921113952",
+                "-35.134846435111655",
+                "129.001930016",
+                "-13.689492034565587"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Western Australia Mesh Blocks",
+              "description": "Western Australia Mesh Blocks",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:IARE_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Indigenous Areas",
+              "description": "Indigenous Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:ILOC_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Indigenous Locations",
+              "description": "Indigenous Locations",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:IREG_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Indigenous Regions",
+              "description": "Indigenous Regions",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:SOS_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Section of State",
+              "description": "Section of State",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:SOSR_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Section of State Range",
+              "description": "Section of State Range",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:UCL_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Urban Centre and Locality",
+              "description": "Urban Centre and Locality",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "admin_bnds:RA_2011_AUST",
+              "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
+              "type": "wms",
+              "rectangle": [
+                "96.816941408",
+                "-43.740509602057614",
+                "159.109219008",
+                "-9.142175976703609"
+              ],
+              "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
+              "name": "Remoteness Area",
+              "description": "Remoteness Area",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "name": "Statistical Boundaries"
+        }
+      ],
+      "type": "group",
+      "isOpen": true,
+      "name": "National Data Sets"
+    }
+  ]
+}
