@@ -63,7 +63,7 @@ var durationUnits = {
 };
 
 function doProxy(req, res, next, callback) {
-    var maxAgeSeconds = 315360000; // effectively no max age.
+    var maxAgeSeconds = 1209600; // two weeks
     var remoteUrlString = req.params[0];
 
     if (!remoteUrlString || remoteUrlString.length === 0) {
