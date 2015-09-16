@@ -73,6 +73,10 @@ function doProxy(req, res, next, callback) {
     // Does the proxy URL include a max age?
     if (remoteUrlString[0] === '_') {
         var slashIndex = remoteUrlString.indexOf('/');
+        if (slashIndex < 0) {
+            return res.status(400).send('No url specified.');
+        }
+
         var maxAgeString = remoteUrlString.substring(1, slashIndex);
         remoteUrlString = remoteUrlString.substring(slashIndex + 1);
 
