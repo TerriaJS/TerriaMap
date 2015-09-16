@@ -87,7 +87,15 @@ function doProxy(req, res, next, callback) {
         // Interpret the max age as a duration in Varnish notation.
         // https://www.varnish-cache.org/docs/trunk/reference/vcl.html#durations
         var parsedMaxAge = durationRegex.exec(maxAgeString);
+        if (!parsedMaxAge || parsedMaxAge.length < 3) {
+            return res.status(400).send('Invalid duration.');
+        }
+
         var value = parseFloat(parsedMaxAge[1]);
+        if (value !== value) {
+            return res.status(400).send('Invalid duration.');
+        }
+
         var unitConversion = durationUnits[parsedMaxAge[2]];
         if (!unitConversion) {
             return res.status(400).send('Invalid duration unit ' + parsedMaxAge[2]);
