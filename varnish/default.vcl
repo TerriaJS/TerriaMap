@@ -50,7 +50,7 @@ sub vcl_miss {
 
 sub vcl_fetch
 {
-  if ( beresp.status >= 500 ) {
+  if ( beresp.status >= 400 ) {
     set beresp.ttl = 0s;
   }
 }
