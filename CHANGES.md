@@ -1,12 +1,19 @@
 Change Log
 ==========
 
+### 2015-09-17
+
+* Improved proxy cache expiration.  Previously, catalog item tiles could be cached by end-user browsers much longer than intended.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.43.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that prevented the opened/closed state of groups from being preserved when sharing.
+
 ### 2015-09-03
+
 * Removed "beta" tag
 * Added new screenshots and YouTube videos.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.42. Relevant changes include:  
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.42. Relevant changes include:
   * Fixed a bug sharing CSV items.
-   
+
 ### 2015-08-03
 
 * Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.
