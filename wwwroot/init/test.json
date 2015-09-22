@@ -60,7 +60,8 @@
               "tableStyle": {
                 "dataVariable": "Magnitude",
                 "scaleByValue": true
-              }
+              },
+              "displayDuration": 2880
             },
             {
               "name": "Auto Incidents (CSV)",
@@ -287,7 +288,15 @@
             {
               "name": "Auto Incidents No Time (CSV)",
               "type": "csv",
-              "url": "test/incidents_notime.csv"
+              "url": "test/incidents_notime.csv",
+              "tableStyle": {
+                "colorMap": [
+                  {
+                    "color": "hsla(60,80%,80%,1.00)",
+                    "offset": 0
+                  }
+                ]
+              }
             },
             {
               "name": "Route in England (GPX)",
