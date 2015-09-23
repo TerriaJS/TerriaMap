@@ -5,38 +5,11 @@
         {
           "items": [
             {
-              "layers": "Vegetation:clearedlines",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "114.30741",
-                "-35.68676999910569",
-                "151.17083",
-                "-11.62904999962697"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Cleared Lines",
-              "name": "Cleared Lines",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Vegetation:cultivatedareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.66133",
-                "-43.44901999905807",
-                "153.54656",
-                "-9.04530999970664"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Cultivated Areas",
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Vegetation/MapServer",
+              "layers": "Cultivated_Areas,No_Data",
               "name": "Cultivated Areas",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Vegetation_Cultivated_Areas.png",
               "info": [
                 {
                   "name": "Licence",
@@ -45,38 +18,11 @@
               ]
             },
             {
-              "layers": "Vegetation:nativevegetationareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.93226",
-                "-43.658549999057726",
-                "153.63769",
-                "-8.93332999971015"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Native Vegetation Areas",
-              "name": "Native Vegetation Areas",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Vegetation:windbreaks",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "114.99020999999999",
-                "-41.16088999906501",
-                "151.58246",
-                "-24.201429999293836"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Windbreaks",
-              "name": "Windbreaks",
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Vegetation/MapServer",
+              "layers": "Native_Vegetation_2Mill_to_70K_Scale,Native_Vegetation_60Mill_to_2Mill_Scale,No_Data",
+              "name": "Native Vegetation",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Vegetation_Native_Vegetation.png",
               "info": [
                 {
                   "name": "Licence",
@@ -85,8 +31,8 @@
               ]
             }
           ],
-          "type": "group",
-          "name": "Vegetation"
+          "name": "Vegetation",
+          "type": "group"
         }
       ],
       "type": "group",

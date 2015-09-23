@@ -7,31 +7,8 @@ var proxyAuth = require('./proxyAuth.json');
 
 var protocolRegex = /^\w+:\//;
 
-function getRemoteUrlFromParam(req) {
-    var remoteUrl = req.params[0];
-    if (remoteUrl.indexOf('_') === 0) {
-        remoteUrl = remoteUrl.substring(remoteUrl.indexOf('/')+1);
-    }
-    if (remoteUrl) {
-        var match = protocolRegex.exec(remoteUrl);
-        if (!match || match.length < 1) {
-            remoteUrl = 'http://' + remoteUrl;
-        } else {
-            var matchedPart = match[0];
-
-            // If the protocol portion of the URL only has a single slash after it, the extra slash was probably stripped off by someone
-            // along the way (NGINX will do this).  Add it back.
-            if (remoteUrl[matchedPart.length] !== '/') {
-                remoteUrl = matchedPart + '/' + remoteUrl.substring(matchedPart.length);
-            }
-        }
-
-        remoteUrl = url.parse(remoteUrl);
-        // copy query string
-        remoteUrl.search = url.parse(req.url).search;
-    }
-    return remoteUrl;
-}
+var upstreamProxy;
+var bypassUpstreamProxyHosts;
 
 var dontProxyHeaderRegex = /^(?:Host|Proxy-Connection|Connection|Keep-Alive|Transfer-Encoding|TE|Trailer|Proxy-Authorization|Proxy-Authenticate|Upgrade)$/i;
 
@@ -44,9 +21,15 @@ function filterHeaders(req, headers) {
         }
     });
 
-    result['Cache-Control'] = 'public,max-age=315360000';
-    result['Expires'] = 'Thu, 31 Dec 2037 23:55:55 GMT';
+    return result;
+}
+
+function filterResponseHeaders(req, headers, maxAgeSeconds) {
+    var result = filterHeaders(req, headers);
+
+    result['Cache-Control'] = 'public,max-age=' + maxAgeSeconds;
     result['Access-Control-Allow-Origin'] ='*';
+    delete result['Expires'];
     delete result['pragma'];
 
     return result;
@@ -65,6 +48,117 @@ function proxyAllowedHost(host) {
         }
     }
     return false;
+}
+
+var durationRegex = /^([\d.]+)(ms|s|m|h|d|w|y)$/;
+
+var durationUnits = {
+    ms: 1.0 / 1000,
+    s: 1.0,
+    m: 60.0,
+    h: 60.0 * 60.0,
+    d: 24.0 * 60.0 * 60.0,
+    w: 7.0 * 24.0 * 60.0 * 60.0,
+    y: 365.0 * 24.0 * 60.0 * 60.0
+};
+
+function doProxy(req, res, next, callback) {
+    var maxAgeSeconds = 1209600; // two weeks
+    var remoteUrlString = req.params[0];
+
+    if (!remoteUrlString || remoteUrlString.length === 0) {
+        return res.status(400).send('No url specified.');
+    }
+
+    // Does the proxy URL include a max age?
+    if (remoteUrlString[0] === '_') {
+        var slashIndex = remoteUrlString.indexOf('/');
+        if (slashIndex < 0) {
+            return res.status(400).send('No url specified.');
+        }
+
+        var maxAgeString = remoteUrlString.substring(1, slashIndex);
+        remoteUrlString = remoteUrlString.substring(slashIndex + 1);
+
+        if (remoteUrlString.length === 0) {
+            return res.status(400).send('No url specified.');
+        }
+
+        // Interpret the max age as a duration in Varnish notation.
+        // https://www.varnish-cache.org/docs/trunk/reference/vcl.html#durations
+        var parsedMaxAge = durationRegex.exec(maxAgeString);
+        if (!parsedMaxAge || parsedMaxAge.length < 3) {
+            return res.status(400).send('Invalid duration.');
+        }
+
+        var value = parseFloat(parsedMaxAge[1]);
+        if (value !== value) {
+            return res.status(400).send('Invalid duration.');
+        }
+
+        var unitConversion = durationUnits[parsedMaxAge[2]];
+        if (!unitConversion) {
+            return res.status(400).send('Invalid duration unit ' + parsedMaxAge[2]);
+        }
+
+        maxAgeSeconds = value * unitConversion;
+    }
+
+    // Add http:// if no protocol is specified.
+    var protocolMatch = protocolRegex.exec(remoteUrlString);
+    if (!protocolMatch || protocolMatch.length < 1) {
+        remoteUrlString = 'http://' + remoteUrlString;
+    } else {
+        var matchedPart = protocolMatch[0];
+
+        // If the protocol portion of the URL only has a single slash after it, the extra slash was probably stripped off by someone
+        // along the way (NGINX will do this).  Add it back.
+        if (remoteUrlString[matchedPart.length] !== '/') {
+            remoteUrlString = matchedPart + '/' + remoteUrlString.substring(matchedPart.length);
+        }
+    }
+
+    var remoteUrl = url.parse(remoteUrlString);
+
+    // Copy the query string
+    remoteUrl.search = url.parse(req.url).search;
+
+    if (!remoteUrl.protocol) {
+        remoteUrl.protocol = 'http:';
+    }
+
+    var proxy;
+    if (upstreamProxy && !(remoteUrl.host in bypassUpstreamProxyHosts)) {
+        proxy = upstreamProxy;
+    }
+
+    // Are we allowed to proxy for this host?
+    if (!proxyAllowedHost(remoteUrl.host)) {
+        res.status(400).send('Host is not in list of allowed hosts: ' + remoteUrl.host);
+        return;
+    }
+
+    // encoding : null means "body" passed to the callback will be raw bytes
+
+    var proxiedRequest;
+    req.on('close', function() {
+        if (proxiedRequest) {
+            proxiedRequest.abort();
+        }
+    });
+
+    var filteredReqHeaders = filterHeaders(req, req.headers);
+    if (!filteredReqHeaders['x-forwarded-for']) {
+        filteredReqHeaders['x-forwarded-for'] = req.connection.remoteAddress;
+    }
+
+    // http basic auth
+    var authRequired = proxyAuth[remoteUrl.host];
+    if (authRequired) {
+        filteredReqHeaders['authorization'] = authRequired.authorization;
+    }
+
+    proxiedRequest = callback(remoteUrl, filteredReqHeaders, proxy, maxAgeSeconds);
 }
 
 // Include the cluster module
@@ -155,8 +249,8 @@ if (cluster.isMaster) {
     app.disable('etag');
     app.use(express.static(path.join(__dirname, 'wwwroot')));
 
-    var upstreamProxy = argv['upstream-proxy'];
-    var bypassUpstreamProxyHosts = {};
+    upstreamProxy = argv['upstream-proxy'];
+    bypassUpstreamProxyHosts = {};
     if (argv['bypass-upstream-proxy-hosts']) {
         argv['bypass-upstream-proxy-hosts'].split(',').forEach(function(host) {
             bypassUpstreamProxyHosts[host.toLowerCase()] = true;
@@ -168,69 +262,42 @@ if (cluster.isMaster) {
     });
 
     app.get('/proxy/*', function(req, res, next) {
-        // look for request like http://localhost:8080/proxy/http://example.com/file?query=1
-        var remoteUrl = getRemoteUrlFromParam(req);
-        if (!remoteUrl) {
-            // look for request like http://localhost:8080/proxy/?http%3A%2F%2Fexample.com%2Ffile%3Fquery%3D1
-            remoteUrl = Object.keys(req.query)[0];
-            if (remoteUrl) {
-                remoteUrl = url.parse(remoteUrl);
-            }
-        }
+        doProxy(req, res, next, function(remoteUrl, filteredRequestHeaders, proxy, maxAgeSeconds) {
+            return request.get({
+                url : url.format(remoteUrl),
+                headers : filteredRequestHeaders,
+                encoding : null,
+                proxy : proxy
+            }, function(error, response, body) {
+                var code = 500;
 
-        if (!remoteUrl) {
-            return res.status(400).send('No url specified.');
-        }
+                if (response) {
+                    code = response.statusCode;
+                    res.header(filterResponseHeaders(req, response.headers, maxAgeSeconds));
+                }
 
-        if (!remoteUrl.protocol) {
-            remoteUrl.protocol = 'http:';
-        }
-
-        var proxy;
-        if (upstreamProxy && !(remoteUrl.host in bypassUpstreamProxyHosts)) {
-            proxy = upstreamProxy;
-        }
-
-        //If you want to run a CORS proxy to data source, remove this section
-        if (!proxyAllowedHost(remoteUrl.host)) {
-            res.status(400).send('Host is not in list of allowed hosts: ' + remoteUrl.host);
-            return;
-        }
-
-        // encoding : null means "body" passed to the callback will be raw bytes
-
-        var proxiedRequest;
-        req.on('close', function() {
-            if (proxiedRequest) {
-                proxiedRequest.abort();
-            }
+                res.status(code).send(body);
+            });
         });
+    });
 
-        var filteredReqHeaders = filterHeaders(req, req.headers);
-        if (!filteredReqHeaders['x-forwarded-for']) {
-            filteredReqHeaders['x-forwarded-for'] = req.connection.remoteAddress;
-        }
+    app.post('/proxy/*', function(req, res, next) {
+        doProxy(req, res, next, function(remoteUrl, filteredRequestHeaders, proxy, maxAgeSeconds) {
+            req.pipe(request.post({
+                url : url.format(remoteUrl),
+                headers : filteredRequestHeaders,
+                encoding : null,
+                proxy : proxy
+            }, function(error, response, body) {
+                var code = 500;
 
-        // http basic auth
-        var authRequired = proxyAuth[remoteUrl.host];
-        if (authRequired) {
-            filteredReqHeaders['authorization'] = authRequired.authorization;
-        }
+                if (response) {
+                    code = response.statusCode;
+                    res.header(filterResponseHeaders(req, response.headers, maxAgeSeconds));
+                }
 
-        proxiedRequest = request.get({
-            url : url.format(remoteUrl),
-            headers : filteredReqHeaders,
-            encoding : null,
-            proxy : proxy
-        }, function(error, response, body) {
-            var code = 500;
-
-            if (response) {
-                code = response.statusCode;
-                res.header(filterHeaders(req, response.headers));
-            }
-
-            res.status(code).send(body);
+                res.status(code).send(body);
+            }));
         });
     });
 

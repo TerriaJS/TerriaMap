@@ -17,6 +17,28 @@
             "type": "group",
             "items": [
                 {
+                  "name": "ABS Data Service Complete",
+                  "rectangle": [
+                    "112.93529999999998",
+                    "-38.208809999082796",
+                    "152.06206",
+                    "-11.05104999964455"
+                  ],
+                  "type": "abs-itt-dataset-list",
+                  "url": "http://stat.abs.gov.au/itt/query.jsp",
+                  "filter": [
+                    "REGIONTYPE.STE"
+                  ],
+                  "tableStyle": {
+                    "legendTicks": 2,
+                    "colorMap": [
+                        { "offset": 0.0, "color": "rgba(0,0,200,1.0)" },
+                        { "offset": 0.5, "color": "rgba(200,200,200,1.00)" },
+                        { "offset": 1.0, "color": "rgba(200,0,0,1.00)" }
+                    ]
+                  }
+                },
+                {
                     "name": "Selected ABS datasets",
                     "type": "group",
                     "items": [
@@ -33,7 +55,7 @@
                             "type": "abs-itt",
                             "url": "http://stat.abs.gov.au/itt/query.jsp",
                             "dataSetID": "ABS_SEIFA_SLA",
-                            "regionType": "SA4",
+                            "regionTypeConcept": "REGIONTYPE",
                             "regionConcept": "SLA_2011"
                         },
                         {
@@ -47,9 +69,8 @@
                                 "-11.05104999964455"
                             ],
                             "type": "abs-itt",
-                            "url": "./data/2011Census_B15_AUST",
+                            "url": "./test/abs_file/2011Census_B15_AUST",
                             "dataSetID": "FILE",
-                            "regionType": "SA3",
                             "opacity": 1.0,
                             "tableStyle": {
                                 "minDisplayValue": 20,

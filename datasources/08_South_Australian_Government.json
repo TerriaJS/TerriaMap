@@ -1,11 +1,19 @@
 {
   "catalog": [
     {
-      "type": "wms-getCapabilities",
-      "url": "http://geoserver.nationalmap.nicta.com.au/sa_gov_au/ows",
-      "dataCustodian": "[South Australian Government](http://www.sa.gov.au/)",
-      "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-      "name": "South Australian Government"
+      "type": "ckan",
+      "name": "South Australian Government (BETA)",
+      "url": "https://data.sa.gov.au/data",
+      "minimumMaxScaleDenominator": 10000000000,
+      "filterByWmsGetCapabilities": false,
+      "filterQuery": [
+        "fq=+(res_format%3ageojson%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=jurisdiction%3a\"Government%20of%20South%20Australia\""
+      ],
+      "includeWms": false,
+      "includeCsv": true,
+      "includeKml": false,
+      "includeGeoJson": true,
+      "allowEntireWmsServers": true
     }
   ]
 }

@@ -9,7 +9,7 @@ if [[ -z `which jq` ]]; then
 fi
 
 
-echo  "Replacing $SOURCE with individual group files split out in ${OUTDIR}/" 
+echo  "Replacing files in ${OUTDIR}/ with individual groups split from $SOURCE" 
 
 read -p "Continue? (Y/N)" choice
 echo
@@ -18,18 +18,19 @@ case "$choice" in
     * ) exit ;;
 esac
 
-mkdir -p $OUTDIR
+mkdir -p "$OUTDIR"
+rm "$OUTDIR"/*.json
     
 i=0
 while true; do
-  name=`jq -r ".catalog[0].items[$i].name" < $SOURCE`
+  name=`jq -r ".catalog[0].items[$i].name" < "$SOURCE"`
   if [[ $name == "null" ]]; then
     exit
   fi
-  name=00_`printf "%02d" $i`_${name// /_}.json
+  name="00_`printf "%02d" $i`_${name// /_}.json"
   echo $name
-  jq ".catalog=([.catalog[0]|.items = [.items[$i]]])" < $SOURCE > $OUTDIR/$name
+  jq ".catalog=([.catalog[0]|.items = [.items[$i]]])" < "$SOURCE" > "$OUTDIR/$name"
   ((i++))
 
 done
-rm $SOURCE
+rm "$SOURCE"

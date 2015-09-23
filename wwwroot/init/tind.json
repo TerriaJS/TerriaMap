@@ -23,7 +23,10 @@
             "includeEsriMapServer": false,
             "groupBy": "none",
             "useResourceName": true,
-            "isOpen": true
+            "isOpen": true,
+            "itemProperties": {
+                "cacheDuration": "1d"
+            }
         }
     ]
 }

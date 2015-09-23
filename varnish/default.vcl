@@ -4,10 +4,10 @@
 
 # This is a basic VCL configuration file for varnish.  See the vcl(7)
 # man page for details on VCL syntax and semantics.
-# 
+#
 # Default backend definition.  Set this to point to your content
 # server.
-# 
+#
 backend default {
     .host = "127.0.0.1";
     .port = "3001";
@@ -50,18 +50,12 @@ sub vcl_miss {
 
 sub vcl_fetch
 {
-  if ( beresp.status >= 500 ) {
+  if ( beresp.status >= 400 ) {
     set beresp.ttl = 0s;
-  } else if (req.url ~ "^/proxy/_0d"){
-    set beresp.ttl = 0d;
-  } else if (req.url ~ "^/proxy/_1d") {
-    set beresp.ttl = 1d;
-  } else {
-    set beresp.ttl = 14d;
   }
 }
 
-# 
+#
 # Below is a commented-out copy of the default VCL logic.  If you
 # redefine any of these subroutines, the built-in logic will be
 # appended to your code.
@@ -94,7 +88,7 @@ sub vcl_fetch
 #     }
 #     return (lookup);
 # }
-# 
+#
 # sub vcl_pipe {
 #     # Note that only the first request to the backend will have
 #     # X-Forwarded-For set.  If you use X-Forwarded-For and want to
@@ -104,11 +98,11 @@ sub vcl_fetch
 #     # applications, like IIS with NTLM authentication.
 #     return (pipe);
 # }
-# 
+#
 # sub vcl_pass {
 #     return (pass);
 # }
-# 
+#
 # sub vcl_hash {
 #     hash_data(req.url);
 #     if (req.http.host) {
@@ -118,15 +112,15 @@ sub vcl_fetch
 #     }
 #     return (hash);
 # }
-# 
+#
 # sub vcl_hit {
 #     return (deliver);
 # }
-# 
+#
 # sub vcl_miss {
 #     return (fetch);
 # }
-# 
+#
 # sub vcl_fetch {
 #     if (beresp.ttl <= 0s ||
 #         beresp.http.Set-Cookie ||
@@ -139,11 +133,11 @@ sub vcl_fetch
 #     }
 #     return (deliver);
 # }
-# 
+#
 # sub vcl_deliver {
 #     return (deliver);
 # }
-# 
+#
 # sub vcl_error {
 #     set obj.http.Content-Type = "text/html; charset=utf-8";
 #     set obj.http.Retry-After = "5";
@@ -167,11 +161,11 @@ sub vcl_fetch
 # "};
 #     return (deliver);
 # }
-# 
+#
 # sub vcl_init {
 #   return (ok);
 # }
-# 
+#
 # sub vcl_fini {
 #   return (ok);
 # }

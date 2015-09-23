@@ -9,7 +9,7 @@
     "catalog": [
         {
             "name": "ACT Government",
-            "type": "group",
+            "type": "socrata",
             "isPromoted": true,
             "isOpen": true
         },

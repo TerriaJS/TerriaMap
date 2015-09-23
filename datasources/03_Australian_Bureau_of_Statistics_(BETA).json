@@ -30,19 +30,14 @@
           ],
           "type": "abs-itt-dataset-list",
           "url": "http://stat.abs.gov.au/itt/query.jsp",
-          "regionType": "SA4"
+          "filter": [
+            "REGIONTYPE.SA4"
+          ]
         },
         {
           "items": [
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-              "filter": [
-                "MEASURE.3",
-                "AGE.A04",
-                "AGE.A10",
-                "AGE.A15",
-                "AGE.A59"
-              ],
               "name": "Age",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
@@ -55,14 +50,17 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B04",
-              "regionType": "SA4"
+              "filter": [
+                "MEASURE.3",
+                "AGE.A04",
+                "AGE.A10",
+                "AGE.A15",
+                "AGE.A59",
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-              "filter": [
-                "BPLP.1101",
-                "MEASURE.3"
-              ],
               "name": "Country of Birth",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
@@ -75,15 +73,14 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B09",
-              "regionType": "SA4"
+              "filter": [
+                "BPLP.1101",
+                "MEASURE.3",
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-              "filter": [
-                "AGE.O15",
-                "HSCP.1",
-                "MEASURE.3"
-              ],
               "name": "Highest year of school completed",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
@@ -96,15 +93,15 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B16",
-              "regionType": "SA4"
+              "filter": [
+                "AGE.O15",
+                "HSCP.1",
+                "MEASURE.3",
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-              "filter": [
-                "MEASURE.O15",
-                "OCCP.TOT",
-                "SEX.3"
-              ],
               "name": "Occupation",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
@@ -117,7 +114,12 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B45",
-              "regionType": "SA4"
+              "filter": [
+                "MEASURE.O15",
+                "OCCP.TOT",
+                "SEX.3",
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
@@ -133,7 +135,9 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B17",
-              "regionType": "SA4"
+              "filter": [
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
@@ -149,7 +153,9 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B34",
-              "regionType": "SA4"
+              "filter": [
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
@@ -165,14 +171,12 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B15",
-              "regionType": "SA4"
+              "filter": [
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-              "filter": [
-                "MEASURE.OPD",
-                "NEDD.TOT"
-              ],
               "name": "Type of Internet Connection",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
@@ -185,15 +189,14 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B35",
-              "regionType": "SA4"
+              "filter": [
+                "MEASURE.OPD",
+                "NEDD.TOT",
+                "REGIONTYPE.SA4"
+              ]
             },
             {
               "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-              "filter": [
-                "AGE.O15",
-                "MEASURE.3",
-                "VOLWP.2"
-              ],
               "name": "Volunteer Work",
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
@@ -206,7 +209,12 @@
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
               "dataSetID": "ABS_CENSUS2011_B19",
-              "regionType": "SA4"
+              "filter": [
+                "AGE.O15",
+                "MEASURE.3",
+                "VOLWP.2",
+                "REGIONTYPE.SA4"
+              ]
             }
           ],
           "isOpen": true,

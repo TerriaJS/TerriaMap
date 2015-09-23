@@ -39,10 +39,12 @@ checkBrowserCompatibility('ui');
 
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
+var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var KnockoutMarkdownBinding = require('terriajs/lib/Core/KnockoutMarkdownBinding');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
+var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
 var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
@@ -58,6 +60,7 @@ var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
 var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
 var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
+var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var LocationBarViewModel = require('terriajs/lib/ViewModels/LocationBarViewModel');
 var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel');
 var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
@@ -104,7 +107,8 @@ var terria = new Terria({
     supportEmail: 'nationalmap@communications.gov.au',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
-    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
+    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
+    analytics: new GoogleAnalytics()
 });
 
 terria.error.addEventListener(function(e) {
@@ -118,7 +122,11 @@ terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
-    configUrl: 'config.json'
+    configUrl: 'config.json',
+    defaultTo2D: isCommonMobilePlatform(),
+    urlShortener: new GoogleUrlShortener({
+        terria: terria
+    })
 }).otherwise(function(e) {
     raiseErrorToUser(terria, e);
 }).always(function() {
@@ -143,7 +151,7 @@ terria.start({
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
     var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels');
+    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
     // Create the Settings / Map panel.
     var settingsPanel = SettingsPanelViewModel.create({
@@ -242,12 +250,14 @@ terria.start({
         nowViewing: terria.nowViewing
     });
 
+    var isSmallScreen = document.body.clientWidth <= 700 || document.body.clientHeight <= 420;
+
     // Create the explorer panel.
     ExplorerPanelViewModel.create({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
-        isOpen: !terria.userProperties.hideExplorerPanel,
+        isOpen: !isSmallScreen && !terria.userProperties.hideExplorerPanel,
         tabs: [
             new DataCatalogTabViewModel({
                 catalog: terria.catalog

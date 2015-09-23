@@ -1,9 +1,11 @@
 {
   "catalog": [
     {
-      "items": [],
-      "type": "group",
-      "name": "ACT Government"
-    }
+      "type": "socrata",
+      "name": "ACT Government",
+      "groupBy": "category",
+      "filterQuery": ["limitTo=MAPS"],
+      "url": "http://www.data.act.gov.au"
+    }      
   ]
 }

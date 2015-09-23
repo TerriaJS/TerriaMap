@@ -5,18 +5,102 @@
         {
           "items": [
             {
-              "layers": "Hydrography:bores",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Bores",
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Foreshore_Flats,No_Data",
+              "name": "Foreshore Flats",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Foreshore_Flats.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Flats_SalineCoastalFlats,No_Data",
+              "name": "Saline Coastal Flats",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Saline_Coastal_Flats.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Flats_LandSubjectToInundation,No_Data",
+              "name": "Land Subject to Inundation",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Land_Subject_to_Inundation.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Levees,No_Data",
+              "name": "Levees",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Levees.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "layers": "Water_Pipelines,No_Data",
+              "name": "Water Pipelines",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Water_Pipelines.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Flats_MarineSwamps_Labels,Flats_MarineSwamps,No_Data",
+              "name": "Marine Swamps",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Marine_Swamps.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Flats_Swamps_Labels,Flats_Swamps,No_Data",
+              "name": "Swamps",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Swamps.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Bores_Labels,Bores,No_Data",
               "name": "Bores",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Bores.png",
               "info": [
                 {
                   "name": "Licence",
@@ -25,18 +109,106 @@
               ]
             },
             {
-              "layers": "Hydrography:canalareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "115.70707",
-                "-38.08189999908377",
-                "145.17220000000003",
-                "-32.253269999147996"
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Natural_Water_Points_NativeWells_Labels,Natural_Water_Points_Pools_Labels,Natural_Water_Points_Rockholes_Labels,Natural_Water_Points_Soaks_Labels,Natural_Water_Points_GnammaHole,Natural_Water_Points_NativeWell,Natural_Water_Points_Pool,Natural_Water_Points_Rockhole,Natural_Water_Points_Soak,No_Data",
+              "name": "Natural Water Points",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Natural_Water_Points.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Springs_Labels,Springs,No_Data",
+              "name": "Springs",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Springs.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Dams_and_Tanks_Labels,Dams_and_Tanks,No_Data",
+              "name": "Water Storage Points",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Water_Storage_Points.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Waterbody_All_Flood_Irrigation_Storage_Labels,Waterbody_All_Reservoirs_Labels,Waterbody_All_Lakes_Labels,Waterbody_Extra_Lakes_and_Reservoirs_Labels,Waterbody_Reservoirs_Scale_10Million_to_300000_Labels,Waterbody_Lakes_Scale_5Million_to_300000_Labels,Waterbody_Lakes_Scale_10Million_to_5Million_Labels,Farm_Dam_Area,Waterbody_All_Flood_Irrigation_Storage,Waterbody_All_Reservoirs,Waterbody_All_Lakes,Waterbody_Extra_Lakes_and_Reservoirs,Waterbody_Reservoirs_National_Scale_to_300000,Waterbody_Lakes_Scale_5Million_to_300000,Waterbody_Lakes_National_Scale_to_5Million,No_Data",
+              "name": "Lakes and Reservoirs",
+              "type": "esri-mapServer",
+              "legendUrls": [
+                "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Reservoirs.png",
+                "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lakes.png",
+                "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Farm_Dam_Areas.png"
               ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Canal Areas",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Locks_Labels,Locks,No_Data",
+              "name": "Locks",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Locks.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Pondage_Areas_Settling_Ponds,Pondage_Areas_Salt_Evaporators,PondageArea_AquacultureAreas,No_Data",
+              "name": "Pondage Areas",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Pondage_Areas.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Waterholes_Labels,No_Data,Waterholes,No_Data",
+              "name": "Waterholes",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Waterholes.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Canal_Areas,No_Data",
               "name": "Canal Areas",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Canal_Areas.png",
               "info": [
                 {
                   "name": "Licence",
@@ -45,18 +217,76 @@
               ]
             },
             {
-              "layers": "Hydrography:canallines",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.35391999999999",
-                "-42.85120999905931",
-                "153.59005",
-                "-12.524599999600033"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Canal Lines",
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Canal_Lines,No_Data",
               "name": "Canal Lines",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Canal_Lines.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Rapid_Areas,No_Data",
+              "name": "Rapid Areas",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Rapid_Areas.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Rapid_Lines,No_Data",
+              "name": "Rapid Lines",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Rapid_Lines.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Watercourses_All_Rivers_Labels,Watercourses_Major_Rivers_Scale_5Million_to_300000_Labels,Watercourses_Major_Rivers_Scale_10Million_to_5Million_Labels,Watercourses_All_Rivers_Watercourse_Lines,Watercourses_All_Rivers_Connectors,Watercourses_Major_Rivers_Scale_5Million_to_300000,Watercourses_Major_Rivers_National_Scale_to_5Million,No_Data",
+              "name": "Rivers",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Watercourses.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Watercourse_Areas_Labels,Watercourse_Areas,No_Data",
+              "name": "Watercourse Areas",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Watercourse_Areas.png",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ]
+            },
+            {
+              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "layers": "Waterfalls_Labels,Waterfalls,No_Data",
+              "name": "Waterfalls",
+              "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Waterfalls.png",
               "info": [
                 {
                   "name": "Licence",
@@ -75,252 +305,11 @@
                 "-10.835983610651068"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Estuary",
               "name": "Estuary",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:flats",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.00808000000002",
-                "-43.60604999905781",
-                "153.61275",
-                "-8.93332999971015"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Flats",
-              "name": "Flats",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:foreshoreflats",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.00706",
-                "-43.511829999057966",
-                "153.57853",
-                "-9.007109999707835"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Foreshore Flats",
-              "name": "Foreshore Flats",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:lakes",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.99395",
-                "-43.55222999905789",
-                "153.61302",
-                "-8.93787999971001"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Lakes",
-              "name": "Lakes",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:locks",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "138.80938",
-                "-35.94260999910306",
-                "144.46688000000003",
-                "-33.996729999124945"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Locks",
-              "name": "Locks",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:marinehazardareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.92034999999998",
-                "-43.5473099990579",
-                "153.54714",
-                "-8.998569999708106"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Reef Areas",
-              "name": "Reef Areas",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:marinehazardpoints",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.11903999999998",
-                "-43.66633999905772",
-                "153.62995",
-                "-9.063349999706077"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Reef Points",
-              "name": "Reef Points",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:pondageareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.31874",
-                "-42.10062999906144",
-                "153.3509",
-                "-12.191229999610012"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Pondage Areas",
-              "name": "Pondage Areas",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:rapidareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "131.03977",
-                "-33.995369999124954",
-                "149.38968999999997",
-                "-12.680119999595398"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Rapid Areas",
-              "name": "Rapid Areas",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:rapidlines",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "131.66452",
-                "-43.20146999905853",
-                "149.13695",
-                "-10.70548999965513"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Rapid Lines",
-              "name": "Rapid Lines",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:reservoirs",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "114.99601",
-                "-43.19763999905853",
-                "153.56568",
-                "-10.571689999659238"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Reservoirs",
-              "name": "Reservoirs",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:spillways",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "117.10128000000002",
-                "-42.103829999061425",
-                "153.28249",
-                "-20.977869999368615"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Spillways",
-              "name": "Spillways",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "Hydrography:springs",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "114.13676",
-                "-38.23244999908261",
-                "147.96741000000003",
-                "-11.523879999630154"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Springs",
-              "name": "Springs",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -335,12 +324,11 @@
                 "-9.242297499700408"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Streams",
               "name": "Streams",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -355,12 +343,11 @@
                 "-9.242297499700424"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Stream Nodes",
               "name": "Stream Nodes",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -375,12 +362,11 @@
                 "-5.051811819379163"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Stream Network",
               "name": "Stream Network",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -395,12 +381,11 @@
                 "-9.23624999970059"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Stream Network Nodes",
               "name": "Stream Network Nodes",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -415,12 +400,11 @@
                 "-10.64324999965701"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Structure",
               "name": "Structure",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -435,92 +419,144 @@
                 "-10.903989999649017"
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Waterbodies",
               "name": "Waterbodies",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
             {
-              "layers": "Hydrography:watercourseareas",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "layers": "ahgf_shcarto:AHGFWaterPipeline",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.56261000000002",
-                "-43.58998999905784",
-                "153.58856",
-                "-8.93332999971015"
+                "113.80691",
+                "-43.00307999905891",
+                "152.89131000000003",
+                "-10.903989999649017"
               ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Water Course Areas",
-              "name": "Water Course Areas",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Water Pipeline",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
             {
-              "layers": "Hydrography:watercourselines",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "layers": "ahgf_shcarto:AHGFDam",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.37533999999998",
-                "-43.629399999057775",
-                "153.6321",
-                "-8.93332999971015"
+                "112.9318700000001",
+                "-42.75848999905948",
+                "153.00634000000005",
+                "-9.951769999678337"
               ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Water Course Lines",
-              "name": "Water Course Lines",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Water Storage",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
             {
-              "layers": "Hydrography:waterfallpoints",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "layers": "ahgf_hrr:RiverRegion",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "115.84323",
-                "-43.49497999905798",
-                "153.04724000000002",
-                "-10.643249999657044"
+                "112.9225",
+                "-43.64250000005773",
+                "153.63750000000013",
+                "-9.229999999700832"
               ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Waterfall Points",
-              "name": "Waterfall Points",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "River Region",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
             {
-              "layers": "Hydrography:waterholes",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
+              "layers": "ahgf_hrc:AHGFContractedCatchment",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.89583439399999",
-                "-47.40775060536477",
-                "154.01767560599998",
-                "-6.2859093933647605"
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000002",
+                "-9.197499999701808"
               ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Waterholes",
-              "name": "Waterholes",
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "Catchment",
               "info": [
                 {
                   "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_hrr:AWRADrainageDivision",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "111.24438730279999",
+                "-48.47186269657931",
+                "155.3156126972001",
+                "-4.400637302179204"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": " Drainage Division",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcatch:NCBLevel1DrainageDivision",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000002",
+                "-9.197499999701801"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "NCB Level1 Drainage Division",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            },
+            {
+              "layers": "ahgf_shcatch:NCBLevel2DrainageBasinGroup",
+              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
+              "type": "wms",
+              "rectangle": [
+                "112.9225",
+                "-43.73999999905757",
+                "153.63750000000013",
+                "-9.197499999701803"
+              ],
+              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
+              "name": "NCB Level2 Drainage Basin Group",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
             },
@@ -634,170 +670,10 @@
               ],
               "type": "group",
               "name": "Water Observations from Space"
-            },
-            {
-              "layers": "Hydrography:waterpoints",
-              "url": "http://geoserver.nationalmap.nicta.com.au/geotopo_250k/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.76517999999999",
-                "-38.63448999907962",
-                "153.09347999999997",
-                "-10.072709999674638"
-              ],
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "description": "Water Points",
-              "name": "Water Points",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_shcarto:AHGFWaterPipeline",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "113.80691",
-                "-43.00307999905891",
-                "152.89131000000003",
-                "-10.903989999649017"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Water Pipeline",
-              "name": "Water Pipeline",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_shcarto:AHGFDam",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.9318700000001",
-                "-42.75848999905948",
-                "153.00634000000005",
-                "-9.951769999678337"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Water Storage",
-              "name": "Water Storage",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_hrr:RiverRegion",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.9225",
-                "-43.64250000005773",
-                "153.63750000000013",
-                "-9.229999999700832"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "River Region",
-              "name": "River Region",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_hrc:AHGFContractedCatchment",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.9225",
-                "-43.73999999905757",
-                "153.63750000000002",
-                "-9.197499999701808"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "Catchment",
-              "name": "Catchment",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_hrr:AWRADrainageDivision",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "111.24438730279999",
-                "-48.47186269657931",
-                "155.3156126972001",
-                "-4.400637302179204"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": " Drainage Division",
-              "name": " Drainage Division",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_shcatch:NCBLevel1DrainageDivision",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.9225",
-                "-43.73999999905757",
-                "153.63750000000002",
-                "-9.197499999701801"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "NCB Level1 Drainage Division",
-              "name": "NCB Level1 Drainage Division",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
-            },
-            {
-              "layers": "ahgf_shcatch:NCBLevel2DrainageBasinGroup",
-              "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
-              "type": "wms",
-              "rectangle": [
-                "112.9225",
-                "-43.73999999905757",
-                "153.63750000000013",
-                "-9.197499999701803"
-              ],
-              "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
-              "description": "NCB Level2 Drainage Basin Group",
-              "name": "NCB Level2 Drainage Basin Group",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ]
             }
           ],
-          "type": "group",
-          "name": "Surface Water"
+          "name": "Surface Water",
+          "type": "group"
         }
       ],
       "type": "group",
