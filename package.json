@@ -19,8 +19,8 @@
     "proj4js-defs": "^0.0.1",
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
-    "terriajs": "1.0.43",
-    "terriajs-cesium": "1.11.1",
+    "terriajs": "1.0.44",
+    "terriajs-cesium": "1.13.0",
     "yargs": "^3.8.0"
   },
   "devDependencies": {
