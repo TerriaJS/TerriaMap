@@ -266,6 +266,14 @@
             "digits": 5,
             "description": "Tourism regions"
         },
+        "PHN": {
+            "layerName":"region_map:FID_PHN_boundaries_AUS_Sep2015_V5",
+            "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "PHN_Code",
+            "aliases": ["phn_code_2015", "phn_code", "phn"],
+            "digits": 6,
+            "description": "Primary health networks"
+        },
         "STE_NAME": {
             "layerName":"region_map:FID_STE_2011_AUST",
             "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
