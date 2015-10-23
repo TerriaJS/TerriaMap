@@ -57,7 +57,7 @@ var createToolsMenuItem = require('terriajs/lib/ViewModels/createToolsMenuItem')
 var DataCatalogTabViewModel = require('terriajs/lib/ViewModels/DataCatalogTabViewModel');
 var DistanceLegendViewModel = require('terriajs/lib/ViewModels/DistanceLegendViewModel');
 var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
-var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
+var SingleTabExplorerPanelViewModel = require('terriajs/lib/ViewModels/SingleTabExplorerPanelViewModel');
 var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
@@ -67,7 +67,7 @@ var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
 var MutuallyExclusivePanels = require('terriajs/lib/ViewModels/MutuallyExclusivePanels');
 var NavigationViewModel = require('terriajs/lib/ViewModels/NavigationViewModel');
 var NowViewingAttentionGrabberViewModel = require('terriajs/lib/ViewModels/NowViewingAttentionGrabberViewModel');
-var NowViewingTabViewModel = require('terriajs/lib/ViewModels/NowViewingTabViewModel');
+var WorkbenchViewModel = require('terriajs/lib/ViewModels/WorkbenchViewModel');
 var PopupMessageViewModel = require('terriajs/lib/ViewModels/PopupMessageViewModel');
 var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
 var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
@@ -246,37 +246,21 @@ terria.start({
         ]
     });
 
-    var nowViewingTab = new NowViewingTabViewModel({
+    var nowViewingTab = new WorkbenchViewModel({
         nowViewing: terria.nowViewing
     });
 
     var isSmallScreen = document.body.clientWidth <= 700 || document.body.clientHeight <= 420;
 
     // Create the explorer panel.
-    ExplorerPanelViewModel.create({
+    SingleTabExplorerPanelViewModel.create({
         container: ui,
         terria: terria,
         mapElementToDisplace: 'cesiumContainer',
         isOpen: !isSmallScreen && !terria.userProperties.hideExplorerPanel,
+        showSingleTab: false,
         tabs: [
-            new DataCatalogTabViewModel({
-                catalog: terria.catalog
-            }),
-            nowViewingTab,
-            new SearchTabViewModel({
-                searchProviders: [
-                    new CatalogItemNameSearchProviderViewModel({
-                        terria: terria
-                    }),
-                    new BingMapsSearchProviderViewModel({
-                        terria: terria,
-                        key: configuration.bingMapsKey
-                    }),
-                    new GazetteerSearchProviderViewModel({
-                        terria: terria
-                    })
-                ]
-            })
+            nowViewingTab
         ]
     });
 
