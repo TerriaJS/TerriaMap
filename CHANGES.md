@@ -1,6 +1,20 @@
 Change Log
 ==========
 
+### 2015-10-15
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.44.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that could cause timeseries animation to "jump" when resuming play after it was paused.
+  * When catalog items are enabled, the checkbox now animates to indicate that loading is in progress.
+  * Add `mode=preview` option in the hash portion of the URL.  When present, it is assumed that TerriaJS is being used as a previewer and the "small screen warning" will not be shown.
+  * Added the `attribution` property to catalog items.  The attribution is displayed on the map when the catalog item is enabled.
+  * Fixed a bug that prevented `AbsIttCatalogGroup` from successfully loading its list of catalog items.
+  * Allow missing URLs on embedded data (eg. embedded czml data)
+  * Fixed a bug loading URLs for ArcGIS services names that start with a number.
+* Updated to [Cesium](http://cesiumjs.org) 1.13.  Significant changes relevant to NationalMap users include:
+  * The default `CTRL + Left Click Drag` mouse behavior is now duplicated for `CTRL + Right Click Drag` for better compatibility with Firefox on Mac OS [#2913](https://github.com/AnalyticalGraphicsInc/cesium/pull/2913).
+  * Fixed an issue where non-feature nodes prevented KML documents from loading. [#2945](https://github.com/AnalyticalGraphicsInc/cesium/pull/2945)
+
 ### 2015-09-17
 
 * Improved proxy cache expiration.  Previously, catalog item tiles could be cached by end-user browsers much longer than intended.
