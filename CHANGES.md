@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-11-16
+
+* Added freight route datasets provided by the Department of Infrastructure and Regional Development under `Transport -> Freight`.
+
 ### 2015-10-15
 
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.44.  Significant changes relevant to NationalMap users include:
