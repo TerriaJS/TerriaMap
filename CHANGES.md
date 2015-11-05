@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-11-16
+
+* Added IMOS and AODN Geoservers to the list of hosts that may be proxied.
+
 ### 2015-10-15
 
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.44.  Significant changes relevant to NationalMap users include:
