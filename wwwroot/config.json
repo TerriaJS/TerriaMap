@@ -10,7 +10,9 @@
         "mapsengine.google.com",
         "s3-ap-southeast-2.amazonaws.com",
         "adelaidecitycouncil.com",
-        "www.dptiapps.com.au"
+        "www.dptiapps.com.au",
+        "geoserver-123.aodn.org.au",
+        "geoserver.imos.org.au"
     ],
     "initializationUrls" : [
         "nm"
@@ -22,7 +24,7 @@
         "googleAnalyticsOptions": null,
         "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
-            "url": "About.html"
+            "url": "about.html"
         }
     }
 }

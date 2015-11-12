@@ -4,6 +4,8 @@ Change Log
 ### 2015-11-16
 
 * Completely support the [csv-geo-au](https://github.com/NICTA/nationalmap/wiki/csv-geo-au) specification (other than SA1s and boundaries from previous years) including ASGS boundaries like remoteness regions, indigenous areas and non ASGS boundaries like primary health networks.
+* Added IMOS and AODN Geoservers to the list of hosts that may be proxied.
+* Changed the support email address from `nationalmap@communications.gov.au` to `data@pmc.gov.au`.
 
 ### 2015-10-15
 
