@@ -24,7 +24,7 @@
         "googleAnalyticsOptions": null,
         "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
-            "url": "About.html"
+            "url": "about.html"
         }
     }
 }
