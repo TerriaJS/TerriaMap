@@ -114,6 +114,12 @@
               "type": "group"
             },
             {
+              "name": "Freight",
+              "type": "esri-mapServer-group",
+              "url": "http://gis.infrastructure.gov.au/infrastructure/rest/services/KeyFreightRoute/KeyFrightRoute/MapServer",
+              "dataCustodian": "[Department of Infrastructure and Regional Development](https://infrastructure.gov.au/)"
+            },
+            {
               "items": [
                 {
                   "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
