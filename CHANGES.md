@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-11-16
+
+* Changed the support email address from `nationalmap@communications.gov.au` to `data@pmc.gov.au`.
+
 ### 2015-10-15
 
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.44.  Significant changes relevant to NationalMap users include:
