@@ -8,6 +8,42 @@ Change Log
 * Added IMOS and AODN Geoservers to the list of hosts that may be proxied.
 * Changed the support email address from `nationalmap@communications.gov.au` to `data@pmc.gov.au`.
 * Use YouTube videos hosted in the AusGovDPMC account.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.47.  Significant changes relevant to NationalMap users include:
+  * Update the default Australian topography basemap to Geoscience Australia's new worldwide layer (http://www.ga.gov.au/gisimg/rest/services/topography/National_Map_Colour_Basemap/MapServer)
+  * The Feature Info panel now shows all selected features in an accordion control.  Previously it only showed the first one.
+  * Major refactor of `CsvCatalogItem`, splitting region-mapping functionality out into `RegionProvider` and `RegionProviderList`. Dozens of new test cases. In the process, fixed a number of bugs and added new features including:
+    * Regions can be matched using regular expressions, enabling matching of messy fields like local government names ("Baw Baw", "Baw Baw Shire", "Baw Baw (S)", "Shire of Baw Baw" etc).
+    * Regions can be matched using a second field for disambiguation (eg, "Campbelltown" + "SA")
+    * Drag-and-dropped datasets with a time column behave much better: rather than a fixed time being allocated to each row, each row occupies all the time up until the next row is shown.
+    * Enumerated fields are colour coded in lat-long files, consist with region-mapped files.
+    * Feedback is now provided after region mapping, showing which regions failed to match, and which matched more than once.
+    * Bug: Fields with names starting with 'lon', 'lat' etc were too aggressively matched.
+    * Bug: Numeric codes beginning with zeros (eg, certain NT 08xx postcodes) were treated as numbers and failed to match.
+    * Bug: Fields with names that could be interpreted as regions weren't available as data variables.
+  * The `LocationBarViewModel` now shows the latitude and longitude coordinates of the mouse cursor in 2D as well as 3D.
+  * The `LocationBarViewModel` no longer displays a misleading elevation of 0m when in "3D Smooth" mode.
+  * Applied markdown to properties shown in the Feature Info Panel.
+  * HTML and Markdown text in catalog item metadata, feature information, etc. is now formatted in a more typical way.  For example, text inside `<h1>` now looks like a heading.  Previously, most HTML styling was stripped out.
+  * The `name` of a feature from a CSV file is now taken from a `name` or `title` column, if it exists.  Previously the name was always "Site Data".
+  * Most catalog items now automatically expose a `dataUrl` that is the same as their `url`.
+  * Fixed a bug that caused time-dynamic WMS layers with just one time to not be displayed.
+  * Underscores are now replaced with spaces in the feature info panel for `GeoJsonCatalogItem`.
+  * Added Proj4 projections to the location bar. Clicking on the bar switches between lats/longs and projected coordinates. To enable this, set `useProjection` to `true`
+  * Fixed a bug that caused an exception when running inside an `<iframe>` and the user's browser blocked 3rd-party cookies.
+  * Fixed a bug that caused `WebMapServiceCatalogItem` to incorrectly populate the catalog item's metadata with data from GetCapabilities when another layer had a `Title` with the same value as the expected layer's `Name`.
+  * Avoid mixed content warnings when using the CartoDB basemaps.
+  * Handle WMS time interval specifications (time/time and time/time/periodicity)
+  * Allow a single layer of an ArcGIS MapServer to be added through the "Add Data" interface.
+  * Updated to [Cesium](http://cesiumjs.org) 1.15.  Significant changes relevant to TerriaJS users include:
+    * Added support for the [glTF 1.0](https://github.com/KhronosGroup/glTF/blob/master/specification/README.md) draft specification.
+    * Added support for the glTF extensions [KHR_binary_glTF](https://github.com/KhronosGroup/glTF/tree/master/extensions/Khronos/KHR_binary_glTF) and [KHR_materials_common](https://github.com/KhronosGroup/glTF/tree/KHR_materials_common/extensions/Khronos/KHR_materials_common).
+    * `ImageryLayerFeatureInfo` now has an `imageryLayer` property, indicating the layer that contains the feature.
+    * Make KML invalid coordinate processing match Google Earth behavior. [#3124](https://github.com/AnalyticalGraphicsInc/cesium/pull/3124)
+    * Fixed issues causing the terrain and sky to disappear when the camera is near the surface. [#2415](https://github.com/AnalyticalGraphicsInc/cesium/issues/2415) and [#2271](https://github.com/AnalyticalGraphicsInc/cesium/issues/2271)
+    * Fixed issues causing the terrain and sky to disappear when the camera is near the surface. [#2415](https://github.com/AnalyticalGraphicsInc/cesium/issues/2415) and [#2271](https://github.com/AnalyticalGraphicsInc/cesium/issues/2271)
+    * Provided a workaround for Safari 9 where WebGL constants can't be accessed through `WebGLRenderingContext`. Now constants are hard-coded in `WebGLConstants`. [#2989](https://github.com/AnalyticalGraphicsInc/cesium/issues/2989)
+    * Added a workaround for Chrome 45, where the first character in a label with a small font size would not appear. [#3011](https://github.com/AnalyticalGraphicsInc/cesium/pull/3011)
+    * Fixed an issue with drill picking at low frame rates that would cause a crash. [#3010](https://github.com/AnalyticalGraphicsInc/cesium/pull/3010)
 
 ### 2015-10-15
 
