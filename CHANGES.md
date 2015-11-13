@@ -7,6 +7,7 @@ Change Log
 * Added freight route datasets provided by the Department of Infrastructure and Regional Development under `Transport -> Freight`.
 * Added IMOS and AODN Geoservers to the list of hosts that may be proxied.
 * Changed the support email address from `nationalmap@communications.gov.au` to `data@pmc.gov.au`.
+* Use YouTube videos hosted in the AusGovDPMC account.
 
 ### 2015-10-15
 
