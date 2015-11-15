@@ -135,14 +135,6 @@
                   "featureInfoTemplate": "<table class=\"cesium-infoBox-defaultTable\"><tr><td>Name</td><td>{{name}}</td></tr><tr><td>Route Number</td><td>{{RouteNumber}}</td><tr><td>State</td><td>{{state}}</td></tr><tr><td>Owner</td><td>{{owner}}</td></tr></table>"
                 },
                 {
-                  "name": "Road Train Assembly Areas",
-                  "type": "esri-mapServer",
-                  "url": "http://gis.infrastructure.gov.au/infrastructure/rest/services/KeyFreightRoute/KFR/MapServer",
-                  "layers": "3",
-                  "dataCustodian": "[Department of Infrastructure and Regional Development](https://infrastructure.gov.au/)",
-                  "featureInfoTemplate": "<table class=\"cesium-infoBox-defaultTable\"><tr><td>Name</td><td>{{name}}</td></tr><tr><td>State</td><td>{{state}}</td></tr></table>"
-                },
-                {
                   "name": "Key Freight Routes - Rail",
                   "type": "esri-mapServer",
                   "url": "http://gis.infrastructure.gov.au/infrastructure/rest/services/KeyFreightRoute/KFR/MapServer",
@@ -155,6 +147,14 @@
                   "type": "esri-mapServer",
                   "url": "http://gis.infrastructure.gov.au/infrastructure/rest/services/KeyFreightRoute/KFR/MapServer",
                   "layers": "2",
+                  "dataCustodian": "[Department of Infrastructure and Regional Development](https://infrastructure.gov.au/)",
+                  "featureInfoTemplate": "<table class=\"cesium-infoBox-defaultTable\"><tr><td>Name</td><td>{{name}}</td></tr><tr><td>State</td><td>{{state}}</td></tr></table>"
+                },
+                {
+                  "name": "Road Train Assembly Areas",
+                  "type": "esri-mapServer",
+                  "url": "http://gis.infrastructure.gov.au/infrastructure/rest/services/KeyFreightRoute/KFR/MapServer",
+                  "layers": "3",
                   "dataCustodian": "[Department of Infrastructure and Regional Development](https://infrastructure.gov.au/)",
                   "featureInfoTemplate": "<table class=\"cesium-infoBox-defaultTable\"><tr><td>Name</td><td>{{name}}</td></tr><tr><td>State</td><td>{{state}}</td></tr></table>"
                 },
