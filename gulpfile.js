@@ -232,3 +232,29 @@ function watch(name, files, minify) {
 
     return rebundle();
 }
+
+var reactify = require('reactify');
+
+// jsx transform task
+gulp.task('jsx', function() {
+  var b =  browserify({ debug:true });
+  b.add(appEntryJSName)
+   .transform(reactify)
+  return b.bundle()
+    .on('error', function (err) {
+            console.log(err.toString());
+            this.emit("end");
+        })
+    .pipe(source(appJSName))
+    .pipe(gulp.dest('wwwroot/build'));
+});
+
+//watch js and sass compile
+gulp.task('new-watch', function(){
+  gulp.watch(['Terria/**', 'index.js'],  ['jsx']);
+  // gulp.watch([path.SRC + '/js/**', './spec/test.js'], ['test']);
+})
+
+
+
+
