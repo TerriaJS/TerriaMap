@@ -17,14 +17,14 @@ var DataCatalogMember = React.createClass({
     var member = this.props.member;
     var items = this.props.items;
 
-    var content;
+    var content ='';
 
-    if(this.state.isOpen === true && items && items.length > 0){
-      content = items.map(function(item, i){return <DataCatalogItem item={item} key={i} />});
-    } else if(this.state.isOpen === true){
-      content = "Loading";
-    } else{
-      content = '';
+    if(this.state.isOpen === true ){
+      if(items && items.length > 0){
+        content = items.map(function(item, i){return <DataCatalogItem item={item} key={i} />});
+      } else{
+        content = "Loading";
+      }
     }
 
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');

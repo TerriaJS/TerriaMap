@@ -7,7 +7,7 @@ var DataCatalog = React.createClass({
       <ul className = 'list-reset'>
       {dataCatalog.map(function(group, i) {
         return (
-          <DataCatalogGroup group={group} items={group.items} key={i} />
+          <DataCatalogGroup group={group} items={group.items} isLoading={group.isLoading} key={i} />
         )
       })}
       </ul>
