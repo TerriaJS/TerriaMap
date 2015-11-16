@@ -11,19 +11,22 @@ var DataCatalogMember = React.createClass({
   componentWillUpdate: function(catalogGroup, state) {
     var member = catalogGroup.member;
     member.isOpen = state.isOpen;    
-    this.dataItems = state.isOpen ? member.items : [];
   },
 
   render: function(){
     var member = this.props.member;
-    var items = this.dataItems;
-    var content = [];
-      
-    if(items && items.length > 0){
-      content = items.map(function(item, i){
-        return <DataCatalogItem item={item} key={i} />
-      });
+    var items = this.props.items;
+
+    var content;
+
+    if(this.state.isOpen === true && items && items.length > 0){
+      content = items.map(function(item, i){return <DataCatalogItem item={item} key={i} />});
+    } else if(this.state.isOpen === true){
+      content = "Loading";
+    } else{
+      content = '';
     }
+
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');
     return (
       <li>
@@ -32,7 +35,7 @@ var DataCatalogMember = React.createClass({
         {content}
       </ul>
       </li>
-      ) ;
+      );
   }
 });
 
