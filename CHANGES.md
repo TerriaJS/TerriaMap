@@ -8,7 +8,7 @@ Change Log
 * Added IMOS and AODN Geoservers to the list of hosts that may be proxied.
 * Changed the support email address from `nationalmap@communications.gov.au` to `data@pmc.gov.au`.
 * Use YouTube videos hosted in the AusGovDPMC account.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.47.  Significant changes relevant to NationalMap users include:
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.48.  Significant changes relevant to NationalMap users include:
   * Update the default Australian topography basemap to Geoscience Australia's new worldwide layer (http://www.ga.gov.au/gisimg/rest/services/topography/National_Map_Colour_Basemap/MapServer)
   * The Feature Info panel now shows all selected features in an accordion control.  Previously it only showed the first one.
   * Major refactor of `CsvCatalogItem`, splitting region-mapping functionality out into `RegionProvider` and `RegionProviderList`. Dozens of new test cases. In the process, fixed a number of bugs and added new features including:
