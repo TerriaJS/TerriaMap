@@ -57,10 +57,10 @@ li[aria-selected='true'] {
   opacity: 1;
 }
 
-section[aria-hidden='true'], 
-main[aria-hidden='true'], 
+section[aria-hidden='true'],
+main[aria-hidden='true'],
 li[aria-hidden='true'],
-ul[aria-hidden='true'] 
+ul[aria-hidden='true']
 {
   display: none;
 }
@@ -124,7 +124,7 @@ header{
     margin: 0;
   }
   nav{
-    margin-top: 1rem;    
+    margin-top: 1rem;
   }
   .btn{
     padding: 0;

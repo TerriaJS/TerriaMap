@@ -13,6 +13,11 @@ var DataCatalogGroup = React.createClass({
     group.isOpen = state.isOpen;
   },
 
+  shouldComponentUpdate: function(nextProps) {
+    console.log(nextProps);
+    return true;
+  },
+
   render: function(){
     var group = this.props.group;
     var members = this.props.items;
