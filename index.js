@@ -4,7 +4,9 @@
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
     ModalWindow = require('./Terria/ModalWindow.jsx'),
-    element = document.getElementById('main');
+    SidePanel = require('./Terria/SidePanel.jsx'),
+    element = document.getElementById('main'),
+    nav = document.getElementById('nav');
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -64,6 +66,7 @@ terria.start({
 }).always(function() {
     var catalogGroups = terria.catalog.group.items;
     ReactDOM.render(<ModalWindow catalog={catalogGroups} />, element);
+    ReactDOM.render(<SidePanel catalog={catalogGroups} />, nav);
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
