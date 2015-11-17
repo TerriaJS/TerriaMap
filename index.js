@@ -3,7 +3,6 @@
 /*global require*/
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
-    Message = require('./Terria/Message.jsx'),
     Tabs = require('./Terria/Tabs.jsx'),
     element = document.getElementById('data-panel');
 

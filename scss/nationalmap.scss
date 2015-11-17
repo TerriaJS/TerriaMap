@@ -50,20 +50,20 @@ section:focus{
   //border-color: rgba(0,0,0,.125);
 }
 
-// li[aria-selected='true'] {
-//   color: black;
-//   background-color: #fff;
-//   font-weight: bold;
-//   opacity: 1;
-// }
+li[aria-selected='true'] {
+  color: black;
+  background-color: #fff;
+  font-weight: bold;
+  opacity: 1;
+}
 
-// section[aria-hidden='true'], 
-// main[aria-hidden='true'], 
-// li[aria-hidden='true'],
-// ul[aria-hidden='true'] 
-// {
-//   display: none;
-// }
+section[aria-hidden='true'], 
+main[aria-hidden='true'], 
+li[aria-hidden='true'],
+ul[aria-hidden='true'] 
+{
+  display: none;
+}
 
 
 .clearfix{
@@ -203,6 +203,12 @@ header{
   .fa{
     padding-right: 10px;
   }
+}
+
+.btn-tab{
+  padding: 1rem;
+  font-size: 1.1rem;
+  text-transform: capitalize;
 }
 
 
