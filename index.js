@@ -3,8 +3,8 @@
 /*global require*/
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
-    Tabs = require('./Terria/Tabs.jsx'),
-    element = document.getElementById('data-panel');
+    ModalWindow = require('./Terria/ModalWindow.jsx'),
+    element = document.getElementById('main');
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -63,7 +63,7 @@ terria.start({
     raiseErrorToUser(terria, e);
 }).always(function() {
     var catalogGroups = terria.catalog.group.items;
-    ReactDOM.render(<Tabs catalog={catalogGroups} />, element);
+    ReactDOM.render(<ModalWindow catalog={catalogGroups} />, element);
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.

@@ -57,10 +57,10 @@ li[aria-selected='true'] {
   opacity: 1;
 }
 
-section[aria-hidden='true'], 
-main[aria-hidden='true'], 
+section[aria-hidden='true'],
+main[aria-hidden='true'],
 li[aria-hidden='true'],
-ul[aria-hidden='true'] 
+ul[aria-hidden='true']
 {
   display: none;
 }
@@ -87,7 +87,7 @@ ul[aria-hidden='true']
 .modal-wrapper{
   width: 100vw;
   height: 100vh;
-  
+
 }
 
 .modal-content{
@@ -107,7 +107,7 @@ ul[aria-hidden='true']
 
 .tab-panel{
   background: #fff;
-  height: 400px;
+  height: 500px;
   max-height: calc(100vh - 100px);
   overflow-y: auto;
 }
@@ -127,7 +127,7 @@ header{
     margin: 0;
   }
   nav{
-    margin-top: 1rem;    
+    margin-top: 1rem;
   }
   .btn{
     padding: 0;
@@ -211,4 +211,17 @@ header{
   text-transform: capitalize;
 }
 
+.search-data-form{
+  .fa{
+    position: absolute;
+    left: 0;
+    top: 7px;
+    font-size: 1.2rem;
+    color: #CBCBCB;
+  }
+  input{
+    padding-left: 1.5rem;
+  }
+
+}
 
