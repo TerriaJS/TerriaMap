@@ -1,4 +1,5 @@
 var DataCatalogMember = require('./DataCatalogMember.jsx');
+var Loader = require('./Loader.jsx');
 var when = require('terriajs-cesium/Source/ThirdParty/when');
 
 var DataCatalogGroup = React.createClass({
@@ -40,7 +41,7 @@ var DataCatalogGroup = React.createClass({
       if(members && members.length > 0){
         content = members.map(function(member, i){return <DataCatalogMember  onClick={that.handleChildClick.bind(that, i)} member={member} items={member.items} key={i} />});
       } else{
-        content = "Loading";
+        content = <Loader/> ;
       }
     }
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');

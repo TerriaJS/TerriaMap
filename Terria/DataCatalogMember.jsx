@@ -1,4 +1,5 @@
 var DataCatalogItem = require('./DataCatalogItem.jsx');
+var Loader = require('./Loader.jsx');
 var DataCatalogMember = React.createClass({
   getInitialState: function() {
     return {isOpen: false};
@@ -18,7 +19,7 @@ var DataCatalogMember = React.createClass({
       if(items && items.length > 0){
         content = items.map(function(item, i){return <DataCatalogItem item={item} key={i} />});
       } else{
-        content = "Loading";
+        content = <Loader/>
       }
     }
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');
