@@ -4,8 +4,9 @@
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
     Message = require('./Terria/Message.jsx'),
-    DataCatalog = require('./Terria/DataCatalog.jsx'),
+    // DataCatalog = require('./Terria/DataCatalog.jsx'),
     element = document.getElementById('data-panel');
+    var DataCatalogGroup = require('./Terria/DataCatalogGroup.jsx');
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -60,11 +61,52 @@ terria.start({
     raiseErrorToUser(terria, e);
 }).always(function() {
     var catalogGroups = terria.catalog.group.items;
-    ReactDOM.render(<DataCatalog catalog={catalogGroups} />, element);
+
+    var DataCatalog =  React.createClass({
+      getInitialState: function() {
+        return {data: []};
+      },
+      componentWillMount: function() {
+        this.setState({
+            data: catalogGroups
+        })
+      },
+
+      componentWillUpdate: function() {
+        console.log(this.state.data);
+      },
+
+      handleClick: function () {
+        // catalogGroups[0].isOpen = true;
+        this.setState({
+            data: catalogGroups
+        })
+      },
+
+      render: function () {
+        console.log(this.state.data);
+        return (
+        <ul className = 'list-reset'>
+        <button onClick={this.handleClick}> update </button>
+          {this.state.data.map(function(group, i) {
+            return (
+              <DataCatalogGroup group={group} items={group.items} isLoading={group.isLoading} key={i} />
+            )
+          })}
+          </ul>
+        )
+      }
+    });
+
+    ReactDOM.render(<DataCatalog />, element);
+
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     updateApplicationOnHashChange(terria, window);
+
+
+
   });
 
 

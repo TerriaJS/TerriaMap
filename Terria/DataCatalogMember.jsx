@@ -6,11 +6,7 @@ var DataCatalogMember = React.createClass({
 
   handleClick: function(event) {
     this.setState({isOpen: !this.state.isOpen});
-  },
-
-  componentWillUpdate: function(catalogGroup, state) {
-    var member = catalogGroup.member;
-    member.isOpen = state.isOpen;    
+    this.member.isOpen = this.state.isOpen;
   },
 
   render: function(){
@@ -26,7 +22,6 @@ var DataCatalogMember = React.createClass({
         content = "Loading";
       }
     }
-
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');
     return (
       <li>

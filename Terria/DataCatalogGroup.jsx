@@ -5,17 +5,22 @@ var DataCatalogGroup = React.createClass({
   },
 
   handleClick: function(event) {
+    event.preventDefault();
     this.setState({isOpen: !this.state.isOpen});
   },
 
   componentWillUpdate: function(catalogGroup, state) {
     var group = catalogGroup.group;
-    group.isOpen = state.isOpen;
+
   },
 
-  shouldComponentUpdate: function(nextProps) {
-    console.log(nextProps);
-    return true;
+  componentDidUpdate: function(obj) {
+    //console.log(this.state.isOpen);
+    obj.group.isOpen = this.state.isOpen;
+    obj.group.load().then(function() {
+      refreshUI();
+    });
+    console.log(obj);
   },
 
   render: function(){
@@ -23,6 +28,7 @@ var DataCatalogGroup = React.createClass({
     var members = this.props.items;
     var content='';
     var iconClass;
+
     if(this.state.isOpen === true){
       if(members && members.length > 0){
         content = members.map(function(member, i){return <DataCatalogMember member={member} items={member.items} key={i} />});
