@@ -17,9 +17,9 @@ var DataCatalogGroup = React.createClass({
   componentDidUpdate: function(obj) {
     //console.log(this.state.isOpen);
     obj.group.isOpen = this.state.isOpen;
-    obj.group.load().then(function() {
-      refreshUI();
-    });
+    // obj.group.load().then(function() {
+    //   refreshUI();
+    // });
     console.log(obj);
   },
 
