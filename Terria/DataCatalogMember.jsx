@@ -4,8 +4,8 @@ var DataCatalogMember = React.createClass({
     return {isOpen: false};
   },
 
-  handleClick: function(event) {
-    this.setState({isOpen: !this.state.isOpen});
+  handleClick: function() {
+    this.props.onClick(this);
   },
 
   render: function(){
@@ -26,7 +26,7 @@ var DataCatalogMember = React.createClass({
       <li>
       <button onClick={this.handleClick} className="btn data-group is-open"><i className={iconClass}></i>{member.name}</button>
       <ul className='list-reset'>
-        {content}
+      {content}
       </ul>
       </li>
       );

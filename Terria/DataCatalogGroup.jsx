@@ -5,49 +5,44 @@ var DataCatalogGroup = React.createClass({
   getInitialState: function() {
     return {
       isOpen: false,
-      data: this.props
+      openId: ''
     };
   },
 
-  handleClick: function(event) {
-    event.preventDefault();
-    this.setState({isOpen: !this.state.isOpen});
+  handleClick: function() {
+    this.props.onClick(this);
   },
 
-  componentWillUpdate: function(catalogGroup, state) {
-    var group = catalogGroup.group;
+  handleChildClick: function (i, obj) {
+    var that = this;
+    obj.props.member.isOpen = !obj.state.isOpen;
+    obj.setState({
+      isOpen : !obj.state.isOpen
+    });
 
-  },
-
-  componentDidUpdate: function(obj) {
-    //console.log(this.state.isOpen);
-    if(obj.group.isOpen === false){
-      obj.group.isOpen = this.state.isOpen;
-      var that = this;
-      when(obj.group.load()).then(function() {
+    if(obj.state.isOpen === false){
+      when(obj.props.member.load()).then(function() {
         that.setState({
-          data: obj
+          openId : i
         });
       });
     }
-
-    console.log(obj);
   },
 
   render: function(){
-    var group = this.state.data.group;
-    var members = this.state.data.items;
+    var group = this.props.group;
+    var members = this.props.items;
     var content='';
     var iconClass;
 
     if(this.state.isOpen === true){
+      var that = this;
       if(members && members.length > 0){
-        content = members.map(function(member, i){return <DataCatalogMember member={member} items={member.items} key={i} />});
+        content = members.map(function(member, i){return <DataCatalogMember  onClick={that.handleChildClick.bind(that, i)} member={member} items={member.items} key={i} />});
       } else{
         content = "Loading";
       }
     }
-
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');
     return (
       <li>
