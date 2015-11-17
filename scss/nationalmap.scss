@@ -179,24 +179,30 @@ header{
     margin-bottom: 10px;
   }
   li .btn{
-    width: 100%;
     text-align: left;
-    &.data-server{
-      background: #eee;
-      .fa {
-        float: right;
-      }
-    }
-    &.data-group__data-item{
-      .fa {
-        float: right;
-      }
-    }
-    &.data-group{
-      .fa{
-        padding-right: 5px;
-      }
-    }
   }
 }
+
+.btn-catalogue{
+  width: 100%;
+  padding-right: 30px;
+  position: relative;
+  &:hover{
+    background: #0074d9;
+    color: #fff;
+  }
+  .fa{
+    position: absolute;
+    right: 5px;
+    top: 8px;
+
+  }
+}
+
+.data-group{
+  .fa{
+    padding-right: 10px;
+  }
+}
+
 

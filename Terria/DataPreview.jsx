@@ -2,7 +2,7 @@ var DataPreview = React.createClass({
   getInitialState: function() {
     return {
       item: {
-        name: '',
+        name: 'Select a Dataset to see preview',
         description: ''
         }
     };

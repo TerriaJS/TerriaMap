@@ -4,7 +4,7 @@
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
     Message = require('./Terria/Message.jsx'),
-    DataCatalog = require('./Terria/DataCatalog.jsx'),
+    Tabs = require('./Terria/Tabs.jsx'),
     element = document.getElementById('data-panel');
 
 var configuration = {
@@ -64,7 +64,7 @@ terria.start({
     raiseErrorToUser(terria, e);
 }).always(function() {
     var catalogGroups = terria.catalog.group.items;
-    ReactDOM.render(<DataCatalog catalog={catalogGroups} />, element);
+    ReactDOM.render(<Tabs catalog={catalogGroups} />, element);
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.

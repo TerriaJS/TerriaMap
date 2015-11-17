@@ -27,7 +27,7 @@ var DataCatalogItem = React.createClass({
   render: function(){
     var item = this.props.item;
     return ( 
-      <li><button onClick={this.addToPreview} className="btn data-group__data-item">{item.name}</button><button onClick={this.addToMap} className="btn blue"><i className="fa fa-plus-circle"> </i></button></li>
+      <li className="clearfix"><button onClick={this.addToPreview} className="btn data-group__data-item col col-10">{item.name}</button><button onClick={this.addToMap} className="btn blue col col-2"><i className="fa fa-plus-circle"> </i></button></li>
       ) ;
   }
 });

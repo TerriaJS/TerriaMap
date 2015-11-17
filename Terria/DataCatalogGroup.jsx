@@ -47,7 +47,7 @@ var DataCatalogGroup = React.createClass({
     iconClass = 'fa fa-chevron-' + (this.state.isOpen ? 'down' : 'right');
     return (
       <li>
-        <button className ='btn' onClick={this.handleClick} > {group.name} <i className={iconClass}></i> </button>
+        <button className ='btn btn-catalogue' onClick={this.handleClick} > {group.name} <i className={iconClass}></i> </button>
         <ul className="data-catalog-group list-reset">
         {content}
         </ul>
