@@ -1,5 +1,7 @@
 var DataCatalogGroup = require('./DataCatalogGroup.jsx');
 var DataPreview = require('./DataPreview.jsx');
+var SearchBox = require('./SearchBox.jsx');
+
 
 var when = require('terriajs-cesium/Source/ThirdParty/when');
 
@@ -33,11 +35,7 @@ var DataCatalog = React.createClass({
     return (
       <div className="panel-content clearfix">
       <div className="search-data col col-5">
-      <form className="search-data-form relative">
-      <label htmlFor="search" className="hide"> Type keyword to search </label>
-      <i className="fa fa-search"></i>
-      <input id="search" type="text" name="search" value="" className="search__field field" placeholder="Search"/>
-      </form>
+      <SearchBox />
       <ul className = 'list-reset'>
       {dataCatalog.map(function(group, i) {
         return (
