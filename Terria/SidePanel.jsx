@@ -1,5 +1,6 @@
 var SearchBox = require('./SearchBox.jsx');
 var ModalTriggerButton = require('./ModalTriggerButton.jsx');
+var Legend = require('./Legend.jsx');
 
 var btnAdd = "Add Data";
 var btnRemove = "Remove All";
@@ -15,6 +16,7 @@ var SidePanel = React.createClass({
               <li className="now-viewing__remove col col-6 right-align"><ModalTriggerButton btnText={btnRemove}/></li>
             </ul>
             <ul className="now-viewing__content list-reset">
+            <Legend />
             </ul>
           </div>
         </div>
