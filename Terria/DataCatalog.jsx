@@ -1,11 +1,14 @@
 var DataCatalogGroup = require('./DataCatalogGroup.jsx');
 var DataPreview = require('./DataPreview.jsx');
+
 var when = require('terriajs-cesium/Source/ThirdParty/when');
+
 
 var DataCatalog = React.createClass({
   getInitialState: function() {
     return {
-      openId: ''
+      openId: '',
+      previewed: undefined
     };
   },
 
