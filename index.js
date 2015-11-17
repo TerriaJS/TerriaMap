@@ -46,7 +46,10 @@ var terria = new Terria({
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
   });
 
+var EventEmitter = require('./Terria/EventEmitter.js');
 
+var emitter = new EventEmitter();
+window.emitter = emitter;
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
