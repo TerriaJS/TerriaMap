@@ -21,7 +21,7 @@ var DataCatalogItem = React.createClass({
   },
 
   componentDidUpdate: function(){
-    emitter.dispatch('preview', { obj: this});
+    emitter.dispatch('preview', this.props.item);
   },
 
   render: function(){
