@@ -6,7 +6,6 @@ var DataCatalogMember = React.createClass({
 
   handleClick: function(event) {
     this.setState({isOpen: !this.state.isOpen});
-    this.member.isOpen = this.state.isOpen;
   },
 
   render: function(){

@@ -1,7 +1,12 @@
 var DataCatalogMember = require('./DataCatalogMember.jsx');
+var when = require('terriajs-cesium/Source/ThirdParty/when');
+
 var DataCatalogGroup = React.createClass({
   getInitialState: function() {
-    return {isOpen: false};
+    return {
+      isOpen: false,
+      data: this.props
+    };
   },
 
   handleClick: function(event) {
@@ -16,16 +21,22 @@ var DataCatalogGroup = React.createClass({
 
   componentDidUpdate: function(obj) {
     //console.log(this.state.isOpen);
-    obj.group.isOpen = this.state.isOpen;
-    // obj.group.load().then(function() {
-    //   refreshUI();
-    // });
+    if(obj.group.isOpen === false){
+      obj.group.isOpen = this.state.isOpen;
+      var that = this;
+      when(obj.group.load()).then(function() {
+        that.setState({
+          data: obj
+        });
+      });
+    }
+
     console.log(obj);
   },
 
   render: function(){
-    var group = this.props.group;
-    var members = this.props.items;
+    var group = this.state.data.group;
+    var members = this.state.data.items;
     var content='';
     var iconClass;
 
