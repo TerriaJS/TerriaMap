@@ -1,4 +1,5 @@
 var DataCatalogGroup = require('./DataCatalogGroup.jsx');
+var DataPreview = require('./DataPreview.jsx');
 var when = require('terriajs-cesium/Source/ThirdParty/when');
 
 var DataCatalog = React.createClass({
@@ -27,6 +28,8 @@ var DataCatalog = React.createClass({
   render: function(){
     var dataCatalog = this.props.catalog;
     return (
+      <div className="panel-content clearfix">
+      <div className="search-data col col-5">
       <ul className = 'list-reset'>
       {dataCatalog.map(function(group, i) {
         return (
@@ -34,6 +37,11 @@ var DataCatalog = React.createClass({
         )
       }, this)}
       </ul>
+      </div>
+      <div className="search-preview preview col col-7 block">
+        <DataPreview />
+      </div>
+      </div>
       ) ;
   }
 });
