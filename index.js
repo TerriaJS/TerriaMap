@@ -66,7 +66,12 @@ terria.start({
 }).always(function() {
     var catalogGroups = terria.catalog.group.items;
     ReactDOM.render(<ModalWindow catalog={catalogGroups} />, element);
-    ReactDOM.render(<SidePanel catalog={catalogGroups} />, nav);
+    ReactDOM.render(<SidePanel terria={terria} />, nav);
+
+    emitter.subscribe('nowViewing', function(data) {
+      ReactDOM.render(<SidePanel terria={terria} />, nav);
+    });
+
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.

@@ -7,10 +7,18 @@ var ModalWindow = React.createClass({
   },
 
   closeModal: function () {
-    console.log(this);
     this.setState({
       isOpen: !this.state.isOpen
     })
+  },
+
+  componentWillMount: function(){
+    var that = this;
+     emitter.subscribe('openModalWindow', function(activeTab) {
+      that.setState({
+        isOpen: true
+      })
+    });
   },
 
   render: function() {

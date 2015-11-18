@@ -1,5 +1,5 @@
 var DataCatalogItem = React.createClass({
-  
+
   getInitialState: function() {
     return {
       isPreviewed: false,
@@ -14,10 +14,19 @@ var DataCatalogItem = React.createClass({
   },
 
   addToMap: function(){
-    console.log('add to map');
+    emitter.dispatch('nowViewing', this.props.item);
+    this.props.item.isEnabled = !this.props.item.isEnabled;
     this.setState({
-      isActive: true
+      isActive: this.props.item.isEnabled
     });
+  },
+
+  componentWillUpdate: function(){
+    if(this.state.isActive !== this.props.item.isEnabled){
+      this.setState({
+      isActive: this.props.item.isEnabled
+      });
+    }
   },
 
   componentDidUpdate: function(){
@@ -26,8 +35,9 @@ var DataCatalogItem = React.createClass({
 
   render: function(){
     var item = this.props.item;
-    return ( 
-      <li className="clearfix"><button onClick={this.addToPreview} className="btn data-group__data-item col col-10">{item.name}</button><button onClick={this.addToMap} className="btn blue col col-2"><i className="fa fa-plus-circle"> </i></button></li>
+    var iconClass = "fa " + (this.state.isActive === true ? "fa-minus-circle red" : "fa-plus-circle blue");
+    return (
+      <li className="clearfix"><button onClick={this.addToPreview} className="btn data-group__data-item col col-10">{item.name}</button><button onClick={this.addToMap} className="btn col col-2 "><i className={iconClass}> </i></button></li>
       ) ;
   }
 });

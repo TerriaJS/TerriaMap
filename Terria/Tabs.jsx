@@ -12,7 +12,7 @@ var items = ['welcome', 'data-catalog', 'collections' , 'my-data' ];
 var Tabs = React.createClass({
   getInitialState: function() {
     return {
-      activeTab: 0
+      activeTab: 1
     };
   },
 
@@ -24,21 +24,20 @@ var Tabs = React.createClass({
 
   render: function() {
     var panels = [ <WelcomeTab />, <DataCatalog catalog={this.props.catalog} />, <CollectionsTab/>, <MyDataTab /> ];
-
     return (
       <div className="tabs clearfix">
       <ul className="tablist center list-reset mb0" role="tablist">
       {items.map(function(item, i ){
-      return (<li onClick={this.clickTab.bind(this, i)} key={i} id={getName('tablist__', item)} className={getName('btn btn-tab tablist__', item)} role="tab" aria-controls={getName('panel__', item)} aria-selected={(this.state.activeTab === i) ? "true" : "false"} tabIndex="0">{item.replace(/-/g, ' ')}</li>)
+      return (<li onClick={this.clickTab.bind(this, i)} key={i} id={getName('tablist__', item)} className={getName('btn btn-tab tablist__', item)} role="tab" aria-controls={getName('panel__', item)} aria-selected={(this.state.activeTab == i) ? "true" : "false"} tabIndex="0">{item.replace(/-/g, ' ')}</li>)
       }, this)}
       </ul>
 
       {items.map(function(item, i){
         return(
-          <section key={i} aria-hidden={(this.state.activeTab === i) ? "false" : "true"} id={getName('panel__', item)} className={getName('tab-panel panel__', item)}  aria-labelledby={getName('tablist__', item)} role="tabpanel" tabIndex="0">       
+          <section key={i} aria-hidden={(this.state.activeTab == i) ? "false" : "true"} id={getName('panel__', item)} className={getName('tab-panel panel__', item)}  aria-labelledby={getName('tablist__', item)} role="tabpanel" tabIndex="0">
           <h3 className="hide">{item.replace(/-/g, ' ')}</h3>
             {panels[i]}
-          </section> 
+          </section>
           )
         }, this)}
       </div>);
