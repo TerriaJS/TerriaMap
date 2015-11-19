@@ -5,6 +5,7 @@ var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
     ModalWindow = require('./Terria/ModalWindow.jsx'),
     SidePanel = require('./Terria/SidePanel.jsx'),
+    TerriaViewer = require('./Terria/TerriaViewer.js'),
     element = document.getElementById('main'),
     nav = document.getElementById('nav');
 
@@ -22,10 +23,9 @@ var corsProxy = require('terriajs/lib/Core/corsProxy');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
-var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
-var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
+var ViewerMode = require('terriajs/lib/Models/ViewerMode');
 
 // Configure the base URL for the proxy service used to work around CORS restrictions.
 corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
@@ -71,6 +71,15 @@ terria.start({
     emitter.subscribe('nowViewing', function(data) {
       ReactDOM.render(<SidePanel terria={terria} />, nav);
     });
+
+        // Create the map/globe.
+    TerriaViewer.create(terria, {
+        developerAttribution: {
+            text: 'NICTA',
+            link: 'http://www.nicta.com.au'
+        }
+    });
+    //terria.viewerMode = ViewerMode.CesiumEllipsoid;
 
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 

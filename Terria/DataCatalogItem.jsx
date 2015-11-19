@@ -14,28 +14,21 @@ var DataCatalogItem = React.createClass({
   },
 
   addToMap: function(){
-    emitter.dispatch('nowViewing', this.props.item);
-    this.props.item.isEnabled = !this.props.item.isEnabled;
     this.setState({
-      isActive: this.props.item.isEnabled
+      isActive: true
     });
-  },
 
-  componentWillUpdate: function(){
-    if(this.state.isActive !== this.props.item.isEnabled){
-      this.setState({
-      isActive: this.props.item.isEnabled
-      });
-    }
+    this.props.item.isEnabled = !this.props.item.isEnabled;
   },
 
   componentDidUpdate: function(){
     emitter.dispatch('preview', this.props.item);
+    emitter.dispatch('nowViewing', null);
   },
 
   render: function(){
     var item = this.props.item;
-    var iconClass = "fa " + (this.state.isActive === true ? "fa-minus-circle red" : "fa-plus-circle blue");
+    var iconClass = "fa " + (this.props.item.isEnabled === true ? "fa-minus-circle red" : "fa-plus-circle blue");
     return (
       <li className="clearfix"><button onClick={this.addToPreview} className="btn data-group__data-item col col-10">{item.name}</button><button onClick={this.addToMap} className="btn col col-2 "><i className={iconClass}> </i></button></li>
       ) ;
