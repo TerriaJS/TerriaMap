@@ -41,7 +41,7 @@ registerCatalogMembers();
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria({
     appName: 'NationalMap',
-    supportEmail: 'nationalmap@communications.gov.au',
+    supportEmail: 'data@pmc.gov.au',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
