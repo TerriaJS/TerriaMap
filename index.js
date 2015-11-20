@@ -3,10 +3,10 @@
 /*global require*/
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
-    ModalWindow = require('terriajs/lib/Views/ModalWindow.jsx'),
-    SidePanel = require('terriajs/lib/Views/SidePanel.jsx'),
-    TerriaViewer = require('terriajs/lib/Views/TerriaViewer.js'),
-    EventEmitter = require('terriajs/lib/Views/EventEmitter.js'),
+    ModalWindow = require('terriajs/lib/ReactViews/ModalWindow.jsx'),
+    SidePanel = require('terriajs/lib/ReactViews/SidePanel.jsx'),
+    TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer.js'),
+    EventEmitter = require('terriajs/lib/ReactViews/EventEmitter.js'),
     element = document.getElementById('main'),
     nav = document.getElementById('nav');
 
