@@ -251,7 +251,7 @@ gulp.task('jsx', function() {
 
 //compile sass, temp
 gulp.task('sass', function(){
-  return sass('scss/nationalmap.scss',{
+  return sass('./node_modules/terriajs/lib/Sass/nationalmap.scss',{
           style: 'expanded',
           loadPath: 'scss'
         })
@@ -261,7 +261,7 @@ gulp.task('sass', function(){
 //watch js and sass compile
 gulp.task('new-watch', function(){
   gulp.watch(['./node_modules/terriajs/lib/Views/**', 'index.js'],  ['jsx']);
-  gulp.watch('scss/**', ['sass']);
+  gulp.watch('./node_modules/terriajs/lib/Sass/**', ['sass']);
 });
 
 
