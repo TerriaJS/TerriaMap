@@ -33,6 +33,8 @@ var Transforms = require('terriajs-cesium/Source/Core/Transforms');
 var Tween = require('terriajs-cesium/Source/ThirdParty/Tween');
 var CesiumWidget = require('terriajs-cesium/Source/Widgets/CesiumWidget/CesiumWidget');
 
+var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
+
 var FrameRateMonitor = require('terriajs-cesium/Source/Scene/FrameRateMonitor');
 var runLater = require('terriajs/lib/Core/runLater');
 
@@ -62,6 +64,9 @@ var TerriaViewer = function(terria, options) {
 
     this._developerAttribution = options.developerAttribution;
     this.maximumLeafletZoomLevel = options.maximumLeafletZoomLevel;
+
+    //TODO: perf test to set environment
+
     this.terria = terria;
 
     var useCesium = terria.viewerMode !== ViewerMode.Leaflet;
@@ -69,7 +74,6 @@ var TerriaViewer = function(terria, options) {
 
     this._terrainProvider = undefined;
     if (supportsWebgl()) {
-
         if (typeof options.terrain === 'string' || options.terrain instanceof String) {
             this._terrainProvider = new CesiumTerrainProvider({
                 url : options.terrain
@@ -80,16 +84,25 @@ var TerriaViewer = function(terria, options) {
             this._terrainProvider = new CesiumTerrainProvider({
                 url : '//assets.agi.com/stk-terrain/v1/tilesets/world/tiles'
             });
-            console.log(this._terrainProvider);
+        console.log(this._terrainProvider);
         }
     }
 
     this.selectViewer(useCesium);
+
+    knockout.getObservable( this.terria, 'viewerMode').subscribe(function() {
+        changeViewer(this);
+    }, this);
+
     this._previousBaseMap =  this.terria.baseMap;
+
+    knockout.getObservable( this.terria, 'baseMap').subscribe(function() {
+        changeBaseMap(this,  this.terria.baseMap);
+    }, this);
 };
 
-TerriaViewer.create = function(terria) {
-    return new TerriaViewer(terria);
+TerriaViewer.create = function(terria, options) {
+    return new TerriaViewer(terria, options);
 };
 
 function changeViewer(viewer) {
@@ -103,16 +116,6 @@ function changeViewer(viewer) {
         }
     } else {
         if (!supportsWebgl()) {
-            PopupMessageViewModel.open('ui', {
-                title : 'WebGL not supported',
-                message : '\
-Your web browser cannot display the map in 3D because it does not support WebGL.  Please upgrade to the \
-latest version of <a href="http://www.google.com/chrome" target="_blank">Google Chrome</a>, \
-<a href="http://www.mozilla.org/firefox" target="_blank">Mozilla Firefox</a>, \
-<a href="https://www.apple.com/au/osx/how-to-upgrade/" target="_blank">Apple Safari</a>, or \
-<a href="http://www.microsoft.com/ie" target="_blank">Microsoft Internet Explorer</a>.'
-            });
-
             terria.viewerMode = ViewerMode.Leaflet;
         } else {
             if (newMode === ViewerMode.CesiumTerrain) {
@@ -296,8 +299,6 @@ DrawExtentHelper.prototype.destroy = function () {
 };
 
 
-
-
 // -------------------------------------------
 // Region Selection
 // -------------------------------------------
@@ -318,6 +319,7 @@ TerriaViewer.prototype._enableSelectExtent = function(scene, bActive) {
 
 
 TerriaViewer.prototype._createCesiumViewer = function(container) {
+
     var that = this;
 
     var terrainProvider = that._terrainProvider;
@@ -353,14 +355,7 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO \
             console.log('Switching to EllipsoidTerrainProvider.');
             viewer.scene.terrainProvider = new EllipsoidTerrainProvider();
             if (!defined(that.TerrainMessageViewed)) {
-                PopupMessageViewModel.open('ui', {
-                    title : 'Terrain Server Not Responding',
-                    message : '\
-The terrain server is not responding at the moment.  You can still use all the features of '+that.terria.appName+' \
-but there will be no terrain detail in 3D mode.  We\'re sorry for the inconvenience.  Please try \
-again later and the terrain server should be responding as expected.  If the issue persists, please contact \
-us via email at '+that.terria.supportEmail+'.'
-                });
+
                 that.TerrainMessageViewed = true;
             }
         }
@@ -398,6 +393,7 @@ us via email at '+that.terria.supportEmail+'.'
 };
 
 TerriaViewer.prototype.selectViewer = function(bCesium) {
+
     changeBaseMap(this, undefined);
 
     this.terria.beforeViewerChanged.raiseEvent();
@@ -557,13 +553,6 @@ TerriaViewer.prototype.selectViewer = function(bCesium) {
             });
             this.monitor.lowFrameRate.addEventListener( function() {
                 if (! that.terria.cesium.stoppedRendering) {
-                    PopupMessageViewModel.open('ui', {
-                        title : 'Unusually Slow Performance Detected',
-                        message : '\
-It appears that your system is capable of running '+that.terria.appName+' in 3D mode, but is having significant performance issues. \
-We are automatically switching to 2D mode to help resolve this issue.  If you want to switch back to 3D mode you can select \
-that option from the Maps button at the top of the screen.'
-                    });
                     runLater(function() {
                         that.terria.viewerMode = ViewerMode.Leaflet;
                     });

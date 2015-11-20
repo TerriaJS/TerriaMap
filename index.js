@@ -6,6 +6,7 @@ var React = window.React = require('react'),
     ModalWindow = require('./Terria/ModalWindow.jsx'),
     SidePanel = require('./Terria/SidePanel.jsx'),
     TerriaViewer = require('./Terria/TerriaViewer.js'),
+    //TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer'),
     element = document.getElementById('main'),
     nav = document.getElementById('nav');
 
@@ -84,7 +85,7 @@ terria.start({
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
-    updateApplicationOnHashChange(terria, window);
+    //updateApplicationOnHashChange(terria, window);
   });
 
 
