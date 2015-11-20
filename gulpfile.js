@@ -10,7 +10,7 @@ var gutil = require('gulp-util');
 var browserify = require('browserify');
 var jshint = require('gulp-jshint');
 var jsdoc = require('gulp-jsdoc');
-var less = require('gulp-less');
+var sass  = require('gulp-ruby-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
@@ -55,7 +55,7 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
+gulp.task('build', ['sass', 'merge-datasources', 'build-app', 'build-specs', 'jsx']);
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);
@@ -249,11 +249,20 @@ gulp.task('jsx', function() {
     .pipe(gulp.dest('wwwroot/build'));
 });
 
+//compile sass, temp
+gulp.task('sass', function(){
+  return sass('scss/nationalmap.scss',{
+          style: 'expanded',
+          loadPath: 'scss'
+        })
+        .pipe(gulp.dest('wwwroot/build'));
+});
+
 //watch js and sass compile
 gulp.task('new-watch', function(){
   gulp.watch(['./node_modules/terriajs/lib/Views/**', 'index.js'],  ['jsx']);
-  // gulp.watch([path.SRC + '/js/**', './spec/test.js'], ['test']);
-})
+  gulp.watch('scss/**', ['sass']);
+});
 
 
 

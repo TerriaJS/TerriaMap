@@ -77,7 +77,7 @@ terria.start({
             link: 'http://www.nicta.com.au'
         }
     });
-    //terria.viewerMode = ViewerMode.CesiumEllipsoid;
+    terria.viewerMode = ViewerMode.CesiumEllipsoid;
 
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
