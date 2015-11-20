@@ -81,6 +81,21 @@ terria.start({
 
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
+    //temp
+
+    // @Kevin: why doesn't this work :(
+    var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
+    var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
+    var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
+
+
+    // Create the various base map options.
+    var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
+    var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
+
+    var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
+
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     //updateApplicationOnHashChange(terria, window);
   });
