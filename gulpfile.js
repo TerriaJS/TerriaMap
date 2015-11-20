@@ -251,7 +251,7 @@ gulp.task('jsx', function() {
 
 //watch js and sass compile
 gulp.task('new-watch', function(){
-  gulp.watch(['Terria/**', 'index.js'],  ['jsx']);
+  gulp.watch(['./node_modules/terriajs/lib/Views/**', 'index.js'],  ['jsx']);
   // gulp.watch([path.SRC + '/js/**', './spec/test.js'], ['test']);
 })
 

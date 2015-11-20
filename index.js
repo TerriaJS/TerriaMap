@@ -3,10 +3,10 @@
 /*global require*/
 var React = window.React = require('react'),
     ReactDOM = require('react-dom'),
-    ModalWindow = require('./Terria/ModalWindow.jsx'),
-    SidePanel = require('./Terria/SidePanel.jsx'),
-    TerriaViewer = require('./Terria/TerriaViewer.js'),
-    //TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer'),
+    ModalWindow = require('terriajs/lib/Views/ModalWindow.jsx'),
+    SidePanel = require('terriajs/lib/Views/SidePanel.jsx'),
+    TerriaViewer = require('terriajs/lib/Views/TerriaViewer.js'),
+    EventEmitter = require('terriajs/lib/Views/EventEmitter.js'),
     element = document.getElementById('main'),
     nav = document.getElementById('nav');
 
@@ -48,8 +48,6 @@ var terria = new Terria({
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
   });
 
-var EventEmitter = require('./Terria/EventEmitter.js');
-
 var emitter = new EventEmitter();
 window.emitter = emitter;
 
@@ -72,7 +70,6 @@ terria.start({
     emitter.subscribe('nowViewing', function(data) {
       ReactDOM.render(<SidePanel terria={terria} />, nav);
     });
-
         // Create the map/globe.
     TerriaViewer.create(terria, {
         developerAttribution: {
