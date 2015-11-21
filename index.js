@@ -1,13 +1,8 @@
 'use strict';
 
 /*global require*/
-var React = window.React = require('react'),
-    ReactDOM = require('react-dom'),
-    ModalWindow = require('terriajs/lib/ReactViews/ModalWindow.jsx'),
-    SidePanel = require('terriajs/lib/ReactViews/SidePanel.jsx'),
-    TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer.js'),
-    EventEmitter = require('terriajs/lib/ReactViews/EventEmitter.js'),
-    element = document.getElementById('main'),
+var Ui = require('terriajs/lib/ReactViews/Ui.jsx'),
+    main = document.getElementById('main'),
     nav = document.getElementById('nav');
 
 var configuration = {
@@ -20,6 +15,7 @@ var configuration = {
 };
 
 var Terria = require('terriajs/lib/Models/Terria');
+var TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
@@ -27,6 +23,8 @@ var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var ViewerMode = require('terriajs/lib/Models/ViewerMode');
+var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
+
 
 // Configure the base URL for the proxy service used to work around CORS restrictions.
 corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
@@ -45,12 +43,9 @@ var terria = new Terria({
     supportEmail: 'data@pmc.gov.au',
     baseUrl: configuration.terriaBaseUrl,
     cesiumBaseUrl: configuration.cesiumBaseUrl,
-    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl
+    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
+    analytics: new GoogleAnalytics()
   });
-
-var emitter = new EventEmitter();
-window.emitter = emitter;
-
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
@@ -63,32 +58,20 @@ terria.start({
 }).otherwise(function(e) {
     raiseErrorToUser(terria, e);
 }).always(function() {
-    var catalogGroups = terria.catalog.group.items;
-    ReactDOM.render(<ModalWindow catalog={catalogGroups} />, element);
-    ReactDOM.render(<SidePanel terria={terria} />, nav);
-
-    emitter.subscribe('nowViewing', function(data) {
-      ReactDOM.render(<SidePanel terria={terria} />, nav);
-    });
-        // Create the map/globe.
+    configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
+    //more configurables to come
+    var ui = new Ui(terria, main, nav);
+    // Create the map/globe.
     TerriaViewer.create(terria, {
         developerAttribution: {
             text: 'NICTA',
             link: 'http://www.nicta.com.au'
         }
     });
-    terria.viewerMode = ViewerMode.CesiumEllipsoid;
-
-    configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
-
     //temp
-
-    // @Kevin: why doesn't this work :(
     var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
     var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
     var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
-
-
     // Create the various base map options.
     var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
     var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
@@ -97,7 +80,7 @@ terria.start({
     selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
-    //updateApplicationOnHashChange(terria, window);
+    // updateApplicationOnHashChange(terria, window);
   });
 
 
