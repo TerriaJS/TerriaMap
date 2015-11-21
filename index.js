@@ -1,7 +1,7 @@
 'use strict';
 
 /*global require*/
-var Ui = require('terriajs/lib/ReactViews/Ui.jsx'),
+var UiWrapper = require('terriajs/lib/ReactViews/UiWrapper.jsx'),
     main = document.getElementById('main'),
     nav = document.getElementById('nav');
 
@@ -60,7 +60,8 @@ terria.start({
 }).always(function() {
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
     //more configurables to come
-    var ui = new Ui(terria, main, nav);
+    var uiWrapper = new UiWrapper(terria, main, nav);
+    uiWrapper.init(main, nav);
     // Create the map/globe.
     TerriaViewer.create(terria, {
         developerAttribution: {
