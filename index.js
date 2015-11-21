@@ -3,7 +3,8 @@
 /*global require*/
 var UiWrapper = require('terriajs/lib/ReactViews/UiWrapper.jsx'),
     main = document.getElementById('main'),
-    nav = document.getElementById('nav');
+    nav = document.getElementById('nav'),
+    aside = document.getElementById('aside');
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -60,8 +61,7 @@ terria.start({
 }).always(function() {
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
     //more configurables to come
-    var uiWrapper = new UiWrapper(terria, main, nav);
-    uiWrapper.init(main, nav);
+
     // Create the map/globe.
     TerriaViewer.create(terria, {
         developerAttribution: {
@@ -82,6 +82,10 @@ terria.start({
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     // updateApplicationOnHashChange(terria, window);
+
+    var uiWrapper = new UiWrapper(terria, main, nav);
+    uiWrapper.init(main, nav, aside);
+
   });
 
 

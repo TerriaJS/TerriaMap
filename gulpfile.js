@@ -260,7 +260,7 @@ gulp.task('sass', function(){
 
 //watch js and sass compile
 gulp.task('new-watch', function(){
-  gulp.watch(['./node_modules/terriajs/lib/Views/**', 'index.js'],  ['jsx']);
+  gulp.watch(['./node_modules/terriajs/lib/ReactViews/**', 'index.js'],  ['jsx']);
   gulp.watch('./node_modules/terriajs/lib/Sass/**', ['sass']);
 });
 
