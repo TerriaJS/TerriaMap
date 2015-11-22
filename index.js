@@ -63,12 +63,13 @@ terria.start({
     //more configurables to come
 
     // Create the map/globe.
-    TerriaViewer.create(terria, {
+    var terriaViewer = TerriaViewer.create(terria, {
         developerAttribution: {
             text: 'NICTA',
             link: 'http://www.nicta.com.au'
         }
     });
+
     //temp
     var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
     var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
@@ -79,6 +80,10 @@ terria.start({
 
     var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
     selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
+
+    console.log(terriaViewer);
+
+    terriaViewer.updateBaseMap();
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     // updateApplicationOnHashChange(terria, window);
