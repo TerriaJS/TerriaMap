@@ -21,6 +21,7 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
+var child_exec = require('child_process').exec;  // child_process is built in to node
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -107,6 +108,11 @@ gulp.task('docs', function(){
         .pipe(jsdoc('./wwwroot/doc', undefined, {
             plugins : ['plugins/markdown']
         }));
+});
+
+
+gulp.task('styleguide', function(done) {
+    child_exec('kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
 });
 
 gulp.task('prepare', ['prepare-terriajs']);
