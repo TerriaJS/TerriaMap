@@ -66,7 +66,7 @@ gulp.task('release-specs', ['prepare'], function() {
     return build(specJSName, glob.sync(testGlob), true);
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs']);
+gulp.task('release', ['merge-datasources', 'release-app', 'release-specs']);
 
 gulp.task('watch-app', ['prepare', 'new-watch'], function() {
     return watch(appJSName, appEntryJSName, false);
