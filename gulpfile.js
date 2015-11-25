@@ -209,7 +209,7 @@ function watch(name, files, minify) {
         debug: true,
         cache: {},
         packageCache: {}
-    }));
+    }), { poll: 1000 } );
 
     function rebundle(ids) {
         // Don't rebundle if only the version changed.
