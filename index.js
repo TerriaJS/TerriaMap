@@ -81,8 +81,6 @@ terria.start({
     var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
     selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
-    console.log(terriaViewer);
-
     terriaViewer.updateBaseMap();
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
