@@ -4,7 +4,9 @@
 var UiWrapper = require('terriajs/lib/ReactViews/UiWrapper.jsx'),
     main = document.getElementById('main'),
     nav = document.getElementById('nav'),
-    aside = document.getElementById('aside');
+    aside = document.getElementById('aside'),
+    mapNav = document.getElementById('map-nav'),
+    chart = document.getElementById('chart');
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -86,8 +88,8 @@ terria.start({
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     // updateApplicationOnHashChange(terria, window);
 
-    var uiWrapper = new UiWrapper(terria, main, nav);
-    uiWrapper.init(main, nav, aside);
+    var uiWrapper = new UiWrapper(terria);
+    uiWrapper.init(main, nav, aside, mapNav, chart, allBaseMaps);
 
   });
 
