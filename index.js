@@ -89,7 +89,7 @@ terria.start({
     // updateApplicationOnHashChange(terria, window);
 
     var uiWrapper = new UiWrapper(terria);
-    uiWrapper.init(main, nav, aside, mapNav, chart, allBaseMaps);
+    uiWrapper.init(main, nav, aside, mapNav, chart, allBaseMaps, terriaViewer);
 
   });
 
