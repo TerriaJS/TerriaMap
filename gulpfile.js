@@ -68,7 +68,7 @@ gulp.task('release-specs', ['prepare'], function() {
 
 gulp.task('release', ['merge-datasources', 'release-app', 'release-specs']);
 
-gulp.task('watch-app', ['prepare', 'new-watch'], function() {
+gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
 });
 
@@ -94,7 +94,7 @@ gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
     return gulp.watch(terriaJSSource + '/**', [ 'prepare-terriajs' ]);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs','watch-datasources', 'watch-terriajs', 'new-watch']);
+gulp.task('watch', ['watch-app', 'watch-specs','watch-datasources', 'watch-terriajs', 'sass']);
 
 gulp.task('lint', function(){
     return gulp.src(['lib/**/*.js', 'test/**/*.js'])
