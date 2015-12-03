@@ -72,6 +72,7 @@ var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
 var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
 var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
+var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 
 var Terria = require('terriajs/lib/Models/Terria');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
@@ -132,6 +133,7 @@ terria.start({
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     updateApplicationOnHashChange(terria, window);
+    updateApplicationOnMessageFromParentWindow(terria, window);
 
     // Create the map/globe.
     TerriaViewer.create(terria, {
