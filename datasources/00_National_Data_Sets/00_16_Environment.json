@@ -9,55 +9,13 @@
           "name": "Environment",
           "type": "group",
           "items": [
-
-            {
-              "name": "Protected Areas",
-              "type": "group",
-              "items": [
-                {
-                  "name": "CAPAD 2014 Marine Areas",
-                  "url": "http://www.ga.gov.au/gis/services/topography/Dept_of_Environment_Protected_Areas/MapServer/WMSServer",
-                  "type": "wms",
-                  "layers": "Protected_Areas_CAPAD_2014_Marine",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Protected_Areas_CAPAD_2014_Marine_DeptEnvironment.jpg",
-                  "clipToRectangle": true,
-                  "parameters": {
-                    "tiled": true
-                  }
-                },
-                {
-                  "name": "CAPAD 2014 Terrestrial Areas",
-                  "url": "http://www.ga.gov.au/gis/services/topography/Dept_of_Environment_Protected_Areas/MapServer/WMSServer",
-                  "type": "wms",
-                  "layers": "Protected_Areas_CAPAD_2014_Terrestrial",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Protected_Areas_CAPAD_2014_Terrestrial_DeptEnvironment.jpg",
-                  "clipToRectangle": true,
-                  "parameters": {
-                    "tiled": true
-                  }
-                },
-                {
-                  "name": "World Heritage Areas 2007",
-                  "url": "http://www.ga.gov.au/gis/services/topography/Dept_of_Environment_Protected_Areas/MapServer/WMSServer",
-                  "type": "wms",
-                  "layers": "World_Heritage_Areas_2007",
-                  "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/World_Heritage_Areas_2007_DeptEnvironment.jpg",
-                  "clipToRectangle": true,
-                  "parameters": {
-                    "tiled": true
-                  }
-                }
-              ]
-            },
             {
               "name": "Commonwealth Marine Regions",
               "url": "http://www.environment.gov.au/mapping/services/ogc_services/Commonwealth_Marine_Regions/MapServer/WMSServer",
               "layers": "Commonwealth_Marine_Regions",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Australian World Heritage Areas",
@@ -67,19 +25,7 @@
               "dataUrl": "",
               "dataUrlType": "wfs-complete",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
-            },
-            {
-              "name": "Collaborative Australian Protected Areas Database (CAPAD) 2014",
-              "url": "http://www.environment.gov.au/mapping/services/ogc_services/capad/MapServer/WMSServer",
-              "layers": "Protected_Areas_2014",
-              "type": "wms",
-              "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Commonwealth Heritage List (CHL)",
@@ -87,9 +33,7 @@
               "layers": "0",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Commonwealth Marine Reserves",
@@ -97,9 +41,7 @@
               "layers": "0",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Directory of Important Wetlands in Australia (DIWA)",
@@ -107,9 +49,7 @@
               "layers": "Directory of Important Wetlands in Australia",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "EPBC Referrals",
@@ -117,9 +57,7 @@
               "layers": "EPBC_Referrals",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Key Ecological Features",
@@ -127,9 +65,7 @@
               "layers": "Key_Ecological_Features",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "National Heritage List (NHL)",
@@ -137,9 +73,7 @@
               "layers": "National_Heritage_List_Australia",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Ramsar Upstream Catchments",
@@ -147,9 +81,7 @@
               "layers": "Ramsar_Wetlands_Upstream_Catchments",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
             },
             {
               "name": "Ramsar Wetlands of International Importance",
@@ -157,9 +89,15 @@
               "layers": "Ramsar_Wetlands",
               "type": "wms",
               "clipToRectangle": true,
-              "parameters": {
-                "tiled": true
-              }
+              "ignoreUnknownTileErrors": true
+            },
+            {
+              "name": "Conservation Management Zones",
+              "url": "http://www.environment.gov.au/mapping/services/ogc_services/Conservation_Management_Zones/MapServer/WMSServer",
+              "layers": "CM_Zones",
+              "type": "wms",
+              "clipToRectangle": true,
+              "ignoreUnknownTileErrors": true
             }
           ]
         }
