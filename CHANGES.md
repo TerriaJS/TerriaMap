@@ -2,6 +2,8 @@ Change Log
 ==========
 
 ### 2015-12-15
+* Add NEII Viewer to Related Maps.
+* Fixed display of map preview images in Related Maps.
 
 * Fixed the squished images on the Related Maps panel.
 
