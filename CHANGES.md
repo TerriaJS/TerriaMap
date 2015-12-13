@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2015-12-15
+
+* Fixed the squished images on the Related Maps panel.
+
 ### 2015-11-16
 
 * Completely support the [csv-geo-au](https://github.com/NICTA/nationalmap/wiki/csv-geo-au) specification (other than SA1s and boundaries from previous years) including ASGS boundaries like remoteness regions, indigenous areas and non ASGS boundaries like primary health networks.
