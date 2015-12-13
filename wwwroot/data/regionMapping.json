@@ -2,13 +2,20 @@
     "comments": "Matching takes place in the order defined in this file. Place code matches before name matches, and smaller regions before larger ones.",
     "regionWmsMap": {
         "SA1": {
-          "description": "Statistical Area Level 1",
-          "layerName": "region_map:FID_SA1_2011_AUST",
-          "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
-          "regionProp": "SA1_7DIG11",
-          "aliases": [
-            "sa1"
-          ]
+            "layerName": "region_map:FID_SA1_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "SA1_MAIN11",
+            "aliases": ["sa1_code_2011", "sa1_maincode_2011", "sa1_code", "sa1"],
+            "digits": 11,
+            "description":"Statistical Area Level 1"
+        },
+        "SA1_7DIGIT": {
+            "layerName": "region_map:FID_SA1_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "SA1_7DIG11",
+            "aliases": ["sa1_7digitcode_2011", "sa1_7digitcode"],
+            "digits": 7,
+            "description":"Statistical Area Level 1"
         },
         "SA4": {
             "layerName":"region_map:FID_SA4_2011_AUST",
