@@ -12,7 +12,8 @@
         "adelaidecitycouncil.com",
         "www.dptiapps.com.au",
         "geoserver-123.aodn.org.au",
-        "geoserver.imos.org.au"
+        "geoserver.imos.org.au",
+        "nci.org.au"
     ],
     "initializationUrls" : [
         "nm"
