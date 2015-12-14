@@ -8,15 +8,130 @@
     "services": [],
     "catalog": [
         {
-            "name": "CSIRO Web Services",
+            "name": "Soil and Landscape Grid of Australia",
             "type": "group",
             "items": [
                 {
-                    "name": "Soil and Landscape Grid",
-                    "description": "[Home Page](http://www.clw.csiro.au/aclep/soilandlandscapegrid/GetData-GIS.html)  [Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-                    "dataCustodian": "[CSIRO](http://www.sa.gov.au/)",
-                    "url": "http://www.asris.csiro.au/ArcGis/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer/WMSServer",
-                    "type": "wms-getCapabilities"
+                    "name": "National Soil Attributes",
+                    "type": "group",
+                    "items": [
+                        {
+                            "name": "Bulk Density (Whole Earth)",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Organic Carbon",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Clay",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Silt",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Sand",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "pH CaCl2",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Available Water Capacity",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Total Nitrogen",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Total Phosphorus",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Effective Cation Exchange Capacity",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Depth of Regolith",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/DER_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Depth of Soil",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/DES_ACLEP_AU_NAT_C/MapServer",
+                            "type": "esri-mapServer-group"
+                        }
+                    ]
+                },
+                {
+                    "name": "Australia-wide 3D Soil Attributes",
+                    "type": "group",
+                    "items": [
+                        {
+                            "name": "Bulk Density (Whole Earth)",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Clay",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Silt",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Sand",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "pH CaCl2",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Available Water Capacity",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Total Nitrogen",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/NTO_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Total Phosphorus",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        },
+                        {
+                            "name": "Effective Cation Exchange Capacity",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_TRN_N/MapServer",
+                            "type": "esri-mapServer-group"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landscape Attributes",
+                    "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SRTM_attributes_3s_ACLEP_AU/MapServer",
+                    "type": "esri-mapServer-group"
                 }
             ]
         }
