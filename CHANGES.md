@@ -4,7 +4,7 @@ Change Log
 ### 2015-12-15
 
 * Added Department of Environment datasets under `National Data Sets -> Environment`.
-* Add NEII Viewer to Related Maps.
+* Add NEII Viewer and AURIN Map to Related Maps.
 * Fixed display of map preview images in Related Maps.
 * Fixed the squished images on the Related Maps panel.
 
