@@ -9,7 +9,6 @@ Change Log
 * Fixed the squished images on the Related Maps panel.
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.50.  Significant changes relevant to NationalMap users include:
   * Fixed a bug that caused poor performance when clicking a point on the map with lots of features and then closing the feature information panel.
-  * Apply linkify, instead of markdown, to properties shown in the Feature Info Panel.
   * Legend URLs are now accessed via the proxy, if applicable.
   * Fixed a bug that caused a `TypeError` on load when the share URL included enabled datasets with an order different from their order in the catalog.
   * Improved the message that is shown to the user when their browser supports WebGL but it has a "major performance caveat".
@@ -23,7 +22,6 @@ Change Log
   * Layer name is now shown in the catalog item info panel for ESRI ArcGIS MapServer layers.
   * Retrieve WFS or WCS URL associated with WMS data sources using DescribeLayer if no dataUrl is present.
   * Sorted ABS age variables numerically, not alphabetically.
-  * Removed extra space at the bottom of base map buttons.
   * Fixed a bug that prevented region mapping from working over HTTPS.
   * The proxy is now used to avoid a mixed content warning when accessing an HTTP dataset from an HTTPS deployment of TerriaJS.
 
