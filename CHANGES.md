@@ -7,6 +7,25 @@ Change Log
 * Add NEII Viewer and AURIN Map to Related Maps.
 * Fixed display of map preview images in Related Maps.
 * Fixed the squished images on the Related Maps panel.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.50.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that caused poor performance when clicking a point on the map with lots of features and then closing the feature information panel.
+  * Apply linkify, instead of markdown, to properties shown in the Feature Info Panel.
+  * Legend URLs are now accessed via the proxy, if applicable.
+  * Fixed a bug that caused a `TypeError` on load when the share URL included enabled datasets with an order different from their order in the catalog.
+  * Improved the message that is shown to the user when their browser supports WebGL but it has a "major performance caveat".
+  * Fixed a bug that could cause an exception in some browsers (Internet Explorer, Safari) when loading a GeoJSON with embedded styles.
+  * Fixed a bug with Leaflet 2D map where clicks on animation controls or timeline would also register on the map underneath causing undesired feature selection and, when double clicked, zooming (also removed an old hack that disabled dragging while using the timeline slider)
+  * Changed Australian Topography base map server and updated the associated thumbnail.
+  * Added `updateApplicationOnMessageFromParentWindow` function.  After an app calls this function at startup, TerriaJS can be controlled by its parent window when embedded in an `iframe` by messages sent with `window.postMessage`.
+  * Put a white background behind legend images to fix legend images with transparent background being nearly invisible.
+  * Search entries are no longer duplicated for catalog items that appear in multiple places in the Data Catalogue
+  * Fixed the layer order changing in Cesium when a CSV variable is chosen.
+  * Layer name is now shown in the catalog item info panel for ESRI ArcGIS MapServer layers.
+  * Retrieve WFS or WCS URL associated with WMS data sources using DescribeLayer if no dataUrl is present.
+  * Sorted ABS age variables numerically, not alphabetically.
+  * Removed extra space at the bottom of base map buttons.
+  * Fixed a bug that prevented region mapping from working over HTTPS.
+  * The proxy is now used to avoid a mixed content warning when accessing an HTTP dataset from an HTTPS deployment of TerriaJS.
 
 ### 2015-11-16
 
