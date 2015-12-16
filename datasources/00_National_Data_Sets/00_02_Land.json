@@ -121,10 +121,464 @@
                   "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
                 }
               ]
-            }
+            },
+                        {
+                            "name": "National Soil Attributes",
+                            "type": "group",
+                            "items": [
+                                {
+                                    "name": "Bulk Density (Whole Earth)",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Bulk Density of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Bulk Density: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Bulk Density of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Bulk Density: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Bulk Density of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Bulk Density: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Bulk Density of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Bulk Density: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Bulk Density of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Bulk Density: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/BDW_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Bulk Density of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Bulk Density: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                }, {
+                                    "name": "Organic Carbon",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Organic Carbon of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Organic Carbon: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Organic Carbon of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Organic Carbon: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Organic Carbon of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Organic Carbon: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Organic Carbon of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Organic Carbon: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Organic Carbon of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Organic Carbon: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SOC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Organic Carbon of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Organic Carbon: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                }, {
+                                    "name": "Clay Content",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Clay Content of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Clay Content: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Clay Content of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Clay Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Clay Content of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Clay Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Clay Content of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Clay Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Clay Content of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Clay Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/CLY_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Clay Content of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Clay Content: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                }, {
+                                    "name": "Silt Content",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Silt Content of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Silt Content: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Silt Content of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Silt Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Silt Content of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Silt Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Silt Content of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Silt Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Silt Content of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Silt Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SLT_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Silt Content of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Silt Content: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                }, {
+                                    "name": "Sand Content",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Sand Content of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Sand Content: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Sand Content of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Sand Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Sand Content of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Sand Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Sand Content of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Sand Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Sand Content of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Sand Content: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SND_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Sand Content of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Sand Content: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "name": "ph in Calcium Chloride",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "pH in Calcium Chloride of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "pH in Calcium Chloride: {{Pixel Value}}"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "pH in Calcium Chloride of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "pH in Calcium Chloride: {{Pixel Value}}"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "pH in Calcium Chloride of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "pH in Calcium Chloride: {{Pixel Value}}"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "pH in Calcium Chloride of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "pH in Calcium Chloride: {{Pixel Value}}"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "pH in Calcium Chloride of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "pH in Calcium Chloride: {{Pixel Value}}"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PHC_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "pH in Calcium Chloride of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "pH in Calcium Chloride: {{Pixel Value}}"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "name": "Available Water Capacity",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                                        "name": "Available Water Capacity of the soil within the 0 - 5 cm depth layer",
+                                        "layers": "1",
+                                        "featureInfoTemplate": "Available water capacity: {{Pixel Value}}%"
+
+                                    },
+                                    {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                                        "name": "Available Water Capacity of the soil within the 5 - 15 cm depth layer",
+                                        "layers": "5",
+                                        "featureInfoTemplate": "Available water capacity: {{Pixel Value}}%"
+
+                                    },
+                                    {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                                        "name": "Available Water Capacity of the soil within the 15 - 30 cm depth layer",
+                                        "layers": "9",
+                                        "featureInfoTemplate": "Available water capacity: {{Pixel Value}}%"
+
+                                    },
+                                    {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                                        "name": "Available Water Capacity of the soil within the 30 - 60 cm depth layer",
+                                        "layers": "13",
+                                        "featureInfoTemplate": "Available water capacity: {{Pixel Value}}%"
+
+                                    },
+                                    {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                                        "name": "Available Water Capacity of the soil within the 60 - 100 cm depth layer",
+                                        "layers": "17",
+                                        "featureInfoTemplate": "Available water capacity: {{Pixel Value}}%"
+
+                                    },
+                                    {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/AWC_ACLEP_AU_NAT_C/MapServer",
+                                        "name": "Available Water Capacity of the soil within the 100 - 200 cm depth layer",
+                                        "layers": "21",
+                                        "featureInfoTemplate": "Available water capacity: {{Pixel Value}}%"
+
+                                    }
+                                    ]
+                                },
+                                {
+                                    "name": "Total Nitrogen",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/arcgis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Total Nitrogen of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Total nitrogen: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/arcgis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Total Nitrogen of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Total nitrogen: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/arcgis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Total Nitrogen of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Total nitrogen: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/arcgis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Total Nitrogen of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Total nitrogen: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/arcgis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Total Nitrogen of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Total nitrogen: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/arcgis/rest/services/TERN/NTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Total Nitrogen of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Total nitrogen: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "name": "Total Phosphorus",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Total Phosphorus of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Total Phosphorus: {{Pixel Value}}%"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Total Phosphorus of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Total Phosphorus: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Total Phosphorus of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Total Phosphorus: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Total Phosphorus of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Total Phosphorus: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Total Phosphorus of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Total Phosphorus: {{Pixel Value}}%"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/PTO_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Total Phosphorus of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Total Phosphorus: {{Pixel Value}}%"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "name": "Effective Cation Exchange Capacity",
+                                    "type": "group",
+                                    "items": [ {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "1",
+                                        "name": "Effective Cation Exchange Capacity of the soil within the 0 - 5 cm depth layer",
+                                        "featureInfoTemplate": "Effective Cation Exchange Capacity: {{Pixel Value}} meq+/100g"
+                                    }, {
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "5",
+                                        "name": "Effective Cation Exchange Capacity of the soil within the 5 - 15 cm depth layer",
+                                        "featureInfoTemplate": "Effective Cation Exchange Capacity: {{Pixel Value}} meq+/100g"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "9",
+                                        "name": "Effective Cation Exchange Capacity of the soil within the 15 - 30 cm depth layer",
+                                        "featureInfoTemplate": "Effective Cation Exchange Capacity: {{Pixel Value}} meq+/100g"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "13",
+                                        "name": "Effective Cation Exchange Capacity of the soil within the 30 - 60 cm depth layer",
+                                        "featureInfoTemplate": "Effective Cation Exchange Capacity: {{Pixel Value}} meq+/100g"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "17",
+                                        "name": "Effective Cation Exchange Capacity of the soil within the 60 - 100 cm depth layer",
+                                        "featureInfoTemplate": "Effective Cation Exchange Capacity: {{Pixel Value}} meq+/100g"
+                                    },{
+                                        "type": "esri-mapServer",
+                                        "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/ECE_ACLEP_AU_NAT_C/MapServer",
+                                        "layers": "21",
+                                        "name": "Effective Cation Exchange Capacity of the soil within the 100 - 200 cm depth layer",
+                                        "featureInfoTemplate": "Effective Cation Exchange Capacity: {{Pixel Value}} meq+/100g"
+                                    }
+                                    ]
+                                },
+                                {
+                                    "name": "Depth of Regolith",
+                                    "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/DER_ACLEP_AU_NAT_C/MapServer",
+                                    "layers": "0",
+                                    "type": "esri-mapServer",
+                                    "featureInfoTemplate": "Depth of Regolith (estimated value): {{Pixel Value}}m"
+                                },
+                                {
+                                    "name": "Depth of Soil",
+                                    "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/DES_ACLEP_AU_NAT_C/MapServer",
+                                    "layers": "0",
+                                    "type": "esri-mapServer",
+                                    "featureInfoTemplate": "Depth of Soil: {{Pixel Value}}m"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Landscape Attributes",
+                            "url": "http://www.asris.csiro.au/ArcGis/rest/services/TERN/SRTM_attributes_3s_ACLEP_AU/MapServer",
+                            "type": "esri-mapServer-group",
+                            "layers": "1"
+                        }
           ],
           "type": "group",
-          "name": "Land"
+          "name": "Land",
+          "preserveOrder": true
         }
       ],
       "type": "group",

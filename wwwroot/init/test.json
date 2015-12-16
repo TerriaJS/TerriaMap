@@ -60,7 +60,8 @@
               "tableStyle": {
                 "dataVariable": "Magnitude",
                 "scaleByValue": true
-              }
+              },
+              "displayDuration": 2880
             },
             {
               "name": "Auto Incidents (CSV)",
@@ -139,6 +140,11 @@
               "name": "2011 Census AUST (SA4)",
               "type": "csv",
               "url": "test/2011Census_AUST_SA4.csv"
+            },
+            {
+              "name": "States STEM 2013",
+              "type": "csv",
+              "url": "test/states_stem_2013.csv"
             },
             {
               "name": "Country Regions",
@@ -287,7 +293,15 @@
             {
               "name": "Auto Incidents No Time (CSV)",
               "type": "csv",
-              "url": "test/incidents_notime.csv"
+              "url": "test/incidents_notime.csv",
+              "tableStyle": {
+                "colorMap": [
+                  {
+                    "color": "hsla(60,80%,80%,1.00)",
+                    "offset": 0
+                  }
+                ]
+              }
             },
             {
               "name": "Route in England (GPX)",
@@ -302,6 +316,7 @@
     {
       "name": "Test Providers",
       "type": "group",
+      "isOpen": true,
       "items": [
         {
           "name": "Topography (GA)",
@@ -321,12 +336,9 @@
       ]
     },
     {
-      "name": "Empty Group",
-      "type": "group"
-    },
-    {
       "name": "TerriaJS test data",
       "type": "group",
+      "isOpen": true,
       "items": [
         {
           "name": "GeoJSON",
@@ -338,8 +350,33 @@
               "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson"
             }
           ]
+        },
+
+        {
+          "name": "Csv-geo-au",
+          "type": "group",
+          "items": [
+            { "name": "Greater capital city statistical area (GCCSA)", "type": "csv", "url": "build/TerriaJS/test/csv/gccsa.csv" },
+            { "name": "Indigenous area (IARE)", "type": "csv", "url": "build/TerriaJS/test/csv/iare.csv" },
+            { "name": "Indigenous location (ILOC)", "type": "csv", "url": "build/TerriaJS/test/csv/iloc.csv" },
+            { "name": "Indigenous region (IREG)", "type": "csv", "url": "build/TerriaJS/test/csv/ireg.csv" },
+            { "name": "Local government area 2011 (LGA_2011)", "type": "csv", "url": "build/TerriaJS/test/csv/lga_code_2011.csv" },
+            { "name": "Local government area 2015 (LGA_2015)", "type": "csv", "url": "build/TerriaJS/test/csv/lga_code_2015.csv" },
+            { "name": "Primary Health Network (PHN)", "type": "csv", "url": "build/TerriaJS/test/csv/phn.csv" },
+            { "name": "Remoteness area (RA)", "type": "csv", "url": "build/TerriaJS/test/csv/ra.csv" },
+            { "name": "Section of state (SOS)", "type": "csv", "url": "build/TerriaJS/test/csv/sos.csv" },
+            { "name": "Section of state range (SOSR)", "type": "csv", "url": "build/TerriaJS/test/csv/sosr.csv" },
+            { "name": "Significant urban area (SUA)", "type": "csv", "url": "build/TerriaJS/test/csv/sua.csv" },
+            { "name": "Significant urban area by name (SUA_NAME)", "type": "csv", "url": "build/TerriaJS/test/csv/sua_name.csv" },
+            { "name": "Tourism region (TR)", "type": "csv", "url": "build/TerriaJS/test/csv/tr.csv" },
+            { "name": "Urban centre and locality (UCL)", "type": "csv", "url": "build/TerriaJS/test/csv/ucl.csv" }
+          ]
         }
       ]
+    },
+    {
+      "name": "Empty Group",
+      "type": "group"
     }
   ]
 }

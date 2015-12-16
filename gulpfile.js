@@ -69,6 +69,7 @@ gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
+    // TODO: make this automatically trigger when ./lib/Views/*.html get updated
 });
 
 gulp.task('watch-specs', ['prepare'], function() {
@@ -76,7 +77,7 @@ gulp.task('watch-specs', ['prepare'], function() {
 });
 
 gulp.task('watch-css', ['build-css'], function() {
-    return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less'], ['build-css']);
+    return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less', './lib/Styles/*.less'], ['build-css']);
 });
 
 gulp.task('watch-datasource-groups', ['merge-groups'], function() {
@@ -209,7 +210,7 @@ function watch(name, files, minify) {
         debug: true,
         cache: {},
         packageCache: {}
-    }));
+    }), { poll: 1000 } );
 
     function rebundle(ids) {
         // Don't rebundle if only the version changed.

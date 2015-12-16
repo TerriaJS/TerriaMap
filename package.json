@@ -13,14 +13,14 @@
     "express": "^4.12.3",
     "formidable": "^1.0.17",
     "javascript-natural-sort": "^0.7.1",
-    "leaflet": "^0.7.3",
+    "leaflet": "0.7.3",
     "ogr2ogr": "^0.5.1",
     "proj4": "^2.3.6",
     "proj4js-defs": "^0.0.1",
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
-    "terriajs": "1.0.44",
-    "terriajs-cesium": "1.13.0",
+    "terriajs": "1.0.50",
+    "terriajs-cesium": "1.15.2",
     "yargs": "^3.8.0"
   },
   "devDependencies": {

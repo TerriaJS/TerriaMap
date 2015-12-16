@@ -98,7 +98,7 @@
     <div id="getstarted" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
-	  	<iframe width="560" height="315" src="https://www.youtube.com/embed/2hbYgOMUA50" frameborder="0" allowfullscreen></iframe>
+	  	<iframe width="560" height="315" src="https://www.youtube.com/embed/2E-u0gjz9Yw" frameborder="0" allowfullscreen></iframe>
 
 	  	<p>To launch the NationalMap and display some basic data follow these steps.</p>
 
@@ -141,27 +141,33 @@
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#spatialdata" aria-expanded="false" aria-controls="collapseThree">
-          Display my own spatial data
+          Display my own spreadsheet or spatial data
         </a>
       </h4>
     </div>
     <div id="spatialdata" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
 
-<p>If you have a data file which contains latitude and longitude information, or contains a column with a region ID which Naitonal Map can identify as a State, Postcode or ABS statistical region, you can display its contents over the NationalMap map view in addition to the NationalMap data.</p>
+<p>National Map can display two kinds of spreadsheets:<p>
+<ol><li>Spreadsheets with a <strong>point location (latitude and longitude)</strong> for each row, expressed as two columns: <code>lat</code> and <code>lon</code>. These will be displayed as points (circles).</li>
+<li>Spreadsheets where each row refers to a <strong>region</strong> such as a local government area (council), state, postcode, or ABS statistical unit such as an SA2 or CED (Commonwealth Electoral Division). Columns must be named according to the <a href="https://github.com/NICTA/nationalmap/wiki/csv-geo-au">CSV-geo-au</a> standard. These will be displayed as regions, highlighting the actual shape of each area.</li>
+</ol>
+<p>Spreadsheets must be saved as CSV (comma-separated values). </p>
 
-<p>There are three ways:</p>
+<p>Other standard spatial data types such as GeoJSON and KML are also supported.</p>
+
+<p>There are three ways to load your data:</p>
 
 <ul>
 <li>Drag your data file onto the NationalMap map view. The format of the data file will be auto-detected.</li>
 <li>Click on the <strong>Add Data</strong> button. A dialog will appear where you can select your spatial data file’s format and then browse to the file.</li>
-<li><p>When your spatial data file can be accessed on the internet using a URL, click on the <strong>Add Data</strong> button. A dialog will appear where you can select your spatial data file’s format and enter the URL which points to the file to display.</p>
-Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude columns or a column with an identifiable region ID) and various other formats. CSV files with latitude and longitude columns will display one point feature for each line of the file. CSV files with a region ID column will colour the found regions. For details of the column names supported for CSV files by National Map, see the <a href="http://terria.io/DataProviders/csv-geo-au/">CSV-GEO-AU guideline</a>.</li>
+<li><p>If your spatial data file can be accessed on the internet using a URL, click on the <strong>Add Data</strong> button. A dialog will appear where you can select your spatial data file’s format and enter the URL which points to the file to display.</p>
 </ul>
 
 <p>As for NationalMap data sets, you can click on the regions or points to see the data available for that location. If the file is a CSV file, the data from all columns will be shown in the feature information dialogue when you click.</p>
 
 <p>You can also use all of the features of the <a href="/help/now-viewing">Now Viewing Tab</a> on the data you have loaded as well.</p>
+<p>To share a view of your data with others, you must first publish it to the web somewhere with a URL, and then load it from there.</p>
       </div>
     </div>
   </div>
@@ -203,7 +209,7 @@ Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude co
 
 <ul>
 <li><p>Any spatial data which is added to <a href="http://data.gov.au">data.gov.au</a> using a protocol or format supported by the NationalMap (such as WMS) will automatically appear in the <strong>data.gov.au</strong> section of the <strong>Data Catalogue</strong> tab for the NationalMap. See WMS Data Sets for a list of spatial data sets already on <a href="http://data.gov.au">data.gov.au</a>. See the <a href="https://toolkit.data.gov.au/index.php?title=How_to_use_data.gov.au">data.gov.au Toolkit</a> for a detailed reference on using <a href="http://data.gov.au">data.gov.au</a> and using it to publish your own data sets.</p></li>
-<li><p>If you require your data set to appear under a separate category of the NationalMap Data Catalogue, you will need to contact the support for NationalMap by emailing to <a href="mailto:nationalmap@communications.gov.au">nationalmap@communications.gov.au</a> for more information. You will need to provide an internet accessible service in a standard protocol to access your data set on the internet and appropriate references must be added to the NationalMap configuration.</p></li>
+<li><p>If you require your data set to appear under a separate category of the NationalMap Data Catalogue, you will need to contact the support for NationalMap by emailing to <a href="mailto:data@pmc.gov.au">data@pmc.gov.au</a> for more information. You will need to provide an internet accessible service in a standard protocol to access your data set on the internet and appropriate references must be added to the NationalMap configuration.</p></li>
 </ul>
       </div>
     </div>
@@ -220,7 +226,7 @@ Supported formats include GeoJSON, KML, KMZ, CSV (with latitude and longitude co
 <footer class="footer">
     <div class="container">
         <div class="col-lg-12">
-        	<p>&copy; Department of Communications & National ICT Australia Limited (NICTA) 2014. All Rights Reserved.</p>
+        	<p>&copy; Department of the Prime Minister and Cabinet, Department of Communications, and National ICT Australia Limited (NICTA) 2014-2015. All Rights Reserved.</p>
           <p>
             <strong><a href="../about.html#terms">Terms and conditions</a></strong> –
             <strong><a href="../privacy.html">Privacy</a></strong>
