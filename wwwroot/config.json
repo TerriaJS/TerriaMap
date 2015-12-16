@@ -14,6 +14,9 @@
         "s3-ap-southeast-2.amazonaws.com",
         "adelaidecitycouncil.com",
         "www.dptiapps.com.au",
+        "geoserver-123.aodn.org.au",
+        "geoserver.imos.org.au",
+        "nci.org.au",
         "gov"
     ],
     "initializationUrls" : [

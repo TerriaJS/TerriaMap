@@ -1,6 +1,99 @@
 Change Log
 ==========
 
+### 2015-12-15
+
+* Added Department of Environment datasets under `National Data Sets -> Environment`.
+* Added Soil and Landscape Grid data under `National Data Sets -> Land`.
+* Add NEII Viewer and AURIN Map to Related Maps.
+* Fixed display of map preview images in Related Maps.
+* Fixed the squished images on the Related Maps panel.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.50.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that caused poor performance when clicking a point on the map with lots of features and then closing the feature information panel.
+  * Legend URLs are now accessed via the proxy, if applicable.
+  * Fixed a bug that caused a `TypeError` on load when the share URL included enabled datasets with an order different from their order in the catalog.
+  * Improved the message that is shown to the user when their browser supports WebGL but it has a "major performance caveat".
+  * Fixed a bug that could cause an exception in some browsers (Internet Explorer, Safari) when loading a GeoJSON with embedded styles.
+  * Fixed a bug with Leaflet 2D map where clicks on animation controls or timeline would also register on the map underneath causing undesired feature selection and, when double clicked, zooming (also removed an old hack that disabled dragging while using the timeline slider)
+  * Changed Australian Topography base map server and updated the associated thumbnail.
+  * Added `updateApplicationOnMessageFromParentWindow` function.  After an app calls this function at startup, TerriaJS can be controlled by its parent window when embedded in an `iframe` by messages sent with `window.postMessage`.
+  * Put a white background behind legend images to fix legend images with transparent background being nearly invisible.
+  * Search entries are no longer duplicated for catalog items that appear in multiple places in the Data Catalogue
+  * Fixed the layer order changing in Cesium when a CSV variable is chosen.
+  * Layer name is now shown in the catalog item info panel for ESRI ArcGIS MapServer layers.
+  * Retrieve WFS or WCS URL associated with WMS data sources using DescribeLayer if no dataUrl is present.
+  * Sorted ABS age variables numerically, not alphabetically.
+  * Fixed a bug that prevented region mapping from working over HTTPS.
+  * The proxy is now used to avoid a mixed content warning when accessing an HTTP dataset from an HTTPS deployment of TerriaJS.
+
+### 2015-11-16
+
+* Completely support the [csv-geo-au](https://github.com/NICTA/nationalmap/wiki/csv-geo-au) specification (other than SA1s and boundaries from previous years) including ASGS boundaries like remoteness regions, indigenous areas and non ASGS boundaries like primary health networks.
+* Added freight route datasets provided by the Department of Infrastructure and Regional Development under `Transport -> Freight`.
+* Added IMOS and AODN Geoservers to the list of hosts that may be proxied.
+* Changed the support email address from `nationalmap@communications.gov.au` to `data@pmc.gov.au`.
+* Use YouTube videos hosted in the AusGovDPMC account.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.48.  Significant changes relevant to NationalMap users include:
+  * Update the default Australian topography basemap to Geoscience Australia's new worldwide layer (http://www.ga.gov.au/gisimg/rest/services/topography/National_Map_Colour_Basemap/MapServer)
+  * The Feature Info panel now shows all selected features in an accordion control.  Previously it only showed the first one.
+  * Major refactor of `CsvCatalogItem`, splitting region-mapping functionality out into `RegionProvider` and `RegionProviderList`. Dozens of new test cases. In the process, fixed a number of bugs and added new features including:
+    * Regions can be matched using regular expressions, enabling matching of messy fields like local government names ("Baw Baw", "Baw Baw Shire", "Baw Baw (S)", "Shire of Baw Baw" etc).
+    * Regions can be matched using a second field for disambiguation (eg, "Campbelltown" + "SA")
+    * Drag-and-dropped datasets with a time column behave much better: rather than a fixed time being allocated to each row, each row occupies all the time up until the next row is shown.
+    * Enumerated fields are colour coded in lat-long files, consist with region-mapped files.
+    * Feedback is now provided after region mapping, showing which regions failed to match, and which matched more than once.
+    * Bug: Fields with names starting with 'lon', 'lat' etc were too aggressively matched.
+    * Bug: Numeric codes beginning with zeros (eg, certain NT 08xx postcodes) were treated as numbers and failed to match.
+    * Bug: Fields with names that could be interpreted as regions weren't available as data variables.
+  * The `LocationBarViewModel` now shows the latitude and longitude coordinates of the mouse cursor in 2D as well as 3D.
+  * The `LocationBarViewModel` no longer displays a misleading elevation of 0m when in "3D Smooth" mode.
+  * Applied markdown to properties shown in the Feature Info Panel.
+  * HTML and Markdown text in catalog item metadata, feature information, etc. is now formatted in a more typical way.  For example, text inside `<h1>` now looks like a heading.  Previously, most HTML styling was stripped out.
+  * The `name` of a feature from a CSV file is now taken from a `name` or `title` column, if it exists.  Previously the name was always "Site Data".
+  * Most catalog items now automatically expose a `dataUrl` that is the same as their `url`.
+  * Fixed a bug that caused time-dynamic WMS layers with just one time to not be displayed.
+  * Underscores are now replaced with spaces in the feature info panel for `GeoJsonCatalogItem`.
+  * Added Proj4 projections to the location bar. Clicking on the bar switches between lats/longs and projected coordinates. To enable this, set `useProjection` to `true`
+  * Fixed a bug that caused an exception when running inside an `<iframe>` and the user's browser blocked 3rd-party cookies.
+  * Fixed a bug that caused `WebMapServiceCatalogItem` to incorrectly populate the catalog item's metadata with data from GetCapabilities when another layer had a `Title` with the same value as the expected layer's `Name`.
+  * Avoid mixed content warnings when using the CartoDB basemaps.
+  * Handle WMS time interval specifications (time/time and time/time/periodicity)
+  * Allow a single layer of an ArcGIS MapServer to be added through the "Add Data" interface.
+  * Updated to [Cesium](http://cesiumjs.org) 1.15.  Significant changes relevant to TerriaJS users include:
+    * Make KML invalid coordinate processing match Google Earth behavior. [#3124](https://github.com/AnalyticalGraphicsInc/cesium/pull/3124)
+    * Fixed issues causing the terrain and sky to disappear when the camera is near the surface. [#2415](https://github.com/AnalyticalGraphicsInc/cesium/issues/2415) and [#2271](https://github.com/AnalyticalGraphicsInc/cesium/issues/2271)
+    * Fixed issues causing the terrain and sky to disappear when the camera is near the surface. [#2415](https://github.com/AnalyticalGraphicsInc/cesium/issues/2415) and [#2271](https://github.com/AnalyticalGraphicsInc/cesium/issues/2271)
+    * Provided a workaround for Safari 9 where WebGL constants can't be accessed through `WebGLRenderingContext`. Now constants are hard-coded in `WebGLConstants`. [#2989](https://github.com/AnalyticalGraphicsInc/cesium/issues/2989)
+    * Added a workaround for Chrome 45, where the first character in a label with a small font size would not appear. [#3011](https://github.com/AnalyticalGraphicsInc/cesium/pull/3011)
+    * Fixed an issue with drill picking at low frame rates that would cause a crash. [#3010](https://github.com/AnalyticalGraphicsInc/cesium/pull/3010)
+
+### 2015-10-15
+
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.44.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that could cause timeseries animation to "jump" when resuming play after it was paused.
+  * When catalog items are enabled, the checkbox now animates to indicate that loading is in progress.
+  * Add `mode=preview` option in the hash portion of the URL.  When present, it is assumed that TerriaJS is being used as a previewer and the "small screen warning" will not be shown.
+  * Added the `attribution` property to catalog items.  The attribution is displayed on the map when the catalog item is enabled.
+  * Fixed a bug that prevented `AbsIttCatalogGroup` from successfully loading its list of catalog items.
+  * Allow missing URLs on embedded data (eg. embedded czml data)
+  * Fixed a bug loading URLs for ArcGIS services names that start with a number.
+* Updated to [Cesium](http://cesiumjs.org) 1.13.  Significant changes relevant to NationalMap users include:
+  * The default `CTRL + Left Click Drag` mouse behavior is now duplicated for `CTRL + Right Click Drag` for better compatibility with Firefox on Mac OS [#2913](https://github.com/AnalyticalGraphicsInc/cesium/pull/2913).
+  * Fixed an issue where non-feature nodes prevented KML documents from loading. [#2945](https://github.com/AnalyticalGraphicsInc/cesium/pull/2945)
+
+### 2015-09-17
+
+* Improved proxy cache expiration.  Previously, catalog item tiles could be cached by end-user browsers much longer than intended.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.43.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that prevented the opened/closed state of groups from being preserved when sharing.
+
+### 2015-09-03
+
+* Removed "beta" tag
+* Added new screenshots and YouTube videos.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.42. Relevant changes include:
+  * Fixed a bug sharing CSV items.
+
 ### 2015-08-03
 
 * Retired the NICTA-hosted geotopo250k data sets, replacing them with the Geoscience Australia Topography data sets.

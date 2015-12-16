@@ -42,6 +42,7 @@ var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
+var KnockoutMarkdownBinding = require('terriajs/lib/Core/KnockoutMarkdownBinding');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
@@ -72,6 +73,7 @@ var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
 var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
 var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
+var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 
 var Terria = require('terriajs/lib/Models/Terria');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
@@ -91,6 +93,9 @@ OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl
 
 // Register custom Knockout.js bindings.  If you're not using the TerriaJS user interface, you can remove this.
 registerKnockoutBindings();
+
+// Disable HTML sanitization.  TODO: remove this
+KnockoutMarkdownBinding.allowUnsafeHtml = true;
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -130,6 +135,7 @@ terria.start({
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     updateApplicationOnHashChange(terria, window);
+    updateApplicationOnMessageFromParentWindow(terria, window);
 
     // Create the map/globe.
     TerriaViewer.create(terria, {
