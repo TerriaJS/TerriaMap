@@ -117,62 +117,86 @@
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Example
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
         </div>
         <div class="kss-modifier__example">
-          <div class="feature-info-panel" aria-hidden="false">
-<button class="btn modal-btn right" title="Close data panel"><i class="icon icon-close"></i></button>
-<ul class="list-reset">
+          <div class="feature-info-panel [modifier class]" aria-hidden="false">
+<div class="feature-info-panel__header">
+<button class="btn"> Feature Info Panel </button><button class="btn modal-btn right" title="Close data panel"><i class="icon icon-close"></i></button>
+</div>
+<ul class='list-reset feature-info-panel__body'>
 <li class="feature-info__group">
-<button class="btn" data-reactid=".4.1.$0.0">Broadband ADSL Availability</button>
-<ul aria-hidden="false" class="list-reset feature-info-panel-sections">
-<li class="feature-info-panel__section">
-<button class="btn" data-reactid=".4.1.$0.1.1:$0.0"><span>WOLR:BQP23910</span><i class="icon icon-show-less"></i></button>
+<ul class="list-reset feature-info-panel-sections">
+<li class="feature-info-panel__section"><button class="btn btn-feature-name"><span>Broadband ADSL Availability</span><i class="icon icon-chevron-down" ></i></button>
 <section class="feature-info-panel__content" aria-hidden="false">
-<table class="cesium-infoBox-defaultTable"><tbody><tr><td>name</td><td>RHST:BQP</td></tr>
-<tr><td>esa_name</td><td>ROOKHURST</td></tr>
+<table class="cesium-infoBox-defaultTable">
+<tbody>
+<tr><td>name</td><td>ALLO:BQP30118</td></tr>
+<tr><td>esa_name</td><td>ALLORA</td></tr>
 <tr><td>availability_rating</td><td>E</td></tr>
 <tr><td>availability_description</td><td>This is the lowest availability rating. Between 0 and 20 per cent of premises in the area surrounding your address have access to at least one broadband technology.</td></tr>
-<tr><td>availability_adsl_rating</td><td>E</td></tr>
-</tbody></table>
-</section>
-</li>
-<li class="feature-info-panel__section">
-<button class="btn"><span>WOLR:BQP23910</span><i class="icon icon-show-more"></i></button>
-<section class="feature-info-panel__content" aria-hidden="true">
+</tbody>
+</table>
 </section>
 </li>
 </ul>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .is-collapsed
+        </div>
+        <div class="kss-modifier__description kss-style">
+          collapsed feature info panel
+        </div>
+        <div class="kss-modifier__example">
+          <div class="feature-info-panel is-collapsed" aria-hidden="false">
+<div class="feature-info-panel__header">
+<button class="btn"> Feature Info Panel </button><button class="btn modal-btn right" title="Close data panel"><i class="icon icon-close"></i></button>
+</div>
+<ul class='list-reset feature-info-panel__body'>
+<li class="feature-info__group">
+<ul class="list-reset feature-info-panel-sections">
+<li class="feature-info-panel__section"><button class="btn btn-feature-name"><span>Broadband ADSL Availability</span><i class="icon icon-chevron-down" ></i></button>
+<section class="feature-info-panel__content" aria-hidden="false">
+<table class="cesium-infoBox-defaultTable">
+<tbody>
+<tr><td>name</td><td>ALLO:BQP30118</td></tr>
+<tr><td>esa_name</td><td>ALLORA</td></tr>
+<tr><td>availability_rating</td><td>E</td></tr>
+<tr><td>availability_description</td><td>This is the lowest availability rating. Between 0 and 20 per cent of premises in the area surrounding your address have access to at least one broadband technology.</td></tr>
+</tbody>
+</table>
+</section>
 </li>
+</ul>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;feature-info-panel&quot; aria-hidden&#x3D;&quot;false&quot;&gt;
-&lt;button class&#x3D;&quot;btn modal-btn right&quot; title&#x3D;&quot;Close data panel&quot;&gt;&lt;i class&#x3D;&quot;icon icon-close&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;ul class&#x3D;&quot;list-reset&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;feature-info-panel [modifier class]&quot; aria-hidden&#x3D;&quot;false&quot;&gt;
+&lt;div class&#x3D;&quot;feature-info-panel__header&quot;&gt;
+&lt;button class&#x3D;&quot;btn&quot;&gt; Feature Info Panel &lt;/button&gt;&lt;button class&#x3D;&quot;btn modal-btn right&quot; title&#x3D;&quot;Close data panel&quot;&gt;&lt;i class&#x3D;&quot;icon icon-close&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;ul class&#x3D;&#x27;list-reset feature-info-panel__body&#x27;&gt;
 &lt;li class&#x3D;&quot;feature-info__group&quot;&gt;
-&lt;button class&#x3D;&quot;btn&quot; data-reactid&#x3D;&quot;.4.1.$0.0&quot;&gt;Broadband ADSL Availability&lt;/button&gt;
-&lt;ul aria-hidden&#x3D;&quot;false&quot; class&#x3D;&quot;list-reset feature-info-panel-sections&quot;&gt;
-&lt;li class&#x3D;&quot;feature-info-panel__section&quot;&gt;
-&lt;button class&#x3D;&quot;btn&quot; data-reactid&#x3D;&quot;.4.1.$0.1.1:$0.0&quot;&gt;&lt;span&gt;WOLR:BQP23910&lt;/span&gt;&lt;i class&#x3D;&quot;icon icon-show-less&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;ul class&#x3D;&quot;list-reset feature-info-panel-sections&quot;&gt;
+&lt;li class&#x3D;&quot;feature-info-panel__section&quot;&gt;&lt;button class&#x3D;&quot;btn btn-feature-name&quot;&gt;&lt;span&gt;Broadband ADSL Availability&lt;/span&gt;&lt;i class&#x3D;&quot;icon icon-chevron-down&quot; &gt;&lt;/i&gt;&lt;/button&gt;
 &lt;section class&#x3D;&quot;feature-info-panel__content&quot; aria-hidden&#x3D;&quot;false&quot;&gt;
-&lt;table class&#x3D;&quot;cesium-infoBox-defaultTable&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;name&lt;/td&gt;&lt;td&gt;RHST:BQP&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;esa_name&lt;/td&gt;&lt;td&gt;ROOKHURST&lt;/td&gt;&lt;/tr&gt;
+&lt;table class&#x3D;&quot;cesium-infoBox-defaultTable&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;name&lt;/td&gt;&lt;td&gt;ALLO:BQP30118&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;esa_name&lt;/td&gt;&lt;td&gt;ALLORA&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;availability_rating&lt;/td&gt;&lt;td&gt;E&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;availability_description&lt;/td&gt;&lt;td&gt;This is the lowest availability rating. Between 0 and 20 per cent of premises in the area surrounding your address have access to at least one broadband technology.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;availability_adsl_rating&lt;/td&gt;&lt;td&gt;E&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/section&gt;
-&lt;/li&gt;
-&lt;li class&#x3D;&quot;feature-info-panel__section&quot;&gt;
-&lt;button class&#x3D;&quot;btn&quot;&gt;&lt;span&gt;WOLR:BQP23910&lt;/span&gt;&lt;i class&#x3D;&quot;icon icon-show-more&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;section class&#x3D;&quot;feature-info-panel__content&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;/section&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
