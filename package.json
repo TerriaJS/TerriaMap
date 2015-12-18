@@ -20,7 +20,7 @@
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
     "terriajs": "1.0.50",
-    "terriajs-cesium": "1.15.2",
+    "terriajs-cesium": "1.15.3",
     "yargs": "^3.8.0"
   },
   "devDependencies": {
