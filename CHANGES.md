@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-01-15
+
+* Removed hardcoded descriptions from the Mobile Black Spot datasets, allowing descriptions provided by the server to be used instead.
+
 ### 2015-12-15
 
 * Added Department of Environment datasets under `National Data Sets -> Environment`.
