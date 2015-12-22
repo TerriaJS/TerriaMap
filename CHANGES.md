@@ -3,6 +3,7 @@ Change Log
 
 ### 2016-01-15
 
+* Removed `National Data Sets -> Land -> Catchment Scale Land Use 2014`.
 * Removed hardcoded descriptions from the Mobile Black Spot datasets, allowing descriptions provided by the server to be used instead.
 
 ### 2015-12-15
