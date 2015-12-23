@@ -40,6 +40,7 @@ echo "Generating region ID lists and saving to ${OUTPUTDIR}."
 
 mkdir -p $OUTPUTDIR
 # In an ideal world, we'd run this automatically off regionmapping.json
+
 makeJSON "region_map:FID_SA1_2011_AUST" SA1_MAIN11
 makeJSON "region_map:FID_SA1_2011_AUST" SA1_7DIG11
 makeJSON "region_map:FID_SA2_2011_AUST" SA2_MAIN11
@@ -51,8 +52,10 @@ makeJSON "region_map:FID_SA4_2011_AUST" SA4_CODE11
 makeJSON "region_map:FID_SA4_2011_AUST" SA4_NAME11 '"'
 makeJSON "region_map:FID_LGA_2015_AUST" LGA_CODE15
 makeJSON "region_map:FID_LGA_2015_AUST" LGA_NAME15 '"'
+makeJSON "region_map:FID_LGA_2015_AUST" STE_NAME15 '"' # disambiguation column
 makeJSON "region_map:FID_LGA_2011_AUST" LGA_CODE11
 makeJSON "region_map:FID_LGA_2011_AUST" LGA_NAME11 '"'
+makeJSON "region_map:FID_LGA_2011_AUST" STE_NAME11 '"' # disambiguation column
 makeJSON "region_map:FID_SSC_2011_AUST" SSC_CODE
 makeJSON "region_map:FID_SSC_2011_AUST" SSC_NAME '"'
 makeJSON "region_map:FID_POA_2011_AUST" POA_CODE '"' # leading zeroes
