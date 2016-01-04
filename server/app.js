@@ -105,15 +105,6 @@ app.use('/proj4def', crs);
 
 app.use('/convert', convert);
 
-//Share record storage
-app.post('/upload', function(req, res, next) {
-});
-
-
-app.get('/get/:id', function(req, res, next) {
-});
-
-
 //sample simple NM service
 app.post('/nm_service_1', function(req, res, next) {
     //receive the posted object
