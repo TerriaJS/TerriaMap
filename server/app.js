@@ -1,12 +1,20 @@
 "use strict";
 
+/**
+ * Terria server, used to run NationalMap. It is primarily a static web app, but there are a couple of helper functions
+ * that run server-side.
+ */
 
+// Proxy for servers that don't support CORS
 var proxy = require('./proxy');
+
+// Proj4def lookup service, to avoid downloading all definitions into the client.
 var crs = require('./crs');
+
+// OGR2OGR wrapper to allow supporting file types like Shapefile.
 var convert = require('./convert');
 
 var cluster = require('cluster');
-var formidable = require('formidable');
 
 // The master process just spins up a few workers and quits.
 if (cluster.isMaster) {
@@ -71,12 +79,12 @@ if (argv.help) {
 var po = proxy._proxyOptions = {};
 po.upstreamProxy = argv['upstream-proxy'];
 po.bypassUpstreamProxyHosts = {};
+
 if (argv['bypass-upstream-proxy-hosts']) {
     argv['bypass-upstream-proxy-hosts'].split(',').forEach(function(host) {
         po.bypassUpstreamProxyHosts[host.toLowerCase()] = true;
     });
 }
-
 
 // eventually this mime type configuration will need to change
 // https://github.com/visionmedia/send/commit/d2cb54658ce65948b0ed6e5fb5de69d022bef941
@@ -94,19 +102,24 @@ app.disable('etag');
 
 // Serve the bulk of our application as a static web directory.
 app.use(express.static(path.join(__dirname, '../wwwroot')));
-
+app.use('/proxy', proxy);
+app.use('/proj4def', crs);
+app.use('/convert', convert);
 app.get('/ping', function(req, res){
   res.status(200).send('OK');
 });
 
-app.use('/proxy', proxy);
+// Redirect unknown pages back home. We don't actually have a 404 page, for starters.
+app.use(function(req, res, next) {
+    res.redirect(303, '/');
+});
 
-app.use('/proj4def', crs);
+app.listen(argv.port, argv.public ? undefined : 'localhost');
 
-app.use('/convert', convert);
-
-//sample simple NM service
+/*
+//sample simple NM service. To use, uncomment and move above the fallback redirection.
 app.post('/nm_service_1', function(req, res, next) {
+    var formidable = require('formidable');
     //receive the posted object
     var form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
@@ -121,10 +134,4 @@ app.post('/nm_service_1', function(req, res, next) {
         res.json({ displayHtml: 'Here are the available bike racks.', layer: obj});
     });
 });
-
-// Redirect unknown pages back home. We don't actually have a 404 page, for starters.
-app.use(function(req, res, next) {
-    res.redirect(303, '/');
-});
-
-app.listen(argv.port, argv.public ? undefined : 'localhost');
+*/
