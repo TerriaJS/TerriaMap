@@ -2,8 +2,8 @@
 
 
 var url = require('url');
-var configSettings = require('./wwwroot/config.json');
-var proxyAuth = require('./proxyAuth.json');
+var configSettings = require('../wwwroot/config.json');
+var proxyAuth = require('../proxyAuth.json');
 
 var protocolRegex = /^\w+:\//;
 
