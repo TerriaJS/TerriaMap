@@ -3,17 +3,16 @@
 
 var proxy = require('./proxy');
 var crs = require('./crs');
+var convert = require('./convert');
 
 var cluster = require('cluster');
-var request = require('request');
+var formidable = require('formidable');
 
 // Code to run if we're in the master process
 if (cluster.isMaster) {
 
     // Count the machine's CPUs
     var cpuCount = require('os').cpus().length;
-
-//    cpuCount = 1;  //testing
 
     console.log('Cores Used:', cpuCount);
 
@@ -38,12 +37,9 @@ if (cluster.isMaster) {
     /*jshint es3:false*/
 
     var express = require('express');
-    var fs = require('fs');
     var compression = require('compression');
     var path = require('path');
     var cors = require('cors');
-    var formidable = require('formidable');
-    var ogr2ogr = require('ogr2ogr');
 
     var yargs = require('yargs').options({
         'port' : {
@@ -73,20 +69,6 @@ if (cluster.isMaster) {
         return yargs.showHelp();
     }
 
-    // eventually this mime type configuration will need to change
-    // https://github.com/visionmedia/send/commit/d2cb54658ce65948b0ed6e5fb5de69d022bef941
-    var mime = express.static.mime;
-    mime.define({
-        'application/json' : ['czml', 'json', 'geojson'],
-        'text/plain' : ['glsl']
-    });
-
-    var app = express();
-    app.use(compression());
-    app.use(cors());
-    app.disable('etag');
-    app.use(express.static(path.join(__dirname, 'wwwroot')));
-
     var po = proxy._proxyOptions = {};
     po.upstreamProxy = argv['upstream-proxy'];
     po.bypassUpstreamProxyHosts = {};
@@ -96,6 +78,24 @@ if (cluster.isMaster) {
         });
     }
 
+
+    // eventually this mime type configuration will need to change
+    // https://github.com/visionmedia/send/commit/d2cb54658ce65948b0ed6e5fb5de69d022bef941
+    var mime = express.static.mime;
+    mime.define({
+        'application/json' : ['czml', 'json', 'geojson'],
+        'text/plain' : ['glsl']
+    });
+
+    // initialise app with standard middlewares
+    var app = express();
+    app.use(compression());
+    app.use(cors());
+    app.disable('etag');
+
+    // Serve the bulk of our application as a static web directory.
+    app.use(express.static(path.join(__dirname, 'wwwroot')));
+
     app.get('/ping', function(req, res){
       res.status(200).send('OK');
     });
@@ -104,73 +104,7 @@ if (cluster.isMaster) {
 
     app.use('/proj4def', crs);
 
-    // provide conversion to geojson service
-    // reguires install of gdal on server: sudo apt-get install gdal-bin
-    app.post('/convert', function(req, res, next) {
-        var form = new formidable.IncomingForm();
-        form.parse(req, function(err, fields, files) {
-            var fname, fpath, inputStream;
-            var maxSize = 1000000;
-
-            if (fields.input_url !== undefined) {
-                if (fields.input_url.indexOf('http') === 0) {
-                    fpath = fields.input_url;
-                    fname = fpath;
-                }
-            } else if (files.input_file !== undefined) {
-                if (files.input_file.size <= maxSize) {
-                    fpath = files.input_file.path;
-                    fname = files.input_file.name;
-                } else {
-                    console.log('Input file is too large', files.input_file.size);
-                }
-            }
-            if (fpath === undefined) {
-                res.status(500).send('Unable to convert data');
-                return;
-            }
-            console.log('Converting', fname);
-
-            var hint = '';
-            //simple hint for now, might need to crack zip files going forward
-            if (fname.toLowerCase().indexOf('.zip') === fname.length-4) {
-                hint = 'shp';
-            }
-
-            if (fpath.indexOf('http') === 0) {
-                 inputStream = request.get({url: fpath}).on('response', function(response) {
-                    var request = this, len = 0;
-                    response.on('data', function (chunk) {
-                        len += chunk.length;
-                        if (len > maxSize) {
-                            request.abort();
-                        }
-                    });
-                    response.on('end', function() {
-                        console.log('Convert download size', len);
-                    });
-                });
-            } else {
-                inputStream = fs.createReadStream(fpath);
-            }
-
-            var ogr = ogr2ogr(inputStream, hint)
-                            .skipfailures()
-                            .options(['-t_srs', 'EPSG:4326']);
-
-            ogr.exec(function (er, data) {
-                if (er) {
-                    console.error(er);
-                }
-                if (data !== undefined) {
-                    res.status(200).send(JSON.stringify(data));
-                } else {
-                    res.status(500).send('Unable to convert data');
-                }
-            });
-        });
-    });
-
+    app.use('/convert', convert);
 
     //Share record storage
     app.post('/upload', function(req, res, next) {
