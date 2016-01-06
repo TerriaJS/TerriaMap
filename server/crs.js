@@ -15,7 +15,7 @@ router.get('/:crs', function(req, res, next) {
     if (epsg !== undefined) {
         res.status(200).send(epsg);
     } else {
-        res.status(500).send('no proj4 definition');
+        res.status(404).send('No proj4 definition available for this CRS.');
     }
 });
 
