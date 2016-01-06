@@ -5,15 +5,6 @@
  * that run server-side.
  */
 
-// Proxy for servers that don't support CORS
-var proxy = require('./proxy');
-
-// Proj4def lookup service, to avoid downloading all definitions into the client.
-var crs = require('./crs');
-
-// OGR2OGR wrapper to allow supporting file types like Shapefile.
-var convert = require('./convert');
-
 var cluster = require('cluster');
 
 // The master process just spins up a few workers and quits.
@@ -47,6 +38,10 @@ var express = require('express');
 var compression = require('compression');
 var path = require('path');
 var cors = require('cors');
+
+var proxy = require('./proxy');
+var crs = require('./crs');
+var convert = require('./convert');
 
 var yargs = require('yargs').options({
     'port' : {
@@ -102,9 +97,10 @@ app.disable('etag');
 
 // Serve the bulk of our application as a static web directory.
 app.use(express.static(path.join(__dirname, '../wwwroot')));
-app.use('/proxy', proxy);
-app.use('/proj4def', crs);
-app.use('/convert', convert);
+
+app.use('/proxy', proxy);      // Proxy for servers that don't support CORS
+app.use('/proj4def', crs);     // Proj4def lookup service, to avoid downloading all definitions into the client.
+app.use('/convert', convert);  // OGR2OGR wrapper to allow supporting file types like Shapefile.
 app.get('/ping', function(req, res){
   res.status(200).send('OK');
 });
