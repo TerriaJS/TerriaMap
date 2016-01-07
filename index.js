@@ -25,7 +25,7 @@ var version = require('./version');
 var terriaOptions = {
     appName: 'NationalMap',
     supportEmail: 'data@pmc.gov.au',
-    terriaBaseUrl: 'build/TerriaJS',
+    baseUrl: 'build/TerriaJS',
     cesiumBaseUrl: undefined, // use default
     corsProxyBaseUrl: 'proxy/',
     conversionServiceBaseUrl: 'convert',
