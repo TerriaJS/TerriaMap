@@ -9,7 +9,7 @@
   "dependencies": {
     "leaflet": "0.7.3",
     "terriajs": "1.0.51",
-    "terriajs-server": "^0.0.2",
+    "terriajs-server": "^0.0.4",
     "terriajs-cesium": "1.15.4"
   },
   "devDependencies": {
