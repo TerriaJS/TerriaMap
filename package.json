@@ -2,14 +2,14 @@
   "name": "nationalmap",
   "version": "0.1.0",
   "description": "Geospatial visualization application for Australian government and open data.",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/NICTA/nationalmap"
   },
   "dependencies": {
-    "leaflet": "0.7.3",
     "terriajs": "1.0.51",
-    "terriajs-server": "^0.0.4",
+    "terriajs-server": "^1.0.0",
     "terriajs-cesium": "1.15.4"
   },
   "devDependencies": {
