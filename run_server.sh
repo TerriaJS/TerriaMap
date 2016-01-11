@@ -11,5 +11,17 @@ nohup node node_modules/terriajs-server "$@" >> output.log 2> error.log < /dev/n
 sleep 2 # Give the server a chance to fail.
 cat output.log 
 pid=$!
-ps | grep "^\s*${pid}" > /dev/null && echo "(TerriaJS-Server running in background with pid $!)." && echo $pid > terriajs.pid
-cat error.log
+ps | grep "^\s*${pid}" > /dev/null
+running=$?
+if [ $running -eq 0 ]; then
+    echo "(TerriaJS-Server running in background with pid $!)." && echo $pid > terriajs.pid
+    if [ ! -f wwwroot/build/natioonalmap.js ]; then
+        echo "Warning: TerriaJS-Server is running, but NationalMap has not been built yet. To build it, now run: "
+        echo "     gulp watch"
+        echo 
+    fi
+
+else
+    cat error.log
+fi
+
