@@ -26,14 +26,10 @@ var terriaOptions = {
     appName: 'NationalMap',
     supportEmail: 'data@pmc.gov.au',
     baseUrl: 'build/TerriaJS',
-    cesiumBaseUrl: undefined, // use default
-    corsProxyBaseUrl: 'proxy/',
-    conversionServiceBaseUrl: 'convert',
-    proj4ServiceBaseUrl: 'proj4def/',
-    regionMappingDefinitionsUrl: 'data/regionMapping.json'
+    cesiumBaseUrl: undefined // use default
 };
 var configuration = {
-    bingMapsKey: undefined, // use Cesium key
+    bingMapsKey: undefined // use Cesium key
 };
 
 // Check browser compatibility early on.
