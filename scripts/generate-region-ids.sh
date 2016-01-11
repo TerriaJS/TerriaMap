@@ -33,7 +33,7 @@ function makeJSON {
 
     # Close JSON array and object
     echo "${QUOTES}]}" >> response
-    mv response "${OUTPUTDIR}/${LAYER}_${COLUMN}.json"
+    mv response "${OUTPUTDIR}/${LAYER//:/-}_${COLUMN}.json"
 }
 
 echo "Generating region ID lists and saving to ${OUTPUTDIR}."
