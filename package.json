@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "terriajs": "1.0.51",
-    "terriajs-server": "^1.0.0",
+    "terriajs-server": "^1.1.0",
     "terriajs-cesium": "1.15.4"
   },
   "devDependencies": {
@@ -45,6 +45,7 @@
     ]
   },
   "scripts": {
-    "start": "node_modules/terriajs-server/node_modules/.bin/supervisor --no-restart-on exit -- node_modules/terriajs-server ./wwwroot"
+    "start": "./run_server.sh",
+    "stop": "./stop_server.sh"
   }
 }
