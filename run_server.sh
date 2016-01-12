@@ -16,7 +16,7 @@ fi
 sleep 2 # Give the server a chance to fail.
 cat output.log 
 pid=$!
-ps | grep "^\s*${pid}" > /dev/null
+ps | grep "^ *${pid}" > /dev/null
 running=$?
 if [ $running -eq 0 ]; then
     echo "(TerriaJS-Server running in background with pid $!)." && echo $pid > terriajs.pid
