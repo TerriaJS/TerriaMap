@@ -22,13 +22,14 @@
 
 var version = require('./version');
 
+var terriaOptions = {
+    appName: 'NationalMap',
+    supportEmail: 'data@pmc.gov.au',
+    baseUrl: 'build/TerriaJS',
+    cesiumBaseUrl: undefined // use default
+};
 var configuration = {
-    terriaBaseUrl: 'build/TerriaJS',
-    cesiumBaseUrl: undefined, // use default
-    bingMapsKey: undefined, // use Cesium key
-    proxyBaseUrl: 'proxy/',
-    conversionServiceBaseUrl: 'convert',
-    regionMappingDefinitionsUrl: 'data/regionMapping.json'
+    bingMapsKey: undefined // use Cesium key
 };
 
 // Check browser compatibility early on.
@@ -42,8 +43,6 @@ var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
-var KnockoutMarkdownBinding = require('terriajs/lib/Core/KnockoutMarkdownBinding');
-var corsProxy = require('terriajs/lib/Core/corsProxy');
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
 var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
@@ -72,11 +71,11 @@ var PopupMessageViewModel = require('terriajs/lib/ViewModels/PopupMessageViewMod
 var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
 var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
 var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel');
+var MapProgressBarViewModel = require('terriajs/lib/ViewModels/MapProgressBarViewModel');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 
 var Terria = require('terriajs/lib/Models/Terria');
-var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
@@ -84,12 +83,6 @@ var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 var svgPlus = require('terriajs/lib/SvgPaths/svgPlus');
 var svgShare = require('terriajs/lib/SvgPaths/svgShare');
 var svgWorld = require('terriajs/lib/SvgPaths/svgWorld');
-
-// Configure the base URL for the proxy service used to work around CORS restrictions.
-corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
-
-// Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
-OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
 
 // Register custom Knockout.js bindings.  If you're not using the TerriaJS user interface, you can remove this.
 registerKnockoutBindings();
@@ -102,15 +95,10 @@ KnockoutMarkdownBinding.allowUnsafeHtml = true;
 // the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
 
+terriaOptions.analytics = new GoogleAnalytics();
+
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
-var terria = new Terria({
-    appName: 'NationalMap',
-    supportEmail: 'data@pmc.gov.au',
-    baseUrl: configuration.terriaBaseUrl,
-    cesiumBaseUrl: configuration.cesiumBaseUrl,
-    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
-    analytics: new GoogleAnalytics()
-});
+var terria = new Terria(terriaOptions);
 
 terria.error.addEventListener(function(e) {
     PopupMessageViewModel.open('ui', {
@@ -313,6 +301,11 @@ terria.start({
             settingsPanel,
             featureInfoPanel
         ]
+    });
+
+    MapProgressBarViewModel.create({
+        container: document.getElementById('cesiumContainer'),
+        terria: terria
     });
 
     document.getElementById('loadingIndicator').style.display = 'none';

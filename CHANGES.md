@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+### 2016-01-15
+
+* Removed `National Data Sets -> Land -> Catchment Scale Land Use 2014`.
+* Removed hardcoded descriptions from the Mobile Black Spot datasets, allowing descriptions provided by the server to be used instead.
+* Split out server-side code into a separate repo, github.com/TerriaJS/terriajs-server and NPM package 'terriajs-server'.
+
 ### 2015-12-15
 
 * Added Department of Environment datasets under `National Data Sets -> Environment`.
