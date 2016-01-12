@@ -15,7 +15,7 @@ ps | grep "^\s*${pid}" > /dev/null
 running=$?
 if [ $running -eq 0 ]; then
     echo "(TerriaJS-Server running in background with pid $!)." && echo $pid > terriajs.pid
-    if [ ! -f wwwroot/build/natioonalmap.js ]; then
+    if [ ! -f wwwroot/build/nationalmap.js ]; then
         echo "Warning: TerriaJS-Server is running, but NationalMap has not been built yet. To build it, now run: "
         echo "     gulp watch"
         echo 
