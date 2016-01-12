@@ -5,13 +5,18 @@ fi
 if [ -f terriajs.pid ]; then
     echo "Warning: server seems to be already running."
 fi
-# pkill -f terriajs-server
 date > output.log
-nohup node node_modules/terriajs-server "$@" >> output.log 2> error.log < /dev/null &
+
+if [ "`which nohup`" == "" ]; then
+    # There's no nohup on Windows. We just run node without it, which is fine in a dev environment.
+    node node_modules/terriajs-server "$@" >> output.log 2> error.log < /dev/null &
+else
+    nohup node node_modules/terriajs-server "$@" >> output.log 2> error.log < /dev/null &
+fi
 sleep 2 # Give the server a chance to fail.
 cat output.log 
 pid=$!
-ps | grep "^\s*${pid}" > /dev/null
+ps | grep "^ *${pid}" > /dev/null
 running=$?
 if [ $running -eq 0 ]; then
     echo "(TerriaJS-Server running in background with pid $!)." && echo $pid > terriajs.pid
