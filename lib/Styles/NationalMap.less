@@ -1,14 +1,35 @@
 .nationalmap-print-disclaimer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    padding: 0 10px;
     display: none;
 }
 
 @media print {
     .nationalmap-print-disclaimer {
-        background-color: blue;
-        color: white;
+        color: #000;
         display: block;
+    }
+
+    .cesium-credit-text, .leaflet-disclaimer{
+        a[href="about.html"]{
+          display: none!important;
+        }
+    }
+
+    .cesium-widget-credits{
+        margin-bottom: -30px;
+    }
+
+    #cesiumContainer{
+        position: relative;
+        margin-bottom: 30px;
+        min-height: 700px;
+        min-height: ~"calc(100% - 100px)";
+        overflow: visible;
+    }
+
+    .map-displaced {
+        margin-left: -@explorer-panel-width;
     }
 }
 
