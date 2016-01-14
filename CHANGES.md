@@ -8,6 +8,7 @@ Change Log
 * Split out server-side code into a separate repo, github.com/TerriaJS/terriajs-server and NPM package 'terriajs-server'.
 * Remove Supervisor and Forever, as they're basically redundant.
 * Reworked "npm start" and "npm stop" so they start/stop TerriaJS-Server in the background.
+* The disclaimer no longer overlaps with the map credits when printing the 2D view in Chrome.
 
 ### 2015-12-15
 
