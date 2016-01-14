@@ -9,6 +9,24 @@ Change Log
 * Remove Supervisor and Forever, as they're basically redundant.
 * Reworked "npm start" and "npm stop" so they start/stop TerriaJS-Server in the background.
 * The disclaimer no longer overlaps with the map credits when printing the 2D view in Chrome.
+* Fixed the City of Melbourne datasets.  An upgrade of their Socrata server broke functionality we relied on.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.53.  Significant changes relevant to NationalMap users include:
+  * Fixed a typo that prevented clearing the search query on the Search tab.
+  * Added a progress bar to the top of the map, indicating tile download progress.
+  * We no longer show the entity's ID (which is usually a meaningless GUID) on the feature info panel when the feature does not have a name.  Instead, we leave the area blank.
+  * Fixed a bug with time-dynamic imagery layers that caused features to be picked from the next time to be displayed, in addition to the current one.
+  * `Cesium.zoomTo` now takes the terrain height into account when zooming to a rectangle.
+  * Dramatically improved the performance of region mapping.
+  * Introduced new quantisation (color binning) methods to dramatically improve the display of choropleths (numerical quantities displayed as colors) for CSV files, instead of always using linear. Four values for `colorBinMethod` are supported:
+    * "auto" (default), usually means "ckmeans"
+    * "ckmeans": use "CK means" method, an improved version of Jenks Even Breaks to form clusters of values that are as distinct as possible.
+    * "quantile": use quantiles, evenly distributing values between bins
+    * "none": use the previous linear color mapping method.
+  * The default style for CSV files is now 7 color bins with CK means method.
+  * Added support for color palettes from Color Brewer (colorbrewer2.org). Within `tableStyle`, use a value like `"colorPalette": "10-class BrBG"`.
+  * Improved the display of legends for CSV files.
+  * Added support for the Socrata "new backend" with GeoJSON download to `SocrataCatalogGroup`.
+  * Improved compatibility with Internet Explorer 9.
 
 ### 2015-12-15
 
