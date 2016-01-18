@@ -1,7 +1,8 @@
 {
   "name": "nationalmap",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Geospatial visualization application for Australian government and open data.",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/NICTA/nationalmap"
@@ -20,8 +21,9 @@
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#newui",
-    "terriajs-cesium": "1.15.2",
-    "yargs": "^3.8.0"
+    "yargs": "^3.8.0",
+    "terriajs-server": "^1.1.0",
+    "terriajs-cesium": "1.15.5"
   },
   "devDependencies": {
     "brfs": "^1.4.0",
@@ -62,6 +64,8 @@
     ]
   },
   "scripts": {
-    "start": "node_modules/.bin/supervisor server"
+    "start": "bash -c \"./run_server.sh\"",
+    "stop": "bash -c \"./stop_server.sh\"",
+    "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
   }
 }

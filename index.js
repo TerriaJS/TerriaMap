@@ -17,16 +17,62 @@ var configuration = {
     regionMappingDefinitionsUrl: 'data/regionMapping.json'
 };
 
+// Check browser compatibility early on.
+// A very old browser (e.g. Internet Explorer 8) will fail on requiring-in many of the modules below.
+// 'ui' is the name of the DOM element that should contain the error popup if the browser is not compatible
+var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
+
+// checkBrowserCompatibility('ui');
+
+var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
+
+var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
+var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
+var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
+var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
+
+var AddDataPanelViewModel = require('terriajs/lib/ViewModels/AddDataPanelViewModel');
+var AnimationViewModel = require('terriajs/lib/ViewModels/AnimationViewModel');
+var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel');
+var BrandBarViewModel = require('terriajs/lib/ViewModels/BrandBarViewModel');
+var CatalogItemNameSearchProviderViewModel = require('terriajs/lib/ViewModels/CatalogItemNameSearchProviderViewModel');
+var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
+var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
+var createToolsMenuItem = require('terriajs/lib/ViewModels/createToolsMenuItem');
+var DataCatalogTabViewModel = require('terriajs/lib/ViewModels/DataCatalogTabViewModel');
+var DistanceLegendViewModel = require('terriajs/lib/ViewModels/DistanceLegendViewModel');
+var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
+var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
+var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
+var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
+var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
+var LocationBarViewModel = require('terriajs/lib/ViewModels/LocationBarViewModel');
+var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel');
+var MenuBarViewModel = require('terriajs/lib/ViewModels/MenuBarViewModel');
+var MutuallyExclusivePanels = require('terriajs/lib/ViewModels/MutuallyExclusivePanels');
+var NavigationViewModel = require('terriajs/lib/ViewModels/NavigationViewModel');
+var NowViewingAttentionGrabberViewModel = require('terriajs/lib/ViewModels/NowViewingAttentionGrabberViewModel');
+var NowViewingTabViewModel = require('terriajs/lib/ViewModels/NowViewingTabViewModel');
+var PopupMessageViewModel = require('terriajs/lib/ViewModels/PopupMessageViewModel');
+var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
+var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
+var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel');
+var MapProgressBarViewModel = require('terriajs/lib/ViewModels/MapProgressBarViewModel');
+var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
+var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
+
 var Terria = require('terriajs/lib/Models/Terria');
-var TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer');
-var corsProxy = require('terriajs/lib/Core/corsProxy');
-var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var ViewerMode = require('terriajs/lib/Models/ViewerMode');
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
+
+var TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer');
+var corsProxy = require('terriajs/lib/Core/corsProxy');
+var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
+
 
 
 // Configure the base URL for the proxy service used to work around CORS restrictions.
@@ -35,12 +81,18 @@ corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
 OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
 
+// Register custom Knockout.js bindings.  If you're not using the TerriaJS user interface, you can remove this.
+registerKnockoutBindings();
+
+
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
 
+
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
+
 var terria = new Terria({
     appName: 'NationalMap',
     supportEmail: 'data@pmc.gov.au',
@@ -49,6 +101,14 @@ var terria = new Terria({
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
     analytics: new GoogleAnalytics()
   });
+
+// terria.error.addEventListener(function(e) {
+//     PopupMessageViewModel.open('ui', {
+//         title: e.title,
+//         message: e.message
+//     });
+// });
+
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
@@ -62,7 +122,10 @@ terria.start({
     raiseErrorToUser(terria, e);
 }).always(function() {
     configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
-    //more configurables to come
+
+    // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
+    updateApplicationOnHashChange(terria, window);
+    updateApplicationOnMessageFromParentWindow(terria, window);
 
     // Create the map/globe.
     var terriaViewer = TerriaViewer.create(terria, {
@@ -91,6 +154,4 @@ terria.start({
     var uiWrapper = new UiWrapper(terria);
     uiWrapper.init(main, nav, aside, mapNav, chart, allBaseMaps, terriaViewer);
 
-  });
-
-
+});

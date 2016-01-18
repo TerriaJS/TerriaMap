@@ -1,6 +1,58 @@
 Change Log
 ==========
 
+### 2016-01-15
+
+* Removed `National Data Sets -> Land -> Catchment Scale Land Use 2014`.
+* Removed hardcoded descriptions from the Mobile Black Spot datasets, allowing descriptions provided by the server to be used instead.
+* Split out server-side code into a separate repo, github.com/TerriaJS/terriajs-server and NPM package 'terriajs-server'.
+* Remove Supervisor and Forever, as they're basically redundant.
+* Reworked "npm start" and "npm stop" so they start/stop TerriaJS-Server in the background.
+* The disclaimer no longer overlaps with the map credits when printing the 2D view in Chrome.
+* Fixed the City of Melbourne datasets.  An upgrade of their Socrata server broke functionality we relied on.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.53.  Significant changes relevant to NationalMap users include:
+  * Fixed a typo that prevented clearing the search query on the Search tab.
+  * Added a progress bar to the top of the map, indicating tile download progress.
+  * We no longer show the entity's ID (which is usually a meaningless GUID) on the feature info panel when the feature does not have a name.  Instead, we leave the area blank.
+  * Fixed a bug with time-dynamic imagery layers that caused features to be picked from the next time to be displayed, in addition to the current one.
+  * `Cesium.zoomTo` now takes the terrain height into account when zooming to a rectangle.
+  * Dramatically improved the performance of region mapping.
+  * Introduced new quantisation (color binning) methods to dramatically improve the display of choropleths (numerical quantities displayed as colors) for CSV files, instead of always using linear. Four values for `colorBinMethod` are supported:
+    * "auto" (default), usually means "ckmeans"
+    * "ckmeans": use "CK means" method, an improved version of Jenks Even Breaks to form clusters of values that are as distinct as possible.
+    * "quantile": use quantiles, evenly distributing values between bins
+    * "none": use the previous linear color mapping method.
+  * The default style for CSV files is now 7 color bins with CK means method.
+  * Added support for color palettes from Color Brewer (colorbrewer2.org). Within `tableStyle`, use a value like `"colorPalette": "10-class BrBG"`.
+  * Improved the display of legends for CSV files.
+  * Added support for the Socrata "new backend" with GeoJSON download to `SocrataCatalogGroup`.
+  * Improved compatibility with Internet Explorer 9.
+
+### 2015-12-15
+
+* Added Department of Environment datasets under `National Data Sets -> Environment`.
+* Added Soil and Landscape Grid data under `National Data Sets -> Land`.
+* Add NEII Viewer and AURIN Map to Related Maps.
+* Fixed display of map preview images in Related Maps.
+* Fixed the squished images on the Related Maps panel.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.50.  Significant changes relevant to NationalMap users include:
+  * Fixed a bug that caused poor performance when clicking a point on the map with lots of features and then closing the feature information panel.
+  * Legend URLs are now accessed via the proxy, if applicable.
+  * Fixed a bug that caused a `TypeError` on load when the share URL included enabled datasets with an order different from their order in the catalog.
+  * Improved the message that is shown to the user when their browser supports WebGL but it has a "major performance caveat".
+  * Fixed a bug that could cause an exception in some browsers (Internet Explorer, Safari) when loading a GeoJSON with embedded styles.
+  * Fixed a bug with Leaflet 2D map where clicks on animation controls or timeline would also register on the map underneath causing undesired feature selection and, when double clicked, zooming (also removed an old hack that disabled dragging while using the timeline slider)
+  * Changed Australian Topography base map server and updated the associated thumbnail.
+  * Added `updateApplicationOnMessageFromParentWindow` function.  After an app calls this function at startup, TerriaJS can be controlled by its parent window when embedded in an `iframe` by messages sent with `window.postMessage`.
+  * Put a white background behind legend images to fix legend images with transparent background being nearly invisible.
+  * Search entries are no longer duplicated for catalog items that appear in multiple places in the Data Catalogue
+  * Fixed the layer order changing in Cesium when a CSV variable is chosen.
+  * Layer name is now shown in the catalog item info panel for ESRI ArcGIS MapServer layers.
+  * Retrieve WFS or WCS URL associated with WMS data sources using DescribeLayer if no dataUrl is present.
+  * Sorted ABS age variables numerically, not alphabetically.
+  * Fixed a bug that prevented region mapping from working over HTTPS.
+  * The proxy is now used to avoid a mixed content warning when accessing an HTTP dataset from an HTTPS deployment of TerriaJS.
+
 ### 2015-11-16
 
 * Completely support the [csv-geo-au](https://github.com/NICTA/nationalmap/wiki/csv-geo-au) specification (other than SA1s and boundaries from previous years) including ASGS boundaries like remoteness regions, indigenous areas and non ASGS boundaries like primary health networks.

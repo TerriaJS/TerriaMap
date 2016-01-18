@@ -316,6 +316,7 @@
     {
       "name": "Test Providers",
       "type": "group",
+      "isOpen": true,
       "items": [
         {
           "name": "Topography (GA)",
@@ -335,12 +336,9 @@
       ]
     },
     {
-      "name": "Empty Group",
-      "type": "group"
-    },
-    {
       "name": "TerriaJS test data",
       "type": "group",
+      "isOpen": true,
       "items": [
         {
           "name": "GeoJSON",
@@ -375,6 +373,10 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Empty Group",
+      "type": "group"
     }
   ]
 }

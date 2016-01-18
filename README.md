@@ -12,5 +12,14 @@ The National Map is designed to:
 * Provide an open framework of geospatial data services that supports commercial and community innovation
 
 ### Getting Started ###
+The quick version:
 
-Check the [wiki](https://github.com/NICTA/nationalmap/wiki) for more information about National Map and how to build and run it.
+```
+git clone https://github.com/NICTA/NationalMap
+cd NationalMap
+npm install
+npm start
+gulp watch
+```
+
+See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about National Map and how to build and run it.
