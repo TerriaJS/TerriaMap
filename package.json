@@ -8,6 +8,10 @@
     "url": "http://github.com/NICTA/nationalmap"
   },
   "dependencies": {
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.11.2",
+    "babel-eslint": "^4.1.6",
+    "gulp-eslint": "^1.1.1",
     "compression": "^1.4.3",
     "connect": "^3.3.5",
     "cors": "^2.6.0",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
     "brfs": "^1.4.0",
     "browserify": "^9.0.8",
@@ -60,14 +65,23 @@
     "vinyl-transform": "^1.0.0",
     "watchify": "^3.2.0"
   },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
-  },
   "scripts": {
     "start": "bash -c \"./run_server.sh\"",
     "stop": "bash -c \"./stop_server.sh\"",
     "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ],
+      "brfs"
+    ]
   }
 }
