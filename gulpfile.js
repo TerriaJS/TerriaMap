@@ -7,6 +7,7 @@ var spawnSync = require('spawn-sync');
 var glob = require('glob-all');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var notify = require('gulp-notify');
 var browserify = require('browserify');
 var jshint = require('gulp-jshint');
 var jsdoc = require('gulp-jsdoc');
@@ -97,6 +98,8 @@ gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
 
 gulp.task('watch', ['watch-app', 'watch-specs','watch-datasources', 'watch-terriajs', 'sass']);
 
+
+//to be updated
 gulp.task('lint', function(){
     return gulp.src(['lib/**/*.js', 'test/**/*.js'])
         .pipe(jshint())
@@ -110,7 +113,6 @@ gulp.task('docs', function(){
             plugins : ['plugins/markdown']
         }));
 });
-
 
 gulp.task('styleguide', function(done) {
     child_exec('kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
@@ -174,9 +176,7 @@ function bundle(name, bundler, minify, catchErrors) {
 
     if (catchErrors) {
         // Display errors to the user, and don't let them propagate.
-        result = result.on('error', function(e) {
-            gutil.log('Browserify Error', e.message);
-        });
+        result = result.on('error', handleErrors);
     }
 
     result = result
@@ -206,7 +206,8 @@ function bundle(name, bundler, minify, catchErrors) {
 function build(name, files, minify) {
     return bundle(name, browserify({
         entries: files,
-        debug: true
+        debug: true,
+        extensions: ['.es6', '.jsx']
     }), minify, false);
 }
 
@@ -215,6 +216,7 @@ function watch(name, files, minify) {
         entries: files,
         debug: true,
         cache: {},
+        extensions: ['.es6', '.jsx'],
         packageCache: {}
     }), { poll: 1000 } );
 
@@ -240,21 +242,14 @@ function watch(name, files, minify) {
     return rebundle();
 }
 
-var reactify = require('reactify');
-
-// jsx transform task
-gulp.task('jsx', function() {
-  var b =  browserify({ debug:true });
-  b.add(appEntryJSName)
-   .transform(reactify)
-  return b.bundle()
-    .on('error', function (err) {
-            console.log(err.toString());
-            this.emit("end");
-        })
-    .pipe(source(appJSName))
-    .pipe(gulp.dest('wwwroot/build'));
-});
+function handleErrors() {
+  var args = Array.prototype.slice.call(arguments);
+  notify.onError({
+    title: 'Compile Error',
+    message: '<%= error.message %>'
+  }).apply(this, args);
+  this.emit('end'); // Keep gulp from hanging on this task
+}
 
 //compile sass, temp
 gulp.task('sass', function(){
@@ -263,12 +258,6 @@ gulp.task('sass', function(){
           loadPath: './node_modules/terriajs/lib/Sass'
         })
         .pipe(gulp.dest('wwwroot/build'));
-});
-
-//watch js and sass compile
-gulp.task('new-watch', function(){
-  gulp.watch(['./node_modules/terriajs/lib/ReactViews/**', 'index.js'],  ['jsx']);
-  gulp.watch(['./node_modules/terriajs/lib/Sass/**', 'nationalmap.scss'], ['sass']);
 });
 
 //watch sass compile and update doc

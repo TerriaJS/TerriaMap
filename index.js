@@ -1,7 +1,7 @@
 'use strict';
 
 /*global require*/
-var UiWrapper = require('terriajs/lib/ReactViews/UiWrapper.jsx'),
+var UiWrapper = require('./UiWrapper.jsx'),
     main = document.getElementById('main'),
     nav = document.getElementById('nav'),
     aside = document.getElementById('aside'),
