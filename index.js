@@ -102,6 +102,8 @@ var terria = new Terria({
     analytics: new GoogleAnalytics()
   });
 
+terria.welcome = function welcomeText(){ return {__html: '<h3>Welcome text for <strong> National Map </strong>.</h3>'}; }
+
 // terria.error.addEventListener(function(e) {
 //     PopupMessageViewModel.open('ui', {
 //         title: e.title,
