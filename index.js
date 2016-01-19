@@ -1,12 +1,7 @@
 'use strict';
 
 /*global require*/
-var UiWrapper = require('./UiWrapper.jsx'),
-    main = document.getElementById('main'),
-    nav = document.getElementById('nav'),
-    aside = document.getElementById('aside'),
-    mapNav = document.getElementById('map-nav'),
-    chart = document.getElementById('chart');
+var UiWrapper = require('./UiWrapper.jsx');
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -154,6 +149,6 @@ terria.start({
     // updateApplicationOnHashChange(terria, window);
 
     var uiWrapper = new UiWrapper(terria);
-    uiWrapper.init(main, nav, aside, mapNav, chart, allBaseMaps, terriaViewer);
+    uiWrapper.init(allBaseMaps, terriaViewer);
 
 });

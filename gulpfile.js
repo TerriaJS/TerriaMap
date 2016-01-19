@@ -46,18 +46,8 @@ gulp.task('build-specs', ['prepare-terriajs'], function() {
     return build(specJSName, glob.sync(testGlob), false);
 });
 
-gulp.task('build-css', function() {
-    return gulp.src('./index.less')
-        .pipe(less({
-            plugins: [
-                new NpmImportPlugin()
-            ]
-        }))
-        .pipe(rename(appCssName))
-        .pipe(gulp.dest('./wwwroot/build/'));
-});
 
-gulp.task('build', ['sass', 'merge-datasources', 'build-app', 'build-specs', 'jsx']);
+gulp.task('build', ['sass', 'merge-datasources', 'build-app', 'build-specs']);
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);

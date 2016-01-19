@@ -9,6 +9,7 @@ var React = require('react'),
     Chart = require('terriajs/lib/ReactViews/Chart.jsx'),
     MapNavigation = require('terriajs/lib/ReactViews/MapNavigation.jsx');
 
+import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
 
 var UiWrapper = function(terria) {
     /**
@@ -59,22 +60,23 @@ var UiWrapper = function(terria) {
     window.searchData = this.searchData;
 };
 
-UiWrapper.prototype.init = function(main, nav, aside, mapNav, chart, allBaseMaps, terriaViewer) {
+UiWrapper.prototype.init = function(allBaseMaps, terriaViewer) {
     var terria = this.terria;
-    ReactDOM.render(<ModalWindow terria={terria} />, main);
-    ReactDOM.render(<SidePanel terria={terria} />, nav);
-    ReactDOM.render(<Chart terria={terria} />, chart);
-    ReactDOM.render(<MapNavigation terria= {terria} allBaseMaps = {allBaseMaps} terriaViewer={terriaViewer} />, mapNav);
+    ReactDOM.render(<ModalWindow terria={terria} />, document.getElementById('main'));
+    ReactDOM.render(<SidePanel terria={terria} />, document.getElementById('nav'));
+    ReactDOM.render(<Chart terria={terria} />, document.getElementById('chart'));
+    ReactDOM.render(<MapNavigation terria= {terria} allBaseMaps = {allBaseMaps} terriaViewer={terriaViewer} />, document.getElementById('map-nav'));
+    ReactDOM.render(<Branding />, document.getElementById('branding'));
 
 
     this.onFeatureSelect.addEventListener(function() {
         if (terria.nowViewing.hasItems) {
-            ReactDOM.render(<FeatureInfoPanel terria={terria} />, aside);
+            ReactDOM.render(<FeatureInfoPanel terria={terria} />, document.getElementById('aside'));
         }
     });
 
     this.terriaViewerUpdate.addEventListener(function() {
-        ReactDOM.render(<MapNavigation terria= {terria} allBaseMaps = {allBaseMaps} terriaViewer={terriaViewer} />, mapNav);
+        ReactDOM.render(<MapNavigation terria= {terria} allBaseMaps = {allBaseMaps} terriaViewer={terriaViewer} />, document.getElementById('map-nav'));
     });
 
 };
