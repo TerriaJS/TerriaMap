@@ -34,6 +34,7 @@
     "less": "^2.5.0",
     "less-plugin-npm-import": "^2.0.0",
     "spawn-sync": "^1.0.11",
+    "terriajs-schema": "terriajs/terriajs-schema",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
@@ -47,6 +48,7 @@
   "scripts": {
     "start": "bash -c \"./run_server.sh\"",
     "stop": "bash -c \"./stop_server.sh\"",
-    "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
+    "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'",
+    "validate": "node node_modules/terriajs-schema/validate.js --terriajsdir node_modules/terriajs wwwroot/init/*.json"
   }
 }
