@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-01-19
+
+* Fixed incorrect claims in the documentation that NationalMap was funed by the Department of Prime Minister and Cabinet.
+
 ### 2016-01-15
 
 * Removed `National Data Sets -> Land -> Catchment Scale Land Use 2014`.
