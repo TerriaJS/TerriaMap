@@ -147,13 +147,23 @@
         "lga",
         "lga_code_2015",
         "lga_code_2014",
-        "lga_code_2013",
         "lga_code_2012",
         "lga_code_2010"
       ],
       "digits": 5,
       "description": "Local government areas",
       "regionIdsFile": "data/regionids/region_map-FID_LGA_2015_AUST_LGA_CODE15.json"
+    },
+    "LGA_2013": {
+      "layerName": "region_map:FID_LGA_2013_AUST",
+      "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+      "regionProp": "LGA_CODE13",
+      "aliases": [
+        "lga_code_2013"
+      ],
+      "digits": 5,
+      "description": "Local government areas",
+      "regionIdsFile": "data/regionids/region_map-FID_LGA_2013_AUST_LGA_CODE13.json"
     },
     "LGA_2011": {
       "layerName": "region_map:FID_LGA_2011_AUST",
@@ -256,6 +266,18 @@
       "digits": 3,
       "description": "Commonwealth electoral districts (ABS approximations)",
       "disabledregionIdsFile": "data/regionids/region_map-FID_CED_2011_AUST_CED_CODE.json"
+    },
+    "CED_2013": {
+      "layerName": "region_map:FID_CED_2013_AUST",
+      "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+      "regionProp": "CED_CODE",
+      "aliases": [
+        "ced_code_2013",
+        "ced_2013"
+      ],
+      "digits": 3,
+      "description": "Commonwealth electoral districts 2013 (ABS approximations)",
+      "disabledregionIdsFile": "data/regionids/region_map-FID_CED_2013_AUST_CED_CODE.json"
     },
     "CED_NAME": {
       "layerName": "region_map:FID_CED_2011_AUST",
@@ -480,6 +502,18 @@
       "digits": 5,
       "description": "Tourism regions",
       "regionIdsFile": "data/regionids/region_map-FID_TR_2015_AUST_TR_CODE15.json"
+    },
+    "TR_2013": {
+      "layerName": "region_map:FID_TR_2013_AUST",
+      "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+      "regionProp": "TR_CODE13",
+      "aliases": [
+        "tr_code_2013",
+        "tr_2013"
+      ],
+      "digits": 5,
+      "description": "Tourism regions",
+      "regionIdsFile": "data/regionids/region_map-FID_TR_2013_AUST_TR_CODE13.json"
     },
     "PHN": {
       "layerName": "region_map:FID_PHN_boundaries_AUS_Sep2015_V5",
