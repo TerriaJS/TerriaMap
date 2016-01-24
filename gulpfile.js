@@ -9,7 +9,6 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var browserify = require('browserify');
 var jshint = require('gulp-jshint');
-var jsdoc = require('gulp-jsdoc');
 var less = require('gulp-less');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -101,13 +100,6 @@ gulp.task('lint', function(){
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(jshint.reporter('fail'));
-});
-
-gulp.task('docs', function(){
-    return gulp.src('lib/**/*.js')
-        .pipe(jsdoc('./wwwroot/doc', undefined, {
-            plugins : ['plugins/markdown']
-        }));
 });
 
 gulp.task('prepare', ['prepare-terriajs']);
