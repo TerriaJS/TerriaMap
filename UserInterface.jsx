@@ -18,7 +18,8 @@ var UiWrapper = React.createClass({
         return {
             modalWindowIsOpen: true,
             activeTab: 0,
-            defaultSearchText: ''
+            defaultSearchText: '',
+            previewed: null
         };
     },
 
@@ -30,6 +31,12 @@ var UiWrapper = React.createClass({
         if (_callback){_callback(this);}
     },
 
+    setPreview(_item) {
+        this.setState({
+            previewed: _item
+        });
+    },
+
     render(){
         const terria = this.props.terria;
         const allBaseMaps = this.props.allBaseMaps;
@@ -39,23 +46,24 @@ var UiWrapper = React.createClass({
                 <Branding toggleModalWindow={this.toggleModalWindow}/>
             <nav>
                 <SidePanel terria={terria}
-                toggleModalWindow={this.toggleModalWindow}
+                           toggleModalWindow={this.toggleModalWindow}
                 />
             </nav>
             </header>
             <main>
                 <ModalWindow terria={terria}
-                modalWindowIsOpen={this.state.modalWindowIsOpen}
-                activeTab={this.state.activeTab}
-                toggleModalWindow={this.toggleModalWindow}
-                defaultSearchText={this.state.defaultSearchText}
+                             modalWindowIsOpen={this.state.modalWindowIsOpen}
+                             activeTab={this.state.activeTab}
+                             toggleModalWindow={this.toggleModalWindow}
+                             defaultSearchText={this.state.defaultSearchText}
+                             previewed={this.state.previewed}
+                             setPreview={this.setPreview}
                 />
             </main>
             <div id="map-nav">
-            <MapNavigation
-            terria={terria}
-            allBaseMaps = {allBaseMaps}
-            terriaViewer={terriaViewer}
+            <MapNavigation terria={terria}
+                           allBaseMaps = {allBaseMaps}
+                           terriaViewer={terriaViewer}
             />
             </div>
             </div>);
