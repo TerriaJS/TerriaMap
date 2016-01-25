@@ -1,7 +1,10 @@
 'use strict';
 
 /*global require*/
-var UiWrapper = require('./UiWrapper.jsx');
+var UserInterface = require('./UserInterface.jsx');
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 
 var configuration = {
     terriaBaseUrl: 'build/TerriaJS',
@@ -147,8 +150,6 @@ terria.start({
 
     // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
     // updateApplicationOnHashChange(terria, window);
-
-    var uiWrapper = new UiWrapper(terria);
-    uiWrapper.init(allBaseMaps, terriaViewer);
+    ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps} terriaViewer={terriaViewer}/>, document.getElementById('ui'));
 
 });
