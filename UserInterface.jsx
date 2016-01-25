@@ -14,11 +14,11 @@ var UiWrapper = React.createClass({
         allBaseMaps: React.PropTypes.array,
         terriaViewer: React.PropTypes.object
     },
-    
     getInitialState() {
         return {
             modalWindowIsOpen: true,
-            activeTab: 0
+            activeTab: 0,
+            defaultSearchText: ''
         };
     },
 
@@ -27,7 +27,7 @@ var UiWrapper = React.createClass({
             modalWindowIsOpen: _action,
             activeTab: _activeTab
         });
-        if (_callback){_callback();}
+        if (_callback){_callback(this);}
     },
 
     render(){
@@ -38,14 +38,26 @@ var UiWrapper = React.createClass({
             <header className='workbench'>
                 <Branding toggleModalWindow={this.toggleModalWindow}/>
             <nav>
-                <SidePanel terria={terria} toggleModalWindow={this.toggleModalWindow}/>
+                <SidePanel terria={terria}
+                toggleModalWindow={this.toggleModalWindow}
+                />
             </nav>
             </header>
             <main>
-                <ModalWindow terria={terria} modalWindowIsOpen={this.state.modalWindowIsOpen} activeTab={this.state.activeTab} toggleModalWindow={this.toggleModalWindow} />
+                <ModalWindow terria={terria}
+                modalWindowIsOpen={this.state.modalWindowIsOpen}
+                activeTab={this.state.activeTab}
+                toggleModalWindow={this.toggleModalWindow}
+                defaultSearchText={this.state.defaultSearchText}
+                />
             </main>
-            <div id="map-nav"><MapNavigation terria={terria} allBaseMaps = {allBaseMaps} terriaViewer={terriaViewer} />
-</div>
+            <div id="map-nav">
+            <MapNavigation
+            terria={terria}
+            allBaseMaps = {allBaseMaps}
+            terriaViewer={terriaViewer}
+            />
+            </div>
             </div>);
     }
 });
