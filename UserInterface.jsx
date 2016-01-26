@@ -47,6 +47,7 @@ var UiWrapper = React.createClass({
             <nav>
                 <SidePanel terria={terria}
                            toggleModalWindow={this.toggleModalWindow}
+                           setPreview={this.setPreview}
                 />
             </nav>
             </header>
