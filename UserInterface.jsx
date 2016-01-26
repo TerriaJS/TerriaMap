@@ -5,6 +5,7 @@ const ModalWindow = require('terriajs/lib/ReactViews/ModalWindow.jsx');
 const SidePanel = require('terriajs/lib/ReactViews/SidePanel.jsx');
 const FeatureInfoPanel = require('terriajs/lib/ReactViews/FeatureInfoPanel.jsx');
 const MapNavigation = require('terriajs/lib/ReactViews/MapNavigation.jsx');
+const Notification = require('terriajs/lib/ReactViews/Notification.jsx');
 
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
 
@@ -19,7 +20,12 @@ var UiWrapper = React.createClass({
             modalWindowIsOpen: true,
             activeTab: 0,
             defaultSearchText: '',
-            previewed: null
+            previewed: null,
+            notification: {
+                title: 'Message Title',
+                body: 'Message body'
+            },
+            notificationisShow: true
         };
     },
 
@@ -34,6 +40,12 @@ var UiWrapper = React.createClass({
     setPreview(_item) {
         this.setState({
             previewed: _item
+        });
+    },
+
+    dismissNotification(){
+        this.setState({
+            notificationisShow: false
         });
     },
 
@@ -62,10 +74,16 @@ var UiWrapper = React.createClass({
                 />
             </main>
             <div id="map-nav">
-            <MapNavigation terria={terria}
-                           allBaseMaps = {allBaseMaps}
-                           terriaViewer={terriaViewer}
-            />
+                <MapNavigation terria={terria}
+                               allBaseMaps = {allBaseMaps}
+                               terriaViewer={terriaViewer}
+                />
+            </div>
+            <div id='notification'>
+                <Notification notification={this.state.notification}
+                              notificationisShow ={this.state.notificationisShow}
+                              dismissNotification={this.dismissNotification}
+                />
             </div>
             </div>);
     }
