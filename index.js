@@ -102,13 +102,6 @@ var terria = new Terria({
 
 terria.welcome = function welcomeText(){ return {__html: '<h3>Welcome text for <strong> National Map </strong>.</h3>'}; }
 
-// terria.error.addEventListener(function(e) {
-//     PopupMessageViewModel.open('ui', {
-//         title: e.title,
-//         message: e.message
-//     });
-// });
-
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.

@@ -28,6 +28,14 @@ var UiWrapper = React.createClass({
             notificationisShow: true
         };
     },
+    componentWillMount(){
+        this.props.terria.error.addEventListener(function(e) {
+            this.setState({
+                notification: e,
+                notificationisShow: true
+            });
+        });
+    },
 
     toggleModalWindow(_action, _activeTab, _callback){
         this.setState({
