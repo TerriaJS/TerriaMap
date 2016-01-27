@@ -22,15 +22,16 @@ var UiWrapper = React.createClass({
             defaultSearchText: '',
             previewed: null,
             notification: {
-                title: 'Message Title',
-                body: 'Message body'
+                title: '',
+                body: ''
             },
-            notificationisShow: true
+            notificationisShow: false
         };
     },
     componentWillMount(){
+        var that = this;
         this.props.terria.error.addEventListener(function(e) {
-            this.setState({
+            that.setState({
                 notification: e,
                 notificationisShow: true
             });
