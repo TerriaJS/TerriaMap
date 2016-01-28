@@ -1,7 +1,6 @@
 'use strict';
 
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
-import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
@@ -11,13 +10,13 @@ import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 
 var UserInterface = React.createClass({
-    mixins: [ObserveModelMixin, PureRenderMixin],
-
     propTypes: {
         terria: React.PropTypes.object,
         allBaseMaps: React.PropTypes.array,
         terriaViewer: React.PropTypes.object
     },
+
+    mixins: [ObserveModelMixin, PureRenderMixin],
 
     getInitialState() {
         return {
@@ -47,7 +46,7 @@ var UserInterface = React.createClass({
         };
     },
 
-    componentWillMount(){
+    componentWillMount() {
         this.props.terria.error.addEventListener(function(e) {
             this.setState({
                 notificationIsVisible: true,
@@ -60,9 +59,15 @@ var UserInterface = React.createClass({
     /**
      * Closes the current notification.
      */
-    dismissNotification(){
+    closeNotification() {
         this.setState({
             notificationIsVisible: false
+        });
+    },
+
+    closeExplorerPanel() {
+        this.setState({
+            explorerPanelIsVisible: false
         });
     },
 
@@ -137,7 +142,7 @@ var UserInterface = React.createClass({
      */
     changeExplorerPanelActiveTab(newActiveTabID) {
         this.setState({
-            explorerPanelActiveTabID: newActiveTab
+            explorerPanelActiveTabID: newActiveTabID
         });
     },
 
@@ -173,7 +178,8 @@ var UserInterface = React.createClass({
                                  activeTabID={this.state.explorerPanelActiveTabID}
                                  catalogSearchText={this.state.catalogSearchText}
                                  previewedCatalogItem={this.state.previewedCatalogItem}
-                                 onSearchTextChanged={this.changeCatalogSearchText}
+                                 onClose={this.state.closeExplorerPanel}
+                                 onCatalogSearchTextChanged={this.changeCatalogSearchText}
                                  onActiveTabChanged={this.changeExplorerPanelActiveTab}
                                  onPreviewedCatalogItemChanged={this.changePreviewedCatalogItem}
                     />
@@ -188,6 +194,7 @@ var UserInterface = React.createClass({
                     <Notification isVisible={this.state.notificationIsVisible}
                                   title={this.state.notificationTitle}
                                   body={this.state.notificationBody}
+                                  onDismiss={this.closeNotification}
                     />
                 </div>
             </div>);
