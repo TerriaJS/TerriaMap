@@ -5,10 +5,14 @@ import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
+import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 
 var UserInterface = React.createClass({
+    mixins: [ObserveModelMixin, PureRenderMixin],
+
     propTypes: {
         terria: React.PropTypes.object,
         allBaseMaps: React.PropTypes.array,
