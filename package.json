@@ -22,7 +22,6 @@
     "ogr2ogr": "^0.5.1",
     "proj4": "^2.3.6",
     "proj4js-defs": "^0.0.1",
-    "react-addons-pure-render-mixin": "^0.14.6",
     "request": "^2.55.0",
     "supervisor": "^0.6.0",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#newui",

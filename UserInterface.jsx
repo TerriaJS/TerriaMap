@@ -5,7 +5,6 @@ import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 
@@ -16,7 +15,7 @@ var UserInterface = React.createClass({
         terriaViewer: React.PropTypes.object
     },
 
-    mixins: [ObserveModelMixin, PureRenderMixin],
+    mixins: [ObserveModelMixin],
 
     getInitialState() {
         return {
