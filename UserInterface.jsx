@@ -45,10 +45,10 @@ var UserInterface = React.createClass({
             // The body of the notification popup.
             notificationBody: undefined,
 
-            // True if the feature info panel is visible
-            featureInfoPanelIsvisible: false,
+            // True if the feature info panel is visible.
+            featureInfoPanelIsVisible: false,
 
-            // True if the feature info panel is collapsed
+            // True if the feature info panel is collapsed.
             featureInfoPanelIsCollapsed: false
         };
     },
@@ -63,7 +63,7 @@ var UserInterface = React.createClass({
         });
         knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(function(){
             this.setState({
-                featureInfoPanelIsvisible: true,
+                featureInfoPanelIsVisible: true,
                 featureInfoPanelIsCollapsed: false
             });
         }, this);
@@ -92,7 +92,7 @@ var UserInterface = React.createClass({
      */
     closeFeatureInfoPanel(){
         this.setState({
-            featureInfoPanelIsvisible: false
+            featureInfoPanelIsVisible: false
         });
     },
 
@@ -234,7 +234,7 @@ var UserInterface = React.createClass({
                     />
                 </div>
                 <FeatureInfoPanel terria={terria}
-                                  isVisible={this.state.featureInfoPanelIsvisible}
+                                  isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed ={this.state.featureInfoPanelIsCollapsed}
                                   changeFeatureInfoPanelCollapse={this.changeFeatureInfoPanelCollapse}
