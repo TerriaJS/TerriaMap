@@ -49,7 +49,7 @@ var UserInterface = React.createClass({
             featureInfoPanelIsvisible: false,
 
             // True if the feature info panel is collapsed
-            featureInfoPanelIscollapsed: false
+            featureInfoPanelIsCollapsed: false
         };
     },
 
@@ -185,7 +185,7 @@ var UserInterface = React.createClass({
      */
     changeFeatureInfoPanelCollapse(){
         this.setState({
-            featureInfoPanelIscollapsed: !this.state.featureInfoPanelIscollapsed
+            featureInfoPanelIsCollapsed: !this.state.featureInfoPanelIsCollapsed
         });
     },
 
@@ -235,8 +235,8 @@ var UserInterface = React.createClass({
                 <FeatureInfoPanel terria={terria}
                                   isVisible={this.state.featureInfoPanelIsvisible}
                                   onClose={this.closeFeatureInfoPanel}
-                                  isCollapsed ={this.state.featureInfoPanelIscollapsed}
-                                  onToggleCollapse={this.changeFeatureInfoPanelCollapse}
+                                  isCollapsed ={this.state.featureInfoPanelIsCollapsed}
+                                  changeFeatureInfoPanelCollapse={this.changeFeatureInfoPanelCollapse}
                 />
             </div>);
     }
