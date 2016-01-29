@@ -63,7 +63,8 @@ var UserInterface = React.createClass({
         });
         knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(function(){
             this.setState({
-                featureInfoPanelIsvisible: true
+                featureInfoPanelIsvisible: true,
+                featureInfoPanelIsCollapsed: false
             });
         }, this);
     },
