@@ -184,7 +184,7 @@ var UserInterface = React.createClass({
     /**
      * Changes the open/collapse state of the feature info panel.
      */
-    changeFeatureInfoPanelCollapse(){
+    changeFeatureInfoPanelIsCollapsed() {
         this.setState({
             featureInfoPanelIsCollapsed: !this.state.featureInfoPanelIsCollapsed
         });
@@ -237,7 +237,7 @@ var UserInterface = React.createClass({
                                   isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed ={this.state.featureInfoPanelIsCollapsed}
-                                  changeFeatureInfoPanelCollapse={this.changeFeatureInfoPanelCollapse}
+                                  onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
             </div>);
     }
