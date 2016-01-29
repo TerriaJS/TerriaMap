@@ -165,6 +165,8 @@ var UserInterface = React.createClass({
                     <Branding onClick={this.showWelcome}/>
                 <nav>
                     <SidePanel terria={terria}
+                               mapSearchText={this.state.mapSearchText}
+                               onMapSearchTextChanged={this.changeMapSearchText}
                                onActivateAddData={this.addData}
                                onActivateCatalogItemInfo={this.showCatalogItemInfo}
                                onSearchCatalog={this.searchCatalog}
@@ -177,7 +179,7 @@ var UserInterface = React.createClass({
                                  activeTabID={this.state.explorerPanelActiveTabID}
                                  catalogSearchText={this.state.catalogSearchText}
                                  previewedCatalogItem={this.state.previewedCatalogItem}
-                                 onClose={this.state.closeExplorerPanel}
+                                 onClose={this.closeExplorerPanel}
                                  onCatalogSearchTextChanged={this.changeCatalogSearchText}
                                  onActiveTabChanged={this.changeExplorerPanelActiveTab}
                                  onPreviewedCatalogItemChanged={this.changePreviewedCatalogItem}
