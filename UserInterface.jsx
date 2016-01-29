@@ -1,8 +1,10 @@
 'use strict';
 
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
+import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
+import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
@@ -41,7 +43,13 @@ var UserInterface = React.createClass({
             notificationTitle: undefined,
 
             // The body of the notification popup.
-            notificationBody: undefined
+            notificationBody: undefined,
+
+            // True if the feature info panel is visible
+            featureInfoPanelIsvisible: false,
+
+            // True if the feature info panel is collapsed
+            featureInfoPanelIscollapsed: false
         };
     },
 
@@ -53,6 +61,11 @@ var UserInterface = React.createClass({
                 notificationBody: e.message
             });
         });
+        knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(function(){
+            this.setState({
+                featureInfoPanelIsvisible: true
+            });
+        }, this);
     },
 
     /**
@@ -64,9 +77,21 @@ var UserInterface = React.createClass({
         });
     },
 
+    /**
+     * Closes the explorer panel.
+     */
     closeExplorerPanel() {
         this.setState({
             explorerPanelIsVisible: false
+        });
+    },
+
+    /**
+     * Show feature info panel.
+     */
+    closeFeatureInfoPanel(){
+        this.setState({
+            featureInfoPanelIsvisible: false
         });
     },
 
@@ -155,6 +180,15 @@ var UserInterface = React.createClass({
         });
     },
 
+    /**
+     * Changes the open/collapse state of the feature info panel.
+     */
+    changeFeatureInfoPanelCollapse(){
+        this.setState({
+            featureInfoPanelIscollapsed: !this.state.featureInfoPanelIscollapsed
+        });
+    },
+
     render(){
         const terria = this.props.terria;
         const allBaseMaps = this.props.allBaseMaps;
@@ -198,6 +232,12 @@ var UserInterface = React.createClass({
                                   onDismiss={this.closeNotification}
                     />
                 </div>
+                <FeatureInfoPanel terria={terria}
+                                  isVisible={this.state.featureInfoPanelIsvisible}
+                                  onClose={this.closeFeatureInfoPanel}
+                                  isCollapsed ={this.state.featureInfoPanelIscollapsed}
+                                  onToggleCollapse={this.changeFeatureInfoPanelCollapse}
+                />
             </div>);
     }
 });
