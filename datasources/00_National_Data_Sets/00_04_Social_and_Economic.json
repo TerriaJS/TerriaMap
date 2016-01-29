@@ -14,10 +14,10 @@
               "url": "http://www.ga.gov.au/gis/rest/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer",
               "type": "esri-mapServer",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Population Estimates",
@@ -32,10 +32,10 @@
             {
               "dataCustodian": "[Australian Taxation Office](http://www.ato.gov.au)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "wms",
               "url": "http://data.gov.au/geoserver/taxation-statistics-2011-12/ows",

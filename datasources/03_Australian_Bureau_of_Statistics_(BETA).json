@@ -23,10 +23,10 @@
             "title": "ABS Data Service Information"
           },
           "rectangle": [
-            "112.93529999999998",
-            "-38.208809999082796",
-            "152.06206",
-            "-11.05104999964455"
+            112.93529,
+            -38.20880,
+            152.06206,
+            -11.05104
           ],
           "type": "abs-itt-dataset-list",
           "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -42,10 +42,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -65,10 +65,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -85,10 +85,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -106,10 +106,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -127,10 +127,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -145,10 +145,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -163,10 +163,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -181,10 +181,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -201,10 +201,10 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
