@@ -32,7 +32,7 @@
       "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
       "regionProp": "SA4_CODE11",
       "aliases": [
-        "sa4_code",
+        "sa4_code_2011",
         "sa4_code",
         "sa4"
       ],

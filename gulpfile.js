@@ -10,7 +10,6 @@ var gutil = require('gulp-util');
 var notify = require('gulp-notify');
 var browserify = require('browserify');
 var jshint = require('gulp-jshint');
-var jsdoc = require('gulp-jsdoc');
 var sass  = require('gulp-ruby-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
