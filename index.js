@@ -72,7 +72,6 @@ var corsProxy = require('terriajs/lib/Core/corsProxy');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 
 
-
 // Configure the base URL for the proxy service used to work around CORS restrictions.
 corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
 
@@ -98,9 +97,9 @@ var terria = new Terria({
     cesiumBaseUrl: configuration.cesiumBaseUrl,
     regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
     analytics: new GoogleAnalytics()
-  });
+});
 
-terria.welcome = function welcomeText(){ return {__html: '<h3>Welcome text for <strong> National Map </strong>.</h3>'}; }
+terria.welcome = function welcomeText() { return {__html: '<h3>Welcome text for <strong> National Map </strong>.</h3>'}; }
 
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
@@ -114,35 +113,39 @@ terria.start({
 }).otherwise(function(e) {
     raiseErrorToUser(terria, e);
 }).always(function() {
-    configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
+    try {
+        configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
-    // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
-    updateApplicationOnHashChange(terria, window);
-    updateApplicationOnMessageFromParentWindow(terria, window);
+        // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
+        updateApplicationOnHashChange(terria, window);
+        updateApplicationOnMessageFromParentWindow(terria, window);
 
-    // Create the map/globe.
-    var terriaViewer = TerriaViewer.create(terria, {
-        developerAttribution: {
-            text: 'NICTA',
-            link: 'http://www.nicta.com.au'
-        }
-    });
+        // Create the map/globe.
+        var terriaViewer = TerriaViewer.create(terria, {
+            developerAttribution: {
+                text: 'NICTA',
+                link: 'http://www.nicta.com.au'
+            }
+        });
 
-    //temp
-    var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-    var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
-    var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
-    // Create the various base map options.
-    var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
-    var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
+        //temp
+        var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
+        var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
+        var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
+        // Create the various base map options.
+        var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
+        var globalBaseMaps = createGlobalBaseMapOptions(terria, configuration.bingMapsKey);
 
-    var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-    selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
+        var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+        selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
-    terriaViewer.updateBaseMap();
+        terriaViewer.updateBaseMap();
 
-    // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
-    // updateApplicationOnHashChange(terria, window);
-    ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps} terriaViewer={terriaViewer}/>, document.getElementById('ui'));
-
+        // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
+        // updateApplicationOnHashChange(terria, window);
+        ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps}
+                                       terriaViewer={terriaViewer}/>, document.getElementById('ui'));
+    } catch (e) {
+        console.error(e.stack)
+    }
 });
