@@ -10,6 +10,7 @@ import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
+import ViewState from 'terriajs/lib/ReactViewModels/ViewState.js';
 import arrayContains from 'terriajs/lib/Core/arrayContains';
 
 var UserInterface = React.createClass({
@@ -23,23 +24,11 @@ var UserInterface = React.createClass({
 
     getInitialState() {
         return {
-            // True if the explorer panel modal window is visible.
-            explorerPanelIsVisible: true,
-
             // The ID of the tab that is visible on the explorer panel.
             explorerPanelActiveTabID: 0,
 
-            // The catalog item that is being previewed.
-            previewedCatalogItem: undefined,
-
-            // The user added catalog item that is being previewed.
-            myDataPreviewedCatalogItem: undefined,
-
             // The text being used to search the map.
             mapSearchText: undefined,
-
-            // The text being used to search the catalog.
-            catalogSearchText: undefined,
 
             // True if the notification popup is visible
             notificationIsVisible: false,
@@ -62,6 +51,8 @@ var UserInterface = React.createClass({
     },
 
     componentWillMount() {
+        this.viewState = new ViewState();
+
         this.props.terria.error.addEventListener(function(e) {
             this.setState({
                 notificationIsVisible: true,
@@ -98,15 +89,6 @@ var UserInterface = React.createClass({
     },
 
     /**
-     * Closes the explorer panel.
-     */
-    closeExplorerPanel() {
-        this.setState({
-            explorerPanelIsVisible: false
-        });
-    },
-
-    /**
      * Show feature info panel.
      */
     closeFeatureInfoPanel(){
@@ -134,76 +116,6 @@ var UserInterface = React.createClass({
             explorerPanelIsVisible: true,
             explorerPanelActiveTabID: 1
         });
-    },
-
-    /**
-     * Opens the explorer panel to show details of a particular catalog item.
-     * @param {CatalogItem} catalogItem The catalog item to show.
-     */
-    showCatalogItemInfo(catalogItem) {
-        this.setState({
-            explorerPanelIsVisible: true,
-            explorerPanelActiveTabID: 1,
-            previewedCatalogItem: catalogItem
-        });
-    },
-
-    /**
-     * Opens the explorer panel to searh for particular text.
-     * @param {String} searchText The text to search for.
-     */
-    searchCatalog(searchText) {
-        this.setState({
-            explorerPanelIsVisible: true,
-            explorerPanelActiveTabID: 1,
-            catalogSearchText: searchText
-        });
-    },
-
-    /**
-     * Changes the text being used to search the catalog, e.g. in response to user input.
-     * @param {String} newSearchText The new search text.
-     */
-    changeCatalogSearchText(newSearchText) {
-        this.setState({
-            catalogSearchText: newSearchText
-        });
-    },
-
-    /**
-     * Changes the text being used to search the map, e.g. in response to user input.
-     * @param {String} newSearchText The new search text.
-     */
-    changeMapSearchText(newSearchText) {
-        this.setState({
-            mapSearchText: newSearchText
-        });
-    },
-
-    /**
-     * Changes the active tab on the explorer panel.
-     * @param {String} newActiveTabID The ID of the new active tab.
-     */
-    changeExplorerPanelActiveTab(newActiveTabID) {
-        this.setState({
-            explorerPanelActiveTabID: newActiveTabID
-        });
-    },
-
-    /**
-     * Changes the previewed catalog item on the explorer panel.
-     * @param {CatalogItem} newPreviewedCatalogItem The new previewed catalog item.
-     */
-    changePreviewedCatalogItem(newPreviewedCatalogItem, userData) {
-        if (userData === true){
-            this.setState({
-                myDataPreviewedCatalogItem: newPreviewedCatalogItem
-            });
-        } else {
-            this.setState({
-                previewedCatalogItem: newPreviewedCatalogItem
-            });
-        }
     },
 
     /**
@@ -239,25 +151,18 @@ var UserInterface = React.createClass({
                     <Branding onClick={this.showWelcome}/>
                 <nav>
                     <SidePanel terria={terria}
-                               mapSearchText={this.state.mapSearchText}
-                               onMapSearchTextChanged={this.changeMapSearchText}
+                               viewState={this.viewState}
                                onActivateAddData={this.addData}
-                               onActivateCatalogItemInfo={this.showCatalogItemInfo}
-                               onSearchCatalog={this.searchCatalog}
                     />
                 </nav>
                 </header>
                 <main>
                     <ModalWindow terria={terria}
-                                 isVisible={this.state.explorerPanelIsVisible}
+                                 viewState={this.viewState}
                                  activeTabID={this.state.explorerPanelActiveTabID}
-                                 catalogSearchText={this.state.catalogSearchText}
-                                 previewedCatalogItem={this.state.previewedCatalogItem}
                                  myDataPreviewedCatalogItem={this.state.myDataPreviewedCatalogItem}
                                  onClose={this.closeExplorerPanel}
-                                 onCatalogSearchTextChanged={this.changeCatalogSearchText}
                                  onActiveTabChanged={this.changeExplorerPanelActiveTab}
-                                 onPreviewedCatalogItemChanged={this.changePreviewedCatalogItem}
                                  isDraggingDroppingFile ={this.state.isDraggingDroppingFile}
                                  onFinishDroppingFile={this.onFinishDroppingFile}
                     />
