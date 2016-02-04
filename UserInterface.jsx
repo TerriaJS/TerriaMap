@@ -9,6 +9,7 @@ import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
+import arrayContains from 'terriajs/lib/Core/arrayContains';
 
 var UserInterface = React.createClass({
     propTypes: {
@@ -283,14 +284,5 @@ var UserInterface = React.createClass({
     }
 });
 
-function arrayContains(array, value) {
-    for (var i = 0; i < array.length; ++i) {
-        if (array[i] === value) {
-            return true;
-        }
-    }
-
-    return false;
-}
 
 module.exports = UserInterface;
