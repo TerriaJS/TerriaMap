@@ -30,6 +30,7 @@ var UserInterface = React.createClass({
             // The catalog item that is being previewed.
             previewedCatalogItem: undefined,
 
+            // The user added catalog item that is being previewed.
             myDataPreviewedCatalogItem: undefined,
 
             // The text being used to search the map.
@@ -72,10 +73,8 @@ var UserInterface = React.createClass({
                 featureInfoPanelIsCollapsed: false
             });
         }, this);
-    },
 
-    componentDidMount: function(){
-        var that = this;
+        const  that = this;
         window.addEventListener('dragover', (e)=>{
             e.preventDefault();
             e.stopPropagation();
