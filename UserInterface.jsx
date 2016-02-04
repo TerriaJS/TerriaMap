@@ -76,6 +76,9 @@ var UserInterface = React.createClass({
 
         const  that = this;
         window.addEventListener('dragover', (e)=>{
+            if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
+                return;
+            }
             e.preventDefault();
             e.stopPropagation();
             e.dataTransfer.dropEffect = 'copy';
@@ -279,5 +282,15 @@ var UserInterface = React.createClass({
             </div>);
     }
 });
+
+function arrayContains(array, value) {
+    for (var i = 0; i < array.length; ++i) {
+        if (array[i] === value) {
+            return true;
+        }
+    }
+
+    return false;
+}
 
 module.exports = UserInterface;
