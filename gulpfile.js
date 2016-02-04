@@ -85,7 +85,7 @@ gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
     return gulp.watch(terriaJSSource + '/**', [ 'prepare-terriajs' ]);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs','watch-datasources', 'watch-terriajs', 'sass']);
+gulp.task('watch', ['watch-app', 'watch-specs','watch-datasources', 'watch-terriajs', 'sass-watch']);
 
 
 //to be updated
@@ -94,13 +94,6 @@ gulp.task('lint', function(){
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(jshint.reporter('fail'));
-});
-
-gulp.task('docs', function(){
-    return gulp.src('lib/**/*.js')
-        .pipe(jsdoc('./wwwroot/doc', undefined, {
-            plugins : ['plugins/markdown']
-        }));
 });
 
 gulp.task('styleguide', function(done) {
