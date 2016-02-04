@@ -1,6 +1,7 @@
 'use strict';
 
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
+import ChartPanel from 'terriajs/lib/ReactViews/ChartPanel.jsx';
 import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
@@ -238,6 +239,11 @@ var UserInterface = React.createClass({
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed ={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
+                />
+                <ChartPanel terria={terria}
+                            isVisible={this.state.featureInfoPanelIsVisible}
+                            onClose={this.closeFeatureInfoPanel}
+                            isCollapsed ={this.state.featureInfoPanelIsCollapsed}
                 />
             </div>);
     }

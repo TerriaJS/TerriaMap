@@ -61,6 +61,7 @@ var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModel
 
 var Terria = require('terriajs/lib/Models/Terria');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
+var registerCustomComponentTypes = require('terriajs/lib/Models/registerCustomComponentTypes');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
@@ -87,6 +88,9 @@ registerKnockoutBindings();
 // the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
 
+// Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
+// insert your custom version of the code in the registerCustomComponentTypes function here instead.
+registerCustomComponentTypes();
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 
