@@ -10,6 +10,7 @@ import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
+import arrayContains from 'terriajs/lib/Core/arrayContains';
 
 var UserInterface = React.createClass({
     propTypes: {
@@ -31,6 +32,9 @@ var UserInterface = React.createClass({
             // The catalog item that is being previewed.
             previewedCatalogItem: undefined,
 
+            // The user added catalog item that is being previewed.
+            myDataPreviewedCatalogItem: undefined,
+
             // The text being used to search the map.
             mapSearchText: undefined,
 
@@ -50,7 +54,10 @@ var UserInterface = React.createClass({
             featureInfoPanelIsVisible: false,
 
             // True if the feature info panel is collapsed.
-            featureInfoPanelIsCollapsed: false
+            featureInfoPanelIsCollapsed: false,
+
+            // True is dragging and dropping file
+            isDraggingDroppingFile: false
         };
     },
 
@@ -68,6 +75,17 @@ var UserInterface = React.createClass({
                 featureInfoPanelIsCollapsed: false
             });
         }, this);
+
+        const  that = this;
+        window.addEventListener('dragover', (e)=>{
+            if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
+                return;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+            e.dataTransfer.dropEffect = 'copy';
+            that.acceptDragDropFile();
+        });
     },
 
     /**
@@ -176,10 +194,16 @@ var UserInterface = React.createClass({
      * Changes the previewed catalog item on the explorer panel.
      * @param {CatalogItem} newPreviewedCatalogItem The new previewed catalog item.
      */
-    changePreviewedCatalogItem(newPreviewedCatalogItem) {
-        this.setState({
-            previewedCatalogItem: newPreviewedCatalogItem
-        });
+    changePreviewedCatalogItem(newPreviewedCatalogItem, userData) {
+        if (userData === true){
+            this.setState({
+                myDataPreviewedCatalogItem: newPreviewedCatalogItem
+            });
+        } else {
+            this.setState({
+                previewedCatalogItem: newPreviewedCatalogItem
+            });
+        }
     },
 
     /**
@@ -188,6 +212,20 @@ var UserInterface = React.createClass({
     changeFeatureInfoPanelIsCollapsed() {
         this.setState({
             featureInfoPanelIsCollapsed: !this.state.featureInfoPanelIsCollapsed
+        });
+    },
+
+    acceptDragDropFile(){
+        this.setState({
+            explorerPanelIsVisible: true,
+            explorerPanelActiveTabID: 2,
+            isDraggingDroppingFile: true
+        });
+    },
+
+    onFinishDroppingFile(){
+        this.setState({
+            isDraggingDroppingFile: false
         });
     },
 
@@ -215,10 +253,13 @@ var UserInterface = React.createClass({
                                  activeTabID={this.state.explorerPanelActiveTabID}
                                  catalogSearchText={this.state.catalogSearchText}
                                  previewedCatalogItem={this.state.previewedCatalogItem}
+                                 myDataPreviewedCatalogItem={this.state.myDataPreviewedCatalogItem}
                                  onClose={this.closeExplorerPanel}
                                  onCatalogSearchTextChanged={this.changeCatalogSearchText}
                                  onActiveTabChanged={this.changeExplorerPanelActiveTab}
                                  onPreviewedCatalogItemChanged={this.changePreviewedCatalogItem}
+                                 isDraggingDroppingFile ={this.state.isDraggingDroppingFile}
+                                 onFinishDroppingFile={this.onFinishDroppingFile}
                     />
                 </main>
                 <div id="map-nav">
@@ -248,5 +289,6 @@ var UserInterface = React.createClass({
             </div>);
     }
 });
+
 
 module.exports = UserInterface;
