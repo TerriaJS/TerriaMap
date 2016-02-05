@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*global require*/
 
@@ -6,11 +6,11 @@ var fs = require('fs');
 var spawnSync = require('spawn-sync');
 var glob = require('glob-all');
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var notify = require('gulp-notify');
 var browserify = require('browserify');
 var jshint = require('gulp-jshint');
-var sass  = require('gulp-ruby-sass');
+var less = require('gulp-less');
+var sass = require('gulp-ruby-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
@@ -21,7 +21,7 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
-var child_exec = require('child_process').exec;  // child_process is built in to node
+var childExec = require('child_process').exec;  // child_process is built in to node
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -45,6 +45,16 @@ gulp.task('build-specs', ['prepare-terriajs'], function() {
     return build(specJSName, glob.sync(testGlob), false);
 });
 
+gulp.task('build-css', function() {
+    return gulp.src('./index.less')
+        .pipe(less({
+            plugins: [
+                new NpmImportPlugin()
+            ]
+        }))
+        .pipe(rename(appCssName))
+        .pipe(gulp.dest('./wwwroot/build/'));
+});
 
 gulp.task('build', ['sass', 'merge-datasources', 'build-app', 'build-specs']);
 
@@ -85,7 +95,7 @@ gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
     return gulp.watch(terriaJSSource + '/**', [ 'prepare-terriajs' ]);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs','watch-datasources', 'watch-terriajs', 'sass-watch']);
+gulp.task('watch', ['watch-app', 'watch-specs', 'watch-datasources', 'watch-terriajs', 'sass-watch']);
 
 
 //to be updated
@@ -97,7 +107,7 @@ gulp.task('lint', function(){
 });
 
 gulp.task('styleguide', function(done) {
-    child_exec('kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
+    childExec('kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
 });
 
 gulp.task('prepare', ['prepare-terriajs']);
@@ -109,9 +119,9 @@ gulp.task('prepare-terriajs', function() {
 });
 
 gulp.task('merge-groups', function() {
-    var jsonspacing=0;
-    return gulp.src("./datasources/00_National_Data_Sets/*.json")
-    .pipe(jsoncombine("00_National_Data_Sets.json", function(data) {
+    var jsonspacing = 0;
+    return gulp.src('./datasources/00_National_Data_Sets/*.json')
+    .pipe(jsoncombine('00_National_Data_Sets.json', function(data) {
         // be absolutely sure we have the files in alphabetical order
         var keys = Object.keys(data).slice().sort();
         for (var i = 1; i < keys.length; i++) {
@@ -119,13 +129,13 @@ gulp.task('merge-groups', function() {
         }
         return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
     }))
-    .pipe(gulp.dest("./datasources"));
+    .pipe(gulp.dest('./datasources'));
 });
 
 gulp.task('merge-catalog', ['merge-groups'], function() {
-    var jsonspacing=0;
-    return gulp.src("./datasources/*.json")
-        .pipe(jsoncombine("nm.json", function(data) {
+    var jsonspacing = 0;
+    return gulp.src('./datasources/*.json')
+        .pipe(jsoncombine('nm.json', function(data) {
         // be absolutely sure we have the files in alphabetical order, with 000_settings first.
         var keys = Object.keys(data).slice().sort();
         data[keys[0]].catalog = [];
@@ -135,7 +145,7 @@ gulp.task('merge-catalog', ['merge-groups'], function() {
         }
         return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
     }))
-    .pipe(gulp.dest("./wwwroot/init"));
+    .pipe(gulp.dest('./wwwroot/init'));
 });
 
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
@@ -246,6 +256,3 @@ gulp.task('sass', function(){
 gulp.task('sass-watch', function(){
   gulp.watch(['./node_modules/terriajs/lib/Sass/**', 'nationalmap.scss'], ['sass', 'styleguide']);
 });
-
-
-
