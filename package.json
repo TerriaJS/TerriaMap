@@ -55,7 +55,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.2.4",
-    "kss": "^2.1.1",
+    "kss": "^2.4.0",
     "less": "^2.5.0",
     "less-plugin-npm-import": "^2.0.0",
     "reactify": "^1.1.1",
@@ -84,7 +84,12 @@
       "brfs"
     ],
     "plugin": [
-      ["browserify-resolutions", ["react"]]
+      [
+        "browserify-resolutions",
+        [
+          "react"
+        ]
+      ]
     ]
   }
 }
