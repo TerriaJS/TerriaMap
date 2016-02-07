@@ -55,43 +55,49 @@
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-buttons.html">
-          <span class="kss-nav__ref">6</span
+          <span class="kss-nav__ref">5</span
           ><span class="kss-nav__name">Buttons</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-component.html">
-          <span class="kss-nav__ref">7</span
+          <span class="kss-nav__ref">6</span
           ><span class="kss-nav__name">Component</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-component.html#kssref-component.feature-info-panel">
-                <span class="kss-nav__ref">7.1</span
+                <span class="kss-nav__ref">6.1</span
                 ><span class="kss-nav__name">Feature info Panel</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
-              <a href="section-component.html#kssref-component.map-navigation">
-                <span class="kss-nav__ref">7.2</span
+              <a href="section-component.html#kssref-component.map-compass">
+                <span class="kss-nav__ref">6.2</span
                 ><span class="kss-nav__name">Map Compass</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
+              <a href="section-component.html#kssref-component.map-zoom">
+                <span class="kss-nav__ref">6.3</span
+                ><span class="kss-nav__name">Map Zoom</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
               <a href="section-component.html#kssref-component.notification">
-                <span class="kss-nav__ref">7.3</span
+                <span class="kss-nav__ref">6.4</span
                 ><span class="kss-nav__name">Notification</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-component.html#kssref-component.now-viewing">
-                <span class="kss-nav__ref">7.4</span
+                <span class="kss-nav__ref">6.5</span
                 ><span class="kss-nav__name">Now viewing</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-component.html#kssref-component.setting-panel">
-                <span class="kss-nav__ref">7.5</span
+                <span class="kss-nav__ref">6.6</span
                 ><span class="kss-nav__name">Setting Panel</span>
               </a>
             </li>
@@ -99,7 +105,7 @@
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-loader.html">
-          <span class="kss-nav__ref">8</span
+          <span class="kss-nav__ref">7</span
           ><span class="kss-nav__name">Loader</span>
         </a>
       </li>
@@ -114,7 +120,7 @@
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink" href="#kssref-component">
           <span class="kss-title__ref">
-              7
+              6
             <span class="kss-title__permalink-hash">
                 #Component
             </span>
@@ -134,7 +140,7 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-component.feature-info-panel">
           <span class="kss-title__ref">
-              7.1
+              6.1
             <span class="kss-title__permalink-hash">
                 #Component.feature-info-panel
             </span>
@@ -148,49 +154,17 @@
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Examples
-        </div>
-        <div class="kss-modifier__default-name kss-style">
-          Default styling
+          Example
         </div>
         <div class="kss-modifier__example">
-          <div class="feature-info-panel " aria-hidden="false">
+          <div class="feature-info-panel is-visible" aria-hidden="false">
 <div class="feature-info-panel__header">
-<button class="btn"> Feature Info Panel </button><button class="btn modal-btn right" title="Close data panel"><i class="icon icon-close"></i></button>
+<button class="btn"> Feature Info Panel </button><button class="btn btn--close-modal" title="Close data panel"></button>
 </div>
-<ul class='list-reset feature-info-panel__body'>
+<ul class='feature-info-panel__body'>
 <li class="feature-info__group">
-<ul class="list-reset feature-info-panel-sections">
-<li class="feature-info-panel__section"><button class="btn btn-feature-name"><span>Broadband ADSL Availability</span><i class="icon icon-chevron-down" ></i></button>
-<section class="feature-info-panel__content" aria-hidden="false">
-<table class="cesium-infoBox-defaultTable">
-<tbody>
-<tr><td>name</td><td>ALLO:BQP30118</td></tr>
-<tr><td>esa_name</td><td>ALLORA</td></tr>
-<tr><td>availability_rating</td><td>E</td></tr>
-<tr><td>availability_description</td><td>This is the lowest availability rating. Between 0 and 20 per cent of premises in the area surrounding your address have access to at least one broadband technology.</td></tr>
-</tbody>
-</table>
-</section>
-</li>
-</ul>
-</div>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          .is-collapsed
-        </div>
-        <div class="kss-modifier__description kss-style">
-          collapsed feature info panel
-        </div>
-        <div class="kss-modifier__example">
-          <div class="feature-info-panel is-collapsed" aria-hidden="false">
-<div class="feature-info-panel__header">
-<button class="btn"> Feature Info Panel </button><button class="btn modal-btn right" title="Close data panel"><i class="icon icon-close"></i></button>
-</div>
-<ul class='list-reset feature-info-panel__body'>
-<li class="feature-info__group">
-<ul class="list-reset feature-info-panel-sections">
-<li class="feature-info-panel__section"><button class="btn btn-feature-name"><span>Broadband ADSL Availability</span><i class="icon icon-chevron-down" ></i></button>
+<ul class="feature-info-panel__sections">
+<li class="feature-info-panel__section is-open"><button class="btn feature-info-panel__title is-open"><span>Broadband ADSL Availability</span></button>
 <section class="feature-info-panel__content" aria-hidden="false">
 <table class="cesium-infoBox-defaultTable">
 <tbody>
@@ -208,14 +182,14 @@
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;feature-info-panel &quot; aria-hidden=&quot;false&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;feature-info-panel is-visible&quot; aria-hidden=&quot;false&quot;&gt;
 &lt;div class=&quot;feature-info-panel__header&quot;&gt;
-&lt;button class=&quot;btn&quot;&gt; Feature Info Panel &lt;/button&gt;&lt;button class=&quot;btn modal-btn right&quot; title=&quot;Close data panel&quot;&gt;&lt;i class=&quot;icon icon-close&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button class=&quot;btn&quot;&gt; Feature Info Panel &lt;/button&gt;&lt;button class=&quot;btn btn--close-modal&quot; title=&quot;Close data panel&quot;&gt;&lt;/button&gt;
 &lt;/div&gt;
-&lt;ul class=&#x27;list-reset feature-info-panel__body&#x27;&gt;
+&lt;ul class=&#x27;feature-info-panel__body&#x27;&gt;
 &lt;li class=&quot;feature-info__group&quot;&gt;
-&lt;ul class=&quot;list-reset feature-info-panel-sections&quot;&gt;
-&lt;li class=&quot;feature-info-panel__section&quot;&gt;&lt;button class=&quot;btn btn-feature-name&quot;&gt;&lt;span&gt;Broadband ADSL Availability&lt;/span&gt;&lt;i class=&quot;icon icon-chevron-down&quot; &gt;&lt;/i&gt;&lt;/button&gt;
+&lt;ul class=&quot;feature-info-panel__sections&quot;&gt;
+&lt;li class=&quot;feature-info-panel__section is-open&quot;&gt;&lt;button class=&quot;btn feature-info-panel__title is-open&quot;&gt;&lt;span&gt;Broadband ADSL Availability&lt;/span&gt;&lt;/button&gt;
 &lt;section class=&quot;feature-info-panel__content&quot; aria-hidden=&quot;false&quot;&gt;
 &lt;table class=&quot;cesium-infoBox-defaultTable&quot;&gt;
 &lt;tbody&gt;
@@ -232,15 +206,15 @@
       </div>
 
       </section>
-      <section id="kssref-component.map-navigation" class="kss-section kss-section--depth-2">
+      <section id="kssref-component.map-compass" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-component.map-navigation">
+        <a class="kss-title__permalink" href="#kssref-component.map-compass">
           <span class="kss-title__ref">
-              7.2
+              6.2
             <span class="kss-title__permalink-hash">
-                #Component.map-navigation
+                #Component.map-compass
             </span>
           </span>
           Map Compass
@@ -255,12 +229,62 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="compass"><div class="compass-outer-ring"></div><div class="compass-inner-ring" title="Click and drag to rotate the camera"></div><div class="compass-rotation-marker"></div></div>
+          <div class="compass">
+<div class="compass--outer-ring"></div>
+<div class="compass--inner-ring" title="Click and drag to rotate the camera"></div>
+<div class="compass--rotation-marker"></div>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;compass&quot;&gt;&lt;div class=&quot;compass-outer-ring&quot;&gt;&lt;/div&gt;&lt;div class=&quot;compass-inner-ring&quot; title=&quot;Click and drag to rotate the camera&quot;&gt;&lt;/div&gt;&lt;div class=&quot;compass-rotation-marker&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;compass&quot;&gt;
+&lt;div class=&quot;compass--outer-ring&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;compass--inner-ring&quot; title=&quot;Click and drag to rotate the camera&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;compass--rotation-marker&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-component.map-zoom" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-component.map-zoom">
+          <span class="kss-title__ref">
+              6.3
+            <span class="kss-title__permalink-hash">
+                #Component.map-zoom
+            </span>
+          </span>
+          Map Zoom
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="zoom-control">
+<ul>
+<li><button class="btn btn--increase" title="zoom in"></button></li>
+<li><button class="btn btn--refresh" title="reset zoom"></button></li>
+<li><button class="btn btn--decrease" title="zoom out"></button></li></ul>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;zoom-control&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--increase&quot; title=&quot;zoom in&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--refresh&quot; title=&quot;reset zoom&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--decrease&quot; title=&quot;zoom out&quot;&gt;&lt;/button&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -270,7 +294,7 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-component.notification">
           <span class="kss-title__ref">
-              7.3
+              6.4
             <span class="kss-title__permalink-hash">
                 #Component.notification
             </span>
@@ -328,7 +352,7 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-component.now-viewing">
           <span class="kss-title__ref">
-              7.4
+              6.5
             <span class="kss-title__permalink-hash">
                 #Component.now-viewing
             </span>
@@ -438,7 +462,7 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-component.setting-panel">
           <span class="kss-title__ref">
-              7.5
+              6.6
             <span class="kss-title__permalink-hash">
                 #Component.setting-panel
             </span>
@@ -455,51 +479,53 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="setting-panel-inner">
-<div class="setting-panel-section setting-panel__viewer">
-<label class="setting-panel__label"> Map View </label>
-<ul class="setting-panel__viewer-selector list-reset clearfix">
-<li class="col col-4"><button class="btn btn-viewer is-active">3D Terrain</button></li>
-<li class="col col-4"><button class="btn btn-viewer ">3D Smooth</button></li>
-<li class="col col-4"><button class="btn btn-viewer ">2D</button></li>
+          <div class="setting-panel__inner">
+<div class="setting-panel__section setting-panel__viewer">
+<label class="label label--setting-panel"> Map View </label>
+<ul class="setting-panel__viewer-selector">
+<li><button class="btn btn--viewer is-active">3D Terrain</button></li>
+<li><button class="btn btn--viewer ">3D Smooth</button></li>
+<li><button class="btn btn--viewer ">2D</button></li>
 </ul>
-</div><div class="setting-panel-section setting-panel__basemap"><label class="setting-panel__label"> Base Map </label>
-<label class="label active-map__label">Bing Maps Aerial with Labels</label>
-<ul class="setting-panel__basemap-selector list-reset clearfix">
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Australian Topography" src="../build/TerriaJS/images/australian-topo.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Australian Hydrography" src="../build/TerriaJS/images/hydro.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap is-active"><img alt="Bing Maps Aerial with Labels" src="../build/TerriaJS/images/bing-aerial-labels.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Bing Maps Aerial" src="../build/TerriaJS/images/bing-aerial.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Bing Maps Roads" src="../build/TerriaJS/images/bing-maps-roads.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Natural Earth II" src="../build/TerriaJS/images/natural-earth.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="NASA Black Marble" src="../build/TerriaJS/images/black-marble.png"></button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Positron (Light)" src="../build/TerriaJS/images/positron.png"</button></li>
-<li class="basemap col col-4"><button class="btn btn-basemap "><img alt="Dark Matter" src="../build/TerriaJS/images/dark-matter.png"></button></li>
+</div><div class="setting-panel__section setting-panel__basemap">
+<label class="label--setting-panel"> Base Map </label>
+<label class="label label--active-map">Bing Maps Aerial with Labels</label>
+<ul class="setting-panel__basemap-selector">
+<li><button class="btn btn--basemap "><img alt="Australian Topography" src="../build/TerriaJS/images/australian-topo.png"></button></li>
+<li><button class="btn btn--basemap "><img alt="Australian Hydrography" src="../build/TerriaJS/images/hydro.png"></button></li>
+<li><button class="btn btn--basemap is-active"><img alt="Bing Maps Aerial with Labels" src="../build/TerriaJS/images/bing-aerial-labels.png"></button></li>
+<li><button class="btn btn--basemap "><img alt="Bing Maps Aerial" src="../build/TerriaJS/images/bing-aerial.png"></button></li>
+<li><button class="btn btn--basemap "><img alt="Bing Maps Roads" src="../build/TerriaJS/images/bing-maps-roads.png"></button></li>
+<li><button class="btn btn--basemap "><img alt="Natural Earth II" src="../build/TerriaJS/images/natural-earth.png"></button></li>
+<li><button class="btn btn--basemap "><img alt="NASA Black Marble" src="../build/TerriaJS/images/black-marble.png"></button></li>
+<li><button class="btn btn--basemap "><img alt="Positron (Light)" src="../build/TerriaJS/images/positron.png"</button></li>
+<li><button class="btn btn--basemap "><img alt="Dark Matter" src="../build/TerriaJS/images/dark-matter.png"></button></li>
 </ul></div></div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;setting-panel-inner&quot;&gt;
-&lt;div class=&quot;setting-panel-section setting-panel__viewer&quot;&gt;
-&lt;label class=&quot;setting-panel__label&quot;&gt; Map View &lt;/label&gt;
-&lt;ul class=&quot;setting-panel__viewer-selector list-reset clearfix&quot;&gt;
-&lt;li class=&quot;col col-4&quot;&gt;&lt;button class=&quot;btn btn-viewer is-active&quot;&gt;3D Terrain&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;col col-4&quot;&gt;&lt;button class=&quot;btn btn-viewer &quot;&gt;3D Smooth&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;col col-4&quot;&gt;&lt;button class=&quot;btn btn-viewer &quot;&gt;2D&lt;/button&gt;&lt;/li&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;setting-panel__inner&quot;&gt;
+&lt;div class=&quot;setting-panel__section setting-panel__viewer&quot;&gt;
+&lt;label class=&quot;label label--setting-panel&quot;&gt; Map View &lt;/label&gt;
+&lt;ul class=&quot;setting-panel__viewer-selector&quot;&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--viewer is-active&quot;&gt;3D Terrain&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--viewer &quot;&gt;3D Smooth&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--viewer &quot;&gt;2D&lt;/button&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;div class=&quot;setting-panel-section setting-panel__basemap&quot;&gt;&lt;label class=&quot;setting-panel__label&quot;&gt; Base Map &lt;/label&gt;
-&lt;label class=&quot;label active-map__label&quot;&gt;Bing Maps Aerial with Labels&lt;/label&gt;
-&lt;ul class=&quot;setting-panel__basemap-selector list-reset clearfix&quot;&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Australian Topography&quot; src=&quot;../build/TerriaJS/images/australian-topo.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Australian Hydrography&quot; src=&quot;../build/TerriaJS/images/hydro.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap is-active&quot;&gt;&lt;img alt=&quot;Bing Maps Aerial with Labels&quot; src=&quot;../build/TerriaJS/images/bing-aerial-labels.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Bing Maps Aerial&quot; src=&quot;../build/TerriaJS/images/bing-aerial.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Bing Maps Roads&quot; src=&quot;../build/TerriaJS/images/bing-maps-roads.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Natural Earth II&quot; src=&quot;../build/TerriaJS/images/natural-earth.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;NASA Black Marble&quot; src=&quot;../build/TerriaJS/images/black-marble.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Positron (Light)&quot; src=&quot;../build/TerriaJS/images/positron.png&quot;&lt;/button&gt;&lt;/li&gt;
-&lt;li class=&quot;basemap col col-4&quot;&gt;&lt;button class=&quot;btn btn-basemap &quot;&gt;&lt;img alt=&quot;Dark Matter&quot; src=&quot;../build/TerriaJS/images/dark-matter.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;/div&gt;&lt;div class=&quot;setting-panel__section setting-panel__basemap&quot;&gt;
+&lt;label class=&quot;label--setting-panel&quot;&gt; Base Map &lt;/label&gt;
+&lt;label class=&quot;label label--active-map&quot;&gt;Bing Maps Aerial with Labels&lt;/label&gt;
+&lt;ul class=&quot;setting-panel__basemap-selector&quot;&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Australian Topography&quot; src=&quot;../build/TerriaJS/images/australian-topo.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Australian Hydrography&quot; src=&quot;../build/TerriaJS/images/hydro.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap is-active&quot;&gt;&lt;img alt=&quot;Bing Maps Aerial with Labels&quot; src=&quot;../build/TerriaJS/images/bing-aerial-labels.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Bing Maps Aerial&quot; src=&quot;../build/TerriaJS/images/bing-aerial.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Bing Maps Roads&quot; src=&quot;../build/TerriaJS/images/bing-maps-roads.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Natural Earth II&quot; src=&quot;../build/TerriaJS/images/natural-earth.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;NASA Black Marble&quot; src=&quot;../build/TerriaJS/images/black-marble.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Positron (Light)&quot; src=&quot;../build/TerriaJS/images/positron.png&quot;&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;btn btn--basemap &quot;&gt;&lt;img alt=&quot;Dark Matter&quot; src=&quot;../build/TerriaJS/images/dark-matter.png&quot;&gt;&lt;/button&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
       </div>
 
