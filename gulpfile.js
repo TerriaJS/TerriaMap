@@ -253,6 +253,6 @@ gulp.task('sass', function(){
 });
 
 //watch sass compile and update doc
-gulp.task('sass-watch', function(){
-  gulp.watch(['./node_modules/terriajs/lib/Sass/**', 'nationalmap.scss'], ['sass', 'styleguide']);
+gulp.task('sass-watch', ['sass'], function(){
+  return gulp.watch(['./node_modules/terriajs/lib/Sass/**', 'nationalmap.scss'], ['sass']);
 });
