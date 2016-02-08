@@ -1,8 +1,8 @@
 @import "global/variables";
-@import "partial/icons";
+@import "global/icons";
 @import "global/helpers";
 @import "global/mixins";
-@import "partial/leaflet";
+@import "global/normalize";
 @import "partial/base";
 @import "partial/type";
 @import "partial/tables";
@@ -13,7 +13,9 @@
 @import "partial/dropdown";
 @import "partial/tabs";
 @import "partial/map";
+@import "partial/leaflet";
 @import "partial/map_navigation";
+@import "partial/compass_zoom";
 @import "partial/work_bench";
 @import "partial/modal_window";
 @import "partial/search";
@@ -22,7 +24,10 @@
 @import "partial/settingPanel";
 @import "partial/chart";
 @import "partial/now_viewing";
+@import "partial/preview_panel";
 @import "partial/notification";
 @import "partial/my_data";
+@import "partial/loader";
+@import "partial/drop_zone";
 @import "partial/misc";
 

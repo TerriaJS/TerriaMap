@@ -6,12 +6,11 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>KSS Style Guide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-  <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/7.0.4/basscss.min.css" rel="stylesheet">
   <link rel="stylesheet" href="public/kss.css">
   <link rel="stylesheet" href="./../build/nationalmap.css">
 
@@ -20,7 +19,7 @@
 
 <div class="kss-sidebar kss-style sm-col sm-col-3">
   <header class="kss-header">
-    <h1 class="kss-doc-title"></h1>
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
   </header>
   <nav class="kss-nav">
     <ul class="kss-nav__menu">
@@ -48,6 +47,24 @@
           ><span class="kss-nav__name">Forms</span>
         </a>
         <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-.html#kssref-3-1">
+                <span class="kss-nav__ref">3.1</span
+                ><span class="kss-nav__name">Search form</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-.html#kssref-3-2">
+                <span class="kss-nav__ref">3.2</span
+                ><span class="kss-nav__name">Add data from url form</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-.html#kssref-3-3">
+                <span class="kss-nav__ref">3.3</span
+                ><span class="kss-nav__name">Add data from local form</span>
+              </a>
+            </li>
         </ul>
       </li>
       <li class="kss-nav__menu-item">
@@ -58,14 +75,20 @@
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-buttons.html">
-          <span class="kss-nav__ref">6</span
+          <span class="kss-nav__ref">5</span
           ><span class="kss-nav__name">Buttons</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-component.html">
-          <span class="kss-nav__ref">7</span
+          <span class="kss-nav__ref">6</span
           ><span class="kss-nav__name">Component</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-loader.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">Loader</span>
         </a>
       </li>
     </ul>
@@ -91,6 +114,26 @@
 
     </div>
 
+
+      </div>
+      <section id="kssref-3-1" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-3-1">
+          <span class="kss-title__ref">
+              3.1
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Search form
+        </a>
+      </h2>
+
+
+    </div>
+
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
           Examples
@@ -99,11 +142,16 @@
           Default styling
         </div>
         <div class="kss-modifier__example">
-          <div class=>
-<form class="search-data-form relative" autocomplete="off">
-<label for="search" class="hide"> Type keyword to search </label>
-<i class="icon icon-search"></i>
-<input id="search" type="text" name="search" value="" class="search__field field" placeholder="Search" autocomplete="off">
+          <div class=[modifier class]>
+<form class='form--search-data' autoComplete='off'>
+  <label htmlFor='search' class='form__label'> Type keyword to search </label>
+  <input id='search'
+         type='text'
+         name='search'
+         class='form__search-field field'
+         placeholder='Search'
+         autoComplete='off'/>
+  <button class='btn search-clear'></button>
 </form>
 </div>
         </div>
@@ -115,26 +163,132 @@
         </div>
         <div class="kss-modifier__example">
           <div class=panel-content>
-<form class="search-data-form relative" autocomplete="off">
-<label for="search" class="hide"> Type keyword to search </label>
-<i class="icon icon-search"></i>
-<input id="search" type="text" name="search" value="" class="search__field field" placeholder="Search" autocomplete="off">
+<form class='form--search-data' autoComplete='off'>
+  <label htmlFor='search' class='form__label'> Type keyword to search </label>
+  <input id='search'
+         type='text'
+         name='search'
+         class='form__search-field field'
+         placeholder='Search'
+         autoComplete='off'/>
+  <button class='btn search-clear'></button>
+</form>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .workbench__inner
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Search form in workbench
+        </div>
+        <div class="kss-modifier__example">
+          <div class=workbench__inner>
+<form class='form--search-data' autoComplete='off'>
+  <label htmlFor='search' class='form__label'> Type keyword to search </label>
+  <input id='search'
+         type='text'
+         name='search'
+         class='form__search-field field'
+         placeholder='Search'
+         autoComplete='off'/>
+  <button class='btn search-clear'></button>
 </form>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&gt;
-&lt;form class=&quot;search-data-form relative&quot; autocomplete=&quot;off&quot;&gt;
-&lt;label for=&quot;search&quot; class=&quot;hide&quot;&gt; Type keyword to search &lt;/label&gt;
-&lt;i class=&quot;icon icon-search&quot;&gt;&lt;/i&gt;
-&lt;input id=&quot;search&quot; type=&quot;text&quot; name=&quot;search&quot; value=&quot;&quot; class=&quot;search__field field&quot; placeholder=&quot;Search&quot; autocomplete=&quot;off&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;[modifier class]&gt;
+&lt;form class&#x3D;&#x27;form--search-data&#x27; autoComplete&#x3D;&#x27;off&#x27;&gt;
+  &lt;label htmlFor&#x3D;&#x27;search&#x27; class&#x3D;&#x27;form__label&#x27;&gt; Type keyword to search &lt;/label&gt;
+  &lt;input id&#x3D;&#x27;search&#x27;
+         type&#x3D;&#x27;text&#x27;
+         name&#x3D;&#x27;search&#x27;
+         class&#x3D;&#x27;form__search-field field&#x27;
+         placeholder&#x3D;&#x27;Search&#x27;
+         autoComplete&#x3D;&#x27;off&#x27;/&gt;
+  &lt;button class&#x3D;&#x27;btn search-clear&#x27;&gt;&lt;/button&gt;
 &lt;/form&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
+      </section>
+      <section id="kssref-3-2" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-3-2">
+          <span class="kss-title__ref">
+              3.2
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Add data from url form
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <form class='url-input' autocomplete="off">
+<input class='field' type='text' placeholder='e.g. http://data.gov.au/geoserver/wms'/>
+<button class="btn btn--add-url">Add</button>
+</form>
+        </div>
       </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form class&#x3D;&#x27;url-input&#x27; autocomplete&#x3D;&quot;off&quot;&gt;
+&lt;input class&#x3D;&#x27;field&#x27; type&#x3D;&#x27;text&#x27; placeholder&#x3D;&#x27;e.g. http://data.gov.au/geoserver/wms&#x27;/&gt;
+&lt;button class&#x3D;&quot;btn btn--add-url&quot;&gt;Add&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-3-3" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-3-3">
+          <span class="kss-title__ref">
+              3.3
+            <span class="kss-title__permalink-hash">
+                #permalink
+            </span>
+          </span>
+          Add data from local form
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <form class='file-input'>
+<input type='file'/>
+<label class='btn btn--file-input'>Upload File</label>
+</form>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form class&#x3D;&#x27;file-input&#x27;&gt;
+&lt;input type&#x3D;&#x27;file&#x27;/&gt;
+&lt;label class&#x3D;&#x27;btn btn--file-input&#x27;&gt;Upload File&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      </section>
 </article>
 
 <!-- SCRIPTS -->
