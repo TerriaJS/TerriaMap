@@ -107,7 +107,7 @@ gulp.task('lint', function(){
 });
 
 gulp.task('styleguide', function(done) {
-    childExec('kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
+    childExec('./node_modules/kss/bin/kss-node ./node_modules/terriajs/lib/Sass ./wwwroot/styleguide --template ./wwwroot/styleguide-template --css ./../build/nationalmap.css', undefined, done);
 });
 
 gulp.task('prepare', ['prepare-terriajs']);
