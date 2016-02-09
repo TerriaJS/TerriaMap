@@ -373,7 +373,9 @@
             { "name": "Significant urban area by name (SUA_NAME)", "type": "csv", "url": "test/csv-geo-au/sua_name.csv" },
             { "name": "Tourism region (TR) 2015", "type": "csv", "url": "test/csv-geo-au/tr_code_2015.csv" },
             { "name": "Tourism region (TR) 2013", "type": "csv", "url": "test/csv-geo-au/tr_code_2013.csv" },
-            { "name": "Urban centre and locality (UCL)", "type": "csv", "url": "test/csv-geo-au/ucl.csv" }
+            { "name": "Urban centre and locality (UCL)", "type": "csv", "url": "test/csv-geo-au/ucl.csv" },
+            { "name": "Statistical local area (SLA, obsolete)", "type": "csv", "url": "test/csv-geo-au/sla.csv" },
+            { "name": "Census collection district (CD, obsolete)", "type": "csv", "url": "test/csv-geo-au/cd.csv" }
           ]
         }
       ]
