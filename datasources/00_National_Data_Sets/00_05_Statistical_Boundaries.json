@@ -9,10 +9,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.74050960205765",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 4 (SA4)",
@@ -29,10 +29,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.74050960205765",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 3 (SA3)",
@@ -49,10 +49,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.74050960205765",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 2 (SA2)",
@@ -69,10 +69,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.74050960205765",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 1 (SA1)",
@@ -89,10 +89,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.74050960205765",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Greater Capital City Statistical Area (GCCSA)",
@@ -109,10 +109,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "148.76267481599996",
-                "-35.92076221410328",
-                "149.3992872",
-                "-35.12451727461176"
+                148.76267,
+                -35.92076,
+                149.39928,
+                -35.12451
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Australian Capital Territory Mesh Blocks",
@@ -129,10 +129,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "140.633657689504",
-                "-42.25172903364744",
-                "159.475035846496",
-                "-23.41035087665545"
+                140.63365,
+                -42.25172,
+                159.47503,
+                -23.41035
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "New South Wales Mesh Blocks",
@@ -149,10 +149,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "129.00043971199997",
-                "-25.99948233275597",
-                "138.001197856",
-                "-10.965914264647154"
+                129.00043,
+                -25.99948,
+                138.00119,
+                -10.96591
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Northern Territory Mesh Blocks",
@@ -169,10 +169,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-35.20087199161092",
-                "150.772826016",
-                "-10.412356006664147"
+                96.81694,
+                -35.20087,
+                150.77282,
+                -10.41235
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Other Territories Mesh Blocks",
@@ -189,10 +189,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "137.99595744000004",
-                "-29.177897698696302",
-                "153.552171232",
-                "-9.142175976703609"
+                137.99595,
+                -29.17789,
+                153.55217,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Queensland Mesh Blocks",
@@ -209,10 +209,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "129.00133699200003",
-                "-38.06260298858392",
-                "141.002955616",
-                "-25.996146486756036"
+                129.00133,
+                -38.06260,
+                141.00295,
+                -25.99614
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "South Australia Mesh Blocks",
@@ -229,10 +229,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "143.81892271999996",
-                "-43.740509602057614",
-                "148.49867360000002",
-                "-39.2036616580757"
+                143.81892,
+                -43.74050,
+                148.49867,
+                -39.20366
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Tasmania Mesh Blocks",
@@ -249,10 +249,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "140.961681984",
-                "-39.15918952657599",
-                "149.976679008",
-                "-33.98042558562515"
+                140.96168,
+                -39.15918,
+                149.97667,
+                -33.98042
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Victoria Mesh Blocks",
@@ -269,10 +269,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "112.921113952",
-                "-35.134846435111655",
-                "129.001930016",
-                "-13.689492034565587"
+                112.92111,
+                -35.13484,
+                129.00193,
+                -13.68949
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Western Australia Mesh Blocks",
@@ -289,10 +289,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Indigenous Areas",
@@ -309,10 +309,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Indigenous Locations",
@@ -329,10 +329,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Indigenous Regions",
@@ -349,10 +349,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Section of State",
@@ -369,10 +369,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Section of State Range",
@@ -389,10 +389,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Urban Centre and Locality",
@@ -409,10 +409,10 @@
               "url": "http://geoserver.nationalmap.nicta.com.au/admin_bnds_abs/ows",
               "type": "wms",
               "rectangle": [
-                "96.816941408",
-                "-43.740509602057614",
-                "159.109219008",
-                "-9.142175976703609"
+                96.81694,
+                -43.74050,
+                159.10921,
+                -9.14217
               ],
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Remoteness Area",

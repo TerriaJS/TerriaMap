@@ -9,7 +9,6 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var browserify = require('browserify');
 var jshint = require('gulp-jshint');
-var jsdoc = require('gulp-jsdoc');
 var less = require('gulp-less');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -30,8 +29,11 @@ var terriaJSSource = 'node_modules/terriajs/wwwroot';
 var terriaJSDest = 'wwwroot/build/TerriaJS';
 var testGlob = './test/**/*.js';
 
+var watching = false; // if we're in watch mode, we try to never quit.
+
 // Create the build directory, because browserify flips out if the directory that might
 // contain an existing source map doesn't exist.
+
 if (!fs.existsSync('wwwroot/build')) {
     fs.mkdirSync('wwwroot/build');
 }
@@ -46,6 +48,7 @@ gulp.task('build-specs', ['prepare-terriajs'], function() {
 
 gulp.task('build-css', function() {
     return gulp.src('./index.less')
+        .on('error', onError)
         .pipe(less({
             plugins: [
                 new NpmImportPlugin()
@@ -97,17 +100,11 @@ gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
 gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-datasources', 'watch-terriajs']);
 
 gulp.task('lint', function(){
-    return gulp.src(['lib/**/*.js', 'test/**/*.js'])
+    return gulp.src(['index.js'])
+        .on('error', onError)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(jshint.reporter('fail'));
-});
-
-gulp.task('docs', function(){
-    return gulp.src('lib/**/*.js')
-        .pipe(jsdoc('./wwwroot/doc', undefined, {
-            plugins : ['plugins/markdown']
-        }));
 });
 
 gulp.task('prepare', ['prepare-terriajs']);
@@ -121,6 +118,7 @@ gulp.task('prepare-terriajs', function() {
 gulp.task('merge-groups', function() {
     var jsonspacing=0;
     return gulp.src("./datasources/00_National_Data_Sets/*.json")
+    .on('error', onError)
     .pipe(jsoncombine("00_National_Data_Sets.json", function(data) {
         // be absolutely sure we have the files in alphabetical order
         var keys = Object.keys(data).slice().sort();
@@ -135,6 +133,7 @@ gulp.task('merge-groups', function() {
 gulp.task('merge-catalog', ['merge-groups'], function() {
     var jsonspacing=0;
     return gulp.src("./datasources/*.json")
+        .on('error', onError)
         .pipe(jsoncombine("nm.json", function(data) {
         // be absolutely sure we have the files in alphabetical order, with 000_settings first.
         var keys = Object.keys(data).slice().sort();
@@ -152,7 +151,22 @@ gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 
 gulp.task('default', ['lint', 'build']);
 
-function bundle(name, bundler, minify, catchErrors) {
+function onError(e) {
+    if (e.code === 'EMFILE') {
+        console.error('Too many open files. You should run this command:\n    ulimit -n 2048');
+        process.exit(1);
+    } else if (e.code === 'ENOSPC') {
+        console.error('Too many files to watch. You should run this command:\n' +
+                    '    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p');
+        process.exit(1);
+    }
+    gutil.log(e.message);
+    if (!watching) {
+        process.exit(1);
+    }
+}
+
+var bundle = function(name, bundler, minify) {
     // Get a version string from "git describe".
     var version = spawnSync('git', ['describe']).stdout.toString().trim();
     var isClean = spawnSync('git', ['status', '--porcelain']).stdout.toString().length === 0;
@@ -163,17 +177,10 @@ function bundle(name, bundler, minify, catchErrors) {
     fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
 
     // Combine main.js and its dependencies into a single file.
-    // The poorly-named "debug: true" causes Browserify to generate a source map.
     var result = bundler.bundle();
 
-    if (catchErrors) {
-        // Display errors to the user, and don't let them propagate.
-        result = result.on('error', function(e) {
-            gutil.log('Browserify Error', e.message);
-        });
-    }
-
     result = result
+        .on('error', onError)
         .pipe(source(name))
         .pipe(buffer());
 
@@ -190,24 +197,24 @@ function bundle(name, bundler, minify, catchErrors) {
     result = result
         // Extract the embedded source map to a separate file.
         .pipe(transform(function () { return exorcist('wwwroot/build/' + name + '.map'); }))
-
         // Write the finished product.
         .pipe(gulp.dest('wwwroot/build'));
 
     return result;
-}
+};
 
 function build(name, files, minify) {
     return bundle(name, browserify({
         entries: files,
-        debug: true
-    }), minify, false);
+        debug: true // generate source map
+    }), minify);
 }
 
 function watch(name, files, minify) {
+    watching = true;
     var bundler = watchify(browserify({
         entries: files,
-        debug: true,
+        debug: true, // generate source map
         cache: {},
         packageCache: {}
     }), { poll: 1000 } );
@@ -220,10 +227,10 @@ function watch(name, files, minify) {
 
         var start = new Date();
 
-        var result = bundle(name, bundler, minify, true);
+        var result = bundle(name, bundler, minify);
 
         result.on('end', function() {
-            console.log('Rebuilt ' + name + ' in ' + (new Date() - start) + ' milliseconds.');
+            gutil.log('Rebuilt \'' + gutil.colors.cyan(name) + '\' in', gutil.colors.magenta((new Date() - start)), 'milliseconds.');
         });
 
         return result;

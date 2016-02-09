@@ -23,10 +23,10 @@
             "title": "ABS Data Service Information"
           },
           "rectangle": [
-            "112.93529999999998",
-            "-38.208809999082796",
-            "152.06206",
-            "-11.05104999964455"
+            112.93529,
+            -38.20880,
+            152.06206,
+            -11.05104
           ],
           "type": "abs-itt-dataset-list",
           "url": "http://stat.abs.gov.au/itt/query.jsp",
@@ -42,14 +42,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B04",
+              "datasetId": "ABS_CENSUS2011_B04",
               "filter": [
                 "MEASURE.3",
                 "AGE.A04",
@@ -65,14 +65,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B09",
+              "datasetId": "ABS_CENSUS2011_B09",
               "filter": [
                 "BPLP.1101",
                 "MEASURE.3",
@@ -85,14 +85,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B16",
+              "datasetId": "ABS_CENSUS2011_B16",
               "filter": [
                 "AGE.O15",
                 "HSCP.1",
@@ -106,14 +106,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B45",
+              "datasetId": "ABS_CENSUS2011_B45",
               "filter": [
                 "MEASURE.O15",
                 "OCCP.TOT",
@@ -127,14 +127,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B17",
+              "datasetId": "ABS_CENSUS2011_B17",
               "filter": [
                 "REGIONTYPE.SA4"
               ]
@@ -145,14 +145,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B34",
+              "datasetId": "ABS_CENSUS2011_B34",
               "filter": [
                 "REGIONTYPE.SA4"
               ]
@@ -163,14 +163,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B15",
+              "datasetId": "ABS_CENSUS2011_B15",
               "filter": [
                 "REGIONTYPE.SA4"
               ]
@@ -181,14 +181,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B35",
+              "datasetId": "ABS_CENSUS2011_B35",
               "filter": [
                 "MEASURE.OPD",
                 "NEDD.TOT",
@@ -201,14 +201,14 @@
               "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "rectangle": [
-                "112.93529999999998",
-                "-38.208809999082796",
-                "152.06206",
-                "-11.05104999964455"
+                112.93529,
+                -38.20880,
+                152.06206,
+                -11.05104
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B19",
+              "datasetId": "ABS_CENSUS2011_B19",
               "filter": [
                 "AGE.O15",
                 "MEASURE.3",

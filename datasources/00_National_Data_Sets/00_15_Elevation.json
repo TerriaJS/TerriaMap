@@ -9,10 +9,10 @@
               "url": "http://www.ga.gov.au/gisimg/services/topography/dem_s_1s/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "112.93472",
-                "-43.657359999057725",
-                "153.63573999999997",
-                "-9.004409999707923"
+                112.93472,
+                -43.65735,
+                153.63573,
+                -9.00440
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "SRTM 1 sec DEM Image",
@@ -23,10 +23,10 @@
               "url": "http://www.ga.gov.au/thredds/wms/national_grids/d8-9s.nc",
               "type": "wms",
               "rectangle": [
-                "112.93472",
-                "-43.657359999057725",
-                "153.63573999999997",
-                "-9.004409999707923"
+                112.93472,
+                -43.65735,
+                153.63573,
+                -9.00440
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Flow Grid Direction Image",
