@@ -62,14 +62,14 @@ var UserInterface = React.createClass({
     },
 
     componentWillMount() {
-        this.props.terria.error.addEventListener(function(e) {
+        this.props.terria.error.addEventListener(e => {
             this.setState({
                 notificationIsVisible: true,
                 notificationTitle: e.title,
                 notificationBody: e.message
             });
         });
-        knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(function(){
+        knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(() => {
             this.setState({
                 featureInfoPanelIsVisible: true,
                 featureInfoPanelIsCollapsed: false
@@ -77,7 +77,7 @@ var UserInterface = React.createClass({
         }, this);
 
         const  that = this;
-        window.addEventListener('dragover', (e)=>{
+        window.addEventListener('dragover', e => {
             if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
                 return;
             }
