@@ -44,6 +44,8 @@ $offset: 10px;
     margin: $offset;
     img{
       display: block;
+      width: 100%;
+      height: auto;
     }
   }
   .row{
