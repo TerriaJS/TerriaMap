@@ -24,12 +24,6 @@ var UserInterface = React.createClass({
 
     getInitialState() {
         return {
-            // The ID of the tab that is visible on the explorer panel.
-            explorerPanelActiveTabID: 0,
-
-            // The text being used to search the map.
-            mapSearchText: undefined,
-
             // True if the notification popup is visible
             notificationIsVisible: false,
 
@@ -43,10 +37,7 @@ var UserInterface = React.createClass({
             featureInfoPanelIsVisible: false,
 
             // True if the feature info panel is collapsed.
-            featureInfoPanelIsCollapsed: false,
-
-            // True is dragging and dropping file
-            isDraggingDroppingFile: false
+            featureInfoPanelIsCollapsed: false
         };
     },
 
@@ -102,20 +93,7 @@ var UserInterface = React.createClass({
      * @return {[type]} [description]
      */
     showWelcome() {
-        this.setState({
-            explorerPanelIsVisible: true,
-            explorerPanelActiveTabID: 0
-        });
-    },
-
-    /**
-     * Opens the explorer panel to let the user add data.
-     */
-    addData() {
-        this.setState({
-            explorerPanelIsVisible: true,
-            explorerPanelActiveTabID: 1
-        });
+        this.viewState.openWelcome();
     },
 
     /**
@@ -128,17 +106,8 @@ var UserInterface = React.createClass({
     },
 
     acceptDragDropFile(){
-        this.setState({
-            explorerPanelIsVisible: true,
-            explorerPanelActiveTabID: 2,
-            isDraggingDroppingFile: true
-        });
-    },
-
-    onFinishDroppingFile(){
-        this.setState({
-            isDraggingDroppingFile: false
-        });
+        this.viewState.openUserData();
+        this.viewState.isDraggingDroppingFile = true;
     },
 
     render(){
@@ -152,19 +121,12 @@ var UserInterface = React.createClass({
                 <nav>
                     <SidePanel terria={terria}
                                viewState={this.viewState}
-                               onActivateAddData={this.addData}
                     />
                 </nav>
                 </header>
                 <main>
                     <ModalWindow terria={terria}
                                  viewState={this.viewState}
-                                 activeTabID={this.state.explorerPanelActiveTabID}
-                                 myDataPreviewedCatalogItem={this.state.myDataPreviewedCatalogItem}
-                                 onClose={this.closeExplorerPanel}
-                                 onActiveTabChanged={this.changeExplorerPanelActiveTab}
-                                 isDraggingDroppingFile ={this.state.isDraggingDroppingFile}
-                                 onFinishDroppingFile={this.onFinishDroppingFile}
                     />
                 </main>
                 <div id="map-nav">
