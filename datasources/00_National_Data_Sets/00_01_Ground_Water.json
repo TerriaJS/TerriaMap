@@ -9,10 +9,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "130.9294316820001",
-                "-41.24101109706462",
-                "151.640955901",
-                "-12.157000677611002"
+                130.92943,
+                -41.24101,
+                151.64095,
+                -12.15700
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Aquifer Contours",
@@ -28,10 +28,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.92137000000001",
-                "-43.65854999905766",
-                "153.63857000000004",
-                "-9.219939999701113"
+                112.92137,
+                -43.65854,
+                153.63857,
+                -9.21993
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Water Table Aquifer",
@@ -47,10 +47,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.92137000000001",
-                "-43.65854999905766",
-                "153.63857000000004",
-                "-9.219939999701113"
+                112.92137,
+                -43.65854,
+                153.63857,
+                -9.21993
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Surficial Hydrogeologic Unit",
@@ -66,10 +66,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.92137000000001",
-                "-39.135739999076094",
-                "152.49040280900007",
-                "-12.243238350608436"
+                112.92137,
+                -39.13573,
+                152.49040,
+                -12.24323
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Aquifer Boundary",
@@ -85,10 +85,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.8055180570001",
-                "-38.755833332078694",
-                "152.49040280900002",
-                "-13.441636424572783"
+                113.80551,
+                -38.75583,
+                152.49040,
+                -13.44163
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Aquifer Outcrop",
@@ -104,10 +104,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.92137000000001",
-                "-38.97436811707721",
-                "148.91107675700005",
-                "-20.97124299936873"
+                112.92137,
+                -38.97436,
+                148.91107,
+                -20.97124
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Aquifer Salinity",
@@ -123,10 +123,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "138.73545507400001",
-                "-38.97436810607722",
-                "148.9098995590001",
-                "-31.999839353151554"
+                138.73545,
+                -38.97436,
+                148.90989,
+                -31.99983
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Aquifer Yield",
@@ -142,10 +142,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "129.00048000000004",
-                "-39.135739999076094",
-                "153.63857000000007",
-                "-10.965879999647115"
+                129.00048,
+                -39.13573,
+                153.63857,
+                -10.96587
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Water Table Yield",
@@ -161,10 +161,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.92137000000001",
-                "-43.643049999057716",
-                "153.63857000000007",
-                "-10.687579999655645"
+                112.92137,
+                -43.64304,
+                153.63857,
+                -10.68757
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Water Table Salinity",
@@ -180,10 +180,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "140.96334594200005",
-                "-37.68073353908695",
-                "152.49056374800008",
-                "-24.586309583285477"
+                140.96334,
+                -37.68073,
+                152.49056,
+                -24.58630
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Water Table Hydraulic Conductivity",

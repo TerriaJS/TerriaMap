@@ -68,7 +68,6 @@ makeJSON "region_map:FID_CED_2013_AUST" CED_CODE13
 makeJSON "region_map:FID_CED_2013_AUST" CED_NAME13 '"'
 makeJSON "region_map:FID_SED_2011_AUST" SED_CODE
 makeJSON "region_map:FID_SED_2011_AUST" SED_NAME '"'
-
 makeJSON "region_map:FID_STE_2011_AUST" STE_CODE11
 makeJSON "region_map:FID_STE_2011_AUST" STE_NAME11 '"' 
 makeJSON "region_map:FID_TM_WORLD_BORDERS" ISO2 '"'
