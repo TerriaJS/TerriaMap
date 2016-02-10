@@ -14,7 +14,6 @@ import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState.js';
-import arrayContains from 'terriajs/lib/Core/arrayContains';
 
 var UserInterface = React.createClass({
     propTypes: {
