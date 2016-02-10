@@ -1,16 +1,18 @@
 'use strict';
 
+import arrayContains from 'terriajs/lib/Core/arrayContains';
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
 import ChartPanel from 'terriajs/lib/ReactViews/ChartPanel.jsx';
+import DistanceLegend from 'terriajs/lib/ReactViews/DistanceLegend.jsx';
 import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
+import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
+import LocationBar from 'terriajs/lib/ReactViews/LocationBar.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
-import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
-import arrayContains from 'terriajs/lib/Core/arrayContains';
 
 var UserInterface = React.createClass({
     propTypes: {
@@ -281,6 +283,10 @@ var UserInterface = React.createClass({
                                   isCollapsed ={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
+                <div className='location-distance'>
+                  <LocationBar terria={terria}/>
+                  <DistanceLegend terria={terria}/>
+                </div>
                 <ChartPanel terria={terria}
                             isVisible={this.state.featureInfoPanelIsVisible}
                             onClose={this.closeFeatureInfoPanel}
