@@ -1,11 +1,14 @@
 'use strict';
 
+import arrayContains from 'terriajs/lib/Core/arrayContains';
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
 import ChartPanel from 'terriajs/lib/ReactViews/ChartPanel.jsx';
+import DistanceLegend from 'terriajs/lib/ReactViews/DistanceLegend.jsx';
 import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
+import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
+import LocationBar from 'terriajs/lib/ReactViews/LocationBar.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
-import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
@@ -44,14 +47,14 @@ var UserInterface = React.createClass({
     componentWillMount() {
         this.viewState = new ViewState();
 
-        this.props.terria.error.addEventListener(function(e) {
+        this.props.terria.error.addEventListener(e => {
             this.setState({
                 notificationIsVisible: true,
                 notificationTitle: e.title,
                 notificationBody: e.message
             });
         });
-        knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(function(){
+        knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(() => {
             this.setState({
                 featureInfoPanelIsVisible: true,
                 featureInfoPanelIsCollapsed: false
@@ -59,7 +62,7 @@ var UserInterface = React.createClass({
         }, this);
 
         const  that = this;
-        window.addEventListener('dragover', (e)=>{
+        window.addEventListener('dragover', e => {
             if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
                 return;
             }
@@ -148,6 +151,10 @@ var UserInterface = React.createClass({
                                   isCollapsed ={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
+                <div className='location-distance'>
+                  <LocationBar terria={terria}/>
+                  <DistanceLegend terria={terria}/>
+                </div>
                 <ChartPanel terria={terria}
                             isVisible={this.state.featureInfoPanelIsVisible}
                             onClose={this.closeFeatureInfoPanel}
