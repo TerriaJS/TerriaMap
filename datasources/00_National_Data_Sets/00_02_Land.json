@@ -5,20 +5,9 @@
         {
           "items": [
             {
-              "layers": "catchment-scale-land-use-of-australia-update-march-2015",
-              "url": "http://data.gov.au/geoserver/catchment-scale-land-use-of-australia-update-march-2015/wms",
-              "description": "This dataset is the most current national compilation of catchment scale land use data for Australia (CLUM), as at March 2015. It is a seamless raster dataset that combines land use data for all state and territory jurisdictions, compiled at a resolution of 50 metres by 50 metres. It has been compiled from vector land use datasets collected as part of state and territory mapping programs through the Australian Collaborative Land Use and Management Program (ACLUMP). Catchment scale land use data was produced by combining land tenure and other types of land use information, fine-scale satellite data and information collected in the field. The date of mapping (1997 to 2014) and scale of mapping (1:20 000 to 1:250 000) vary, reflecting the source data, capture date and scale.",
-              "dataCustodian": "[Department of Agriculture](mailto:Land_Management@agriculture.gov.au)",
-              "dataUrl": "http://data.gov.au/dataset/catchment-scale-land-use-of-australia-update-march-2015",
-              "dataUrlType": "direct",
               "name": "Catchment Scale Land Use 2015",
-              "type": "wms",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-                }
-              ]
+              "type": "ckan-resource",
+              "url": "http://data.gov.au/api/3/action/package_show?id=catchment-scale-land-use-of-australia-update-march-2015"
             },
             {
               "url": "http://www.ga.gov.au/gisimg/rest/services/earth_science/Geoscience_Australia_National_Geophysical_Grids/MapServer",
