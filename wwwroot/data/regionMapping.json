@@ -250,6 +250,9 @@
                 "postcode_2015"
             ],
             "digits": 4,
+            "dataReplacements": [
+              ["^(?=\\d\\d\\d$)", "0"]
+            ],
             "description": "Postal areas (ABS approximations of postcodes)",
             "regionIdsFile": "data/regionids/region_map-FID_POA_2011_AUST_POA_CODE.json"
         },
