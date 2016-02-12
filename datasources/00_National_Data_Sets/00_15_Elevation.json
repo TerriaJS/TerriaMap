@@ -16,7 +16,6 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "SRTM 1 sec DEM Image",
-              "legendUrl": "",
               "featureInfoTemplate" : {
                 "name": "{{PixelValue}} metres",
                 "template": "{{PixelValue}} metres"
