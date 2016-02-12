@@ -7,7 +7,7 @@
             {
               "name": "Catchment Scale Land Use 2015",
               "type": "ckan-resource",
-              "url": "http://data.gov.au",
+              "url": "https://data.gov.au",
               "resourceID": "7d326ba9-492d-4d32-a893-9d45936bc0af",
               "datasetID": "catchment-scale-land-use-of-australia-update-march-2015"
             },
