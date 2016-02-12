@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-02-15
+
+* Several catalog items (`Mobile Black Spot Database` and `Mobile Black Spot Programme - Funded Base Stations` in `Communications`, `Catchment Scale Land Use 2015` in `Land`, and `Taxation Statistics 2011-201` and `Medicare Offices` in `Social and Economic`) now point directly to the corresponding dataset on data.gov.au and get their metadata from there, instead of pointing to a WMS server to GeoJSON file.
+
 ### 2016-01-19
 
 * Fixed incorrect claims in the documentation that NationalMap was funed by the Department of Prime Minister and Cabinet.

@@ -208,8 +208,8 @@
               "name": "Mobile Black Spot Database",
               "type": "ckan-resource",
               "url": "https://data.gov.au",
-              "datasetID": "community-reports-of-poor-or-no-mobile-coverage",
-              "resourceID": "6253b341-ac24-4b70-be8a-69abe4d7f72c",
+              "datasetId": "community-reports-of-poor-or-no-mobile-coverage",
+              "resourceId": "6253b341-ac24-4b70-be8a-69abe4d7f72c",
               "itemProperties": {
                 "opacity": 1.0,
                 "clipToRectangle": true
@@ -219,8 +219,8 @@
               "name": "Mobile Black Spot Programme - Funded Base Stations",
               "type": "ckan-resource",
               "url": "https://data.gov.au",
-              "datasetID": "mobile-black-spot-programme-funded-base-stations",
-              "resourceID": "597dfa80-bd00-42eb-8f56-f1d9828f6724",
+              "datasetId": "mobile-black-spot-programme-funded-base-stations",
+              "resourceId": "597dfa80-bd00-42eb-8f56-f1d9828f6724",
               "itemProperties": {
                 "opacity": 1.0,
                 "clipToRectangle": true

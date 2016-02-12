@@ -33,8 +33,8 @@
               "name": "Taxation Statistics 2011-2012",
               "type": "ckan-resource",
               "url": "https://data.gov.au",
-              "datasetID": "taxation-statistics-2011-12",
-              "resourceID": "205ef0d1-521b-4e3c-a26c-4e49e00f1a05"
+              "datasetId": "taxation-statistics-2011-12",
+              "resourceId": "205ef0d1-521b-4e3c-a26c-4e49e00f1a05"
             },
             {
               "dataCustodian": "The AURIN project\n\nadmin@aurin.org.au",
@@ -53,8 +53,8 @@
               "name": "Medicare Offices",
               "type": "ckan-resource",
               "url": "https://data.gov.au",
-              "datasetID": "location-of-medicare-offices",
-              "resourceID": "7eb30338-768e-436c-9dde-dc7a1066c9c9",
+              "datasetId": "location-of-medicare-offices",
+              "resourceId": "7eb30338-768e-436c-9dde-dc7a1066c9c9",
               "csvResourceFormat": "CSV",
               "itemProperties": {
                 "tableStyle": {
