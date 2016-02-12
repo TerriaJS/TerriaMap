@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-### 2016-02-15
+### 2016-02-12
 
 * Several catalog items (`Mobile Black Spot Database` and `Mobile Black Spot Programme - Funded Base Stations` in `Communications`, `Catchment Scale Land Use 2015` in `Land`, and `Taxation Statistics 2011-201` and `Medicare Offices` in `Social and Economic`) now point directly to the corresponding dataset on data.gov.au and get their metadata from there, instead of pointing to a WMS server or GeoJSON file.
 * The Australian Goverernment logos have been moved to the top-left part of the About page.
