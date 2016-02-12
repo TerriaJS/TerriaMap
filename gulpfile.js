@@ -20,6 +20,7 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
+var child_exec = require('child_process').exec;  // child_process is built in to node
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -68,7 +69,17 @@ gulp.task('release-specs', ['prepare'], function() {
     return build(specJSName, glob.sync(testGlob), true);
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs']);
+// Generate new schema for editor, and copy it over whatever version came with editor.
+gulp.task('make-editor-schema', ['copy-editor'], function(done) {
+    child_exec('node node_modules/.bin/gen-schema --source node_modules/terriajs --dest wwwroot/editor --noversionsubdir', undefined, done);
+});
+
+gulp.task('copy-editor', function() {
+    return gulp.src('./node_modules/terriajs-catalog-editor/**')
+        .pipe(gulp.dest('./wwwroot/editor'));
+});
+
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs', 'make-editor-schema']);
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
