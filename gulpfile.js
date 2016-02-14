@@ -71,7 +71,7 @@ gulp.task('release-specs', ['prepare'], function() {
 
 // Generate new schema for editor, and copy it over whatever version came with editor.
 gulp.task('make-editor-schema', ['copy-editor'], function(done) {
-    child_exec('node node_modules/.bin/gen-schema --source node_modules/terriajs --dest wwwroot/editor --noversionsubdir', undefined, done);
+    child_exec('node node_modules/.bin/gen-schema --source node_modules/terriajs --dest wwwroot/editor --noversionsubdir --editor', undefined, done);
 });
 
 gulp.task('copy-editor', function() {
