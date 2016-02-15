@@ -1,6 +1,32 @@
 Change Log
 ==========
 
+### 2016-02-12
+
+* Several catalog items (`Mobile Black Spot Database` and `Mobile Black Spot Programme - Funded Base Stations` in `Communications`, `Catchment Scale Land Use 2015` in `Land`, and `Taxation Statistics 2011-201` and `Medicare Offices` in `Social and Economic`) now point directly to the corresponding dataset on data.gov.au and get their metadata from there, instead of pointing to a WMS server or GeoJSON file.
+* The Australian Goverernment logos have been moved to the top-left part of the About page.
+* References to "NICTA" have been replaced by "Data61" in the help pages.
+* The privacy policy link on the Privacy page now links to the policy on `dpmc.gov.au` instead of `communications.gov.au`.
+* The statistical boundary catalogue items now have direct download links to the ABS-provided shapefiles on their info pages.
+* The `National Data Sets -> Elevation -> SRTM 1 sec DEM Image` catalogue item now points to the new service at `services.ga.gov.au` instead of the old one at `www.ga.gov.au`.
+* Added the 2013 versions of the Local Government Area (LGA), Commonwealth Electoral Division (CED), and Tourism Regions (TR) boundaries for region mapping.
+* The data source editor, previously at `terria.io/DataSourceEditor` is now available with NationalMap at `/editor`.  This way it will track the version of the catalogue format currently used by NationalMap.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 2.0.0.  Significant changes relevant to NationalMap users include:
+  * Region mapping now works with CSV files containing a postcode column in which the leading zero is missing (e.g. `830` instead of `0830`).
+  * Clicking inside a region with no value in a region-mapped CSV will now report "No features found" instead of showing a mysterious blank feature info window.
+  * More date formats are now supported in CSV files, including `YYYY`, `YYYY-MM`, and `YYYY-MM-DD HH:MM(:SS)`
+  * Improved the formatting of dates/times from CSV files in the feature info panel.
+  * Added 5 new options to the `tableStyle` property for CSV catalog items, including `replaceWithZeroValues`, `replaceWithNullValues`, `nullColor`, `nullLabel`, and `timeColumn`.  See the TerriaJS changelog linked above for details.
+  * CSV columns containing only HTML tags are no longer shown as a possible Data Variable on the Now Viewing tab.
+  * Greatly improved backward compatibility for share links.  Share links can now continue to work even if an enabled catalog item is moved or renamed.
+  * We now generate a nice legend image for ArcGIS MapServer catalogue items instead of simply providing a link to the server-provided HTML file.
+  * Legends for CSV, ABS, and ArcGIS MapServer catalogue items are now generated in SVG format.
+  * Added `CkanCatalogItem`, which can be used to reference a particular resource of any compatible type on a CKAN server.
+  * Fixed Leaflet feature selection when zoomed out enough that the world is repeated.
+  * Improved the handling of lat/lon CSV files with missing latitude or longitude values.
+  * Fixed a bug that prevented `SocrataCatalogGroup` from working in Internet Explorer 9.
+  * Fixed a bug that caused the Now Viewing tab to display incorrectly in Internet Explorer 11 when switching directly to it from the Data Catalogue tab.
+
 ### 2016-01-19
 
 * Fixed incorrect claims in the documentation that NationalMap was funed by the Department of Prime Minister and Cabinet.

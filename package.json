@@ -8,15 +8,16 @@
     "url": "http://github.com/NICTA/nationalmap"
   },
   "dependencies": {
-    "terriajs": "1.0.54",
+    "terriajs": "2.0.0",
     "terriajs-server": "^1.1.0",
-    "terriajs-cesium": "1.15.5"
+    "terriajs-cesium": "1.15.6"
   },
   "devDependencies": {
     "brfs": "^1.4.0",
     "browserify": "^9.0.8",
     "deamdify": "^0.1.1",
     "exorcist": "^0.3.0",
+    "generate-terriajs-schema": "^1.1.1",
     "glob": "^5.0.5",
     "glob-all": "^3.0.1",
     "gulp": "^3.8.11",
@@ -34,6 +35,7 @@
     "less-plugin-npm-import": "^2.0.0",
     "spawn-sync": "^1.0.11",
     "terriajs-schema": "terriajs/terriajs-schema",
+    "terriajs-catalog-editor": "^0.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
@@ -48,6 +50,8 @@
     "start": "bash -c \"./run_server.sh\"",
     "stop": "bash -c \"./stop_server.sh\"",
     "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'",
-    "validate": "node node_modules/terriajs-schema/validate.js --terriajsdir node_modules/terriajs wwwroot/init/*.json"
+    "start": "bash ./run_server.sh",
+    "stop": "bash ./stop_server.sh",
+    "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
   }
 }

@@ -17,6 +17,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 4 (SA4)",
               "description": "Statistical Area Level 4 (SA4)",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_sa4_2011_aust_shape.zip&1270.0.55.001&Data%20Cubes&B18D49356F3FDA5FCA257801000D6D2E&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -37,6 +39,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 3 (SA3)",
               "description": "Statistical Area Level 3 (SA3)",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_sa3_2011_aust_shape.zip&1270.0.55.001&Data%20Cubes&AD2BD90E5DC0F4C7CA257801000D59E3&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -57,6 +61,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 2 (SA2)",
               "description": "Statistical Area Level 2 (SA2)",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_sa2_2011_aust_shape.zip&1270.0.55.001&Data%20Cubes&7130A5514535C5FCCA257801000D3FBD&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -77,6 +83,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Statistical Area Level 1 (SA1)",
               "description": "Statistical Area Level 1 (SA1)",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_sa1_2011_aust_shape.zip&1270.0.55.001&Data%20Cubes&24A18E7B88E716BDCA257801000D0AF1&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -97,6 +105,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Greater Capital City Statistical Area (GCCSA)",
               "description": "Greater Capital City Statistical Area (GCCSA)",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_gccsa_2011_aust_shape.zip&1270.0.55.001&Data%20Cubes&E0FC2223AF731E0ACA257801000D7B54&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -117,6 +127,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Australian Capital Territory Mesh Blocks",
               "description": "Australian Capital Territory Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_act_shape.zip&1270.0.55.001&Data%20Cubes&1911A225354236D2CA257801000CEECB&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -137,6 +149,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "New South Wales Mesh Blocks",
               "description": "New South Wales Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_nsw_shape.zip&1270.0.55.001&Data%20Cubes&24D5D6CF2AE953EECA257801000C80C3&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -157,6 +171,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Northern Territory Mesh Blocks",
               "description": "Northern Territory Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_nt_shape.zip&1270.0.55.001&Data%20Cubes&28330E3BC3BD9664CA257801000CED32&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -177,6 +193,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Other Territories Mesh Blocks",
               "description": "Other Territories Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_ot_shape.zip&1270.0.55.001&Data%20Cubes&2DCDFCEB2683BAE8CA257801000CEFE7&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -197,6 +215,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Queensland Mesh Blocks",
               "description": "Queensland Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_qld_shape.zip&1270.0.55.001&Data%20Cubes&28231DC5E634B991CA257801000CC024&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -217,6 +237,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "South Australia Mesh Blocks",
               "description": "South Australia Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_sa_shape.zip&1270.0.55.001&Data%20Cubes&80D17614D3554120CA257801000CCDCF&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -237,6 +259,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Tasmania Mesh Blocks",
               "description": "Tasmania Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_tas_shape.zip&1270.0.55.001&Data%20Cubes&2A51C083AC8C54F5CA257801000CE3B5&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -257,6 +281,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Victoria Mesh Blocks",
               "description": "Victoria Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_vic_shape.zip&1270.0.55.001&Data%20Cubes&85F5B2ED8E3DC957CA257801000CA953&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -277,6 +303,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Western Australia Mesh Blocks",
               "description": "Western Australia Mesh Blocks",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_wa_shape.zip&1270.0.55.001&Data%20Cubes&E1F9D7EA5D7FE609CA257801000CD692&0&July%202011&23.12.2010&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -297,6 +325,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Indigenous Areas",
               "description": "Indigenous Areas",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055002_iare_2011_aust_shape.zip&1270.0.55.002&Data%20Cubes&30B219BC2C1BA5DDCA2579A7001790DC&0&July%202011&20.02.2012&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -317,6 +347,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Indigenous Locations",
               "description": "Indigenous Locations",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055002_ireg_2011_aust_shape.zip&1270.0.55.002&Data%20Cubes&5C2F21B87633B4B6CA2579A70017B643&0&July%202011&20.02.2012&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -337,6 +369,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Indigenous Regions",
               "description": "Indigenous Regions",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055002_ireg_2011_aust_shape.zip&1270.0.55.002&Data%20Cubes&5C2F21B87633B4B6CA2579A70017B643&0&July%202011&20.02.2012&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -357,6 +391,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Section of State",
               "description": "Section of State",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055004_sos_2011_aust_shape.zip&1270.0.55.004&Data%20Cubes&09598BD74AC10B0CCA257A980013CAD8&0&July%202011&16.10.2012&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -377,6 +413,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Section of State Range",
               "description": "Section of State Range",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055004_sosr_2011_aust_shape.zip&1270.0.55.004&Data%20Cubes&037E310AB1A6E0CDCA257A980013BA66&0&July%202011&16.10.2012&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -397,6 +435,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Urban Centre and Locality",
               "description": "Urban Centre and Locality",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055004_ucl_2011_aust_shape.zip&1270.0.55.004&Data%20Cubes&52B516A3309048CBCA257A980013A96D&0&July%202011&16.10.2012&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",
@@ -417,6 +457,8 @@
               "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
               "name": "Remoteness Area",
               "description": "Remoteness Area",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055005_ra_2001_aust_shape.zip&1270.0.55.005&Data%20Cubes&C712776994895856CA257B03000D7599&0&July%202011&31.01.2013&Latest",
+              "dataUrlType": "direct",
               "info": [
                 {
                   "name": "Licence",

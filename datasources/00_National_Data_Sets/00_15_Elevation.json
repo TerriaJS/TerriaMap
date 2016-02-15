@@ -5,8 +5,8 @@
         {
           "items": [
             {
-              "layers": "dem_s_1s",
-              "url": "http://www.ga.gov.au/gisimg/services/topography/dem_s_1s/ImageServer/WMSServer",
+              "layers": "Image",
+              "url": "http://services.ga.gov.au/gis/services/DEM_SRTM_1Second/MapServer/WMSServer",
               "type": "wms",
               "rectangle": [
                 112.93472,
@@ -16,7 +16,10 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "SRTM 1 sec DEM Image",
-              "legendUrl": ""
+              "featureInfoTemplate" : {
+                "name": "{{PixelValue}} metres",
+                "template": "{{PixelValue}} metres"
+              }
             },
             {
               "layers": "Flow_Direction_Grid_to_accompany_9_Second_Digital_Elevation_Model_of_Australia_Version_3",
