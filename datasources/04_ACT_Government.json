@@ -1,11 +1,14 @@
 {
   "catalog": [
     {
-      "type": "socrata",
+      "type": "group",
       "name": "ACT Government",
-      "groupBy": "category",
-      "filterQuery": ["limitTo=MAPS"],
-      "url": "http://www.data.act.gov.au"
+      "items": [],
+      "initialMessage": { 
+        "title": "Data unavailable",
+        "content": "ACT Government data is currently unavailable due to changes made by <a href=\"http://data.act.gov.au\">data.act.gov.au</a> in January 2016.",
+        "key": "act-data-unavailable"
+      }
     }      
   ]
 }
