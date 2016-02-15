@@ -22,7 +22,7 @@ var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
 var child_exec = require('child_process').exec;  // child_process is built in to node
 var generateSchema = require('generate-terriajs-schema');
-var schemaValidate = require('terriajs-schema')
+//var schemaValidate = require('terriajs-schema')
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -73,13 +73,13 @@ gulp.task('release-specs', ['prepare'], function() {
 
 // Generate new schema for editor, and copy it over whatever version came with editor.
 gulp.task('make-editor-schema', ['copy-editor'], function(done) {
-    /*###generateSchema({
+    generateSchema({
         source: 'node_modules/terriajs',
         dest: 'wwwroot/editor',
         noversionsubdir: true,
-        editor: true
-    });*/
-    child_exec('node node_modules/.bin/gen-schema --source node_modules/terriajs --dest wwwroot/editor --noversionsubdir --editor', undefined, done);
+        editor: true,
+        quiet: true
+    }).then(done);
 });
 
 gulp.task('copy-editor', function() {
