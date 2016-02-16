@@ -20,9 +20,8 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
-var child_exec = require('child_process').exec;  // child_process is built in to node
 var generateSchema = require('generate-terriajs-schema');
-//var schemaValidate = require('terriajs-schema')
+var validateSchema = require('terriajs-schema');
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -89,8 +88,21 @@ gulp.task('copy-editor', function() {
 
 gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs', 'make-editor-schema']);
 
-gulp.task('validate', ['merge-datasources'], function() {
-    //"validate": "node node_modules/terriajs-schema/validate.js --terriajsdir node_modules/terriajs wwwroot/init/*.json"
+// Generate new schema for validator, and copy it over whatever version came with validator.
+gulp.task('make-validator-schema', function(done) {
+    generateSchema({
+        source: 'node_modules/terriajs',
+        dest: 'node_modules/terriajs-schema/schema',
+        quiet: true
+    }).then(done);
+});
+
+gulp.task('validate', ['merge-datasources', 'make-validator-schema'], function() {
+    return validateSchema({
+        terriajsdir: 'node_modules/terriajs',
+        _: glob.sync('wwwroot/init/*.json'),
+        quiet: true
+    });//.then(done);
 });
 
 gulp.task('watch-app', ['prepare'], function() {

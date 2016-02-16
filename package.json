@@ -17,7 +17,7 @@
     "browserify": "^9.0.8",
     "deamdify": "^0.1.1",
     "exorcist": "^0.3.0",
-    "generate-terriajs-schema": "^1.2.0",
+    "generate-terriajs-schema": "^1.2.1",
     "glob": "^5.0.5",
     "glob-all": "^3.0.1",
     "gulp": "^3.8.11",
