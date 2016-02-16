@@ -121,7 +121,9 @@ var UserInterface = React.createClass({
             <div>
                 <header className='workbench'>
                     <Branding onClick={this.showWelcome}/>
-                    <MobileHeader terria={terria}/>
+                    <MobileHeader terria={terria}
+                                  showWelcome={this.showWelcome}
+                    />
                 <nav>
                     <SidePanel terria={terria}
                                viewState={this.viewState}
