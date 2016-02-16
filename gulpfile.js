@@ -86,7 +86,7 @@ gulp.task('copy-editor', function() {
         .pipe(gulp.dest('./wwwroot/editor'));
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs', 'make-editor-schema']);
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs', 'make-editor-schema', 'validate']);
 
 // Generate new schema for validator, and copy it over whatever version came with validator.
 gulp.task('make-validator-schema', function(done) {
@@ -100,9 +100,12 @@ gulp.task('make-validator-schema', function(done) {
 gulp.task('validate', ['merge-datasources', 'make-validator-schema'], function() {
     return validateSchema({
         terriajsdir: 'node_modules/terriajs',
-        _: glob.sync('wwwroot/init/*.json'),
-        quiet: true
-    });//.then(done);
+        _: glob.sync('wwwroot/init/*.json')
+    }).then(function(result) {
+        if (result && !watching) {
+            process.exit(result);
+        }
+    });
 });
 
 gulp.task('watch-app', ['prepare'], function() {
