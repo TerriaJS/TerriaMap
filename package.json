@@ -47,9 +47,6 @@
     ]
   },
   "scripts": {
-    "start": "bash -c \"./run_server.sh\"",
-    "stop": "bash -c \"./stop_server.sh\"",
-    "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'",
     "start": "bash ./run_server.sh",
     "stop": "bash ./stop_server.sh",
     "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
