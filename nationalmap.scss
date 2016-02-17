@@ -14,8 +14,8 @@
 @import "partial/tabs";
 @import "partial/map";
 @import "partial/leaflet";
-@import "partial/work_bench";
-@import "partial/modal_window";
+// component styles
+@import "partial/branding";
 @import "partial/chart";
 @import "partial/compass_zoom";
 @import "partial/data_catalog";
@@ -25,12 +25,15 @@
 @import "partial/location_bar";
 @import "partial/map_navigation";
 @import "partial/misc";
+@import "partial/modal_window";
 @import "partial/my_data";
 @import "partial/notification";
 @import "partial/now_viewing";
 @import "partial/preview_panel";
 @import "partial/search";
 @import "partial/settingPanel";
+@import "partial/work_bench";
+//mobile only styles
 @import "partial/mobile_only";
 
 $offset: 10px;

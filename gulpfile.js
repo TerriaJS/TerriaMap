@@ -247,8 +247,17 @@ function handleErrors() {
 gulp.task('sass', function(){
   return sass('nationalmap.scss',{
           style: 'expanded',
-          loadPath: './node_modules/terriajs/lib/Sass'
+          loadPath: './node_modules/terriajs/lib/Sass',
+          sourcemap: true
         })
+        // For inline sourcemaps
+        .pipe(sourcemaps.write())
+
+        // For file sourcemaps
+        .pipe(sourcemaps.write('maps', {
+          includeContent: false,
+          sourceRoot: 'source'
+        }))
         .pipe(gulp.dest('wwwroot/build'));
 });
 
