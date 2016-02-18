@@ -62,6 +62,7 @@ var UserInterface = React.createClass({
         }, this);
 
         const  that = this;
+        // TO DO(chloe): change window into a container
         window.addEventListener('dragover', e => {
             if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
                 return;
@@ -121,7 +122,9 @@ var UserInterface = React.createClass({
             <div>
                 <header className='workbench'>
                     <Branding onClick={this.showWelcome}/>
-                    <MobileHeader terria={terria}/>
+                    <MobileHeader terria={terria}
+                                  viewState={this.viewState}
+                    />
                 <nav>
                     <SidePanel terria={terria}
                                viewState={this.viewState}
