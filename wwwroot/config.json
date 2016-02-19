@@ -26,7 +26,18 @@
         "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
             "url": "about.html"
-        }
+        },
+        "developerAttribution": {
+            "text": "NICTA",
+            "link": "http://www.nicta.com.au"
+        },
+        "appName": "NationalMap",
+        "supportEmail": "data@pmc.gov.au",
+        "brandBarElements": [
+            "<a target=\"_blank\" href=\"about.html\"><img src=\"images/NationalMap_Logo_RGB72dpi_REV_Blue text.png\" height=\"50\" alt=\"National Map\" title=\"Version: {{version}}\" /></a>",
+            "<a target=\"_blank\" href=\"http://www.gov.au/\"><img src=\"images/AG-Rvsd-Stacked-Press.png\" height=\"45\" alt=\"Australian Government\" /></a>"
+        ]
+
     }
 }
 

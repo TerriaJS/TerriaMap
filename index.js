@@ -23,10 +23,7 @@
 var version = require('./version');
 
 var terriaOptions = {
-    appName: 'NationalMap',
-    supportEmail: 'data@pmc.gov.au',
-    baseUrl: 'build/TerriaJS',
-    cesiumBaseUrl: undefined // use default
+    baseUrl: 'build/TerriaJS'
 };
 var configuration = {
     bingMapsKey: undefined // use Cesium key
@@ -79,6 +76,7 @@ var Terria = require('terriajs/lib/Models/Terria');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
+var defaultValue = require('terriajs-cesium/Source/Core/defaultValue');
 
 var svgInfo = require('terriajs/lib/SvgPaths/svgInfo');
 var svgPlus = require('terriajs/lib/SvgPaths/svgPlus');
@@ -125,12 +123,7 @@ terria.start({
     updateApplicationOnMessageFromParentWindow(terria, window);
 
     // Create the map/globe.
-    TerriaViewer.create(terria, {
-        developerAttribution: {
-            text: 'NICTA',
-            link: 'http://www.nicta.com.au'
-        }
-    });
+    TerriaViewer.create(terria, { developerAttribution: terria.configParameters.developerAttribution });
 
     // We'll put the entire user interface into a DOM element called 'ui'.
     var ui = document.getElementById('ui');
@@ -150,13 +143,17 @@ terria.start({
         baseMaps: allBaseMaps
     });
 
+    var brandBarElements = defaultValue(terria.configParameters.brandBarElements, [
+            '',
+            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" title="Version: {{ version }}" /></a>',
+            ''
+        ]);
+    brandBarElements = brandBarElements.map(function(s) { return s.replace(/\{\{\s*version\s*\}\}/, version);});
+
     // Create the brand bar.
     BrandBarViewModel.create({
         container: ui,
-        elements: [
-            '<a target="_blank" href="about.html"><img src="images/NationalMap_Logo_RGB72dpi_REV_Blue text.png" height="50" alt="National Map" title="Version: ' + version + '" /></a>',
-            '<a target="_blank" href="http://www.gov.au/"><img src="images/AG-Rvsd-Stacked-Press.png" height="45" alt="Australian Government" /></a>'
-        ]
+        elements: brandBarElements
     });
 
     // Create the menu bar.
