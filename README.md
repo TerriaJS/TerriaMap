@@ -25,4 +25,4 @@ Pre-requisites: Git, NodeJS, NPM, GDAL (optional). (See the wiki for details)
  gulp watch                                   # Build the site, and watch for changes.
  ```
 
-See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about National Map and how to build and run it.
+See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about Terria and how to build and run it.
