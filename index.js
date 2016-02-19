@@ -145,7 +145,7 @@ terria.start({
 
     var brandBarElements = defaultValue(terria.configParameters.brandBarElements, [
             '',
-            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" title="Version: {{ version }}" /></a>',
+            '<a target="_blank" href="http://terria.io"><img src="images/terria_logo.png" height="52" title="Version: {{ version }}" /></a>',
             ''
         ]);
     brandBarElements = brandBarElements.map(function(s) { return s.replace(/\{\{\s*version\s*\}\}/, version);});
