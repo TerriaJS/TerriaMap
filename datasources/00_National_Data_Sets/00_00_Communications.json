@@ -14,10 +14,10 @@
               "description": "[MyBroadband Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband Map",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -39,10 +39,10 @@
               "description": "[MyBroadband Availability Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband Availability",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -64,10 +64,10 @@
               "description": "[MyBroadband Availability Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband Availability no Borders",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -89,10 +89,10 @@
               "description": "[MyBroadband Quality Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband Quality",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -114,10 +114,10 @@
               "description": "[MyBroadband ADSL Quality Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband ADSL Quality",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -139,10 +139,10 @@
               "description": "[MyBroadband ADSL Quality Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband ADSL Quality no Borders",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -164,10 +164,10 @@
               "description": "[MyBroadband ADSL Availability Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband ADSL Availability",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -189,10 +189,10 @@
               "description": "[MyBroadband ADSL Availability Map](https://www.mybroadband.communications.gov.au)",
               "name": "Broadband ADSL Availability no Borders",
               "rectangle": [
-                "96.799393",
-                "-43.598214999057824",
-                "153.63925700000001",
-                "-9.2159219997013"
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
               ],
               "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
               "url": "https://programs.communications.gov.au/geoserver/ows",
@@ -205,44 +205,26 @@
               ]
             },
             {
-              "layers": "mobile-black-spot-programme:database-group",
-              "parameters": {
-                "tiled": true
-              },
-              "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage",
-              "dataUrlType": "direct",
-              "clipToRectangle": true,
               "name": "Mobile Black Spot Database",
-              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "type": "wms",
-              "opacity": 1.0,
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-                }
-              ]
+              "type": "ckan-resource",
+              "url": "https://data.gov.au",
+              "datasetId": "community-reports-of-poor-or-no-mobile-coverage",
+              "resourceId": "6253b341-ac24-4b70-be8a-69abe4d7f72c",
+              "itemProperties": {
+                "opacity": 1.0,
+                "clipToRectangle": true
+              }
             },
             {
-              "layers": "mobile-black-spot-programme:funded-base-stations-group",
-              "parameters": {
-                "tiled": true
-              },
-              "dataUrl": "http://data.gov.au/dataset/mobile-black-spot-programme-funded-base-stations",
-              "dataUrlType": "direct",
-              "clipToRectangle": true,
               "name": "Mobile Black Spot Programme - Funded Base Stations",
-              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "type": "wms",
-              "opacity": 1.0,
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-                }
-              ]
+              "type": "ckan-resource",
+              "url": "https://data.gov.au",
+              "datasetId": "mobile-black-spot-programme-funded-base-stations",
+              "resourceId": "597dfa80-bd00-42eb-8f56-f1d9828f6724",
+              "itemProperties": {
+                "opacity": 1.0,
+                "clipToRectangle": true
+              }
             }
           ],
           "type": "group",

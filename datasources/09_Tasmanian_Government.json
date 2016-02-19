@@ -5,105 +5,105 @@
         {
           "items": [
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Topographic/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "name": "Topographic"
             },
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/TopographicGrayScale/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "name": "Topographic Grayscale"
             },
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Orthophoto/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "name": "Orthophoto"
             },
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap500K/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "name": "Tasmania Map 500k Resolution"
             },
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap250K/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "name": "Tasmania Map 250k Resolution"
             },
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap100K/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
               "name": "Tasmania Map 100k Resolution"
             },
             {
-              "opacity": "1.0",
+              "opacity": 1.0,
               "layers": "0",
               "url": "http://services.thelist.tas.gov.au/arcgis/services/Basemaps/Tasmap25K/ImageServer/WMSServer",
               "type": "wms",
               "rectangle": [
-                "141",
-                "-44",
-                "152",
-                "-39"
+                141,
+                -44,
+                152,
+                -39
               ],
               "dataCustodian": "[Tasmanian Government](http://www.tas.gov.au/)",
               "description": "[Licence](http://creativecommons.org/licenses/by/2.5/au/)",

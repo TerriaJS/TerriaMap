@@ -8,21 +8,21 @@
     "url": "http://github.com/TerriaJS/map"
   },
   "dependencies": {
-    "terriajs": "1.0.52",
-    "terriajs-server": "^1.0.0",
-    "terriajs-cesium": "1.15.4"
+    "terriajs": "2.0.1",
+    "terriajs-server": "^1.1.0",
+    "terriajs-cesium": "1.15.6"
   },
   "devDependencies": {
     "brfs": "^1.4.0",
     "browserify": "^9.0.8",
     "deamdify": "^0.1.1",
     "exorcist": "^0.3.0",
+    "generate-terriajs-schema": "^1.2.1",
     "glob": "^5.0.5",
     "glob-all": "^3.0.1",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
     "gulp-jasmine": "^2.0.1",
-    "gulp-jsdoc": "^0.1.4",
     "gulp-jshint": "^1.10.0",
     "gulp-jsoncombine": "^1.0.2",
     "gulp-less": "^3.0.3",
@@ -34,6 +34,8 @@
     "less": "^2.5.0",
     "less-plugin-npm-import": "^2.0.0",
     "spawn-sync": "^1.0.11",
+    "terriajs-schema": "latest",
+    "terriajs-catalog-editor": "^0.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
@@ -45,6 +47,8 @@
     ]
   },
   "scripts": {
-    "start": "node_modules/terriajs-server/node_modules/.bin/supervisor --no-restart-on exit -- node_modules/terriajs-server ./wwwroot"
+    "start": "bash ./run_server.sh",
+    "stop": "bash ./stop_server.sh",
+    "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
   }
 }

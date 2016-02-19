@@ -1,11 +1,63 @@
 Change Log
 ==========
 
+### 2016-02-15
+
+* Removed the datasets in the "ACT Government" and "Western Australian Government" groups because they were not working.  ACT broke as a result of a change in the Socrata software used to manage their catalog in January.  WA broke as a result of the retirement of Google Maps Engine in December.
+* Several catalog items (`Mobile Black Spot Database` and `Mobile Black Spot Programme - Funded Base Stations` in `Communications`, `Catchment Scale Land Use 2015` in `Land`, and `Taxation Statistics 2011-201` and `Medicare Offices` in `Social and Economic`) now point directly to the corresponding dataset on data.gov.au and get their metadata from there, instead of pointing to a WMS server or GeoJSON file.
+* The Australian Goverernment logos have been moved to the top-left part of the About page.
+* References to "NICTA" have been replaced by "Data61" in the help pages.
+* The privacy policy link on the Privacy page now links to the policy on `dpmc.gov.au` instead of `communications.gov.au`.
+* The statistical boundary catalogue items now have direct download links to the ABS-provided shapefiles on their info pages.
+* The `National Data Sets -> Elevation -> SRTM 1 sec DEM Image` catalogue item now points to the new service at `services.ga.gov.au` instead of the old one at `www.ga.gov.au`.
+* Added the 2013 versions of the Local Government Area (LGA), Commonwealth Electoral Division (CED), and Tourism Regions (TR) boundaries for region mapping.
+* The data source editor, previously at `terria.io/DataSourceEditor` is now available with NationalMap at `/editor`.  This way it will track the version of the catalogue format currently used by NationalMap.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 2.0.1.  Significant changes relevant to NationalMap users include:
+  * Region mapping now works with CSV files containing a postcode column in which the leading zero is missing (e.g. `830` instead of `0830`).
+  * Clicking inside a region with no value in a region-mapped CSV will now report "No features found" instead of showing a mysterious blank feature info window.
+  * More date formats are now supported in CSV files, including `YYYY`, `YYYY-MM`, and `YYYY-MM-DD HH:MM(:SS)`
+  * Improved the formatting of dates/times from CSV files in the feature info panel.
+  * Added 5 new options to the `tableStyle` property for CSV catalog items, including `replaceWithZeroValues`, `replaceWithNullValues`, `nullColor`, `nullLabel`, and `timeColumn`.  See the TerriaJS changelog linked above for details.
+  * CSV columns containing only HTML tags are no longer shown as a possible Data Variable on the Now Viewing tab.
+  * Greatly improved backward compatibility for share links.  Share links can now continue to work even if an enabled catalog item is moved or renamed.
+  * We now generate a nice legend image for ArcGIS MapServer catalogue items instead of simply providing a link to the server-provided HTML file.
+  * Legends for CSV, ABS, and ArcGIS MapServer catalogue items are now generated in SVG format.
+  * Added `CkanCatalogItem`, which can be used to reference a particular resource of any compatible type on a CKAN server.
+  * Fixed Leaflet feature selection when zoomed out enough that the world is repeated.
+  * Improved the handling of lat/lon CSV files with missing latitude or longitude values.
+  * Fixed a bug that prevented `SocrataCatalogGroup` from working in Internet Explorer 9.
+  * Fixed a bug that caused the Now Viewing tab to display incorrectly in Internet Explorer 11 when switching directly to it from the Data Catalogue tab.
+
+### 2016-01-19
+
+* Fixed incorrect claims in the documentation that NationalMap was funed by the Department of Prime Minister and Cabinet.
+
 ### 2016-01-15
 
 * Removed `National Data Sets -> Land -> Catchment Scale Land Use 2014`.
 * Removed hardcoded descriptions from the Mobile Black Spot datasets, allowing descriptions provided by the server to be used instead.
 * Split out server-side code into a separate repo, github.com/TerriaJS/terriajs-server and NPM package 'terriajs-server'.
+* Remove Supervisor and Forever, as they're basically redundant.
+* Reworked "npm start" and "npm stop" so they start/stop TerriaJS-Server in the background.
+* The disclaimer no longer overlaps with the map credits when printing the 2D view in Chrome.
+* Fixed the City of Melbourne datasets.  An upgrade of their Socrata server broke functionality we relied on.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 1.0.53.  Significant changes relevant to NationalMap users include:
+  * Fixed a typo that prevented clearing the search query on the Search tab.
+  * Added a progress bar to the top of the map, indicating tile download progress.
+  * We no longer show the entity's ID (which is usually a meaningless GUID) on the feature info panel when the feature does not have a name.  Instead, we leave the area blank.
+  * Fixed a bug with time-dynamic imagery layers that caused features to be picked from the next time to be displayed, in addition to the current one.
+  * `Cesium.zoomTo` now takes the terrain height into account when zooming to a rectangle.
+  * Dramatically improved the performance of region mapping.
+  * Introduced new quantisation (color binning) methods to dramatically improve the display of choropleths (numerical quantities displayed as colors) for CSV files, instead of always using linear. Four values for `colorBinMethod` are supported:
+    * "auto" (default), usually means "ckmeans"
+    * "ckmeans": use "CK means" method, an improved version of Jenks Even Breaks to form clusters of values that are as distinct as possible.
+    * "quantile": use quantiles, evenly distributing values between bins
+    * "none": use the previous linear color mapping method.
+  * The default style for CSV files is now 7 color bins with CK means method.
+  * Added support for color palettes from Color Brewer (colorbrewer2.org). Within `tableStyle`, use a value like `"colorPalette": "10-class BrBG"`.
+  * Improved the display of legends for CSV files.
+  * Added support for the Socrata "new backend" with GeoJSON download to `SocrataCatalogGroup`.
+  * Improved compatibility with Internet Explorer 9.
 
 ### 2015-12-15
 

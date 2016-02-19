@@ -299,10 +299,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.6089684320001",
-                "-43.59020860705779",
-                "153.62495056300006",
-                "-10.835983610651068"
+                113.60896,
+                -43.59020,
+                153.62495,
+                -10.83598
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Estuary",
@@ -318,10 +318,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.37534500000005",
-                "-43.629381999057735",
-                "153.63207400000002",
-                "-9.242297499700408"
+                113.37534,
+                -43.62938,
+                153.63207,
+                -9.24229
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Streams",
@@ -337,10 +337,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.37534500000005",
-                "-43.629381999057735",
-                "153.6320740000001",
-                "-9.242297499700424"
+                113.37534,
+                -43.62938,
+                153.63207,
+                -9.24229
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Stream Nodes",
@@ -356,10 +356,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.10056181999998",
-                "-47.81318817937922",
-                "154.86193818000004",
-                "-5.051811819379163"
+                112.10056,
+                -47.81318,
+                154.86193,
+                -5.05181
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Stream Network",
@@ -375,10 +375,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.33375",
-                "-43.628749999057746",
-                "153.62875000000008",
-                "-9.23624999970059"
+                113.33375,
+                -43.62874,
+                153.62875,
+                -9.23624
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Stream Network Nodes",
@@ -394,10 +394,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.76872500000002",
-                "-43.58274499905778",
-                "153.5956600000001",
-                "-10.64324999965701"
+                113.76872,
+                -43.58274,
+                153.59566,
+                -10.64324
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Structure",
@@ -413,10 +413,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.80691",
-                "-43.00307999905891",
-                "152.89131000000003",
-                "-10.903989999649017"
+                113.80691,
+                -43.00307,
+                152.89131,
+                -10.90398
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Waterbodies",
@@ -432,10 +432,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "113.80691",
-                "-43.00307999905891",
-                "152.89131000000003",
-                "-10.903989999649017"
+                113.80691,
+                -43.00307,
+                152.89131,
+                -10.90398
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Water Pipeline",
@@ -451,10 +451,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.9318700000001",
-                "-42.75848999905948",
-                "153.00634000000005",
-                "-9.951769999678337"
+                112.93187,
+                -42.75848,
+                153.00634,
+                -9.95176
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Water Storage",
@@ -470,10 +470,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.9225",
-                "-43.64250000005773",
-                "153.63750000000013",
-                "-9.229999999700832"
+                112.9225,
+                -43.64250,
+                153.63750,
+                -9.22999
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "River Region",
@@ -489,10 +489,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.9225",
-                "-43.73999999905757",
-                "153.63750000000002",
-                "-9.197499999701808"
+                112.9225,
+                -43.73999,
+                153.63750,
+                -9.19749
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "Catchment",
@@ -508,10 +508,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "111.24438730279999",
-                "-48.47186269657931",
-                "155.3156126972001",
-                "-4.400637302179204"
+                111.24438,
+                -48.47186,
+                155.31561,
+                -4.40063
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": " Drainage Division",
@@ -527,10 +527,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.9225",
-                "-43.73999999905757",
-                "153.63750000000002",
-                "-9.197499999701801"
+                112.9225,
+                -43.73999,
+                153.63750,
+                -9.19749
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "NCB Level1 Drainage Division",
@@ -546,10 +546,10 @@
               "url": "http://geofabric.bom.gov.au/simplefeatures/ows",
               "type": "wms",
               "rectangle": [
-                "112.9225",
-                "-43.73999999905757",
-                "153.63750000000013",
-                "-9.197499999701803"
+                112.9225,
+                -43.73999,
+                153.63750,
+                -9.19749
               ],
               "dataCustodian": "[Australian Bureau of Meteorology](http://www.bom.gov.au/water/geofabric/)",
               "name": "NCB Level2 Drainage Basin Group",

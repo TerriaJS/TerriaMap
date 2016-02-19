@@ -20,4 +20,4 @@ Thanks for trying out Terria Map, the software that drives [http://nationalmap.g
 
  Now visit the site in your browser at `http://localhost:3001`.
  
- +See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about National Map and how to build and run it.
+ See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about how to build and run it.
