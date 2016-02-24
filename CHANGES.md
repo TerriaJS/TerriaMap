@@ -1,8 +1,9 @@
 Change Log
 ==========
 
-### 2016-02-12
+### 2016-02-15
 
+* Removed the datasets in the "ACT Government" and "Western Australian Government" groups because they were not working.  ACT broke as a result of a change in the Socrata software used to manage their catalog in January.  WA broke as a result of the retirement of Google Maps Engine in December.
 * Several catalog items (`Mobile Black Spot Database` and `Mobile Black Spot Programme - Funded Base Stations` in `Communications`, `Catchment Scale Land Use 2015` in `Land`, and `Taxation Statistics 2011-201` and `Medicare Offices` in `Social and Economic`) now point directly to the corresponding dataset on data.gov.au and get their metadata from there, instead of pointing to a WMS server or GeoJSON file.
 * The Australian Goverernment logos have been moved to the top-left part of the About page.
 * References to "NICTA" have been replaced by "Data61" in the help pages.
@@ -11,7 +12,7 @@ Change Log
 * The `National Data Sets -> Elevation -> SRTM 1 sec DEM Image` catalogue item now points to the new service at `services.ga.gov.au` instead of the old one at `www.ga.gov.au`.
 * Added the 2013 versions of the Local Government Area (LGA), Commonwealth Electoral Division (CED), and Tourism Regions (TR) boundaries for region mapping.
 * The data source editor, previously at `terria.io/DataSourceEditor` is now available with NationalMap at `/editor`.  This way it will track the version of the catalogue format currently used by NationalMap.
-* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 2.0.0.  Significant changes relevant to NationalMap users include:
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 2.0.1.  Significant changes relevant to NationalMap users include:
   * Region mapping now works with CSV files containing a postcode column in which the leading zero is missing (e.g. `830` instead of `0830`).
   * Clicking inside a region with no value in a region-mapped CSV will now report "No features found" instead of showing a mysterious blank feature info window.
   * More date formats are now supported in CSV files, including `YYYY`, `YYYY-MM`, and `YYYY-MM-DD HH:MM(:SS)`
