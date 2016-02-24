@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-03-15
+
+* Changed the query of the South Australian Government CKAN server to include datasets with a format of both `geojson` and `GeoJSON`, greatly increasing the number of datasets found.
+
 ### 2016-02-15
 
 * Removed the datasets in the "ACT Government" and "Western Australian Government" groups because they were not working.  ACT broke as a result of a change in the Socrata software used to manage their catalog in January.  WA broke as a result of the retirement of Google Maps Engine in December.

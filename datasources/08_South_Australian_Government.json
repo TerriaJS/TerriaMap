@@ -7,7 +7,7 @@
       "minimumMaxScaleDenominator": 10000000000,
       "filterByWmsGetCapabilities": false,
       "filterQuery": [
-        "fq=+(res_format%3ageojson%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=jurisdiction%3a\"Government%20of%20South%20Australia\""
+        "fq=+(res_format%3ageojson%20OR%20res_format%3aGeoJSON%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv)&q=jurisdiction%3a\"Government%20of%20South%20Australia\""
       ],
       "includeWms": false,
       "includeCsv": true,
