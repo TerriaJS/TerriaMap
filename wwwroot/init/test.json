@@ -348,6 +348,42 @@
               "name": "Test styled and unstyled features",
               "type": "geojson",
               "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson"
+            },
+            {
+              "name": "Test overriding styled and unstyled features",
+              "type": "geojson",
+              "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson",
+              "style": {
+                "marker-size": "200",
+                "marker-color": "#ff3333",
+                "marker-symbol": "rail"
+              }
+            },
+            {
+              "name": "Testing stroke styles applied to embedded unstyled point.",
+              "type": "geojson",
+              "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson",
+              "style": {
+                "stroke-width": "20",
+                "stroke": "red",
+                "marker-size": 200
+              },
+              "data": {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "properties": { "name": "Thick red border, unspecified centre"},
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        146.469,
+                        -40.830
+                      ]
+                    }
+                  }
+                ]
+              }              
             }
           ]
         },
