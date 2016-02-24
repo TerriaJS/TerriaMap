@@ -12,14 +12,17 @@ The National Map is designed to:
 * Provide an open framework of geospatial data services that supports commercial and community innovation
 
 ### Getting Started ###
-The quick version:
+Please don't use **this** repo. Instead, start your map from https://github.com/TerriaJS/Map, which is maintained as a starting point for third-party maps, without the NationalMap branding.
 
-```
-git clone https://github.com/NICTA/NationalMap
-cd NationalMap
-npm install
-npm start
-gulp watch
-```
+Pre-requisites: Git, NodeJS, NPM, GDAL (optional). (See the wiki for details)
+ 
+ ```
+ sudo npm install -g gulp                     # Install gulp, the build tool
+ git clone https://github.com/TerriaJS/Map    # Get the code
+ cd Map                                       
+ npm install                                  # Install dependencies
+ npm start                                    # Start the server in the background
+ gulp watch                                   # Build the site, and watch for changes.
+ ```
 
-See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about National Map and how to build and run it.
+See the [wiki](https://github.com/NICTA/nationalmap/wiki) for more detailed information about Terria and how to build and run it.
