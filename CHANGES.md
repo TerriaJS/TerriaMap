@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-### 2016-03
+### 2016-03-15
 
 * Updated "Population Estimates" layer to point to new GA location.
 
