@@ -12,4 +12,5 @@ datasources/00_National_Data_Sets.json
 /terriajs.pid
 /error.log
 /output.log
-
+# added by GitSavvy
+/wwwroot/editor/

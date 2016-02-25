@@ -205,44 +205,26 @@
               ]
             },
             {
-              "layers": "mobile-black-spot-programme:database-group",
-              "parameters": {
-                "tiled": true
-              },
-              "dataUrl": "http://data.gov.au/dataset/community-reports-of-poor-or-no-mobile-coverage",
-              "dataUrlType": "direct",
-              "clipToRectangle": true,
               "name": "Mobile Black Spot Database",
-              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "type": "wms",
-              "opacity": 1.0,
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-                }
-              ]
+              "type": "ckan-resource",
+              "url": "https://data.gov.au",
+              "datasetId": "community-reports-of-poor-or-no-mobile-coverage",
+              "resourceId": "6253b341-ac24-4b70-be8a-69abe4d7f72c",
+              "itemProperties": {
+                "opacity": 1.0,
+                "clipToRectangle": true
+              }
             },
             {
-              "layers": "mobile-black-spot-programme:funded-base-stations-group",
-              "parameters": {
-                "tiled": true
-              },
-              "dataUrl": "http://data.gov.au/dataset/mobile-black-spot-programme-funded-base-stations",
-              "dataUrlType": "direct",
-              "clipToRectangle": true,
               "name": "Mobile Black Spot Programme - Funded Base Stations",
-              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
-              "url": "https://programs.communications.gov.au/geoserver/ows",
-              "type": "wms",
-              "opacity": 1.0,
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-                }
-              ]
+              "type": "ckan-resource",
+              "url": "https://data.gov.au",
+              "datasetId": "mobile-black-spot-programme-funded-base-stations",
+              "resourceId": "597dfa80-bd00-42eb-8f56-f1d9828f6724",
+              "itemProperties": {
+                "opacity": 1.0,
+                "clipToRectangle": true
+              }
             }
           ],
           "type": "group",

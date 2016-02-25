@@ -49,7 +49,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B04",
+              "datasetId": "ABS_CENSUS2011_B04",
               "filter": [
                 "MEASURE.3",
                 "AGE.A04",
@@ -72,7 +72,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B09",
+              "datasetId": "ABS_CENSUS2011_B09",
               "filter": [
                 "BPLP.1101",
                 "MEASURE.3",
@@ -92,7 +92,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B16",
+              "datasetId": "ABS_CENSUS2011_B16",
               "filter": [
                 "AGE.O15",
                 "HSCP.1",
@@ -113,7 +113,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B45",
+              "datasetId": "ABS_CENSUS2011_B45",
               "filter": [
                 "MEASURE.O15",
                 "OCCP.TOT",
@@ -134,7 +134,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B17",
+              "datasetId": "ABS_CENSUS2011_B17",
               "filter": [
                 "REGIONTYPE.SA4"
               ]
@@ -152,7 +152,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B34",
+              "datasetId": "ABS_CENSUS2011_B34",
               "filter": [
                 "REGIONTYPE.SA4"
               ]
@@ -170,7 +170,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B15",
+              "datasetId": "ABS_CENSUS2011_B15",
               "filter": [
                 "REGIONTYPE.SA4"
               ]
@@ -188,7 +188,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B35",
+              "datasetId": "ABS_CENSUS2011_B35",
               "filter": [
                 "MEASURE.OPD",
                 "NEDD.TOT",
@@ -208,7 +208,7 @@
               ],
               "type": "abs-itt",
               "url": "http://stat.abs.gov.au/itt/query.jsp",
-              "dataSetID": "ABS_CENSUS2011_B19",
+              "datasetId": "ABS_CENSUS2011_B19",
               "filter": [
                 "AGE.O15",
                 "MEASURE.3",

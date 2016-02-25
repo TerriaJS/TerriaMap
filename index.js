@@ -6,13 +6,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 
+var terriaOptions = {
+    baseUrl: 'build/TerriaJS'
+};
 var configuration = {
-    terriaBaseUrl: 'build/TerriaJS',
-    cesiumBaseUrl: undefined, // use default
     bingMapsKey: undefined, // use Cesium key
-    proxyBaseUrl: '/proxy/',
-    conversionServiceBaseUrl: 'convert',
-    regionMappingDefinitionsUrl: 'data/regionMapping.json'
 };
 
 // Check browser compatibility early on.
@@ -63,6 +61,7 @@ var Terria = require('terriajs/lib/Models/Terria');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var registerCustomComponentTypes = require('terriajs/lib/Models/registerCustomComponentTypes');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
+
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var ViewerMode = require('terriajs/lib/Models/ViewerMode');
@@ -72,9 +71,8 @@ var TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 
-
-// Configure the base URL for the proxy service used to work around CORS restrictions.
-corsProxy.baseProxyUrl = configuration.proxyBaseUrl;
+var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
+var defaultValue = require('terriajs-cesium/Source/Core/defaultValue');
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
 OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
@@ -88,16 +86,10 @@ registerKnockoutBindings();
 // the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
 
-// Construct the TerriaJS application, arrange to show errors to the user, and start it up.
+terriaOptions.analytics = new GoogleAnalytics();
 
-var terria = new Terria({
-    appName: 'NationalMap',
-    supportEmail: 'data@pmc.gov.au',
-    baseUrl: configuration.terriaBaseUrl,
-    cesiumBaseUrl: configuration.cesiumBaseUrl,
-    regionMappingDefinitionsUrl: configuration.regionMappingDefinitionsUrl,
-    analytics: new GoogleAnalytics()
-});
+// Construct the TerriaJS application, arrange to show errors to the user, and start it up.
+var terria = new Terria(terriaOptions);
 
 // Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
 // insert your custom version of the code in the registerCustomComponentTypes function here instead.

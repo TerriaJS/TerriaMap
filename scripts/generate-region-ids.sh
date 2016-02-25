@@ -20,7 +20,7 @@ function makeJSON {
 
     echo "$LAYER, $COLUMN"
 
-    wget  --quiet -O response "http://geoserver.nationalmap.nicta.com.au/region_map/ows?service=wfs&version=2.0&request=getPropertyValue&typenames=${LAYERU}&valueReference=${COLUMN}"
+    wget  --quiet -O response "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows?service=wfs&version=2.0&request=getPropertyValue&typenames=${LAYERU}&valueReference=${COLUMN}"
 
     # Add commas between items
     perl -pi -e "s/<\/wfs:member><wfs:member>/${QUOTES},${QUOTES}/g" response
@@ -53,6 +53,9 @@ makeJSON "region_map:FID_SA4_2011_AUST" SA4_NAME11 '"'
 makeJSON "region_map:FID_LGA_2015_AUST" LGA_CODE15
 makeJSON "region_map:FID_LGA_2015_AUST" LGA_NAME15 '"'
 makeJSON "region_map:FID_LGA_2015_AUST" STE_NAME15 '"' # disambiguation column
+makeJSON "region_map:FID_LGA_2013_AUST" LGA_CODE13
+makeJSON "region_map:FID_LGA_2013_AUST" LGA_NAME13 '"'
+makeJSON "region_map:FID_LGA_2013_AUST" STE_NAME11 '"' # yes, 11...
 makeJSON "region_map:FID_LGA_2011_AUST" LGA_CODE11
 makeJSON "region_map:FID_LGA_2011_AUST" LGA_NAME11 '"'
 makeJSON "region_map:FID_LGA_2011_AUST" STE_NAME11 '"' # disambiguation column
@@ -61,9 +64,10 @@ makeJSON "region_map:FID_SSC_2011_AUST" SSC_NAME '"'
 makeJSON "region_map:FID_POA_2011_AUST" POA_CODE '"' # leading zeroes
 makeJSON "region_map:FID_CED_2011_AUST" CED_CODE
 makeJSON "region_map:FID_CED_2011_AUST" CED_NAME '"'
+makeJSON "region_map:FID_CED_2013_AUST" CED_CODE13
+makeJSON "region_map:FID_CED_2013_AUST" CED_NAME13 '"'
 makeJSON "region_map:FID_SED_2011_AUST" SED_CODE
 makeJSON "region_map:FID_SED_2011_AUST" SED_NAME '"'
-
 makeJSON "region_map:FID_STE_2011_AUST" STE_CODE11
 makeJSON "region_map:FID_STE_2011_AUST" STE_NAME11 '"' 
 makeJSON "region_map:FID_TM_WORLD_BORDERS" ISO2 '"'
@@ -82,4 +86,5 @@ makeJSON "region_map:FID_ILOC_2011_AUST" IL_CODE11
 makeJSON "region_map:FID_IARE_2011_AUST" IA_CODE11
 makeJSON "region_map:FID_RA_2011_AUST" RA_CODE11
 makeJSON "region_map:FID_TR_2015_AUST" TR_CODE15 '"'
+makeJSON "region_map:FID_TR_2013_AUST" TR_CODE13 '"'
 makeJSON "region_map:FID_PHN_boundaries_AUS_Sep2015_V5" PHN_Code '"'
