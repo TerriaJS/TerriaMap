@@ -311,8 +311,11 @@ gulp.task('sass', function(){
   return sass('nationalmap.scss',{
           style: 'expanded',
           loadPath: './node_modules/terriajs/lib/Sass',
-          sourcemap: true
+          sourcemap: true,
+          verbose: true
         })
+        .on('error', sass.logError)
+
         // For inline sourcemaps
         .pipe(sourcemaps.write())
 
