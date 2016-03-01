@@ -13,6 +13,7 @@
               "layers": "1,2,3,4,5",
               "url": "http://services.ga.gov.au/gis/rest/services/NEXIS_Residential_Population_Density/MapServer",
               "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/NEXIS_PopDensity_Legend.png",
               "rectangle": [
                 112.93529,
                 -38.20880,
@@ -21,6 +22,7 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Population Estimates",
+              "featureInfoTemplate": "{{Pixel Value}} people in 100m radius.",
               "info": [
                 {
                   "name": "Licence",
