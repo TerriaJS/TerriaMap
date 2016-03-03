@@ -14,6 +14,7 @@ import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
+import ProgressBar from 'terriajs/lib/ReactViews/ProgressBar.jsx';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState.js';
 
 var UserInterface = React.createClass({
@@ -125,11 +126,11 @@ var UserInterface = React.createClass({
                     <MobileHeader terria={terria}
                                   viewState={this.viewState}
                     />
-                <nav>
-                    <SidePanel terria={terria}
-                               viewState={this.viewState}
-                    />
-                </nav>
+                    <nav>
+                        <SidePanel terria={terria}
+                                   viewState={this.viewState}
+                        />
+                    </nav>
                 </header>
                 <main>
                     <ModalWindow terria={terria}
@@ -149,6 +150,7 @@ var UserInterface = React.createClass({
                                   onDismiss={this.closeNotification}
                     />
                 </div>
+                <ProgressBar terria={terria} />
                 <FeatureInfoPanel terria={terria}
                                   isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
