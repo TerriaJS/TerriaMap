@@ -1,26 +1,25 @@
 'use strict';
 
 /*global require*/
-var webpack = require("webpack");
+var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 
-module.exports = {
+var config = {
     entry: './index.js',
     output: {
         path: 'wwwroot/build',
-        filename: 'nationalmap.js'
+        filename: 'nationalmap.js',
+        publicPath: 'build/'
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                loader: "transform?brfs"
-            },
-            {
-                test: /\.json$/,
-                loader: 'json'
+                test: require.resolve('./index.js'),
+                loader: require.resolve('transform-loader/cacheable') + '?' + require.resolve('brfs')
             }
         ]
-    },
-    plugins: [
-    ]
+    }
 };
+
+configureWebpackForTerriaJS(require.resolve('terriajs/package.json'), config);
+
+module.exports = config;
