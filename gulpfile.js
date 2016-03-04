@@ -22,6 +22,8 @@ var NpmImportPlugin = require('less-plugin-npm-import');
 var jsoncombine = require('gulp-jsoncombine');
 var generateSchema = require('generate-terriajs-schema');
 var validateSchema = require('terriajs-schema');
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.config.js');
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -33,19 +35,18 @@ var testGlob = './test/**/*.js';
 
 var watching = false; // if we're in watch mode, we try to never quit.
 
-// Create the build directory, because browserify flips out if the directory that might
-// contain an existing source map doesn't exist.
-
-if (!fs.existsSync('wwwroot/build')) {
-    fs.mkdirSync('wwwroot/build');
-}
-
-gulp.task('build-app', ['prepare-terriajs'], function() {
-    return build(appJSName, appEntryJSName, false);
-});
-
-gulp.task('build-specs', ['prepare-terriajs'], function() {
-    return build(specJSName, glob.sync(testGlob), false);
+gulp.task('build-app', ['prepare-terriajs'], function(done) {
+    var wp = webpack(webpackConfig);
+    wp.run(function(err, stats) {
+        if (stats) {
+            console.log(stats.toString({
+                colors: true,
+                modules: false,
+                chunkModules: false
+            }));
+        }
+        done(err);
+    });
 });
 
 gulp.task('build-css', function() {
@@ -60,14 +61,10 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
+gulp.task('build', ['build-css', 'merge-datasources', 'build-app']);
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);
-});
-
-gulp.task('release-specs', ['prepare'], function() {
-    return build(specJSName, glob.sync(testGlob), true);
 });
 
 // Generate new schema for editor, and copy it over whatever version came with editor.
@@ -86,7 +83,7 @@ gulp.task('copy-editor', function() {
         .pipe(gulp.dest('./wwwroot/editor'));
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs', 'make-editor-schema', 'validate']);
+gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'make-editor-schema', 'validate']);
 
 // Generate new schema for validator, and copy it over whatever version came with validator.
 gulp.task('make-validator-schema', function(done) {
@@ -110,13 +107,17 @@ gulp.task('validate', ['merge-datasources', 'make-validator-schema'], function()
     });
 });
 
-gulp.task('watch-app', ['prepare'], function() {
-    return watch(appJSName, appEntryJSName, false);
-    // TODO: make this automatically trigger when ./lib/Views/*.html get updated
-});
-
-gulp.task('watch-specs', ['prepare'], function() {
-    return watch(specJSName, glob.sync(testGlob), false);
+gulp.task('watch-app', ['prepare'], function(done) {
+    var wp = webpack(webpackConfig);
+    wp.watch({}, function(err, stats) {
+        if (stats) {
+            console.log(stats.toString({
+                colors: true,
+                modules: false,
+                chunkModules: false
+            }));
+        }
+    });
 });
 
 gulp.task('watch-css', ['build-css'], function() {
@@ -137,7 +138,7 @@ gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
     return gulp.watch(terriaJSSource + '/**', [ 'prepare-terriajs' ]);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-datasources', 'watch-terriajs']);
+gulp.task('watch', ['watch-app', 'watch-css', 'watch-datasources', 'watch-terriajs']);
 
 gulp.task('lint', function(){
     return gulp.src(['index.js'])
@@ -204,79 +205,4 @@ function onError(e) {
     if (!watching) {
         process.exit(1);
     }
-}
-
-var bundle = function(name, bundler, minify) {
-    // Get a version string from "git describe".
-    var version = spawnSync('git', ['describe']).stdout.toString().trim();
-    var isClean = spawnSync('git', ['status', '--porcelain']).stdout.toString().length === 0;
-    if (!isClean) {
-        version += ' (plus local modifications)';
-    }
-
-    fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
-
-    // Combine main.js and its dependencies into a single file.
-    var result = bundler.bundle();
-
-    result = result
-        .on('error', onError)
-        .pipe(source(name))
-        .pipe(buffer());
-
-    if (minify) {
-        // Minify the combined source.
-        // sourcemaps.init/write maintains a working source map after minification.
-        // "preserveComments: 'some'" preserves JSDoc-style comments tagged with @license or @preserve.
-        result = result
-            .pipe(sourcemaps.init({ loadMaps: true }))
-            .pipe(uglify({preserveComments: 'some', mangle: true, compress: true}))
-            .pipe(sourcemaps.write());
-    }
-
-    result = result
-        // Extract the embedded source map to a separate file.
-        .pipe(transform(function () { return exorcist('wwwroot/build/' + name + '.map'); }))
-        // Write the finished product.
-        .pipe(gulp.dest('wwwroot/build'));
-
-    return result;
-};
-
-function build(name, files, minify) {
-    return bundle(name, browserify({
-        entries: files,
-        debug: true // generate source map
-    }), minify);
-}
-
-function watch(name, files, minify) {
-    watching = true;
-    var bundler = watchify(browserify({
-        entries: files,
-        debug: true, // generate source map
-        cache: {},
-        packageCache: {}
-    }), { poll: 1000 } );
-
-    function rebundle(ids) {
-        // Don't rebundle if only the version changed.
-        if (ids && ids.length === 1 && /\/version\.js$/.test(ids[0])) {
-            return;
-        }
-
-        var start = new Date();
-
-        var result = bundle(name, bundler, minify);
-
-        result.on('end', function() {
-            gutil.log('Rebuilt \'' + gutil.colors.cyan(name) + '\' in', gutil.colors.magenta((new Date() - start)), 'milliseconds.');
-        });
-
-        return result;
-    }
-
-    bundler.on('update', rebundle);
-
-    return rebundle();
 }
