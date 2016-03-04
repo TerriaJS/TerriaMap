@@ -14,7 +14,7 @@ var config = {
         loaders: [
             {
                 test: require.resolve('./index.js'),
-                loader: require.resolve('transform-loader/cacheable') + '?' + require.resolve('brfs')
+                loader: require.resolve('transform-loader') + '?' + require.resolve('brfs')
             }
         ]
     }
