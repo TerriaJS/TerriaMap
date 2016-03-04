@@ -2,6 +2,7 @@
 
 /*global require*/
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
+var path = require('path');
 
 var config = {
     entry: './index.js',
@@ -13,8 +14,8 @@ var config = {
     module: {
         loaders: [
             {
-                test: require.resolve('./index.js'),
-                loader: require.resolve('transform-loader') + '?' + require.resolve('brfs')
+                test: path.resolve(__dirname, 'lib', 'Views'),
+                loader: require.resolve('raw-loader')
             }
         ]
     }

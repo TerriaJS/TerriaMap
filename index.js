@@ -206,7 +206,7 @@ terria.start({
                 callback: function() {
                     PopupMessageViewModel.open(ui, {
                         title: 'Related Maps',
-                        message: require('fs').readFileSync(__dirname + '/lib/Views/RelatedMaps.html', 'utf8'),
+                        message: require('./lib/Views/RelatedMaps.html'),
                         width: 600,
                         height: 430
                     });
