@@ -101,11 +101,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Hydrography_and_Marine/MapServer",
               "layers": "Offshore_Rocks_and_Wrecks_Labels,Offshore_Rocks_and_Wrecks,No_Data",
               "name": "Offshore Rocks and Wrecks",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Offshore_Rocks_and_Wrecks.png",
               "info": [
                 {
                   "name": "Licence",
@@ -114,11 +113,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Hydrography_and_Marine/MapServer",
               "layers": "Reefs_and_Shoals_Labels,Reefs_and_Shoals,No_Data",
               "name": "Reefs and Shoals",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Reefs_and_Shoals.png",
               "info": [
                 {
                   "name": "Licence",
