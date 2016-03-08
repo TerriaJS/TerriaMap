@@ -49,7 +49,7 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Relief_and_Physiography/MapServer",
               "layers": "Contours_Labels,Contours_250K_Scale,Contours_2_5Million_Scale,No_Data",
               "name": "Contours",
               "type": "esri-mapServer",
@@ -62,7 +62,7 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Relief_and_Physiography/MapServer",
               "layers": "Cuttings,No_Data",
               "name": "Cuttings",
               "type": "esri-mapServer",
@@ -75,7 +75,7 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Relief_and_Physiography/MapServer",
               "layers": "Embankments,No_Data",
               "name": "Embankments",
               "type": "esri-mapServer",
@@ -88,7 +88,7 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Relief_and_Physiography/MapServer",
               "layers": "Horizontal_Control_Points_Labels,Horizontal_Control_Points,No_Data",
               "name": "Horizontal Control Points",
               "type": "esri-mapServer",
@@ -127,7 +127,7 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Elevation_Relief_and_Physiography/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Relief_and_Physiography/MapServer",
               "layers": "Spot_Elevations_Labels,Spot_Elevations_250K_Scale,Spot_Elevations_2_5Million_Scale,No_Data",
               "name": "Spot Elevations",
               "type": "esri-mapServer",
