@@ -9,7 +9,7 @@
               "layers": "Caves,No_Data",
               "name": "Caves",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Caves.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -22,7 +22,7 @@
               "layers": "Cliffs,No_Data",
               "name": "Cliffs",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Cliffs.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -35,7 +35,7 @@
               "layers": "Craters,No_Data",
               "name": "Craters",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Craters.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -48,7 +48,7 @@
               "layers": "Distorted_Surfaces,No_Data",
               "name": "Distorted Surfaces",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Distorted_Surfaces.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -61,7 +61,7 @@
               "layers": "Outcrops,No_Data",
               "name": "Outcrops",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Outcrops.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -74,7 +74,7 @@
               "layers": "Pinnacles,No_Data",
               "name": "Pinnacles",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Pinnacles.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -87,7 +87,7 @@
               "layers": "Sandridges_250K_Scale,Sandridges_2_5Million_Scale,No_Data",
               "name": "Sandridges",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Sandridges.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -100,7 +100,7 @@
               "layers": "Sands,No_Data",
               "name": "Sands",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Sands.png",
+
               "info": [
                 {
                   "name": "Licence",

@@ -53,7 +53,7 @@
               "layers": "Contours_Labels,Contours_250K_Scale,Contours_2_5Million_Scale,No_Data",
               "name": "Contours",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Contours.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -66,7 +66,7 @@
               "layers": "Cuttings,No_Data",
               "name": "Cuttings",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Cuttings.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -79,7 +79,7 @@
               "layers": "Embankments,No_Data",
               "name": "Embankments",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Embankments.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -92,7 +92,7 @@
               "layers": "Horizontal_Control_Points_Labels,Horizontal_Control_Points,No_Data",
               "name": "Horizontal Control Points",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Horizontal_Control_Points.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -129,7 +129,7 @@
               "layers": "Spot_Elevations_Labels,Spot_Elevations_250K_Scale,Spot_Elevations_2_5Million_Scale,No_Data",
               "name": "Spot Elevations",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Elevation_Relief_and_Physiography_Spot_Elevations.png",
+
               "info": [
                 {
                   "name": "Licence",
