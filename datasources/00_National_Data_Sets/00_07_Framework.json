@@ -35,7 +35,7 @@
             {
               "name": "Forestry Reserves",
               "type": "esri-mapServer",
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Reserves/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Reserves/MapServer",
               "layers": "Forestry_Reserves_Labels,Forestry_Reserves,No_Data",
               "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Reserves_ForestryReserves.png",
               "info": [
@@ -48,7 +48,7 @@
             {
               "name": "Indigenous Reserves",
               "type": "esri-mapServer",
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Reserves/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Reserves/MapServer",
               "layers": "Indigenous_Reserves_Labels,Indigenous_Reserves,No_Data",
               "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Reserves_IndigenousReserves.png",
               "info": [
@@ -100,7 +100,7 @@
             {
               "name": "Marine Parks",
               "type": "esri-mapServer",
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Reserves/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Reserves/MapServer",
               "layers": "Nature_Conservation_Reserves_Marine_Labels,Nature_Conservation_Reserves_Marine,No_Data",
               "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Reserves_NatureConservationReserves_Marine.png",
               "info": [
@@ -113,7 +113,7 @@
             {
               "name": "National Parks and Other Reserves",
               "type": "esri-mapServer",
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Reserves/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Reserves/MapServer",
               "layers": "Nature_Conservation_Reserves_Land_Labels,Nature_Conservation_Reserves_Land,No_Data",
               "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Reserves_NatureConservationReserves_Land.png",
               "info": [
@@ -139,7 +139,7 @@
             {
               "name": "Prohibited Areas",
               "type": "esri-mapServer",
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Reserves/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Reserves/MapServer",
               "layers": "Prohibited_Areas_Labels,Prohibited_Areas,No_Data",
               "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Reserves_Prohibited_Areas.png",
               "info": [
@@ -256,7 +256,7 @@
             {
               "name": "Water Supply Reserves",
               "type": "esri-mapServer",
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Reserves/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Reserves/MapServer",
               "layers": "Water_Supply_Reserves_Labels,Water_Supply_Reserves,No_Data",
               "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Reserves_WaterSupplyReserves.png",
               "info": [
