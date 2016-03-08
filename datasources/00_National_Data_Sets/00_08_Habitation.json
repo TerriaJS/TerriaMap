@@ -5,11 +5,11 @@
         {
           "items": [
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Cemetery_Areas,No_Data",
               "name": "Cemetery Areas",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Cemetery_Areas.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -18,11 +18,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Cemetery_Points,No_Data",
               "name": "Cemetery Points",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Cemetery_Points.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -70,11 +70,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Recreation_Areas,No_Data",
               "name": "Recreation Areas",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Recreation_Areas.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -83,11 +83,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Urban_Landscapes,No_Data",
               "name": "Urban Landscapes",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Urban_Landscapes.png",
+
               "info": [
                 {
                   "name": "Licence",
