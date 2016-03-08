@@ -7,7 +7,7 @@
             {
               "items": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Airports_Point_Features,No_Data",
                   "name": "Airport Point Features",
                   "type": "esri-mapServer",
@@ -20,7 +20,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Airport_Runway_Centrelines_and_Landing_Grounds_Line_Features,No_Data",
                   "name": "Airport Runway Centrelines and Landing Grounds Line Features",
                   "type": "esri-mapServer",
@@ -33,7 +33,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Heliports,No_Data",
                   "name": "Heliports",
                   "type": "esri-mapServer",
@@ -46,7 +46,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Landing_Grounds_Point_Features,No_Data",
                   "name": "Landing Ground Point Features",
                   "type": "esri-mapServer",
@@ -65,7 +65,7 @@
             {
               "items": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Railway_Bridges,No_Data",
                   "name": "Railway Bridges",
                   "type": "esri-mapServer",
@@ -78,7 +78,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Road_Bridges_and_Fords,No_Data",
                   "name": "Road Bridges and Fords",
                   "type": "esri-mapServer",
@@ -97,7 +97,7 @@
             {
               "items": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Ferry_Routes,No_Data",
                   "name": "Ferry Routes",
                   "type": "esri-mapServer",
@@ -179,7 +179,7 @@
             {
               "items": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Railway_Bridges,No_Data",
                   "name": "Railway Bridges",
                   "type": "esri-mapServer",
@@ -192,7 +192,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Railway_Crossing_Lines,No_Data",
                   "name": "Railway Crossing Lines",
                   "type": "esri-mapServer",
@@ -205,7 +205,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Railway_Stations,No_Data",
                   "name": "Railway Stations",
                   "type": "esri-mapServer",
@@ -218,7 +218,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Railways,No_Data",
                   "name": "Railways",
                   "type": "esri-mapServer",
@@ -237,7 +237,7 @@
             {
               "items": [
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Foot_Tracks,No_Data",
                   "name": "Foot Tracks",
                   "type": "esri-mapServer",
@@ -250,7 +250,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Road_Bridges_and_Fords,No_Data",
                   "name": "Road Bridges and Fords",
                   "type": "esri-mapServer",
@@ -263,7 +263,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "Road_Crossing_Lines,No_Data",
                   "name": "Road Crossing Lines",
                   "type": "esri-mapServer",
@@ -276,7 +276,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "All_Roads,Roads_Scale_600000_to_300000,Roads_Scale_7Million_to_600000,Major_Road_Network,No_Data",
                   "name": "Roads",
                   "type": "esri-mapServer",
@@ -289,7 +289,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "National_Route_Number_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
                   "name": "Route Number Labels - National",
                   "type": "esri-mapServer",
@@ -302,7 +302,7 @@
                   ]
                 },
                 {
-                  "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Transport/MapServer",
+                  "url": "http://services.ga.gov.au/gis/rest/services/NM_Transport_Infrastructure/MapServer",
                   "layers": "State_Route_Number_Labels,No_Data,No_Labels_National_Scale_to_10Million_Scale",
                   "name": "Route Number Labels - State",
                   "type": "esri-mapServer",
