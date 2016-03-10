@@ -45,7 +45,7 @@
             },
             {
               "url": "http://services.ga.gov.au/gis/rest/services/NM_Labelling_and_Boundaries/MapServer",
-              "layers": "Great_Barrier_Reef,Great_Dividing_Range,Linear_Relief_Features,Linear_Hydro_Features,Area_Relief_Features,Area_Hydro_Features,State_Names_Points,Locations_20Mill_to_7Mill_Scale,Locations_7Mill_to_750k_Scale,Locations_750K_to_300K_Scale_NamedBuildings,Locations_750K_to_300K_Scale_GeneralPlaceNames,Locations_300K_to_70K_Scale_NamedBuildings,Locations_300K_to_70K_Scale_Rocks_and_Pinnacles,Locations_300K_to_70K_Scale_GeneralPlaceNames,No_Data",
+              "layers": "Locations_Great_Barrier_Reef,Locations_Great_Dividing_Range,Locations_Linear_Relief_Features,Locations_Linear_Hydro_Features,Locations_Area_Relief_Features,Locations_Area_Hydro_Features,Locations_State_Names_Points,Locations_20Mill_to_7Mill_Scale,Locations_7Mill_to_750k_Scale,Locations_750K_to_300K_Scale_NamedBuildings,Locations_750K_to_300K_Scale_GeneralPlaceNames,Locations_300K_to_70K_Scale_NamedBuildings,Locations_300K_to_70K_Scale_Rocks_and_Pinnacles,Locations_300K_to_70K_Scale_GeneralPlaceNames",
               "name": "Place Names",
               "type": "esri-mapServer",
               "legendUrl": "",
