@@ -19,11 +19,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Conveyors,No_Data",
               "name": "Conveyors",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Conveyors.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -32,11 +32,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Hydrography_and_Marine_Points/MapServer",
               "layers": "Lighthouses_Labels,Lighthouses,No_Data",
               "name": "Lighthouses",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Lighthouses.png",
               "info": [
                 {
                   "name": "Licence",
@@ -45,11 +44,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Hydrography_and_Marine_Lines/MapServer",
               "layers": "Marine_Infrastructure_Lines,No_Data",
               "name": "Marine Infrastructure Lines",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Marine_Infrastructure_Lines.png",
               "info": [
                 {
                   "name": "Licence",
@@ -58,11 +56,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Mine_Areas,No_Data",
               "name": "Mine Areas",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Mine_Areas.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -71,11 +69,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Storage_Tanks,No_Data",
               "name": "Storage Tanks",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Storage_Tanks.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -84,11 +82,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Vertical_Obstructions,No_Data",
               "name": "Vertical Obstructions",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Vertical_Obstructions.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -97,11 +95,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Hydrography_and_Marine_Lines/MapServer",
               "layers": "Dam_Walls_Labels,Dam_Walls,No_Data",
               "name": "Dam Walls",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Dam_Walls.png",
               "info": [
                 {
                   "name": "Licence",
@@ -110,11 +107,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Hydrography_and_Marine/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Hydrography_and_Marine_Lines/MapServer",
               "layers": "Spillways,No_Data",
               "name": "Spillways",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Hydrography_and_Marine_Spillways.png",
               "info": [
                 {
                   "name": "Licence",

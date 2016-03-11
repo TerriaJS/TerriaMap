@@ -4,6 +4,7 @@ Change Log
 ### 2016-03-15
 
 * Changed the query of the South Australian Government CKAN server to include datasets with a format of both `geojson` and `GeoJSON`, greatly increasing the number of datasets found.
+* Updated all Geoscience Australia layers to point to the new infrastructure at http://services.ga.gov.au/gis/rest/services .
 
 ### 2016-02-15
 
