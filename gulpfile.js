@@ -100,7 +100,7 @@ gulp.task('make-validator-schema', function(done) {
 gulp.task('validate', ['merge-datasources', 'make-validator-schema'], function() {
     return validateSchema({
         terriajsdir: 'node_modules/terriajs',
-        _: glob.sync(['datasources/00_National_Data_Sets/*.json', 'wwwroot/init/*.json', '!wwwroot/init/nm.json'])
+        _: glob.sync(['datasources/00_National_Data_Sets/*.json','datasources/*.json', '!datasources/00_National_Data_Sets.json', 'wwwroot/init/*.json', '!wwwroot/init/nm.json'])
     }).then(function(result) {
         if (result && !watching) {
             // We should abort here. But currently we can't resolve the situation where a data source legitimately
