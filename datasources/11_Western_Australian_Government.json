@@ -1,13 +1,11 @@
 {
   "catalog": [
     {
-      "type": "group",
+      "type": "ckan",
       "name": "Western Australian Government",
-      "initialMessage": {
-        "title": "Data unavailable",
-        "content": "Western Australian Goverenment data is currently unavailable due to the retirement of Google Maps Engine in December 2015.",
-        "key": "wa-data-unavailable"
-      }
+      "url": "http://catalogue.beta.data.wa.gov.au/",
+      "groupBy": "organization",
+      "filterQuery": [ "q=data_homepage:*_Public*&fq=res_format:WMS" ]
     }
   ]
 }
