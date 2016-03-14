@@ -10,9 +10,10 @@
                   "type": "html"
                 }
               ],
-              "layers": "0,1,2,3,4",
-              "url": "http://www.ga.gov.au/gis/rest/services/hazards/NEXIS_National_Exposure_Information_System_Population_Density_Exposure/MapServer",
+              "layers": "1,2,3,4,5",
+              "url": "http://services.ga.gov.au/gis/rest/services/NEXIS_Residential_Population_Density/MapServer",
               "type": "esri-mapServer",
+              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/NEXIS_PopDensity_Legend.png",
               "rectangle": [
                 112.93529,
                 -38.20880,
@@ -21,7 +22,7 @@
               ],
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "name": "Population Estimates",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/NEXIS_PopDensity_Legend.png",
+              "featureInfoTemplate": "{{Pixel Value}} people in 100m radius.",
               "info": [
                 {
                   "name": "Licence",
