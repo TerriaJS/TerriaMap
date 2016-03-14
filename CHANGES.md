@@ -9,6 +9,7 @@ Change Log
 * Re-populated Western Australian Government group, now pulling directly from `catalogue.beta.data.wa.gov.au`.
 * Added pages for HTTP 404 (Not Found) and 500 (Internal Server Error).  Previously, we redirected errors back to the main page without an explanation.
 * Added Brisbane City Council group under Data Providers.
+* Added direct download links for several ABS national boundaries.
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 2.2.0.  Significant changes relevant to NationalMap users include:
   * Warn user when the requested WMS layer doesn't exist, and try to provide a suggestion.
   * Fixed the calculation of a CSV file's extent so that missing latitudes and longitudes are ignored, not treated as zero.
