@@ -23,7 +23,7 @@ var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCom
 var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
 
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
-var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
+var TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
@@ -67,7 +67,6 @@ var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform')
 var ViewerMode = require('terriajs/lib/Models/ViewerMode');
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 
-var TerriaViewer = require('terriajs/lib/ReactViews/TerriaViewer');
 var corsProxy = require('terriajs/lib/Core/corsProxy');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 

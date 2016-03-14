@@ -121,17 +121,19 @@ var UserInterface = React.createClass({
         const terriaViewer = this.props.terriaViewer;
         return (
             <div>
-                <header className='workbench'>
-                    <Branding onClick={this.showWelcome}/>
-                    <MobileHeader terria={terria}
+                <div className='header'>
+                <MobileHeader terria={terria}
                                   viewState={this.viewState}
-                    />
+                />
+                <div className='workbench'>
+                    <Branding onClick={this.showWelcome}/>
                     <nav>
                         <SidePanel terria={terria}
                                    viewState={this.viewState}
                         />
                     </nav>
-                </header>
+                </div>
+                </div>
                 <main>
                     <ModalWindow terria={terria}
                                  viewState={this.viewState}
