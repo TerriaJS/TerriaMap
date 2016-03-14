@@ -105,6 +105,11 @@ terria.error.addEventListener(function(e) {
     });
 });
 
+DisclaimerViewModel.create({
+    container: 'ui',
+    terria: terria
+});
+
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
@@ -321,11 +326,6 @@ terria.start({
             settingsPanel,
             featureInfoPanel
         ]
-    });
-
-    DisclaimerViewModel.create({
-        container: ui,
-        terria: terria
     });
 
     MapProgressBarViewModel.create({
