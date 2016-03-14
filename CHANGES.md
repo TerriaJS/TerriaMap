@@ -29,6 +29,23 @@ Change Log
   * Improved readability of ArcGIS catalog items and legends by replacing underscores with spaces.
   * `ArcGisMapServerCatalogItem` metadata is now cached by the proxy for only 24 hours.
   * Improved the feature info panel to update the display of time-varying region-mapped CSV files for the current time.
+  * Fixed sharing of time-varying CZML files; the timeline was not showing on the shared link.
+  * Fixed sharing of user-added time-varying CSV files.
+  * Fixed a bug in `CkanCatalogItem` that made it build URLs incorrectly when given a base URL ending in a slash.
+  * Added column-specific styling to CSV files, using a new `tableStyle.columns` json parameter. This is an object whose keys are column names or indices, and whose values are objects of column-specific tableStyle parameters. See the CSV column-specific group in `wwwroot/test/init/test-tablestyle.json` for an example. [#1097](https://github.com/TerriaJS/terriajs/issues/1097)
+  * Added the following column-specific `tableStyle` parameters:
+    - `name`: renames the column.
+    - `type`: sets the column type; can be one of LON, LAT, ALT, TIME, SCALAR, or ENUM.
+    - `format`: sets the column number format, using the format of the [Javascript Intl options parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString), eg. `{"format": {"useGrouping": true, "maximumFractionDigits": 2}}` to add thousands separators to numbers and show only two decimal places. Only the `useGrouping`, `maximumFractionDigits` and `styling: "percent"` options are guaranteed to work in all browsers.
+  * Added column-specific formatting to the feature info panel for all file types, eg. `"featureInfoTemplate" : {"template": "{{SPEED}} m/s", "formats": {"SPEED": {"maximumFractionDigits": 2}}}`. The formatting options are the same as above.
+  * Changed the default number format in the Feature Info Panel to not separate thousands with commas.
+  * Fixed a bug that caused the content on the feature info panel to be rendered as pure HTML instead of as mixed HTML / Markdown.
+  * Changed the default for `tableStyle.replaceWithZeroValues` to `[]`, ie. nothing.
+  * Changed the default for `tableStyle.replaceWithNullValues` to `["-", "na", "NA"]`.
+  * Changed the default for `tableStyle.nullLabel` to '(No value)'.
+  * Fixed showWarnings in config json not being respected by CSV catalog items.
+  * Fixed hidden region mapped layers being displayed when variable selection changes.
+  * Fixed exporting raw data as CSV not escaping commas in the data itself.
   * Updated to [Cesium](http://cesiumjs.org) 1.18.  Significant changes relevant to TerriaJS users include:
     * Improved terrain performance by up to 35%. Added support for fog near the horizon, which improves performance by rendering less terrain tiles and reduces terrain tile requests. [#3154](https://github.com/AnalyticalGraphicsInc/cesium/pull/3154)
     * Reduced the amount of GPU and CPU memory used by terrain by using compression. The CPU memory was reduced by up to 40%, and approximately another 25% in Chrome.
