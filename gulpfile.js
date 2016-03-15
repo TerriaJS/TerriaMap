@@ -32,6 +32,7 @@ var terriaJSDest = 'wwwroot/build/TerriaJS';
 var testGlob = './test/**/*.js';
 
 var watching = false; // if we're in watch mode, we try to never quit.
+var watchOptions = { poll:1000, interval: 1000 }; // time between watch intervals. OSX hates short intervals. Different versions of Gulp use different options.
 
 // Create the build directory, because browserify flips out if the directory that might
 // contain an existing source map doesn't exist.
@@ -120,21 +121,21 @@ gulp.task('watch-specs', ['prepare'], function() {
 });
 
 gulp.task('watch-css', ['build-css'], function() {
-    return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less', './lib/Styles/*.less'], ['build-css']);
+    return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less', './lib/Styles/*.less'], watchOptions, ['build-css']);
 });
 
 gulp.task('watch-datasource-groups', ['merge-groups'], function() {
-    return gulp.watch('datasources/00_National_Data_Sets/*.json', [ 'merge-groups', 'merge-catalog' ]);
+    return gulp.watch('datasources/00_National_Data_Sets/*.json', watchOptions, [ 'merge-groups', 'merge-catalog' ]);
 });
 
 gulp.task('watch-datasource-catalog', ['merge-catalog'], function() {
-    return gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
+    return gulp.watch('datasources/*.json', watchOptions, [ 'merge-catalog' ]);
 });
 
 gulp.task('watch-datasources', ['watch-datasource-groups','watch-datasource-catalog']);
 
 gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
-    return gulp.watch(terriaJSSource + '/**', [ 'prepare-terriajs' ]);
+    return gulp.watch(terriaJSSource + '/**', watchOptions, [ 'prepare-terriajs' ]);
 });
 
 gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-datasources', 'watch-terriajs']);
@@ -257,7 +258,7 @@ function watch(name, files, minify) {
         debug: true, // generate source map
         cache: {},
         packageCache: {}
-    }), { poll: 1000 } );
+    }), watchOptions );
 
     function rebundle(ids) {
         // Don't rebundle if only the version changed.
