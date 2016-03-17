@@ -56,13 +56,14 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.2.4",
+    "jsx-control-statements": "^3.1.0",
     "kss": "^2.4.0",
     "less": "^2.5.0",
     "less-plugin-npm-import": "^2.0.0",
     "reactify": "^1.1.1",
     "spawn-sync": "^1.0.11",
-    "terriajs-schema": "latest",
     "terriajs-catalog-editor": "^0.1.0",
+    "terriajs-schema": "latest",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
@@ -78,6 +79,9 @@
       [
         "babelify",
         {
+          "plugins": [
+            "jsx-control-statements"
+          ],
           "presets": [
             "es2015",
             "react"

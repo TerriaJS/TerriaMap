@@ -11,6 +11,7 @@ import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import MobileHeader from 'terriajs/lib/ReactViews/MobileHeader.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
+import Timeline from 'terriajs/lib/ReactViews/Timeline.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
@@ -163,11 +164,18 @@ var UserInterface = React.createClass({
                   <LocationBar terria={terria}/>
                   <DistanceLegend terria={terria}/>
                 </div>
-                <ChartPanel terria={terria}
+                <div className='bottom-dock'>
+                    <If condition={this.state.featureInfoPanelIsVisible}>
+                        <ChartPanel terria={terria}
                             isVisible={this.state.featureInfoPanelIsVisible}
                             onClose={this.closeFeatureInfoPanel}
                             isCollapsed ={this.state.featureInfoPanelIsCollapsed}
-                />
+                        />
+                    </If>
+                    <If condition={terria.timeSeriesStack.topLayer}>
+                        <Timeline />
+                    </If>
+                </div>
             </div>);
     }
 });
