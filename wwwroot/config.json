@@ -16,7 +16,7 @@
         "nci.org.au"
     ],
     "initializationUrls" : [
-        "nm"
+        "https://raw.githubusercontent.com/TerriaJS/NationalMap-Catalog/master/build/nm.json"
     ],
     "parameters": {
         "bingMapsKey": null,
