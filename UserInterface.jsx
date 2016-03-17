@@ -154,6 +154,7 @@ var UserInterface = React.createClass({
                 </div>
                 <ProgressBar terria={terria} />
                 <FeatureInfoPanel terria={terria}
+                                  viewState={this.viewState}
                                   isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed ={this.state.featureInfoPanelIsCollapsed}
@@ -164,6 +165,7 @@ var UserInterface = React.createClass({
                   <DistanceLegend terria={terria}/>
                 </div>
                 <ChartPanel terria={terria}
+                            viewState={this.viewState}
                             isVisible={this.state.featureInfoPanelIsVisible}
                             onClose={this.closeFeatureInfoPanel}
                             isCollapsed ={this.state.featureInfoPanelIsCollapsed}
