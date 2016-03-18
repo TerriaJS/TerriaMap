@@ -95,7 +95,7 @@ var terria = new Terria(terriaOptions);
 registerCustomComponentTypes(terria);
 
 // This is temporary
-var welcome = '<h3> Welcome to AREMI </h3> <p> AREMI is a website for map-based access to Australian spatial data relevant to the Renewable Energy industry - with a focus on Developers, Financiers, and Policy Makers. It is funded by the <a href="#">Australian Renewable Energy Agency</a> and developed by NICTA in partnership with the <a href="#">Clean Energy Council</a> with hosting being provided by <a href="#">Geoscience Australia</a>.</p><div class="getting-started"> <h4> Getting Started</h4> <div class="row"> <div class="col col-6 getting-started--alpha"><figure><img src="./images/solar.png"><figcaption>Solar</figcaption></figure></div> <div class="col col-6 getting-started--beta"><figure><img src="./images/wind.png"><figcaption>Wind</figcaption></figure></div></div>';
+var welcome = 'welcome text';
 
 terria.welcome = function welcomeText() { return {__html: welcome}; };
 
