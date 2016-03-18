@@ -11,7 +11,7 @@ import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import MobileHeader from 'terriajs/lib/ReactViews/MobileHeader.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
-import Timeline from 'terriajs/lib/ReactViews/Timeline.jsx';
+import Timeline from 'terriajs/lib/ReactViews/Timeline/Timeline.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
@@ -173,7 +173,7 @@ var UserInterface = React.createClass({
                         />
                     </If>
                     <If condition={terria.timeSeriesStack.topLayer}>
-                        <Timeline />
+                        <Timeline terria={terria} />
                     </If>
                 </div>
             </div>);
