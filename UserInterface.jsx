@@ -8,7 +8,7 @@ import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
 import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import LocationBar from 'terriajs/lib/ReactViews/LocationBar.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
-import MobileHeader from 'terriajs/lib/ReactViews/MobileHeader.jsx';
+import MobileHeader from 'terriajs/lib/ReactViews/Mobile/MobileHeader.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
