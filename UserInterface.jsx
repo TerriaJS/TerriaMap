@@ -4,7 +4,7 @@ import arrayContains from 'terriajs/lib/Core/arrayContains';
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
 import ChartPanel from 'terriajs/lib/ReactViews/Chart/ChartPanel.jsx';
 import DistanceLegend from 'terriajs/lib/ReactViews/DistanceLegend.jsx';
-import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
+import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfo/FeatureInfoPanel.jsx';
 import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import LocationBar from 'terriajs/lib/ReactViews/LocationBar.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
