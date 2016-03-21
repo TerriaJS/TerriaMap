@@ -16,26 +16,28 @@
 @import "partial/leaflet";
 // component styles
 @import "partial/branding";
-@import "partial/chart";
-@import "partial/compass_zoom";
-@import "partial/data_catalog";
 @import "partial/drop_zone";
-@import "partial/feature_info_panel";
-@import "partial/loader";
-@import "partial/location_bar";
+
 @import "partial/map_navigation";
 @import "partial/misc";
 @import "partial/modal_window";
 @import "partial/my_data";
-@import "partial/notification";
-@import "partial/now_viewing";
-@import "partial/preview_panel";
-@import "partial/search";
-@import "partial/settingPanel";
 @import "partial/work_bench";
-@import "partial/progressBar";
-//mobile only styles
-@import "partial/mobile_only";
+
+@import "component/loader";
+@import "component/location_bar";
+@import "component/notification";
+@import "component/compass_zoom";
+@import "component/settingPanel";
+@import "component/progressBar";
+@import "component/chart";
+@import "component/data_catalog";
+@import "component/feature_info";
+@import "component/now_viewing";
+@import "component/preview";
+@import "component/search";
+@import "component/mobile";
+
 
 $offset: 10px;
 //welcome text
