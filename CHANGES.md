@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+### 2016-04-15
+* Split catalog into a separate module. The catalog is now managed through github.com/TerriaJS/NationalMap-Catalog.
+* Split client-side configuration (config.json) from server-side (devserverconfig.json). Using Terria-Server 2.0.0 enables
+  the catalog separation described above.
+
 ### 2016-03-15
 
 * Updated "Population Estimates" layer to point to new GA location.
