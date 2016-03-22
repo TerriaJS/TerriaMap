@@ -34,11 +34,12 @@
 @import "partial/settingPanel";
 @import "partial/work_bench";
 @import "partial/progressBar";
+@import "partial/bottom_dock";
 @import "partial/timeline";
+
 //mobile only styles
 @import "partial/mobile_only";
 
-@import "partial/cesium-timeline";
 
 $offset: 10px;
 //welcome text
