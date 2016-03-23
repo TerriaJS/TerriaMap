@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+### 2016-04-16
+* Added missing CED2 regionmap id file.
+
 ### 2016-03-15
 
 * Updated "Population Estimates" layer to point to new GA location.
