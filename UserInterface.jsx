@@ -2,21 +2,18 @@
 
 import arrayContains from 'terriajs/lib/Core/arrayContains';
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
-import ChartPanel from 'terriajs/lib/ReactViews/ChartPanel.jsx';
-import DistanceLegend from 'terriajs/lib/ReactViews/DistanceLegend.jsx';
 import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
 import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
-import LocationBar from 'terriajs/lib/ReactViews/LocationBar.jsx';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import MobileHeader from 'terriajs/lib/ReactViews/MobileHeader.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
-import Timeline from 'terriajs/lib/ReactViews/Timeline/Timeline.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 import ProgressBar from 'terriajs/lib/ReactViews/ProgressBar.jsx';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState.js';
+import BottomDock from '../terriajs/lib/ReactViews/BottomDock/BottomDock.jsx';
 
 var UserInterface = React.createClass({
     propTypes: {
@@ -63,7 +60,7 @@ var UserInterface = React.createClass({
             });
         }, this);
 
-        const  that = this;
+        const that = this;
         // TO DO(chloe): change window into a container
         window.addEventListener('dragover', e => {
             if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
@@ -120,20 +117,21 @@ var UserInterface = React.createClass({
         const terria = this.props.terria;
         const allBaseMaps = this.props.allBaseMaps;
         const terriaViewer = this.props.terriaViewer;
+
         return (
             <div>
                 <div className='header'>
-                <MobileHeader terria={terria}
+                    <MobileHeader terria={terria}
                                   viewState={this.viewState}
-                />
-                <div className='workbench'>
-                    <Branding onClick={this.showWelcome}/>
-                    <nav>
-                        <SidePanel terria={terria}
-                                   viewState={this.viewState}
-                        />
-                    </nav>
-                </div>
+                    />
+                    <div className='workbench'>
+                        <Branding onClick={this.showWelcome}/>
+                        <nav>
+                            <SidePanel terria={terria}
+                                       viewState={this.viewState}
+                            />
+                        </nav>
+                    </div>
                 </div>
                 <main>
                     <ModalWindow terria={terria}
@@ -153,29 +151,14 @@ var UserInterface = React.createClass({
                                   onDismiss={this.closeNotification}
                     />
                 </div>
-                <ProgressBar terria={terria} />
+                <ProgressBar terria={terria}/>
                 <FeatureInfoPanel terria={terria}
                                   isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
-                                  isCollapsed ={this.state.featureInfoPanelIsCollapsed}
+                                  isCollapsed={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
-                <div className='location-distance'>
-                  <LocationBar terria={terria}/>
-                  <DistanceLegend terria={terria}/>
-                </div>
-                <div className='bottom-dock'>
-                    <If condition={this.state.featureInfoPanelIsVisible}>
-                        <ChartPanel terria={terria}
-                            isVisible={this.state.featureInfoPanelIsVisible}
-                            onClose={this.closeFeatureInfoPanel}
-                            isCollapsed ={this.state.featureInfoPanelIsCollapsed}
-                        />
-                    </If>
-                    <If condition={terria.timeSeriesStack.topLayer}>
-                        <Timeline terria={terria} />
-                    </If>
-                </div>
+                <BottomDock terria={terria} topLayer={terria.timeSeriesStack.topLayer} />
             </div>);
     }
 });
