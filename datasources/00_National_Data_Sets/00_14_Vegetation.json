@@ -5,11 +5,10 @@
         {
           "items": [
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Vegetation/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Cultivated_and_Native_Vegetation/MapServer",
               "layers": "Cultivated_Areas,No_Data",
               "name": "Cultivated Areas",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Vegetation_Cultivated_Areas.png",
               "info": [
                 {
                   "name": "Licence",
@@ -18,11 +17,10 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Vegetation/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Cultivated_and_Native_Vegetation/MapServer",
               "layers": "Native_Vegetation_2Mill_to_70K_Scale,Native_Vegetation_60Mill_to_2Mill_Scale,No_Data",
               "name": "Native Vegetation",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Vegetation_Native_Vegetation.png",
               "info": [
                 {
                   "name": "Licence",

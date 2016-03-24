@@ -2,10 +2,10 @@
 
 import arrayContains from 'terriajs/lib/Core/arrayContains';
 import Branding from 'terriajs/lib/ReactViews/Branding.jsx';
-import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfoPanel.jsx';
+import FeatureInfoPanel from 'terriajs/lib/ReactViews/FeatureInfo/FeatureInfoPanel.jsx';
 import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
-import MobileHeader from 'terriajs/lib/ReactViews/MobileHeader.jsx';
+import MobileHeader from 'terriajs/lib/ReactViews/Mobile/MobileHeader.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
 import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
@@ -121,17 +121,20 @@ var UserInterface = React.createClass({
         return (
             <div>
                 <div className='header'>
-                    <MobileHeader terria={terria}
-                                  viewState={this.viewState}
+
+                <MobileHeader terria={terria}
+                              viewState={this.viewState}
+                />
+                <div className='workbench'>
+                    <Branding onClick={this.showWelcome}
+                              terria={terria}
                     />
-                    <div className='workbench'>
-                        <Branding onClick={this.showWelcome}/>
-                        <nav>
-                            <SidePanel terria={terria}
-                                       viewState={this.viewState}
-                            />
-                        </nav>
-                    </div>
+                    <nav>
+                        <SidePanel terria={terria}
+                                   viewState={this.viewState}
+                        />
+                    </nav>
+                </div>
                 </div>
                 <main>
                     <ModalWindow terria={terria}
@@ -153,6 +156,7 @@ var UserInterface = React.createClass({
                 </div>
                 <ProgressBar terria={terria}/>
                 <FeatureInfoPanel terria={terria}
+                                  viewState={this.viewState}
                                   isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}

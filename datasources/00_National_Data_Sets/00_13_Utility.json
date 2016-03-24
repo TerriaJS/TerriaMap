@@ -5,11 +5,11 @@
         {
           "items": [
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Oil_and_Gas_Pipelines,No_Data",
               "name": "Oil and Gas Pipelines",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Oil_and_Gas_Pipelines.png",
+
               "info": [
                 {
                   "name": "Licence",
@@ -18,11 +18,11 @@
               ]
             },
             {
-              "url": "http://www.ga.gov.au/gis/rest/services/topography/Dynamic_National_Map_Culture_and_Infrastructure/MapServer",
+              "url": "http://services.ga.gov.au/gis/rest/services/NM_Culture_and_Infrastructure/MapServer",
               "layers": "Powerlines,No_Data",
               "name": "Powerlines",
               "type": "esri-mapServer",
-              "legendUrl": "http://www.ga.gov.au/gis/server/capabilities/Dynamic_National_Map_Culture_and_Infrastructure_Powerlines.png",
+
               "info": [
                 {
                   "name": "Licence",
