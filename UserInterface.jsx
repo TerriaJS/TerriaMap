@@ -13,7 +13,7 @@ import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 import ProgressBar from 'terriajs/lib/ReactViews/ProgressBar.jsx';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState.js';
-import BottomDock from '../terriajs/lib/ReactViews/BottomDock/BottomDock.jsx';
+import BottomDock from 'terriajs/lib/ReactViews/BottomDock/BottomDock.jsx';
 
 var UserInterface = React.createClass({
     propTypes: {
@@ -158,7 +158,7 @@ var UserInterface = React.createClass({
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
-                <BottomDock terria={terria} topLayer={terria.timeSeriesStack.topLayer} />
+                <BottomDock terria={terria} />
             </div>);
     }
 });

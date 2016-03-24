@@ -89,14 +89,6 @@
         }
       ],
       "brfs"
-    ],
-    "plugin": [
-      [
-        "browserify-resolutions",
-        [
-          "*"
-        ]
-      ]
     ]
   }
 }
