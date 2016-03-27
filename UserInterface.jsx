@@ -129,11 +129,9 @@ var UserInterface = React.createClass({
                     <Branding onClick={this.showWelcome}
                               terria={terria}
                     />
-                    <nav>
-                        <SidePanel terria={terria}
-                                   viewState={this.viewState}
-                        />
-                    </nav>
+                    <SidePanel terria={terria}
+                               viewState={this.viewState}
+                    />
                 </div>
                 </div>
                 <main>
