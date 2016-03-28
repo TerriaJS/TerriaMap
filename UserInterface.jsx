@@ -7,34 +7,26 @@ import knockout from 'terriajs-cesium/Source/ThirdParty/knockout';
 import MapNavigation from 'terriajs/lib/ReactViews/MapNavigation.jsx';
 import MobileHeader from 'terriajs/lib/ReactViews/Mobile/MobileHeader.jsx';
 import ModalWindow from 'terriajs/lib/ReactViews/ModalWindow.jsx';
-import Notification from 'terriajs/lib/ReactViews/Notification.jsx';
+import Notification from 'terriajs/lib/ReactViews/Notification/Notification.jsx';
+import MapInteractionWindow from 'terriajs/lib/ReactViews/Notification/MapInteractionWindow.jsx';
 import ObserveModelMixin from 'terriajs/lib/ReactViews/ObserveModelMixin';
 import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 import ProgressBar from 'terriajs/lib/ReactViews/ProgressBar.jsx';
-import ViewState from 'terriajs/lib/ReactViewModels/ViewState.js';
 import BottomDock from 'terriajs/lib/ReactViews/BottomDock/BottomDock.jsx';
 
 var UserInterface = React.createClass({
     propTypes: {
         terria: React.PropTypes.object,
         allBaseMaps: React.PropTypes.array,
-        terriaViewer: React.PropTypes.object
+        terriaViewer: React.PropTypes.object,
+        viewState: React.PropTypes.object,
     },
 
     mixins: [ObserveModelMixin],
 
     getInitialState() {
         return {
-            // True if the notification popup is visible
-            notificationIsVisible: false,
-
-            // The title of the notification popup.
-            notificationTitle: undefined,
-
-            // The body of the notification popup.
-            notificationBody: undefined,
-
             // True if the feature info panel is visible.
             featureInfoPanelIsVisible: false,
 
@@ -44,15 +36,6 @@ var UserInterface = React.createClass({
     },
 
     componentWillMount() {
-        this.viewState = new ViewState();
-
-        this.props.terria.error.addEventListener(e => {
-            this.setState({
-                notificationIsVisible: true,
-                notificationTitle: e.title,
-                notificationBody: e.message
-            });
-        });
         knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(() => {
             this.setState({
                 featureInfoPanelIsVisible: true,
@@ -77,9 +60,7 @@ var UserInterface = React.createClass({
      * Closes the current notification.
      */
     closeNotification() {
-        this.setState({
-            notificationIsVisible: false
-        });
+        this.props.viewState.notifications.splice(0, 1);
     },
 
     /**
@@ -96,7 +77,7 @@ var UserInterface = React.createClass({
      * @return {[type]} [description]
      */
     showWelcome() {
-        this.viewState.openWelcome();
+        this.props.viewState.openWelcome();
     },
 
     /**
@@ -109,8 +90,8 @@ var UserInterface = React.createClass({
     },
 
     acceptDragDropFile(){
-        this.viewState.openUserData();
-        this.viewState.isDraggingDroppingFile = true;
+        this.props.viewState.openUserData();
+        this.props.viewState.isDraggingDroppingFile = true;
     },
 
     render(){
@@ -123,20 +104,20 @@ var UserInterface = React.createClass({
                 <div className='header'>
 
                 <MobileHeader terria={terria}
-                              viewState={this.viewState}
+                              viewState={this.props.viewState}
                 />
                 <div className='workbench'>
                     <Branding onClick={this.showWelcome}
                               terria={terria}
                     />
                     <SidePanel terria={terria}
-                               viewState={this.viewState}
+                               viewState={this.props.viewState}
                     />
                 </div>
                 </div>
                 <main>
                     <ModalWindow terria={terria}
-                                 viewState={this.viewState}
+                                 viewState={this.props.viewState}
                     />
                 </main>
                 <div id="map-nav">
@@ -146,15 +127,14 @@ var UserInterface = React.createClass({
                     />
                 </div>
                 <div id='notification'>
-                    <Notification isVisible={this.state.notificationIsVisible}
-                                  title={this.state.notificationTitle}
-                                  body={this.state.notificationBody}
+                    <Notification notification={this.props.viewState.getNextNotification()}
                                   onDismiss={this.closeNotification}
                     />
+                    <MapInteractionWindow terria ={terria}/>
                 </div>
                 <ProgressBar terria={terria}/>
                 <FeatureInfoPanel terria={terria}
-                                  viewState={this.viewState}
+                                  viewState={this.props.viewState}
                                   isVisible={this.state.featureInfoPanelIsVisible}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}
