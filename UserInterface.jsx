@@ -140,7 +140,7 @@ var UserInterface = React.createClass({
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
-                <BottomDock terria={terria} />
+                <BottomDock terria={terria} viewState={this.props.viewState}/>
             </div>);
     }
 });
