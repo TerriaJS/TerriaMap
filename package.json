@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "terriajs": "2.2.1",
-    "terriajs-server": "^1.4.0",
+    "terriajs-server": "^1.4.1",
     "terriajs-cesium": "1.18.1"
   },
   "devDependencies": {

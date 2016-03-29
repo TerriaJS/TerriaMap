@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-03-29
+
+* Use terriajs-server 1.4.1 to fix a bug that caused all headers - even the ones meant to be excluded - to be passed to the remote server by the proxy service.  This broke the Western Australian Government datasets in the Geoscience Australia deployment architecture.
+
 ### 2016-03-15
 
 * Updated "Population Estimates" layer to point to new GA location.
