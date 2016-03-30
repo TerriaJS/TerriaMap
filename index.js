@@ -67,10 +67,7 @@ var terria = new Terria(terriaOptions);
 // insert your custom version of the code in the registerCustomComponentTypes function here instead.
 registerCustomComponentTypes(terria);
 
-// This is temporary
-var welcome = 'welcome text';
-
-terria.welcome = function welcomeText() { return {__html: welcome}; };
+terria.welcome = 'welcome text';
 
 const viewState = new ViewState();
 
