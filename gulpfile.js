@@ -262,7 +262,7 @@ function build(name, files, minify) {
         entries: files,
         debug: true, // generate source map
         extensions: ['.es6', '.jsx']
-    }).plugin('browserify-resolutions', '*'), minify, false);
+    }).plugin('browserify-resolutions', ['react', 'knockout']), minify, false);
 }
 
 function watch(name, files, minify) {
@@ -273,7 +273,7 @@ function watch(name, files, minify) {
         cache: {},
         extensions: ['.es6', '.jsx'],
         packageCache: {}
-    }).plugin('browserify-resolutions', '*'), { poll: 1000 } );
+    }).plugin('browserify-resolutions', ['react', 'knockout']), minify, false);
 
     function rebundle(ids) {
         // Don't rebundle if only the version changed.
