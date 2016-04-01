@@ -16,6 +16,7 @@
         "nci.org.au"
     ],
     "initializationUrls" : [
+        "terria",
         "test"
     ],
     "parameters": {
