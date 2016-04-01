@@ -16,17 +16,28 @@
         "nci.org.au"
     ],
     "initializationUrls" : [
-        "nm"
+        "test"
     ],
     "parameters": {
-        "bingMapsKey": null,
+        "bingMapsKey": "Aok1Vp7sWAFX5ZuyIirPJjaY8Fq-niP8TvuJREpLflYiq5Y2GXSdW_SE4xgOgQJ9",
         "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
         "googleAnalyticsOptions": null,
         "disclaimer": {
-            "text": "Disclaimer: The Terria Map must not be used for navigation or precise spatial analysis",
+            "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
             "url": ""
-        }
+        },
+        "developerAttribution-CHANGEHTIS": {
+            "text": "Your organisation",
+            "link": "http://www.example.com"
+        },
+        "appName": "Terria Map",
+        "supportEmail-CHANGETHIS": "help@example.com",
+        "brandBarElements": [
+            "",
+            "<a target=\"_blank\" href=\"http://www.nicta.com.au\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+            ""
+        ]
     }
 }
 

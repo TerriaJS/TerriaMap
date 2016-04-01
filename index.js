@@ -23,10 +23,7 @@
 var version = require('./version');
 
 var terriaOptions = {
-    appName: 'NationalMap',
-    supportEmail: 'data@pmc.gov.au',
-    baseUrl: 'build/TerriaJS',
-    cesiumBaseUrl: undefined // use default
+    baseUrl: 'build/TerriaJS'
 };
 var configuration = {
     bingMapsKey: undefined // use Cesium key
@@ -79,6 +76,7 @@ var Terria = require('terriajs/lib/Models/Terria');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
+var defaultValue = require('terriajs-cesium/Source/Core/defaultValue');
 
 var svgPlus = require('terriajs/lib/SvgPaths/svgPlus');
 var svgShare = require('terriajs/lib/SvgPaths/svgShare');
@@ -86,9 +84,6 @@ var svgWorld = require('terriajs/lib/SvgPaths/svgWorld');
 
 // Register custom Knockout.js bindings.  If you're not using the TerriaJS user interface, you can remove this.
 registerKnockoutBindings();
-
-// Disable HTML sanitization.  TODO: remove this
-KnockoutMarkdownBinding.allowUnsafeHtml = true;
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -126,12 +121,7 @@ terria.start({
     updateApplicationOnMessageFromParentWindow(terria, window);
 
     // Create the map/globe.
-    TerriaViewer.create(terria, {
-        developerAttribution: {
-            text: 'NICTA',
-            link: 'http://www.nicta.com.au'
-        }
-    });
+    TerriaViewer.create(terria, { developerAttribution: terria.configParameters.developerAttribution });
 
     // We'll put the entire user interface into a DOM element called 'ui'.
     var ui = document.getElementById('ui');
@@ -151,14 +141,17 @@ terria.start({
         baseMaps: allBaseMaps
     });
 
+    var brandBarElements = defaultValue(terria.configParameters.brandBarElements, [
+            '',
+            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" title="Version: {{ version }}" /></a>',
+            ''
+        ]);
+    brandBarElements = brandBarElements.map(function(s) { return s.replace(/\{\{\s*version\s*\}\}/, version);});
+
     // Create the brand bar.
     BrandBarViewModel.create({
         container: ui,
-        elements: [
-            '',
-            '<a target="_blank" href="http://www.nicta.com.au"><img src="images/terria_logo.png" height="52" title="Version: ' + version + '" /></a>',
-            ''
-        ]
+        elements: brandBarElements
     });
 
     // Create the menu bar.
