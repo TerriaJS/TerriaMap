@@ -4,7 +4,7 @@
 var UserInterface = require('./UserInterface.jsx');
 var React = require('react');
 var ReactDOM = require('react-dom');
-
+// require('babel-polyfill');
 
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
