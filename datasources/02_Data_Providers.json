@@ -29,6 +29,16 @@
           "url": "https://data.melbourne.vic.gov.au"
         },
         {
+          "type": "ckan",
+          "name": "Brisbane City Council",
+          "url": "https://www.data.brisbane.qld.gov.au/data",
+          "filterQuery": ["q=groups%3Dspatial-data"],
+          "csvResourceFormat": "csv",
+          "includeCsv": true,
+          "includeKml": true,
+          "includeGeoJson": true
+        },
+        {
           "type": "esri-mapServer-group",
           "name": "Sunshine Coast Council (QLD)",
           "url": "https://gisservices.scc.qld.gov.au/arcgis/rest/services"
