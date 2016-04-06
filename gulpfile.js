@@ -11,14 +11,14 @@ gulp.task('watch', ['watch-css', 'watch-datasources', 'watch-terriajs-assets', '
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 gulp.task('default', ['lint', 'build']);
 
-gulp.task('build-app', function(done) {
+gulp.task('build-app', ['write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
     runWebpack(webpackConfig, done);
 });
 
-gulp.task('release-app', function(done) {
+gulp.task('release-app', ['write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js');
@@ -34,9 +34,11 @@ gulp.task('release-app', function(done) {
 });
 
 gulp.task('watch-app', function(done) {
+    var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
+    fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpackConfig, done);
 });
 
@@ -182,6 +184,20 @@ gulp.task('merge-catalog', ['merge-groups'], function() {
             return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
         }))
         .pipe(gulp.dest("./wwwroot/init"));
+});
+
+gulp.task('write-version', function() {
+    var fs = require('fs');
+    var spawnSync = require('child_process').spawnSync;
+
+    // Get a version string from "git describe".
+    var version = spawnSync('git', ['describe']).stdout.toString().trim();
+    var isClean = spawnSync('git', ['status', '--porcelain']).stdout.toString().length === 0;
+    if (!isClean) {
+        version += ' (plus local modifications)';
+    }
+
+    fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
 });
 
 function onError(e) {
