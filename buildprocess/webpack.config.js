@@ -15,13 +15,13 @@ var config = {
     module: {
         loaders: [
             {
-                test: path.resolve(__dirname, 'lib', 'Views'),
+                test: path.resolve(__dirname, '..', 'lib', 'Views'),
                 loader: require.resolve('raw-loader')
             }
         ]
     }
 };
 
-configureWebpackForTerriaJS(require.resolve('terriajs/package.json'), config);
+configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config);
 
 module.exports = config;
