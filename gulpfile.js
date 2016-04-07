@@ -1,6 +1,8 @@
 'use strict';
 
 /*global require*/
+// Every module required-in here must be a `dependency` in package.json, not just a `devDependency`,
+// This matters if ever we have gulp tasks run from npm, especially post-install ones.
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var path = require('path');
