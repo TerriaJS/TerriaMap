@@ -1,5 +1,5 @@
 {
-    "proxyDomains" : [
+    "allowProxyFor" : [
         "nicta.com.au",
         "gov.au",
         "csiro.au",
