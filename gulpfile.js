@@ -9,7 +9,7 @@ var path = require('path');
 
 gulp.task('build', ['sass', 'build-css', 'merge-datasources', 'copy-terriajs-assets', 'build-app']);
 gulp.task('release', ['sass', 'build-css', 'merge-datasources', 'copy-terriajs-assets', 'release-app', 'make-editor-schema', 'validate']);
-gulp.task('watch', ['watch-css', 'watch-datasources', 'watch-terriajs-assets', 'watch-app']);
+gulp.task('watch', ['sass-watch', 'watch-datasources', 'watch-terriajs-assets', 'watch-app']);
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 gulp.task('default', ['lint', 'build']);
 

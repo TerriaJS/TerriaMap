@@ -19,6 +19,7 @@
     "gulp-jsoncombine": "^1.0.3",
     "gulp-less": "^3.0.5",
     "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "jsx-control-statements": "git://github.com/RacingTadpole/jsx-control-statements#37_multiwhen",
