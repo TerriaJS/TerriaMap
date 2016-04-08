@@ -13,6 +13,10 @@ gulp.task('watch', ['watch-css', 'watch-datasources', 'watch-terriajs-assets', '
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 gulp.task('default', ['lint', 'build']);
 
+var watchOptions = {
+    interval: 1000
+};
+
 gulp.task('build-app', ['write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpackConfig = require('./buildprocess/webpack.config.js');
@@ -63,7 +67,7 @@ gulp.task('build-css', function() {
 gulp.task('watch-css', ['build-css'], function() {
     var terriaStylesGlob = path.join(getPackageRoot('terriajs'), 'lib', 'Styles', '**', '*.less');
     var appStylesGlob = path.join(__dirname, 'lib', 'Styles', '**', '*.less');
-    return gulp.watch(['./index.less', terriaStylesGlob, appStylesGlob], ['build-css']);
+    return gulp.watch(['./index.less', terriaStylesGlob, appStylesGlob], watchOptions, ['build-css']);
 });
 
 gulp.task('copy-terriajs-assets', function() {
@@ -80,7 +84,7 @@ gulp.task('watch-terriajs-assets', ['copy-terriajs-assets'], function() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
     var sourceGlob = path.join(terriaWebRoot, '**');
 
-    return gulp.watch(sourceGlob, [ 'copy-terriajs-assets' ]);
+    return gulp.watch(sourceGlob, watchOptions, [ 'copy-terriajs-assets' ]);
 });
 
 // Generate new schema for editor, and copy it over whatever version came with editor.
@@ -131,11 +135,11 @@ gulp.task('validate', ['merge-datasources', 'make-validator-schema'], function()
 });
 
 gulp.task('watch-datasource-groups', ['merge-groups'], function() {
-    return gulp.watch('datasources/00_National_Data_Sets/*.json', [ 'merge-groups', 'merge-catalog' ]);
+    return gulp.watch('datasources/00_National_Data_Sets/*.json', watchOptions, [ 'merge-groups', 'merge-catalog' ]);
 });
 
 gulp.task('watch-datasource-catalog', ['merge-catalog'], function() {
-    return gulp.watch('datasources/*.json', [ 'merge-catalog' ]);
+    return gulp.watch('datasources/*.json', watchOptions, [ 'merge-catalog' ]);
 });
 
 gulp.task('watch-datasources', ['watch-datasource-groups','watch-datasource-catalog']);
