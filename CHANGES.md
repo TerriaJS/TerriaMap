@@ -5,6 +5,13 @@ Change Log
 * Split catalog into a separate module. The catalog is now managed through github.com/TerriaJS/NationalMap-Catalog.
 * Split client-side configuration (config.json) from server-side (devserverconfig.json). Using Terria-Server 2.0.0 enables
   the catalog separation described above.
+### 2016-04-16
+
+* Added missing CED2 regionmap id file.
+
+### 2016-03-29
+
+* Use terriajs-server 1.4.1 to fix a bug that caused all headers - even the ones meant to be excluded - to be passed to the remote server by the proxy service.  This broke the Western Australian Government datasets in the Geoscience Australia deployment architecture.
 
 ### 2016-03-15
 
