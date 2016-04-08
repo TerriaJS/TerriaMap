@@ -62,6 +62,7 @@ makeJSON "region_map:FID_LGA_2011_AUST" STE_NAME11 '"' # disambiguation column
 makeJSON "region_map:FID_SSC_2011_AUST" SSC_CODE
 makeJSON "region_map:FID_SSC_2011_AUST" SSC_NAME '"'
 makeJSON "region_map:FID_POA_2011_AUST" POA_CODE '"' # leading zeroes
+makeJSON "region_map:FID_COM20111216_ELB_region" ELECT_DIV '"'
 makeJSON "region_map:FID_CED_2011_AUST" CED_CODE
 makeJSON "region_map:FID_CED_2011_AUST" CED_NAME '"'
 makeJSON "region_map:FID_CED_2013_AUST" CED_CODE13

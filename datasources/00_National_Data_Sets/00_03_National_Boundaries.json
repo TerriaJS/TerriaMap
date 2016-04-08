@@ -22,7 +22,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_ste_2011_aust_shape.zip&1270.0.55.001&Data%20Cubes&1D26EC44E6ABD911CA257801000D8779&0&July%202011&23.12.2010&Latest"
             },
             {
               "layers": "admin_bnds:LGA_2011_AUST",
@@ -42,7 +44,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_lga_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&4A320EE17A293459CA257937000CC967&0&July%202011&31.10.2011&Previous"
             },
             {
               "layers": "admin_bnds:POA_2011_AUST",
@@ -62,7 +66,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_poa_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&71B4572D909B934ECA2578D40012FE0D&0&July%202011&22.07.2011&Previous"
             },
             {
               "layers": "admin_bnds:COM20111216_ELB_region",
@@ -104,7 +110,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_sed_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&1F692001AC7E460DCA2578D40013567C&0&July%202011&22.07.2011&Previous"
             },
             {
               "layers": "admin_bnds:SSC_2011_AUST",
@@ -124,7 +132,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_ssc_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&D68DFFC14D31F4E1CA2578D40013268D&0&July%202011&22.07.2011&Previous"
             },
             {
               "layers": "admin_bnds:ADD_2011_AUST",
@@ -144,7 +154,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_add_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&582C067EAE26C41ACA2578D4001375F4&0&July%202011&22.07.2011&Previous"
             },
             {
               "layers": "admin_bnds:NRMR_2011_AUST",
@@ -164,7 +176,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_nrmr_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&6F23BC29F5CA27F8CA2578D40013679F&0&July%202011&22.07.2011&Previous"
             },
             {
               "layers": "admin_bnds:TR_2011_AUST",
@@ -184,7 +198,9 @@
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)](http://creativecommons.org/licenses/by/2.5/au/)"
                 }
-              ]
+              ],
+              "dataUrlType": "direct",
+              "dataUrl": "http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_tr_2011_aust_shape.zip&1270.0.55.003&Data%20Cubes&7140033784CE5EAFCA2578D4001383F7&0&July%202011&22.07.2011&Previous"
             }
           ],
           "type": "group",
