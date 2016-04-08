@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-- '0.10'
+- '5'
 script:
-- npm run submodules
 - gulp lint release
 #deploy:
 #  provider: s3
