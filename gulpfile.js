@@ -7,9 +7,9 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var path = require('path');
 
-gulp.task('build', ['sass', 'build-css', 'merge-datasources', 'copy-terriajs-assets', 'build-app']);
-gulp.task('release', ['sass', 'build-css', 'merge-datasources', 'copy-terriajs-assets', 'release-app', 'make-editor-schema', 'validate']);
-gulp.task('watch', ['sass-watch', 'watch-datasources', 'watch-terriajs-assets', 'watch-app']);
+gulp.task('build', ['sass', 'merge-datasources', 'copy-terriajs-assets', 'build-app']);
+gulp.task('release', ['sass', 'merge-datasources', 'copy-terriajs-assets', 'release-app', 'make-editor-schema', 'validate']);
+gulp.task('watch', ['watch-sass', 'watch-datasources', 'watch-terriajs-assets', 'watch-app']);
 gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 gulp.task('default', ['lint', 'build']);
 
@@ -46,28 +46,6 @@ gulp.task('watch-app', function(done) {
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpackConfig, done);
-});
-
-gulp.task('build-css', function() {
-    var less = require('gulp-less');
-    var NpmImportPlugin = require('less-plugin-npm-import');
-    var rename = require('gulp-rename');
-
-    return gulp.src('./index.less')
-        .on('error', onError)
-        .pipe(less({
-            plugins: [
-                new NpmImportPlugin()
-            ]
-        }))
-        .pipe(rename('nationalmap.css'))
-        .pipe(gulp.dest('./wwwroot/build/'));
-});
-
-gulp.task('watch-css', ['build-css'], function() {
-    var terriaStylesGlob = path.join(getPackageRoot('terriajs'), 'lib', 'Styles', '**', '*.less');
-    var appStylesGlob = path.join(__dirname, 'lib', 'Styles', '**', '*.less');
-    return gulp.watch(['./index.less', terriaStylesGlob, appStylesGlob], watchOptions, ['build-css']);
 });
 
 gulp.task('copy-terriajs-assets', function() {
@@ -249,7 +227,7 @@ gulp.task('sass', function(){
 });
 
 //watch sass compile and update doc
-gulp.task('sass-watch', ['sass'], function(){
+gulp.task('watch-sass', ['sass'], function(){
   return gulp.watch(['./node_modules/terriajs/lib/Sass/**', 'nationalmap.scss'], ['sass']);
 });
 
