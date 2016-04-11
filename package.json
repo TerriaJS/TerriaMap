@@ -16,6 +16,7 @@
     "babel-preset-react": "^6.5.0",
     "eslint": "^2.7.0",
     "generate-terriajs-schema": "^1.2.1",
+    "glob-all": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-jsoncombine": "^1.0.3",
     "gulp-less": "^3.0.5",
