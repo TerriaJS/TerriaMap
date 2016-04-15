@@ -3,6 +3,7 @@ Change Log
 
 ### 2016-04-15
 
+* Updated the URLs for the Water Observations from Space datasets to `geoserver.nci.org.au`.
 * Split catalog into a separate module. The catalog is now managed through github.com/TerriaJS/NationalMap-Catalog.
 * Split client-side configuration (config.json) from server-side (devserverconfig.json). Using Terria-Server 2.0.0 enables
   the catalog separation described above.
