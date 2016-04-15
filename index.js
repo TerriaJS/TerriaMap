@@ -71,6 +71,7 @@ var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel')
 var MapProgressBarViewModel = require('terriajs/lib/ViewModels/MapProgressBarViewModel');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
+var DisclaimerViewModel = require('terriajs/lib/ViewModels/DisclaimerViewModel');
 
 var Terria = require('terriajs/lib/Models/Terria');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
@@ -102,6 +103,11 @@ terria.error.addEventListener(function(e) {
         title: e.title,
         message: e.message
     });
+});
+
+DisclaimerViewModel.create({
+    container: 'ui',
+    terria: terria
 });
 
 terria.start({
