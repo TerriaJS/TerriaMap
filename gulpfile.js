@@ -19,9 +19,7 @@ var transform = require('vinyl-transform');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var NpmImportPlugin = require('less-plugin-npm-import');
-var jsoncombine = require('gulp-jsoncombine');
 var generateSchema = require('generate-terriajs-schema');
-var validateSchema = require('terriajs-schema');
 
 var appJSName = 'nationalmap.js';
 var appCssName = 'nationalmap.css';
@@ -61,7 +59,7 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
-gulp.task('build', ['build-css', 'merge-datasources', 'build-app', 'build-specs']);
+gulp.task('build', ['build-css', 'build-app', 'build-specs']);
 
 gulp.task('release-app', ['prepare'], function() {
     return build(appJSName, appEntryJSName, true);
@@ -87,29 +85,7 @@ gulp.task('copy-editor', function() {
         .pipe(gulp.dest('./wwwroot/editor'));
 });
 
-gulp.task('release', ['build-css', 'merge-datasources', 'release-app', 'release-specs', 'make-editor-schema', 'validate']);
-
-// Generate new schema for validator, and copy it over whatever version came with validator.
-gulp.task('make-validator-schema', function(done) {
-    generateSchema({
-        source: 'node_modules/terriajs',
-        dest: 'node_modules/terriajs-schema/schema',
-        quiet: true
-    }).then(done);
-});
-
-gulp.task('validate', ['merge-datasources', 'make-validator-schema'], function() {
-    return validateSchema({
-        terriajsdir: 'node_modules/terriajs',
-        _: glob.sync(['datasources/00_National_Data_Sets/*.json','datasources/*.json', '!datasources/00_National_Data_Sets.json', 'wwwroot/init/*.json', '!wwwroot/init/nm.json'])
-    }).then(function(result) {
-        if (result && !watching) {
-            // We should abort here. But currently we can't resolve the situation where a data source legitimately
-            // uses some new feature not present in the latest published TerriaJS.
-            //process.exit(result);
-        }
-    });
-});
+gulp.task('release', ['build-css', 'release-app', 'release-specs', 'make-editor-schema']);
 
 gulp.task('watch-app', ['prepare'], function() {
     return watch(appJSName, appEntryJSName, false);
@@ -124,21 +100,11 @@ gulp.task('watch-css', ['build-css'], function() {
     return gulp.watch(['./index.less', './node_modules/terriajs/lib/Styles/*.less', './lib/Styles/*.less'], watchOptions, ['build-css']);
 });
 
-gulp.task('watch-datasource-groups', ['merge-groups'], function() {
-    return gulp.watch('datasources/00_National_Data_Sets/*.json', watchOptions, [ 'merge-groups', 'merge-catalog' ]);
-});
-
-gulp.task('watch-datasource-catalog', ['merge-catalog'], function() {
-    return gulp.watch('datasources/*.json', watchOptions, [ 'merge-catalog' ]);
-});
-
-gulp.task('watch-datasources', ['watch-datasource-groups','watch-datasource-catalog']);
-
 gulp.task('watch-terriajs', ['prepare-terriajs'], function() {
     return gulp.watch(terriaJSSource + '/**', watchOptions, [ 'prepare-terriajs' ]);
 });
 
-gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-datasources', 'watch-terriajs']);
+gulp.task('watch', ['watch-app', 'watch-specs', 'watch-css', 'watch-terriajs']);
 
 gulp.task('lint', function(){
     return gulp.src(['index.js'])
@@ -155,40 +121,6 @@ gulp.task('prepare-terriajs', function() {
         .src([ terriaJSSource + '/**' ], { base: terriaJSSource })
         .pipe(gulp.dest(terriaJSDest));
 });
-
-gulp.task('merge-groups', function() {
-    var jsonspacing=0;
-    return gulp.src("./datasources/00_National_Data_Sets/*.json")
-    .on('error', onError)
-    .pipe(jsoncombine("00_National_Data_Sets.json", function(data) {
-        // be absolutely sure we have the files in alphabetical order
-        var keys = Object.keys(data).slice().sort();
-        for (var i = 1; i < keys.length; i++) {
-            data[keys[0]].catalog[0].items.push(data[keys[i]].catalog[0].items[0]);
-        }
-        return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
-    }))
-    .pipe(gulp.dest("./datasources"));
-});
-
-gulp.task('merge-catalog', ['merge-groups'], function() {
-    var jsonspacing=0;
-    return gulp.src("./datasources/*.json")
-        .on('error', onError)
-        .pipe(jsoncombine("nm.json", function(data) {
-        // be absolutely sure we have the files in alphabetical order, with 000_settings first.
-        var keys = Object.keys(data).slice().sort();
-        data[keys[0]].catalog = [];
-
-        for (var i = 1; i < keys.length; i++) {
-            data[keys[0]].catalog.push(data[keys[i]].catalog[0]);
-        }
-        return new Buffer(JSON.stringify(data[keys[0]], null, jsonspacing));
-    }))
-    .pipe(gulp.dest("./wwwroot/init"));
-});
-
-gulp.task('merge-datasources', ['merge-catalog', 'merge-groups']);
 
 gulp.task('default', ['lint', 'build']);
 
