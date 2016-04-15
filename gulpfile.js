@@ -205,27 +205,17 @@ function onError(e) {
 }
 
 //compile sass, temp
-gulp.task('sass', function(){
-    var sass = require('gulp-ruby-sass');
-    var sourcemaps = require('gulp-sourcemaps');
+gulp.task('sass', function() {
+    var runExternalModule = require('terriajs/buildprocess/runExternalModule');
 
-    return sass('nationalmap.scss',{
-            style: 'expanded',
-            loadPath: './node_modules/terriajs/lib/Sass',
-            sourcemap: true,
-            verbose: true
-        })
-        .on('error', sass.logError)
-
-        // For inline sourcemaps
-        .pipe(sourcemaps.write())
-
-        // For file sourcemaps
-        .pipe(sourcemaps.write('maps', {
-          includeContent: false,
-          sourceRoot: 'source'
-        }))
-        .pipe(gulp.dest('wwwroot/build'));
+    runExternalModule(require.resolve('node-sass/bin/node-sass'), [
+        '--quiet',
+        '--include-path', './node_modules/terriajs/lib/Sass',
+        '--output-style', 'expanded',
+        '--source-map', 'wwwroot/build/nationalmap.css.map',
+        'nationalmap.scss',
+        'wwwroot/build/nationalmap.css'
+    ]);
 });
 
 //watch sass compile and update doc
