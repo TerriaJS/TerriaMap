@@ -19,9 +19,10 @@ var watchOptions = {
 
 gulp.task('build-app', ['write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
+    var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
-    runWebpack(webpackConfig, done);
+    runWebpack(webpack, webpackConfig, done);
 });
 
 gulp.task('release-app', ['write-version'], function(done) {
@@ -29,7 +30,7 @@ gulp.task('release-app', ['write-version'], function(done) {
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
-    runWebpack(Object.assign({}, webpackConfig, {
+    runWebpack(webpack, Object.assign({}, webpackConfig, {
         devtool: 'source-map',
         plugins: [
             new webpack.optimize.UglifyJsPlugin(),
@@ -42,10 +43,11 @@ gulp.task('release-app', ['write-version'], function(done) {
 gulp.task('watch-app', function(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
+    var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
-    watchWebpack(webpackConfig, done);
+    watchWebpack(webpack, webpackConfig, done);
 });
 
 gulp.task('build-css', function() {
