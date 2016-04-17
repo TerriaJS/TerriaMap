@@ -16,7 +16,7 @@ var configuration = {
 // Check browser compatibility early on.
 // A very old browser (e.g. Internet Explorer 8) will fail on requiring-in many of the modules below.
 // 'ui' is the name of the DOM element that should contain the error popup if the browser is not compatible
-var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
+//var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
 
 // checkBrowserCompatibility('ui');
 
