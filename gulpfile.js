@@ -237,8 +237,14 @@ gulp.task('diagnose', function() {
     if (terriajsIsLinked) {
         console.log('TerriaJS is linked.  Have you run `npm install` at least twice in your TerriaJS directory?');
 
-        // Make sure all common packages are the same version.
-        // If they're linked, they must be linked to the same place.
+        var importantPackages = [
+            'jsx-control-statements',
+            'leaflet',
+            'react',
+            'react-dom',
+            'terriajs-cesium'
+        ];
+
         var terriaPackages = fs.readdirSync('./node_modules/terriajs/node_modules');
         terriaPackages.forEach(function(packageName) {
             var terriaPackage = path.join('./node_modules/terriajs/node_modules', packageName);
@@ -254,6 +260,11 @@ gulp.task('diagnose', function() {
                 console.log('Problem with package: ' + packageName);
                 console.log('  The application ' + (appPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
                 console.log('  TerriaJS ' + (terriaPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
+            }
+
+            // Verify versions only for important packages compiled into the application.
+            if (importantPackages.indexOf(packageName) < 0) {
+                return;
             }
 
             var terriaPackageJsonPath = path.join(terriaPackage, 'package.json');
