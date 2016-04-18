@@ -237,13 +237,7 @@ gulp.task('diagnose', function() {
     if (terriajsIsLinked) {
         console.log('TerriaJS is linked.  Have you run `npm install` at least twice in your TerriaJS directory?');
 
-        var importantPackages = [
-            'jsx-control-statements',
-            'leaflet',
-            'react',
-            'react-dom',
-            'terriajs-cesium'
-        ];
+        var terriaPackageJson = JSON.parse(fs.readFileSync('./node_modules/terriajs/package.json'));
 
         var terriaPackages = fs.readdirSync('./node_modules/terriajs/node_modules');
         terriaPackages.forEach(function(packageName) {
@@ -262,21 +256,21 @@ gulp.task('diagnose', function() {
                 console.log('  TerriaJS ' + (terriaPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
             }
 
-            // Verify versions only for important packages compiled into the application.
-            if (importantPackages.indexOf(packageName) < 0) {
+            // Verify versions only for packages required by TerriaJS.
+            if (typeof terriaPackageJson.dependencies[packageName] === 'undefined') {
                 return;
             }
 
-            var terriaPackageJsonPath = path.join(terriaPackage, 'package.json');
-            var appPackageJsonPath = path.join(appPackage, 'package.json');
+            var terriaDependencyPackageJsonPath = path.join(terriaPackage, 'package.json');
+            var appDependencyPackageJsonPath = path.join(appPackage, 'package.json');
 
-            var terriaPackageJson = JSON.parse(fs.readFileSync(terriaPackageJsonPath));
-            var appPackageJson = JSON.parse(fs.readFileSync(appPackageJsonPath));
+            var terriaDependencyPackageJson = JSON.parse(fs.readFileSync(terriaDependencyPackageJsonPath));
+            var appDependencyPackageJson = JSON.parse(fs.readFileSync(appDependencyPackageJsonPath));
 
-            if (terriaPackageJson.version !== appPackageJson.version) {
+            if (terriaDependencyPackageJson.version !== appDependencyPackageJson.version) {
                 console.log('Problem with package: ' + packageName);
-                console.log('  The application has version ' + appPackageJson.version);
-                console.log('  TerriaJS has version ' + terriaPackageJson.version);
+                console.log('  The application has version ' + appDependencyPackageJson.version);
+                console.log('  TerriaJS has version ' + terriaDependencyPackageJson.version);
             }
         });
     } else {
