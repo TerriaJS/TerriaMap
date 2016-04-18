@@ -3,6 +3,7 @@
 /*global require*/
 // Every module required-in here must be a `dependency` in package.json, not just a `devDependency`,
 // This matters if ever we have gulp tasks run from npm, especially post-install ones.
+var fs = require('fs');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var path = require('path');
@@ -226,3 +227,56 @@ gulp.task('watch-sass', ['sass'], function(){
 function getPackageRoot(packageName) {
     return path.dirname(require.resolve(packageName + '/package.json'));
 }
+
+gulp.task('diagnose', function() {
+    console.log('Have you run `npm install` at least twice?  See https://github.com/npm/npm/issues/10727');
+
+    var terriajsStat = fs.lstatSync('./node_modules/terriajs');
+    var terriajsIsLinked = terriajsStat.isSymbolicLink();
+
+    if (terriajsIsLinked) {
+        console.log('TerriaJS is linked.  Have you run `npm install` at least twice in your TerriaJS directory?');
+
+        // Make sure all common packages are the same version.
+        // If they're linked, they must be linked to the same place.
+        var terriaPackages = fs.readdirSync('./node_modules/terriajs/node_modules');
+        terriaPackages.forEach(function(packageName) {
+            var terriaPackage = path.join('./node_modules/terriajs/node_modules', packageName);
+            var appPackage = path.join('./node_modules', packageName);
+            if (packageName === '.bin' || !fs.existsSync(appPackage)) {
+                return;
+            }
+
+            var terriaPackageStat = fs.lstatSync(terriaPackage);
+            var appPackageStat = fs.lstatSync(appPackage);
+
+            if (terriaPackageStat.isSymbolicLink() !== appPackageStat.isSymbolicLink()) {
+                console.log('Problem with package: ' + packageName);
+                console.log('  The application ' + (appPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
+                console.log('  TerriaJS ' + (terriaPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
+            }
+
+            var terriaPackageJsonPath = path.join(terriaPackage, 'package.json');
+            var appPackageJsonPath = path.join(appPackage, 'package.json');
+
+            var terriaPackageJson = JSON.parse(fs.readFileSync(terriaPackageJsonPath));
+            var appPackageJson = JSON.parse(fs.readFileSync(appPackageJsonPath));
+
+            if (terriaPackageJson.version !== appPackageJson.version) {
+                console.log('Problem with package: ' + packageName);
+                console.log('  The application has version ' + appPackageJson.version);
+                console.log('  TerriaJS has version ' + terriaPackageJson.version);
+            }
+        });
+    } else {
+        console.log('TerriaJS is not linked.');
+
+        try {
+            var terriajsModules = fs.readdirSync('./node_modules/terriajs/node_modules');
+            if (terriajsModules.length > 0) {
+                console.log('./node_modules/terriajs/node_modules is not empty.  This may indicate a conflict between package versions in this application and TerriaJS, or it may indicate you\'re using an old version of npm.');
+            }
+        } catch (e) {
+        }
+    }
+});
