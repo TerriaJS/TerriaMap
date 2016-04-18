@@ -8,7 +8,7 @@ var gutil = require('gulp-util');
 var path = require('path');
 
 gulp.task('build', ['build-css', 'copy-terriajs-assets', 'build-app']);
-gulp.task('release', ['build-css', 'copy-terriajs-assets', 'release-app', 'make-editor-schema', 'validate']);
+gulp.task('release', ['build-css', 'copy-terriajs-assets', 'release-app', 'make-editor-schema']);
 gulp.task('watch', ['watch-css', 'watch-terriajs-assets', 'watch-app']);
 gulp.task('default', ['lint', 'build']);
 
