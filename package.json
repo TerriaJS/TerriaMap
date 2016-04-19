@@ -23,7 +23,6 @@
     "gulp-util": "^3.0.7",
     "less": "^2.6.1",
     "less-plugin-npm-import": "^2.1.0",
-    "nationalmap-catalog": "git://github.com/TerriaJS/NationalMap-Catalog",
     "node-notifier": "^4.5.0",
     "raw-loader": "^0.5.1",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#webpack",
