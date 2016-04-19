@@ -17,6 +17,9 @@ Terria Map is a free web-based geospatial visualisation platform that drives [ht
 * Drag-and-drop files from your desktop the browser, for instant visualisation (no file upload to server required).
 * All ASGS region types (LGA, SA2, commonwealth electoral district etc) supported for [CSV region mapping](https://github.com/NICTA/nationalmap/wiki/csv-geo-au), plus several others: Primary Health Networks, Statistical Local Areas, ISO 3 letter country codes, etc.
 
+![Terria screenshot](terria-screenshot.png "Terria screenshot")
+
+
 ### Technical
 
 * Built in Ecmascript 2015, compiled with Babel to ES5 using Gulp.
