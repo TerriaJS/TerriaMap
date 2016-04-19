@@ -1,26 +1,10 @@
 {
-    "proxyDomains" : [
-        "nicta.com.au",
-        "gov.au",
-        "csiro.au",
-        "arcgis.com",
-        "argo.jcommops.org",
-        "www.abc.net.au",
-        "geoserver.aurin.org.au",
-        "mapsengine.google.com",
-        "s3-ap-southeast-2.amazonaws.com",
-        "adelaidecitycouncil.com",
-        "www.dptiapps.com.au",
-        "geoserver-123.aodn.org.au",
-        "geoserver.imos.org.au",
-        "nci.org.au"
-    ],
     "initializationUrls" : [
         "terria",
         "test"
     ],
     "parameters": {
-        "bingMapsKey": "Aok1Vp7sWAFX5ZuyIirPJjaY8Fq-niP8TvuJREpLflYiq5Y2GXSdW_SE4xgOgQJ9",
+        "bingMapsKey": "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
         "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
         "googleAnalyticsOptions": null,
@@ -28,7 +12,7 @@
             "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
             "url": ""
         },
-        "developerAttribution-CHANGEHTIS": {
+        "developerAttribution-CHANGETHIS": {
             "text": "Your organisation",
             "link": "http://www.example.com"
         },

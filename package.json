@@ -8,47 +8,33 @@
     "url": "http://github.com/TerriaJS/map"
   },
   "dependencies": {
-    "terriajs": "2.0.1",
-    "terriajs-server": "^1.1.0",
-    "terriajs-cesium": "1.15.6"
+    "terriajs-server": "^2.0.0"
   },
   "devDependencies": {
-    "brfs": "^1.4.0",
-    "browserify": "^9.0.8",
-    "deamdify": "^0.1.1",
-    "exorcist": "^0.3.0",
+    "babel-eslint": "^6.0.2",
+    "eslint": "^2.7.0",
     "generate-terriajs-schema": "^1.2.1",
-    "glob": "^5.0.5",
     "glob-all": "^3.0.1",
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2",
-    "gulp-jasmine": "^2.0.1",
-    "gulp-jshint": "^1.10.0",
-    "gulp-jsoncombine": "^1.0.2",
-    "gulp-less": "^3.0.3",
+    "gulp": "^3.9.1",
+    "gulp-jsoncombine": "^1.0.3",
+    "gulp-less": "^3.0.5",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.4",
-    "gulp-watch": "^4.2.4",
-    "less": "^2.5.0",
-    "less-plugin-npm-import": "^2.0.0",
-    "spawn-sync": "^1.0.11",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "less": "^2.6.1",
+    "less-plugin-npm-import": "^2.1.0",
+    "nationalmap-catalog": "git://github.com/TerriaJS/NationalMap-Catalog",
+    "node-notifier": "^4.5.0",
+    "raw-loader": "^0.5.1",
+    "terriajs": "git://github.com/TerriaJS/terriajs.git#webpack",
+    "terriajs-catalog-editor": "^0.2.0",
+    "terriajs-cesium": "1.19.2",
     "terriajs-schema": "latest",
-    "terriajs-catalog-editor": "^0.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "vinyl-transform": "^1.0.0",
-    "watchify": "^3.2.0"
-  },
-  "browserify": {
-    "transform": [
-      "brfs"
-    ]
+    "webpack": "^1.12.14"
   },
   "scripts": {
-    "start": "bash ./run_server.sh",
-    "stop": "bash ./stop_server.sh",
+    "start": "bash ./node_modules/terriajs-server/run_server.sh --config-file devserverconfig.json",
+    "stop": "bash ./node_modules/terriajs-server/stop_server.sh",
     "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
   }
 }
