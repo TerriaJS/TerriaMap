@@ -8,7 +8,7 @@ var config = {
     entry: './index.js',
     output: {
         path: 'wwwroot/build',
-        filename: 'nationalmap.js',
+        filename: 'TerriaMap.js',
         publicPath: 'build/'
     },
     devtool: 'eval-source-map',

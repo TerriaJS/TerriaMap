@@ -61,7 +61,7 @@ gulp.task('build-css', function() {
                 new NpmImportPlugin()
             ]
         }))
-        .pipe(rename('nationalmap.css'))
+        .pipe(rename('TerriaMap.css'))
         .pipe(gulp.dest('./wwwroot/build/'));
 });
 
