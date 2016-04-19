@@ -30,6 +30,7 @@ var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
+var DisclaimerViewModel = require('terriajs/lib/ViewModels/DisclaimerViewModel');
 
 var Terria = require('terriajs/lib/Models/Terria');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
@@ -76,6 +77,11 @@ terria.error.addEventListener(e => {
         title: e.title,
         message: e.message
     });
+});
+
+DisclaimerViewModel.create({
+    container: 'ui',
+    terria: terria
 });
 
 terria.start({

@@ -1,9 +1,20 @@
 Change Log
 ==========
 
-### 2016-04-16
+### 2016-04-15
 
+* Updated the URLs for the Water Observations from Space datasets to `geoserver.nci.org.au`.
+* Split catalog into a separate module. The catalog is now managed through github.com/TerriaJS/NationalMap-Catalog.
+* Split client-side configuration (config.json) from server-side (devserverconfig.json). Using Terria-Server 2.0.0 enables
+  the catalog separation described above.
 * Added missing CED2 regionmap id file.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 2.3.0.  Significant changes relevant to NationalMap users include:
+  * Share links now contain details about the picked point, picked features and currently selected feature.
+  * Fixed a bug that could cause catalog items to be loaded multiple times.
+  * Added support for the `copyrightText` property for ArcGIS layers - this now shows up in info under "Copyright Text".
+  * Showed a message in the catalog item info panel that informs the user that a catalog item is local and can't be shared.
+  * TerriaJS now obtains its list of domains that the proxy will proxy for from the `proxyableDomains/` service.  The URL can be overridden by setting `parameters.proxyableDomainsUrl` in `config.json`.
+  * Improved legend and coloring of ENUM (string) columns of CSV files, to sort first by frequency, then alphabetically.
 
 ### 2016-03-29
 

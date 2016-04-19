@@ -8,7 +8,7 @@
     "url": "http://github.com/NICTA/nationalmap"
   },
   "dependencies": {
-    "terriajs-server": "^1.4.1"
+    "terriajs-server": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
@@ -28,6 +28,7 @@
     "jsx-control-statements": "3.1.1",
     "less": "^2.6.1",
     "less-plugin-npm-import": "^2.1.0",
+    "nationalmap-catalog": "git://github.com/TerriaJS/NationalMap-Catalog",
     "node-notifier": "^4.5.0",
     "node-sass": "^3.4.2",
     "raw-loader": "^0.5.1",
@@ -40,8 +41,8 @@
     "webpack": "^1.12.14"
   },
   "scripts": {
-    "start": "bash ./run_server.sh",
-    "stop": "bash ./stop_server.sh",
+    "start": "bash ./node_modules/terriajs-server/run_server.sh --config-file devserverconfig.json",
+    "stop": "bash ./node_modules/terriajs-server/stop_server.sh",
     "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'"
   }
 }
