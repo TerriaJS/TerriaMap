@@ -21,7 +21,7 @@ var watchOptions = {
 gulp.task('build-app', ['write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js');
+    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
 
     runWebpack(webpack, webpackConfig, done);
 });
@@ -29,7 +29,7 @@ gulp.task('build-app', ['write-version'], function(done) {
 gulp.task('release-app', ['write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js');
+    var webpackConfig = require('./buildprocess/webpack.config.js')(false);
 
     runWebpack(webpack, Object.assign({}, webpackConfig, {
         devtool: 'source-map',
@@ -45,7 +45,7 @@ gulp.task('watch-app', function(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js');
+    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);

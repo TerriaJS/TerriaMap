@@ -33,6 +33,7 @@
     "raw-loader": "^0.5.1",
     "react": "0.14.8",
     "react-dom": "0.14.8",
+    "redbox-react": "^1.2.3",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#newui-webpack",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.19.2",

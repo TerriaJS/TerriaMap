@@ -1,7 +1,6 @@
 'use strict';
 
 /*global require*/
-var UserInterface = require('./UserInterface.jsx');
 var React = require('react');
 var ReactDOM = require('react-dom');
 // require('babel-polyfill');
@@ -12,6 +11,8 @@ var terriaOptions = {
 var configuration = {
     bingMapsKey: undefined, // use Cesium key
 };
+
+require('./nationalmap.scss');
 
 // Check browser compatibility early on.
 // A very old browser (e.g. Internet Explorer 8) will fail on requiring-in many of the modules below.
@@ -78,6 +79,12 @@ terria.error.addEventListener(e => {
     });
 });
 
+// If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
+// Note that if the first stylesheet stops being nationalmap.css then this will have to change.
+if (process.env.NODE_ENV !== "production") {
+    document.styleSheets[0].disabled = true;
+}
+
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
@@ -118,9 +125,37 @@ terria.start({
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         // updateApplicationOnHashChange(terria, window);
-        ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps}
-                                       terriaViewer={terriaViewer}
-                                       viewState={viewState} />, document.getElementById('ui'));
+        let render = () => {
+            const UserInterface = require('./UserInterface.jsx');
+            ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps}
+                                           terriaViewer={terriaViewer}
+                                           viewState={viewState}/>, document.getElementById('ui'));
+        }
+
+        if (module.hot) {
+            // Support hot reloading of components
+            // and display an overlay for runtime errors
+            const renderApp = render;
+            const renderError = (error) => {
+                const RedBox = require('redbox-react');
+                ReactDOM.render(
+                    <RedBox error={error} />,
+                    document.getElementById('ui')
+                );
+            };
+            render = () => {
+                try {
+                    renderApp()
+                } catch (error) {
+                    renderError(error)
+                }
+            };
+            module.hot.accept('./UserInterface.jsx', () => {
+                setTimeout(render);
+            });
+        }
+
+        render();
     } catch (e) {
         console.error(e);
         console.error(e.stack);
