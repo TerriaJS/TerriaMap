@@ -31,12 +31,12 @@ Terria Map is a free web-based geospatial visualisation platform that drives [ht
 Pre-requisites: Git, NodeJS, NPM, GDAL (optional).
  
 ```
-sudo npm install -g gulp                     # Install gulp, the build tool
-git clone https://github.com/TerriaJS/Map    # Get the code
-cd Map                                       
-npm install                                  # Install dependencies
-npm start                                    # Start the server in the background
-gulp watch                                   # Build the site, and watch for changes.
+sudo npm install -g gulp                           # Install gulp, the build tool
+git clone https://github.com/TerriaJS/TerriaMap    # Get the code
+cd TerriaMap                                       
+npm install                                        # Install dependencies
+npm start                                          # Start the server in the background
+gulp watch                                         # Build the site, and watch for changes.
 ```
 
 Now visit the site in your browser at `http://localhost:3001`.
