@@ -14,9 +14,9 @@
         "geoserver-123.aodn.org.au",
         "geoserver.imos.org.au",
         "nci.org.au",
-        "static.nationalmap.nicta.com.au"
+        "static.nationalmap.nicta.com.au",
+        "githubusercontent.com"
     ],
     "initPaths": [
-        "node_modules/nationalmap-catalog/build"
     ]
 }
