@@ -3,6 +3,7 @@
 /*global require*/
 var webpack = require('webpack');
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
 module.exports = function(devMode) {
@@ -35,7 +36,7 @@ module.exports = function(devMode) {
                             require.resolve('jsx-control-statements')
                         ]
                     }
-                }
+                },
             ]
         },
         plugins: [
@@ -47,5 +48,5 @@ module.exports = function(devMode) {
         ]
     };
 
-    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config);
+    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode);
 }

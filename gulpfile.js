@@ -36,7 +36,7 @@ gulp.task('release-app', ['write-version'], function(done) {
         plugins: [
             new webpack.optimize.UglifyJsPlugin(),
             new webpack.optimize.DedupePlugin(),
-            new webpack.optimize.OccurrenceOrderPlugin()
+            new webpack.optimize.OccurrenceOrderPlugin(),
         ].concat(webpackConfig.plugins || [])
     }), done);
 });
