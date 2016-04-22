@@ -12,9 +12,9 @@ module.exports = function(devMode) {
         output: {
             path: 'wwwroot/build',
             filename: 'nationalmap.js',
-            publicPath: 'build/'
+            publicPath: '/build/'
         },
-        devtool: 'cheap-module-source-map',
+        devtool: devMode ? 'cheap-module-source-map' : 'source-map',
         module: {
             loaders: [
                 {
