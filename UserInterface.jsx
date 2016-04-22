@@ -119,7 +119,7 @@ var UserInterface = React.createClass({
     shouldUseMobileInterface() {
         // TODO: justify the magic number 16!
         // 40 must match the value of the $sm SASS variable.
-        return document.body.clientWidth <= (16 * 40);
+        return document.body.clientWidth < (16 * 40);
     },
 
     render(){
