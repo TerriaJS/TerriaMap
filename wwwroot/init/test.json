@@ -250,6 +250,38 @@
           ]
         },
         {
+          "name": "WMS",
+          "type": "group",
+          "items": [
+            {
+              "layers": "mybroadband:MyBroadband_Map",
+              "parameters": {
+                "tiled": true
+              },
+              "dataUrlType": "none",
+              "clipToRectangle": true,
+              "description": "[MyBroadband Map](https://www.mybroadband.communications.gov.au)",
+              "name": "Broadband with html feature info",
+              "rectangle": [
+                96.79939,
+                -43.59821,
+                153.63925,
+                -9.21592
+              ],
+              "getFeatureInfoFormats": [{"type": "html"}],
+              "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
+              "url": "https://programs.communications.gov.au/geoserver/ows",
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "GeoJSON files",
           "type": "group",
           "items": [

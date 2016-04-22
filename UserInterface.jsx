@@ -31,12 +31,14 @@ var UserInterface = React.createClass({
             featureInfoPanelIsVisible: false,
 
             // True if the feature info panel is collapsed.
-            featureInfoPanelIsCollapsed: false
+            featureInfoPanelIsCollapsed: false,
+
+            useMobileInterface: this.shouldUseMobileInterface()
         };
     },
 
     componentWillMount() {
-        knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(() => {
+        this.pickedFeaturesSubscription = knockout.getObservable(this.props.terria, 'pickedFeatures').subscribe(() => {
             this.setState({
                 featureInfoPanelIsVisible: true,
                 featureInfoPanelIsCollapsed: false
@@ -44,8 +46,9 @@ var UserInterface = React.createClass({
         }, this);
 
         const that = this;
+
         // TO DO(chloe): change window into a container
-        window.addEventListener('dragover', e => {
+        this.dragOverListener = e => {
             if (!e.dataTransfer.types || !arrayContains(e.dataTransfer.types, 'Files')) {
                 return;
             }
@@ -53,7 +56,26 @@ var UserInterface = React.createClass({
             e.stopPropagation();
             e.dataTransfer.dropEffect = 'copy';
             that.acceptDragDropFile();
-        });
+        };
+
+        window.addEventListener('dragover', this.dragOverListener, false);
+
+        this.resizeListener = () => {
+            var useMobileInterface = this.shouldUseMobileInterface();
+            if (useMobileInterface !== this.state.useMobileInterface) {
+                this.setState({
+                    useMobileInterface: useMobileInterface
+                });
+            }
+        };
+
+        window.addEventListener('resize', this.resizeListener, false);
+    },
+
+    componentWillUnmount() {
+        this.pickedFeaturesSubscription.dispose();
+        window.removeEventListener('resize', this.resizeListener, false);
+        window.removeEventListener('dragover', this.dragOverListener, false);
     },
 
     /**
@@ -94,6 +116,11 @@ var UserInterface = React.createClass({
         this.props.viewState.isDraggingDroppingFile = true;
     },
 
+    shouldUseMobileInterface() {
+        // 640 must match the value of the $sm SASS variable.
+        return document.body.clientWidth < 640;
+    },
+
     render(){
         const terria = this.props.terria;
         const allBaseMaps = this.props.allBaseMaps;
@@ -102,23 +129,22 @@ var UserInterface = React.createClass({
         return (
             <div>
                 <div className='header'>
-
-                <MobileHeader terria={terria}
-                              viewState={this.props.viewState}
-                />
-                <div className='workbench'>
-                    <Branding onClick={this.showWelcome}
-                              terria={terria}
-                    />
-                    <SidePanel terria={terria}
-                               viewState={this.props.viewState}
-                    />
-                </div>
+                    {this.state.useMobileInterface && <MobileHeader terria={terria}
+                                  viewState={this.props.viewState}
+                    />}
+                    <div className='workbench'>
+                        <Branding onClick={this.showWelcome}
+                                  terria={terria}
+                        />
+                        {!this.state.useMobileInterface && <SidePanel terria={terria}
+                                   viewState={this.props.viewState}
+                        />}
+                    </div>
                 </div>
                 <main>
-                    <ModalWindow terria={terria}
+                    {!this.state.useMobileInterface && <ModalWindow terria={terria}
                                  viewState={this.props.viewState}
-                    />
+                    />}
                 </main>
                 <div id="map-nav">
                     <MapNavigation terria={terria}
