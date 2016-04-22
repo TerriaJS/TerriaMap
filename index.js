@@ -1,11 +1,6 @@
 'use strict';
 
 /*global require*/
-var UserInterface = require('./UserInterface.jsx');
-var React = require('react');
-var ReactDOM = require('react-dom');
-// require('babel-polyfill');
-
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
@@ -20,30 +15,24 @@ var configuration = {
 
 // checkBrowserCompatibility('ui');
 
-
-var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
-var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
-var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
-var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
-
-var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
-var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
-var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
-var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
 var DisclaimerViewModel = require('terriajs/lib/ViewModels/DisclaimerViewModel');
-
-var Terria = require('terriajs/lib/Models/Terria');
+var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
+var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
+var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
+var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
+var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var registerAnalytics = require('terriajs/lib/Models/registerAnalytics');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var registerCustomComponentTypes = require('terriajs/lib/Models/registerCustomComponentTypes');
-// var registerAnalytics = require('terriajs/lib/Models/registerAnalytics');
-var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
-
-var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
-var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
-var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
-
-var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
-
+var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
+var Terria = require('terriajs/lib/Models/Terria');
+var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
+var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
+var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
+var UserInterface = require('./UserInterface.jsx');
+var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
 OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
@@ -56,8 +45,7 @@ registerKnockoutBindings();
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
-
-// registerAnalytics();
+registerAnalytics();
 
 terriaOptions.analytics = new GoogleAnalytics();
 
