@@ -117,9 +117,8 @@ var UserInterface = React.createClass({
     },
 
     shouldUseMobileInterface() {
-        // TODO: justify the magic number 16!
-        // 40 must match the value of the $sm SASS variable.
-        return document.body.clientWidth < (16 * 40);
+        // 640 must match the value of the $sm SASS variable.
+        return document.body.clientWidth < 640;
     },
 
     render(){
@@ -137,9 +136,9 @@ var UserInterface = React.createClass({
                         <Branding onClick={this.showWelcome}
                                   terria={terria}
                         />
-                        <SidePanel terria={terria}
+                        {!this.state.useMobileInterface && <SidePanel terria={terria}
                                    viewState={this.props.viewState}
-                        />
+                        />}
                     </div>
                 </div>
                 <main>
