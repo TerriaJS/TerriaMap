@@ -1,0 +1,6 @@
+Tue 29 Mar 2016 21:39:23 AEDT
+Using config file "/Users/chloe/Sites/nationalmap/wwwroot/config.json".
+TerriaJS Server 1.4.0
+Serving directory "/Users/chloe/Sites/nationalmap/wwwroot" on port 3001.
+Launching 4 worker processes.
+Warning: ogr2ogr (gdal) is not installed or inaccessible, so the format conversion service will fail.
