@@ -119,7 +119,7 @@ terria.start({
             ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps}
                                            terriaViewer={terriaViewer}
                                            viewState={viewState}/>, document.getElementById('ui'));
-        }
+        };
 
         if (module.hot) {
             // Support hot reloading of components
@@ -134,9 +134,9 @@ terria.start({
             };
             render = () => {
                 try {
-                    renderApp()
+                    renderApp();
                 } catch (error) {
-                    renderError(error)
+                    renderError(error);
                 }
             };
             module.hot.accept('./UserInterface.jsx', () => {
