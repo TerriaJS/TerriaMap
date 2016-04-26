@@ -6,13 +6,14 @@ var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpac
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 
-module.exports = function(devMode) {
+module.exports = function(devMode, hot) {
     var config = {
         entry: './index.js',
         output: {
             path: 'wwwroot/build',
             filename: 'nationalmap.js',
-            publicPath: '/build/'
+            // work around chrome needing the full URL when using sourcemaps (http://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts/34133809#34133809)
+            publicPath: hot ? 'http://localhost:3003/build/' : '/build/'
         },
         devtool: devMode ? 'cheap-module-source-map' : 'source-map',
         module: {
