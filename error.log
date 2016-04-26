@@ -1,0 +1,3 @@
+Could not find file proxyAuth.json in /Users/chloe/Sites/nationalmap/wwwroot or /Users/chloe/Sites/nationalmap/node_modules/terriajs-server/lib
+Warning: Can't open proxyAuth file. Proxying to servers that require authentication will fail.
+
