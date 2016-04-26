@@ -17,7 +17,6 @@ require('./nationalmap.scss');
 
 // checkBrowserCompatibility('ui');
 
-var DisclaimerViewModel = require('terriajs/lib/ViewModels/DisclaimerViewModel');
 var GoogleAnalytics = require('terriajs/lib/Core/GoogleAnalytics');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
@@ -74,11 +73,6 @@ terria.error.addEventListener(e => {
 if (process.env.NODE_ENV !== "production") {
     document.styleSheets[0].disabled = true;
 }
-
-DisclaimerViewModel.create({
-    container: 'ui',
-    terria: terria
-});
 
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
