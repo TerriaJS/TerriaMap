@@ -8,9 +8,9 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var path = require('path');
 
-gulp.task('build', ['sass', 'copy-terriajs-assets', 'build-app']);
-gulp.task('release', ['sass', 'copy-terriajs-assets', 'release-app', 'make-editor-schema']);
-gulp.task('watch', ['watch-sass', 'watch-terriajs-assets', 'watch-app']);
+gulp.task('build', ['copy-terriajs-assets', 'build-app']);
+gulp.task('release', ['copy-terriajs-assets', 'release-app', 'make-editor-schema']);
+gulp.task('watch', ['watch-terriajs-assets', 'watch-app']);
 gulp.task('default', ['lint', 'build']);
 
 var watchOptions = {
@@ -130,25 +130,6 @@ function onError(e) {
     gutil.log(e.message);
     process.exit(1);
 }
-
-//compile sass, temp
-gulp.task('sass', function() {
-    var runExternalModule = require('terriajs/buildprocess/runExternalModule');
-
-    runExternalModule(require.resolve('node-sass/bin/node-sass'), [
-        '--quiet',
-        '--include-path', './node_modules/terriajs/lib/Sass',
-        '--output-style', 'expanded',
-        '--source-map', 'wwwroot/build/nationalmap.css.map',
-        'nationalmap.scss',
-        'wwwroot/build/nationalmap.css'
-    ]);
-});
-
-//watch sass compile and update doc
-gulp.task('watch-sass', ['sass'], function(){
-  return gulp.watch(['./node_modules/terriajs/lib/Sass/**', 'nationalmap.scss'], ['sass']);
-});
 
 function getPackageRoot(packageName) {
     return path.dirname(require.resolve(packageName + '/package.json'));
