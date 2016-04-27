@@ -30,7 +30,6 @@ gulp.task('release-app', ['write-version'], function(done) {
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
     runWebpack(webpack, Object.assign({}, webpackConfig, {
-        devtool: 'source-map',
         plugins: [
             new webpack.optimize.UglifyJsPlugin(),
             new webpack.optimize.DedupePlugin(),
@@ -46,7 +45,9 @@ gulp.task('watch-app', function(done) {
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
-    watchWebpack(webpack, webpackConfig, done);
+    watchWebpack(webpack, Object.assign({}, webpackConfig, {
+        devtool: 'eval-source-map'
+    }), done);
 });
 
 gulp.task('build-css', function() {

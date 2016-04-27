@@ -11,7 +11,7 @@ var config = {
         filename: 'nationalmap.js',
         publicPath: 'build/'
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     module: {
         loaders: [
             {
