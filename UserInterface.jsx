@@ -14,13 +14,13 @@ import React from 'react';
 import SidePanel from 'terriajs/lib/ReactViews/SidePanel.jsx';
 import ProgressBar from 'terriajs/lib/ReactViews/ProgressBar.jsx';
 import BottomDock from 'terriajs/lib/ReactViews/BottomDock/BottomDock.jsx';
+import TerriaViewerWrapper from 'terriajs/lib/ReactViews/TerriaViewerWrapper.jsx';
 
 var UserInterface = React.createClass({
     propTypes: {
         terria: React.PropTypes.object,
         allBaseMaps: React.PropTypes.array,
-        terriaViewer: React.PropTypes.object,
-        viewState: React.PropTypes.object,
+        viewState: React.PropTypes.object
     },
 
     mixins: [ObserveModelMixin],
@@ -124,23 +124,24 @@ var UserInterface = React.createClass({
     render(){
         const terria = this.props.terria;
         const allBaseMaps = this.props.allBaseMaps;
-        const terriaViewer = this.props.terriaViewer;
 
         return (
             <div>
-                <div className='header'>
-                    {this.state.useMobileInterface && <MobileHeader terria={terria}
-                                  viewState={this.props.viewState}
-                    />}
-                    <div className='workbench'>
-                        <Branding onClick={this.showWelcome}
-                                  terria={terria}
-                        />
-                        {!this.state.useMobileInterface && <SidePanel terria={terria}
-                                   viewState={this.props.viewState}
+                <If condition={!this.props.viewState.isFullScreen}>
+                    <div className='header'>
+                        {this.state.useMobileInterface && <MobileHeader terria={terria}
+                                                                        viewState={this.props.viewState}
                         />}
+                        <div className='workbench'>
+                            <Branding onClick={this.showWelcome}
+                                      terria={terria}
+                            />
+                            {!this.state.useMobileInterface && <SidePanel terria={terria}
+                                                                          viewState={this.props.viewState}
+                            />}
+                        </div>
                     </div>
-                </div>
+                </If>
                 <main>
                     {!this.state.useMobileInterface && <ModalWindow terria={terria}
                                  viewState={this.props.viewState}
@@ -148,8 +149,8 @@ var UserInterface = React.createClass({
                 </main>
                 <div id="map-nav">
                     <MapNavigation terria={terria}
+                                   viewState={this.props.viewState}
                                    allBaseMaps={allBaseMaps}
-                                   terriaViewer={terriaViewer}
                     />
                 </div>
                 <div id='notification'>
@@ -158,7 +159,6 @@ var UserInterface = React.createClass({
                     />
                     <MapInteractionWindow terria ={terria}/>
                 </div>
-                <ProgressBar terria={terria}/>
                 <FeatureInfoPanel terria={terria}
                                   viewState={this.props.viewState}
                                   isVisible={this.state.featureInfoPanelIsVisible}
@@ -166,7 +166,11 @@ var UserInterface = React.createClass({
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
-                <BottomDock terria={terria} viewState={this.props.viewState}/>
+                <section className="map">
+                    <ProgressBar terria={terria}/>
+                    <TerriaViewerWrapper terria={this.props.terria} viewState={this.props.viewState}/>
+                    <BottomDock terria={terria} viewState={this.props.viewState}/>
+                </section>
             </div>);
     }
 });

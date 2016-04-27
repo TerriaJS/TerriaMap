@@ -29,7 +29,6 @@ var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers
 var registerCustomComponentTypes = require('terriajs/lib/Models/registerCustomComponentTypes');
 var registerKnockoutBindings = require('terriajs/lib/Core/registerKnockoutBindings');
 var Terria = require('terriajs/lib/Models/Terria');
-var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 var UserInterface = require('./UserInterface.jsx');
@@ -93,14 +92,6 @@ terria.start({
         updateApplicationOnHashChange(terria, window);
         updateApplicationOnMessageFromParentWindow(terria, window);
 
-        // Create the map/globe.
-        var terriaViewer = TerriaViewer.create(terria, {
-            developerAttribution: {
-                text: 'Data61',
-                link: 'http://www.csiro.au/en/Research/D61'
-            }
-        });
-
         //temp
         var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
         var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
@@ -112,12 +103,9 @@ terria.start({
         var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
-        // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
-        // updateApplicationOnHashChange(terria, window);
         let render = () => {
             const UserInterface = require('./UserInterface.jsx');
             ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps}
-                                           terriaViewer={terriaViewer}
                                            viewState={viewState}/>, document.getElementById('ui'));
         };
 
@@ -127,6 +115,8 @@ terria.start({
             const renderApp = render;
             const renderError = (error) => {
                 const RedBox = require('redbox-react');
+                console.error(error);
+                console.error(error.stack);
                 ReactDOM.render(
                     <RedBox error={error} />,
                     document.getElementById('ui')
