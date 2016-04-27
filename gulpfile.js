@@ -45,9 +45,7 @@ gulp.task('watch-app', function(done) {
     var webpackConfig = require('./buildprocess/webpack.config.js');
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
-    watchWebpack(webpack, Object.assign({}, webpackConfig, {
-        devtool: 'eval-source-map'
-    }), done);
+    watchWebpack(webpack, webpackConfig, done);
 });
 
 gulp.task('build-css', function() {
