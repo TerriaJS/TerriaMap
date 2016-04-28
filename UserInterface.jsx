@@ -127,51 +127,61 @@ var UserInterface = React.createClass({
 
         return (
             <div>
-                <If condition={!this.props.viewState.isFullScreen}>
-                    <div className='header'>
-                        {this.state.useMobileInterface && <MobileHeader terria={terria}
-                                                                        viewState={this.props.viewState}
-                        />}
-                        <div className='workbench'>
-                            <Branding onClick={this.showWelcome}
-                                      terria={terria}
-                            />
-                            {!this.state.useMobileInterface && <SidePanel terria={terria}
-                                                                          viewState={this.props.viewState}
-                            />}
-                        </div>
+                <div className="ui">
+                    <div className="ui-inner">
+                        <If condition={!this.props.viewState.isMapFullScreen && !this.props.viewState.hideMapUi()}>
+                            <If condition={this.state.useMobileInterface}>
+                                <MobileHeader terria={terria} viewState={this.props.viewState}/>
+                            </If>
+                            <div className='workbench'>
+                                <Branding onClick={this.showWelcome}
+                                          terria={terria}
+                                />
+                                {!this.state.useMobileInterface && <SidePanel terria={terria}
+                                                                              viewState={this.props.viewState}
+                                />}
+                            </div>
+                        </If>
+                        <section className="map">
+                            <div>
+                                <ProgressBar terria={terria}/>
+                                <TerriaViewerWrapper terria={this.props.terria} viewState={this.props.viewState}/>
+                                <If condition={!this.props.viewState.hideMapUi()}>
+                                    <BottomDock terria={terria} viewState={this.props.viewState}/>
+                                </If>
+                            </div>
+                        </section>
                     </div>
-                </If>
+                </div>
+
                 <main>
                     {!this.state.useMobileInterface && <ModalWindow terria={terria}
-                                 viewState={this.props.viewState}
+                                                                    viewState={this.props.viewState}
                     />}
                 </main>
-                <div id="map-nav">
-                    <MapNavigation terria={terria}
-                                   viewState={this.props.viewState}
-                                   allBaseMaps={allBaseMaps}
-                    />
-                </div>
+                <If condition={!this.props.viewState.hideMapUi()}>
+                    <div id="map-nav">
+                        <MapNavigation terria={terria}
+                                       viewState={this.props.viewState}
+                                       allBaseMaps={allBaseMaps}
+                        />
+                    </div>
+                </If>
                 <div id='notification'>
                     <Notification notification={this.props.viewState.getNextNotification()}
                                   onDismiss={this.closeNotification}
                     />
-                    <MapInteractionWindow terria ={terria}/>
+                    <MapInteractionWindow terria={terria}/>
                 </div>
                 <FeatureInfoPanel terria={terria}
                                   viewState={this.props.viewState}
-                                  isVisible={this.state.featureInfoPanelIsVisible}
+                                  isVisible={this.state.featureInfoPanelIsVisible && this.props.viewState.showUi()}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
                 />
-                <section className="map">
-                    <ProgressBar terria={terria}/>
-                    <TerriaViewerWrapper terria={this.props.terria} viewState={this.props.viewState}/>
-                    <BottomDock terria={terria} viewState={this.props.viewState}/>
-                </section>
-            </div>);
+            </div>
+        );
     }
 });
 

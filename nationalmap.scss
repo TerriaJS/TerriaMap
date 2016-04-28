@@ -48,6 +48,14 @@
 
 @import "print";
 
+.ui {
+ display: table;
+ width: 100%;
+}
+
+.ui-inner {
+ display: table-row;
+}
 
 .panel--getting-started .panel-content{
   background-image: url("~terriajs/wwwroot/images/welcome-bg.jpg");
