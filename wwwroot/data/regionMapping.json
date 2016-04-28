@@ -708,6 +708,22 @@
                 "aus"
             ],
             "regionIdsFile": "data/regionids/region_map-FID_AUS_2011_AUST_AUS_CODE.json"
+        },
+        "US_STATE": {
+            "layerName": "region_map:us_states-fid",
+            "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "STATE_ABBR",
+            "aliases": [
+                "us_state","us_state_code"
+            ]
+        },
+        "US_STATE_NAME": {
+            "layerName": "region_map:us_states-fid",
+            "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "STATE_NAME",
+            "aliases": [
+                "us_state_name"
+            ]
         }
     }
 }
