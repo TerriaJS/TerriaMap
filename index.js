@@ -70,7 +70,7 @@ terria.error.addEventListener(e => {
 
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
@@ -121,7 +121,7 @@ terria.start({
                                            viewState={viewState}/>, document.getElementById('ui'));
         };
 
-        if (module.hot) {
+        if (module.hot && process.env.NODE_ENV !== "production") {
             // Support hot reloading of components
             // and display an overlay for runtime errors
             const renderApp = render;

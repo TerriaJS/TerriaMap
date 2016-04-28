@@ -49,5 +49,5 @@ module.exports = function(devMode, hot) {
         ]
     };
 
-    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode);
+    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot);
 }
