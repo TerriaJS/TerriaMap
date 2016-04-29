@@ -38,6 +38,14 @@ module.exports = function(devMode, hot) {
                         ]
                     }
                 },
+                {
+                    test: /\.(png|jpg|svg|gif)$/,
+                    include: path.resolve(__dirname, '..', 'wwwroot', 'images'),
+                    loader: require.resolve('url-loader'),
+                    query: {
+                        limit: 8192
+                    }
+                }
             ]
         },
         plugins: [
