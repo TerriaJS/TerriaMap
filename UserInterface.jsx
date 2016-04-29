@@ -137,28 +137,26 @@ var UserInterface = React.createClass({
                                 <Branding onClick={this.showWelcome}
                                           terria={terria}
                                 />
-                                {!this.state.useMobileInterface && <SidePanel terria={terria}
-                                                                              viewState={this.props.viewState}
-                                />}
+                                <If condition={!this.state.useMobileInterface}>
+                                    <SidePanel terria={terria} viewState={this.props.viewState} />
+                                </If>
                             </div>
                         </If>
                         <section className="map">
-                            <div>
-                                <ProgressBar terria={terria}/>
-                                <TerriaViewerWrapper terria={this.props.terria} viewState={this.props.viewState}/>
-                                <If condition={!this.props.viewState.hideMapUi()}>
-                                    <BottomDock terria={terria} viewState={this.props.viewState}/>
-                                </If>
-                            </div>
+                            <ProgressBar terria={terria}/>
+                            <TerriaViewerWrapper terria={this.props.terria} viewState={this.props.viewState}/>
+                            <If condition={!this.props.viewState.hideMapUi()}>
+                                <BottomDock terria={terria} viewState={this.props.viewState}/>
+                            </If>
+                            <If condition={!this.state.useMobileInterface}>
+                                <main>
+                                    <ModalWindow terria={terria} viewState={this.props.viewState}/>
+                                </main>
+                            </If>
                         </section>
                     </div>
                 </div>
 
-                <main>
-                    {!this.state.useMobileInterface && <ModalWindow terria={terria}
-                                                                    viewState={this.props.viewState}
-                    />}
-                </main>
                 <If condition={!this.props.viewState.hideMapUi()}>
                     <div id="map-nav">
                         <MapNavigation terria={terria}
@@ -175,7 +173,7 @@ var UserInterface = React.createClass({
                 </div>
                 <FeatureInfoPanel terria={terria}
                                   viewState={this.props.viewState}
-                                  isVisible={this.state.featureInfoPanelIsVisible && this.props.viewState.showUi()}
+                                  isVisible={this.state.featureInfoPanelIsVisible && !this.props.viewState.hideMapUi()}
                                   onClose={this.closeFeatureInfoPanel}
                                   isCollapsed={this.state.featureInfoPanelIsCollapsed}
                                   onChangeFeatureInfoPanelIsCollapsed={this.changeFeatureInfoPanelIsCollapsed}
