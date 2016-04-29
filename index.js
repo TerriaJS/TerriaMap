@@ -32,7 +32,6 @@ var Terria = require('terriajs/lib/Models/Terria');
 var TerriaViewer = require('terriajs/lib/ViewModels/TerriaViewer');
 var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateApplicationOnHashChange');
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
-var UserInterface = require('./UserInterface.jsx');
 var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
@@ -115,8 +114,8 @@ terria.start({
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         // updateApplicationOnHashChange(terria, window);
         let render = () => {
-            const UserInterface = require('./UserInterface.jsx');
-            ReactDOM.render(<UserInterface terria={terria} allBaseMaps={allBaseMaps}
+            const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface.jsx');
+            ReactDOM.render(<StandardUserInterface terria={terria} allBaseMaps={allBaseMaps}
                                            terriaViewer={terriaViewer}
                                            viewState={viewState}/>, document.getElementById('ui'));
         };
@@ -139,7 +138,7 @@ terria.start({
                     renderError(error);
                 }
             };
-            module.hot.accept('./UserInterface.jsx', () => {
+            module.hot.accept('terriajs/lib/ReactViews/StandardUserInterface.jsx', () => {
                 setTimeout(render);
             });
         }
