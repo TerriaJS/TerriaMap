@@ -13,7 +13,8 @@ module.exports = function(devMode, hot) {
             path: 'wwwroot/build',
             filename: 'nationalmap.js',
             // work around chrome needing the full URL when using sourcemaps (http://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts/34133809#34133809)
-            publicPath: hot ? 'http://localhost:3003/build/' : '/build/'
+            publicPath: hot ? 'http://localhost:3003/build/' : '/build/',
+            sourcePrefix: '' // to avoid breaking multi-line string literals by inserting extra tabs.
         },
         devtool: devMode ? 'cheap-module-source-map' : 'source-map',
         module: {

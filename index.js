@@ -60,13 +60,6 @@ terria.welcome = '<h3>Terria<sup>TM</sup> is a spatial data platform that provid
 
 const viewState = new ViewState(terria);
 
-terria.error.addEventListener(e => {
-    viewState.notifications.push({
-        title: e.title,
-        message: e.message
-    });
-});
-
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
 if (process.env.NODE_ENV !== "production" && module.hot) {
