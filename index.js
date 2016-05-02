@@ -33,6 +33,8 @@ var updateApplicationOnHashChange = require('terriajs/lib/ViewModels/updateAppli
 var updateApplicationOnMessageFromParentWindow = require('terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow');
 var UserInterface = require('./UserInterface.jsx');
 var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
+import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
+import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
 OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
@@ -58,7 +60,10 @@ registerCustomComponentTypes(terria);
 
 terria.welcome = '<h3>Terria<sup>TM</sup> is a spatial data platform that provides spatial predictive analytics</h3><div class="body-copy"><p>This interactive map uses TerriaJS<sup>TM</sup>, an open source software library developed by Data61 for building rich, web-based geospatial data explorers.  It uses Cesium<sup>TM</sup> open source 3D globe viewing software.  TerriaJS<sup>TM</sup> is used for the official Australian Government NationalMap and many other sites rich in the use of spatial data.</p><p>This map also uses Terria<sup>TM</sup> Inference Engine, a cloud-based platform for making probabilistic predictions using data in a web-based mapping environment. Terria<sup>TM</sup> Inference Engine uses state of the art machine learning algorithms developed by Data61 and designed specifically for large-scale spatial inference.</p></div>';
 
-const viewState = new ViewState();
+const viewState = new ViewState([
+    new BingMapsSearchProviderViewModel({terria}),
+    new GazetteerSearchProviderViewModel({terria})
+]);
 
 terria.error.addEventListener(e => {
     viewState.notifications.push({
