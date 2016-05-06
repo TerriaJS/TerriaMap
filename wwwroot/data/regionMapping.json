@@ -314,6 +314,17 @@
             "description": "Commonwealth electoral districts (Australian Electoral Commission)",
             "regionIdsFile": "data/regionids/region_map-FID_COM20111216_ELB_region_ELECT_DIV.json"
         },
+        "CED_AEC_2016": {
+            "layerName": "region_map:FID_COM20111216_ELB_2016",
+            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "ELECT_DIV",
+            "textCodes": true,
+            "aliases": [
+                "ced_aec_2016"
+            ],
+            "description": "Commonwealth electoral districts (Australian Electoral Commission)",
+            "regionIdsFile": "data/regionids/region_map-FID_COM20111216_ELB_2016_ELECT_DIV.json"
+        },
         "SED": {
             "layerName": "region_map:FID_SED_2011_AUST",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
