@@ -45,8 +45,9 @@
 @import "~terriajs/lib/Sass/component/bottom_dock";
 @import "~terriajs/lib/Sass/component/share_panel";
 @import "~terriajs/lib/Sass/component/analytics";
+@import "~terriajs/lib/Sass/component/feedback";
 
-@import "print";
+@import "~terriajs/lib/Sass/print";
 
 .ui {
  display: table;
