@@ -307,8 +307,6 @@
             "regionProp": "ELECT_DIV",
             "textCodes": true,
             "aliases": [
-                "divisionnm",
-                "ced_aec",
                 "ced_aec_2011"
             ],
             "description": "Commonwealth electoral districts (Australian Electoral Commission)",
@@ -320,6 +318,8 @@
             "regionProp": "ELECT_DIV",
             "textCodes": true,
             "aliases": [
+                "divisionnm",
+                "ced_aec",
                 "ced_aec_2016"
             ],
             "description": "Commonwealth electoral districts (Australian Electoral Commission)",
