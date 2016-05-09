@@ -46,6 +46,22 @@ module.exports = function(devMode, hot) {
                     query: {
                         limit: 8192
                     }
+                },
+                {
+                    test: /nationalmap\.scss$/,
+                    loader: hot ?
+                        require.resolve('style-loader') + '!' +
+                        require.resolve('css-loader') + '?sourceMap!' +
+                        require.resolve('resolve-url-loader') + '?sourceMap!' +
+                        require.resolve('sass-loader') + '?sourceMap'
+                     : ExtractTextPlugin.extract(
+                        require.resolve('css-loader') + '?sourceMap!' +
+                        require.resolve('resolve-url-loader') + '?sourceMap!' +
+                        require.resolve('sass-loader') + '?sourceMap',
+                        {
+                            publicPath: ''
+                        }
+                    )
                 }
             ]
         },
@@ -54,9 +70,10 @@ module.exports = function(devMode, hot) {
                 'process.env': {
                     'NODE_ENV': devMode ? '"development"' : '"production"'
                 }
-            })
+            }),
+            new ExtractTextPlugin("nationalmap.css", {disable: hot})
         ]
     };
 
-    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot);
+    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, ExtractTextPlugin);
 }

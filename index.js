@@ -108,10 +108,15 @@ terria.start({
         selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
         let render = () => {
-            const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface.jsx');
+            const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx');
             ReactDOM.render(<StandardUserInterface terria={terria} allBaseMaps={allBaseMaps}
                                            viewState={viewState}/>, document.getElementById('ui'));
         };
+
+
+        if (process.env.NODE_ENV === "development") {
+            window.viewState = viewState;
+        }
 
         if (module.hot && process.env.NODE_ENV !== "production") {
             // Support hot reloading of components
@@ -133,7 +138,7 @@ terria.start({
                     renderError(error);
                 }
             };
-            module.hot.accept('terriajs/lib/ReactViews/StandardUserInterface.jsx', () => {
+            module.hot.accept('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx', () => {
                 setTimeout(render);
             });
         }

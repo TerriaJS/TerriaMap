@@ -30,7 +30,6 @@
 
 @import "~terriajs/lib/Sass/component/dropdown_panel";
 @import "~terriajs/lib/Sass/component/loader";
-@import "~terriajs/lib/Sass/component/location_bar";
 @import "~terriajs/lib/Sass/component/notification";
 @import "~terriajs/lib/Sass/component/compass_zoom";
 @import "~terriajs/lib/Sass/component/settingPanel";
@@ -42,20 +41,11 @@
 @import "~terriajs/lib/Sass/component/preview";
 @import "~terriajs/lib/Sass/component/search";
 @import "~terriajs/lib/Sass/component/mobile";
-@import "~terriajs/lib/Sass/component/bottom_dock";
 @import "~terriajs/lib/Sass/component/share_panel";
 @import "~terriajs/lib/Sass/component/analytics";
 
-@import "print";
+@import "~terriajs/lib/Sass/print";
 
-.ui {
- display: table;
- width: 100%;
-}
-
-.ui-inner {
- display: table-row;
-}
 
 .panel--getting-started .panel-content{
   background-image: url("~terriajs/wwwroot/images/welcome-bg.jpg");
