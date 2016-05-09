@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Geospatial catalog explorer based on TerriaJS",
   "engines" : { 
-    "node" : ">= 4.0.0", 
+    "node" : ">= 5.1.0", 
     "npm":  ">= 3.0.0"
   },
   "repository": {
