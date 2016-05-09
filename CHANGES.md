@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+### 2016-05-15
+* Detect when an old version of Node.js is being used, and fail helpfully.
+
 ### 2016-04-15
 
 * Updated the URLs for the Water Observations from Space datasets to `geoserver.nci.org.au`.
