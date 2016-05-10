@@ -313,7 +313,7 @@
             "regionIdsFile": "data/regionids/region_map-FID_COM20111216_ELB_region_ELECT_DIV.json"
         },
         "CED_AEC_2016": {
-            "layerName": "region_map:FID_COM20111216_ELB_2016",
+            "layerName": "region_map:FID_COM20160509_ELB",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "DIV_ID",
             "aliases": [
@@ -322,10 +322,10 @@
             ],
             "digits": 3,
             "description": "Commonwealth electoral districts (Australian Electoral Commission)",
-            "regionIdsFile": "data/regionids/region_map-FID_COM20111216_ELB_2016_DIV_ID.json"
+            "regionIdsFile": "data/regionids/region_map-FID_COM20160509_ELB_DIV_ID.json"
         },
         "CED_AEC_2016_NAME": {
-            "layerName": "region_map:FID_COM20111216_ELB_2016",
+            "layerName": "region_map:FID_COM20160509_ELB",
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ELECT_DIV",
             "textCodes": true,
@@ -335,7 +335,7 @@
                 "ced_aec_name_2016"
             ],
             "description": "Commonwealth electoral districts (Australian Electoral Commission)",
-            "regionIdsFile": "data/regionids/region_map-FID_COM20111216_ELB_2016_ELECT_DIV.json"
+            "regionIdsFile": "data/regionids/region_map-FID_COM20160509_ELB_ELECT_DIV.json"
         },
         "SED": {
             "layerName": "region_map:FID_SED_2011_AUST",
