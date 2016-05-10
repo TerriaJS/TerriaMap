@@ -528,7 +528,7 @@
         },
         "NRMR": {
             "layerName": "region_map:FID_NRMR_2011_AUST",
-            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "NRMR_CODE",
             "aliases": [
                 "nrmr",
@@ -541,7 +541,7 @@
         },
         "NRMR_NAME": {
             "layerName": "region_map:FID_NRMR_2011_AUST",
-            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "NRMR_NAME",
             "aliases": [
                 "nrmr_name"
@@ -551,7 +551,7 @@
         },
         "ADD": {
             "layerName": "region_map:FID_ADD_2011_AUST",
-            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ADD_CODE",
             "aliases": [
               "add",
@@ -564,7 +564,7 @@
         },
         "ADD_NAME": {
             "layerName": "region_map:FID_ADD_2011_AUST",
-            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ADD_NAME",
             "aliases": [
               "add_name"
