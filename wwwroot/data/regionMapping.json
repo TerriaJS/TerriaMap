@@ -314,7 +314,7 @@
         },
         "CED_AEC_2016": {
             "layerName": "region_map:FID_COM20111216_ELB_2016",
-            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "DIV_ID",
             "aliases": [
                 "ced_aec",
@@ -326,7 +326,7 @@
         },
         "CED_AEC_2016_NAME": {
             "layerName": "region_map:FID_COM20111216_ELB_2016",
-            "server": "http://temp-geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ELECT_DIV",
             "textCodes": true,
             "aliases": [
