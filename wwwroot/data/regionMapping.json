@@ -317,6 +317,7 @@
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "DIV_ID",
             "aliases": [
+                "divisionid",
                 "com_elb_code_2016",
                 "com_elb_code",
                 "com_elb"
