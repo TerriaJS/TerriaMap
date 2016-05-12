@@ -8,7 +8,7 @@
     "url": "http://github.com/NICTA/nationalmap"
   },
   "dependencies": {
-    "terriajs-server": "^2.0.0"
+    "terriajs-server": "^2.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
@@ -42,7 +42,7 @@
     "style-loader": "^0.13.1",
     "terriajs": "git://github.com/TerriaJS/terriajs.git#newui",
     "terriajs-catalog-editor": "^0.2.0",
-    "terriajs-cesium": "1.19.3",
+    "terriajs-cesium": "1.20.0",
     "terriajs-schema": "latest",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",

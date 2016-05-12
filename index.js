@@ -1,6 +1,8 @@
 'use strict';
 
 /*global require*/
+var version = require('./version');
+
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
@@ -59,16 +61,12 @@ registerCustomComponentTypes(terria);
 
 terria.welcome = '<h3>Terria<sup>TM</sup> is a spatial data platform that provides spatial predictive analytics</h3><div class="body-copy"><p>This interactive map uses TerriaJS<sup>TM</sup>, an open source software library developed by Data61 for building rich, web-based geospatial data explorers.  It uses Cesium<sup>TM</sup> open source 3D globe viewing software.  TerriaJS<sup>TM</sup> is used for the official Australian Government NationalMap and many other sites rich in the use of spatial data.</p><p>This map also uses Terria<sup>TM</sup> Inference Engine, a cloud-based platform for making probabilistic predictions using data in a web-based mapping environment. Terria<sup>TM</sup> Inference Engine uses state of the art machine learning algorithms developed by Data61 and designed specifically for large-scale spatial inference.</p></div>';
 
-const viewState = new ViewState(terria, [
-    new BingMapsSearchProviderViewModel({terria}),
-    new GazetteerSearchProviderViewModel({terria})
-]);
-
-viewState.notifications.push({
-    title: 'Aremi is a spatial data platform for the Australian Energy industry',
-    message: 'We are focused on supporting Developer, Financiers, and Policy Makers in evaluating spatial renewable energy information.\n\nAREMI is funded by the *Australian Renewable Energy Agency* and developed by *Data61* in partnership with *GeoScience Australia* and the *Clean Energy Council*.',
-    confirmText: 'Got it! Take me to the map',
-    hideUi: true
+const viewState = new ViewState({
+    terria: terria,
+    locationSearchProviders: [
+        new BingMapsSearchProviderViewModel({terria}),
+        new GazetteerSearchProviderViewModel({terria})
+    ]
 });
 
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
@@ -109,8 +107,11 @@ terria.start({
 
         let render = () => {
             const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx');
-            ReactDOM.render(<StandardUserInterface terria={terria} allBaseMaps={allBaseMaps}
-                                           viewState={viewState}/>, document.getElementById('ui'));
+            ReactDOM.render(<StandardUserInterface
+                                terria={terria}
+                                allBaseMaps={allBaseMaps}
+                                viewState={viewState}
+                                version={version} />, document.getElementById('ui'));
         };
 
 

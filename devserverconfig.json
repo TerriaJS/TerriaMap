@@ -18,5 +18,10 @@
     ],
     "initPaths": [
         "node_modules/nationalmap-catalog/build"
-    ]
+    ],
+    "feedback": {
+        "userAgent": "TerriaBot (TerriaJS Feedback)",
+        "issuesUrl": "https://api.github.com/repos/TerriaJS/NationalMap-Feedback/issues",
+        "accessToken": null
+    }
 }
