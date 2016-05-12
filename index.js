@@ -64,13 +64,6 @@ const viewState = new ViewState(terria, [
     new GazetteerSearchProviderViewModel({terria})
 ]);
 
-viewState.notifications.push({
-    title: 'Aremi is a spatial data platform for the Australian Energy industry',
-    message: 'We are focused on supporting Developer, Financiers, and Policy Makers in evaluating spatial renewable energy information.\n\nAREMI is funded by the *Australian Renewable Energy Agency* and developed by *Data61* in partnership with *GeoScience Australia* and the *Clean Energy Council*.',
-    confirmText: 'Got it! Take me to the map',
-    hideUi: true
-});
-
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
 if (process.env.NODE_ENV !== "production" && module.hot) {
