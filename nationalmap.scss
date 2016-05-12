@@ -2,7 +2,6 @@
 
 @import "~terriajs/lib/Sass/global/variables";
 @import "~terriajs/lib/Sass/global/icons";
-@import "~terriajs/lib/Sass/global/helpers";
 @import "~terriajs/lib/Sass/global/mixins";
 @import "~terriajs/lib/Sass/partial/base";
 @import "~terriajs/lib/Sass/partial/type";
@@ -16,14 +15,12 @@
 @import "~terriajs/lib/Sass/partial/map";
 @import "~terriajs/lib/Sass/partial/leaflet";
 // component styles
-@import "~terriajs/lib/Sass/partial/branding";
 @import "~terriajs/lib/Sass/partial/drop_zone";
 
 @import "~terriajs/lib/Sass/partial/map_navigation";
 @import "~terriajs/lib/Sass/partial/misc";
 @import "~terriajs/lib/Sass/partial/modal_window";
 @import "~terriajs/lib/Sass/partial/my_data";
-@import "~terriajs/lib/Sass/partial/work_bench";
 
 //mobile only styles
 @import "~terriajs/lib/Sass/component/mobile";
@@ -37,7 +34,6 @@
 @import "~terriajs/lib/Sass/component/chart";
 @import "~terriajs/lib/Sass/component/data_catalog";
 @import "~terriajs/lib/Sass/component/feature_info";
-@import "~terriajs/lib/Sass/component/now_viewing";
 @import "~terriajs/lib/Sass/component/preview";
 @import "~terriajs/lib/Sass/component/search";
 @import "~terriajs/lib/Sass/component/mobile";
