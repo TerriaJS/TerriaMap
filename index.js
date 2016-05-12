@@ -1,6 +1,8 @@
 'use strict';
 
 /*global require*/
+var version = require('./version');
+
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
@@ -102,8 +104,11 @@ terria.start({
 
         let render = () => {
             const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface.jsx');
-            ReactDOM.render(<StandardUserInterface terria={terria} allBaseMaps={allBaseMaps}
-                                           viewState={viewState}/>, document.getElementById('ui'));
+            ReactDOM.render(<StandardUserInterface
+                                terria={terria}
+                                allBaseMaps={allBaseMaps}
+                                viewState={viewState}
+                                version={version} />, document.getElementById('ui'));
         };
 
         if (module.hot && process.env.NODE_ENV !== "production") {
