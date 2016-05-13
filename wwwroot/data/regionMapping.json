@@ -584,7 +584,7 @@
               "add_code_2011"
             ],
             "digits": 3,
-            "description": "Natural resource management regions",
+            "description": "Australian drainage divisions",
             "regionIdsFile": "data/regionids/region_map-FID_ADD_2011_AUST_ADD_CODE.json"
         },
         "ADD_NAME": {
@@ -594,7 +594,7 @@
             "aliases": [
               "add_name"
             ],
-            "description": "Natural resource management regions",
+            "description": "Australian drainage divisions",
             "regionIdsFile": "data/regionids/region_map-FID_ADD_2011_AUST_ADD_NAME.json"
         },
         "PHN": {
