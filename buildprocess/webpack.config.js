@@ -9,7 +9,8 @@ var config = {
     output: {
         path: 'wwwroot/build',
         filename: 'nationalmap.js',
-        publicPath: 'build/'
+        publicPath: 'build/',
+        sourcePrefix: '' // to avoid breaking multi-line string literals by inserting extra tabs.
     },
     devtool: 'source-map',
     module: {
