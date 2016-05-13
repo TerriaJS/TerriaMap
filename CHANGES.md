@@ -3,6 +3,15 @@ Change Log
 
 ### 2016-05-13
 
+* Breaking changes:
+  * Columns with the name `ced_aec` are no longer supported for region mapping.  Please use `com_elb_code` or `com_elb_name` instead.
+* Added new region types for region mapping:
+  * Commonwealth electoral divisions 2016 by ID, from the Australian Electoral Commission: (column names: `divisionnm`, `com_elb_name_2016`, or `com_elb_name`)
+  * Commonwealth electoral divisions 2016 by name, from the Australian Electoral Commission: (column names: `divisionid`, `com_elb_code_2016`, `com_elb_code`, or `com_elb`)
+  * Natural resource management regions by ID (column names: `nrmr`, `nrmr_code`, or `nrmr_code_2011`)
+  * Natural resource management regions by name (column name: `nrmr_name`)
+  * Australian drainage divisions by ID (column names: `add`, `add_code`, `add_code_2011`)
+  * Australian drainage divisions by name (column name: `add_name`)
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 3.1.0.  Significant changes relevant to NationalMap users include:
   * Injected clicked lat and long into templates under `{{terria.coords.latitude}}` and `{{terria.coords.longitude}}`.
   * Fixed an exception being thrown when selecting a region while another region highlight was still loading.
