@@ -18,7 +18,7 @@
     "eslint": "^2.7.0",
     "eslint-plugin-jsx-control-statements": "git+https://github.com/AlexGilleran/eslint-plugin-jsx-control-statements.git",
     "eslint-plugin-react": "^4.3.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "https://github.com/MicheleBertoli/extract-text-webpack-plugin#order-undefined-error",
     "file-loader": "^0.8.5",
     "fs-extra": "^0.30.0",
     "generate-terriajs-schema": "^1.2.1",
