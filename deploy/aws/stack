@@ -33,7 +33,7 @@ aws cloudformation $1-stack \
     --parameters \
       ParameterKey=ImageId,ParameterValue='ami-2a644649' \
       ParameterKey=InstanceType,ParameterValue='t2.medium' \
-      ParameterKey=KeyName,ParameterValue='natmap-kring' \
+      ParameterKey=KeyName,ParameterValue='natmap-peter' \
       ParameterKey=RootVolumeSize,ParameterValue='16' \
       ParameterKey=UserDataBase64,ParameterValue="${BASE64_USERDATA}" \
       # ParameterKey=SpotPrice,ParameterValue='0.041' \
