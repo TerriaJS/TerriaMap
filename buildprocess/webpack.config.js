@@ -71,7 +71,7 @@ module.exports = function(devMode, hot) {
                     'NODE_ENV': devMode ? '"development"' : '"production"'
                 }
             }),
-            new ExtractTextPlugin("nationalmap.css", {disable: hot})
+            new ExtractTextPlugin("nationalmap.css", {disable: hot, ignoreOrder: true})
         ]
     };
 
