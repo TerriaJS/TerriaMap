@@ -191,3 +191,133 @@ gulp.task('diagnose', function() {
         }
     }
 });
+
+gulp.task('make-package', function() {
+    makePackage();
+});
+
+gulp.task('make-clean-package', function() {
+    var fs = require('fs-extra');
+    var spawnSync = require('child_process').spawnSync;
+
+    checkPackageParameters();
+
+    // Remove install/build products
+    fs.removeSync('node_modules');
+    fs.removeSync(path.join('wwwroot', 'build'));
+
+    // npm install
+    var npmResult = spawnSync('npm', ['install'], {
+        stdio: 'inherit',
+        shell: false
+    });
+    if (npmResult.status !== 0) {
+        throw new gutil.PluginError('npm', 'External module exited with an error.', { showStack: false });
+    }
+
+    // build
+    gulp.run('release');
+
+    makePackage();
+});
+
+function checkPackageParameters() {
+    var argv = require('yargs').argv;
+    var fs = require('fs-extra');
+    var spawnSync = require('child_process').spawnSync;
+
+    var packageName = argv.packageName;
+    if (!packageName) {
+        throw new gutil.PluginError('make-package', '--packageName is required.', { showStack: false });
+    }
+
+    var packagesDir = path.join('.', 'deploy', 'packages');
+    if (!fs.existsSync(packagesDir)) {
+        fs.mkdirSync(packagesDir);
+    }
+
+    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
+    if (fs.existsSync(packageFile)) {
+        throw new gutil.PluginError('make-package', 'Package file already exists: ' + packageFile, { showStack: false });
+    }
+}
+
+function makePackage() {
+    var argv = require('yargs').argv;
+    var fs = require('fs-extra');
+    var spawnSync = require('child_process').spawnSync;
+
+    checkPackageParameters();
+
+    var packageName = argv.packageName;
+    var packagesDir = path.join('.', 'deploy', 'packages');
+    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
+
+    var workingDir = path.join('.', 'deploy', 'work');
+    if (fs.existsSync(workingDir)) {
+        fs.removeSync(workingDir);
+    }
+
+    fs.mkdirSync(workingDir);
+
+    var copyOptions = {
+        preserveTimestamps: true
+    };
+
+    fs.copySync('wwwroot', path.join(workingDir, 'wwwroot'), copyOptions);
+    fs.copySync('node_modules', path.join(workingDir, 'node_modules'), copyOptions);
+
+    if (argv.serverConfigOverride) {
+        var serverConfig = JSON.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
+        var serverConfigOverride = JSON.parse(fs.readFileSync(argv.serverConfigOverride, 'utf8'));
+        var productionServerConfig = mergeConfigs(serverConfig, serverConfigOverride);
+        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), JSON.stringify(productionServerConfig, undefined, '  '));
+    } else {
+        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), fs.readyFileSync('devserverconfig.json', 'utf8'));
+    }
+
+    if (argv.clientConfigOverride) {
+        var clientConfig = JSON.parse(fs.readFileSync(path.join('wwwroot', 'config.json'), 'utf8'));
+        var clientConfigOverride = JSON.parse(fs.readFileSync(argv.clientConfigOverride, 'utf8'));
+        var productionClientConfig = mergeConfigs(clientConfig, clientConfigOverride);
+        fs.writeFileSync(path.join(workingDir, 'wwwroot', 'config.json'), JSON.stringify(productionClientConfig, undefined, '  '));
+    }
+
+    var tarResult = spawnSync('tar', [
+        'czvf',
+        path.join('..', 'packages', packageName + '.tar.gz')
+    ].concat(fs.readdirSync(workingDir)), {
+        cwd: workingDir,
+        stdio: 'inherit',
+        shell: false
+    });
+    if (tarResult.status !== 0) {
+        throw new gutil.PluginError('tar', 'External module exited with an error.', { showStack: false });
+    }
+}
+
+function mergeConfigs(original, override) {
+    var result = Object.assign({}, original);
+
+    for (var name in override) {
+        if (!override.hasOwnProperty(name)) {
+            continue;
+        }
+
+        if (Array.isArray(override[name])) {
+            var a = original[name].slice();
+            override[name].forEach(function(item) {
+                if (original[name].indexOf(item) < 0) {
+                    a.push(item);
+                }
+            });
+            result[name] = a;
+        } else if (typeof override[name] === 'object') {
+            result[name] = mergeConfigs(original[name], override[name]);
+        } else {
+            result[name] = override[name];
+        }
+    }
+
+    return result;
+}
