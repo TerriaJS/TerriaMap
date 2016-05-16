@@ -19,7 +19,6 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # encode the 'user-data' file into a BASE64 string (use Perl since the Linux(GNU)/OSX(BSD) 'base64' utils are different
-#BASE64_USERDATA=$(perl -MMIME::Base64 -0777ne 'print encode_base64($_, "")' user-data)
 BASE64_USERDATA=$(node createUserData.js user-data $2)
 echo "Length of the BASE64 encoded user-data is ${#BASE64_USERDATA} (max size allowed is 4096.)"
 

@@ -7,4 +7,4 @@ if (process.argv.length < 4) {
 
 var userDataTemplate = fs.readFileSync(process.argv[2], 'utf8');
 var userData = userDataTemplate.replace(/{{deploymentName}}/g, process.argv[3]);
-process.stdout.write(new Buffer(userDataTemplate).toString('base64'));
+process.stdout.write(new Buffer(userData).toString('base64'));
