@@ -83,7 +83,7 @@ write_files:
     start on (net-device-up and local-filesystems and runlevel [2345])
     stop on runlevel [016]
     console log
-    exec bash -c "cd /opt/{{deploymentName}} && /opt/{{deploymentName}}/node_modules/terriajs-server/run_server.sh --config-file serverconfig.json 2>&1 | logger -t natmap"
+    exec bash -c "cd /opt/{{deploymentName}} && /opt/{{deploymentName}}/node_modules/terriajs-server/run_server.sh --config-file publicserverconfig.json 2>&1 | logger -t natmap"
 
 # run all the commands to set this instance up
 runcmd:
