@@ -45,6 +45,7 @@ Prior to deploying, please tag the release, e.g.
 
 ```
 git tag -a 2016-05-17 -m '2016-05-17' release
+git push origin 2016-05-17
 ```
 
 Deployment is initiated via `npm` scripts.  A full production deployment may be initiated with:
@@ -53,7 +54,7 @@ Deployment is initiated via `npm` scripts.  A full production deployment may be 
 npm run deploy
 ```
 
-Once the stack starts up, it will be available at `nationalmap-2016-05-17.nationalmap.nicta.com.au`, where `nationalmap` is the name of the project in `package.json` and `2016-05-17
+Once the stack starts up, it will be available at `nationalmap-2016-05-17.nationalmap.nicta.com.au`, where `nationalmap` is the name of the project in `package.json` and `2016-05-17` is the output of `git describe` (that's why you should talk before starting a deployment).
 
 The following npm scripts are available:
 
