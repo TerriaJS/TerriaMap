@@ -197,7 +197,7 @@ gulp.task('make-package', function() {
     var fs = require('fs-extra');
     var spawnSync = require('child_process').spawnSync;
 
-    var packageName = argv.packageName || spawnSync('git', ['describe']).stdout.toString().trim();
+    var packageName = argv.packageName || (process.env.npm_package_name + '-' + spawnSync('git', ['describe']).stdout.toString().trim());
     var packagesDir = path.join('.', 'deploy', 'packages');
 
     if (!fs.existsSync(packagesDir)) {

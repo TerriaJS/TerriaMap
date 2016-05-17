@@ -16,7 +16,7 @@
 PACKAGE_NAME=$2
 if [ -z "$2" ]
   then
-    PACKAGE_NAME=$(git describe)
+    PACKAGE_NAME=$npm_package_name-$(git describe)
 fi
 
 echo "Deploying $PACKAGE_NAME"
