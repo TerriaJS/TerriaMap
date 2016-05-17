@@ -12,7 +12,7 @@
   },
   "config": {
     "awsProfile": "nationalmap",
-    "awsS3PackagesPath": "s3://nationalmap-apps/nationalmap/",
+    "awsS3PackagesPath": "s3://nationalmap-apps/nationalmap",
     "awsRegion": "ap-southeast-2",
     "awsEc2InstanceType": "t2.medium",
     "awsEc2ImageId": "ami-2a644649",

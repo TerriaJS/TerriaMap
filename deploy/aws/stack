@@ -21,7 +21,7 @@ fi
 
 echo "Deploying $PACKAGE_NAME"
 
-aws s3 --profile $npm_package_config_awsProfile cp ../packages/$PACKAGE_NAME.tar.gz $npm_package_config_s3PackagesPath/$PACKAGE_NAME.tar.gz
+aws s3 --profile $npm_package_config_awsProfile cp ../packages/$PACKAGE_NAME.tar.gz $npm_package_config_awsS3PackagesPath/$PACKAGE_NAME.tar.gz
 if [[ $? -ne 0 ]]; then
     exit 1
 fi
@@ -38,9 +38,9 @@ aws cloudformation $1-stack \
     --template-body file://stack.json \
     --capabilities CAPABILITY_IAM \
     --parameters \
-      ParameterKey=ImageId,ParameterValue='$npm_package_config_awsEc2ImageId' \
-      ParameterKey=InstanceType,ParameterValue='$npm_package_config_awsEc2InstanceType' \
-      ParameterKey=KeyName,ParameterValue='$npm_package_config_awsKeyName' \
+      ParameterKey=ImageId,ParameterValue="${npm_package_config_awsEc2ImageId}" \
+      ParameterKey=InstanceType,ParameterValue="${npm_package_config_awsEc2InstanceType}" \
+      ParameterKey=KeyName,ParameterValue="${npm_package_config_awsKeyName}" \
       ParameterKey=RootVolumeSize,ParameterValue='16' \
       ParameterKey=UserDataBase64,ParameterValue="${BASE64_USERDATA}" \
       # ParameterKey=SpotPrice,ParameterValue='0.041' \
