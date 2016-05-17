@@ -27,14 +27,14 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # encode the 'user-data' file into a BASE64 string (use Perl since the Linux(GNU)/OSX(BSD) 'base64' utils are different
-BASE64_USERDATA=$(node createUserData.js user-data $2)
+BASE64_USERDATA=$(node createUserData.js user-data $PACKAGE_NAME)
 echo "Length of the BASE64 encoded user-data is ${#BASE64_USERDATA} (max size allowed is 4096.)"
 
 # run the AWS CloudFormation command to take action
 aws cloudformation $1-stack \
     --profile nationalmap \
     --region ap-southeast-2 \
-    --stack-name "$2" \
+    --stack-name "$PACKAGE_NAME" \
     --template-body file://stack.json \
     --capabilities CAPABILITY_IAM \
     --parameters \

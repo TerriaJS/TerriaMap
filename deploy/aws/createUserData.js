@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 if (process.argv.length < 4) {
-    console.log('createUserData <user data filename> <deployment name>');
+    console.error('createUserData <user data filename> <deployment name>');
     process.exit(1);
 }
 
