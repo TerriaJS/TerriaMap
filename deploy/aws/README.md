@@ -2,17 +2,36 @@
 
 ## Prerequisites
 
+### package.json
+
+Various parameters controlling AWS deployment are specified in `package.json`.  They are:
+
+* `awsProfile` - The AWS profile to use (see AWS credentials below) when interacting with AWS.
+* `awsS3PackagesPath` - The S3 path to which to copy the deployment .tar.gz.
+* `awsRegion` - The AWS region in which to create resources.
+* `awsEc2InstanceType` - The type of EC2 instance to use.
+* `awsEc2ImageId` - The ID of the EC2 image to use.
+* `awsKeyName` - The name of a key that may be used to SSH to the EC2 instance.
+* `awsS3ServerConfigOverridePath` - The path to a file on S3 containing any overrides to `devserverconfig.json`.
+* `awsS3ClientConfigOverridePath` - The path to a file on S3 containing any overrides to `wwwroot/config.json`.
+
+You can customize these settings by changing `package.json`, or by using `npm config` to override the setting locally, for example;
+
+```
+npm config set nationalmap:awsProfile myprofilename
+```
+
 ### awscli
 
-You require a recent version of `awscli`. It's recommended to install and maintain this using `pip` as the Homebrew and Ubuntu packages are quite old.
+Deploying requires a recent version of `awscli`. It's recommended to install and maintain this using `pip` as the Homebrew and Ubuntu packages are quite old.
 
 ```sh
 pip install awscli
 ```
 
-### aws credentials
+### AWS credentials
 
-You must have an `awscli` configuration profile (in `~/.aws/config`) named `nationalmap` with your credentials. e.g.
+You must have an `awscli` configuration profile (in `~/.aws/config`) with a name that matches `awsProfile` in `package.json`.  e.g.
 
 ```
 [profile nationalmap]
@@ -20,35 +39,30 @@ aws_access_key_id=YOUR_ACCESS_KEY
 aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
 ```
 
-### Release tarball on S3
+### Deploy
 
-The new release tarball needs to be copied to the `nationalmap-apps` S3 bucket in the `nationalmap` directory, e.g.
-
-```
-s3://nationalmap-apps/nationalmap/natmap-2016-01-15.tar.gz
-```
-
-## Deployment Process
-
-### Update User Data
-
-Update the `user-data` file as required. Typically you just need to update all occurences of the release version, e.g.
+Prior to deploying, please tag the release, e.g.
 
 ```
-natmap-2015-12-15 -> natmap-2016-01-15
+git tag -a 2016-05-17 -m '2016-05-17' release
 ```
 
-### Create Stack
-
-We use the following naming convention for stacks nm-TAG, e.g.
+Deployment is initiated via `npm` scripts.  A full production deployment may be initiated with:
 
 ```
-nm-2015-11-16b
-nm-2015-12-15
-nm-2016-01-15
+npm run deploy
 ```
 
-The `stack` script creates a new CloudFormation stack with the following AWS resources:
+Once the stack starts up, it will be available at `nationalmap-2016-05-17.nationalmap.nicta.com.au`, where `nationalmap` is the name of the project in `package.json` and `2016-05-17
+
+The following npm scripts are available:
+
+* `deploy` - Removes the `node_modules` directory, runs `npm install`, and launches the `deploy-without-reinstall` script.
+* `deploy-without-reinstall` - Runs `gulp clean` (which removes the `wwwroot/build` directory) and `gulp release`, and then launches the `deploy-current` script.
+* `deploy-current` - Gets the two configuration override files specified in package.json from S3, builds a package (.tar.gz), uploads it to S3, and spins up a CloudFormation stack.
+
+
+The CloudFormation stack has the following AWS resources:
 
   - Elastic Load Balancer
   - EC2 Security Group
@@ -58,20 +72,14 @@ The `stack` script creates a new CloudFormation stack with the following AWS res
 
 Instances in the Auto Scaling group are bootstrapped using the supplied `user-data` file.
 
-Create a new stack:
-
-```
-./stack create nm-2016-01-15
-```
-
-This process takes about 5 minutes but it can take a further 15 minutes for the DNS to propagate.
+The process of starting a new stack takes about 5 minutes but it can take a further 15 minutes for the DNS to propagate.
 
 ### Test stack
 
 Each stack is automatically assigned its own URL based on the name of the stack. e.g.
 
 ```
-http://nm-2016-01-15.nationalmap.nicta.com.au/
+https://nationalmap-2016-05-17.nationalmap.nicta.com.au/
 ```
 
 ### Update DNS alias
@@ -80,5 +88,5 @@ Once you're satisfied the release is working, change the staging environment DNS
 
 
 ```
-staging.nationalmap.nicta.com.au -> nm-2016-01-15.nationalmap.nicta.com.au
+staging.nationalmap.nicta.com.au -> nationalmap-2016-05-17.nationalmap.nicta.com.au
 ```

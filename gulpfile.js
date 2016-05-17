@@ -266,13 +266,6 @@ function mergeConfigs(original, override) {
 
         if (Array.isArray(override[name])) {
             result[name] = override[name];
-            // var a = original[name].slice();
-            // override[name].forEach(function(item) {
-            //     if (original[name].indexOf(item) < 0) {
-            //         a.push(item);
-            //     }
-            // });
-            // result[name] = a;
         } else if (typeof override[name] === 'object') {
             result[name] = mergeConfigs(original[name], override[name]);
         } else {
