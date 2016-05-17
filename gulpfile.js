@@ -193,56 +193,6 @@ gulp.task('diagnose', function() {
 });
 
 gulp.task('make-package', function() {
-    makePackage();
-});
-
-gulp.task('make-clean-package', function() {
-    var fs = require('fs-extra');
-    var spawnSync = require('child_process').spawnSync;
-
-    checkPackageParameters();
-
-    // Remove install/build products
-    fs.removeSync('node_modules');
-    fs.removeSync(path.join('wwwroot', 'build'));
-
-    // npm install
-    var npmResult = spawnSync('npm', ['install'], {
-        stdio: 'inherit',
-        shell: false
-    });
-    if (npmResult.status !== 0) {
-        throw new gutil.PluginError('npm', 'External module exited with an error.', { showStack: false });
-    }
-
-    // build
-    gulp.run('release');
-
-    makePackage();
-});
-
-function checkPackageParameters() {
-    var argv = require('yargs').argv;
-    var fs = require('fs-extra');
-    var spawnSync = require('child_process').spawnSync;
-
-    var packageName = argv.packageName;
-    if (!packageName) {
-        throw new gutil.PluginError('make-package', '--packageName is required.', { showStack: false });
-    }
-
-    var packagesDir = path.join('.', 'deploy', 'packages');
-    if (!fs.existsSync(packagesDir)) {
-        fs.mkdirSync(packagesDir);
-    }
-
-    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
-    if (fs.existsSync(packageFile)) {
-        throw new gutil.PluginError('make-package', 'Package file already exists: ' + packageFile, { showStack: false });
-    }
-}
-
-function makePackage() {
     var argv = require('yargs').argv;
     var fs = require('fs-extra');
     var spawnSync = require('child_process').spawnSync;
@@ -293,6 +243,34 @@ function makePackage() {
     });
     if (tarResult.status !== 0) {
         throw new gutil.PluginError('tar', 'External module exited with an error.', { showStack: false });
+    }
+});
+
+gulp.task('clean', function() {
+    var fs = require('fs-extra');
+
+    // // Remove build products
+    fs.removeSync(path.join('wwwroot', 'build'));
+});
+
+function checkPackageParameters() {
+    var argv = require('yargs').argv;
+    var fs = require('fs-extra');
+    var spawnSync = require('child_process').spawnSync;
+
+    var packageName = argv.packageName;
+    if (!packageName) {
+        throw new gutil.PluginError('make-package', '--packageName is required.', { showStack: false });
+    }
+
+    var packagesDir = path.join('.', 'deploy', 'packages');
+    if (!fs.existsSync(packagesDir)) {
+        fs.mkdirSync(packagesDir);
+    }
+
+    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
+    if (fs.existsSync(packageFile)) {
+        throw new gutil.PluginError('make-package', 'Package file already exists: ' + packageFile, { showStack: false });
     }
 }
 
