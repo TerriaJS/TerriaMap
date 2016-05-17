@@ -197,10 +197,13 @@ gulp.task('make-package', function() {
     var fs = require('fs-extra');
     var spawnSync = require('child_process').spawnSync;
 
-    checkPackageParameters();
-
-    var packageName = argv.packageName;
+    var packageName = argv.packageName || spawnSync('git', ['describe']).stdout.toString().trim();
     var packagesDir = path.join('.', 'deploy', 'packages');
+
+    if (!fs.existsSync(packagesDir)) {
+        fs.mkdirSync(packagesDir);
+    }
+
     var packageFile = path.join(packagesDir, packageName + '.tar.gz');
 
     var workingDir = path.join('.', 'deploy', 'work');
@@ -252,27 +255,6 @@ gulp.task('clean', function() {
     // // Remove build products
     fs.removeSync(path.join('wwwroot', 'build'));
 });
-
-function checkPackageParameters() {
-    var argv = require('yargs').argv;
-    var fs = require('fs-extra');
-    var spawnSync = require('child_process').spawnSync;
-
-    var packageName = argv.packageName;
-    if (!packageName) {
-        throw new gutil.PluginError('make-package', '--packageName is required.', { showStack: false });
-    }
-
-    var packagesDir = path.join('.', 'deploy', 'packages');
-    if (!fs.existsSync(packagesDir)) {
-        fs.mkdirSync(packagesDir);
-    }
-
-    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
-    if (fs.existsSync(packageFile)) {
-        throw new gutil.PluginError('make-package', 'Package file already exists: ' + packageFile, { showStack: false });
-    }
-}
 
 function mergeConfigs(original, override) {
     var result = Object.assign({}, original);
