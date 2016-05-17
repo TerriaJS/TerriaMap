@@ -13,7 +13,15 @@
 # be used.  The deployment-package-name is the name of the .tar.gz without .tar.gz on the end.
 #
 
-aws s3 --profile nationalmap cp ../packages/$2.tar.gz s3://nationalmap-apps/nationalmap/$2.tar.gz
+PACKAGE_NAME=$2
+if [ -z "$2" ]
+  then
+    PACKAGE_NAME=$(git describe)
+fi
+
+echo "Deploying $PACKAGE_NAME"
+
+aws s3 --profile nationalmap cp ../packages/$PACKAGE_NAME.tar.gz s3://nationalmap-apps/nationalmap/$PACKAGE_NAME.tar.gz
 if [[ $? -ne 0 ]]; then
     exit 1
 fi
