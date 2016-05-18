@@ -24,7 +24,7 @@ aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
 
 Various parameters controlling AWS deployment are specified in `package.json`.  They are:
 
-* `awsProfile` - The AWS profile to use (see AWS credentials below) when interacting with AWS.
+* `awsProfile` - The AWS profile to use (see AWS credentials above) when interacting with AWS.
 * `awsS3PackagesPath` - The S3 path to which to copy the deployment .tar.gz.
 * `awsRegion` - The AWS region in which to create resources.
 * `awsEc2InstanceType` - The type of EC2 instance to use.
