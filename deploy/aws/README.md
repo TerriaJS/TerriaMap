@@ -2,25 +2,6 @@
 
 ## Prerequisites
 
-### package.json
-
-Various parameters controlling AWS deployment are specified in `package.json`.  They are:
-
-* `awsProfile` - The AWS profile to use (see AWS credentials below) when interacting with AWS.
-* `awsS3PackagesPath` - The S3 path to which to copy the deployment .tar.gz.
-* `awsRegion` - The AWS region in which to create resources.
-* `awsEc2InstanceType` - The type of EC2 instance to use.
-* `awsEc2ImageId` - The ID of the EC2 image to use.
-* `awsKeyName` - The name of a key that may be used to SSH to the EC2 instance.
-* `awsS3ServerConfigOverridePath` - The path to a file on S3 containing any overrides to `devserverconfig.json`.
-* `awsS3ClientConfigOverridePath` - The path to a file on S3 containing any overrides to `wwwroot/config.json`.
-
-You can customize these settings by changing `package.json`, or by using `npm config` to override the setting locally, for example;
-
-```
-npm config set nationalmap:awsProfile myprofilename
-```
-
 ### awscli
 
 Deploying requires a recent version of `awscli`. It's recommended to install and maintain this using `pip` as the Homebrew and Ubuntu packages are quite old.
@@ -39,7 +20,26 @@ aws_access_key_id=YOUR_ACCESS_KEY
 aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
 ```
 
-### Deploy
+## package.json
+
+Various parameters controlling AWS deployment are specified in `package.json`.  They are:
+
+* `awsProfile` - The AWS profile to use (see AWS credentials below) when interacting with AWS.
+* `awsS3PackagesPath` - The S3 path to which to copy the deployment .tar.gz.
+* `awsRegion` - The AWS region in which to create resources.
+* `awsEc2InstanceType` - The type of EC2 instance to use.
+* `awsEc2ImageId` - The ID of the EC2 image to use.
+* `awsKeyName` - The name of a key that may be used to SSH to the EC2 instance.
+* `awsS3ServerConfigOverridePath` - The path to a file on S3 containing any overrides to `devserverconfig.json`.
+* `awsS3ClientConfigOverridePath` - The path to a file on S3 containing any overrides to `wwwroot/config.json`.
+
+You can customize these settings by changing `package.json`, or by using `npm config` to override the setting locally, for example;
+
+```
+npm config set nationalmap:awsProfile myprofilename
+```
+
+## Deploy
 
 Prior to deploying, please tag the release, e.g.
 
