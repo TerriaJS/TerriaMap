@@ -44,7 +44,7 @@ npm config set nationalmap:awsProfile myprofilename
 Prior to deploying, please tag the release, e.g.
 
 ```
-git tag -a 2016-05-17 -m '2016-05-17' release
+git tag -a 2016-05-17 -m '2016-05-17 release'
 git push origin 2016-05-17
 ```
 
