@@ -7,6 +7,14 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var path = require('path');
 
+var minNode = require('./package.json').engines.node;
+if (!require('semver').satisfies(process.version, minNode)) {
+    console.log('Terria requires Node.js ' + minNode + ' to build. Please update your version of Node.js, delete your node_modules directory' +
+        ', then run npm install and gulp again.');
+    process.exit();
+}
+
+
 gulp.task('build', ['build-css', 'copy-terriajs-assets', 'build-app']);
 gulp.task('release', ['build-css', 'copy-terriajs-assets', 'release-app', 'make-editor-schema']);
 gulp.task('watch', ['watch-css', 'watch-terriajs-assets', 'watch-app']);
