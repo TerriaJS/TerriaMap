@@ -11,7 +11,7 @@
     "url": "http://github.com/TerriaJS/map"
   },
   "dependencies": {
-    "terriajs-server": "^2.0.0"
+    "terriajs-server": "^2.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
