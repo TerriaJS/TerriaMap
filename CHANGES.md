@@ -1,6 +1,52 @@
 Change Log
 ==========
 
+### 2016-05-13b
+
+* Fixed a bug in the build configuration that allowed extra whitespace to be inserted in multi-line strings.  This whitespace could case the markdown formatter to treat the string as preformatted text and break, e.g., error messages.
+
+### 2016-05-13
+
+* Breaking changes:
+  * Columns with the name `ced_aec` are no longer supported for region mapping.  Please use `com_elb_code` or `com_elb_name` instead.
+* Added new region types for region mapping:
+  * Commonwealth electoral divisions 2016 by ID, from the Australian Electoral Commission: (column names: `divisionnm`, `com_elb_name_2016`, or `com_elb_name`)
+  * Commonwealth electoral divisions 2016 by name, from the Australian Electoral Commission: (column names: `divisionid`, `com_elb_code_2016`, `com_elb_code`, or `com_elb`)
+  * Natural resource management regions by ID (column names: `nrmr`, `nrmr_code`, or `nrmr_code_2011`)
+  * Natural resource management regions by name (column name: `nrmr_name`)
+  * Australian drainage divisions by ID (column names: `add`, `add_code`, `add_code_2011`)
+  * Australian drainage divisions by name (column name: `add_name`)
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 3.1.0.  Significant changes relevant to NationalMap users include:
+  * Injected clicked lat and long into templates under `{{terria.coords.latitude}}` and `{{terria.coords.longitude}}`.
+  * Fixed an exception being thrown when selecting a region while another region highlight was still loading.
+  * Added `CesiumTerrainCatalogItem` to display a 3D surface model in a supported Cesium format.
+  * Added support for configuration of how time is displayed on the timeline - catalog items can now specify a dateFormat hash
+      in their configuration that has formats for `timelineTic` (what is displayed on the timeline itself) and `currentTime`
+      (which is the current time at the top-left).
+  * Fixed display when `tableStyle.colorBins` is 0.
+  * Added `fogSettings` option to init file to customize fog settings, introduced in Cesium 1.16.
+  * Improved zooming to csvs, to include a small margin around the points.
+  * Support ArcGIS MapServer extents specified in a wider range of projections, including GDA MGA zones.
+  * WMS legends now use a bigger font, include labels, and are anti-aliased when we can determine that the server is Geoserver and supports these options.
+  * Added support for time-series data sets with gaps - these are skipped when scrubbing on the timeline or playing.
+  * Only trigger a search when the user presses enter or stops typing for 3 seconds.  This will greatly reduce the number of times that searches are performed, which is important with a geocoder like Bing Maps that counts each geocode as a transaction.
+  * Reduced the tendency for search to lock up the web browser while it is in progress.
+  * For WMS catalog items that have animated data, the initial time of the timeslider can be specified with `initialTimeSource` as `start`, `end`, `present` (nearest date to present), or with an ISO8601 date.
+  * Added ability to remove csv columns from the Now Viewing panel, using `"type": "HIDDEN"` in `tableStyle.columns`.
+  * Updated to [Cesium](http://cesiumjs.org) 1.20.  Significant changes relevant to TerriaJS users include:
+      * Fixed loading for KML `NetworkLink` to not append a `?` if there isn't a query string.
+      * Fixed handling of non-standard KML `styleUrl` references within a `StyleMap`.
+      * Fixed issue in KML where StyleMaps from external documents fail to load.
+      * Added translucent and colored image support to KML ground overlays
+      * `GeoJsonDataSource` now handles CRS `urn:ogc:def:crs:EPSG::4326`
+      * Fix a race condition that would cause the terrain to continue loading and unloading or cause a crash when changing terrain providers. [#3690](https://github.com/AnalyticalGraphicsInc/cesium/issues/3690)
+      * Fix issue where the `GroundPrimitive` volume was being clipped by the far plane. [#3706](https://github.com/AnalyticalGraphicsInc/cesium/issues/3706)
+      * Fixed a reentrancy bug in `EntityCollection.collectionChanged`. [#3739](https://github.com/AnalyticalGraphicsInc/cesium/pull/3739)
+      * Fixed a crash that would occur if you added and removed an `Entity` with a path without ever actually rendering it. [#3738](https://github.com/AnalyticalGraphicsInc/cesium/pull/3738)
+      * Fixed issue causing parts of geometry and billboards/labels to be clipped. [#3748](https://github.com/AnalyticalGraphicsInc/cesium/issues/3748)
+      * Fixed bug where transparent image materials were drawn black.
+      * Fixed `Color.fromCssColorString` from reusing the input `result` alpha value in some cases.
+
 ### 2016-04-15
 
 * Updated the URLs for the Water Observations from Space datasets to `geoserver.nci.org.au`.
