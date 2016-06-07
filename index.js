@@ -65,6 +65,8 @@ var NavigationViewModel = require('terriajs/lib/ViewModels/NavigationViewModel')
 var NowViewingAttentionGrabberViewModel = require('terriajs/lib/ViewModels/NowViewingAttentionGrabberViewModel');
 var NowViewingTabViewModel = require('terriajs/lib/ViewModels/NowViewingTabViewModel');
 var PopupMessageViewModel = require('terriajs/lib/ViewModels/PopupMessageViewModel');
+var PopupMessageConfirmationViewModel = require('terriajs/lib/ViewModels/PopupMessageConfirmationViewModel');
+var PopupMessageViewModel = require('terriajs/lib/ViewModels/PopupMessageViewModel');
 var SearchTabViewModel = require('terriajs/lib/ViewModels/SearchTabViewModel');
 var SettingsPanelViewModel = require('terriajs/lib/ViewModels/SettingsPanelViewModel');
 var SharePopupViewModel = require('terriajs/lib/ViewModels/SharePopupViewModel');
@@ -78,6 +80,7 @@ var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
 var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 var defaultValue = require('terriajs-cesium/Source/Core/defaultValue');
+var defined = require('terriajs-cesium/Source/Core/defined');
 
 var svgPlus = require('terriajs/lib/SvgPaths/svgPlus');
 var svgShare = require('terriajs/lib/SvgPaths/svgShare');
@@ -324,4 +327,37 @@ terria.start({
     });
 
     document.getElementById('loadingIndicator').style.display = 'none';
+
+    // Show a modal disclaimer before user can do anything else.
+    if (defined(terria.configParameters.globalDisclaimer)) {
+        var globalDisclaimer = terria.configParameters.globalDisclaimer;
+        var hostname = location.hostname;
+        if (globalDisclaimer.enableOnLocalhost || hostname.indexOf('localhost') === -1) {
+            var message = '';
+            // Sometimes we want to show a preamble if the user is viewing a site other than the official production instance.
+            // This can be expressed as a devHostRegex ("any site starting with staging.") or a negative prodHostRegex ("any site not ending in .gov.au")
+            if (defined(globalDisclaimer.devHostRegex) && hostname.match(globalDisclaimer.devHostRegex) ||
+                defined(globalDisclaimer.prodHostRegex) && !hostname.match(globalDisclaimer.prodHostRegex)) {
+                    message += require('./lib/Views/DevelopmentDisclaimerPreamble.html');
+            }
+            message += require('./lib/Views/GlobalDisclaimer.html');
+
+            var options = {
+                title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
+                confirmText: (globalDisclaimer.buttonTitle || "Ok"),
+                width: 600,
+                height: 550,
+                message: message,
+                horizontalPadding : 100
+            };
+
+            if(globalDisclaimer.confirmationRequired) {
+                // To account for confirmation buttons
+                options.height += 30;
+                PopupMessageConfirmationViewModel.open(ui, options);
+            } else {
+                PopupMessageViewModel.open(ui, options);
+            }
+        }
+    }
 });
