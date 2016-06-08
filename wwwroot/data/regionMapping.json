@@ -307,12 +307,37 @@
             "regionProp": "ELECT_DIV",
             "textCodes": true,
             "aliases": [
-                "divisionnm",
-                "ced_aec",
                 "ced_aec_2011"
             ],
             "description": "Commonwealth electoral districts (Australian Electoral Commission)",
             "regionIdsFile": "data/regionids/region_map-FID_COM20111216_ELB_region_ELECT_DIV.json"
+        },
+        "COM_ELB_2016": {
+            "layerName": "region_map:FID_COM20160509_ELB",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "DIV_ID",
+            "aliases": [
+                "divisionid",
+                "com_elb_code_2016",
+                "com_elb_code",
+                "com_elb"
+            ],
+            "digits": 3,
+            "description": "Commonwealth electoral districts (Australian Electoral Commission)",
+            "regionIdsFile": "data/regionids/region_map-FID_COM20160509_ELB_DIV_ID.json"
+        },
+        "COM_ELB_2016_NAME": {
+            "layerName": "region_map:FID_COM20160509_ELB",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "ELECT_DIV",
+            "textCodes": true,
+            "aliases": [
+                "divisionnm",
+                "com_elb_name_2016",
+                "com_elb_name"
+            ],
+            "description": "Commonwealth electoral districts (Australian Electoral Commission)",
+            "regionIdsFile": "data/regionids/region_map-FID_COM20160509_ELB_ELECT_DIV.json"
         },
         "SED": {
             "layerName": "region_map:FID_SED_2011_AUST",
@@ -515,16 +540,62 @@
             "regionIdsFile": "data/regionids/region_map-FID_TR_2015_AUST_TR_CODE15.json"
         },
         "TR_2013": {
-          "layerName": "region_map:FID_TR_2013_AUST",
-          "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
-          "regionProp": "TR_CODE13",
-          "aliases": [
-            "tr_code_2013",
-            "tr_2013"
-          ],
-          "digits": 5,
-          "description": "Tourism regions",
-          "regionIdsFile": "data/regionids/region_map-FID_TR_2013_AUST_TR_CODE13.json"
+            "layerName": "region_map:FID_TR_2013_AUST",
+            "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "TR_CODE13",
+            "aliases": [
+                "tr_code_2013",
+                "tr_2013"
+            ],
+            "digits": 5,
+            "description": "Tourism regions",
+            "regionIdsFile": "data/regionids/region_map-FID_TR_2013_AUST_TR_CODE13.json"
+        },
+        "NRMR": {
+            "layerName": "region_map:FID_NRMR_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "NRMR_CODE",
+            "aliases": [
+                "nrmr",
+                "nrmr_code",
+                "nrmr_code_2011"
+            ],
+            "digits": 3,
+            "description": "Natural resource management regions",
+            "regionIdsFile": "data/regionids/region_map-FID_NRMR_2011_AUST_NRMR_CODE.json"
+        },
+        "NRMR_NAME": {
+            "layerName": "region_map:FID_NRMR_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "NRMR_NAME",
+            "aliases": [
+                "nrmr_name"
+            ],
+            "description": "Natural resource management regions",
+            "regionIdsFile": "data/regionids/region_map-FID_NRMR_2011_AUST_NRMR_NAME.json"
+        },
+        "ADD": {
+            "layerName": "region_map:FID_ADD_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "ADD_CODE",
+            "aliases": [
+              "add",
+              "add_code",
+              "add_code_2011"
+            ],
+            "digits": 3,
+            "description": "Australian drainage divisions",
+            "regionIdsFile": "data/regionids/region_map-FID_ADD_2011_AUST_ADD_CODE.json"
+        },
+        "ADD_NAME": {
+            "layerName": "region_map:FID_ADD_2011_AUST",
+            "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "ADD_NAME",
+            "aliases": [
+              "add_name"
+            ],
+            "description": "Australian drainage divisions",
+            "regionIdsFile": "data/regionids/region_map-FID_ADD_2011_AUST_ADD_NAME.json"
         },
         "PHN": {
             "layerName": "region_map:FID_PHN_boundaries_AUS_Sep2015_V5",
