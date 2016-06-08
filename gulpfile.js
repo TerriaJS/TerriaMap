@@ -43,7 +43,7 @@ gulp.task('watch-app', function(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);
