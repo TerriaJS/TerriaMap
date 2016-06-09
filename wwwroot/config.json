@@ -4,6 +4,7 @@
         "test"
     ],
     "parameters": {
+        "feedbackUrl": "feedback",
         "bingMapsKey": "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
         "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
