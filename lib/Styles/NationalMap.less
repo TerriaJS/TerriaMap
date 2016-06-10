@@ -71,3 +71,52 @@ span.cesium-credit-delimiter:nth-child(2) {
 .nationalmap-related-maps-table tr td img {
     max-width: inherit;
 }
+
+.preview-link-container {
+    border-radius: 10px;
+    background-color: @floating-background-color;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-family: @default-font;
+    font-size: 15px;
+    font-weight: bold;
+    color: @menu-bar-text-color;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 40px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    @media print {
+        display: none;
+    }
+
+    @media screen and (max-width: 700px), screen and (max-height: 420px) {
+        display: none;
+    }
+}
+
+.preview-link-button {
+    cursor: pointer;
+    background-color: @panel-form-button-background-color;
+    border: 0;
+    font-size: 14px;
+    color: @panel-form-button-text-color;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+ .preview-link-line {
+    text-align: center;
+
+    strong {
+        font-style: italic;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+ }
