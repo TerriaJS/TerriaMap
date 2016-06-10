@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-06-15
+
+* Fixed an issue where the 404 error page would display incorrectly if given a non-existent path (eg, nationlmap.gov.au/nonexistent/path)
+
 ### 2016-05-13b
 
 * Fixed a bug in the build configuration that allowed extra whitespace to be inserted in multi-line strings.  This whitespace could case the markdown formatter to treat the string as preformatted text and break, e.g., error messages.
