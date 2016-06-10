@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-06-15
+
+* Added a prominent link to the preview of the new UI.
+
 ### 2016-05-13b
 
 * Fixed a bug in the build configuration that allowed extra whitespace to be inserted in multi-line strings.  This whitespace could case the markdown formatter to treat the string as preformatted text and break, e.g., error messages.
