@@ -11,9 +11,9 @@ The National Map is designed to:
 * Facilitate the opening of data by federal, state and local government bodies
 * Provide an open framework of geospatial data services that supports commercial and community innovation
 
-NationalMap is powered by [https://github.com/TerriaJS/TerriaJS](TerriaJS), a free, open source geospatial catalog viewer. The content is maintained in [https://github.com/TerriaJS/NationalMap-Catalog](NationalMap-Catalog).
+NationalMap is powered by [TerriaJS](https://github.com/TerriaJS/TerriaJS), a free, open source geospatial catalog viewer. The content is maintained in [NationalMap-Catalog](https://github.com/TerriaJS/NationalMap-Catalog).
 
 ### Want to make your own Terria Map? ###
 Please don't clone **this** repo. Instead, start your map from https://github.com/TerriaJS/TerriaMap, which is maintained as a starting point for third-party maps, without the NationalMap branding.
 
-See the [TerriaMap documentation](http://terria.io/Documentation/) for more detailed information about Terria and how to build and run it.
+See the [http://terria.io/Documentation/](TerriaMap documentation) for more detailed information about Terria and how to build and run it.
