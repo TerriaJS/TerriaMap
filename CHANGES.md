@@ -3,6 +3,7 @@ Change Log
 
 ### 2016-06-15
 
+* Added a prominent link to the preview of the new UI.
 * Fixed an issue where the 404 error page would display incorrectly if given a non-existent path (eg, nationlmap.gov.au/nonexistent/path)
 
 ### 2016-05-13b
