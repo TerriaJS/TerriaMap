@@ -56,6 +56,7 @@ var DragDropViewModel = require('terriajs/lib/ViewModels/DragDropViewModel');
 var ExplorerPanelViewModel = require('terriajs/lib/ViewModels/ExplorerPanelViewModel');
 var FeatureInfoPanelViewModel = require('terriajs/lib/ViewModels/FeatureInfoPanelViewModel');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel');
+var GNAFSearchProviderViewModel = require('terriajs/lib/ViewModels/GNAFSearchProviderViewModel.js');
 var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var LocationBarViewModel = require('terriajs/lib/ViewModels/LocationBarViewModel');
 var MenuBarItemViewModel = require('terriajs/lib/ViewModels/MenuBarItemViewModel');
@@ -289,6 +290,9 @@ terria.start({
                         key: configuration.bingMapsKey
                     }),
                     new GazetteerSearchProviderViewModel({
+                        terria: terria
+                    }),
+                    new GNAFSearchProviderViewModel({
                         terria: terria
                     })
                 ]
