@@ -5,6 +5,7 @@ Change Log
 
 * Added a prominent link to the preview of the new UI.
 * Fixed an issue where the 404 error page would display incorrectly if given a non-existent path (eg, nationlmap.gov.au/nonexistent/path)
+* Added CNT3 as an alias for ISO3 as a csv column name (for three-letter country codes).
 
 ### 2016-05-13b
 
