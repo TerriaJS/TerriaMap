@@ -5,6 +5,7 @@ Change Log
 
 * Added a prominent link to the preview of the new UI.
 * Fixed an issue where the 404 error page would display incorrectly if given a non-existent path (eg, nationlmap.gov.au/nonexistent/path)
+* Added CNT3 as an alias for ISO3 as a csv column name (for three-letter country codes).
 * Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 3.3.0.  Significant changes relevant to NationalMap users include:
   * `CkanCatalogItem.createCatalogItemFromResource`'s `options.allowGroups` has been replaced with `options.allowWmsGroups` and `options.allowWfsGroups`.
   * Added support for WFS in CKAN items.
@@ -28,7 +29,6 @@ Change Log
   * Metadata and single data files (e.g. KML, GeoJSON) are now consistently cached for one day instead of two weeks.
   * `WebMapServiceCatalogItem` now uses the legend for the `style` specified in `parameters` when possible.  It also now includes the `parameters` when building a `GetLegendGraphic` URL.
   * Fixed a bug that prevented switching to the 3D view after starting the application in 2D mode.
-* Added CNT3 as an alias for ISO3 as a csv column name (for three-letter country codes).
 
 ### 2016-05-13b
 
