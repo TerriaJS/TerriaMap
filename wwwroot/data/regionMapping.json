@@ -755,6 +755,7 @@
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ISO3",
             "aliases": [
+                "cnt3",
                 "iso3"
             ],
             "digits": 3,
