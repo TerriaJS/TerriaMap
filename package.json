@@ -30,6 +30,7 @@
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.20.0",
     "terriajs-schema": "latest",
+    "urijs": "^1.17.1",
     "webpack": "^1.12.14"
   },
   "scripts": {
