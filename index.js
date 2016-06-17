@@ -10,7 +10,7 @@ var configuration = {
     bingMapsKey: undefined, // use Cesium key
 };
 
-require('./nationalmap.scss');
+require('./TerriaMap.scss');
 
 // Check browser compatibility early on.
 // A very old browser (e.g. Internet Explorer 8) will fail on requiring-in many of the modules below.

@@ -11,7 +11,7 @@ module.exports = function(devMode, hot) {
         entry: './index.js',
         output: {
             path: 'wwwroot/build',
-            filename: 'nationalmap.js',
+            filename: 'TerriaMap.js',
             // work around chrome needing the full URL when using sourcemaps (http://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts/34133809#34133809)
             publicPath: hot ? 'http://localhost:3003/build/' : 'build/',
             sourcePrefix: '' // to avoid breaking multi-line string literals by inserting extra tabs.
@@ -48,7 +48,7 @@ module.exports = function(devMode, hot) {
                     }
                 },
                 {
-                    test: /nationalmap\.scss$/,
+                    test: /TerriaMap\.scss$/,
                     loader: hot ?
                         require.resolve('style-loader') + '!' +
                         require.resolve('css-loader') + '?sourceMap!' +
@@ -71,7 +71,7 @@ module.exports = function(devMode, hot) {
                     'NODE_ENV': devMode ? '"development"' : '"production"'
                 }
             }),
-            new ExtractTextPlugin("nationalmap.css", {disable: hot, ignoreOrder: true})
+            new ExtractTextPlugin("TerriaMap.css", {disable: hot, ignoreOrder: true})
         ]
     };
 
