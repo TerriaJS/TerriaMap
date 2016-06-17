@@ -17,6 +17,10 @@
             "text": "Your organisation",
             "link": "http://www.example.com"
         },
+        "printDisclaimer-CHANGETHIS":{
+            "text":"Put your print disclaimer here.",
+            "url": "#"
+        },
         "appName": "Terria Map",
         "supportEmail-CHANGETHIS": "help@example.com",
         "brandBarElements": [
