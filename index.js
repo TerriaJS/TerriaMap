@@ -62,6 +62,11 @@ registerCustomComponentTypes(terria);
 
 terria.welcome = '<h3>Terria<sup>TM</sup> is a spatial data platform that provides spatial predictive analytics</h3><div class="body-copy"><p>This interactive map uses TerriaJS<sup>TM</sup>, an open source software library developed by Data61 for building rich, web-based geospatial data explorers.  It uses Cesium<sup>TM</sup> open source 3D globe viewing software.  TerriaJS<sup>TM</sup> is used for the official Australian Government NationalMap and many other sites rich in the use of spatial data.</p><p>This map also uses Terria<sup>TM</sup> Inference Engine, a cloud-based platform for making probabilistic predictions using data in a web-based mapping environment. Terria<sup>TM</sup> Inference Engine uses state of the art machine learning algorithms developed by Data61 and designed specifically for large-scale spatial inference.</p></div>';
 
+// Create the ViewState before terria.start so that errors have somewhere to go.
+const viewState = new ViewState({
+    terria: terria
+});
+
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
 if (process.env.NODE_ENV !== "production" && module.hot) {
@@ -83,17 +88,14 @@ terria.start({
     try {
         configuration.bingMapsKey = terria.configParameters.bingMapsKey ? terria.configParameters.bingMapsKey : configuration.bingMapsKey;
 
-        const viewState = new ViewState({
-            terria: terria,
-            locationSearchProviders: [
-                new BingMapsSearchProviderViewModel({
-                    terria: terria,
-                    key: configuration.bingMapsKey
-                }),
-                new GazetteerSearchProviderViewModel({terria}),
-                new GNAFSearchProviderViewModel({terria})
-            ]
-        });
+        viewState.searchState.locationSearchProviders = [
+            new BingMapsSearchProviderViewModel({
+                terria: terria,
+                key: configuration.bingMapsKey
+            }),
+            new GazetteerSearchProviderViewModel({terria}),
+            new GNAFSearchProviderViewModel({terria})
+        ];
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
