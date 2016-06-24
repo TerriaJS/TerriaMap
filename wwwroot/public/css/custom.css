@@ -3,7 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
- 
+
 html {
   position: relative;
   min-height: 100%;
@@ -99,7 +99,7 @@ ul {
   .navbar-toggle {
     display: none;
   }
-  
+
   .navbar-nav > li > a {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -288,5 +288,5 @@ p.no-indent {
 }
 
 .panel-group .panel-heading+.panel-collapse>.panel-body, .panel-group .panel-heading+.panel-collapse>.list-group {
-	border-top: none; 
+	border-top: none;
 }
