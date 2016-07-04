@@ -44,7 +44,7 @@ module.exports = function(devMode, hot) {
                 },
                 {
                     test: /\.scss$/,
-                    include: [path.resolve(__dirname, '..', 'lib'), path.resolve(__dirname, '..', 'nationalmap.scss')],
+                    include: [path.resolve(__dirname, '..', 'lib'), path.resolve(__dirname, '..', 'TerriaMap.scss')],
                     loader: hot ?
                         require.resolve('style-loader') + '!' +
                         require.resolve('css-loader') + '?sourceMap&modules&camelCase&localIdentName=nm-[name]__[local]&importLoaders=2!' +
