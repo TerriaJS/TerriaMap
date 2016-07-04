@@ -8,7 +8,7 @@
     "url": "http://github.com/NICTA/nationalmap"
   },
   "dependencies": {
-    "terriajs-server": "^2.2.0"
+    "terriajs-server": "^2.4.0"
   },
   "config": {
     "awsProfile": "nationalmap",
@@ -17,7 +17,7 @@
     "awsEc2InstanceType": "t2.medium",
     "awsEc2ImageId": "ami-2a644649",
     "awsKeyName": "natmap-kring",
-    "awsS3ServerConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateserverconfig-2016-05-17.json",
+    "awsS3ServerConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateserverconfig-2016-07-04.json",
     "awsS3ClientConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateclientconfig-2016-05-17.json"
   },
   "devDependencies": {

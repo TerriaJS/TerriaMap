@@ -20,7 +20,7 @@ require('./nationalmap.scss');
 // checkBrowserCompatibility('ui');
 
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
-import GoogleUrlShortener from 'terriajs/lib/Models/GoogleUrlShortener';
+import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import isCommonMobilePlatform from 'terriajs/lib/Core/isCommonMobilePlatform';
 import OgrCatalogItem from 'terriajs/lib/Models/OgrCatalogItem';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
@@ -82,7 +82,7 @@ terria.start({
     applicationUrl: window.location,
     configUrl: 'config.json',
     defaultTo2D: isCommonMobilePlatform(),
-    urlShortener: new GoogleUrlShortener({
+    shareDataService: new ShareDataService({
         terria: terria
     })
 }).otherwise(function(e) {
