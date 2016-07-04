@@ -32,7 +32,7 @@
                     "type": "group",
                     "items": [
                         {
-                            "name": "Chlorophyll-a concentration (monthly)",
+                            "name": "Chlorophyll-a concentration (WMS)",
                             "type": "wms",
                             "url": "http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M",
                             "description": "...",
@@ -53,7 +53,7 @@
                             }
                         },
                         {
-                            "name": "Pacific Earthquakes (CSV)",
+                            "name": "Pacific Earthquakes (CSV points)",
                             "type": "csv",
                             "url": "test/earthquakes.csv",
                             "disableUserChanges": true,
@@ -64,7 +64,7 @@
                             "displayDuration": 2880
                         },
                         {
-                            "name": "Auto Incidents (CSV)",
+                            "name": "Auto Incidents (CSV points)",
                             "type": "csv",
                             "url": "test/incidents.csv",
                             "tableStyle": {
@@ -94,7 +94,23 @@
                                     "incident_severity": "Severity"
                                 }
                             }
-                        }
+                        },
+                        {
+                            "name": "Droughts by Country (CSV regions)",
+                            "type": "csv",
+                            "url": "test/droughts.csv",
+                            "tableStyle": {
+                                "featureInfoFields": {
+                                    "Country name": "Country",
+                                    "date": "Date",
+                                    "Total deaths": "Deaths",
+                                    "Total damage": "Cost"
+                                },
+                                "dataVariable": "Total affected",
+                                "displayDuration": 525600
+                            }
+                        },
+
                     ]
                 },
                 {
@@ -152,21 +168,6 @@
                             "url": "test/countries.csv",
                             "tableStyle": {
                                 "dataVariable": "ITU-T Telephone Code"
-                            }
-                        },
-                        {
-                            "name": "Droughts by Country",
-                            "type": "csv",
-                            "url": "test/droughts.csv",
-                            "tableStyle": {
-                                "featureInfoFields": {
-                                    "Country name": "Country",
-                                    "date": "Date",
-                                    "Total deaths": "Deaths",
-                                    "Total damage": "Cost"
-                                },
-                                "dataVariable": "Total affected",
-                                "displayDuration": 525600
                             }
                         },
                         {
@@ -259,11 +260,22 @@
                     ]
                 },
                 {
+                    "name": "Conversion service",
+                    "type": "group",
+                    "items": [
+                        {
+                            "name": "Airports (zipped shapefile)",
+                            "type": "ogr",
+                            "url": "test/airports.zip"
+                        }
+                    ]
+                },
+                {
                     "name": "GeoJSON files",
                     "type": "group",
                     "items": [
                         {
-                            "name": "Cemeteries (GeoJSON)",
+                            "name": "Cemeteries (points)",
                             "type": "geojson",
                             "url": "test/cemeteries.geojson",
                             "initialMessage": {
@@ -273,30 +285,24 @@
                             }
                         },
                         {
-                            "name": "Centrelink Sites (GME->GeoJSON)",
+                            "name": "Centrelink Sites (points)",
                             "type": "geojson",
                             "url": "test/gme.geojson"
                         },
                         {
-                            "name": "Bike Racks (GeoJSON:reproj)",
+                            "name": "Bike Racks (EPSG:28356)",
                             "type": "geojson",
                             "url": "test/bike_racks.geojson"
                         },
                         {
-                            "name": "Ferry Routes (GeoJSON via WFS)",
-                            "type": "wfs",
-                            "url": "http://www.ga.gov.au/gis/services/topography/Australian_Topography/MapServer/WFSServer",
-                            "typeNames": "topography_Australian_Topography:Ferry_Routes"
-                        },
-                        {
-                            "name": "Airports (OGR->GeoJSON, zipped)",
-                            "type": "ogr",
-                            "url": "test/airports.zip"
+                            "name":"Adelaide Dolphin Sanctuary (polygon)",
+                            "type": "geojson",
+                            "url": "http://www.waterconnect.sa.gov.au/Content/Downloads/DEWNR/CONSERVATION_DolphinSanctuary_geojson.zip"
                         }
                     ]
                 },
                 {
-                    "name": "Miscellaneous files",
+                    "name": "CSV (points)",
                     "type": "group",
                     "items": [
                         {
@@ -312,6 +318,12 @@
                                 ]
                             }
                         },
+                    ]
+                },
+                {
+                    "name": "GPX",
+                    "type": "group",
+                    "items": [
                         {
                             "name": "Route in England (GPX)",
                             "type": "gpx",
