@@ -1,6 +1,18 @@
 Change Log
 ==========
 
+### 2016-06-15
+* Support "globalDisclaimer" configuration option, defined as follows:
+        "globalDisclaimer": {
+            "confirmationRequired": true, // Whether user must click the correct button to dismiss it (otherwise click anywhere)
+            "buttonTitle": "I agree",     // Text for that button (defaults to "Ok").
+            "title": "Disclaimer",        // Title for the window
+            "prodHostRegex": "gov.\\.au$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
+            "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.", // If this regular expression IS matched, add that preamble
+            "enableOnLocalhost": true     // By default, Disclaimers are not shown when testing locally. Add this to test your disclaimer.
+        },
+
+
 ### 2016-05-13b
 
 * Fixed a bug in the build configuration that allowed extra whitespace to be inserted in multi-line strings.  This whitespace could case the markdown formatter to treat the string as preformatted text and break, e.g., error messages.
