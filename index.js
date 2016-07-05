@@ -1,7 +1,6 @@
 'use strict';
 
 /*global require*/
-var version = require('./version');
 
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
@@ -9,8 +8,6 @@ var terriaOptions = {
 var configuration = {
     bingMapsKey: undefined, // use Cesium key
 };
-
-require('./TerriaMap.scss');
 
 // Check browser compatibility early on.
 // A very old browser (e.g. Internet Explorer 8) will fail on requiring-in many of the modules below.
@@ -24,8 +21,6 @@ var GoogleUrlShortener = require('terriajs/lib/Models/GoogleUrlShortener');
 var isCommonMobilePlatform = require('terriajs/lib/Core/isCommonMobilePlatform');
 var OgrCatalogItem = require('terriajs/lib/Models/OgrCatalogItem');
 var raiseErrorToUser = require('terriajs/lib/Models/raiseErrorToUser');
-var React = require('react');
-var ReactDOM = require('react-dom');
 var registerAnalytics = require('terriajs/lib/Models/registerAnalytics');
 var registerCatalogMembers = require('terriajs/lib/Models/registerCatalogMembers');
 var registerCustomComponentTypes = require('terriajs/lib/Models/registerCustomComponentTypes');
@@ -37,6 +32,8 @@ var ViewState = require('terriajs/lib/ReactViewModels/ViewState').default;
 var BingMapsSearchProviderViewModel = require('terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js');
 var GazetteerSearchProviderViewModel = require('terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js');
 var GNAFSearchProviderViewModel = require('terriajs/lib/ViewModels/GNAFSearchProviderViewModel.js');
+
+import render from './lib/Views/render';
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
 OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
@@ -66,6 +63,10 @@ terria.welcome = '<h3>Terria<sup>TM</sup> is a spatial data platform that provid
 const viewState = new ViewState({
     terria: terria
 });
+
+if (process.env.NODE_ENV === "development") {
+    window.viewState = viewState;
+}
 
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
@@ -113,46 +114,7 @@ terria.start({
         var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
-        let render = () => {
-            const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx');
-            ReactDOM.render(<StandardUserInterface
-                                terria={terria}
-                                allBaseMaps={allBaseMaps}
-                                viewState={viewState}
-                                version={version} />, document.getElementById('ui'));
-        };
-
-
-        if (process.env.NODE_ENV === "development") {
-            window.viewState = viewState;
-        }
-
-        if (module.hot && process.env.NODE_ENV !== "production") {
-            // Support hot reloading of components
-            // and display an overlay for runtime errors
-            const renderApp = render;
-            const renderError = (error) => {
-                const RedBox = require('redbox-react');
-                console.error(error);
-                console.error(error.stack);
-                ReactDOM.render(
-                    <RedBox error={error} />,
-                    document.getElementById('ui')
-                );
-            };
-            render = () => {
-                try {
-                    renderApp();
-                } catch (error) {
-                    renderError(error);
-                }
-            };
-            module.hot.accept('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx', () => {
-                setTimeout(render);
-            });
-        }
-
-        render();
+        render(terria, allBaseMaps, viewState);
     } catch (e) {
         console.error(e);
         console.error(e.stack);

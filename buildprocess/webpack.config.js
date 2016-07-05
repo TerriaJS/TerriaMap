@@ -20,10 +20,6 @@ module.exports = function(devMode, hot) {
         module: {
             loaders: [
                 {
-                    test: path.resolve(__dirname, '..', 'lib', 'Views'),
-                    loader: require.resolve('raw-loader')
-                },
-                {
                     test: /\.jsx?$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
@@ -48,7 +44,7 @@ module.exports = function(devMode, hot) {
                     }
                 },
                 {
-                    test: /TerriaMap\.scss$/,
+                    test: /global\.scss$/,
                     loader: hot ?
                         require.resolve('style-loader') + '!' +
                         require.resolve('css-loader') + '?sourceMap!' +
