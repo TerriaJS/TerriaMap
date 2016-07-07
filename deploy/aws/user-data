@@ -1,8 +1,5 @@
 #cloud-config
 
-# Capture all cloud-config output into a more readable logfile
-output: {all: '| tee -a /var/log/cloud-init-output.log'}
-
 # update and install packages, reboot if necessary
 apt_sources:
   - source: deb https://deb.nodesource.com/node_4.x trusty main
