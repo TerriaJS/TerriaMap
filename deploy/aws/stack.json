@@ -279,7 +279,7 @@
         "Path": "/",
         "Roles": [
           {
-            "Ref": "S3Role",
+            "Ref": "S3Role"
           }
         ]
       },
