@@ -226,7 +226,7 @@ gulp.task('make-package', function() {
         var productionServerConfig = mergeConfigs(serverConfig, serverConfigOverride);
         fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), JSON.stringify(productionServerConfig, undefined, '  '));
     } else {
-        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), fs.readyFileSync('devserverconfig.json', 'utf8'));
+        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), fs.readFileSync('devserverconfig.json', 'utf8'));
     }
 
     if (argv.clientConfigOverride) {
@@ -258,6 +258,10 @@ gulp.task('clean', function() {
 
 function mergeConfigs(original, override) {
     var result = Object.assign({}, original);
+
+    if (typeof original === 'undefined') {
+        original = {};
+    }
 
     for (var name in override) {
         if (!override.hasOwnProperty(name)) {
