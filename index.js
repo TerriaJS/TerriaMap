@@ -28,7 +28,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
-import registerCustomComponentTypes from 'terriajs/lib/Models/registerCustomComponentTypes';
+import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
 import registerKnockoutBindings from 'terriajs/lib/Core/registerKnockoutBindings';
 import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
