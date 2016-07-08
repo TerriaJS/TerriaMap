@@ -14,7 +14,7 @@
     "terriajs-server": "^2.5.0"
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.2",
+    "babel-eslint": "^6.1.1",
     "eslint": "^3.0.1",
     "generate-terriajs-schema": "^1.2.1",
     "glob-all": "^3.0.1",
