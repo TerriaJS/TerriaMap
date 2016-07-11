@@ -16,9 +16,9 @@ if (!require('semver').satisfies(process.version, minNode)) {
 }
 
 
-gulp.task('build', ['copy-terriajs-assets', 'build-app']);
-gulp.task('release', ['copy-terriajs-assets', 'release-app', 'make-editor-schema']);
-gulp.task('watch', ['watch-terriajs-assets', 'watch-app']);
+gulp.task('build', ['render-datasource-templates', 'copy-terriajs-assets', 'build-app']);
+gulp.task('release', ['render-datasource-templates', 'copy-terriajs-assets', 'release-app', 'make-editor-schema']);
+gulp.task('watch', ['watch-datasource-templates', 'watch-terriajs-assets', 'watch-app']);
 gulp.task('default', ['lint', 'build']);
 
 var watchOptions = {
@@ -234,7 +234,7 @@ gulp.task('make-package', function() {
         var productionServerConfig = mergeConfigs(serverConfig, serverConfigOverride);
         fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), JSON.stringify(productionServerConfig, undefined, '  '));
     } else {
-        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), fs.readyFileSync('devserverconfig.json', 'utf8'));
+        fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), fs.readFileSync('devserverconfig.json', 'utf8'));
     }
 
     if (argv.clientConfigOverride) {
@@ -267,6 +267,10 @@ gulp.task('clean', function() {
 function mergeConfigs(original, override) {
     var result = Object.assign({}, original);
 
+    if (typeof original === 'undefined') {
+        original = {};
+    }
+
     for (var name in override) {
         if (!override.hasOwnProperty(name)) {
             continue;
@@ -283,3 +287,55 @@ function mergeConfigs(original, override) {
 
     return result;
 }
+
+/*
+    Use EJS to render "datasources/foo.ejs" to "wwwroot/init/foo.json". Include files should be
+    stored in "datasources/includes/blah.ejs". You can refer to an include file as:
+
+    <%- include includes/foo %>
+
+    If you want to pass parameters to the included file, do this instead:
+
+    <%- include('includes/foo', { name: 'Cool layer' } %>
+
+    and in includes/foo:
+
+    "name": "<%= name %>"
+ */
+gulp.task('render-datasource-templates', function() {
+    var ejs = require('ejs');
+    var JSON5 = require('json5');
+    var templateDir = 'datasources';
+    try {
+        fs.accessSync(templateDir);
+    } catch (e) {
+        // Datasources directory doesn't exist? No problem.
+        return;
+    }
+    fs.readdirSync(templateDir).forEach(function(filename) {
+        if (filename.match(/\.ejs$/)) {
+            var templateFilename = path.join(templateDir, filename);
+            var template = fs.readFileSync(templateFilename,'utf8');
+            var result = ejs.render(template, null, {filename: templateFilename});
+
+            // Remove all new lines. This means you can add newlines to help keep source files manageable, without breaking your JSON.
+            // If you want actual new lines displayed somewhere, you should probably use <br/> if it's HTML, or \n\n if it's Markdown.
+            //result = result.replace(/(?:\r\n|\r|\n)/g, '');
+
+            var outFilename = filename.replace('.ejs', '.json');
+            try {
+                // Replace "2" here with "0" to minify.
+                result = JSON.stringify(JSON5.parse(result), null, 2);
+                console.log('Rendered template ' + outFilename);
+            } catch (e) {
+                console.warn('Warning: Rendered template ' + outFilename + ' is not valid JSON');
+            }
+            fs.writeFileSync(path.join('wwwroot/init', outFilename), new Buffer(result));
+        }
+    });
+
+});
+
+gulp.task('watch-datasource-templates', ['render-datasource-templates'], function() {
+    return gulp.watch(['datasources/**/*.ejs','datasources/*.json'], watchOptions, [ 'render-datasource-templates' ]);
+});

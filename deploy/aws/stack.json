@@ -200,7 +200,7 @@
           }
         ],
         "IamInstanceProfile": {
-          "Ref": "S3ReadInstanceProfile"
+          "Ref": "S3InstanceProfile"
         },
         "ImageId": {
           "Ref": "ImageId"
@@ -274,18 +274,18 @@
       },
       "Type": "AWS::Route53::RecordSetGroup"
     },
-    "S3ReadInstanceProfile": {
+    "S3InstanceProfile": {
       "Properties": {
         "Path": "/",
         "Roles": [
           {
-            "Ref": "S3ReadRole"
+            "Ref": "S3Role"
           }
         ]
       },
       "Type": "AWS::IAM::InstanceProfile"
     },
-    "S3ReadRole": {
+    "S3Role": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -314,6 +314,17 @@
                   ],
                   "Effect": "Allow",
                   "Resource": "*"
+                },
+                {
+                  "Action": [
+                    "s3:GetObject",
+                    "s3:PutObject"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": [
+                    "arn:aws:s3:::nationalmap-sharing",
+                    "arn:aws:s3:::nationalmap-sharing/*"
+                  ]
                 }
               ]
             },

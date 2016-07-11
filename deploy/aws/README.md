@@ -91,3 +91,7 @@ Once you're satisfied the release is working, change the staging environment DNS
 ```
 staging.nationalmap.nicta.com.au -> nationalmap-2016-05-17.nationalmap.nicta.com.au
 ```
+
+### Troubleshooting
+
+The default Mac OS `tar` command [causes trouble](http://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt). You'll need to replace it with `gtar`, eg. using homebrew.
