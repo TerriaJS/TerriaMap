@@ -1,6 +1,36 @@
 Change Log
 ==========
 
+### 2016-06-15
+
+* Added a prominent link to the preview of the new UI.
+* Added GNAF as a location search provider.
+* Fixed an issue where the 404 error page would display incorrectly if given a non-existent path (eg, nationlmap.gov.au/nonexistent/path)
+* Added CNT3 as an alias for ISO3 as a csv column name (for three-letter country codes).
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 3.3.0.  Significant changes relevant to NationalMap users include:
+  * `CkanCatalogItem.createCatalogItemFromResource`'s `options.allowGroups` has been replaced with `options.allowWmsGroups` and `options.allowWfsGroups`.
+  * Added support for WFS in CKAN items.
+  * Fixed a bug that prevented the terriajs-server's `"proxyAllDomains": true` option from working.
+  * Added support in FeatureInfoTemplate for referencing CSV columns by either their name in the CSV file, or the name they are given via `TableStyle.columns...name` (if any).
+  * Improved CSV handling to ignore any blank lines, ie. those containing only commas.
+  * Fixed a bug in `CswCatalogGroup` that prevented it from working in Internet Explorer.
+  * Fixed a bug on IE9 that prevented shortened URLs from loading.
+  * Fixed a map started with smooth terrain being unable to switch to 3D terrain.
+  * Fixed a bug in `CkanCatalogItem` that prevented it from using the proxy for dataset URLs.
+  * Fixed feature picking when displaying a point-based vector and a region mapped layer at the same time.
+  * Stopped generation of WMS intervals being dependent on JS dates and hence sensitive to daylight savings time gaps.
+  * Fixed a bug that led to zero property values being considered time-varying in the Feature Info panel.
+  * Fixed a bug that prevented lat/lon injection into templates with time-varying properties.
+  * Add `parameters` property in `WebFeatureServiceCatalogItem` to allow accessing URLs that need additional parameters.
+  * Fixed a bug where visiting a shared link with a time-series layer would crash on load.
+  * Added a direct way to format numbers in feature info templates, eg. `{{#terria.formatNumber}}{"useGrouping": true, "maximumFractionDigits": 3}{{value}}{{/terria.formatNumber}}`. The quotes around the keys are optional.
+  * When the number of unique values in a CSV column exceeds the number of color bins available, the legend now displays "XX other values" as the label for the last bucket rather than simply "Other".
+  * CSV columns with up to 21 unique values can now be fully displayed in the legend.  Previously, the number of bins was limited to 9.
+  * Added `cycle` option to `tableColumnStyle.colorBinMethod` for enumeration-type CSV columns.  When the number of unique values in the column exceeds the number of color bins available, this option makes TerriaJS color all values by cycling through the available colors, rather than coloring only the most common values and lumping the rest into an "Other" bucket.
+  * Metadata and single data files (e.g. KML, GeoJSON) are now consistently cached for one day instead of two weeks.
+  * `WebMapServiceCatalogItem` now uses the legend for the `style` specified in `parameters` when possible.  It also now includes the `parameters` when building a `GetLegendGraphic` URL.
+  * Fixed a bug that prevented switching to the 3D view after starting the application in 2D mode.
+
 ### 2016-05-13b
 
 * Fixed a bug in the build configuration that allowed extra whitespace to be inserted in multi-line strings.  This whitespace could case the markdown formatter to treat the string as preformatted text and break, e.g., error messages.

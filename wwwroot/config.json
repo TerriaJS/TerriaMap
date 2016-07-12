@@ -22,6 +22,7 @@
         },
         "appName": "NationalMap",
         "supportEmail": "data@pmc.gov.au",
+        "proj4ServiceBaseUrl": "proj4def/",
         "brandBarElements(Remove this bit in parentheses for production deployment)": [
             "<a target=\"_blank\" href=\"https://github.com/NICTA/nationalmap/wiki/New-User-Interface-Preview\"><img src=\"images/NationalMap-logo-only.png\" height=\"50\" alt=\"National Map\" title=\"Version: {{version}}\" /></a>",
             "<a target=\"_blank\" href=\"https://github.com/NICTA/nationalmap/wiki/New-User-Interface-Preview\"><img src=\"images/NationalMap-text-only.png\" height=\"50\" alt=\"National Map\" title=\"Version: {{version}}\" /></a>",
