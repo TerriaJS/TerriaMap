@@ -8,8 +8,13 @@ wwwroot/init/nm.json
 datasources/00_National_Data_Sets.json
 .DS_Store
 .localized
+.sass-cache
 /terriajs.pid
 /terriajs-server.log
 
 # added by GitSavvy
 /wwwroot/editor/
+privateserverconfig.json
+wwwroot/privateconfig.json
+deploy/packages/
+deploy/work/

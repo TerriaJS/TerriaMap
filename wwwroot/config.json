@@ -3,6 +3,7 @@
         "nm"
     ],
     "parameters": {
+        "feedbackUrl": "feedback",
         "bingMapsKey": "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
         "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
@@ -10,6 +11,10 @@
         "disclaimer": {
             "text": "Disclaimer: The NationalMap must not be used for navigation or precise spatial analysis",
             "url": "about.html"
+        },
+        "printDisclaimer":{
+            "text":"The Department, Data61 and Geoscience Australia (“We”) make no representations or warranties regarding the accuracy or completeness of any content or the product in connection with the NationalMap. We disclaim all responsibility and all liability (including without limitation, liability in negligence, for errors or omissions) for all expenses, loss, damage and costs which you might incur as a result of the information displayed on the NationalMap and your use of it. The NationalMap must not be used for navigation or precise spatial analysis.",
+            "url": "#"
         },
         "developerAttribution": {
             "text": "Data61",
@@ -19,7 +24,8 @@
         "supportEmail": "data@pmc.gov.au",
         "proj4ServiceBaseUrl": "proj4def/",
         "brandBarElements(Remove this bit in parentheses for production deployment)": [
-            "<a target=\"_blank\" href=\"about.html\"><img src=\"images/NationalMap_Logo_RGB72dpi_REV_Blue text.png\" height=\"50\" alt=\"National Map\" title=\"Version: {{version}}\" /></a>",
+            "<a target=\"_blank\" href=\"https://github.com/NICTA/nationalmap/wiki/New-User-Interface-Preview\"><img src=\"images/NationalMap-logo-only.png\" height=\"50\" alt=\"National Map\" title=\"Version: {{version}}\" /></a>",
+            "<a target=\"_blank\" href=\"https://github.com/NICTA/nationalmap/wiki/New-User-Interface-Preview\"><img src=\"images/NationalMap-text-only.png\" height=\"50\" alt=\"National Map\" title=\"Version: {{version}}\" /></a>",
             "<a target=\"_blank\" href=\"http://www.gov.au/\"><img src=\"images/AG-Rvsd-Stacked-Press.png\" height=\"45\" alt=\"Australian Government\" /></a>"
         ]
     }
