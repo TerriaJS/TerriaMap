@@ -256,29 +256,50 @@
             "description": "Postal areas (ABS approximations of postcodes)",
             "regionIdsFile": "data/regionids/region_map-FID_POA_2011_AUST_POA_CODE.json"
         },
-        "CED": {
+       "CED_13": {
             "layerName": "region_map:FID_CED_2013_AUST",
             "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "CED_CODE13",
             "aliases": [
-                "ced_code_2013",
-                "ced_code",
-                "ced"
+                "ced_code_2013"
             ],
             "digits": 3,
-            "description": "Commonwealth electoral districts (ABS approximations)",
+            "description": "Commonwealth electoral districts (2013 ABS approximations)",
             "regionIdsFile": "data/regionids/region_map-FID_CED_2013_AUST_CED_CODE13.json"
         },
-        "CED_NAME": {
+        "CED_NAME_13": {
             "layerName": "region_map:FID_CED_2013_AUST",
             "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "CED_NAME13",
             "aliases": [
-                "ced_name_2013",
+                "ced_name_2013"
+            ],
+            "description": "Commonwealth electoral districts (2013 ABS approximations)",
+            "regionIdsFile": "data/regionids/region_map-FID_CED_2013_AUST_CED_NAME13.json"
+        },
+        "CED_16": {
+            "layerName": "region_map:FID_CED_2016_AUST",
+            "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "CED_CODE16",
+            "aliases": [
+                "ced_code_2016",
+                "ced_code",
+                "ced"
+            ],
+            "digits": 3,
+            "description": "Commonwealth electoral districts (2016 ABS approximations)",
+            "regionIdsFile": "data/regionids/region_map-FID_CED_2016_AUST_CED_CODE16.json"
+        },
+        "CED_NAME_16": {
+            "layerName": "region_map:FID_CED_2016_AUST",
+            "server": "http://regionmap-dev.nationalmap.nicta.com.au/region_map/ows",
+            "regionProp": "CED_NAME16",
+            "aliases": [
+                "ced_name_2016",
                 "ced_name"
             ],
-            "description": "Commonwealth electoral districts (ABS approximations)",
-            "regionIdsFile": "data/regionids/region_map-FID_CED_2013_AUST_CED_NAME13.json"
+            "description": "Commonwealth electoral districts (2016 ABS approximations)",
+            "regionIdsFile": "data/regionids/region_map-FID_CED_2016_AUST_CED_NAME16.json"
         },
         "CED2011": {
             "layerName": "region_map:FID_CED_2011_AUST",
@@ -755,6 +776,7 @@
             "server": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "ISO3",
             "aliases": [
+                "cnt3",
                 "iso3"
             ],
             "digits": 3,
