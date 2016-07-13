@@ -5,8 +5,7 @@ import version from '../../version';
 import StandardUserInterface from 'terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx';
 import MenuItem from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem';
 import MenuPanel from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel';
-import Nav from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Nav';
-import Menu from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Menu';
+import { Menu } from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups';
 
 import './global.scss';
 
