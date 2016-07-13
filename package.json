@@ -33,7 +33,7 @@
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.20.1",
     "terriajs-schema": "latest",
-    "webpack": "^1.12.14"
+    "webpack": "^1.13.1"
   },
   "scripts": {
     "start": "bash ./node_modules/terriajs-server/run_server.sh --config-file devserverconfig.json",
