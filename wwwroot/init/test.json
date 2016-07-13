@@ -1,11 +1,6 @@
 {
   "catalog": [
     {
-      "name": "National Data Sets",
-      "type": "group",
-      "isOpen": false
-    },
-    {
       "name": "Test Data",
       "type": "group",
       "items": [
@@ -444,6 +439,44 @@
             { "name": "Urban centre and locality (UCL)", "type": "csv", "url": "test/csv-geo-au/ucl.csv" },
             { "name": "Statistical local area (SLA, obsolete)", "type": "csv", "url": "test/csv-geo-au/sla.csv" },
             { "name": "Census collection district (CD, obsolete)", "type": "csv", "url": "test/csv-geo-au/cd.csv" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Terria Analytics",
+      "type": "group",
+      "preserveOrder": true,
+      "items": [
+        {
+          "name": "Regions like this",
+          "type": "places-like-me-function",
+          "url": "http://parlmap.terria.io:31113/jobs"
+        },
+        {
+          "name": "What makes this region unique or special?",
+          "type": "why-am-i-special-function",
+          "url": "http://parlmap.terria.io:31113/jobs"
+        },
+        {
+          "name": "Spatial Detailing",
+          "type": "spatial-detailing-function",
+          "url": "http://parlmap.terria.io:31113/jobs"
+        },
+        {
+          "name": "Sample Data",
+          "type": "group",
+          "items": [
+            {
+              "name": "NSW NEXIS 2012 (LGA)",
+              "type": "csv",
+              "url": "test/NSW_LGA_NEXIS_201212.csv"
+            },
+            {
+              "name": "Victoria Crime (LGA)",
+              "type": "csv",
+              "url": "test/vic_assault.csv"
+            }
           ]
         }
       ]

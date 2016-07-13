@@ -1,7 +1,7 @@
 import React from 'react';
 
 import DropdownPanel from 'terriajs/lib/ReactViews/Map/Panels/DropdownPanel.jsx';
-import DropdownStyles from 'terriajs/lib/ReactViews/Map/Panels/dropdown-panel.scss';
+import DropdownStyles from 'terriajs/lib/ReactViews/Map/Panels/panel.scss';
 import Styles from './related-maps.scss';
 import classNames from 'classnames';
 
