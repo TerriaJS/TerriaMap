@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+### 2016-07-15
+
+* Catalog (init) files can now be stored as .ejs files in /datasources, rendered by the EJS templating library. See comments in gulpfile.js.
 ### 2016-06-15
 
 * Added a prominent link to the preview of the new UI.
@@ -76,6 +79,8 @@ Change Log
       * Fixed issue causing parts of geometry and billboards/labels to be clipped. [#3748](https://github.com/AnalyticalGraphicsInc/cesium/issues/3748)
       * Fixed bug where transparent image materials were drawn black.
       * Fixed `Color.fromCssColorString` from reusing the input `result` alpha value in some cases.
+### 2016-05-15
+* Detect when an old version of Node.js is being used, and fail helpfully.
 
 ### 2016-04-15
 
