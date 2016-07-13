@@ -24,7 +24,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
-    "less": "^2.6.1",
+    "less": "^2.7.1",
     "less-plugin-npm-import": "^2.1.0",
     "node-notifier": "^4.5.0",
     "raw-loader": "^0.5.1",
