@@ -20,8 +20,6 @@ import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import isCommonMobilePlatform from 'terriajs/lib/Core/isCommonMobilePlatform';
 import OgrCatalogItem from 'terriajs/lib/Models/OgrCatalogItem';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
@@ -34,8 +32,6 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSea
 import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 import GNAFSearchProviderViewModel from 'terriajs/lib/ViewModels/GNAFSearchProviderViewModel.js';
 
-import AboutButton from './lib/Views/AboutButton';
-import RelatedMaps from './lib/Views/RelatedMaps';
 import render from './lib/Views/render';
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
