@@ -21,7 +21,7 @@
     "awsEc2ImageId": "ami-2a644649",
     "awsKeyName": "natmap-kring",
     "awsS3ServerConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateserverconfig-2016-07-07.json",
-    "awsS3ClientConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateclientconfig-2016-05-17.json"
+    "awsS3ClientConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateclientconfig-2016-07-12.json"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
@@ -29,7 +29,7 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "ejs": "^2.4.2",
-    "eslint": "^2.7.0",
+    "eslint": "^3.0.1",
     "eslint-plugin-jsx-control-statements": "2.1.1",
     "eslint-plugin-react": "^4.3.0",
     "extract-text-webpack-plugin": "git://github.com/TerriaJS/extract-text-webpack-plugin#order-undefined-error",
@@ -56,11 +56,12 @@
     "sass-loader": "^3.2.0",
     "style-loader": "git://github.com/TerriaJS/style-loader#chromeWorkaround",
     "svg-sprite-loader": "0.0.24",
-    "terriajs": "git://github.com/TerriaJS/terriajs.git#newui",
+    "terriajs": "4.0.0-preview2",
     "terriajs-catalog-editor": "^0.2.0",
-    "terriajs-cesium": "1.20.0",
+    "terriajs-cesium": "1.20.1",
     "terriajs-schema": "latest",
     "url-loader": "^0.5.7",
+    "urijs": "^1.17.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
     "yargs": "^4.7.0"
