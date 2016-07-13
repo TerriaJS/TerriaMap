@@ -1,7 +1,6 @@
 'use strict';
 
 /*global require*/
-var version = require('./version');
 
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
@@ -10,22 +9,17 @@ var configuration = {
     bingMapsKey: undefined, // use Cesium key
 };
 
-require('./TerriaMap.scss');
-
 // Check browser compatibility early on.
 // A very old browser (e.g. Internet Explorer 8) will fail on requiring-in many of the modules below.
 // 'ui' is the name of the DOM element that should contain the error popup if the browser is not compatible
 //var checkBrowserCompatibility = require('terriajs/lib/ViewModels/checkBrowserCompatibility');
 
 // checkBrowserCompatibility('ui');
-
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import isCommonMobilePlatform from 'terriajs/lib/Core/isCommonMobilePlatform';
 import OgrCatalogItem from 'terriajs/lib/Models/OgrCatalogItem';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
@@ -38,8 +32,7 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSea
 import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 import GNAFSearchProviderViewModel from 'terriajs/lib/ViewModels/GNAFSearchProviderViewModel.js';
 
-import AboutButton from './lib/Views/AboutButton';
-import RelatedMaps from './lib/Views/RelatedMaps';
+import render from './lib/Views/render';
 
 // Tell the OGR catalog item where to find its conversion service.  If you're not using OgrCatalogItem you can remove this.
 OgrCatalogItem.conversionServiceBaseUrl = configuration.conversionServiceBaseUrl;
@@ -69,6 +62,10 @@ terria.welcome = '<h3>Terria<sup>TM</sup> is a spatial data platform that provid
 const viewState = new ViewState({
     terria: terria
 });
+
+if (process.env.NODE_ENV === "development") {
+    window.viewState = viewState;
+}
 
 // If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
 // Note that if the first stylesheet stops being nationalmap.css then this will have to change.
@@ -116,54 +113,7 @@ terria.start({
         var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
-        const customElements = {
-            mapTop: [<RelatedMaps viewState={viewState}/>, <AboutButton />]
-        };
-
-        let render = () => {
-            const StandardUserInterface = require('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx');
-            ReactDOM.render((
-                <StandardUserInterface
-                    terria={terria}
-                    allBaseMaps={allBaseMaps}
-                    viewState={viewState}
-                    version={version}
-                    customElements={customElements}
-                />
-            ), document.getElementById('ui'));
-        };
-
-
-        if (process.env.NODE_ENV === "development") {
-            window.viewState = viewState;
-        }
-
-        if (module.hot && process.env.NODE_ENV !== "production") {
-            // Support hot reloading of components
-            // and display an overlay for runtime errors
-            const renderApp = render;
-            const renderError = (error) => {
-                const RedBox = require('redbox-react');
-                console.error(error);
-                console.error(error.stack);
-                ReactDOM.render(
-                    <RedBox error={error} />,
-                    document.getElementById('ui')
-                );
-            };
-            render = () => {
-                try {
-                    renderApp();
-                } catch (error) {
-                    renderError(error);
-                }
-            };
-            module.hot.accept('terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx', () => {
-                setTimeout(render);
-            });
-        }
-
-        render();
+        render(terria, allBaseMaps, viewState);
     } catch (e) {
         console.error(e);
         console.error(e.stack);
