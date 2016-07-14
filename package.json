@@ -74,7 +74,7 @@
     "stop": "bash ./node_modules/terriajs-server/stop_server.sh",
     "postinstall": "echo 'Installation with NPM successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds NationalMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
-    "deploy": "rm -rf node_modules && npm install && gulp run reinstall-northern-australia && npm run deploy-without-reinstall",
+    "deploy": "rm -rf node_modules && npm install && npm run reinstall-northern-australia && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run build-northern-australia && npm run deploy-current",
     "deploy-current": "npm run copy-northern-australia && npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && rm -rf wwwroot/northernaustralia",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
