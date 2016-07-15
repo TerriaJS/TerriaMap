@@ -29,20 +29,21 @@ write_files:
       "127.0.0.1";
     }
 
-
     sub vcl_recv {
-    #  if (req.request == "GET" && req.http.cookie || req.http.authorization) {
-    #    return (lookup);
-    #  }
+      # only cache GET requests
+      if (req.request == "GET") {
+        return (lookup);
+      }
+
       if (req.request == "PURGE") {
         if (!client.ip ~ purge) {
           error 405 "Method Not Allowed";
         }
         return(lookup);
       }
-      if (req.url ~ "^/proxy"){
-        return (lookup);
-      }
+
+      # let everything else pass the cache
+        return (pass);
     }
 
     sub vcl_hit {
