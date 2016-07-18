@@ -40,6 +40,17 @@ Change Log
   * Metadata and single data files (e.g. KML, GeoJSON) are now consistently cached for one day instead of two weeks.
   * `WebMapServiceCatalogItem` now uses the legend for the `style` specified in `parameters` when possible.  It also now includes the `parameters` when building a `GetLegendGraphic` URL.
   * Fixed a bug that prevented switching to the 3D view after starting the application in 2D mode.
+### 2016-06-15
+* Support "globalDisclaimer" configuration option, defined as follows:
+        "globalDisclaimer": {
+            "confirmationRequired": true, // Whether user must click the correct button to dismiss it (otherwise click anywhere)
+            "buttonTitle": "I agree",     // Text for that button (defaults to "Ok").
+            "title": "Disclaimer",        // Title for the window
+            "prodHostRegex": "gov.\\.au$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
+            "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.", // If this regular expression IS matched, add that preamble
+            "enableOnLocalhost": true     // By default, Disclaimers are not shown when testing locally. Add this to test your disclaimer.
+        },
+
 
 ### 2016-05-13b
 

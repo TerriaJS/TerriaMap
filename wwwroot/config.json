@@ -17,6 +17,14 @@
             "text":"Put your print disclaimer here.",
             "url": "#"
         },
+        "globalDisclaimer": {
+            "confirmationRequired": true,
+            "buttonTitle": "I agree",
+            "title": "Disclaimer",
+            "prodHostRegex-OPTIONAL": "gov.\\.au$",
+            "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.",
+            "enableOnLocalhost": false
+        },
         "developerAttribution-CHANGETHIS": {
             "text": "Your organisation",
             "link": "http://www.example.com"
