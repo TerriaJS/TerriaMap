@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="terria">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">  <!-- Use Chrome Frame in IE -->
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="description" content="A web map built on Terria Map.">
-    <meta name="copyright" content="Copyright(c) 2012-2015 National ICT Australia Limited (NICTA).  All rights reserved.">
+    <meta name="description" content="A web map built on Terria Map">
+    <meta name="copyright" content="Copyright(c) 2012-2016 National ICT Australia Limited (NICTA), CSIRO Data61.  All rights reserved.">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
@@ -27,28 +27,15 @@
     <meta name="theme-color" content="#282D32">
 
     <title>Terria Map</title>
-
-    <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:300italic,400,300' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="build/TerriaMap.css">
 
     <!-- Leaflet -->
     <script>L_PREFER_CANVAS = true;</script>
-
-    <link rel="stylesheet" href="build/TerriaMap.css">
 </head>
 
 <body>
 
-    <div id="cesiumContainer" class="full-window map-displaced"></div>
-    <div id="ui" class="full-window transparent-to-input">
-      <div class="nationalmap-print-disclaimer">
-        The Department, Data61 and Geoscience Australia (“We”) make no representations or warranties regarding the accuracy or completeness of any content or the product in connection with Terria Map. We disclaim all responsibility and all liability (including without limitation, liability in negligence, for errors or omissions) for all expenses, loss, damage and costs which you might incur as a result of the information displayed on this map and your use of it. This map must not be used for navigation or precise spatial analysis.
-      </div>
-    </div>
-    <div id="loadingIndicator" class="loadingIndicator"></div>
-
-    <script src="build/TerriaMap.js"></script>
+<div id='ui'></div>
+  <script src="build/TerriaMap.js"></script>
 </body>
 </html>

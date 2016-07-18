@@ -4,6 +4,7 @@
         "test"
     ],
     "parameters": {
+        "feedbackUrl": "feedback",
         "bingMapsKey": "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
         "googleUrlShortenerKey": null,
         "googleAnalyticsKey": null,
@@ -11,6 +12,10 @@
         "disclaimer": {
             "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
             "url": ""
+        },
+        "printDisclaimer":{
+            "text":"Put your print disclaimer here.",
+            "url": "#"
         },
         "globalDisclaimer": {
             "confirmationRequired": true,
@@ -25,7 +30,8 @@
             "link": "http://www.example.com"
         },
         "appName": "Terria Map",
-        "supportEmail-CHANGETHIS": "help@example.com",
+        "supportEmail": "help@example.com",
+        "proj4ServiceBaseUrl": "proj4def/",
         "brandBarElements": [
             "",
             "<a target=\"_blank\" href=\"http://www.nicta.com.au\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
