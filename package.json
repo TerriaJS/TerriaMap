@@ -76,7 +76,7 @@
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "rm -rf node_modules && npm install && npm run reinstall-northern-australia && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run build-northern-australia && npm run deploy-current",
-    "deploy-current": "npm run copy-northern-australia && npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && rm -rf wwwroot/northernaustralia",
+    "deploy-current": "npm run copy-northern-australia && npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../.. && rm -rf wwwroot/northernaustralia",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "reinstall-northern-australia": "if [ -d $npm_package_config_northernAustraliaPath ]; then ORIGINAL_DIR=$PWD && cd $npm_package_config_northernAustraliaPath && rm -rf node_modules && npm install && cd $ORIGINAL_DIR; fi",
     "build-northern-australia": "if [ -d $npm_package_config_northernAustraliaPath ]; then ORIGINAL_DIR=$PWD && cd $npm_package_config_northernAustraliaPath && rm -rf wwwroot/build && gulp release && cd $ORIGINAL_DIR; fi",
