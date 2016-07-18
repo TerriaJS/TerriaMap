@@ -4,6 +4,13 @@ Change Log
 ### 2016-07-15
 
 * Catalog (init) files can now be stored as .ejs files in /datasources, rendered by the EJS templating library. See comments in gulpfile.js.
+* Updated to [TerriaJS](https://github.com/TerriaJS/terriajs) 4.0.2.  Significant changes relevant to NationalMap users include:
+  * A brand new user interface, incorporating user feedback and the results of usability testing!
+  * `CswCatalogGroup` will now include Web Processing Services from the catalog if configured with `includeWps` set to true.
+  * `WebMapServiceCatalogItem` will now detect ncWMS servers and set isNcWMS to true.
+  * Uses a new mechanism for storing the data associated with the Share feature, avoid URL length limits.
+  * Added partial support for the SDMX-JSON format.
+
 ### 2016-06-15
 
 * Added a prominent link to the preview of the new UI.

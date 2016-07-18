@@ -29,20 +29,21 @@ write_files:
       "127.0.0.1";
     }
 
-
     sub vcl_recv {
-    #  if (req.request == "GET" && req.http.cookie || req.http.authorization) {
-    #    return (lookup);
-    #  }
+      # only cache GET requests
+      if (req.request == "GET") {
+        return (lookup);
+      }
+
       if (req.request == "PURGE") {
         if (!client.ip ~ purge) {
           error 405 "Method Not Allowed";
         }
         return(lookup);
       }
-      if (req.url ~ "^/proxy"){
-        return (lookup);
-      }
+
+      # let everything else pass the cache
+        return (pass);
     }
 
     sub vcl_hit {
@@ -98,7 +99,9 @@ runcmd:
  - aws s3 cp --region ap-southeast-2 s3://nationalmap-apps/nationalmap/{{deploymentName}}.tar.gz /tmp/ramfs/
  - mkdir /opt/{{deploymentName}}
  - tar xzf /tmp/ramfs/{{deploymentName}}.tar.gz -C /opt/{{deploymentName}}
- - cp /tmp/ramfs/{{deploymentName}}.tar.gz /opt/{{deploymentName}}/wwwroot
+ - ARCHIVE_DIR=`sha256sum /tmp/ramfs/{{deploymentName}}.tar.gz | awk '{print $1}'`
+ - mkdir -p /opt/{{deploymentName}}/wwwroot/$ARCHIVE_DIR
+ - cp /tmp/ramfs/{{deploymentName}}.tar.gz /opt/{{deploymentName}}/wwwroot/$ARCHIVE_DIR
  - umount /tmp/ramfs
 
 # start/restart services

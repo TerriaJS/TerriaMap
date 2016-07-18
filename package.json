@@ -1,7 +1,8 @@
 {
   "name": "terriajs-map",
   "version": "0.0.1",
-  "description": "Geospatial catalog explorer based on TerriaJS",
+  "description": "Geospatial catalog explorer based on TerriaJS.",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">= 5.1.0",
     "npm": ">= 3.0.0"
@@ -14,14 +15,14 @@
     "terriajs-server": "^2.5.0"
   },
   "config": {
-    "awsProfile": "nationalmap",
-    "awsS3PackagesPath": "s3://nationalmap-apps/nationalmap",
+    "awsProfile": "terria",
+    "awsS3PackagesPath": "s3://terria-apps/map",
     "awsRegion": "ap-southeast-2",
     "awsEc2InstanceType": "t2.medium",
     "awsEc2ImageId": "ami-2a644649",
-    "awsKeyName": "natmap-kring",
-    "awsS3ServerConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateserverconfig-2016-07-07.json",
-    "awsS3ClientConfigOverridePath": "s3://nationalmap-apps/nationalmap/privateclientconfig-2016-07-12.json"
+    "awsKeyName": "terria-kring",
+    "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-07-18.json",
+    "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2016-07-18.json"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",
@@ -55,8 +56,8 @@
     "redbox-react": "^1.2.3",
     "sass-loader": "^3.2.0",
     "style-loader": "git://github.com/TerriaJS/style-loader#chromeWorkaround",
-    "svg-sprite-loader": "0.0.24",
-    "terriajs": "4.0.0-preview3",
+    "svg-sprite-loader": "0.0.25",
+    "terriajs": "4.0.2",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.20.1",
     "terriajs-schema": "latest",
@@ -73,7 +74,7 @@
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "rm -rf node_modules && npm install && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
-    "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create",
+    "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json"
   }
 }
