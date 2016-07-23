@@ -32,7 +32,7 @@
     "ejs": "^2.4.2",
     "eslint": "^3.0.1",
     "eslint-plugin-jsx-control-statements": "2.1.1",
-    "eslint-plugin-react": "^4.3.0",
+    "eslint-plugin-react": "^5.2.2",
     "extract-text-webpack-plugin": "git://github.com/TerriaJS/extract-text-webpack-plugin#order-undefined-error",
     "file-loader": "^0.8.5",
     "fs-extra": "^0.30.0",
