@@ -1,4 +1,10 @@
-@import "~terriajs/lib/Sass/StandardUserInterface";
+@import "~terriajs-variables";
+@import "~terriajs/lib/Sass/global/global";
+
+body {
+	margin: 0;
+	overflow: hidden;
+}
 
 :global {
 	@media print {
