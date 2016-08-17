@@ -1,6 +1,7 @@
 .dropdown-inner {
   width: 600px;
   padding: 10px;
+  font-size: 0.9rem;
 }
 
 .section {
@@ -15,4 +16,8 @@
   margin-bottom: 10px;
   width: 200px;
   height: 150px;
+}
+
+.link {
+  composes: link from 'terriajs/lib/Sass/common/_base.scss';
 }
