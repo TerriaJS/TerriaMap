@@ -84,6 +84,11 @@ body {
     
     }
 
+    // Progress bar while datasets are loading
+    .tjs-progress-bar__progress-bar {
+        background: $color-primary;
+    }
+
     // Flatten and simplify display of timeline controls
     .tjs-timeline-controls__timeline__control {
         background:$dark-lighter;
