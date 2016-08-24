@@ -1,42 +1,60 @@
 {
-    "initializationUrls" : [
+    /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
+    initializationUrls: [
         "terria",
         "test"
     ],
-    "parameters": {
-        "feedbackUrl": "feedback",
-        "bingMapsKey": "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
-        "googleUrlShortenerKey": null,
-        "googleAnalyticsKey": null,
-        "googleAnalyticsOptions": null,
-        "disclaimer": {
-            "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
-            "url": ""
+    parameters: {
+        bingMapsKey: "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
+        googleUrlShortenerKey: null,
+        googleAnalyticsKey: null,
+        googleAnalyticsOptions: null,
+        /* Text that appears at the bottom of the map */
+        disclaimer: {
+            text: "Disclaimer: This map must not be used for navigation or precise spatial analysis",
+            url: ""
         },
-        "printDisclaimer":{
-            "text":"Put your print disclaimer here.",
-            "url": "#"
+        /*
+        // Text that will be added to any pages printed from your site.
+        printDisclaimer:{
+            text:"Put your print disclaimer here.",
+            url: "#"
         },
-        "globalDisclaimer": {
-            "confirmationRequired": true,
-            "buttonTitle": "I agree",
-            "title": "Disclaimer",
-            "prodHostRegex-OPTIONAL": "gov.\\.au$",
-            "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.",
-            "enableOnLocalhost": false
+        */
+         
+        // Pop-up disclaimer that will be shown at the start
+        // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
+        globalDisclaimer: {
+            confirmationRequired: true,
+            buttonTitle: "I agree",
+            title: "Disclaimer",
+            // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
+            // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
+            //prodHostRegex: "gov.\\.au$",
+            //devHostRegex: "\\b(staging|preview|test|dev)\\.",
+            enableOnLocalhost: true // If false, don't show this when running on localhost
         },
-        "developerAttribution-CHANGETHIS": {
-            "text": "Your organisation",
-            "link": "http://www.example.com"
-        },
-        "appName": "Terria Map",
-        "supportEmail": "help@example.com",
-        "proj4ServiceBaseUrl": "proj4def/",
-        "brandBarElements": [
+        
+        /*
+        developerAttribution: {
+            text: "Your organisation",
+            link: "http://www.example.com"
+        },*/
+        // This is used in various text messages. You should also set <title> in index.html
+        appName: "Terria Map",
+
+        // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
+        brandBarElements: [
             "",
             "<a target=\"_blank\" href=\"http://www.nicta.com.au\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
             ""
-        ]
+        ],
+        // Shown when things go wrong.
+        supportEmail: "help@example.com",
+        // You probably shouldn't change this.
+        proj4ServiceBaseUrl: "proj4def/",
+        // Or this
+        feedbackUrl: "feedback"
     }
 }
 
