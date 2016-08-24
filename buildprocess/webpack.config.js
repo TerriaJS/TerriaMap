@@ -20,6 +20,11 @@ module.exports = function(devMode, hot) {
         module: {
             loaders: [
                 {
+                    test: /\.html$/,
+                    include: path.resolve(__dirname, '..', 'lib', 'Views'),
+                    loader: require.resolve('raw-loader')
+                },
+                {
                     test: /\.(js|jsx)$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
