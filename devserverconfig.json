@@ -1,8 +1,6 @@
 {
-    # Port to listen on.
     "port": 3001,
 
-    # List of domains which our server is willing to proxy for. Subdomains are included automatically.
     "allowProxyFor" : [
         "nicta.com.au",
         "gov.au",
@@ -24,27 +22,5 @@
         "gov.uk",
         "gov.nz"
     ]
-    
-    # If this setting is true, the allowProxyFor list is ignored, and all requests are accepted.
-    #"proxyAllDomains": true
-
-    # This allows hosts which require basic HTTP auth to be proxied for. Warning: You are essentially bypassing security for this host and exposing it to
-    # the web, so you may want to combine this with another security mechanism such as an IP whitelist.
-    #"proxyAuth": {
-    #    "www.some.remote.service.example.com": {
-    #        "authorization": "Basic dGVzdHVzZXI6dGVzdHBhc3MK"
-    #    }
-    #},
-    # Pass requests through to another proxy upstream.
-    #"upstreamProxy": "proxy.example.com",
-
-    # List of directories where init (catalog) files will be sought, before defaulting to wwwroot/init. This helps with managing catalog files
-    # separately from the main codebase.
-    #"initPaths": [ "../randominits" ],
-
-    # Hosts in this list will not be passed through to the upstream proxy.
-    #"bypassUpstreamProxyFor": [
-    #  "server.example.com"
-    #]
 }
 
