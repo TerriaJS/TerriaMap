@@ -199,6 +199,7 @@ gulp.task('make-package', function() {
     var argv = require('yargs').argv;
     var fs = require('fs-extra');
     var spawnSync = require('child_process').spawnSync;
+    var json5 = require('json5');
 
     var packageName = argv.packageName || (process.env.npm_package_name + '-' + spawnSync('git', ['describe']).stdout.toString().trim());
     var packagesDir = path.join('.', 'deploy', 'packages');
@@ -224,8 +225,8 @@ gulp.task('make-package', function() {
     fs.copySync('node_modules', path.join(workingDir, 'node_modules'), copyOptions);
 
     if (argv.serverConfigOverride) {
-        var serverConfig = JSON.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
-        var serverConfigOverride = JSON.parse(fs.readFileSync(argv.serverConfigOverride, 'utf8'));
+        var serverConfig = json5.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
+        var serverConfigOverride = json5.parse(fs.readFileSync(argv.serverConfigOverride, 'utf8'));
         var productionServerConfig = mergeConfigs(serverConfig, serverConfigOverride);
         fs.writeFileSync(path.join(workingDir, 'productionserverconfig.json'), JSON.stringify(productionServerConfig, undefined, '  '));
     } else {
@@ -233,8 +234,8 @@ gulp.task('make-package', function() {
     }
 
     if (argv.clientConfigOverride) {
-        var clientConfig = JSON.parse(fs.readFileSync(path.join('wwwroot', 'config.json'), 'utf8'));
-        var clientConfigOverride = JSON.parse(fs.readFileSync(argv.clientConfigOverride, 'utf8'));
+        var clientConfig = json5.parse(fs.readFileSync(path.join('wwwroot', 'config.json'), 'utf8'));
+        var clientConfigOverride = json5.parse(fs.readFileSync(argv.clientConfigOverride, 'utf8'));
         var productionClientConfig = mergeConfigs(clientConfig, clientConfigOverride);
         fs.writeFileSync(path.join(workingDir, 'wwwroot', 'config.json'), JSON.stringify(productionClientConfig, undefined, '  '));
     }

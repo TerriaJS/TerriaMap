@@ -21,8 +21,8 @@
     "awsEc2InstanceType": "t2.medium",
     "awsEc2ImageId": "ami-2a644649",
     "awsKeyName": "terria-kring",
-    "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-07-18.json",
-    "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2016-07-18.json"
+    "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-08-31.json",
+    "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2016-08-31.json"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",

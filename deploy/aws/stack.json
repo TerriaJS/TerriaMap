@@ -32,7 +32,7 @@
   },
   "Parameters": {
     "HostedZoneName": {
-      "Default": "nationalmap.nicta.com.au.",
+      "Default": "terria.io.",
       "Type": "String"
     },
     "ImageId": {
@@ -145,7 +145,7 @@
                 {
                   "Ref": "WebServerPort"
                 },
-                "/"
+                "/ping"
               ]
             ]
           },
@@ -164,7 +164,7 @@
             "InstancePort": "80",
             "LoadBalancerPort": "443",
             "Protocol": "HTTPS",
-            "SSLCertificateId": "arn:aws:iam::933940466036:server-certificate/nationalmap.nicta.com.au-20150508"
+            "SSLCertificateId": "arn:aws:iam::278900443360:server-certificate/terra.io-20151208"
           }
         ]
       },
@@ -322,8 +322,8 @@
                   ],
                   "Effect": "Allow",
                   "Resource": [
-                    "arn:aws:s3:::nationalmap-sharing",
-                    "arn:aws:s3:::nationalmap-sharing/*"
+                    "arn:aws:s3:::terriamap-sharing",
+                    "arn:aws:s3:::terriamap-sharing/*"
                   ]
                 }
               ]

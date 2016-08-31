@@ -96,7 +96,7 @@ runcmd:
 
 # natmap
  - mount -t ramfs ramfs /tmp/ramfs
- - aws s3 cp --region ap-southeast-2 s3://nationalmap-apps/nationalmap/{{deploymentName}}.tar.gz /tmp/ramfs/
+ - aws s3 cp --region ap-southeast-2 s3://terria-apps/map/{{deploymentName}}.tar.gz /tmp/ramfs/
  - mkdir /opt/{{deploymentName}}
  - tar xzf /tmp/ramfs/{{deploymentName}}.tar.gz -C /opt/{{deploymentName}}
  - ARCHIVE_DIR=`sha256sum /tmp/ramfs/{{deploymentName}}.tar.gz | awk '{print $1}'`
