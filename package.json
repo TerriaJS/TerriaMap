@@ -45,7 +45,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "json5": "^0.5.0",
-    "jsx-control-statements": "3.1.1",
+    "jsx-control-statements": "3.1.4",
     "less": "^2.6.1",
     "less-plugin-npm-import": "^2.1.0",
     "node-notifier": "^4.5.0",
