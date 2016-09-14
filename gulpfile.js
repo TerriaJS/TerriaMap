@@ -12,7 +12,7 @@ var minNode = require('./package.json').engines.node;
 if (!require('semver').satisfies(process.version, minNode)) {
     console.log('Terria requires Node.js ' + minNode + ' to build. Please update your version of Node.js, delete your node_modules directory' +
         ', then run npm install and gulp again.');
-    process.exit();
+    console.exit();
 }
 
 
@@ -335,3 +335,25 @@ gulp.task('render-datasource-templates', function() {
 gulp.task('watch-datasource-templates', ['render-datasource-templates'], function() {
     return gulp.watch(['datasources/**/*.ejs','datasources/*.json'], watchOptions, [ 'render-datasource-templates' ]);
 });
+
+gulp.task('sync-terriajs-dependencies', function() {
+    var appPackageJson = require('./package.json');
+    var terriaPackageJson = require('terriajs/package.json');
+
+    syncDependencies(appPackageJson.dependencies, terriaPackageJson);
+    syncDependencies(appPackageJson.devDependencies, terriaPackageJson);
+
+    fs.writeFileSync('./package.json', JSON.stringify(appPackageJson, undefined, '  '));
+});
+
+function syncDependencies(dependencies, targetJson) {
+    for (var dependency in dependencies) {
+        if (dependencies.hasOwnProperty(dependency)) {
+            var version = targetJson.dependencies[dependency] || targetJson.devDependencies[dependency];
+            if (version && version !== dependencies[dependency]) {
+                console.log('Updating ' + dependency + ' from ' + dependencies[dependency] + ' to ' + version + '.');
+                dependencies[dependency] = version;
+            }
+        }
+    }
+}
