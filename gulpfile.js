@@ -12,7 +12,7 @@ var minNode = require('./package.json').engines.node;
 if (!require('semver').satisfies(process.version, minNode)) {
     console.log('Terria requires Node.js ' + minNode + ' to build. Please update your version of Node.js, delete your node_modules directory' +
         ', then run npm install and gulp again.');
-    console.exit();
+    process.exit();
 }
 
 
