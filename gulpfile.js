@@ -16,9 +16,9 @@ if (!require('semver').satisfies(process.version, minNode)) {
 }
 
 
-gulp.task('build', ['render-datasource-templates', 'copy-terriajs-assets', 'build-app']);
+gulp.task('build', ['check-terriajs-dependencies', 'render-datasource-templates', 'copy-terriajs-assets', 'build-app']);
 gulp.task('release', ['render-datasource-templates', 'copy-terriajs-assets', 'release-app', 'make-editor-schema']);
-gulp.task('watch', ['watch-datasource-templates', 'watch-terriajs-assets', 'watch-app']);
+gulp.task('watch', ['check-terriajs-dependencies', 'watch-datasource-templates', 'watch-terriajs-assets', 'watch-app']);
 gulp.task('default', ['lint', 'build']);
 
 var watchOptions = {
@@ -346,13 +346,26 @@ gulp.task('sync-terriajs-dependencies', function() {
     fs.writeFileSync('./package.json', JSON.stringify(appPackageJson, undefined, '  '));
 });
 
-function syncDependencies(dependencies, targetJson) {
+gulp.task('check-terriajs-dependencies', function() {
+    var appPackageJson = require('./package.json');
+    var terriaPackageJson = require('terriajs/package.json');
+
+    syncDependencies(appPackageJson.dependencies, terriaPackageJson, true);
+    syncDependencies(appPackageJson.devDependencies, terriaPackageJson, true);
+});
+
+
+function syncDependencies(dependencies, targetJson, justWarn) {
     for (var dependency in dependencies) {
         if (dependencies.hasOwnProperty(dependency)) {
             var version = targetJson.dependencies[dependency] || targetJson.devDependencies[dependency];
             if (version && version !== dependencies[dependency]) {
-                console.log('Updating ' + dependency + ' from ' + dependencies[dependency] + ' to ' + version + '.');
-                dependencies[dependency] = version;
+                if (justWarn) {
+                    console.warn('Warning: There is a version mismatch for ' + dependency + '. This build may fail. You should run `gulp sync-terriajs-dependencies`, then re-run `npm install`, then run gulp again.');
+                } else {
+                    console.log('Updating ' + dependency + ' from ' + dependencies[dependency] + ' to ' + version + '.');
+                    dependencies[dependency] = version;
+                }
             }
         }
     }
