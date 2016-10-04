@@ -78,8 +78,16 @@ gulp.task('watch-terriajs-assets', ['copy-terriajs-assets'], function() {
 gulp.task('make-editor-schema', ['copy-editor'], function() {
     var generateSchema = require('generate-terriajs-schema');
 
+    var terriaJSRoot = getPackageRoot('terriajs');
+
     return generateSchema({
-        source: getPackageRoot('terriajs'),
+        sourceGlob: [
+            path.join(terriaJSRoot, 'lib/Models/*CatalogItem.js'),
+            path.join(terriaJSRoot, 'lib/Models/*CatalogGroup.js'),
+            path.join(terriaJSRoot, 'lib/Models/*CatalogMember.js'),
+            '!' + path.join(terriaJSRoot, 'lib/Models/addUserCatalogMember.js'),
+            '!' + path.join(terriaJSRoot, 'lib/Models/AsyncFunctionResultCatalogItem.js')
+        ],
         dest: 'wwwroot/editor',
         noversionsubdir: true,
         editor: true,
