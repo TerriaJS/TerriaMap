@@ -16,16 +16,16 @@ if (!require('semver').satisfies(process.version, minNode)) {
 }
 
 
-gulp.task('build', ['check-terriajs-dependencies', 'render-datasource-templates', 'copy-terriajs-assets', 'build-app']);
+gulp.task('build', ['render-datasource-templates', 'copy-terriajs-assets', 'build-app']);
 gulp.task('release', ['render-datasource-templates', 'copy-terriajs-assets', 'release-app', 'make-editor-schema']);
-gulp.task('watch', ['check-terriajs-dependencies', 'watch-datasource-templates', 'watch-terriajs-assets', 'watch-app']);
+gulp.task('watch', ['watch-datasource-templates', 'watch-terriajs-assets', 'watch-app']);
 gulp.task('default', ['lint', 'build']);
 
 var watchOptions = {
     interval: 1000
 };
 
-gulp.task('build-app', ['write-version'], function(done) {
+gulp.task('build-app', ['check-terriajs-dependencies', 'write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true);
@@ -33,7 +33,7 @@ gulp.task('build-app', ['write-version'], function(done) {
     runWebpack(webpack, webpackConfig, done);
 });
 
-gulp.task('release-app', ['write-version'], function(done) {
+gulp.task('release-app', ['check-terriajs-dependencies', 'write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(false);
@@ -47,7 +47,7 @@ gulp.task('release-app', ['write-version'], function(done) {
     }), done);
 });
 
-gulp.task('watch-app', function(done) {
+gulp.task('watch-app', ['check-terriajs-dependencies'], function(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
