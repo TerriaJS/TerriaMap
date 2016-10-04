@@ -49,7 +49,7 @@
     "less": "^2.6.1",
     "less-plugin-npm-import": "^2.1.0",
     "node-notifier": "^4.5.0",
-    "node-sass": "^3.4.2",
+    "node-sass": "^3.10.1",
     "raw-loader": "^0.5.1",
     "react": "15.3.2",
     "react-dom": "15.3.2",
