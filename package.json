@@ -57,7 +57,7 @@
     "sass-loader": "^4.0.1",
     "semver": "^5.0.0",
     "style-loader": "git://github.com/TerriaJS/style-loader.git#chromeWorkaround",
-    "svg-sprite-loader": "0.0.27",
+    "svg-sprite-loader": "0.0.29",
     "terriajs": "^4.4.1",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.23.2",
