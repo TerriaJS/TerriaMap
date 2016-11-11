@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2016-11-15
+
+* Fixed link to NEII viewer in Related Maps.
+
 ### 2016-07-15
 
 * Catalog (init) files can now be stored as .ejs files in /datasources, rendered by the EJS templating library. See comments in gulpfile.js.
