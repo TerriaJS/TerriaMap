@@ -1,4 +1,4 @@
-# National Map CloudFormation Stack
+# TerriaMap CloudFormation Stack
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ pip install awscli
 You must have an `awscli` configuration profile (in `~/.aws/config`) with a name that matches `awsProfile` in `package.json`.  e.g.
 
 ```
-[profile nationalmap]
+[profile terria]
 aws_access_key_id=YOUR_ACCESS_KEY
 aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
 ```
@@ -36,7 +36,7 @@ Various parameters controlling AWS deployment are specified in `package.json`.  
 You can customize these settings by changing `package.json`, or by using `npm config` to override the setting locally, for example;
 
 ```
-npm config set nationalmap:awsProfile myprofilename
+npm config set terriajs-map:awsProfile myprofilename
 ```
 
 ## Deploy
@@ -54,7 +54,7 @@ Deployment is initiated via `npm` scripts.  A full production deployment may be 
 npm run deploy
 ```
 
-Once the stack starts up, it will be available at `nationalmap-2016-05-17.nationalmap.nicta.com.au`, where `nationalmap` is the name of the project in `package.json` and `2016-05-17` is the output of `git describe` (that's why you should tag before starting a deployment).
+Once the stack starts up, it will be available at `terriajs-map-2016-05-17.terria.io`, where `terriajs-map` is the name of the project in `package.json` and `2016-05-17` is the output of `git describe` (that's why you should tag before starting a deployment).
 
 The following npm scripts are available:
 
@@ -80,7 +80,7 @@ The process of starting a new stack takes about 5 minutes but it can take a furt
 Each stack is automatically assigned its own URL based on the name of the stack. e.g.
 
 ```
-https://nationalmap-2016-05-17.nationalmap.nicta.com.au/
+https://terriajs-map-2016-05-17.terria.io/
 ```
 
 ### Update DNS alias
@@ -89,7 +89,7 @@ Once you're satisfied the release is working, change the staging environment DNS
 
 
 ```
-staging.nationalmap.nicta.com.au -> nationalmap-2016-05-17.nationalmap.nicta.com.au
+map.terria.io -> terriajs-map-2016-05-17.terria.io
 ```
 
 ### Troubleshooting
