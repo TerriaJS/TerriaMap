@@ -1,3 +1,7 @@
+/*eslint-env node*/
+/*eslint no-sync: 0*/
+/*eslint no-process-exit: 0*/
+
 'use strict';
 
 /*global require*/
@@ -128,80 +132,9 @@ gulp.task('write-version', function() {
     fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
 });
 
-function onError(e) {
-    if (e.code === 'EMFILE') {
-        console.error('Too many open files. You should run this command:\n    ulimit -n 2048');
-        process.exit(1);
-    } else if (e.code === 'ENOSPC') {
-        console.error('Too many files to watch. You should run this command:\n' +
-                    '    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p');
-        process.exit(1);
-    }
-    gutil.log(e.message);
-    process.exit(1);
-}
-
 function getPackageRoot(packageName) {
     return path.dirname(require.resolve(packageName + '/package.json'));
 }
-
-gulp.task('diagnose', function() {
-    console.log('Have you run `npm install` at least twice?  See https://github.com/npm/npm/issues/10727');
-
-    var terriajsStat = fs.lstatSync('./node_modules/terriajs');
-    var terriajsIsLinked = terriajsStat.isSymbolicLink();
-
-    if (terriajsIsLinked) {
-        console.log('TerriaJS is linked.  Have you run `npm install` at least twice in your TerriaJS directory?');
-
-        var terriaPackageJson = JSON.parse(fs.readFileSync('./node_modules/terriajs/package.json'));
-
-        var terriaPackages = fs.readdirSync('./node_modules/terriajs/node_modules');
-        terriaPackages.forEach(function(packageName) {
-            var terriaPackage = path.join('./node_modules/terriajs/node_modules', packageName);
-            var appPackage = path.join('./node_modules', packageName);
-            if (packageName === '.bin' || !fs.existsSync(appPackage)) {
-                return;
-            }
-
-            var terriaPackageStat = fs.lstatSync(terriaPackage);
-            var appPackageStat = fs.lstatSync(appPackage);
-
-            if (terriaPackageStat.isSymbolicLink() !== appPackageStat.isSymbolicLink()) {
-                console.log('Problem with package: ' + packageName);
-                console.log('  The application ' + (appPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
-                console.log('  TerriaJS ' + (terriaPackageStat.isSymbolicLink() ? 'links' : 'does not link') + ' to the package.');
-            }
-
-            // Verify versions only for packages required by TerriaJS.
-            if (typeof terriaPackageJson.dependencies[packageName] === 'undefined') {
-                return;
-            }
-
-            var terriaDependencyPackageJsonPath = path.join(terriaPackage, 'package.json');
-            var appDependencyPackageJsonPath = path.join(appPackage, 'package.json');
-
-            var terriaDependencyPackageJson = JSON.parse(fs.readFileSync(terriaDependencyPackageJsonPath));
-            var appDependencyPackageJson = JSON.parse(fs.readFileSync(appDependencyPackageJsonPath));
-
-            if (terriaDependencyPackageJson.version !== appDependencyPackageJson.version) {
-                console.log('Problem with package: ' + packageName);
-                console.log('  The application has version ' + appDependencyPackageJson.version);
-                console.log('  TerriaJS has version ' + terriaDependencyPackageJson.version);
-            }
-        });
-    } else {
-        console.log('TerriaJS is not linked.');
-
-        try {
-            var terriajsModules = fs.readdirSync('./node_modules/terriajs/node_modules');
-            if (terriajsModules.length > 0) {
-                console.log('./node_modules/terriajs/node_modules is not empty.  This may indicate a conflict between package versions in this application and TerriaJS, or it may indicate you\'re using an old version of npm.');
-            }
-        } catch (e) {
-        }
-    }
-});
 
 gulp.task('make-package', function() {
     var argv = require('yargs').argv;
@@ -215,8 +148,6 @@ gulp.task('make-package', function() {
     if (!fs.existsSync(packagesDir)) {
         fs.mkdirSync(packagesDir);
     }
-
-    var packageFile = path.join(packagesDir, packageName + '.tar.gz');
 
     var workingDir = path.join('.', 'deploy', 'work');
     if (fs.existsSync(workingDir)) {
