@@ -81,17 +81,10 @@ gulp.task('watch-terriajs-assets', ['copy-terriajs-assets'], function() {
 // Generate new schema for editor, and copy it over whatever version came with editor.
 gulp.task('make-editor-schema', ['copy-editor'], function() {
     var generateSchema = require('generate-terriajs-schema');
-
-    var terriaJSRoot = getPackageRoot('terriajs');
+    var schemaSourceGlob = require('terriajs/buildprocess/schemaSourceGlob');
 
     return generateSchema({
-        sourceGlob: [
-            path.join(terriaJSRoot, 'lib/Models/*CatalogItem.js'),
-            path.join(terriaJSRoot, 'lib/Models/*CatalogGroup.js'),
-            path.join(terriaJSRoot, 'lib/Models/*CatalogMember.js'),
-            '!' + path.join(terriaJSRoot, 'lib/Models/addUserCatalogMember.js'),
-            '!' + path.join(terriaJSRoot, 'lib/Models/AsyncFunctionResultCatalogItem.js')
-        ],
+        sourceGlob: schemaSourceGlob,
         dest: 'wwwroot/editor',
         noversionsubdir: true,
         editor: true,
