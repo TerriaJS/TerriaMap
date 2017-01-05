@@ -34,6 +34,8 @@ gulp.task('build-app', ['check-terriajs-dependencies', 'write-version'], functio
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true);
 
+    checkForDuplicateCesium();
+
     runWebpack(webpack, webpackConfig, done);
 });
 
@@ -41,6 +43,8 @@ gulp.task('release-app', ['check-terriajs-dependencies', 'write-version'], funct
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(false);
+
+    checkForDuplicateCesium();
 
     runWebpack(webpack, Object.assign({}, webpackConfig, {
         plugins: [
@@ -56,6 +60,8 @@ gulp.task('watch-app', ['check-terriajs-dependencies'], function(done) {
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
+
+    checkForDuplicateCesium();
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);
@@ -300,5 +306,21 @@ function syncDependencies(dependencies, targetJson, justWarn) {
                 }
             }
         }
+    }
+}
+
+function checkForDuplicateCesium() {
+    var fse = require('fs-extra');
+
+    if (fse.existsSync('node_modules/terriajs-cesium') && fse.existsSync('node_modules/terriajs/node_modules/terriajs-cesium')) {
+        console.log('You have two copies of terriajs-cesium, one in this application\'s node_modules\n' +
+                    'directory and the other in node_modules/terriajs/node_modules/terriajs-cesium.\n' +
+                    'This leads to strange problems, such as knockout observables not working.\n' +
+                    'Please verify that node_modules/terriajs-cesium is the correct version and\n' + 
+                    '  rm -rf node_modules/terriajs/node_modules/terriajs-cesium\n' +
+                    'Also consider running:\n' +
+                    '  npm run gulp sync-terriajs-dependencies\n' +
+                    'to prevent this problem from recurring the next time you `npm install`.');
+        throw new gutil.PluginError('checkForDuplicateCesium', 'You have two copies of Cesium.', { showStack: false });
     }
 }
