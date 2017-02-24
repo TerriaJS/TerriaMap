@@ -51,7 +51,7 @@
     "semver": "^5.0.0",
     "style-loader": "^0.13.1",
     "svg-sprite-loader": "0.2.1",
-    "terriajs": "4.10.1",
+    "terriajs": "4.10.2",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.29.2",
     "terriajs-schema": "latest",
