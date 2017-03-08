@@ -33,7 +33,7 @@
     "eslint": "^3.10.0",
     "eslint-plugin-jsx-control-statements": "2.1.1",
     "eslint-plugin-react": "^6.5.0",
-    "extract-text-webpack-plugin": "github:terriajs/extract-text-webpack-plugin#order-undefined-error",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.9.0",
     "fs-extra": "^2.0.0",
     "generate-terriajs-schema": "^1.3.0",
@@ -55,10 +55,10 @@
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.31.1",
     "terriajs-schema": "latest",
-    "url-loader": "^0.5.7",
     "urijs": "^1.17.1",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
     "yargs": "^6.0.0"
   },
   "scripts": {
