@@ -52,12 +52,30 @@ module.exports = function(devMode, hot) {
                     include: [path.resolve(__dirname, '..', 'lib')],
                     loader: hot ? [
                         'style-loader',
-                        'css-loader?sourceMap&modules&camelCase&localIdentName=tm-[name]__[local]&importLoaders=2',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                                modules: true,
+                                camelCase: true,
+                                localIdentName: 'tm-[name]__[local]',
+                                importLoaders: 2
+                            }
+                        },
                         'resolve-url-loader?sourceMap',
                         'sass-loader?sourceMap'
                     ] : ExtractTextPlugin.extract({
                         use: [
-                            'css-loader?sourceMap&modules&camelCase&localIdentName=tm-[name]__[local]&importLoaders=2',
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    sourceMap: true,
+                                    modules: true,
+                                    camelCase: true,
+                                    localIdentName: 'tm-[name]__[local]',
+                                    importLoaders: 2
+                                }
+                            },
                             'resolve-url-loader?sourceMap',
                             'sass-loader?sourceMap'
                         ],
