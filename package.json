@@ -59,7 +59,7 @@
     "urijs": "^1.17.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
-    "yargs": "^6.0.0"
+    "yargs": "^7.0.1"
   },
   "scripts": {
     "start": "bash ./node_modules/terriajs-server/run_server.sh --config-file devserverconfig.json",
