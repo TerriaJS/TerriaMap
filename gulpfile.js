@@ -48,8 +48,7 @@ gulp.task('release-app', ['check-terriajs-dependencies', 'write-version'], funct
 
     runWebpack(webpack, Object.assign({}, webpackConfig, {
         plugins: [
-            new webpack.optimize.UglifyJsPlugin(),
-            new webpack.optimize.DedupePlugin(),
+            new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
             new webpack.optimize.OccurrenceOrderPlugin(),
         ].concat(webpackConfig.plugins || [])
     }), done);
