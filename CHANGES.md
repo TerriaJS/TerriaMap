@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2017-XX-XX
+
+* Change deafult mobile view mode to a configuration parameter rather then hard coded to 2D.
+
 ### 2016-11-15
 
 * Fixed link to NEII viewer in Related Maps.
