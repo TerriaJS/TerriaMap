@@ -52,7 +52,7 @@
     "sass-loader": "^6.0.3",
     "semver": "^5.0.0",
     "style-loader": "^0.16.1",
-    "svg-sprite-loader": "^0.3.0",
+    "svg-sprite-loader": "^2.0.0-alpha.1",
     "terriajs": "5.1.0",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.31.1",
