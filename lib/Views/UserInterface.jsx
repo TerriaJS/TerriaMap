@@ -7,8 +7,6 @@ import MenuItem from 'terriajs/lib/ReactViews/StandardUserInterface/customizable
 import RelatedMaps from './RelatedMaps';
 import { Menu, ExperimentalMenu } from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups';
 import SplitPoint from 'terriajs/lib/ReactViews/SplitPoint';
-import ViewerMode from 'terriajs/lib/Models/ViewerMode';
-
 
 import './global.scss';
 
