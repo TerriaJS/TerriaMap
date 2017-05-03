@@ -31,7 +31,7 @@ export default function UserInterface(props) {
                 <MenuItem caption="About" href="about.html" key="about-link"/>
             </Menu>
             <ExperimentalMenu>
-                <If condition={isBrowserSupportedAV() && this.props.terria.viewerMode !== ViewerMode.Leaflet}>
+                <If condition={isBrowserSupportedAV()}>
                     <SplitPoint loadComponent={loadAugmentedVirtuality} viewState={props.viewState} terria={props.viewState.terria} experimentalWarning={true}/>
                 </If>
             </ExperimentalMenu>
