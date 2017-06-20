@@ -4,7 +4,7 @@ Change Log
 ### 2017-XX-XX
 
 * Change deafult mobile view mode to a configuration parameter rather then hard coded to 2D.
-* Add Augmented Reality mode, activated by enabling `experimentalFeatures` in `config.json` and adding the AugmentedVirtualityTool to the ExperimentalMenu in the customisable user interface.
+* Add Augmented Reality mode for iOS and Android devices with a compass and accelerometer, activated by enabling `experimentalFeatures` in `config.json` and adding the AugmentedVirtualityTool to the ExperimentalMenu in the customisable user interface.
 
 ### 2016-11-15
 
