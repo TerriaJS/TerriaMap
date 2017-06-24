@@ -31,7 +31,7 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.28.0",
     "ejs": "^2.5.2",
-    "eslint": "^3.10.0",
+    "eslint": "^4.1.0",
     "eslint-plugin-jsx-control-statements": "2.1.1",
     "eslint-plugin-react": "^6.5.0",
     "extract-text-webpack-plugin": "^2.1.0",
