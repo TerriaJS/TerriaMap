@@ -5,8 +5,9 @@ import version from '../../version';
 import StandardUserInterface from 'terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx';
 import MenuItem from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem';
 import RelatedMaps from './RelatedMaps';
-import { Menu, ExperimentalMenu } from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups';
+import { Menu, Nav, ExperimentalMenu } from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups';
 import SplitPoint from 'terriajs/lib/ReactViews/SplitPoint';
+import ToggleSplitterTool from 'terriajs/lib/ReactViews/Map/Navigation/ToggleSplitterTool';
 
 import './global.scss';
 
@@ -33,6 +34,9 @@ export default function UserInterface(props) {
                     <SplitPoint loadComponent={loadAugmentedVirtuality} viewState={props.viewState} terria={props.viewState.terria} experimentalWarning={true}/>
                 </If>
             </ExperimentalMenu>
+            <Nav>
+                <ToggleSplitterTool terria={props.viewState.terria} key="toggle-splitter-tool"/>
+            </Nav>
         </StandardUserInterface>
     );
 }
