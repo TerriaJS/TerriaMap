@@ -2184,7 +2184,9 @@
             "regionProp": "AUS_CODE",
             "aliases": [
                 "aus",
-                "aus_code"
+                "aus_code",
+                "aus_code_2011",
+                "aus_code_2016"
             ],
             "regionIdsFile": "data/regionids/region_map-FID_AUS_2011_AUST_AUS_CODE.json",
             "serverType": "MVT",
