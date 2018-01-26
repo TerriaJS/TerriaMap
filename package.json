@@ -52,7 +52,7 @@
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.3",
     "semver": "^5.0.0",
-    "style-loader": "^0.19.1",
+    "style-loader": "^0.20.0",
     "svg-sprite-loader": "^3.4.0",
     "terriajs": "5.5.7",
     "terriajs-catalog-editor": "^0.2.0",
