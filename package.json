@@ -56,7 +56,7 @@
     "svg-sprite-loader": "^3.4.0",
     "terriajs": "5.5.7",
     "terriajs-catalog-editor": "^0.2.0",
-    "terriajs-cesium": "1.33.5",
+    "terriajs-cesium": "1.41.0",
     "terriajs-schema": "latest",
     "urijs": "^1.18.12",
     "url-loader": "^0.5.7",
