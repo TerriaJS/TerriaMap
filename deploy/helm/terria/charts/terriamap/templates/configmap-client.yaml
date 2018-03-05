@@ -5,52 +5,5 @@ metadata:
   labels:
     pod: "terriamap"
 data:
-  config.json: '{
-    initializationUrls: [
-      "helm"
-    ],
-    parameters: {
-      bingMapsKey: "AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_",
-      googleUrlShortenerKey: null,
-      googleAnalyticsKey: null,
-      googleAnalyticsOptions: null,
-      disclaimer: {
-        text: "TEST Disclaimer: This map must not be used for navigation or precise spatial analysis",
-        url: ""
-      },
-      printDisclaimer:{
-        text:"Put your print disclaimer here.",
-        url: "#"
-      },
-      globalDisclaimer: {
-        confirmationRequired: true,
-        buttonTitle: "I agree",
-        title: "Disclaimer",
-        prodHostRegex: "gov.\\.au$",
-        devHostRegex: "\\b(staging|preview|test|dev)\\.",
-        enableOnLocalhost: true
-      },
-      developerAttribution: {
-        text: "Your organisation",
-        link: "http://www.example.com"
-      },
-      appName: "Terria Map",
-      brandBarElements: [
-        "",
-        "<a target=\"_blank\" href=\"http://www.nicta.com.au\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: 0.0.1\" /></a>",
-        ""
-      ],
-      supportEmail: "help@example.com",
-      mobileDefaultViewerMode: "2d",
-      "experimentalFeatures": true
-    }
-  }'
-  helm.json: '{
-    "homeCamera": {
-      "north": -8,
-      "east": 158,
-      "south": -45,
-      "west": 109
-    },
-    "catalog": []
-  }'
+  config.json: '{{ toJson .Values.clientConfig | indent 2 }}'
+  helm.json: '{{ toJson .Values.initConfig | indent 2 }}'

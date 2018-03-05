@@ -5,8 +5,4 @@ metadata:
   labels:
     pod: "terriamap"
 data:
-  serverconfig.json: '{
-    "port": 3001,
-    "allowProxyFor" : [],
-    "initPaths": [ "/etc/config/client" ]
-  }'
+  serverconfig.json: '{{ toJson .Values.serverConfig | indent 2 }}'

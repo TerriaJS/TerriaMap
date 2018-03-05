@@ -5,6 +5,6 @@ global:
   image:
     repository: "data61"
     pullPolicy: Always
-  logLevel: INFO
 tags:
-  all: true
+  all: 
+  

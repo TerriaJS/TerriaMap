@@ -10,6 +10,8 @@ spec:
 {{- if .Values.global.exposeNodePorts }}
     nodePort: 30100
   type: NodePort
+{{- else }}
+  type: LoadBalancer
 {{- end }}
   selector:
     service: terriamap
