@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "terriamap-config-server"
+  labels:
+    pod: "terriamap"
+data:
+  serverconfig.json: '{
+    "port": 3001,
+    "allowProxyFor" : [],
+    "initPaths": [ "/etc/config/client" ]
+  }'
