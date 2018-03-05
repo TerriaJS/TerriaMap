@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: terriamap
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3001
+{{- if .Values.global.exposeNodePorts }}
+    nodePort: 30100
+  type: NodePort
+{{- else }}
+  type: LoadBalancer
+{{- end }}
+  selector:
+    service: terriamap

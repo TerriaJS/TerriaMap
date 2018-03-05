@@ -1,0 +1,10 @@
+global:
+  rollingUpdate:
+    maxUnavailable: 0
+  exposeNodePorts: false
+  image:
+    repository: "data61"
+    pullPolicy: Always
+tags:
+  all: 
+  
