@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: terriamap
+  name: {{ printf "%s-%s" .Release.Name "terriamap" | trunc 63 | trimSuffix "-" | quote }}
 spec:
   replicas: {{ .Values.replicas | default 1 }}
   strategy:
@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        service: terriamap
+        service: {{ printf "%s-%s" .Release.Name "terriamap" | trunc 63 | trimSuffix "-" | quote }}
     spec:
       containers:
       - name: terriamap
@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: terriamap-config-client
           configMap:
-            name: terriamap-config-client
+            name: {{ printf "%s-%s" .Release.Name "terriamap-config-client" | trunc 63 | trimSuffix "-" | quote }}
         - name: terriamap-config-server
           configMap:
-            name: terriamap-config-server
+            name: {{ printf "%s-%s" .Release.Name "terriamap-config-server" | trunc 63 | trimSuffix "-" | quote }}
