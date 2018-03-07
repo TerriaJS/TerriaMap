@@ -20,7 +20,7 @@ spec:
         env:
         - name: NODE_ENV
           value: production
-        image: {{ .Values.image.full | default (template "dockerimage" .) }}
+        image: {{ template "dockerimage" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy | default .Values.global.image.pullPolicy }}
         volumeMounts:
           - name: terriamap-config-client
