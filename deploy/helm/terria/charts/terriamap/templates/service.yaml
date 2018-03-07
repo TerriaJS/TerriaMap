@@ -8,7 +8,7 @@ spec:
     port: 80
     targetPort: 3001
 {{- if .Values.global.exposeNodePorts }}
-    nodePort: 30100
+    nodePort: {{ .Values.nodePort }}
   type: NodePort
 {{- else }}
   type: LoadBalancer

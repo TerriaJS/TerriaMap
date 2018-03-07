@@ -1,3 +1,4 @@
+nodePort:
 image:
   #repository: data61/
   #tag: latest
