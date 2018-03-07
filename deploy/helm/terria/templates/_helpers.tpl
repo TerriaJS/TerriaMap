@@ -15,6 +15,13 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
+{{- define "defaultdockerimage" -}}
+{{- end -}}
+
 {{- define "dockerimage" -}}
-"{{ .Values.image.full | default (.Values.image.repository | default .Values.global.image.repository }}/terria-{{ .Chart.Name }}:{{ .Values.image.tag | default .Values.global.image.tag) }}"
+{{- if .Values.image.full -}}
+{{ .Values.image.full | quote }}
+{{- else -}}
+"{{ .Values.image.repository | default .Values.global.image.repository }}/terria-{{ .Chart.Name }}:{{ .Values.image.tag | default .Values.global.image.tag | default "latest" }}"
+{{- end -}}
 {{- end -}}
