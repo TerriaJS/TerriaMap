@@ -1,6 +1,7 @@
 image:
   #repository: data61/
   #tag: latest
+  #full: terria-terrimap:1.0
   pullPolicy: Always
 clientConfig:
   initializationUrls:
