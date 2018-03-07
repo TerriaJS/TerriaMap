@@ -10,7 +10,7 @@ spec:
 {{- if .Values.global.exposeNodePorts }}
 {{- if .Values.global.nodePort }}
     nodePort: {{ .Values.nodePort }}
-{{-end }}
+{{- end }}
   type: NodePort
 {{- else }}
   type: LoadBalancer
