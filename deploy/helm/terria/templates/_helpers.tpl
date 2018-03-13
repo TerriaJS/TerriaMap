@@ -16,5 +16,9 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{- define "dockerimage" -}}
-"{{ .Values.image.repository | default .Values.global.image.repository }}/terria-{{ .Chart.Name }}:{{ .Values.image.tag | default .Values.global.image.tag }}"
+{{- if .Values.image.full -}}
+{{ .Values.image.full | quote }}
+{{- else -}}
+"{{ .Values.image.repository | default .Values.global.image.repository }}/terria-{{ .Chart.Name }}:{{ .Values.image.tag | default .Values.global.image.tag | default "latest" }}"
+{{- end -}}
 {{- end -}}

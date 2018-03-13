@@ -1,6 +1,8 @@
+nodePort:
 image:
   #repository: data61/
   #tag: latest
+  #full: terria-terrimap:1.0
   pullPolicy: Always
 clientConfig:
   initializationUrls:
@@ -22,7 +24,7 @@ clientConfig:
       text: "Your organisation"
       link: "http://www.example.com"
     appName: "Terria Map"
-    brandBarElements: ["", "<a target=\"_blank\" href=\"http://www.nicta.com.au\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: 0.0.1\" /></a>", ""]
+    brandBarElements: ["", "<a target=\"_blank\" href=\"http://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>", ""]
     supportEmail: "help@example.com"
     mobileDefaultViewerMode: "2d"
     experimentalFeatures: true

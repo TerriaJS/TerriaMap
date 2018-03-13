@@ -1,17 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: terriamap
+  name: {{ printf "%s-%s" .Release.Name "terriamap" | trunc 63 | trimSuffix "-" | quote }}
 spec:
   ports:
   - name: http
     port: 80
     targetPort: 3001
 {{- if .Values.global.exposeNodePorts }}
-    nodePort: 30100
+{{- if .Values.global.nodePort }}
+    nodePort: {{ .Values.nodePort }}
+{{- end }}
   type: NodePort
 {{- else }}
   type: LoadBalancer
 {{- end }}
   selector:
-    service: terriamap
+    service: {{ printf "%s-%s" .Release.Name "terriamap" | trunc 63 | trimSuffix "-" | quote }}
