@@ -34,7 +34,7 @@
     "babel-plugin-jsx-control-statements": "^3.2.8",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
-    "css-loader": "^0.28.0",
+    "css-loader": "^1.0.0",
     "ejs": "^2.5.2",
     "eslint": "^4.9.0",
     "eslint-plugin-jsx-control-statements": "^2.2.0",
