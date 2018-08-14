@@ -1,0 +1,9 @@
+{
+    "catalog": [
+        {
+            "type": "wms-group",
+            "name": "Test",
+            "url": "https://programs.communications.gov.au/geoserver/ows"
+        }
+    ]
+}
