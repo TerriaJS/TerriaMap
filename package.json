@@ -12,7 +12,7 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "terriajs-server": "^2.7.0"
+    "terriajs-server": "^2.7.3"
   },
   "config": {
     "awsProfile": "terria",
@@ -58,9 +58,9 @@
     "semver": "^5.0.0",
     "style-loader": "^0.19.1",
     "svg-sprite-loader": "^3.4.0",
-    "terriajs": "6.0.5",
+    "terriajs": "6.1.0",
     "terriajs-catalog-editor": "^0.2.0",
-    "terriajs-cesium": "1.41.2",
+    "terriajs-cesium": "1.48.0",
     "terriajs-schema": "latest",
     "urijs": "^1.18.12",
     "url-loader": "^0.5.7",

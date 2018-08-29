@@ -48,7 +48,7 @@
           "type": "group",
           "items": [
             {
-              "name": "Smooth Geelong Buildings GLTF Mini Demo",
+              "name": "Smooth Geelong Buildings glTF Mini Demo",
               "description": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using data made available from the [City of Greater Geelong](mailto:gis@geelongcity.vic.gov.au) under a Creative Commons license. The data used to create this demo was originally obtained via email in .skp format (> 100MB so not suitable for inclusion in this repo), however there is also a lower quality dataset of the same region available on data.gov.au in .kml/.dae format (this dataset does not seem to contain building textures).\n\nSee [readme.txt](test/3d/geelong/readme.txt) for more information.",
               "attribution": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using a dataset obtained from the City of Greater Geelong. The original dataset is licensed under the CC BY 3.0 AU.",
               "type": "czml",
@@ -61,7 +61,7 @@
               ]
             },
             {
-              "name": "Terrain Geelong Buildings GLTF Mini Demo",
+              "name": "Terrain Geelong Buildings glTF Mini Demo",
               "description": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using data made available from the [City of Greater Geelong](mailto:gis@geelongcity.vic.gov.au) under a Creative Commons license. The data used to create this demo was originally obtained via email in .skp format (> 100MB so not suitable for inclusion in this repo), however there is also a lower quality dataset of the same region available on data.gov.au in .kml/.dae format (this dataset does not seem to contain building textures).\n\nSee [readme.txt](test/3d/geelong/readme.txt) for more information.",
               "attribution": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using a dataset obtained from the City of Greater Geelong. The original dataset is licensed under the CC BY 3.0 AU.",
               "type": "czml",
@@ -71,6 +71,45 @@
                 -38.147,
                 144.358,
                 -38.150
+              ]
+            }
+          ]
+        },
+        {
+          "name": "aero3Dpro",
+          "type": "group",
+          "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
+          "items": [
+            {
+              "name": "Brisbane 3D city model (aero3Dpro)",
+              "type": "3d-tiles",
+              "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
+              "url": "https://sample.aero3dpro.com.au/BrisbaneCBD/Scene/recon_h_3DTiles.json",
+              "options": {
+                "maximumScreenSpaceError": 1,
+                "maximumNumberOfLoadedTiles": 1000
+              },
+              "rectangle": [
+                153.01,
+                -27.484,
+                153.034,
+                -27.46
+              ]
+            },
+            {
+              "name": "Melbourne 3D city model (aero3Dpro)",
+              "type": "3d-tiles",
+              "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
+              "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
+              "options": {
+                  "maximumScreenSpaceError": 1,
+                  "maximumNumberOfLoadedTiles": 1000
+              },
+              "rectangle": [
+                144.868,
+                -37.885,
+                145.018,
+                -37.775
               ]
             }
           ]
