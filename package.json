@@ -12,7 +12,7 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "terriajs-server": "^2.7.3"
+    "terriajs-server": "^2.7.4"
   },
   "config": {
     "awsProfile": "terria",
