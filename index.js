@@ -16,7 +16,7 @@ import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registe
 import Terria from 'terriajs/lib/Models/TerriaNew';
 // import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
-// import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
+import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 // import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
@@ -42,21 +42,8 @@ var terria = new Terria(terriaOptions);
 registerCustomComponentTypes(terria);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
-// const viewState = new ViewState({
-//     terria: terria
-// });
-const viewState = observable({
-    hideMapUi: function() {},
-    searchState: {
-        catalogSearchText: ''
-    },
-    explorerPanelIsVisible: false,
-    notifications: [],
-    activeTabCategory: 'data-catalog',
-    openAddData: function() {
-        this.explorerPanelIsVisible = true;
-        this.activeTabCategory = 'data-catalog';
-    }
+const viewState = new ViewState({
+    terria: terria
 });
 
 CatalogMemberFactory.register('wms-group', WebMapServiceCatalogGroup);
