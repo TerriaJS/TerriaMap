@@ -285,6 +285,7 @@ gulp.task('sync-terriajs-dependencies', function() {
     syncDependencies(appPackageJson.devDependencies, terriaPackageJson);
 
     fs.writeFileSync('./package.json', JSON.stringify(appPackageJson, undefined, '  '));
+    console.log('TerriaMap\'s package.json has been updated. Now run yarn install.');
 });
 
 gulp.task('check-terriajs-dependencies', function() {
