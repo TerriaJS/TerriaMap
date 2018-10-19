@@ -2,6 +2,111 @@
 # yarn lockfile v1
 
 
+"@babel/code-frame@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
+  dependencies:
+    "@babel/highlight" "^7.0.0"
+
+"@babel/core@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.1.2.tgz#f8d2a9ceb6832887329a7b60f9d035791400ba4e"
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/generator" "^7.1.2"
+    "@babel/helpers" "^7.1.2"
+    "@babel/parser" "^7.1.2"
+    "@babel/template" "^7.1.2"
+    "@babel/traverse" "^7.1.0"
+    "@babel/types" "^7.1.2"
+    convert-source-map "^1.1.0"
+    debug "^3.1.0"
+    json5 "^0.5.0"
+    lodash "^4.17.10"
+    resolve "^1.3.2"
+    semver "^5.4.1"
+    source-map "^0.5.0"
+
+"@babel/generator@^7.1.2", "@babel/generator@^7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.1.3.tgz#2103ec9c42d9bdad9190a6ad5ff2d456fd7b8673"
+  dependencies:
+    "@babel/types" "^7.1.3"
+    jsesc "^2.5.1"
+    lodash "^4.17.10"
+    source-map "^0.5.0"
+    trim-right "^1.0.1"
+
+"@babel/helper-function-name@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.1.0.tgz#a0ceb01685f73355d4360c1247f582bfafc8ff53"
+  dependencies:
+    "@babel/helper-get-function-arity" "^7.0.0"
+    "@babel/template" "^7.1.0"
+    "@babel/types" "^7.0.0"
+
+"@babel/helper-get-function-arity@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0.tgz#83572d4320e2a4657263734113c42868b64e49c3"
+  dependencies:
+    "@babel/types" "^7.0.0"
+
+"@babel/helper-split-export-declaration@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0.tgz#3aae285c0311c2ab095d997b8c9a94cad547d813"
+  dependencies:
+    "@babel/types" "^7.0.0"
+
+"@babel/helpers@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.1.2.tgz#ab752e8c35ef7d39987df4e8586c63b8846234b5"
+  dependencies:
+    "@babel/template" "^7.1.2"
+    "@babel/traverse" "^7.1.0"
+    "@babel/types" "^7.1.2"
+
+"@babel/highlight@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/highlight/-/highlight-7.0.0.tgz#f710c38c8d458e6dd9a201afb637fcb781ce99e4"
+  dependencies:
+    chalk "^2.0.0"
+    esutils "^2.0.2"
+    js-tokens "^4.0.0"
+
+"@babel/parser@^7.1.2", "@babel/parser@^7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.1.3.tgz#2c92469bac2b7fbff810b67fca07bd138b48af77"
+
+"@babel/template@^7.1.0", "@babel/template@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.1.2.tgz#090484a574fef5a2d2d7726a674eceda5c5b5644"
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/parser" "^7.1.2"
+    "@babel/types" "^7.1.2"
+
+"@babel/traverse@^7.1.0":
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.1.4.tgz#f4f83b93d649b4b2c91121a9087fa2fa949ec2b4"
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/generator" "^7.1.3"
+    "@babel/helper-function-name" "^7.1.0"
+    "@babel/helper-split-export-declaration" "^7.0.0"
+    "@babel/parser" "^7.1.3"
+    "@babel/types" "^7.1.3"
+    debug "^3.1.0"
+    globals "^11.1.0"
+    lodash "^4.17.10"
+
+"@babel/types@^7.0.0", "@babel/types@^7.1.2", "@babel/types@^7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.1.3.tgz#3a767004567060c2f40fca49a304712c525ee37d"
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.10"
+    to-fast-properties "^2.0.0"
+
 "@mapbox/point-geometry@^0.1.0", "@mapbox/point-geometry@~0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
@@ -586,6 +691,12 @@ babel-plugin-jsx-control-statements@^3.2.8:
   dependencies:
     babel-core "^6.1.2"
     babel-plugin-syntax-jsx "^6.1.18"
+
+babel-plugin-jsx-control-statements@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-control-statements/-/babel-plugin-jsx-control-statements-4.0.0.tgz#a326ed2423d8f3c520655df06e41594143f3f80a"
+  dependencies:
+    "@babel/core" "^7.1.2"
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -1728,6 +1839,12 @@ convert-source-map@^0.3.3:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-0.3.5.tgz#f1d802950af7dd2631a1febe0596550c86ab3190"
 
+convert-source-map@^1.1.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.6.0.tgz#51b537a8c43e0f04dec1993bffcdd504e758ac20"
+  dependencies:
+    safe-buffer "~5.1.1"
+
 convert-source-map@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
@@ -1883,6 +2000,10 @@ css-loader@^0.9.1:
     csso "1.3.x"
     loader-utils "~0.2.2"
     source-map "~0.1.38"
+
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
 
 css-selector-tokenizer@^0.7.0:
   version "0.7.0"
@@ -2882,6 +3003,10 @@ file-loader@^1.1.5:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"
 
+file-saver@^1.3.8:
+  version "1.3.8"
+  resolved "http://registry.npmjs.org/file-saver/-/file-saver-1.3.8.tgz#e68a30c7cb044e2fb362b428469feb291c2e09d8"
+
 file-set@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/file-set/-/file-set-1.1.1.tgz#d3ec70c080ec8f18f204ba1de106780c9056926b"
@@ -3290,6 +3415,10 @@ globals@^11.0.1:
   version "11.7.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.7.0.tgz#a583faa43055b1aca771914bf68258e2fc125673"
 
+globals@^11.1.0:
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.8.0.tgz#c1ef45ee9bed6badf0663c5cb90e8d1adec1321d"
+
 globals@^9.18.0:
   version "9.18.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
@@ -3631,6 +3760,10 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
+hyphenate-style-name@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
+
 iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
@@ -3781,9 +3914,17 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
+ip6@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ip6/-/ip6-0.0.4.tgz#44c5a9db79e39d405201b4d78d13b3870e48db31"
+
 ip@^1.1.0, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
+
+ipaddr.js@1.2:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.2.0.tgz#8aba49c9192799585bdd643e0ccb50e8ae777ba4"
 
 ipaddr.js@1.8.0:
   version "1.8.0"
@@ -4081,7 +4222,7 @@ js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.9.tgz#748911fb04f48a60c4771b375cac45a80df11c03"
 
-"js-tokens@^3.0.0 || ^4.0.0":
+"js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
 
@@ -4166,6 +4307,10 @@ jsesc@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-1.3.0.tgz#46c3fec8c1892b12b0833db9bc7622176dbab34b"
 
+jsesc@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.1.tgz#e421a2a8e20d6b0819df28908f782526b96dd1fe"
+
 jsesc@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
@@ -4208,9 +4353,9 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-"jsonschema@git+https://github.com/terriajs/jsonschema":
+jsonschema@terriajs/jsonschema:
   version "1.0.3"
-  resolved "git+https://github.com/terriajs/jsonschema#55cedb27a265bbae2b366a3824863c586c5d34cf"
+  resolved "https://codeload.github.com/terriajs/jsonschema/tar.gz/55cedb27a265bbae2b366a3824863c586c5d34cf"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -4582,6 +4727,12 @@ markdown-it@^8.0.0:
 marked@~0.3.6:
   version "0.3.19"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
+
+matchmediaquery@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/matchmediaquery/-/matchmediaquery-0.3.0.tgz#6f672bcdbc44de16825c6917fbcdcfb9b82607b1"
+  dependencies:
+    css-mediaquery "^0.1.2"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -5849,7 +6000,7 @@ promise.prototype.finally@^1.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -5965,6 +6116,13 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+range_check@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/range_check/-/range_check-1.4.0.tgz#cd87c7ac62c40ba9df69b8703c604f60c3748635"
+  dependencies:
+    ip6 "0.0.4"
+    ipaddr.js "1.2"
+
 raw-body@2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
@@ -6046,6 +6204,14 @@ react-rangeslider@^2.0.0:
   dependencies:
     classnames "^2.2.3"
     resize-observer-polyfill "^1.4.2"
+
+react-responsive@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-5.0.0.tgz#b6e559b2ce8c4d82b0d47a7a78a74645b977e4af"
+  dependencies:
+    hyphenate-style-name "^1.0.0"
+    matchmediaquery "^0.3.0"
+    prop-types "^15.6.1"
 
 react@^16.3.2:
   version "16.4.2"
@@ -6433,7 +6599,7 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
 
-resolve@^1.1.6, resolve@^1.1.7:
+resolve@^1.1.6, resolve@^1.1.7, resolve@^1.3.2:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   dependencies:
@@ -6449,6 +6615,10 @@ restore-cursor@^2.0.0:
 ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
+
+retry@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
 
 reverse-arguments@1.0.0:
   version "1.0.0"
@@ -6826,7 +6996,7 @@ source-map@^0.4.2:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
+source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
@@ -7222,9 +7392,9 @@ terriajs-catalog-editor@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
 
-terriajs-cesium@1.48.0:
-  version "1.48.0"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.48.0.tgz#3e35f144e10d1b26d01105783afe5361f52d0791"
+terriajs-cesium@1.50.1:
+  version "1.50.1"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.50.1.tgz#b9dfa03edc606e58daeb731aa06cfa45d10ead4f"
   dependencies:
     deamdify "^0.1.1"
     dompurify "^1.0.2"
@@ -7244,9 +7414,9 @@ terriajs-schema@latest:
     when "^3.7.7"
     yargs "^3.32.0"
 
-terriajs-server@^2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.7.3.tgz#8212838f843e136d4d498235d3f8c8d507d0e6e6"
+terriajs-server@^2.7.4:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.8.0.tgz#c05c661fe6b20c6d0c83b7c845a1c5193feab2a2"
   dependencies:
     aws-sdk "^2.4.4"
     base-x "^2.0.4"
@@ -7261,14 +7431,15 @@ terriajs-server@^2.7.3:
     ogr2ogr "^1.0.0"
     proj4 "^2.3.12"
     proj4js-defs "0.0.1"
+    range_check "^1.4.0"
     request "^2.67.0"
     request-promise "^4.0.1"
     when "^3.7.7"
     yargs "^6.0.0"
 
-terriajs@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-6.1.0.tgz#4c0f463f122d6bc352916e71435ca81b338917a4"
+terriajs@6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-6.2.1.tgz#36efc096b7803e991f9e40ac3201a1a557f840be"
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@mapbox/togeojson" "^0.16.0"
@@ -7293,6 +7464,7 @@ terriajs@6.1.0:
     dompurify "^1.0.2"
     extract-text-webpack-plugin "^3.0.0"
     file-loader "^1.1.5"
+    file-saver "^1.3.8"
     gulp "^3.9.1"
     hammerjs "^2.0.6"
     html-to-react "1.2.12"
@@ -7319,13 +7491,15 @@ terriajs@6.1.0:
     react-datepicker "0.53.0"
     react-dom "^16.3.2"
     react-rangeslider "^2.0.0"
+    react-responsive "^5.0.0"
     resolve "^1.1.7"
     resolve-url-loader "^2.0.2"
+    retry "^0.12.0"
     sass-loader "^6.0.3"
     simple-statistics "^4.1.0"
     string-replace-webpack-plugin "^0.1.3"
     style-loader "^0.19.1"
-    terriajs-cesium "1.48.0"
+    terriajs-cesium "1.50.1"
     terriajs-html2canvas "1.0.0-alpha.12-terriajs-1"
     urijs "^1.18.12"
     url-loader "^0.5.7"
@@ -7420,6 +7594,10 @@ to-buffer@^1.1.0:
 to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
+
+to-fast-properties@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
 
 to-object-path@^0.3.0:
   version "0.3.0"
