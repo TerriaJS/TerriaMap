@@ -31,7 +31,7 @@
   "devDependencies": {
     "babel-eslint": "^7.0.0",
     "babel-loader": "^7.0.0",
-    "babel-plugin-jsx-control-statements": "^3.2.8",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.28.0",
