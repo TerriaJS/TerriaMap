@@ -550,7 +550,9 @@
             "regionProp": "LGA_CODE18",
             "nameProp": "LGA_NAME18",
             "aliases": [
-                "lga_code_2018"
+                "lga_code_2018",
+                "lga_code",
+                "lga"
             ],
             "description": "Local Government Areas 2018 (ABS)",
             "regionIdsFile": "data/regionids/region_map-LGA_2018_AUST_LGA_CODE18.json"
@@ -592,9 +594,7 @@
             ],
             "regionProp": "LGA_CODE16",
             "aliases": [
-                "lga_code_2016",
-                "lga_code",
-                "lga"
+                "lga_code_2016"
             ],
             "nameProp": "LGA_NAME16",
             "description": "Local government areas (2016)",
