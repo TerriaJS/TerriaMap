@@ -160,6 +160,9 @@ gulp.task('make-package', function() {
 
     fs.copySync('wwwroot', path.join(workingDir, 'wwwroot'), copyOptions);
     fs.copySync('node_modules', path.join(workingDir, 'node_modules'), copyOptions);
+    fs.copySync('proxyauth.json', path.join(workingDir, 'proxyauth.json'), copyOptions);
+    fs.copySync('ecosystem.config.js', path.join(workingDir, 'ecosystem.config.js'), copyOptions);
+    fs.copySync('ecosystem-production.config.js', path.join(workingDir, 'ecosystem-production.config.js'), copyOptions);
 
     if (argv.serverConfigOverride) {
         var serverConfig = json5.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
