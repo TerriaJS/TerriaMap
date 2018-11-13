@@ -6,6 +6,7 @@ Change Log
 * Use `gtar` when building `make-package` on OSX to create GNU tar compatible tarballs.
 * Change deafult mobile view mode to a configuration parameter rather then hard coded to 2D.
 * Add Augmented Reality mode for iOS and Android devices with a compass and accelerometer, activated by enabling `experimentalFeatures` in `config.json` and adding the AugmentedVirtualityTool to the ExperimentalMenu in the customisable user interface.
+* regionMapping.json and regionids/ are obtained from TerriaJS by default, by symlink. You can override them by keeping another copy in wwwroot/data, as per current practice.
 
 ### 2016-11-15
 

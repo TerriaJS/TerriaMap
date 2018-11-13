@@ -1,3 +1,14 @@
+################################################################################################################################################
+# DEPRECATED. This script is not currently used. Instead, https://github.com/TerriaJS/vector-tile-server/blob/master/scripts/create_layer.py
+# generates the region IDs.
+################################################################################################################################################
+
+
+
+
+
+
+
 # This script downloads lists of region map codes from our WFS region mapping server, and transforms them into a minimal
 # JSON file. This is faster to serve, smaller to transfer, and faster to parse.
 # It should be run whenever boundary layers are added or changed.

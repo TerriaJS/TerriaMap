@@ -66,14 +66,27 @@ gulp.task('watch-app', ['check-terriajs-dependencies'], function(done) {
     watchWebpack(webpack, webpackConfig, done);
 });
 
-gulp.task('copy-terriajs-assets', function() {
+gulp.task('symlink-terriajs-regionmapping', function() {
+    var terriaMapRegionMapping = path.resolve(__dirname, 'wwwroot', 'data', 'regionMapping.json');
+    if (!fs.existsSync(terriaMapRegionMapping)) {
+        var terriajsRegionMapping = path.join(getPackageRoot('terriajs'), 'wwwroot/data/regionMapping.json');
+        fs.symlinkSync(terriajsRegionMapping, terriaMapRegionMapping, 'file');
+    }
+    var terriaMapRegionIds = path.resolve(__dirname, 'wwwroot', 'data', 'regionids');
+    if (!fs.existsSync(terriaMapRegionIds)) {
+        var terriajsRegionIds = path.join(getPackageRoot('terriajs'), 'wwwroot/data/regionids');
+        fs.symlinkSync(terriajsRegionIds, terriaMapRegionIds, 'dir');
+    }
+});
+
+gulp.task('copy-terriajs-assets', ['symlink-terriajs-regionmapping'], function() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
     var sourceGlob = path.join(terriaWebRoot, '**');
     var destPath = path.resolve(__dirname, 'wwwroot', 'build', 'TerriaJS');
 
     return gulp
-        .src([ sourceGlob ], { base: terriaWebRoot })
-        .pipe(gulp.dest(destPath));
+            .src([ sourceGlob ], { base: terriaWebRoot })
+            .pipe(gulp.dest(destPath));
 });
 
 gulp.task('watch-terriajs-assets', ['copy-terriajs-assets'], function() {
@@ -155,7 +168,8 @@ gulp.task('make-package', function() {
     fs.mkdirSync(workingDir);
 
     var copyOptions = {
-        preserveTimestamps: true
+        preserveTimestamps: true,
+        dereference: true
     };
 
     fs.copySync('wwwroot', path.join(workingDir, 'wwwroot'), copyOptions);
