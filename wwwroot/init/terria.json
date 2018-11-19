@@ -13,38 +13,87 @@
       "isOpen": true,
       "items": [
         {
-          "name": "ABC News Stories",
+          "name": "Data.gov.au",
+          "type": "ckan",
+          "url": "http://www.data.gov.au",
+          "description": "![CKAN Logo](https://ckan.org/files/2017/03/Logo_438x144.png)\n\nThis demonstrates populating a catalog group by doing a live query to a [CKAN](https://ckan.org) server. When you expand this group the first time, CKAN is automatically queried via its `package_search` API and the compatible datasets are shown grouped by publishing organization.",
+          "blacklist": {
+            "Rainforests (EVC_2005)": true
+          },
+          "groupBy": "organization",
+          "minimumMaxScaleDenominator": 10000000000,
+          "filterByWmsGetCapabilities": false,
+          "filterQuery": [
+            {
+              "fq": "+(res_format:(geojson OR GeoJSON OR kml OR KML OR kmz OR KMZ OR wms OR WMS OR CSV-GEO-AU OR csv-geo-au OR aus-geo-csv OR \"Esri REST\")) -(organization:alpine-shire-council OR organization:brimbank-city-council OR organization:brisbane-city-council OR organization:cairns-regional-council OR organization:cardinia-shire-council OR organization:central-goldfields-shire-council OR organization:city-of-ballarat OR organization:city-of-boroondara OR organization:city-of-casey OR organization:city-of-darwin OR organization:city-of-gold-coast OR organization:city-of-greater-bendigo OR organization:city-of-greater-dandenong OR organization:city-of-greater-geelong OR organization:city-of-hobart OR organization:city-of-ipswich OR organization:city-of-launceston OR organization:cityofmelbourne OR organization:city-of-monash OR organization:city-of-palmerston OR organization:city-of-port-phillip OR organization:city-of-stonnington OR organization:city-of-whittlesea OR organization:city-of-yarra OR organization:colac-otway-shire OR organization:corangamite-shire-council OR organization:frankston-city-council OR organization:fraser-coast-regional-council OR organization:gcc OR organization:glen-eira-city-council OR organization:glenelg-shire-council OR organization:golden-plains-shire-council OR organization:greater-shepparton-city-council OR organization:hindmarsh-shire-council OR organization:hobsons-bay-city-council OR organization:horsham-rural-city-council OR organization:lake-macquarie-city-council OR organization:loddon-shire-council OR organization:logan-city-council OR organization:macedon-ranges-shire-council OR organization:manningham-city-council OR organization:mansfield-shire-council OR organization:maribyrnong-city-council OR organization:melton-city-council OR organization:moreton-bay-regional-council OR organization:mosmanmunicipalcouncil OR organization:nillumbik-shire-council OR organization:noosa-shire-council OR organization:northern-grampians-shire-council OR organization:southern-grampians-shire-council OR organization:strathbogie-shire-council OR organization:surf-coast-shire-council OR organization:swan-hill-rural-city-council OR organization:warrnambool-city-council OR organization:west-wimmera-shire-council OR organization:wodonga-city-council OR organization:www-mitchellshirecouncil-vic-gov-au OR organization:wyndham-city-council OR organization:yarra-ranges-council OR organization:yarriambiack-shire-council) -(organization:australian-institute-of-marine-science OR organization:geoscienceaustralia OR organization:csiro-oceans-and-atmosphere-information-and-data-centre OR organization:csiro-marine-and-amospheric-research OR organization:state-of-the-environment OR organization:new-south-wales-datasets OR organization:south-australian-governments)"
+            }
+          ],
+          "includeCsv": true,
+          "includeGeoJson": true,
+          "includeKml": true,
+          "includeWms": true,
+          "includeWfs": true,
+          "includeEsriMapServer": true,
+          "includeEsriFeatureServer": true
+        },
+        {
+          "name": "aero3Dpro",
           "type": "group",
-          "preserveOrder": true,
+          "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
           "items": [
             {
-              "name": "ABC Photo Stories (2009-2014)",
-              "type": "csv",
-              "url": "test/localphotostories20092014.csv",
-              "featureInfoTemplate": {
-                "template": "<div class='abc'><small>{{Date}}</small>{{#Primary image}}<figure><img src='{{Primary image}}'/><figcaption>{{Primary image caption}}</figcaption></figure>{{/Primary image}}<p><a target='_blank' href={{URL}}>Read More</a></div>"
+              "name": "Brisbane 3D city model (aero3Dpro)",
+              "type": "3d-tiles",
+              "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+              "url": "https://sample.aero3dpro.com.au/BrisbaneCBD/Scene/recon_h_3DTiles.json",
+              "options": {
+                "maximumScreenSpaceError": 1,
+                "maximumNumberOfLoadedTiles": 1000
               },
-              "tableStyle": {
-                "dataVariable": "State",
-                "timeColumn": null
-              }
+              "rectangle": [
+                153.01,
+                -27.484,
+                153.034,
+                -27.46
+              ]
             },
             {
-              "name": "ABC Photo Stories by date",
-              "type": "csv",
-              "url": "test/localphotostories20092014.csv",
-              "featureInfoTemplate": {
-                "template": "<div class='abc'><small>{{Date}}</small>{{#Primary image}}<figure><img src='{{Primary image}}'/><figcaption>{{Primary image caption}}</figcaption></figure>{{/Primary image}}<p><a target='_blank' href={{URL}}>Read More</a></div>"
+              "name": "Melbourne 3D city model (aero3Dpro)",
+              "type": "3d-tiles",
+              "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+              "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
+              "options": {
+                  "maximumScreenSpaceError": 1,
+                  "maximumNumberOfLoadedTiles": 1000
               },
-              "tableStyle": {
-                "dataVariable": "State",
-                "displayDuration": 1440
-              }
+              "rectangle": [
+                144.868,
+                -37.885,
+                145.018,
+                -37.775
+              ]
+            },
+            {
+              "name": "Sydney 3D city model (aero3Dpro)",
+              "type": "3d-tiles",
+              "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+              "url": "https://sample.aero3dpro.com.au/Sydney/Scene/recon_h_3DTiles.json",
+              "options": {
+                  "maximumScreenSpaceError": 1,
+                  "maximumNumberOfLoadedTiles": 1000
+              },
+              "rectangle": [
+                151.161,
+                -33.923,
+                151.3075,
+                -33.796
+              ]
             }
           ]
         },
         {
-          "name": "3D Demos",
+          "name": "Small glTF 3D Models",
+          "description": "Demonstrations of adding 3D building data to the map using glTF.",
           "type": "group",
           "items": [
             {
@@ -76,53 +125,31 @@
           ]
         },
         {
-          "name": "aero3Dpro",
-          "type": "group",
-          "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
-          "items": [
-            {
-              "name": "Brisbane 3D city model (aero3Dpro)",
-              "type": "3d-tiles",
-              "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
-              "url": "https://sample.aero3dpro.com.au/BrisbaneCBD/Scene/recon_h_3DTiles.json",
-              "options": {
-                "maximumScreenSpaceError": 1,
-                "maximumNumberOfLoadedTiles": 1000
-              },
-              "rectangle": [
-                153.01,
-                -27.484,
-                153.034,
-                -27.46
-              ]
-            },
-            {
-              "name": "Melbourne 3D city model (aero3Dpro)",
-              "type": "3d-tiles",
-              "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
-              "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
-              "options": {
-                  "maximumScreenSpaceError": 1,
-                  "maximumNumberOfLoadedTiles": 1000
-              },
-              "rectangle": [
-                144.868,
-                -37.885,
-                145.018,
-                -37.775
-              ]
-            }
-          ]
+          "name": "ABC Photo Stories (2009-2014)",
+          "description": "Australia Broadcasting Company stories from 2009-2014 with accompanying photos.\n\nThis dataset demonstrates the ability to show users a custom feature info panel when they click on a feature on the map.",
+          "type": "csv",
+          "url": "test/localphotostories20092014.csv",
+          "featureInfoTemplate": {
+            "template": "<div class='abc'><small>{{Date}}</small>{{#Primary image}}<figure><img src='{{Primary image}}'/><figcaption>{{Primary image caption}}</figcaption></figure>{{/Primary image}}<p><a target='_blank' href={{URL}}>Read More</a></div>"
+          },
+          "tableStyle": {
+            "dataVariable": "State",
+            "timeColumn": null
+          }
         },
         {
           "id": "54a553b4",
           "name": "NEM Current Power Generation - All generation types",
-          "url": "http://services.aremi.nicta.com.au/aemo/v3/csv/all",
+          "url": "http://services.aremi.data61.io/aemo/v6/csv/all",
           "type": "csv",
           "cacheDuration": "5m",
           "featureInfoTemplate": {
             "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
-            "template": "<h3>{{Station Name}} ({{DUID}})</h3>\n\n<p><strong>{{Participant}}</strong>\n<div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div>\n<div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div>\n<div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div>\n</p>\n<table>\n  <tbody>\n    <tr>\n      <td>Category</td>\n      <td class='strong'>{{Category}}</td>\n    </tr>\n    <tr>\n      <td>Classification</td>\n      <td class='strong'>{{Classification}}</td>\n    </tr>\n    <tr>\n      <td>Fuel Source</td>\n      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>\n    </tr>\n    <tr>\n      <td>Technology Type</td>\n      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>\n    </tr>\n    <tr>\n      <td>Physical Unit No.</td>\n      <td class='strong'>{{Physical Unit No_}}</td>\n    </tr>\n    <tr>\n      <td>Aggregation</td>\n      <td class='strong'>{{Aggregation}}</td>\n    </tr>\n    <tr>\n      <td>Unit Size (MW)</td>\n      <td class='strong'>{{Unit Size (MW)}}</td>\n    </tr>\n    <tr><td>Power generation</td><td><chart sources='http://services.aremi.nicta.com.au/aemo/v4/duidcsv/{{DUID}}?offset=1D,http://services.aremi.nicta.com.au/aemo/v4/duidcsv/{{DUID}}?offset=5D,http://services.aremi.nicta.com.au/aemo/v4/duidcsv/{{DUID}}?offset=30D,http://services.aremi.nicta.com.au/aemo/v4/duidcsv/{{DUID}}?offset=3M' source-names='1d,5d,30d,3m' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>\n  </tbody>\n</table>"
+            "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,http://services.aremi.nationalmap.gov.au/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+          },
+          "polling": {
+            "seconds": 300,
+            "replace": true
           },
           "rectangle": [
             "134.0",
@@ -139,8 +166,39 @@
             ],
             "nullColor": "rgba(255,255,255,0.1)",
             "nullLabel": "No value",
+            "scaleByValue": true,
+            "scale": 1.5,
             "colorBins": 10,
-            "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)"
+            "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+            "columns": {
+              "Station Name": {
+                "type": "HIDDEN"
+              },
+              "Participant": {
+                "type": "HIDDEN"
+              },
+              "Physical Unit No.": {
+                "type": "HIDDEN"
+              },
+              "Aggregation": {
+                "type": "HIDDEN"
+              },
+              "DUID": {
+                "type": "HIDDEN"
+              },
+              "CSV for last 24h": {
+                "type": "HIDDEN"
+              },
+              "CSV for all data": {
+                "type": "HIDDEN"
+              },
+              "Latest 24h generation": {
+                "type": "HIDDEN"
+              },
+              "Unit Size (MW)": {
+                "type": "HIDDEN"
+              }
+            }
           },
           "info": [
             {
@@ -163,10 +221,9 @@
         },
         {
           "name": "Bird migration paths",
-          "description": "Geographic centers of occurrence estimated daily for 118 migratory bird species using eBird occurrence information for the combined period 2002 to 2014. Additional details on the data and methods can be found here:\nLa Sorte, F.A., Fink, D., Hochachka, W.M. & Kelling, S. (2016) Convergence of broad-scale migration strategies in terrestrial birds. Proceedings of the Royal Society of London B: Biological Sciences, 283, 20152588.",
+          "description": "Geographic centers of occurrence estimated daily for 118 migratory bird species using eBird occurrence information for the combined period 2002 to 2014. Additional details on the data and methods can be found here:\nLa Sorte, F.A., Fink, D., Hochachka, W.M. & Kelling, S. (2016) Convergence of broad-scale migration strategies in terrestrial birds. Proceedings of the Royal Society of London B: Biological Sciences, 283, 20152588.\n\n_Don't forget to press the PLAY button below the map after addding this dataset._",
           "type": "czml",
           "url": "test/all_birds.czml",
-          "ignoreUnknownTileErrors": true,
           "zoomOnEnable": true,
           "rectangle": [
             -160,
@@ -174,38 +231,6 @@
             -30,
             60
           ]
-        },
-        {
-          "layers": "mybroadband:MyBroadband_ADSL_Quality",
-          "parameters": {
-            "tiled": true
-          },
-          "dataUrlType": "none",
-          "clipToRectangle": true,
-          "description": "[MyBroadband ADSL Quality Map](https://www.mybroadband.communications.gov.au)",
-          "name": "Broadband ADSL Quality",
-          "rectangle": [
-            96.79939,
-            -43.59821,
-            153.63925,
-            -9.21592
-          ],
-          "dataCustodian": "[Department of Communications](http://www.communications.gov.au/)",
-          "url": "https://programs.communications.gov.au/geoserver/ows",
-          "type": "wms",
-          "info": [
-            {
-              "name": "Licence",
-              "content": "[Creative Commons Attribution 3.0 Australia (CC BY 3.0 AU)](http://creativecommons.org/licenses/by/3.0/au/)"
-            }
-          ]
-        },
-        {
-          "name": "Catchment Scale Land Use 2015",
-          "type": "ckan-resource",
-          "url": "https://data.gov.au",
-          "resourceId": "7d326ba9-492d-4d32-a893-9d45936bc0af",
-          "datasetId": "catchment-scale-land-use-of-australia-update-march-2015"
         },
         {
           "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
@@ -265,39 +290,6 @@
           },
           "type": "wms",
           "url": "http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1A"
-        },
-        {
-          "name": "BAMS C4ISR",
-          "type": "czml",
-          "description": "Cesium example CZML showing a mission planning exercise involving optimizing the flight path for a reconnaissance UAV over the Persian Gulf.",
-          "url": "http://cesiumjs.org/Gallery/BAMS_C4ISR.czml",
-          "rectangle": [
-            46.5,
-            26.2,
-            53.7,
-            30.4
-          ],
-          "zoomOnEnable": true
-        },
-        {
-          "nowViewingMessage": "Look here for the *legend* and to *interactively filter* the data.",
-          "name": "Census 2011 - Country of Birth",
-          "description": "[More about ABS Data](http://www.abs.gov.au/websitedbs/censushome.nsf/home/data?opendocument&navpos=200)<br>[Licence](http://creativecommons.org/licenses/by/2.5/au/)",
-          "dataCustodian": "[Australian Bureau of Statistics](http://www.abs.gov.au/)",
-          "rectangle": [
-            112.93529,
-            -38.20880,
-            152.06206,
-            -11.05104
-          ],
-          "type": "abs-itt",
-          "url": "http://stat.abs.gov.au/itt/query.jsp",
-          "datasetId": "ABS_CENSUS2011_B09",
-          "filter": [
-            "BPLP.1101",
-            "MEASURE.3",
-            "REGIONTYPE.SA4"
-          ]
         }
       ]
     }
