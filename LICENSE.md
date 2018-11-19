@@ -1,4 +1,4 @@
-Copyright (c) 2014-2018 CSIRO's Data61 and Contributors.
+Copyright (c) 2012-2018 CSIRO's Data61 and Contributors.
  
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
