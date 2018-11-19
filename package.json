@@ -19,10 +19,10 @@
     "awsS3PackagesPath": "s3://terria-apps/map",
     "awsRegion": "ap-southeast-2",
     "awsEc2InstanceType": "t2.medium",
-    "awsEc2ImageId": "ami-2a644649",
+    "awsEc2ImageId": "ami-0d9ca8d416482590e",
     "awsKeyName": "terria-kring",
     "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-08-31.json",
-    "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2016-08-31.json",
+    "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2018-11-19.json",
     "docker": {
       "name": "data61/terria-terriamap",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
