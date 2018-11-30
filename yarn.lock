@@ -2270,6 +2270,10 @@ css-loader@^0.9.1:
     loader-utils "~0.2.2"
     source-map "~0.1.38"
 
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
+
 css-select@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
@@ -2951,9 +2955,9 @@ enzyme-matchers@^6.0.3:
     circular-json-es6 "^2.0.1"
     deep-equal-ident "^1.1.1"
 
-enzyme@^3.3.0:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.4.1.tgz#d305af5bdb30b8aca56d199110421588c670ea0e"
+enzyme@~3.4.0:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.4.4.tgz#92c7c6b9e59d4ef0c3d36a75dccc0e41a5c14d21"
   dependencies:
     array.prototype.flat "^1.2.1"
     cheerio "^1.0.0-rc.2"
@@ -3548,6 +3552,10 @@ file-loader@^1.1.5:
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
+
+file-saver@^1.3.8:
+  version "1.3.8"
+  resolved "http://registry.npmjs.org/file-saver/-/file-saver-1.3.8.tgz#e68a30c7cb044e2fb362b428469feb291c2e09d8"
 
 file-set@^1.0.1:
   version "1.1.1"
@@ -4581,6 +4589,10 @@ https-proxy-agent@^2.2.1:
     agent-base "^4.1.0"
     debug "^3.1.0"
 
+hyphenate-style-name@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
+
 iconv-lite@0.4.15:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
@@ -4739,9 +4751,17 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
+ip6@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ip6/-/ip6-0.0.4.tgz#44c5a9db79e39d405201b4d78d13b3870e48db31"
+
 ip@^1.1.0, ip@^1.1.2, ip@^1.1.4, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
+
+ipaddr.js@1.2:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.2.0.tgz#8aba49c9192799585bdd643e0ccb50e8ae777ba4"
 
 ipaddr.js@1.5.2:
   version "1.5.2"
@@ -5939,6 +5959,12 @@ marked@~0.3.6:
   dependencies:
     buffers "~0.1.1"
     readable-stream "~1.0.0"
+
+matchmediaquery@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/matchmediaquery/-/matchmediaquery-0.3.0.tgz#6f672bcdbc44de16825c6917fbcdcfb9b82607b1"
+  dependencies:
+    css-mediaquery "^0.1.2"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -7526,7 +7552,7 @@ prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.6.2:
+prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -7700,6 +7726,13 @@ range-parser@^1.0.3, range-parser@^1.2.0, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+range_check@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/range_check/-/range_check-1.4.0.tgz#cd87c7ac62c40ba9df69b8703c604f60c3748635"
+  dependencies:
+    ip6 "0.0.4"
+    ipaddr.js "1.2"
+
 raw-body@2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
@@ -7807,6 +7840,14 @@ react-reconciler@^0.7.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-responsive@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-5.0.0.tgz#b6e559b2ce8c4d82b0d47a7a78a74645b977e4af"
+  dependencies:
+    hyphenate-style-name "^1.0.0"
+    matchmediaquery "^0.3.0"
+    prop-types "^15.6.1"
 
 react-shallow-testutils@^3.0.0:
   version "3.0.1"
@@ -8360,6 +8401,10 @@ restore-cursor@^2.0.0:
 ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
+
+retry@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
 
 reverse-arguments@1.0.0:
   version "1.0.0"
@@ -9342,11 +9387,12 @@ terriajs-catalog-editor@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
 
-terriajs-cesium@1.41.2:
-  version "1.41.2"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.41.2.tgz#38a9462331eab5841d1950c556e65552e145800b"
+terriajs-cesium@1.50.1:
+  version "1.50.1"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.50.1.tgz#b9dfa03edc606e58daeb731aa06cfa45d10ead4f"
   dependencies:
     deamdify "^0.1.1"
+    dompurify "^1.0.2"
     requirejs "^2.3.2"
 
 terriajs-html2canvas@1.0.0-alpha.12-terriajs-1:
@@ -9367,9 +9413,9 @@ terriajs-schema@latest:
     when "^3.7.7"
     yargs "^3.32.0"
 
-terriajs-server@^2.7.0:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.7.1.tgz#654a707a066eb153f2c80bed192753d99ec632f6"
+terriajs-server@^2.7.4:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.8.0.tgz#c05c661fe6b20c6d0c83b7c845a1c5193feab2a2"
   dependencies:
     aws-sdk "^2.4.4"
     base-x "^2.0.4"
@@ -9384,28 +9430,7 @@ terriajs-server@^2.7.0:
     ogr2ogr "^1.0.0"
     proj4 "^2.3.12"
     proj4js-defs "0.0.1"
-    request "^2.67.0"
-    request-promise "^4.0.1"
-    when "^3.7.7"
-    yargs "^6.0.0"
-
-terriajs-server@^2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.7.3.tgz#8212838f843e136d4d498235d3f8c8d507d0e6e6"
-  dependencies:
-    aws-sdk "^2.4.4"
-    base-x "^2.0.4"
-    basic-auth "^1.0.4"
-    body-parser "^1.15.0"
-    compression "^1.6.0"
-    cors "^2.7.1"
-    express "^4.8.0"
-    formidable "^1.0.17"
-    json5 "^0.5.0"
-    morgan "^1.7.0"
-    ogr2ogr "^1.0.0"
-    proj4 "^2.3.12"
-    proj4js-defs "0.0.1"
+    range_check "^1.4.0"
     request "^2.67.0"
     request-promise "^4.0.1"
     when "^3.7.7"
