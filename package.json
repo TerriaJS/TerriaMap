@@ -12,6 +12,7 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
+    "cuttlebelle": "^1.0.0-alpha.57",
     "terriajs-server": "^2.7.4"
   },
   "config": {
@@ -80,6 +81,20 @@
     "deploy": "rm -rf node_modules && npm install && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
-    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json"
+    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
+    "init-about-page": "cuttlebelle init",
+    "watch-about-page": "cuttlebelle watch",
+    "build-about-page": "cuttlebelle"
+  },
+  "cuttlebelle": {
+    "folder": {
+      "content": "about/content/",
+      "code": "about/src/",
+      "assets": "about/assets/",
+      "site": "about/build/",
+      "docs": "about/docs",
+      "index": "index",
+      "homepage": "index"
+    }
   }
 }
