@@ -87,6 +87,9 @@
     "build-about-page": "cuttlebelle"
   },
   "cuttlebelle": {
+    "site": {
+      "markdownRenderer": "about/src/markdownExtensions.js"
+    },
     "folder": {
       "content": "about/content/",
       "code": "about/src/",

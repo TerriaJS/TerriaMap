@@ -5,10 +5,10 @@ import React from 'react';
 /**
  * The page layout component
  */
-const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _ID }) => (
+const Page = ({ title, stylesheet, header, main, sidebar, footer, script, _relativeURL, _ID }) => (
 	<html>
 	<head>
-		<title>Cuttlebelle - { title }</title>
+		<title>NationalMap - { title }</title>
 		<meta charSet="utf-8" />
 		<meta httpEquiv="x-ua-compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,6 +29,11 @@ const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _
 			<main>
 				{ main }
 			</main>
+			
+			<aside>
+				{ sidebar }
+			</aside>
+			
 		</div>
 
 		<footer>
@@ -55,6 +60,11 @@ Page.propTypes = {
 	 */
 	main: PropTypes.node.isRequired,
 
+	/**
+	 * sidebar: (partials)(5)
+	 */
+	sidebar: PropTypes.node.isRequired,
+	
 	/**
 	 * footer: (partials)(2)
 	 */
