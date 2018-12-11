@@ -82,22 +82,19 @@
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
-    "init-about-page": "cuttlebelle init",
     "watch-about-page": "cuttlebelle watch",
     "build-about-page": "cuttlebelle"
   },
   "cuttlebelle": {
     "site": {
-      "markdownRenderer": "about/src/markdownExtensions.js"
+      "markdownRenderer": "./node_modules/terriajs-static/dist/markdownExtensions.js"
     },
     "folder": {
-      "content": "about/content/",
-      "code": "about/src/",
-      "assets": "about/assets/",
-      "site": "about/build/",
-      "docs": "about/docs",
-      "index": "index",
-      "homepage": "index"
+      "content": "pages/content/",
+      "code": "./node_modules/terriajs-static/dist/",
+      "assets": "pages/assets/",
+      "site": "pages/build/",
+      "docs": "pages/docs"
     }
   }
 }
