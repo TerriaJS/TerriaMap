@@ -10,7 +10,6 @@ const Nav = ({ links, _pages, _relativeURL, _ID }) => (
 			{
 				links.map( ( link, i ) => {
 					const url = link.link;
-
 					return (
 						<li key={ i } className={`nav__link nav__link--generated${
 							_pages[ _ID ]._url.startsWith( url ) && url != '/' || url === '/' && _ID === 'index'
