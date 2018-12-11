@@ -1,10 +1,8 @@
-# This is how we will construct this page; out of the below listed variables and partials.
-# Cuttlebelle recognizes partials if they end with ".md" and that their path exists inside your content folder
-
-title: About TerriaMap        # The title of the page
+title: About TerriaMap       
 
 header:
   - /_shared/header.md
+  - /_shared/nav.md
   
 main:
   - body.md

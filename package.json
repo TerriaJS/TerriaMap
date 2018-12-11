@@ -1,4 +1,8 @@
 {
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "name": "terriajs-map",
   "version": "0.0.1",
   "description": "Geospatial catalog explorer based on TerriaJS.",
@@ -12,7 +16,6 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "cuttlebelle": "^1.0.0-alpha.57",
     "terriajs-server": "^2.7.4"
   },
   "config": {
@@ -36,6 +39,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.28.0",
+    "cuttlebelle": "^1.0.0-alpha.57",
     "ejs": "^2.5.2",
     "eslint": "^4.9.0",
     "eslint-plugin-jsx-control-statements": "^2.2.0",
@@ -63,6 +67,7 @@
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.51.0",
     "terriajs-schema": "latest",
+    "terriajs-static": "^1.0.0",
     "urijs": "^1.18.12",
     "url-loader": "^0.5.7",
     "webpack": "^3.8.1",
@@ -83,7 +88,9 @@
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "watch-about-page": "cuttlebelle watch",
-    "build-about-page": "cuttlebelle"
+    "build-about-page": "cuttlebelle",
+    "watch-page": "bash ./node_modules/terriajs-static/build.sh --watch",
+    "build-page": "bash ./node_modules/terriajs-static/build.sh"
   },
   "cuttlebelle": {
     "site": {
@@ -91,7 +98,7 @@
     },
     "folder": {
       "content": "pages/content/",
-      "code": "./node_modules/terriajs-static/dist/",
+      "code": "./node_modules/terriajs-static/dist/layout/",
       "assets": "pages/assets/",
       "site": "pages/build/",
       "docs": "pages/docs"
