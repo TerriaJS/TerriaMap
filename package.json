@@ -95,12 +95,8 @@
     "folder": {
       "content": "pages/content/",
       "assets": "pages/assets/",
-      "component": "pages/component",
       "site": "pages/build/",
       "docs": "pages/docs"
-    },
-    "site":{
-      "markdownRenderer": "pages/component/markdownExtensions.js"
     }
   }
 }
