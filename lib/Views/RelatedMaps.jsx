@@ -8,7 +8,9 @@ import classNames from 'classnames';
 
 function RelatedMaps(props) {
     const dropdownTheme = {
-        inner: Styles.dropdownInner
+        inner: Styles.dropdownInner,
+        icon: 'gallery'
+        
     };
 
     return (
