@@ -1884,6 +1884,11 @@ css-loader@^0.9.1:
     loader-utils "~0.2.2"
     source-map "~0.1.38"
 
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
+  integrity sha1-aiw3NEkoYYYxxUvTPO3TAdoYvqA=
+
 css-selector-tokenizer@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/css-selector-tokenizer/-/css-selector-tokenizer-0.7.0.tgz#e6988474ae8c953477bf5e7efecfceccd9cf4c86"
@@ -2882,6 +2887,11 @@ file-loader@^1.1.5:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"
 
+file-saver@^1.3.8:
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-1.3.8.tgz#e68a30c7cb044e2fb362b428469feb291c2e09d8"
+  integrity sha512-spKHSBQIxxS81N/O21WmuXA2F6wppUCsutpzenOeZzOCCJ5gEfcbqJP983IrpLXzYmXnMUa6J03SubcNPdKrlg==
+
 file-set@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/file-set/-/file-set-1.1.1.tgz#d3ec70c080ec8f18f204ba1de106780c9056926b"
@@ -3631,6 +3641,11 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
+hyphenate-style-name@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
+  integrity sha1-MRYKNpMK2vH8BMYHT360FGXU7Es=
+
 iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
@@ -3781,9 +3796,19 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
+ip6@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ip6/-/ip6-0.0.4.tgz#44c5a9db79e39d405201b4d78d13b3870e48db31"
+  integrity sha1-RMWp23njnUBSAbTXjROzhw5I2zE=
+
 ip@^1.1.0, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
+
+ipaddr.js@1.2:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.2.0.tgz#8aba49c9192799585bdd643e0ccb50e8ae777ba4"
+  integrity sha1-irpJyRknmVhb3WQ+DMtQ6K53e6Q=
 
 ipaddr.js@1.8.0:
   version "1.8.0"
@@ -4208,9 +4233,9 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-"jsonschema@git+https://github.com/terriajs/jsonschema":
+jsonschema@terriajs/jsonschema:
   version "1.0.3"
-  resolved "git+https://github.com/terriajs/jsonschema#55cedb27a265bbae2b366a3824863c586c5d34cf"
+  resolved "https://codeload.github.com/terriajs/jsonschema/tar.gz/55cedb27a265bbae2b366a3824863c586c5d34cf"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -4582,6 +4607,13 @@ markdown-it@^8.0.0:
 marked@~0.3.6:
   version "0.3.19"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
+
+matchmediaquery@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/matchmediaquery/-/matchmediaquery-0.3.0.tgz#6f672bcdbc44de16825c6917fbcdcfb9b82607b1"
+  integrity sha512-u0dlv+VENJ+3YepvwSPBieuvnA6DWfaYa/ctwysAR13y4XLJNyt7bEVKzNj/Nvjo+50d88Pj+xL9xaSo6JmX/w==
+  dependencies:
+    css-mediaquery "^0.1.2"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -5849,7 +5881,7 @@ promise.prototype.finally@^1.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -5965,6 +5997,14 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+range_check@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/range_check/-/range_check-1.4.0.tgz#cd87c7ac62c40ba9df69b8703c604f60c3748635"
+  integrity sha1-zYfHrGLEC6nfabhwPGBPYMN0hjU=
+  dependencies:
+    ip6 "0.0.4"
+    ipaddr.js "1.2"
+
 raw-body@2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
@@ -6046,6 +6086,15 @@ react-rangeslider@^2.0.0:
   dependencies:
     classnames "^2.2.3"
     resize-observer-polyfill "^1.4.2"
+
+react-responsive@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-5.0.0.tgz#b6e559b2ce8c4d82b0d47a7a78a74645b977e4af"
+  integrity sha512-oEimZ0FTCC3/pjGDEBHOz06nWbBNDIbMGOdRYp6K9SBUmrqgNAX77hTiqvmRQeLyI97zz4F4kiaFRxFspDxE+w==
+  dependencies:
+    hyphenate-style-name "^1.0.0"
+    matchmediaquery "^0.3.0"
+    prop-types "^15.6.1"
 
 react@^16.3.2:
   version "16.4.2"
@@ -6449,6 +6498,11 @@ restore-cursor@^2.0.0:
 ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
+
+retry@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
+  integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
 
 reverse-arguments@1.0.0:
   version "1.0.0"
@@ -7222,9 +7276,10 @@ terriajs-catalog-editor@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
 
-terriajs-cesium@1.48.0:
-  version "1.48.0"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.48.0.tgz#3e35f144e10d1b26d01105783afe5361f52d0791"
+terriajs-cesium@1.51.0:
+  version "1.51.0"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.51.0.tgz#e19102ab6442087794b3f12400a73d1c232c40fa"
+  integrity sha512-Q0ma/P4rrIorLMkczrci2wDLt+Ok/SmtQ+EIEq8a9f/C2S3xIw6XDaYNvHjaKWgHDLEPaSP6VX9lnZX39TEedA==
   dependencies:
     deamdify "^0.1.1"
     dompurify "^1.0.2"
@@ -7244,9 +7299,10 @@ terriajs-schema@latest:
     when "^3.7.7"
     yargs "^3.32.0"
 
-terriajs-server@^2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.7.3.tgz#8212838f843e136d4d498235d3f8c8d507d0e6e6"
+terriajs-server@^2.7.4:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-2.9.0.tgz#b42cbbb96795bac6b0d8b118eb58b39ec9d08afc"
+  integrity sha512-kbAq+n0YKUrixi7JvpSUagIVS9MV3vqQ6n76yvhCFSCT43++23YC18aDBIv+agt+AaIPfdezhXm53PCJth7IZg==
   dependencies:
     aws-sdk "^2.4.4"
     base-x "^2.0.4"
@@ -7261,14 +7317,16 @@ terriajs-server@^2.7.3:
     ogr2ogr "^1.0.0"
     proj4 "^2.3.12"
     proj4js-defs "0.0.1"
+    range_check "^1.4.0"
     request "^2.67.0"
     request-promise "^4.0.1"
     when "^3.7.7"
     yargs "^6.0.0"
 
-terriajs@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-6.1.0.tgz#4c0f463f122d6bc352916e71435ca81b338917a4"
+terriajs@6.3.6:
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-6.3.6.tgz#3fe8f6cb37e49605ed5f61a12e367ebb64f8d68d"
+  integrity sha512-6mYo2qhU0VVuYBHXRu8Bm7ymFSbE38bEn2eYH9HlLqIIx+LmuBeFhp5fzzqmrU+p/cRn1viDtXH3n0GPhlFsNg==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     "@mapbox/togeojson" "^0.16.0"
@@ -7293,6 +7351,7 @@ terriajs@6.1.0:
     dompurify "^1.0.2"
     extract-text-webpack-plugin "^3.0.0"
     file-loader "^1.1.5"
+    file-saver "^1.3.8"
     gulp "^3.9.1"
     hammerjs "^2.0.6"
     html-to-react "1.2.12"
@@ -7319,13 +7378,15 @@ terriajs@6.1.0:
     react-datepicker "0.53.0"
     react-dom "^16.3.2"
     react-rangeslider "^2.0.0"
+    react-responsive "^5.0.0"
     resolve "^1.1.7"
     resolve-url-loader "^2.0.2"
+    retry "^0.12.0"
     sass-loader "^6.0.3"
     simple-statistics "^4.1.0"
     string-replace-webpack-plugin "^0.1.3"
     style-loader "^0.19.1"
-    terriajs-cesium "1.48.0"
+    terriajs-cesium "1.51.0"
     terriajs-html2canvas "1.0.0-alpha.12-terriajs-1"
     urijs "^1.18.12"
     url-loader "^0.5.7"
