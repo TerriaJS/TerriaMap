@@ -25,6 +25,9 @@ import render from './lib/Views/render';
 import { observable } from 'mobx';
 import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
 import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroupNew';
+import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem3';
+import CommonStrata from 'terriajs/lib/Models/CommonStrata';
+
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -84,15 +87,26 @@ terria.start({
         // updateApplicationOnMessageFromParentWindow(terria, window);
 
         // Create the various base map options.
-        var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-        var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
-        var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
+        // var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
+        // var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
+        // var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
-        var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
-        var globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
+        // var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
+        // var globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
 
-        var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-        selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
+        // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
+        // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
+        const blackMarble = new WebMapServiceCatalogItem(terria);
+        const codedProperties = blackMarble.addStratum(CommonStrata.user);
+        codedProperties.name = 'NASA Black Marble';
+        codedProperties.url = 'http://geoserver.nationalmap.nicta.com.au/imagery/nasa-black-marble/wms';
+        codedProperties.layers = 'nasa-black-marble:dnb_land_ocean_ice.2012.54000x27000_geo';
+        codedProperties.parameters = {
+            tiled: true
+        };
+        codedProperties.opacity = 1.0;
+        codedProperties.isRequiredForRendering = true;
+        terria.baseMap = blackMarble;
         // const allBaseMaps = undefined;
 
         // Show a modal disclaimer before user can do anything else.
@@ -121,7 +135,7 @@ terria.start({
         //     }
         // }
 
-        render(terria, allBaseMaps, viewState);
+        render(terria, [], viewState);
     } catch (e) {
         console.error(e);
         console.error(e.stack);
