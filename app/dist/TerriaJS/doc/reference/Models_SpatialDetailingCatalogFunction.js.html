@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Models/SpatialDetailingCatalogFunction.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Models/SpatialDetailingCatalogFunction.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/*global require*/
+var BooleanParameter = require('./BooleanParameter');
+var CatalogFunction = require('./CatalogFunction');
+var CsvCatalogItem = require('./CsvCatalogItem');
+var defineProperties = require('terriajs-cesium/Source/Core/defineProperties');
+var inherit = require('../Core/inherit');
+var invokeTerriaAnalyticsService = require('./invokeTerriaAnalyticsService');
+var RegionDataParameter = require('./RegionDataParameter');
+var RegionTypeParameter = require('./RegionTypeParameter');
+var RuntimeError = require('terriajs-cesium/Source/Core/RuntimeError');
+
+/**
+ * A Terria Spatial Inference function to predicts the characteristics of fine-grained regions by learning and
+ * exploiting correlations of coarse-grained data with Census characteristics.
+ *
+ * @alias SpatialDetailingCatalogFunction
+ * @constructor
+ * @extends CatalogFunction
+ *
+ * @param {Terria} terria The Terria instance.
+ */
+var SpatialDetailingCatalogFunction = function(terria) {
+    CatalogFunction.call(this, terria);
+
+    this.url = undefined;
+    this.name = "Spatial Detailing";
+    this.description = "Predicts the characteristics of fine-grained regions by learning and exploiting correlations of coarse-grained data with Census characteristics.";
+
+    this._regionTypeToPredictParameter = new RegionTypeParameter({
+        terria: this.terria,
+        catalogFunction: this,
+        id: 'regionTypeToPredict',
+        name: 'Region Type to Predict',
+        description: 'The type of region for which to predict characteristics.'
+    });
+
+    this._coarseDataRegionTypeParameter = new RegionTypeParameter({
+        terria: this.terria,
+        catalogFunction: this,
+        id: 'coarseDataRegionType',
+        name: 'Coarse Data Region Type',
+        description: 'The type of region with which the coarse-grained input characteristics are associated.'
+    });
+
+    this._isMeanAggregationParameter = new BooleanParameter({
+        terria: this.terria,
+        catalogFunction: this,
+        id: 'isMeanAggregation',
+        name: 'Aggregation',
+        description: 'Specifies how coarse region values were aggregated.  True if the value is the mean of the values across the region, or False if the value is the sum of the values across the region.',
+        trueName: 'Mean Aggregation',
+        trueDescription: "Coarse region values are the mean of samples in the region.  For example, average household income.",
+        falseName: 'Sum Aggregation',
+        falseDescription: 'Coarse region values are the sum of samples in the region.  For example, total population.',
+        defaultValue: true
+    });
+
+    this._dataParameter = new RegionDataParameter({
+        terria: this.terria,
+        catalogFunction: this,
+        id: 'data',
+        name: 'Characteristic to Predict',
+        description: 'The characteristic to predict for each region.',
+        regionProvider: this._coarseDataRegionTypeParameter,
+        singleSelect: true
+    });
+
+    this._parameters = [
+        this._coarseDataRegionTypeParameter,
+        this._regionTypeToPredictParameter,
+        this._isMeanAggregationParameter,
+        this._dataParameter
+    ];
+};
+
+inherit(CatalogFunction, SpatialDetailingCatalogFunction);
+
+defineProperties(SpatialDetailingCatalogFunction.prototype, {
+    /**
+     * Gets the type of data member represented by this instance.
+     * @memberOf SpatialDetailingCatalogFunction.prototype
+     * @type {String}
+     */
+    type : {
+        get : function() {
+            return 'spatial-detailing-function';
+        }
+    },
+
+    /**
+     * Gets a human-readable name for this type of data source, 'Spatial Detailing'.
+     * @memberOf SpatialDetailingCatalogFunction.prototype
+     * @type {String}
+     */
+    typeName : {
+        get : function() {
+            return 'Spatial Detailing';
+        }
+    },
+
+    /**
+     * Gets the parameters used to {@link CatalogProcess#invoke} to this function.
+     * @memberOf SpatialDetailingCatalogFunction
+     * @type {CatalogProcessParameters[]}
+     */
+    parameters : {
+        get : function() {
+            return this._parameters;
+        }
+    }
+});
+
+SpatialDetailingCatalogFunction.prototype._load = function() {
+};
+
+/**
+ * Invokes the process.
+ * @return {AsyncProcessResultCatalogItem} The result of invoking this process.  Because the process typically proceeds asynchronously, the result is a temporary
+ *         catalog item that resolves to the real one once the process finishes.
+ */
+SpatialDetailingCatalogFunction.prototype.invoke = function() {
+    var value = this._dataParameter.getRegionDataValue();
+
+    var request = {
+        algorithm: 'spatialdetailing',
+        boundaries_name: this._coarseDataRegionTypeParameter.value.regionType.replace(/_2011$/, ''),
+        region_codes: value.regionCodes,
+        columns: value.columnHeadings[0],
+        table: value.singleSelectValues,
+        parameters: {
+            disagg_boundaries_name: this._regionTypeToPredictParameter.value.regionType.replace(/_2011$/, ''),
+            mean_agg: this._isMeanAggregationParameter.value
+        }
+    };
+
+    var predictedCharacteristic;
+    var data = this._dataParameter.value;
+    for (var characteristicName in data) {
+        if (data.hasOwnProperty(characteristicName) &amp;&amp; data[characteristicName]) {
+            predictedCharacteristic = characteristicName;
+            break;
+        }
+    }
+
+    var name = 'Spatial detailing of ' + value.columnHeadings[0] + ' at ' + this._regionTypeToPredictParameter.value.regionType;
+
+    var that = this;
+    return invokeTerriaAnalyticsService(this.terria, name, this.url, request).then(function(invocationResult) {
+        var result = invocationResult.result;
+        var csv = that._regionTypeToPredictParameter.value.aliases[0] + ',Predicted ' + predictedCharacteristic + ' (Quality: ' + result.Quality + '),Lower bound of 95% confidence interval,Upper bound of 95% confidence interval\n';
+
+        var predictedValues = result.disagg_mean;
+        var predictedRegions = result.disagg_regions;
+        var confidenceUpper = result.disagg_95conf_upper;
+        var confidenceLower = result.disagg_95conf_lower;
+
+        if (predictedValues.length !== predictedRegions.length) {
+            throw new RuntimeError('The list of values and the list of region codes do not contain the same number of elements.');
+        }
+
+        for (var i = 0; i &lt; predictedRegions.length; ++i) {
+            csv += predictedRegions[i] + ',' + predictedValues[i] + ',' + confidenceLower[i] + ',' + confidenceUpper[i] + '\n';
+        }
+
+        var catalogItem = new CsvCatalogItem(that.terria);
+        catalogItem.name = name;
+        catalogItem.data = csv;
+        catalogItem.dataUrl = invocationResult.url;
+
+        var description = 'This is the result of invoking "' + that.name + '" at ' + invocationResult.startDate + ' with these parameters:\n\n';
+        description += ' * Region type to predict: ' + that._regionTypeToPredictParameter.value.regionType + '\n';
+        description += ' * Coarse data region type: ' + that._coarseDataRegionTypeParameter.value.regionType + '\n';
+
+        if (that._isMeanAggregationParameter.value) {
+            description += ' * Treat values as a mean aggregation.\n';
+        } else {
+            description += ' * Treat values as a sum aggregation.\n';
+        }
+
+        description += ' * Predicted characteristic: ' + value.columnHeadings[0] + '\n';
+
+        catalogItem.description = description;
+
+        return catalogItem.loadAndEnable();
+    });
+};
+
+module.exports = SpatialDetailingCatalogFunction;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:30 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

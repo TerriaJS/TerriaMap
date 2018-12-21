@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "layers": {
+      "type": "string",
+      "title": "Layers",
+      "description": "The comma-separated list of layer IDs to show.  If this property is undefined,\rall layers are shown."
+    },
+    "maximumScale": {
+      "type": "number",
+      "title": "Maximum scale",
+      "description": "The denominator of the largest scale (smallest denominator) for which tiles should be requested.  For example, if this value is 1000, then tiles representing\ra scale larger than 1:1000 (i.e. numerically smaller denominator, when zooming in closer) will not be requested.  Instead, tiles of the largest-available scale, as specified by this property,\rwill be used and will simply get blurier as the user zooms in closer."
+    },
+    "maximumScaleBeforeMessage": {
+      "type": "number",
+      "title": "Maximum scale before message",
+      "description": "The denominator of the largest scale (smallest denominator) beyond which to show a message explaining that no further zoom levels are available, at the request\rof the data custodian."
+    },
+    "showTilesAfterMessage": {
+      "type": "boolean",
+      "title": "Show tiles after message",
+      "description": "A value indicating whether to continue showing tiles when the ArcGisMapServerCatalogItem's maximumScaleBeforeMessage\ris exceeded.",
+      "format": "checkbox"
+    },
+    "allowFeaturePicking": {
+      "type": "boolean",
+      "title": "Allow feature picking",
+      "description": "A value indicating whether features in this catalog item can be selected by clicking them on the map.",
+      "format": "checkbox"
+    },
+    "tokenUrl": {
+      "type": "string",
+      "title": "Token URL",
+      "description": "The URL to use for requesting tokens."
+    },
+    "parameters": {
+      "type": "object",
+      "title": "Parameters",
+      "description": "The additional parameters to pass to the WMS server when requesting images.\rAll parameter names must be entered in lowercase in order to be consistent with references in TerrisJS code.\rIf this property is undefined, WebMapServiceCatalogItem.defaultParameters is used."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "why-am-i-special-function"
+      ]
+    }
+  },
+  "description": "A Terria Spatial Inference function to determines the characteristics by which a particular region is _most different_\rfrom all other regions.",
+  "title": "Why Am I Special?",
+  "allOf": [
+    {
+      "$ref": "CatalogFunction.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WhyAmISpecialCatalogFunction.json"
+    }
+  ]
+}

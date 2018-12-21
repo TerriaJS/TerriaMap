@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "ckan-resource"
+      ]
+    }
+  },
+  "description": "A CatalogItem that queries a CKAN server for a resource, and then accesses\rthat resource as WMS, GeoJSON, etc. depending on what it finds.",
+  "title": "CKAN Resource",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CkanCatalogItem.json"
+    }
+  ]
+}

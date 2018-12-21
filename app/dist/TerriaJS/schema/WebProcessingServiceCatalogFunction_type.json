@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wps"
+      ]
+    }
+  },
+  "description": "A CatalogFunction that invokes a Web Processing Service (WPS) process.",
+  "title": "Web Processing Service (WPS)",
+  "allOf": [
+    {
+      "$ref": "CatalogFunction.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WebProcessingServiceCatalogFunction.json"
+    }
+  ]
+}

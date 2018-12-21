@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "resourceId": {
+      "type": "string",
+      "title": "Resource ID",
+      "description": "The ID of the CKAN resource referred to by this catalog item.  Either this property\ris {@see CkanCatalogItem#datasetId} must be specified.  If {@see CkanCatalogItem#datasetId} is\rspecified too, and this resource is not found, _any_ supported resource may be used instead,\rdepending on the value of {@see CkanCatalogItem#allowAnyResourceIfResourceIdNotFound}."
+    },
+    "datasetId": {
+      "type": "string",
+      "title": "Dataset ID",
+      "description": "The ID of the CKAN dataset referred to by this catalog item.  Either this property\ris {@see CkanCatalogItem#resourceId} must be specified.  The first resource of a supported type\rin this dataset will be used."
+    },
+    "allowAnyResourceIfResourceIdNotFound": {
+      "type": "boolean",
+      "title": "Allow any resource if resource ID not found",
+      "description": "A value indicating whether any supported resource may be used if both {@see CkanCatalogItem#datasetId} and\r{@see CkanCatalogItem#resourceId} are specified and the {@see CkanCatalogItem#resourceId} is not found.",
+      "format": "checkbox"
+    },
+    "allowWms": {
+      "type": "boolean",
+      "title": "Allow WMS",
+      "description": "A value indicating whether this may be a WMS resource.",
+      "format": "checkbox"
+    },
+    "allowWfs": {
+      "type": "boolean",
+      "title": "Allow WFS",
+      "description": "A value indicating whether this may be a WFS resource.",
+      "format": "checkbox"
+    },
+    "allowKml": {
+      "type": "boolean",
+      "title": "Allow KML",
+      "description": "A value indicating whether this may be a KML resource.",
+      "format": "checkbox"
+    },
+    "allowCsv": {
+      "type": "boolean",
+      "title": "Allow CSV",
+      "description": "A value indicating whether this may be a CSV resource.",
+      "format": "checkbox"
+    },
+    "allowEsriMapServer": {
+      "type": "boolean",
+      "title": "Allow esri map server",
+      "description": "A value indicating whether this may be an Esri MapServer resource.",
+      "format": "checkbox"
+    },
+    "allowEsriFeatureServer": {
+      "type": "boolean",
+      "title": "Allow esri feature server",
+      "description": "A value indicating whether this may be an Esri FeatureServer resource.",
+      "format": "checkbox"
+    },
+    "allowGeoJson": {
+      "type": "boolean",
+      "title": "Allow geo JSON",
+      "description": "A value indicating whether this may be a GeoJSON resource.",
+      "format": "checkbox"
+    },
+    "allowCzml": {
+      "type": "boolean",
+      "title": "Allow CZML",
+      "description": "A value indicating whether this may be a CZML resource.",
+      "format": "checkbox"
+    },
+    "itemProperties": {
+      "type": "object",
+      "title": "Item properties",
+      "description": "A hash of properties that will be set on the item created from the CKAN resource.\rFor example, { \"treat404AsError\": false }"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

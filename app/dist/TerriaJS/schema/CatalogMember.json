@@ -1,0 +1,138 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "The name of the item."
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "The description of the item."
+    },
+    "info": {
+      "type": "array",
+      "title": "Info",
+      "description": "The array of section titles and contents for display in the layer info panel.\rIn future this may replace 'description' above - this list should not contain\rsections named 'description' or 'Description' if the 'description' property\ris also set as both will be displayed.\rThe object is of the form {name:string, content:string}.\rContent will be rendered as Markdown with HTML.",
+      "format": "tabs",
+      "items": {
+        "type": "object",
+        "title": "Info",
+        "headerTemplate": "{{ self.name }}",
+        "defaultProperties": [
+          "name",
+          "content"
+        ],
+        "required": [
+          "name",
+          "content"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "title": "Section name",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string",
+            "format": "textarea",
+            "options": {
+              "expand_height": true
+            }
+          }
+        }
+      }
+    },
+    "infoSectionOrder": {
+      "type": "array",
+      "title": "Info section order",
+      "description": "The array of section titles definining the display order of info sections.  If this property\ris not defined, DataPreviewSections's DEFAULT_SECTION_ORDER is used.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "isUserSupplied": {
+      "type": "boolean",
+      "title": "Is user supplied",
+      "description": "A value indicating whether this member was supplied by the user rather than loaded from one of the\rTerria's initSources.  User-supplied members must be serialized completely when, for example,\rserializing enabled members for sharing.",
+      "format": "checkbox"
+    },
+    "isPromoted": {
+      "type": "boolean",
+      "title": "Is promoted",
+      "description": "A value indicating whether this item is kept above other non-promoted items.",
+      "format": "checkbox"
+    },
+    "isHidden": {
+      "type": "boolean",
+      "title": "Is hidden",
+      "description": "A value indicating whether this item is hidden from the catalog.  This\rproperty is observable.",
+      "format": "checkbox"
+    },
+    "initialMessage": {
+      "type": "object",
+      "title": "Initial message",
+      "description": "A message object that is presented to the user when an item or group is initially clicked\rThe object is of the form {title:string, content:string, key: string, confirmation: boolean, confirmText: string, width: number, height: number}."
+    },
+    "cacheDuration": {
+      "type": "string",
+      "title": "Cache duration",
+      "description": "The cache duration to use for proxied URLs for this catalog member.  If undefined, proxied URLs are effectively cachable\rforever.  The duration is expressed as a Varnish-like duration string, such as '1d' (one day) or '10000s' (ten thousand seconds)."
+    },
+    "forceProxy": {
+      "type": "boolean",
+      "title": "Force proxy",
+      "description": "Gets or sets whether or not this member should be forced to use a proxy.\rThis property is not observable.",
+      "format": "checkbox"
+    },
+    "customProperties": {
+      "type": "object",
+      "title": "Custom properties",
+      "description": "The dictionary of custom item properties."
+    },
+    "id": {
+      "type": "string",
+      "title": "ID",
+      "description": "An optional unique id for this member, that is stable across renames and moves.\rUse uniqueId to get the canonical unique id for this CatalogMember, which is present even if there is no id."
+    },
+    "shareKeys": {
+      "type": "array",
+      "title": "Share keys",
+      "description": "An array of all possible keys that can be used to match to this catalog member when specified in a share link -\rused for maintaining backwards compatibility when adding or changing CatalogMember's id.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "shortReport": {
+      "type": "string",
+      "title": "Short report",
+      "description": "A short report to show on the now viewing tab."
+    },
+    "isWaitingForDisclaimer": {
+      "type": "boolean",
+      "title": "Is waiting for disclaimer",
+      "description": "Whether this catalog member is waiting for a disclaimer to be accepted before showing itself.",
+      "format": "checkbox"
+    },
+    "hideSource": {
+      "type": "boolean",
+      "title": "Hide source",
+      "description": "Indicates that the source of this data should be hidden from the UI (obviously this isn't super-secure as you\rcan just look at the network requests).",
+      "format": "checkbox"
+    },
+    "nameInCatalog": {
+      "type": "string",
+      "title": "Name in catalog",
+      "description": "The name of this catalog member in the catalog. By default this is just `name`, but can be overridden."
+    }
+  }
+}

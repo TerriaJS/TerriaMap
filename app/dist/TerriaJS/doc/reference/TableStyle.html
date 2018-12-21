@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: TableStyle</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: TableStyle</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>TableStyle<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="TableStyle"><span class="type-signature"></span>new TableStyle<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>A set of properties that define how a table, such as a CSV file, should be displayed.
+If not set explicitly, many of these properties will be given default or guessed values elsewhere,
+such as in CsvCatalogItem.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The values of the properties of the new instance. Options may include all those options found in TableColumnStyle, plus:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>regionVariable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The name of the variable (column) to be used for region mapping.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>regionType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The identifier of a region type, as used by RegionProviderList.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dataVariable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The name of the default variable (column) containing data to be used for scaling and coloring.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeColumn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Integer</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The column name or index to use as the time column. Defaults to the first one found.
+       Pass null for none. Pass an array of two, eg. [0, 1], to provide both start and end date columns.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>xAxis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The column name or index to use as the x-axis, if charted. Defaults to the first one found.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>columns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Column-specific styling, with the format { columnIdentifier1: tableColumnStyle1, columnIdentifier2: tableColumnStyle2, ... },
+                where columnIdentifier is either the name or the column index (zero-based).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="TableColumnStyle.html">TableColumnStyle</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="active"><span class="type-signature"></span>active<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Is this column active?</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#active">TableColumnStyle#active</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line226">line 226</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="chartLineColor"><span class="type-signature"></span>chartLineColor<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Color for column (css string)</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#chartLineColor">TableColumnStyle#chartLineColor</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="clampDisplayValue"><span class="type-signature"></span>clampDisplayValue<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Display values that fall outside the display range as min and max colors.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#clampDisplayValue">TableColumnStyle#clampDisplayValue</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line125">line 125</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="colorBinMethod"><span class="type-signature"></span>colorBinMethod<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The method for quantising colors:</p>
+<ul>
+<li>For numeric columns: &quot;auto&quot; (default), &quot;ckmeans&quot;, &quot;quantile&quot; or &quot;none&quot; (equivalent to colorBins: 0).</li>
+<li>For enumerated columns: &quot;auto&quot; (default), &quot;top&quot;, or &quot;cycle&quot;</li>
+</ul>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#colorBinMethod">TableColumnStyle#colorBinMethod</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line159">line 159</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="colorBins"><span class="type-signature"></span>colorBins<span class="type-signature"> :Integer|Array.&lt;Number></span></h4>
+
+
+
+
+<div class="description">
+    <p>Either the number of discrete colours that a color gradient should be quantised into (ie. an integer), or
+an array of values specifying the boundaries between the color bins.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Integer</span>
+|
+
+<span class="param-type">Array.&lt;Number></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#colorBins">TableColumnStyle#colorBins</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line151">line 151</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="columns"><span class="type-signature"></span>columns<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Column-specific styling, with the format { columnIdentifier1: tableColumnStyle1, columnIdentifier2: tableColumnStyle2, ... },
+where columnIdentifier is either the name or the column index (zero-based).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="dataVariable"><span class="type-signature"></span>dataVariable<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The name of the default variable (column) containing data to be used for scaling and coloring.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="displayDuration"><span class="type-signature"></span>displayDuration<span class="type-signature"> :Float</span></h4>
+
+
+
+
+<div class="description">
+    <p>Display duration for each row in the table, in minutes. If not provided, this is estimated from the data.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Float</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#displayDuration">TableColumnStyle#displayDuration</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="featureInfoFields"><span class="type-signature"></span>featureInfoFields<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>An object of { &quot;myCol&quot;: &quot;My column&quot; } properties, defining which columns get displayed in feature info boxes
+(when clicked on), and what label is used instead of the column's actual name.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#featureInfoFields">TableColumnStyle#featureInfoFields</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line138">line 138</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="format"><span class="type-signature"></span>format<span class="type-signature"> :String|Number</span></h4>
+
+
+
+
+<div class="description">
+    <p>A format string for this column. For numbers, this is passed as options to toLocaleString.
+See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString .</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#format">TableColumnStyle#format</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line233">line 233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="imageUrl"><span class="type-signature"></span>imageUrl<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>A string representing an image to display at each point, for lat-long datasets.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#imageUrl">TableColumnStyle#imageUrl</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line131">line 131</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="legendName"><span class="type-signature"></span>legendName<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Display name for the legend for this column (defaults to the column name).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#legendName">TableColumnStyle#legendName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line207">line 207</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="legendTicks"><span class="type-signature"></span>legendTicks<span class="type-signature"> :Integer</span></h4>
+
+
+
+
+<div class="description">
+    <p>How many horizontal ticks to draw on the generated color ramp legend, not counting the top or bottom.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Integer</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#legendTicks">TableColumnStyle#legendTicks</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line195">line 195</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="maxDisplayValue"><span class="type-signature"></span>maxDisplayValue<span class="type-signature"> :Float</span></h4>
+
+
+
+
+<div class="description">
+    <p>All data values greater than or equal to this are considered equal for the purpose of display.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Float</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#maxDisplayValue">TableColumnStyle#maxDisplayValue</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="minDisplayValue"><span class="type-signature"></span>minDisplayValue<span class="type-signature"> :Float</span></h4>
+
+
+
+
+<div class="description">
+    <p>All data values less than or equal to this are considered equal for the purpose of display.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Float</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#minDisplayValue">TableColumnStyle#minDisplayValue</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line59">line 59</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Display name for this column.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#name">TableColumnStyle#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line201">line 201</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nullColor"><span class="type-signature"></span>nullColor<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The css string for the color with which to display null values.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#nullColor">TableColumnStyle#nullColor</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line101">line 101</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nullLabel"><span class="type-signature"></span>nullLabel<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The legend label for null values.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#nullLabel">TableColumnStyle#nullLabel</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line107">line 107</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="regionType"><span class="type-signature"></span>regionType<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The identifier of a region type, as used by RegionProviderList.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="regionVariable"><span class="type-signature"></span>regionVariable<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The name of the variable (column) to be used for region mapping.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="replaceWithNullValues"><span class="type-signature"></span>replaceWithNullValues<span class="type-signature"> :Array</span></h4>
+
+
+
+
+<div class="description">
+    <p>Values to replace with null, eg. ['na', 'NA'].</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#replaceWithNullValues">TableColumnStyle#replaceWithNullValues</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line95">line 95</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="replaceWithZeroValues"><span class="type-signature"></span>replaceWithZeroValues<span class="type-signature"> :Array</span></h4>
+
+
+
+
+<div class="description">
+    <p>Values to replace with zero, eg. ['-', null].</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#replaceWithZeroValues">TableColumnStyle#replaceWithZeroValues</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="scale"><span class="type-signature"></span>scale<span class="type-signature"> :Float</span></h4>
+
+
+
+
+<div class="description">
+    <p>The size of each point or billboard.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Float</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#scale">TableColumnStyle#scale</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="scaleByValue"><span class="type-signature"></span>scaleByValue<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Should points and billboards representing each feature be scaled by the size of their data variable?</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#scaleByValue">TableColumnStyle#scaleByValue</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line119">line 119</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="timeColumn"><span class="type-signature"></span>timeColumn<span class="type-signature"> :String|Integer|Array.&lt;String>|Array.&lt;Integer>|null</span></h4>
+
+
+
+
+<div class="description">
+    <p>The column name or index to use as the time column. Defaults to the first one found. Pass null for none.
+Pass an array of two, eg. [0, 1], to provide both start and end date columns.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Integer</span>
+|
+
+<span class="param-type">Array.&lt;String></span>
+|
+
+<span class="param-type">Array.&lt;Integer></span>
+|
+
+<span class="param-type">null</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="type"><span class="type-signature"></span>type<span class="type-signature"> :String|Number</span></h4>
+
+
+
+
+<div class="description">
+    <p>The variable type of this column.
+Converts strings, which are case-insensitive keys of VarType, to numbers. See TableStructure for further information.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#type">TableColumnStyle#type</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line214">line 214</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="units"><span class="type-signature"></span>units<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The units of this column.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#units">TableColumnStyle#units</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="xAxis"><span class="type-signature"></span>xAxis<span class="type-signature"> :String|Integer</span></h4>
+
+
+
+
+<div class="description">
+    <p>The column name or index to use as the time column. Defaults to the first one found. Pass null for none.
+Pass an array of two, eg. [0, 1], to provide both start and end date columns.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Integer</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableStyle.js.html">Models/TableStyle.js</a>, <a href="Models_TableStyle.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="yAxisMax"><span class="type-signature"></span>yAxisMax<span class="type-signature"> :Float</span></h4>
+
+
+
+
+<div class="description">
+    <p>Maximum y value to display in charts; if not specified, maximum data value will be used.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Float</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#yAxisMax">TableColumnStyle#yAxisMax</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line71">line 71</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="yAxisMin"><span class="type-signature"></span>yAxisMin<span class="type-signature"> :Float</span></h4>
+
+
+
+
+<div class="description">
+    <p>Minimum y value to display in charts; if not specified, minimum data value will be used.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Float</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="TableColumnStyle.html#yAxisMin">TableColumnStyle#yAxisMin</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_TableColumnStyle.js.html">Models/TableColumnStyle.js</a>, <a href="Models_TableColumnStyle.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:37 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

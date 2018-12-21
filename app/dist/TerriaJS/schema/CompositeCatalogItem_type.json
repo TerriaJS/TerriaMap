@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "composite"
+      ]
+    }
+  },
+  "description": "A CatalogItem composed of multiple other catalog items.  When this item is enabled or shown, the composed items are\renabled or shown as well.  Other properties, including CatalogItem's rectangle,\rCatalogItem's clock, and CatalogItem's legendUrls, are not composed in any way, so you should manually set those\rproperties on this object as appropriate.",
+  "title": "Composite",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CompositeCatalogItem.json"
+    }
+  ]
+}

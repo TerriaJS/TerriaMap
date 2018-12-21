@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wmts"
+      ]
+    }
+  },
+  "description": "A ImageryLayerCatalogItem representing a layer from a Web Map Tile Service (WMTS) server.",
+  "title": "Web Map Tile Service (WMTS)",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WebMapTileServiceCatalogItem.json"
+    }
+  ]
+}

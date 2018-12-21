@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "czml"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing Cesium Language (CZML) data.",
+  "title": "Cesium Language (CZML)",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "DataSourceCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CzmlCatalogItem.json"
+    }
+  ]
+}

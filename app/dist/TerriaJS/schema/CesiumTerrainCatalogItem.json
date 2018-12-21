@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "ionAssetId": {
+      "type": "number",
+      "title": "Ion asset ID",
+      "description": "The ID of the Cesium Ion asset to access. If this property is set, the CesiumTerrainCatalogItem's url\rproperty is ignored."
+    },
+    "ionAccessToken": {
+      "type": "string",
+      "title": "Ion access token",
+      "description": "The Cesium Ion access token to use to access the terrain. If not specified, the token specified\rusing the `cesiumIonAccessToken` property in `config.json` is used. This property is ignored if\rCesiumTerrainCatalogItem's ionAssetId is not set."
+    },
+    "ionServer": {
+      "type": "string",
+      "title": "Ion server",
+      "description": "The Cesium Ion access token to use to access the terrain. If not specified, the default Ion\rserver, `https://api.cesium.com/`, is used. This property is ignored if\rCesiumTerrainCatalogItem's ionAssetId is not set."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TerrainCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

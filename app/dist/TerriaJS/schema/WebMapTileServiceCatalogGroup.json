@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the WMTS server."
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of the data sources in this group.\rThis property is an HTML string that must be sanitized before display to the user."
+    },
+    "parameters": {
+      "type": "object",
+      "title": "Parameters",
+      "description": "The additional parameters to pass to the WMTS server when requesting images.\rAll parameter names must be entered in lowercase in order to be consistent with references in TerrisJS code.\rIf this property is undefiend, WebMapTileServiceCatalogItem.defaultParameters is used."
+    },
+    "blacklist": {
+      "type": "object",
+      "title": "Blacklist",
+      "description": "A hash of names of blacklisted data layers.  A layer that appears in this hash\rwill not be shown to the user.  In this hash, the keys should be the Title of the layers to blacklist,\rand the values should be \"true\".",
+      "additionalProperties": {
+        "type": "boolean",
+        "format": "checkbox"
+      }
+    },
+    "titleField": {
+      "type": "string",
+      "title": "Title field",
+      "description": "The field name to use as the primary title in the catalog view: each WMTS layer's\r\"title\" (default), \"identifier\", or \"abstract\"."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

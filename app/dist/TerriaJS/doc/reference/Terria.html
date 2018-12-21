@@ -1,0 +1,3995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Terria</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: Terria</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>Terria<span class="signature">(options)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="Terria"><span class="type-signature"></span>new Terria<span class="signature">(options)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>The overall model for TerriaJS.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object with the following properties:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>baseUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The base directory in which TerriaJS can find its static assets.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cesiumBaseUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    '(options.baseUrl)/build/Cesium/build/'
+                
+                </td>
+            
+
+            <td class="description last"><p>The base directory in which Cesium can find its static assets.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>appName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The name of the app.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>supportEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The support email for the app.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>batchGeocoder</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AddressGeocoder.html">AddressGeocoder</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Geocoder to use for geocoding addresses in CSV files.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line74">line 74</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="afterViewerChanged"><span class="type-signature"></span>afterViewerChanged<span class="type-signature"> :Event</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the event that is raised just after switching between Cesium and Leaflet.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Event</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line198">line 198</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="analytics"><span class="type-signature"></span>analytics<span class="type-signature"> :ConsoleAnalytics|GoogleAnalytics</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the instance to which to report Google Analytics-style log events.
+If a global <code>ga</code> function is defined, this defaults to <code>GoogleAnalytics</code>.  Otherwise, it defaults
+to <code>ConsoleAnalytics</code>.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">ConsoleAnalytics</span>
+|
+
+<span class="param-type">GoogleAnalytics</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="appName"><span class="type-signature"></span>appName<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The name of the app to be built upon Terria. This will appear in error messages to the user.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>"TerriaJS App"</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line127">line 127</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="autoPlay"><span class="type-signature"></span>autoPlay<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Indicates whether time-dynamic layers should start animating immediately upon load.
+If false, the user will need to press play manually before the layer starts animating.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line142">line 142</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="baseMap"><span class="type-signature"></span>baseMap<span class="type-signature"> :<a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the current base map.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="baseMapContrastColor"><span class="type-signature"></span>baseMapContrastColor<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a color that contrasts well with the base map.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line186">line 186</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="baseMapName"><span class="type-signature"></span>baseMapName<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the name of the base map to use.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line180">line 180</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="batchGeocoder"><span class="type-signature"></span>batchGeocoder<span class="type-signature"> :<a href="AddressGeocoder.html">AddressGeocoder</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The geocoder to use for batch geocoding addresses in CSV files.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="AddressGeocoder.html">AddressGeocoder</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line148">line 148</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="beforeViewerChanged"><span class="type-signature"></span>beforeViewerChanged<span class="type-signature"> :Event</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the event that is raised just before switching between Cesium and Leaflet.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Event</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line192">line 192</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="catalog"><span class="type-signature"></span>catalog<span class="type-signature"> :<a href="Catalog.html">Catalog</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the catalog of geospatial data.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Catalog.html">Catalog</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line306">line 306</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="cesium"><span class="type-signature"></span>cesium<span class="type-signature"> :<a href="Cesium.html">Cesium</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets properties related to the Cesium globe.  If the application is in 2D mode, this property will be
+undefined and <a href="Terria.html#leaflet">Terria#leaflet</a> will be set.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Cesium.html">Cesium</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line246">line 246</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="clock"><span class="type-signature"></span>clock<span class="type-signature"> :<a href="Clock.html">Clock</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the clock that controls how time-varying data items are displayed.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Clock.html">Clock</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line210">line 210</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="configParameters"><span class="type-signature"></span>configParameters<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the configuration parameters set at startup.
+Contains:</p>
+<ul>
+<li>regionMappingDefinitionsUrl: URL of JSON file containing region mapping definitions</li>
+<li>conversionServiceBaseUrl: URL of OGR2OGR conversion service</li>
+<li>proj4ServiceBaseUrl: URL of proj4def lookup service</li>
+<li>corsProxyBaseUrl: URL of CORS proxy</li>
+</ul>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line336">line 336</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="corsProxy"><span class="type-signature"></span>corsProxy<span class="type-signature"> :<a href="CorsProxy.html">CorsProxy</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the this.corsProxy used to determine if a URL needs to be proxied and to proxy it if necessary.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="CorsProxy.html">CorsProxy</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line239">line 239</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="currentViewer"><span class="type-signature"></span>currentViewer<span class="type-signature"> :<a href="Cesium.html">Cesium</a>|<a href="Leaflet.html">Leaflet</a>|NoViewer</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a reference to the current viewer, which is a subclass of Terria#globeOrMap -
+typically <a href="Terria.html#cesium">Terria#cesium</a> or <a href="Terria.html#leaflet">Terria#leaflet</a>.
+This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Cesium.html">Cesium</a></span>
+|
+
+<span class="param-type"><a href="Leaflet.html">Leaflet</a></span>
+|
+
+<span class="param-type">NoViewer</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line262">line 262</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="dataSources"><span class="type-signature"></span>dataSources<span class="type-signature"> :DataSourceCollection</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the collection of Cesium-style data sources that are currently active on the map.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">DataSourceCollection</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="error"><span class="type-signature"></span>error<span class="type-signature"> :CesiumEvent</span></h4>
+
+
+
+
+<div class="description">
+    <p>An event that is raised when a user-facing error occurs.  This is especially useful for errors that happen asynchronously and so
+cannot be raised as an exception because no one would be able to catch it.  Subscribers are passed the <a href="TerriaError.html">TerriaError</a>
+that occurred as the only function parameter.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">CesiumEvent</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line156">line 156</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="filterStartDataCallback"><span class="type-signature"></span>filterStartDataCallback<span class="type-signature"> :function</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a callback function that can modify any &quot;start data&quot; (e.g. a share URL) before it is loaded.
+The function is passed the start data and may modify it in place or return a new instance.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line383">line 383</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="fogSettings"><span class="type-signature"></span>fogSettings<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the current fog settings, used in the Cesium Scene/Fog constructor.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line174">line 174</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="homeView"><span class="type-signature"></span>homeView<span class="type-signature"> :<a href="CameraView.html">CameraView</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the camera's home view.  The home view is the one that the application
+returns to when the user clicks the &quot;Reset View&quot; button in the Navigation widget.  It is also used
+as the Terria#initialView if one is not specified.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="CameraView.html">CameraView</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line225">line 225</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="initSources"><span class="type-signature"></span>initSources<span class="type-signature"> :Array</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the list of sources from which the catalog was populated.  A source may be a string, in which case it
+is expected to be a URL of an init file (like init_nm.json), or it can be a JSON-style object literal which is
+the init content itself.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line281">line 281</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="leaflet"><span class="type-signature"></span>leaflet<span class="type-signature"> :<a href="Leaflet.html">Leaflet</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets properties related to the Leaflet map.  If the application is in 3D mode, this property will be
+undefined and <a href="Terria.html#cesium">Terria#cesium</a> will be set.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Leaflet.html">Leaflet</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line253">line 253</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="locationMarker"><span class="type-signature"></span>locationMarker<span class="type-signature"> :<a href="CustomDataSource.html">CustomDataSource</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the data source that represents the location marker.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="CustomDataSource.html">CustomDataSource</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line287">line 287</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="mapInteractionModeStack"><span class="type-signature"></span>mapInteractionModeStack<span class="type-signature"> :Array.&lt;<a href="MapInteractionMode.html">MapInteractionMode</a>></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the stack of map interactions modes.  The mode at the top of the stack
+(highest index) handles click interactions with the map</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="MapInteractionMode.html">MapInteractionMode</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line300">line 300</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nowViewing"><span class="type-signature"></span>nowViewing<span class="type-signature"> :<a href="global.html#NowViewing">NowViewing</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the collection of geospatial data that is currently enabled.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#NowViewing">NowViewing</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line318">line 318</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="pickedFeatures"><span class="type-signature"></span>pickedFeatures<span class="type-signature"> :<a href="global.html#PickedFeatures">PickedFeatures</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the features that are currently picked.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#PickedFeatures">PickedFeatures</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line293">line 293</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="selectBox"><span class="type-signature"></span>selectBox<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the selectBox function - set true when user requires a rectangle parameter from analytics.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line376">line 376</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="selectedFeature"><span class="type-signature"></span>selectedFeature<span class="type-signature"> :Entity</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the currently-selected feature, or undefined if there is no selected feature.  The selected
+feature is highlighted by drawing a targetting cursor around it.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Entity</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line325">line 325</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="serverConfig"><span class="type-signature"></span>serverConfig<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the ServerConfig object representing server-side configuration.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line357">line 357</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="services"><span class="type-signature"></span>services<span class="type-signature"> :Services</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the add-on services known to the application.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Services</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line312">line 312</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="shareDataService"><span class="type-signature"></span>shareDataService<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the shareDataService to be used with Terria, which can save JSON or (in future) other user-provided
+data somewhere. It can be used to generate short URLs.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line351">line 351</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="showSplitter"><span class="type-signature"></span>showSplitter<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets whether to show a splitter, if possible. Default false. This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line389">line 389</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="splitPosition"><span class="type-signature"></span>splitPosition<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the current position of the splitter (if <a href="Terria.html#showSplitter">Terria#showSplitter</a> is true) as a fraction of the map window.
+0.0 is on the left, 0.5 is in the center, and 1.0 is on the right.  This property is observable.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line395">line 395</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="splitPositionVertical"><span class="type-signature"></span>splitPositionVertical<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the current vertical position of the splitter (if <a href="Terria.html#showSplitter">Terria#showSplitter</a> is true) as a fraction of the map window.
+0.0 is on the top, 0.5 is in the center, and 1.0 is on the bottom.  This property is observable.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line400">line 400</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="supportEmail"><span class="type-signature"></span>supportEmail<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The support email for the app to be built upon Terria. This will appear in error messages to the user.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>"support@terria.io"</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line134">line 134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="tileLoadProgressEvent"><span class="type-signature"></span>tileLoadProgressEvent<span class="type-signature"> :CesiumEvent</span></h4>
+
+
+
+
+<div class="description">
+    <p>Event that tracks changes to the progress in loading new tiles from either Cesium or Leaflet - events will be
+raised with the number of tiles that still need to load.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">CesiumEvent</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line365">line 365</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="urlShortener"><span class="type-signature"></span>urlShortener<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the urlShorter to be used with terria.  This is currently set in the start method
+to allow the urlShortener object to properly initialize.  See the GoogleUrlShortener for an
+example urlShortener.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line344">line 344</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="userProperties"><span class="type-signature"></span>userProperties<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the collection of user properties.  User properties
+can be set by specifying them in the hash portion of the URL.  For example, if the application URL is
+<code>http://localhost:3001/#foo=bar&amp;someproperty=true</code>, this object will contain a property named 'foo' with the
+value 'bar' and a property named 'someproperty' with the value 'true'. Currently recognised URL parameters include
+'map=[2D,3D]' (choose the Leaflet or Cesium view) and <code>mode=preview</code> (suppress warnings, when used as an embedded
+previewer).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line273">line 273</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="viewerMode"><span class="type-signature"></span>viewerMode<span class="type-signature"> :<a href="global.html#ViewerMode">ViewerMode</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the map mode.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#ViewerMode">ViewerMode</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line162">line 162</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="zoomWhenInitialViewChanges"><span class="type-signature"></span>zoomWhenInitialViewChanges<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a value indicating whether the application should automatically zoom to the new view when
+the Terria#initialView (or <a href="Terria.html#homeView">Terria#homeView</a> if no initial view is specified).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line233">line 233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getUserProperty"><span class="type-signature"></span>getUserProperty<span class="signature">(propertyName)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets the value of a user property.  If the property doesn't exist, it is created as an observable property with the
+value undefined.  This way, if it becomes defined in the future, anyone depending on the value will be notified.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>propertyName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the user property for which to get the value.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line597">line 597</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The value of the property, or undefined if the property does not exist.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="start"><span class="type-signature"></span>start<span class="signature">(options)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Starts up Terria.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object with the following properties:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>applicationUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The URL of the application.  Typically this is obtained from window.location.  This URL, if
+                                         supplied, is parsed for startup parameters.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>configUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'config.json'
+                
+                </td>
+            
+
+            <td class="description last"><p>The URL of the file containing configuration information, such as the list of domains to proxy.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>urlShortener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">UrlShortener</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The URL shortener to use to expand short URLs.  If this property is undefined, short URLs will not be expanded.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>persistViewerMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Whether to use the ViewerMode stored in localStorage if avaliable (this takes priority over other ViewerMode options). If not specified the stored ViewerMode will be used.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line446">line 446</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updateApplicationUrl"><span class="type-signature"></span>updateApplicationUrl<span class="signature">(newUrl)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates the state of the application based on the hash portion of a URL.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>newUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new URL of the application.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_Terria.js.html">Models/Terria.js</a>, <a href="Models_Terria.js.html#line563">line 563</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A promise that resolves when any new init sources specified in the URL have been loaded.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:37 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "typeNames": {
+      "type": "string",
+      "title": "Type names",
+      "description": "The WFS feature type names."
+    },
+    "requestGeoJson": {
+      "type": "boolean",
+      "title": "Request geo JSON",
+      "description": "A value indicating whether we should request GeoJSON from the WFS server.  If this property\rand WebFeatureServiceCatalogItem's requestGeoJson are both true, we'll request GeoJSON first and\ronly fall back on trying GML if the GeoJSON request fails.",
+      "format": "checkbox"
+    },
+    "requestGml": {
+      "type": "boolean",
+      "title": "Request gml",
+      "description": "A value indicating whether we should request GML from the WFS server.  If this property\rand WebFeatureServiceCatalogItem's requestGeoJson are both true, we'll request GeoJSON first and\ronly fall back on trying GML if the GeoJSON request fails.",
+      "format": "checkbox"
+    },
+    "parameters": {
+      "type": "object",
+      "title": "Parameters",
+      "description": "The additional parameters to pass to the WFS server when requesting geometry.\rAll parameter names must be entered in lowercase in order to be consistent with references in TerrisJS code."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the Socrata server."
+    },
+    "filterQuery": {
+      "type": "array",
+      "title": "Filter query",
+      "description": "The filter query to pass to Socrata when querying the available data sources and their groups.  Each string in the\rarray is passed to Socrata as an independent search string and the results are concatenated to create the complete list.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of the data sources in this group.\rThis property is an HTML string that must be sanitized before display to the user."
+    },
+    "groupBy": {
+      "type": "string",
+      "title": "Group by",
+      "description": "A value indicating how datasets should be grouped.  Valid values are:\r* `none` - Datasets are put in a flat list; they are not grouped at all.\r* `category` - Datasets are grouped according to their category in Socrata."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

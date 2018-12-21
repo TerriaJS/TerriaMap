@@ -1,0 +1,5086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: WebFeatureServiceCatalogGroup</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: WebFeatureServiceCatalogGroup</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>WebFeatureServiceCatalogGroup<span class="signature">(terria)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="WebFeatureServiceCatalogGroup"><span class="type-signature"></span>new WebFeatureServiceCatalogGroup<span class="signature">(terria)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>A <a href="CatalogGroup.html">CatalogGroup</a> representing a collection of feature types from a Web Feature Service (WFS) server.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>terria</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Terria.html">Terria</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Terria instance.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="CatalogGroup.html">CatalogGroup</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".defaultSerializers"><span class="type-signature">(static) </span>defaultSerializers<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the set of default serializer functions to use in <a href="CatalogMember.html#serializeToJson">CatalogMember#serializeToJson</a>.  Types derived from this type
+should expose this instance - cloned and modified if necesary - through their <a href="CatalogMember.html#serializers">CatalogMember#serializers</a> property.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="_memoizedInfoItemsSourceLookup"><span class="type-signature"></span>_memoizedInfoItemsSourceLookup<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Lookup table for _sourceInfoItemNames, access through CatalogMember#_infoItemsWithSourceInfoLookup</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#_memoizedInfoItemsSourceLookup">CatalogMember#_memoizedInfoItemsSourceLookup</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line196">line 196</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="blacklist"><span class="type-signature"></span>blacklist<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a hash of names of blacklisted data layers.  A layer that appears in this hash
+will not be shown to the user.  In this hash, the keys should be the Title of the layers to blacklist,
+and the values should be &quot;true&quot;.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="cacheDuration"><span class="type-signature"></span>cacheDuration<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the cache duration to use for proxied URLs for this catalog member.  If undefined, proxied URLs are effectively cachable
+forever.  The duration is expressed as a Varnish-like duration string, such as '1d' (one day) or '10000s' (ten thousand seconds).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#cacheDuration">CatalogMember#cacheDuration</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="customProperties"><span class="type-signature"></span>customProperties<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the dictionary of custom item properties. This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#customProperties">CatalogMember#customProperties</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="dataCustodian"><span class="type-signature"></span>dataCustodian<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a description of the custodian of the data sources in this group.
+This property is an HTML string that must be sanitized before display to the user.
+This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="description"><span class="type-signature"></span>description<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the description of the item.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#description">CatalogMember#description</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="forceProxy"><span class="type-signature"></span>forceProxy<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets whether or not this member should be forced to use a proxy.
+This property is not observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#forceProxy">CatalogMember#forceProxy</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line111">line 111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="hasDescription"><span class="type-signature"></span>hasDescription<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Tests whether a description is available, either in the 'description' property
+or as a member of the 'info' array.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#hasDescription">CatalogMember#hasDescription</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line326">line 326</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="hideSource"><span class="type-signature"></span>hideSource<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Indicates that the source of this data should be hidden from the UI (obviously this isn't super-secure as you
+can just look at the network requests).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#hideSource">CatalogMember#hideSource</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line174">line 174</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="id"><span class="type-signature"></span>id<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>An optional unique id for this member, that is stable across renames and moves.
+Use uniqueId to get the canonical unique id for this CatalogMember, which is present even if there is no id.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#id">CatalogMember#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line124">line 124</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="info"><span class="type-signature"></span>info<span class="type-signature"> :Array.&lt;Object></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the array of section titles and contents for display in the layer info panel.
+In future this may replace 'description' above - this list should not contain
+sections named 'description' or 'Description' if the 'description' property
+is also set as both will be displayed.
+The object is of the form {name:string, content:string}.
+Content will be rendered as Markdown with HTML.
+This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Object></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#info">CatalogMember#info</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>[]</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="infoSectionOrder"><span class="type-signature"></span>infoSectionOrder<span class="type-signature"> :Array.&lt;String></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the array of section titles definining the display order of info sections.  If this property
+is not defined, DataPreviewSections's DEFAULT_SECTION_ORDER is used.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;String></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#infoSectionOrder">CatalogMember#infoSectionOrder</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line64">line 64</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="initialMessage"><span class="type-signature"></span>initialMessage<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>A message object that is presented to the user when an item or group is initially clicked
+The object is of the form {title:string, content:string, key: string, confirmation: boolean, confirmText: string, width: number, height: number}.
+This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#initialMessage">CatalogMember#initialMessage</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isGroup"><span class="type-signature"></span>isGroup<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets a value that tells the UI whether this is a group.
+Groups, when clicked, expand to show their constituent items.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#isGroup">CatalogGroup#isGroup</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line154">line 154</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isHidden"><span class="type-signature"></span>isHidden<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a value indicating whether this item is hidden from the catalog.  This
+property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#isHidden">CatalogMember#isHidden</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>false</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isOpen"><span class="type-signature"></span>isOpen<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a value indicating whether the group is currently expanded and showing
+its children.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#isOpen">CatalogGroup#isOpen</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isPromoted"><span class="type-signature"></span>isPromoted<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a value indicating whether this item is kept above other non-promoted items.
+This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#isPromoted">CatalogMember#isPromoted</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>false</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isUserSupplied"><span class="type-signature"></span>isUserSupplied<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets a value indicating whether this member was supplied by the user rather than loaded from one of the
+<a href="Terria.html#initSources">Terria#initSources</a>.  User-supplied members must be serialized completely when, for example,
+serializing enabled members for sharing.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#isUserSupplied">CatalogMember#isUserSupplied</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line73">line 73</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="isWaitingForDisclaimer"><span class="type-signature"></span>isWaitingForDisclaimer<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Whether this catalog member is waiting for a disclaimer to be accepted before showing itself.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#isWaitingForDisclaimer">CatalogMember#isWaitingForDisclaimer</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line166">line 166</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="items"><span class="type-signature"></span>items<span class="type-signature"> :Array.&lt;<a href="CatalogMember.html">CatalogMember</a>></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets the collection of items in this group.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="CatalogMember.html">CatalogMember</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#items">CatalogGroup#items</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="name"><span class="type-signature"></span>name<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the name of the item.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#name">CatalogMember#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="nameInCatalog"><span class="type-signature"></span>nameInCatalog<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the name of this catalog member in the catalog. By default this is just <code>name</code>, but can be overridden.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#nameInCatalog">CatalogMember#nameInCatalog</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="parent"><span class="type-signature"></span>parent<span class="type-signature"> :<a href="CatalogGroup.html">CatalogGroup</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The parent <a href="CatalogGroup.html">CatalogGroup</a> of this member.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="CatalogGroup.html">CatalogGroup</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#parent">CatalogMember#parent</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line139">line 139</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="preserveOrder"><span class="type-signature"></span>preserveOrder<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets flag to prevent items in group being sorted. Subgroups will still sort unless their own preserveOrder flag is set.  The value
+of this property only has an effect during {@CatalogGroup#load} and {@CatalogItem#updateFromJson}.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#preserveOrder">CatalogGroup#preserveOrder</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="propertiesForSharing"><span class="type-signature"></span>propertiesForSharing<span class="type-signature"> :Array.&lt;String></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets the set of names of the properties to be serialized for this object for a share link.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;String></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#propertiesForSharing">CatalogGroup#propertiesForSharing</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line193">line 193</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="serializers"><span class="type-signature"></span>serializers<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets the set of functions used to serialize individual properties in <a href="CatalogMember.html#serializeToJson">CatalogMember#serializeToJson</a>.
+When a property name on the model matches the name of a property in the serializers object literal,
+the value will be called as a function and passed a reference to the model, a reference to the destination
+JSON object literal, and the name of the property.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#serializers">CatalogGroup#serializers</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line92">line 92</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="shareKeys"><span class="type-signature"></span>shareKeys<span class="type-signature"> :Array.&lt;String></span></h4>
+
+
+
+
+<div class="description">
+    <p>An array of all possible keys that can be used to match to this catalog member when specified in a share link -
+used for maintaining backwards compatibility when adding or changing <a href="CatalogMember.html#id">CatalogMember#id</a>.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;String></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#shareKeys">CatalogMember#shareKeys</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line132">line 132</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="shortReport"><span class="type-signature"></span>shortReport<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>A short report to show on the now viewing tab.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#shortReport">CatalogMember#shortReport</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line145">line 145</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="shortReportSections"><span class="type-signature"></span>shortReportSections<span class="type-signature"> :Array.&lt;ShortReportSection></span></h4>
+
+
+
+
+<div class="description">
+    <p>The list of collapsible sections of the short report.  Each element of the array is an object literal
+with a <code>name</code> and <code>content</code> property.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;ShortReportSection></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#shortReportSections">CatalogMember#shortReportSections</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line152">line 152</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="terria"><span class="type-signature"></span>terria<span class="type-signature"> :<a href="Terria.html">Terria</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets the Terria instance.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Terria.html">Terria</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#terria">CatalogMember#terria</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line273">line 273</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="type"><span class="type-signature"></span>type<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets the type of data member represented by this instance.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#type">CatalogGroup#type</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="typeName"><span class="type-signature"></span>typeName<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets a human-readable name for this type of data source, such as 'Web Feature Service (WFS)'.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#typeName">CatalogGroup#typeName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="uniqueId"><span class="type-signature"></span>uniqueId<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The canonical unique id for this CatalogMember. Will be the id property if one is present, otherwise it will fall
+back to the uniqueId of this item's parent + this item's name. This means that if no id is set anywhere up the
+tree, the uniqueId will be a complete path of this member's location.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#uniqueId">CatalogMember#uniqueId</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line343">line 343</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="updaters"><span class="type-signature"></span>updaters<span class="type-signature"> :Object</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets the set of functions used to update individual properties in <a href="CatalogMember.html#updateFromJson">CatalogMember#updateFromJson</a>.
+When a property name in the returned object literal matches the name of a property on this instance, the value
+will be called as a function and passed a reference to this instance, a reference to the source JSON object
+literal, and the name of the property.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#updaters">CatalogGroup#updaters</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="url"><span class="type-signature"></span>url<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Gets or sets the URL of the WFS server.  This property is observable.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_WebFeatureServiceCatalogGroup.js.html">Models/WebFeatureServiceCatalogGroup.js</a>, <a href="Models_WebFeatureServiceCatalogGroup.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="_getValuesThatInfluenceLoad"><span class="type-signature">(protected) </span>_getValuesThatInfluenceLoad<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>When implemented in a derived class, gets an array containing the current value of all properties that
+influence this group's load process.  See <a href="CatalogGroup.html#load">CatalogGroup#load</a> for more information on when and
+how this is used.  The base class implementation returns an empty array.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#_getValuesThatInfluenceLoad">CatalogGroup#_getValuesThatInfluenceLoad</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line422">line 422</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The array of values that influence the load process.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="_load"><span class="type-signature">(protected) </span>_load<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>When implemented in a derived class, this method loads the group.  The base class implementation does nothing.
+This method should not be called directly; call <a href="CatalogGroup.html#load">CatalogGroup#load</a> instead.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#_load">CatalogGroup#_load</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line409">line 409</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A promise that resolves when the load is complete.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="add"><span class="type-signature"></span>add<span class="signature">(item)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds an item or group to this group.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="CatalogMember.html">CatalogMember</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The item to add.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#add">CatalogGroup#add</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line431">line 431</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="connectsWithRoot"><span class="type-signature"></span>connectsWithRoot<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Goes up the hierarchy and determines if this CatalogMember is connected with the root in terria.catalog, or whether it's
+part of a disconnected sub-tree.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#connectsWithRoot">CatalogMember#connectsWithRoot</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line541">line 541</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="enableWithParents"><span class="type-signature"></span>enableWithParents<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>&quot;Enables&quot; this catalog member in a way that makes sense for its implementation (e.g. isEnabled for items, isOpen for
+groups, and all its parents and ancestors in the tree.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#enableWithParents">CatalogMember#enableWithParents</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line553">line 553</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="findFirstItemByName"><span class="type-signature"></span>findFirstItemByName<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="CatalogMember.html">CatalogMember</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Finds the first item in this group that has the given name.  The search is case-sensitive.</p>
+<p>Instead of using this function, consider using Catalog#shareKeyIndex to look the item up, as this works in
+constant time and allows lookups to continue working for items that have been renamed or moved as long as they have
+a stable shareKey set. This function is retained mainly for backwards-compatibility with existing share links that
+used names for matching.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the item to find.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#findFirstItemByName">CatalogGroup#findFirstItemByName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line463">line 463</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The first item with the given name, or undefined if no item with that name exists.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="CatalogMember.html">CatalogMember</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="findInfoSection"><span class="type-signature"></span>findInfoSection<span class="signature">(sectionName)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Finds an <a href="CatalogMember.html#info">CatalogMember#info</a> section by name.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sectionName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the section to find.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#findInfoSection">CatalogMember#findInfoSection</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line528">line 528</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The section, or undefined if no section with that name exists.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="load"><span class="type-signature"></span>load<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Loads the contents of this group, if the contents are not already loaded.  It is safe to
+call this method multiple times.  The CatalogGroup#isLoading flag will be set while the load is in progress.
+Derived classes should implement <a href="CatalogGroup.html#_load">CatalogGroup#_load</a> to perform the actual loading for the group.
+Derived classes may optionally implement <a href="CatalogGroup.html#_getValuesThatInfluenceLoad">CatalogGroup#_getValuesThatInfluenceLoad</a> to provide an array containing
+the current value of all properties that influence this group's load process.  Each time that <a href="CatalogGroup.html#load">CatalogGroup#load</a>
+is invoked, these values are checked against the list of values returned last time, and <a href="CatalogGroup.html#_load">CatalogGroup#_load</a> is
+invoked again if they are different.  If <a href="CatalogGroup.html#_getValuesThatInfluenceLoad">CatalogGroup#_getValuesThatInfluenceLoad</a> is undefined or returns an
+empty array, <a href="CatalogGroup.html#_load">CatalogGroup#_load</a> will only be invoked once, no matter how many times
+<a href="CatalogGroup.html#load">CatalogGroup#load</a> is invoked.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#load">CatalogGroup#load</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line390">line 390</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A promise that resolves when the load is complete, or undefined if the group is already loaded.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="signature">(item)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes an item or group from this group.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="CatalogMember.html">CatalogMember</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The item to remove.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#remove">CatalogGroup#remove</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line440">line 440</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="serializeToJson"><span class="type-signature"></span>serializeToJson<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Serializes the data item to JSON.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Object with the following properties:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>propertyFilter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Filter function that will be executed to determine whether a property
+         should be serialized.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>itemFilter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Filter function that will be executed for each item in a group to determine
+         whether that item should be serialized.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#serializeToJson">CatalogMember#serializeToJson</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line491">line 491</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The serialized JSON object-literal.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sortFunction"><span class="type-signature"></span>sortFunction<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets or sets the function to be used when sorting the group's items.
+This function takes two <a href="CatalogItem.html">CatalogItem</a> parameters and should return a negative,
+zero, or positive value depending on the order in which they should be sorted.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#sortFunction">CatalogGroup#sortFunction</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sortItems"><span class="type-signature"></span>sortItems<span class="signature">(sortRecursively<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sorts the items in this group.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sortRecursively</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>true to sort the items in sub-groups as well; false to sort only the items in this group.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#sortItems">CatalogGroup#sortItems</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line478">line 478</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toggleOpen"><span class="type-signature"></span>toggleOpen<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Toggles the <a href="CatalogGroup.html#isOpen">CatalogGroup#isOpen</a> property of this group.  If it is open, calling this method
+will close it.  If it is closed, calling this method will open it.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogGroup.html#toggleOpen">CatalogGroup#toggleOpen</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogGroup.js.html">Models/CatalogGroup.js</a>, <a href="Models_CatalogGroup.js.html#line448">line 448</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updateFromJson"><span class="type-signature"></span>updateFromJson<span class="signature">(json, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates the catalog member from a JSON object-literal description of it.
+Existing collections with the same name as a collection in the JSON description are
+updated.  If the description contains a collection with a name that does not yet exist,
+it is created.  Because parts of the update may happen asynchronously, this method
+returns at Promise that will resolve when the update is completely done.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The JSON description.  The JSON should be in the form of an object literal, not a string.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Object with the following properties:</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>onlyUpdateExistingItems</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>true to only update existing items and never create new ones, or false is new items
+                                                   may be created by this update.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isUserSupplied</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>If specified, sets the <a href="CatalogMember.html#isUserSupplied">CatalogMember#isUserSupplied</a> property of updated catalog members
+                                          to the given value.  If not specified, the property is left unchanged.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="CatalogMember.html#updateFromJson">CatalogMember#updateFromJson</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Models_CatalogMember.js.html">Models/CatalogMember.js</a>, <a href="Models_CatalogMember.js.html#line465">line 465</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A promise that resolves when the update is complete.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:38 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

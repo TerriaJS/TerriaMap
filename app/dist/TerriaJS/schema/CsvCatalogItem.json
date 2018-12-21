@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "charSet": {
+      "type": "string",
+      "title": "Char set",
+      "description": "The character set of the data, which overrides the file information if present. Default is undefined."
+    },
+    "initialTimeSource": {
+      "type": "string",
+      "title": "Initial time source",
+      "description": "Options for the value of the animation timeline at start. Valid options in config file are:\r    initialTimeSource: \"present\"                            // closest to today's date\r    initialTimeSource: \"start\"                              // start of time range of animation\r    initialTimeSource: \"end\"                                // end of time range of animation\r    initialTimeSource: An ISO8601 date e.g. \"2015-08-08\"    // specified date or nearest if date is outside range"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

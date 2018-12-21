@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Models/MagdaCatalogItem.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Models/MagdaCatalogItem.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+
+/*global require*/
+var ArcGisFeatureServerCatalogItem = require("terriajs/lib/Models/ArcGisFeatureServerCatalogItem");
+var ArcGisMapServerCatalogItem = require("terriajs/lib/Models/ArcGisMapServerCatalogItem");
+var CatalogItem = require("terriajs/lib/Models/CatalogItem");
+var clone = require("terriajs-cesium/Source/Core/clone");
+var createRegexDeserializer = require("terriajs/lib/Models/createRegexDeserializer");
+var createRegexSerializer = require("terriajs/lib/Models/createRegexSerializer");
+var CsvCatalogItem = require("terriajs/lib/Models/CsvCatalogItem");
+var CzmlCatalogItem = require("terriajs/lib/Models/CzmlCatalogItem");
+var defined = require("terriajs-cesium/Source/Core/defined");
+var defineProperties = require("terriajs-cesium/Source/Core/defineProperties");
+var freezeObject = require("terriajs-cesium/Source/Core/freezeObject");
+var GeoJsonCatalogItem = require("terriajs/lib/Models/GeoJsonCatalogItem");
+var inherit = require("terriajs/lib/Core/inherit");
+var KmlCatalogItem = require("terriajs/lib/Models/KmlCatalogItem");
+var loadJson = require("../Core/loadJson");
+var Metadata = require("terriajs/lib/Models/Metadata");
+var TerriaError = require("terriajs/lib/Core/TerriaError");
+var proxyCatalogItemUrl = require("terriajs/lib/Models/proxyCatalogItemUrl");
+// var Rectangle = require('terriajs-cesium/Source/Core/Rectangle');
+var URI = require("urijs");
+var WebMapServiceCatalogGroup = require("terriajs/lib/Models/WebMapServiceCatalogGroup");
+var WebMapServiceCatalogItem = require("terriajs/lib/Models/WebMapServiceCatalogItem");
+var WebFeatureServiceCatalogGroup = require("terriajs/lib/Models/WebFeatureServiceCatalogGroup");
+var WebFeatureServiceCatalogItem = require("terriajs/lib/Models/WebFeatureServiceCatalogItem");
+var when = require("terriajs-cesium/Source/ThirdParty/when");
+var knockout = require("terriajs-cesium/Source/ThirdParty/knockout");
+
+/**
+ * A {@link CatalogItem} that queries a MAGDA server for a dataset or distribution, and then accesses
+ * that the as WMS, GeoJSON, etc. depending on what it finds.
+ *
+ * @alias MagdaCatalogItem
+ * @constructor
+ * @extends CatalogItem
+ *
+ * @param {Terria} terria The Terria instance.
+ */
+function MagdaCatalogItem(terria) {
+    CatalogItem.call(this, terria);
+
+    /**
+     * Gets or sets the ID of the MAGDA distribution referred to by this catalog item.  Either this property
+     * or {@see MagdaCatalogItem#datasetId} must be specified.  If {@see MagdaCatalogItem#datasetId} is
+     * specified too, and this distribution is not found, _any_ supported distribution may be used instead,
+     * depending on the value of {@see MagdaCatalogItem#allowAnyDistributionIfDistributionIdNotFound}.
+     * @type {String}
+     */
+    this.distributionId = undefined;
+
+    /**
+     * Gets or sets the ID of the MAGDA dataset referred to by this catalog item.  Either this property
+     * is {@see MagdaCatalogItem#distributionId} must be specified.  The first distribution of a supported type
+     * in this dataset will be used.
+     * @type {String}
+     */
+    this.datasetId = undefined;
+
+    /**
+     * Gets or sets a value indicating whether any supported distribution may be used if both {@see MagdaCatalogItem#datasetId} and
+     * {@see MagdaCatalogItem#distributionId} are specified and the {@see MagdaCatalogItem#distributionId} is not found.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowAnyDistributionIfDistributionIdNotFound = true;
+
+    /**
+     * Gets or sets a value indicating whether this may be a WMS distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowWms = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is a WMS distribution.
+     * @type {RegExp}
+     */
+    this.wmsDistributionFormat = /^wms$/i;
+
+    /**
+     * Gets or sets a value indicating whether this may be a WFS distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowWfs = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is a WFS distribution.
+     * @type {RegExp}
+     */
+    this.wfsDistributionFormat = /^wfs$/i;
+
+    /**
+     * Gets or sets a value indicating whether this may be a KML distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowKml = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is a KML distribution.
+     * @type {RegExp}
+     */
+    this.kmlDistributionFormat = /^km[lz]$/i;
+
+    /**
+     * Gets or sets a value indicating whether this may be a CSV distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowCsv = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is a CSV distribution.
+     * @type {RegExp}
+     */
+    this.csvDistributionFormat = /^csv(-geo-)?/i;
+
+    /**
+     * Gets or sets a value indicating whether this may be an Esri MapServer distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowEsriMapServer = true;
+
+    /**
+     * Gets or sets a value indicating whether this may be an Esri FeatureServer distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowEsriFeatureServer = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is an Esri MapServer distribution.
+     * A valid MapServer distribution must also have `MapServer` in its URL.
+     * @type {RegExp}
+     */
+    this.esriMapServerDistributionFormat = /^esri rest$/i;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is an Esri
+     * MapServer or FeatureServer distribution.  A valid FeatureServer distribution must also have `FeatureServer` in its URL.
+     * @type {RegExp}
+     */
+    this.esriFeatureServerDistributionFormat = /^esri rest$/i;
+
+    /**
+     * Gets or sets a value indicating whether this may be a GeoJSON distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowGeoJson = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is a GeoJSON distribution.
+     * @type {RegExp}
+     */
+    this.geoJsonDistributionFormat = /^geojson$/i;
+
+    /**
+     * Gets or sets a value indicating whether this may be a CZML distribution.
+     * @type {Boolean}
+     * @default true
+     */
+    this.allowCzml = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches a distribution's format, indicates that the distribution is a CZML distribution.
+     * @type {RegExp}
+     */
+    this.czmlDistributionFormat = /^czml$/i;
+
+    /**
+     * Gets or sets a hash of properties that will be set on the item created from the MAGDA distribution.
+     * For example, { "treat404AsError": false }
+     * @type {Object}
+     */
+    this.itemProperties = undefined;
+}
+
+inherit(CatalogItem, MagdaCatalogItem);
+
+defineProperties(MagdaCatalogItem.prototype, {
+    /**
+     * Gets the type of data member represented by this instance.
+     * @memberOf MagdaCatalogItem.prototype
+     * @type {String}
+     */
+    type: {
+        get: function() {
+            return "magda-distribution";
+        }
+    },
+
+    /**
+     * Gets a human-readable name for this type of data source, 'MAGDA Distribution'.
+     * @memberOf MagdaCatalogItem.prototype
+     * @type {String}
+     */
+    typeName: {
+        get: function() {
+            return "MAGDA Distribution";
+        }
+    },
+
+    /**
+     * Gets the metadata associated with this data source and the server that provided it, if applicable.
+     * @memberOf MagdaCatalogItem.prototype
+     * @type {Metadata}
+     */
+    metadata: {
+        get: function() {
+            var result = new Metadata();
+            result.isLoading = false;
+            result.dataSourceErrorMessage =
+                "This data source does not have any details available.";
+            result.serviceErrorMessage =
+                "This service does not have any details available.";
+            return result;
+        }
+    },
+
+    /**
+     * Gets the set of functions used to update individual properties in {@link CatalogMember#updateFromJson}.
+     * When a property name in the returned object literal matches the name of a property on this instance, the value
+     * will be called as a function and passed a reference to this instance, a reference to the source JSON object
+     * literal, and the name of the property.
+     * @memberOf MagdaCatalogItem.prototype
+     * @type {Object}
+     */
+    updaters: {
+        get: function() {
+            return MagdaCatalogItem.defaultUpdaters;
+        }
+    },
+
+    /**
+     * Gets the set of functions used to serialize individual properties in {@link CatalogMember#serializeToJson}.
+     * When a property name on the model matches the name of a property in the serializers object literal,
+     * the value will be called as a function and passed a reference to the model, a reference to the destination
+     * JSON object literal, and the name of the property.
+     * @memberOf MagdaCatalogItem.prototype
+     * @type {Object}
+     */
+    serializers: {
+        get: function() {
+            return MagdaCatalogItem.defaultSerializers;
+        }
+    }
+});
+
+/**
+ * Gets or sets the set of default updater functions to use in {@link CatalogMember#updateFromJson}.  Types derived from this type
+ * should expose this instance - cloned and modified if necesary - through their {@link CatalogMember#updaters} property.
+ * @type {Object}
+ */
+MagdaCatalogItem.defaultUpdaters = clone(CatalogItem.defaultUpdaters);
+
+MagdaCatalogItem.defaultUpdaters.wmsDistributionFormat = createRegexDeserializer(
+    "wmsDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.wfsDistributionFormat = createRegexDeserializer(
+    "wfsDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.kmlDistributionFormat = createRegexDeserializer(
+    "kmlDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.csvDistributionFormat = createRegexDeserializer(
+    "csvDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.esriMapServerDistributionFormat = createRegexDeserializer(
+    "esriMapServerDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.esriFeatureServerDistributionFormat = createRegexDeserializer(
+    "esriFeatureServerDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.geoJsonDistributionFormat = createRegexDeserializer(
+    "geoJsonDistributionFormat"
+);
+MagdaCatalogItem.defaultUpdaters.czmlDistributionFormat = createRegexDeserializer(
+    "czmlDistributionFormat"
+);
+
+freezeObject(MagdaCatalogItem.defaultUpdaters);
+
+/**
+ * Gets or sets the set of default serializer functions to use in {@link CatalogMember#serializeToJson}.  Types derived from this type
+ * should expose this instance - cloned and modified if necesary - through their {@link CatalogMember#serializers} property.
+ * @type {Object}
+ */
+MagdaCatalogItem.defaultSerializers = clone(CatalogItem.defaultSerializers);
+
+MagdaCatalogItem.defaultSerializers.wmsDistributionFormat = createRegexSerializer(
+    "wmsDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.wfsDistributionFormat = createRegexSerializer(
+    "wfsDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.kmlDistributionFormat = createRegexSerializer(
+    "kmlDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.csvDistributionFormat = createRegexSerializer(
+    "csvDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.esriMapServerDistributionFormat = createRegexSerializer(
+    "esriMapServerDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.esriFeatureServerDistributionFormat = createRegexSerializer(
+    "esriFeatureServerDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.geoJsonDistributionFormat = createRegexSerializer(
+    "geoJsonDistributionFormat"
+);
+MagdaCatalogItem.defaultSerializers.czmlDistributionFormat = createRegexSerializer(
+    "czmlDistributionFormat"
+);
+
+freezeObject(MagdaCatalogItem.defaultSerializers);
+
+/**
+ * Creates a catalog item from a MAGDA distribution.
+ *
+ * @param {Terria} options.terria The Terria instance.
+ * @param {Object} options.distribution The MAGDA distribution JSON.
+ * @param {String} options.magdaBaseUrl The base URL of the MAGDA server.
+ * @param {String} [options.parent] The parent of this catalog item.
+ * @param {RegExp} [options.wmsDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                             is a WMS distribution.  If undefined, WMS distributions will not be returned.
+ * @param {RegExp} [options.wfsDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                             is a WFS distribution.  If undefined, WFS distributions will not be returned.
+ * @param {RegExp} [options.esriMapServerDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                                       is an Esri MapServer distribution.  If undefined, Esri MapServer distributions will not be returned.
+ * @param {RegExp} [options.esriFeatureServerDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                                           is an Esri FeatureServer distribution.  If undefined, Esri FeatureServer distributions will not be returned.
+ * @param {RegExp} [options.kmlDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                             is a KML distribution.  If undefined, KML distributions will not be returned.
+ * @param {RegExp} [options.geoJsonDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                                 is a GeoJSON distribution.  If undefined, GeoJSON distributions will not be returned.
+ * @param {RegExp} [options.csvDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                             is a CSV distribution.  If undefined, CSV distributions will not be returned.
+ * @param {RegExp} [options.czmlDistributionFormat] A regular expression that, when it matches a distribution's format, indicates that the distribution
+ *                                              is a CZML distribution.  If undefined, CZML distributions will not be returned.
+ * @param {Boolean} [options.allowWmsGroups=false] True to allow this function to return WMS groups in addition to items.  For example if the distribution
+ *                                              refers to a WMS server but no layer is available, a {@see WebMapServiceCatalogGroup} for the
+ *                                              server will be returned.
+ * @param {Boolean} [options.allowWfsGroups=false] True to allow this function to return WFS groups in addition to items.  For example if the distribution
+ *                                              refers to a WFS server but no layer is available, a {@see WebFeatureServiceCatalogGroup} for the
+ *                                              server will be returned.
+ * @param {Boolean} [options.useDistributionName=false] True to use the name of the distribution for the name of the catalog item; false to use the
+ *                                                  name of the dataset.
+ * @param {String} [options.dataCustodian] The data custodian to use, overriding any that might be inferred from the MAGDA dataset.
+ * @param {Object} [options.itemProperties] Additional properties to apply to the item once created.
+ * @return {Promise&lt;CatalogMember>} A promise to the created catalog member, or a promise to undefined if no catalog member could be created from the distribution.
+ */
+MagdaCatalogItem.createCatalogItemFromDistribution = function(options) {
+    var distribution = options.distribution;
+    var parent = options.parent;
+
+    var formats = [
+        // Format Regex, Catalog Item, (optional) URL regex
+        [options.wmsDistributionFormat, WebMapServiceCatalogItem],
+        [options.wfsDistributionFormat, WebFeatureServiceCatalogItem],
+        [
+            options.esriMapServerDistributionFormat,
+            ArcGisMapServerCatalogItem,
+            /MapServer/
+        ],
+        [
+            options.esriFeatureServerDistributionFormat,
+            ArcGisFeatureServerCatalogItem,
+            /FeatureServer/
+        ],
+        [options.kmlDistributionFormat, KmlCatalogItem],
+        [options.geoJsonDistributionFormat, GeoJsonCatalogItem],
+        [options.czmlDistributionFormat, CzmlCatalogItem],
+        [options.csvDistributionFormat, CsvCatalogItem]
+    ].filter(function(format) {
+        return defined(format[0]);
+    });
+
+    var dcatJson = distribution.aspects["dcat-distribution-strings"];
+    var datasetFormat = distribution.aspects["dataset-format"];
+    let formatString = dcatJson.format;
+    if (datasetFormat &amp;&amp; datasetFormat.format) {
+        formatString = datasetFormat.format;
+    }
+
+    var baseUrl = dcatJson.downloadURL;
+    if (!defined(baseUrl)) {
+        if (dcatJson.accessURL) {
+            baseUrl = dcatJson.accessURL;
+        } else {
+            return when(undefined);
+        }
+    }
+
+    var matchingFormats = formats.filter(function(format) {
+        // Matching formats must match the format regex,
+        // and also the URL regex if it exists.
+        return (
+            formatString.match(format[0]) &amp;&amp;
+            (!defined(format[2]) || baseUrl.match(format[2]))
+        );
+    });
+    if (matchingFormats.length === 0) {
+        return when(undefined);
+    }
+
+    var isWms = matchingFormats[0][1] === WebMapServiceCatalogItem;
+    var isWfs = matchingFormats[0][1] === WebFeatureServiceCatalogItem;
+
+    // Extract the layer name from the URL.
+    var uri = new URI(baseUrl);
+    var params = uri.search(true);
+
+    // Remove the query portion of the WMS URL.
+    var url = baseUrl;
+
+    var newItem;
+    if (isWms || isWfs) {
+        uri.search("");
+        url = uri.toString();
+        var layerName = params.LAYERS || params.layers || params.typeName;
+        if (defined(layerName)) {
+            newItem = isWms
+                ? new WebMapServiceCatalogItem(options.terria)
+                : new WebFeatureServiceCatalogItem(options.terria);
+            newItem.layers = layerName;
+            newItem.url = url;
+        } else {
+            // Construct a WMS/WFS CatalogGroup and return the first item
+            var newGroup;
+            if (isWms &amp;&amp; options.allowWmsGroups) {
+                newGroup = new WebMapServiceCatalogGroup(options.terria);
+                newGroup.flatten = true;
+            } else if (isWfs &amp;&amp; options.allowWfsGroups) {
+                newGroup = new WebFeatureServiceCatalogGroup(options.terria);
+            } else {
+                return when(undefined);
+            }
+            newGroup.url = url;
+            newItem = newGroup.load().then(function() {
+                if (newGroup.items.length === 0) {
+                    return undefined;
+                } else {
+                    return newGroup.items[0];
+                }
+            });
+        }
+    } else {
+        newItem = new matchingFormats[0][1](options.terria);
+        newItem.url = url;
+    }
+    return when(newItem).then(function(newItem) {
+        if (!newItem) {
+            return undefined;
+        }
+
+        newItem.name = dcatJson.title;
+
+        newItem.info.push({
+            name: "Distribution Description",
+            content: dcatJson.description
+        });
+
+        // newItem.dataUrl = new URI(options.ckanBaseUrl).segment('dataset').segment(itemData.name).toString();
+        // newItem.dataUrlType = 'direct';
+
+        if (defined(options.dataCustodian)) {
+            newItem.dataCustodian = options.dataCustodian;
+        }
+
+        if (typeof options.itemProperties === "object") {
+            newItem.updateFromJson(options.itemProperties);
+        }
+
+        if (defined(parent)) {
+            newItem.id = parent.uniqueId + "/" + distribution.id;
+        }
+
+        if (defined(options.zoomOnEnable)) {
+            newItem.zoomOnEnable = options.zoomOnEnable;
+        }
+
+        knockout.getObservable(newItem, "isLoading").subscribe(function(value) {
+            try {
+                if (value === true) return;
+                if (window.parent !== window) {
+                    window.parent.postMessage("loading complete", "*");
+                }
+
+                if (window.opener) {
+                    window.opener.postMessage("loading complete", "*");
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        });
+
+        return newItem;
+    });
+};
+
+/**
+ * Maps catalog item `type` to a short, human-readable identifier of the
+ * type of distribution accessed (e.g. `wms` maps to `WMS` and `esri-mapServer`
+ * maps to `MapServer`).
+ * @type {Object}
+ */
+MagdaCatalogItem.shortHumanReadableTypeNames = {
+    wms: "WMS",
+    "wms-getCapabilities": "WMS",
+    wfs: "WFS",
+    "wfs-getCapabilities": "WFS",
+    "esri-mapServer": "MapServer",
+    "esri-featureServer": "FeatureServer",
+    kml: "KML",
+    geojson: "GeoJSON",
+    czml: "CZML",
+    csv: "CSV"
+};
+
+MagdaCatalogItem.prototype._load = function() {
+    var baseUri = new URI(this.url).segment("api/v0/registry");
+
+    if (!defined(this.distributionId) &amp;&amp; !defined(this.datasetId)) {
+        throw new TerriaError({
+            sender: this,
+            title: "distributionId or datasetId must be specified",
+            message:
+                "MagdaCatalogItem requires that either distributionId or datasetId be specified."
+        });
+    }
+
+    var that = this;
+
+    // Construct an array of "previewable" distributions
+
+    return when()
+        .then(function() {
+            if (defined(that.distributionId)) {
+                var distributionUri = baseUri
+                    .clone()
+                    .segment(
+                        `records/${encodeURIComponent(that.distributionId)}`
+                    )
+                    .addQuery({
+                        aspect: "dcat-distribution-strings",
+                        optionalAspect: "dataset-format"
+                    });
+                var distributionUrl = proxyCatalogItemUrl(
+                    that,
+                    distributionUri.toString(),
+                    "1d"
+                );
+                return loadJson(distributionUrl).then(function(
+                    distributionJson
+                ) {
+                    if (defined(distributionJson.id)) {
+                        // Success
+                        return [distributionJson];
+                    } else {
+                        return [];
+                    }
+                });
+            } else if (defined(that.datasetId)) {
+                var datasetUri = baseUri
+                    .clone()
+                    .segment(`records/${encodeURIComponent(that.datasetId)}`)
+                    .addQuery({
+                        aspect: "dataset-distributions",
+                        optionalAspect: "dataset-format",
+                        dereference: true
+                    });
+                var datasetUrl = proxyCatalogItemUrl(
+                    that,
+                    datasetUri.toString(),
+                    "1d"
+                );
+                return loadJson(datasetUrl).then(function(datasetJson) {
+                    return datasetJson
+                        .aspects["dataset-distributions"].distributions;
+                });
+            } else {
+                throw new TerriaError({
+                    sender: that,
+                    title: "Error retrieving MAGDA record",
+                    message: "No distribution or dataset ID provided"
+                });
+            }
+        })
+        .then(function(distributionsToConsider) {
+            var catalogItemCreatingAttempts = [];
+            for (var i = 0; i &lt; distributionsToConsider.length; ++i) {
+                var catalogItemCreatingAttempt = MagdaCatalogItem.createCatalogItemFromDistribution(
+                    {
+                        terria: that.terria,
+                        distribution: distributionsToConsider[i],
+                        magdaBaseUrl: that.url,
+                        wmsDistributionFormat: that.allowWms
+                            ? that.wmsDistributionFormat
+                            : undefined,
+                        kmlDistributionFormat: that.allowKml
+                            ? that.kmlDistributionFormat
+                            : undefined,
+                        wfsDistributionFormat: that.allowWfs
+                            ? that.wfsDistributionFormat
+                            : undefined,
+                        csvDistributionFormat: that.allowCsv
+                            ? that.csvDistributionFormat
+                            : undefined,
+                        esriMapServerDistributionFormat: that.allowEsriMapServer
+                            ? that.esriMapServerDistributionFormat
+                            : undefined,
+                        geoJsonDistributionFormat: that.allowGeoJson
+                            ? that.geoJsonDistributionFormat
+                            : undefined,
+                        czmlDistributionFormat: that.allowCzml
+                            ? that.czmlDistributionFormat
+                            : undefined,
+                        dataCustodian: that.dataCustodian,
+                        itemProperties: that.itemProperties,
+                        allowWfsGroups: true,
+                        allowWmsGroups: true,
+                        zoomOnEnable: that.zoomOnEnable
+                    }
+                ).then(function(catalogItem){
+                    if (!defined(catalogItem)) {
+                        var e =new Error();
+                        e.ignore = true;
+                        throw e;
+                        //--- creation function may return undefined.
+                        //--- This should be considered as failed but not report to user.
+                    }else {
+                        catalogItem.name = that.name;
+                        return catalogItem;
+                    }
+                });
+                catalogItemCreatingAttempts.push(catalogItemCreatingAttempt);
+            }
+
+            return when.any(catalogItemCreatingAttempts).otherwise(function(e){
+                var genericError = new TerriaError({
+                    sender: that,
+                    title: "No compatible distributions found",
+                    message: defined(that.distributionId)
+                        ? "The MAGDA dataset does not have a distribution with the ID " +
+                          that.distributionId +
+                          " or it does not have a supported format."
+                        : "The MAGDA dataset does not have any distributions with a supported format."
+                });
+                if(e instanceof RangeError || !e.length){
+                    throw genericError;
+                }else{
+                    for(var i=0; i&lt;e.length; i++){
+                        if(e[i].ignore) continue;
+                        throw e[i];
+                    }
+                    throw genericError;
+                }
+            });
+        });
+};
+
+module.exports = MagdaCatalogItem;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:30 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

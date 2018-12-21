@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {},
+  "allOf": [
+    {
+      "$ref": "CatalogFunction.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

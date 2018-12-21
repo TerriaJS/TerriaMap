@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "urthecast-group"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of avalible Urthecast sensor platforms.",
+  "title": "Urthcast Sensor Platforms",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "UrthecastCatalogGroup.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the REST server."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogFunction.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

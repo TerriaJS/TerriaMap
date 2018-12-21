@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "parameterValues": {
+      "type": "object",
+      "title": "Parameter values",
+      "description": "The values of the parameters that were used to invoke this function."
+    },
+    "wpsResponseUrl": {
+      "type": "string",
+      "title": "Wps response URL",
+      "description": "The URL of the WPS completed response.  This property is ignored if\rWebProcessingServiceCatalogItem's wpsResponse is defined."
+    },
+    "wpsResponse": {
+      "type": "object",
+      "title": "Wps response",
+      "description": "The completed WPS response, as either XML or the result of passing the\rXML through xml2json."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

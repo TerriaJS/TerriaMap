@@ -21,7 +21,7 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSea
 import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 import defined from 'terriajs-cesium/Source/Core/defined';
-import render from './lib/Views/render';
+import render from './app/lib/Views/render';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -99,9 +99,9 @@ terria.start({
                 // This can be expressed as a devHostRegex ("any site starting with staging.") or a negative prodHostRegex ("any site not ending in .gov.au")
                 if (defined(globalDisclaimer.devHostRegex) && hostname.match(globalDisclaimer.devHostRegex) ||
                     defined(globalDisclaimer.prodHostRegex) && !hostname.match(globalDisclaimer.prodHostRegex)) {
-                        message += require('./lib/Views/DevelopmentDisclaimerPreamble.html');
+                        message += require('./app/lib/Views/DevelopmentDisclaimerPreamble.html');
                 }
-                message += require('./lib/Views/GlobalDisclaimer.html');
+                message += require('./app/lib/Views/GlobalDisclaimer.html');
 
                 var options = {
                     title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
@@ -121,3 +121,4 @@ terria.start({
         console.error(e.stack);
     }
 });
+

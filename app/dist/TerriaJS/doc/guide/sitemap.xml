@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/getting-started/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/customizing/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/customizing/client-side-config/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/customizing/initialization-files/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/customizing/server-side-config/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/customizing/skinning/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/connecting-to-data/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/connecting-to-data/cross-origin-resource-sharing/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/connecting-to-data/catalog-groups/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/connecting-to-data/catalog-items/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/connecting-to-data/catalog-functions/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/deploying/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/deploying-terriamap/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/deploying-to-aws/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/deploying-with-kubernetes/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/setting-up-a-region-mapping-server/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/setting-up-geoserver/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/using-as-a-ckan-previewer/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/controlling-with-url-parameters/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/deploying/controlling-in-an-iframe-or-popup/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/contributing/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contributing/development-environment/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contributing/architecture/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contributing/using-a-custom-version-of-cesium/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contributing/setting-up-saucelabs/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contributing/problems-and-solutions/</loc>
+     <lastmod>2018-12-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

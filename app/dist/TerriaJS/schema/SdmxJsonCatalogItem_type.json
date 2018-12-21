@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "sdmx-json"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing region-mapped data obtained from SDMX-JSON format.\r\rDescriptions of this format are available at:\r- https://data.oecd.org/api/sdmx-json-documentation/\r- https://github.com/sdmx-twg/sdmx-json/tree/master/data-message/docs\r- https://sdmx.org/\r- http://stats.oecd.org/sdmx-json/ (hosts a handy query builder)\r\rThe URL can be of two types, eg:\r1. http://example.com/sdmx-json/data/DATASETID/BD1+BD2.LGA.1+2.A/all?startTime=2013&endTime=2013\r2. http://example.com/sdmx-json/data/DATASETID\r\rFor #2, the dimension names and codes come from (in json format):\rhttp://example.com/sdmx-json/dataflow/DATASETID",
+  "title": "SDMX-JSON",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "SdmxJsonCatalogItem.json"
+    }
+  ]
+}

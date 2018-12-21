@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wfs-getCapabilities"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of feature types from a Web Feature Service (WFS) server.",
+  "title": "Web Feature Service (WFS) Server",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WebFeatureServiceCatalogGroup.json"
+    }
+  ]
+}

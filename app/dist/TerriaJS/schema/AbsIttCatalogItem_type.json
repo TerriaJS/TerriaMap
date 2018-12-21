@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "abs-itt"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing region-mapped data obtained from the Australia Bureau of Statistics\r(ABS) ITT query interface.  Documentation for the query interface is found here: http://stat.abs.gov.au/itt/r.jsp?api",
+  "title": "ABS.Stat",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "AbsIttCatalogItem.json"
+    }
+  ]
+}

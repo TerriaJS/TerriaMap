@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "layer": {
+      "type": "string",
+      "title": "Layer",
+      "description": "The WMTS layer to use."
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "The WMTS style to use."
+    },
+    "tileMatrixSetID": {
+      "type": "string",
+      "title": "Tile matrix set i d",
+      "description": "The WMTS Tile Matrix Set ID to use."
+    },
+    "tileMatrixSetLabels": {
+      "type": "array",
+      "title": "Tile matrix set labels",
+      "description": "The labels for each level in the matrix set.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tilingScheme": {
+      "type": "object",
+      "title": "Tiling scheme",
+      "description": "The tiling scheme to pass to the WMTS server when requesting images.\rIf this property is undefiend, the default tiling scheme of the provider is used."
+    },
+    "getFeatureInfoFormats": {
+      "type": "array",
+      "title": "Get feature info formats",
+      "description": "The formats in which to try WMTS GetFeatureInfo requests.  If this property is undefined, the `WebMapServiceImageryProvider` defaults\rare used.",
+      "format": "tabs",
+      "items": {
+        "type": "enum"
+      }
+    },
+    "populateIntervalsFromTimeDimension": {
+      "type": "boolean",
+      "title": "Populate intervals from time dimension",
+      "description": "A value indicating whether a time dimension, if it exists in GetCapabilities, should be used to populate\rthe ImageryLayerCatalogItem's intervals.  If the ImageryLayerCatalogItem's intervals property is set explicitly\ron this catalog item, the value of this property is ignored.",
+      "format": "checkbox"
+    },
+    "minScaleDenominator": {
+      "type": "number",
+      "title": "Min scale denominator",
+      "description": "The denominator of the largest scale (smallest denominator) for which tiles should be requested.  For example, if this value is 1000, then tiles representing\ra scale larger than 1:1000 (i.e. numerically smaller denominator, when zooming in closer) will not be requested.  Instead, tiles of the largest-available scale, as specified by this property,\rwill be used and will simply get blurier as the user zooms in closer."
+    },
+    "format": {
+      "type": "string",
+      "title": "Format",
+      "description": "The format in which to request tile images.  If not specified, 'image/png' is used."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

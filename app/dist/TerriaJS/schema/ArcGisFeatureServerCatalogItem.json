@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "layerDef": {
+      "type": "string",
+      "title": "Layer def",
+      "description": "The 'layerDef' string to pass to the server when requesting geometry.\rBy default, we use a string that always evaluates to true: \"1=1\"."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "3d-tiles"
+      ]
+    }
+  },
+  "description": "A CatalogItem that is added to the map as Cesium 3D Tiles.",
+  "title": "Cesium 3D Tiles",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "Cesium3DTilesCatalogItem.json"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "rectangle": {
+      "type": "array",
+      "title": "Rectangle",
+      "description": "The geographic rectangle (extent or bounding box) containing this data item.",
+      "format": "table",
+      "items": {
+        "type": [
+          "number",
+          "string"
+        ]
+      },
+      "options": {
+        "collapsed": true,
+        "disable_array_reorder": true
+      },
+      "maxItems": 4,
+      "minItems": 2
+    },
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of this data."
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of this data item.\rThis property is an HTML string that must be sanitized before display to the user."
+    },
+    "metadataUrl": {
+      "type": "string",
+      "title": "Metadata URL",
+      "description": "The URL from which this data item's metadata description can be retrieved, or undefined if\rmetadata is not available for this data item.  The format of the metadata depends on the type of data item.\rFor example, Web Map Service (WMS) data items provide their metadata via their GetCapabilities document."
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "title": "Is enabled",
+      "description": "A value indicating whether this data item is enabled.  An enabled data item appears in the\r\"Now Viewing\" pane, but is not necessarily shown on the map.",
+      "format": "checkbox"
+    },
+    "isShown": {
+      "type": "boolean",
+      "title": "Is shown",
+      "description": "A value indicating whether this data item is currently shown on the map.  In order to be shown,\rthe item must also be enabled.",
+      "format": "checkbox"
+    },
+    "isLegendVisible": {
+      "type": "boolean",
+      "title": "Is legend visible",
+      "description": "A value indicating whether the legend for this data item is currently visible.",
+      "format": "checkbox"
+    },
+    "displayChoicesBeforeLegend": {
+      "type": "boolean",
+      "title": "Display choices before legend",
+      "description": "A flag which determines whether the legend comes before (false) or after (true) the display variable choice.\rDefault false.",
+      "format": "checkbox"
+    },
+    "isLoading": {
+      "type": "boolean",
+      "title": "Is loading",
+      "description": "A value indicating whether this data source is currently loading.",
+      "format": "checkbox"
+    },
+    "isMappable": {
+      "type": "boolean",
+      "title": "Is mappable",
+      "description": "A value indicating whether this data source is mappable.",
+      "format": "checkbox"
+    },
+    "showsInfo": {
+      "type": "boolean",
+      "title": "Shows info",
+      "description": "A value indicating whether this data source should show an info icon.",
+      "format": "checkbox"
+    },
+    "nowViewingMessage": {
+      "type": "string",
+      "title": "Now viewing message",
+      "description": "A message to show when this item is enabled for the first time in order to call attention to the Now Viewing panel."
+    },
+    "featureInfoTemplate": {
+      "type": [
+        "string",
+        "object"
+      ],
+      "title": "Feature info template",
+      "description": "A template to display message in a info box.\rMay be a string or an object with template, name and/or partials properties."
+    },
+    "maximumShownFeatureInfos": {
+      "type": "number",
+      "title": "Maximum shown feature infos",
+      "description": "The maximum number of features whose information can be shown at one time in the Feature Info Panel, from this item.\rDefaults to terria.configParameters.defaultMaximumShownFeatureInfos"
+    },
+    "zoomOnEnable": {
+      "type": "boolean",
+      "title": "Zoom on enable",
+      "description": "A value indicating whether the map will automatically zoom to this catalog item when it is enabled.\r\rNote that within a single init source:\r\r* Catalog items with both `isEnabled` and `zoomOnEnable` set to true will override the top-level `initialCamera` property.\r* If multiple catalog items have both `isEnabled` and `zoomOnEnable` set to true, it is undefined which one will affect the camera.\r\rIn the case of multiple init sources, however, the camera will reflect whatever happens in the _last_ init source, whether\rit is a result of a `zoomOnEnable` or an `initialCamera`,",
+      "format": "checkbox"
+    },
+    "dateFormat": {
+      "type": "object",
+      "title": "Date format",
+      "description": "Options for formatting current time and timeline tic labels. Options are:\r   currentTime   // Current time in time slider will be shown in this format. For example \"mmmm yyyy\" for Jan 2016.\r   timelineTic   // Timeline tics will have this label. For example \"yyyy\" will cause each tic to be labelled with the year."
+    },
+    "useOwnClock": {
+      "type": "boolean",
+      "title": "Use own clock",
+      "description": "A flag indicating whether imagery should be displayed using this item's own clock (currentTime, multiplier),\ror, if false, the terria clock (whose current time is shown in the timeline UI). Default false.",
+      "format": "checkbox"
+    },
+    "legendUrls": {
+      "type": "string",
+      "title": "Legend urls",
+      "description": "The URLs of the legends to show when this catalog item is enabled."
+    },
+    "legendUrl": {
+      "type": "string",
+      "title": "Legend URL",
+      "description": "The URL of the legend to show when this catalog item is enabled.  If there is more than one\rlegend URL, this property returns the first one."
+    },
+    "dataUrl": {
+      "type": "string",
+      "title": "Data URL",
+      "description": "The URL from which this data item's raw data can be retrieved, or undefined if raw data for\rthis data item is not available."
+    },
+    "dataUrlType": {
+      "type": "string",
+      "title": "Data URL type",
+      "description": "The type of the CatalogItem's dataUrl, or undefined if raw data for this data\rsource is not available.\rValid values are:\r * `direct` - A direct link to the data.\r * `wfs` - A Web Feature Service (WFS) base URL.  If CatalogItem's dataUrl is not\r           specified, the base URL will be this data item's URL.\r * `wfs-complete` - A complete, ready-to-use link to download features from a WFS server.\r * `none` - There is no data link."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

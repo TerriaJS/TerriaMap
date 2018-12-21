@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "csv"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing CSV data.",
+  "title": "Comma-Separated Values (CSV)",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CsvCatalogItem.json"
+    }
+  ]
+}

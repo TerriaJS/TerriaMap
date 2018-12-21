@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "url-template"
+      ]
+    }
+  },
+  "description": "A ImageryLayerCatalogItem representing a layer from a mapping server that can be reached\rvia a URL template.",
+  "title": "URL Template Map Server",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "UrlTemplateCatalogItem.json"
+    }
+  ]
+}

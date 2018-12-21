@@ -1,0 +1,1849 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.3">
+    
+    
+      
+        <title>Tabular Data - TerriaJS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.bcabdff3.css">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="TerriaJS" class="md-header-nav__button md-logo">
+          
+            <img src="../../../terria.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TerriaJS
+              </span>
+              <span class="md-header-nav__topic">
+                Tabular Data
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../../../terria.png" width="24" height="24">
+      
+    </span>
+    TerriaJS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Customizing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Customizing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../customizing/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../customizing/client-side-config/" title="Client-side Config" class="md-nav__link">
+      Client-side Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../customizing/initialization-files/" title="Initialization Files" class="md-nav__link">
+      Initialization Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../customizing/server-side-config/" title="Server-side Config" class="md-nav__link">
+      Server-side Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../customizing/skinning/" title="Skinning" class="md-nav__link">
+      Skinning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Connecting to Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Connecting to Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cross-origin-resource-sharing/" title="Cross-Origin Resource Sharing" class="md-nav__link">
+      Cross-Origin Resource Sharing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-groups/" title="Catalog Groups" class="md-nav__link">
+      Catalog Groups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-items/" title="Catalog Items" class="md-nav__link">
+      Catalog Items
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" checked>
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Customizing Data Appearance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Customizing Data Appearance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../imagery-data/" title="Imagery Data" class="md-nav__link">
+      Imagery Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Tabular Data
+      </label>
+    
+    <a href="./" title="Tabular Data" class="md-nav__link md-nav__link--active">
+      Tabular Data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-your-data" title="Referencing your data" class="md-nav__link">
+    Referencing your data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulating-time" title="Manipulating time" class="md-nav__link">
+    Manipulating time
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timecolumn" title="timeColumn" class="md-nav__link">
+    timeColumn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idcolumns" title="idColumns" class="md-nav__link">
+    idColumns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-how-table-columns-appear-in-the-workbench" title="Controlling how table columns appear in the workbench" class="md-nav__link">
+    Controlling how table columns appear in the workbench
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datavariable" title="dataVariable" class="md-nav__link">
+    dataVariable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columns" title="columns" class="md-nav__link">
+    columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coloring" title="Coloring" class="md-nav__link">
+    Coloring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colormap" title="colorMap" class="md-nav__link">
+    colorMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorbins" title="colorBins" class="md-nav__link">
+    colorBins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorpalette" title="colorPalette" class="md-nav__link">
+    colorPalette
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorbinmethod" title="colorBinMethod" class="md-nav__link">
+    colorBinMethod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imageurl" title="imageUrl" class="md-nav__link">
+    imageUrl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sizing" title="Sizing" class="md-nav__link">
+    Sizing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scale" title="scale" class="md-nav__link">
+    scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalebyvalue" title="scaleByValue" class="md-nav__link">
+    scaleByValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mindisplayvalue" title="minDisplayValue" class="md-nav__link">
+    minDisplayValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxdisplayvalue" title="maxDisplayValue" class="md-nav__link">
+    maxDisplayValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clampdisplayvalue" title="clampDisplayValue" class="md-nav__link">
+    clampDisplayValue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-settings" title="Other settings" class="md-nav__link">
+    Other settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-examples" title="More examples" class="md-nav__link">
+    More examples
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../feature-info-template/" title="Feature Information Template" class="md-nav__link">
+      Feature Information Template
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-functions/" title="Catalog Functions" class="md-nav__link">
+      Catalog Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Catalog Type Details
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        Catalog Type Details
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/abs-itt-dataset-list/" title="ABS ITT (group)" class="md-nav__link">
+      ABS ITT (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/abs-itt/" title="ABS ITT (item)" class="md-nav__link">
+      ABS ITT (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/esri-featureServer-group/" title="ArcGIS FeatureServer (group)" class="md-nav__link">
+      ArcGIS FeatureServer (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/esri-featureServer/" title="ArcGIS FeatureServer (item)" class="md-nav__link">
+      ArcGIS FeatureServer (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/esri-mapServer-group/" title="ArcGIS MapServer (group)" class="md-nav__link">
+      ArcGIS MapServer (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/esri-mapServer/" title="ArcGIS MapServer (item)" class="md-nav__link">
+      ArcGIS MapServer (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/esri-group/" title="ArcGIS Server (group)" class="md-nav__link">
+      ArcGIS Server (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/bing-maps/" title="Bing Maps (item)" class="md-nav__link">
+      Bing Maps (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/carto/" title="Carto Map (item)" class="md-nav__link">
+      Carto Map (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/csw/" title="Catalog Service for the Web (CSW) (group)" class="md-nav__link">
+      Catalog Service for the Web (CSW) (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/3d-tiles/" title="Cesium 3D Tiles (item)" class="md-nav__link">
+      Cesium 3D Tiles (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/ion-imagery/" title="Cesium Ion Imagery (item)" class="md-nav__link">
+      Cesium Ion Imagery (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/czml/" title="Cesium Language (CZML) (item)" class="md-nav__link">
+      Cesium Language (CZML) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/cesium-terrain/" title="Cesium Terrain (item)" class="md-nav__link">
+      Cesium Terrain (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/ckan/" title="CKAN (group)" class="md-nav__link">
+      CKAN (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/ckan-resource/" title="CKAN Resource (item)" class="md-nav__link">
+      CKAN Resource (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/csv/" title="Comma-Separated Values (CSV) (item)" class="md-nav__link">
+      Comma-Separated Values (CSV) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/composite/" title="Composite (item)" class="md-nav__link">
+      Composite (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/ogr/" title="Format Conversion Service (based on OGR) (item)" class="md-nav__link">
+      Format Conversion Service (based on OGR) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/geojson/" title="GeoJSON (item)" class="md-nav__link">
+      GeoJSON (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/gpx/" title="GPX (item)" class="md-nav__link">
+      GPX (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/group/" title="Group (Manual) (group)" class="md-nav__link">
+      Group (Manual) (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/kml/" title="Keyhole Markup Language (KML) (item)" class="md-nav__link">
+      Keyhole Markup Language (KML) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/magda-distribution/" title="MAGDA Distribution (item)" class="md-nav__link">
+      MAGDA Distribution (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/mapbox-map/" title="MapBox Map (item)" class="md-nav__link">
+      MapBox Map (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/open-street-map/" title="OpenStreetMap (item)" class="md-nav__link">
+      OpenStreetMap (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/places-like-me-function/" title="Places Like Me (function)" class="md-nav__link">
+      Places Like Me (function)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/sdmx-json/" title="SDMX-JSON (item)" class="md-nav__link">
+      SDMX-JSON (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/sos/" title="Sensor Observation Service (SOS) (item)" class="md-nav__link">
+      Sensor Observation Service (SOS) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/socrata/" title="Socrata (group)" class="md-nav__link">
+      Socrata (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/spatial-detailing-function/" title="Spatial Detailing (function)" class="md-nav__link">
+      Spatial Detailing (function)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/terria-json/" title="TerriaJS JSON (function)" class="md-nav__link">
+      TerriaJS JSON (function)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/url-template/" title="URL Template (item)" class="md-nav__link">
+      URL Template (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wfs-getCapabilities/" title="Web Feature Service (WFS) (group)" class="md-nav__link">
+      Web Feature Service (WFS) (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wfs/" title="Web Feature Service (WFS) (item)" class="md-nav__link">
+      Web Feature Service (WFS) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wms-getCapabilities/" title="Web Map Service (WMS) (group)" class="md-nav__link">
+      Web Map Service (WMS) (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wms/" title="Web Map Service (WMS) (item)" class="md-nav__link">
+      Web Map Service (WMS) (item)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wps/" title="Web Processing Service (WPS) (function)" class="md-nav__link">
+      Web Processing Service (WPS) (function)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wps-getCapabilities/" title="Web Processing Service (WPS) (group)" class="md-nav__link">
+      Web Processing Service (WPS) (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/wfs-features-group/" title="WFS Features (group)" class="md-nav__link">
+      WFS Features (group)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalog-type-details/why-am-i-special-function/" title="Why Am I Special (function)" class="md-nav__link">
+      Why Am I Special (function)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Deploying
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Deploying
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/deploying-terriamap/" title="Deploying TerriaMap" class="md-nav__link">
+      Deploying TerriaMap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/deploying-to-aws/" title="Deploying to AWS" class="md-nav__link">
+      Deploying to AWS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/deploying-with-kubernetes/" title="Deploying with Kubernetes" class="md-nav__link">
+      Deploying with Kubernetes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/setting-up-a-region-mapping-server/" title="Setting Up a Region Mapping Server" class="md-nav__link">
+      Setting Up a Region Mapping Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/setting-up-geoserver/" title="Setting Up Geoserver" class="md-nav__link">
+      Setting Up Geoserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/using-as-a-ckan-previewer/" title="Using as a CKAN Previewer" class="md-nav__link">
+      Using as a CKAN Previewer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/controlling-with-url-parameters/" title="Controlling with URL Parameters" class="md-nav__link">
+      Controlling with URL Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../deploying/controlling-in-an-iframe-or-popup/" title="Controlling in an &lt;iframe&gt; or Popup" class="md-nav__link">
+      Controlling in an &lt;iframe&gt; or Popup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/development-environment/" title="Development Environment" class="md-nav__link">
+      Development Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/using-a-custom-version-of-cesium/" title="Using a Custom Version of Cesium" class="md-nav__link">
+      Using a Custom Version of Cesium
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/setting-up-saucelabs/" title="Setting up Saucelabs" class="md-nav__link">
+      Setting up Saucelabs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/problems-and-solutions/" title="Problems and Solutions" class="md-nav__link">
+      Problems and Solutions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-your-data" title="Referencing your data" class="md-nav__link">
+    Referencing your data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulating-time" title="Manipulating time" class="md-nav__link">
+    Manipulating time
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timecolumn" title="timeColumn" class="md-nav__link">
+    timeColumn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idcolumns" title="idColumns" class="md-nav__link">
+    idColumns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-how-table-columns-appear-in-the-workbench" title="Controlling how table columns appear in the workbench" class="md-nav__link">
+    Controlling how table columns appear in the workbench
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datavariable" title="dataVariable" class="md-nav__link">
+    dataVariable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columns" title="columns" class="md-nav__link">
+    columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coloring" title="Coloring" class="md-nav__link">
+    Coloring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colormap" title="colorMap" class="md-nav__link">
+    colorMap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorbins" title="colorBins" class="md-nav__link">
+    colorBins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorpalette" title="colorPalette" class="md-nav__link">
+    colorPalette
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorbinmethod" title="colorBinMethod" class="md-nav__link">
+    colorBinMethod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imageurl" title="imageUrl" class="md-nav__link">
+    imageUrl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sizing" title="Sizing" class="md-nav__link">
+    Sizing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scale" title="scale" class="md-nav__link">
+    scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalebyvalue" title="scaleByValue" class="md-nav__link">
+    scaleByValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mindisplayvalue" title="minDisplayValue" class="md-nav__link">
+    minDisplayValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxdisplayvalue" title="maxDisplayValue" class="md-nav__link">
+    maxDisplayValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clampdisplayvalue" title="clampDisplayValue" class="md-nav__link">
+    clampDisplayValue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-settings" title="Other settings" class="md-nav__link">
+    Other settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-examples" title="More examples" class="md-nav__link">
+    More examples
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="tabular-data">Tabular Data</h1>
+<h2 id="overview">Overview</h2>
+<p>When you drag and drop a csv file onto the map, TerriaJS chooses some display defaults
+for you, including the size of the points, the color scale, how to cluster values in the
+legend, and more.</p>
+<p>You can gain control of these settings by writing a small json file. In fact the json
+is exactly the same as the initialization file, and can be included there too.</p>
+<p>Let's start with an example. Save this snippet as <code>example.json</code> and drag it onto the map.</p>
+<pre><code>{
+    &quot;catalog&quot;: [
+        {
+            &quot;name&quot;: &quot;Victorian postcodes&quot;,
+            &quot;type&quot;: &quot;csv&quot;,
+            &quot;url&quot;: &quot;https://raw.githubusercontent.com/TerriaJS/terriajs/5.2.4/wwwroot/test/csv/3000s.csv&quot;,
+            &quot;tableStyle&quot;: {
+                &quot;colorMap&quot;: &quot;green-orange&quot;
+            }
+        }
+    ]
+}
+</code></pre>
+
+<p>At first it will appear like nothing has happened. This is because json files instruct Terria to update the catalog, not directly add data onto the map.
+So head back to the Data Catalog, and scroll to the bottom. You will see a new item called
+"Victorian postcodes". Add this to the map.</p>
+<p>Two things will happen. First, you will get a message telling you that many of the values
+are not actually valid Australian postcodes. We'll fix that in a moment. Second, you will
+see a swathe of yellow-green color across Victoria. Without the json, the csv file would
+have appeared using the default shades of red.</p>
+<p>To remove the invalid region name warning, just add this to the json (at the same level as "name" and "type"):</p>
+<pre><code>            &quot;showWarnings&quot;: false,
+</code></pre>
+
+<p>This same option can be used with any tabular data type, eg. Sensor Observation Service and SDMX-JSON items as well.</p>
+<p>Please note this documentation is still being developed, and does not cover everything
+that is possible.
+The definitive source of what you can do with <code>tableStyle</code> is this pair:</p>
+<ul>
+<li><a href="https://github.com/TerriaJS/terriajs/blob/master/lib/Models/TableStyle.js">TableStyle</a></li>
+<li><a href="https://github.com/TerriaJS/terriajs/blob/master/lib/Models/TableColumnStyle.js">TableColumnStyle</a></li>
+</ul>
+<h2 id="referencing-your-data">Referencing your data</h2>
+<p>As you can see in the example above, you need to provide a URL to the csv data in the json file. If your data can be made accessible publicly, <a href="https://gist.github.com/">github gists</a> are a convenient way to do this.</p>
+<p>For small data files, you can embed the data directly in the json too, eg. instead of <code>"url"</code>, use:</p>
+<pre><code>            &quot;data&quot;: &quot;lon,lat,value\n134.384,-26.716,5\n121.659,-33.592,10&quot;
+</code></pre>
+
+<h2 id="manipulating-time">Manipulating time</h2>
+<h3 id="timecolumn">timeColumn</h3>
+<p>You can set which column controls the time slider by setting <code>timeColumn</code>:</p>
+<pre><code>            &quot;tableStyle&quot;: {
+                &quot;timeColumn&quot;: &quot;name-or-index-of-column&quot;
+            }
+</code></pre>
+
+<p>Use <code>"timeColumn": null</code> to remove the time slider altogether for this dataset.</p>
+<h3 id="idcolumns">idColumns</h3>
+<p>If you have data that shows particular features over time, you can have a time-series plot of the
+chosen column values to appear in the feature info panel when you click on a feature, so long
+as you tell TerriaJS how to track individual features over time.</p>
+<p>If your table has a time column and a column named <code>id</code>, this will happen automatically.</p>
+<p>Otherwise, you can tell TerriaJS which column or columns to use for the feature ids, by setting
+<code>idColumns</code> (this is on at the same level as the dataset's name or type, not inside <code>tableStyle</code>).
+This should be an array of column names or indexes, eg.</p>
+<pre><code>        &quot;idColumns&quot;: [&quot;feature name&quot;],
+</code></pre>
+
+<p>If your features have fixed lat/lon positions, you could use:</p>
+<pre><code>        &quot;idColumns&quot;: [&quot;lat&quot;, &quot;lon&quot;],
+</code></pre>
+
+<h2 id="controlling-how-table-columns-appear-in-the-workbench">Controlling how table columns appear in the workbench</h2>
+<h3 id="datavariable">dataVariable</h3>
+<p>If you want the dataset to start with a different column selected, use <code>dataVariable</code>:</p>
+<pre><code>            &quot;tableStyle&quot;: {
+                &quot;dataVariable&quot;: &quot;name-or-index-of-column&quot;
+            }
+</code></pre>
+
+<h3 id="columns">columns</h3>
+<p>If you want to change the appearance of individual columns, use <code>tableStyle</code>'s <code>columns</code> property, eg:</p>
+<pre><code>          &quot;tableStyle&quot;: {
+            &quot;columns&quot;: {
+              &quot;original name&quot;: {
+                &quot;name&quot;: &quot;better name&quot;,
+                &quot;format&quot;: {
+                  &quot;maximumFractionDigits&quot;: 0
+                }
+              },
+              &quot;bad&quot;: {
+                  &quot;type&quot;: &quot;hidden&quot;
+              }
+            }
+          },
+</code></pre>
+
+<p>This example shows a few possibilities:</p>
+<ul>
+<li>A column called "original name" is displayed with the name "better name".</li>
+<li>The legend for that column is shown without any decimal places (<code>maximumFractionDigits</code> 0).</li>
+<li>A column in the original data called "bad" is hidden from the workbench.</li>
+</ul>
+<p>The full list of options is in <a href="https://github.com/TerriaJS/terriajs/blob/master/lib/Models/TableColumnStyle.js">TableColumnStyle</a>.</p>
+<h2 id="coloring">Coloring</h2>
+<p>Use the following settings to adjust how points and regions are colored.</p>
+<h3 id="colormap">colorMap</h3>
+<p>In the example above we specified the two ends of the color spectrum to use via the setting
+<code>"colorMap": "green-orange"</code>, where <code>green</code> and <code>orange</code> are two colors in CSS format. In fact you can specify as many colors as you like, separated by hyphens, and the colors are evenly spaced over the range of values, eg.</p>
+<pre><code>                &quot;colorMap&quot;: &quot;red-white-hsl(240,50%,50%)&quot;
+</code></pre>
+
+<p>If you want more control what fraction of the range each color should apply,
+you can use this alternative syntax:</p>
+<pre><code>                &quot;colorMap&quot;: [
+                    {
+                        &quot;color&quot;: &quot;rgba(0,0,200,1.0)&quot;,
+                        &quot;offset&quot;: 0
+                    },
+                    {
+                        &quot;color&quot;: &quot;rgba(200,200,200,1.00)&quot;,
+                        &quot;offset&quot;: 0.6
+                    },
+                    {
+                        &quot;color&quot;: &quot;rgba(200,0,0,1.00)&quot;,
+                        &quot;offset&quot;: 1
+                    }
+                ],
+</code></pre>
+
+<h3 id="colorbins">colorBins</h3>
+<p>You can explicitly state how many colors (color "bins") you want to divide the data into, eg.</p>
+<pre><code>                &quot;colorBins&quot;: 16
+</code></pre>
+
+<p>or, if you have specific boundaries in mind, you can list them, eg.</p>
+<pre><code>                &quot;colorBins&quot;: [3000, 3100, 3800, 3850, 3950, 4000]
+</code></pre>
+
+<h3 id="colorpalette">colorPalette</h3>
+<p>To simplify the settings, you can specify a <a href="http://colorbrewer2.org/">ColorBrewer</a>
+palette directly, eg.</p>
+<pre><code>            &quot;tableStyle&quot;: {
+                &quot;colorPalette&quot;: &quot;10-class Set3&quot;,
+                &quot;colorBins&quot;: 10
+            }
+</code></pre>
+
+<p><code>"10-class BrBG"</code> is also a valid choice.</p>
+<p>This property is ignored if colorMap is defined.</p>
+<h3 id="colorbinmethod">colorBinMethod</h3>
+<p>Use this to force a particular method for quantizing colors.
+The alternatives are "auto" (the default), "ckmeans", "quantile" or "none"
+(equivalent to <code>"colorBins": 0</code>).</p>
+<h3 id="imageurl">imageUrl</h3>
+<p>For lat/lon datasets, if you want to use a particular image instead of a circle,
+you can specify its url as the <code>imageUrl</code>, eg. in <a href="https://raw.githubusercontent.com/TerriaJS/nationalmap/2017-05-15/wwwroot/init/test.json">test.json</a>:</p>
+<pre><code>            &quot;imageUrl&quot;: &quot;test/images/pow32.png&quot;,
+</code></pre>
+
+<h2 id="sizing">Sizing</h2>
+<h3 id="scale">scale</h3>
+<p>The size of each point (or image), eg.</p>
+<pre><code>            &quot;tableStyle&quot;: {
+                &quot;scale&quot;: 2
+            }
+</code></pre>
+
+<h3 id="scalebyvalue">scaleByValue</h3>
+<p>A Boolean for whether points should be scaled by the value of the selected <code>dataVariable</code>. Defaults to <code>false</code>.</p>
+<pre><code>            &quot;tableStyle&quot;: {
+                &quot;scale&quot;: 2,
+                &quot;scaleByValue&quot;: true
+            }
+</code></pre>
+
+<h3 id="mindisplayvalue">minDisplayValue</h3>
+<p>All data values less than or equal to this are considered equal for the purpose of display.</p>
+<h3 id="maxdisplayvalue">maxDisplayValue</h3>
+<p>All data values greater than or equal to this are considered equal for the purpose of display.</p>
+<h3 id="clampdisplayvalue">clampDisplayValue</h3>
+<p>A Boolean - if true, display values that fall outside the display range show as min and max colors.</p>
+<h2 id="other-settings">Other settings</h2>
+<p>For a full list of the available settings, see the <code>TableStyle</code> and <code>TableColumnStyle</code> models mentioned earlier.</p>
+<h2 id="more-examples">More examples</h2>
+<p>Some examples are here:
+<a href="https://github.com/TerriaJS/terriajs/blob/master/wwwroot/test/init/test-tablestyle.json">https://github.com/TerriaJS/terriajs/blob/master/wwwroot/test/init/test-tablestyle.json</a></p>
+<p>You can add this directly to your catalog by appending <code>#build/TerriaJS/test/init/test-tablestyle.json</code> to the URL to your map, eg. <code>http://localhost:3001/#build/TerriaJS/test/init/test-tablestyle.json</code>.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../imagery-data/" title="Imagery Data" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Imagery Data
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../feature-info-template/" title="Feature Information Template" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Feature Information Template
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

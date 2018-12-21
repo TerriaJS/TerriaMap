@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Models/GeoJsonCatalogItem.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Models/GeoJsonCatalogItem.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/*global require*/
+
+var Cartesian3 = require('terriajs-cesium/Source/Core/Cartesian3');
+var Color = require('terriajs-cesium/Source/Core/Color');
+var ColorMaterialProperty = require('terriajs-cesium/Source/DataSources/ColorMaterialProperty');
+var defined = require('terriajs-cesium/Source/Core/defined');
+var defineProperties = require('terriajs-cesium/Source/Core/defineProperties');
+var DeveloperError = require('terriajs-cesium/Source/Core/DeveloperError');
+var Entity = require('terriajs-cesium/Source/DataSources/Entity');
+var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
+var loadBlob = require('../Core/loadBlob');
+var loadJson = require('../Core/loadJson');
+var PolylineGraphics = require('terriajs-cesium/Source/DataSources/PolylineGraphics');
+var Rectangle = require('terriajs-cesium/Source/Core/Rectangle');
+var when = require('terriajs-cesium/Source/ThirdParty/when');
+var defaultValue = require('terriajs-cesium/Source/Core/defaultValue');
+var zip = require('terriajs-cesium/Source/ThirdParty/zip');
+var topojson = require('terriajs-cesium/Source/ThirdParty/topojson');
+
+var PointGraphics = require('terriajs-cesium/Source/DataSources/PointGraphics');
+
+var DataSourceCatalogItem = require('./DataSourceCatalogItem');
+var standardCssColors = require('../Core/standardCssColors');
+var formatPropertyValue = require('../Core/formatPropertyValue');
+var hashFromString = require('../Core/hashFromString');
+var inherit = require('../Core/inherit');
+var Metadata = require('./Metadata');
+var promiseFunctionToExplicitDeferred = require('../Core/promiseFunctionToExplicitDeferred');
+var proxyCatalogItemUrl = require('./proxyCatalogItemUrl');
+var readJson = require('../Core/readJson');
+var TerriaError = require('../Core/TerriaError');
+var Reproject = require('../Map/Reproject');
+
+/**
+ * A {@link CatalogItem} representing GeoJSON feature data.
+ *
+ * @alias GeoJsonCatalogItem
+ * @constructor
+ * @extends CatalogItem
+ *
+ * @param {Terria} terria The Terria instance.
+ * @param {String} [url] The URL from which to retrieve the GeoJSON data.
+ */
+var GeoJsonCatalogItem =  function(terria, url) {
+    DataSourceCatalogItem.call(this, terria);
+
+    this._dataSource = undefined;
+    this._readyData = undefined;
+
+    this.url = url;
+
+    /**
+     * Gets or sets the GeoJSON data, represented as a binary blob, object literal, or a Promise for one of those things.
+     * If this property is set, {@link CatalogItem#url} is ignored.
+     * This property is observable.
+     * @type {Blob|Object|Promise}
+     */
+    this.data = undefined;
+
+    /**
+     * Gets or sets the URL from which the {@link GeoJsonCatalogItem#data} was obtained.  This will be used
+     * to resolve any resources linked in the GeoJSON file, if any.
+     * @type {String}
+     */
+    this.dataSourceUrl = undefined;
+
+    /**
+     * Gets or sets an object of style information which will be used instead of the default, but won't override
+     * styles set on individual GeoJSON features. Styles follow the SimpleStyle spec: https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0
+     * `marker-opacity` and numeric values for `marker-size` are also supported.
+     * @type {Object}
+     */
+    this.style = undefined;
+
+    knockout.track(this, ['data', 'dataSourceUrl', 'style']);
+};
+
+inherit(DataSourceCatalogItem, GeoJsonCatalogItem);
+
+defineProperties(GeoJsonCatalogItem.prototype, {
+    /**
+     * Gets the type of data member represented by this instance.
+     * @memberOf GeoJsonCatalogItem.prototype
+     * @type {String}
+     */
+    type : {
+        get : function() {
+            return 'geojson';
+        }
+    },
+
+    /**
+     * Gets a human-readable name for this type of data source, 'GeoJSON'.
+     * @memberOf GeoJsonCatalogItem.prototype
+     * @type {String}
+     */
+    typeName : {
+        get : function() {
+            return 'GeoJSON';
+        }
+    },
+
+    /**
+     * Gets the metadata associated with this data source and the server that provided it, if applicable.
+     * @memberOf GeoJsonCatalogItem.prototype
+     * @type {Metadata}
+     */
+    metadata : {
+        get : function() {
+            // TODO: maybe return the FeatureCollection's properties?
+            var result = new Metadata();
+            result.isLoading = false;
+            result.dataSourceErrorMessage = 'This data source does not have any details available.';
+            result.serviceErrorMessage = 'This service does not have any details available.';
+            return result;
+        }
+    },
+    /**
+     * Gets the data source associated with this catalog item.
+     * @memberOf GeoJsonCatalogItem.prototype
+     * @type {DataSource}
+     */
+    dataSource : {
+        get : function() {
+            return this._dataSource;
+        }
+    }
+});
+
+GeoJsonCatalogItem.prototype._getValuesThatInfluenceLoad = function() {
+    return [this.url, this.data];
+};
+
+var zipFileRegex = /.zip\b/i;
+var geoJsonRegex = /.geojson\b/i;
+
+var simpleStyleIdentifiers = ['title', 'description', //
+'marker-size', 'marker-symbol', 'marker-color', 'stroke', //
+'stroke-opacity', 'stroke-width', 'fill', 'fill-opacity'];
+
+// This next function modelled on Cesium.geoJsonDataSource's defaultDescribe.
+function describeWithoutUnderscores(properties, nameProperty) {
+    var html = '';
+    for (var key in properties) {
+        if (properties.hasOwnProperty(key)) {
+            if (key === nameProperty || simpleStyleIdentifiers.indexOf(key) !== -1) {
+                continue;
+            }
+            var value = properties[key];
+            if (typeof value === 'object') {
+                value = describeWithoutUnderscores(value);
+            } else {
+                value = formatPropertyValue(value);
+            }
+            key = key.replace(/_/g, ' ');
+            if (defined(value)) {
+                html += '&lt;tr>&lt;th>' + key + '&lt;/th>&lt;td>' + value + '&lt;/td>&lt;/tr>';
+            }
+        }
+    }
+    if (html.length > 0) {
+        html = '&lt;table class="cesium-infoBox-defaultTable">&lt;tbody>' + html + '&lt;/tbody>&lt;/table>';
+    }
+    return html;
+}
+
+GeoJsonCatalogItem.prototype._load = function() {
+    var codeSplitDeferred = when.defer();
+
+    var that = this;
+    require.ensure('terriajs-cesium/Source/DataSources/GeoJsonDataSource', function() {
+        var GeoJsonDataSource = require('terriajs-cesium/Source/DataSources/GeoJsonDataSource');
+
+        promiseFunctionToExplicitDeferred(codeSplitDeferred, function() {
+            // If there is an existing data source, remove it first.
+            var reAdd = false;
+            if (defined(that._dataSource)) {
+                reAdd = that.terria.dataSources.remove(that._dataSource, true);
+            }
+
+            that._dataSource = new GeoJsonDataSource(that.name);
+
+            if (reAdd) {
+                that.terria.dataSources.add(that._dataSource);
+            }
+
+            if (defined(that.data)) {
+                return when(that.data, function(data) {
+                    var promise;
+                    if (typeof Blob !== 'undefined' &amp;&amp; data instanceof Blob) {
+                        promise = readJson(data);
+                    } else if (data instanceof String || typeof data === 'string') {
+                        try {
+                            promise = JSON.parse(data);
+                        } catch(e) {
+                            throw new TerriaError({
+                                sender: that,
+                                title: 'Error loading GeoJSON',
+                                message: '\
+An error occurred parsing the provided data as JSON.  This may indicate that the file is invalid or that it \
+is not supported by '+that.terria.appName+'.  If you would like assistance or further information, please email us \
+at &lt;a href="mailto:'+that.terria.supportEmail+'">'+that.terria.supportEmail+'&lt;/a>.'
+                            });
+                        }
+                    } else {
+                        promise = data;
+                    }
+
+                    return when(promise, function(json) {
+                        that.data = json;
+                        return updateModelFromData(that, json);
+                    }).otherwise(function() {
+                        throw new TerriaError({
+                            sender: that,
+                            title: 'Error loading GeoJSON',
+                            message: '\
+An error occurred while loading a GeoJSON file.  This may indicate that the file is invalid or that it \
+is not supported by '+that.terria.appName+'.  If you would like assistance or further information, please email us \
+at &lt;a href="mailto:'+that.terria.supportEmail+'">'+that.terria.supportEmail+'&lt;/a>.'
+                        });
+                    });
+                });
+            } else {
+                var jsonPromise;
+                if (zipFileRegex.test(that.url)) {
+                    if (typeof FileReader === 'undefined') {
+                        throw new TerriaError({
+                            sender: that,
+                            title: 'Unsupported web browser',
+                            message: '\
+Sorry, your web browser does not support the File API, which '+that.terria.appName+' requires in order to \
+load this dataset.  Please upgrade your web browser.  For the best experience, we recommend the latest versions of \
+&lt;a href="http://www.google.com/chrome" target="_blank">Google Chrome&lt;/a>, or \
+&lt;a href="http://www.mozilla.org/firefox" target="_blank">Mozilla Firefox&lt;/a>, or \
+&lt;a href="http://www.microsoft.com/ie" target="_blank">Internet Explorer 11&lt;/a>.'
+                        });
+                    }
+
+                    jsonPromise = loadBlob(proxyCatalogItemUrl(that, that.url, '1d')).then(function(blob) {
+                        var deferred = when.defer();
+                        zip.createReader(new zip.BlobReader(blob), function(reader) {
+                            // Look for a file with a .geojson extension.
+                            reader.getEntries(function(entries) {
+                                var resolved = false;
+                                for (var i = 0; i &lt; entries.length; i++) {
+                                    var entry = entries[i];
+                                    if (geoJsonRegex.test(entry.filename)) {
+                                        getJson(entry, deferred);
+                                        resolved = true;
+                                    }
+                                }
+
+                                if (!resolved) {
+                                    deferred.reject();
+                                }
+                            });
+                        }, function(e) {
+                            deferred.reject(e);
+                        });
+                        return deferred.promise;
+                    });
+                } else {
+                    jsonPromise = loadJson(proxyCatalogItemUrl(that, that.url, '1d'));
+                }
+
+                return jsonPromise.then(function(json) {
+                    return updateModelFromData(that, json);
+                }).otherwise(function(e) {
+                    if (e instanceof TerriaError) {
+                        throw e;
+                    }
+
+                    throw new TerriaError({
+                        sender: that,
+                        title: 'Could not load JSON',
+                        message: '\
+An error occurred while retrieving JSON data from the provided link.  \
+&lt;p>If you entered the link manually, please verify that the link is correct.&lt;/p>\
+&lt;p>This error may also indicate that the server does not support &lt;a href="http://enable-cors.org/" target="_blank">CORS&lt;/a>.  If this is your \
+server, verify that CORS is enabled and enable it if it is not.  If you do not control the server, \
+please contact the administrator of the server and ask them to enable CORS.  Or, contact the '+that.terria.appName+' \
+team by emailing &lt;a href="mailto:'+that.terria.supportEmail+'">'+that.terria.supportEmail+'&lt;/a> \
+and ask us to add this server to the list of non-CORS-supporting servers that may be proxied by '+that.terria.appName+' \
+itself.&lt;/p>\
+&lt;p>If you did not enter this link manually, this error may indicate that the data source you\'re trying to add is temporarily unavailable or there is a \
+problem with your internet connection.  Try adding the data source again, and if the problem persists, please report it by \
+sending an email to &lt;a href="mailto:'+that.terria.supportEmail+'">'+that.terria.supportEmail+'&lt;/a>.&lt;/p>'
+                    });
+                });
+            }
+        });
+    }, 'Cesium-DataSources');
+
+    return codeSplitDeferred.promise;
+};
+
+function getJson(entry, deferred) {
+    entry.getData(new zip.Data64URIWriter(), function(uri) {
+        deferred.resolve(loadJson(uri));
+    });
+}
+
+function updateModelFromData(geoJsonItem, geoJson) {
+    // If this GeoJSON data is an object literal with a single property, treat that
+    // property as the name of the data source, and the property's value as the
+    // actual GeoJSON.
+    var numProperties = 0;
+    var propertyName;
+    for (propertyName in geoJson) {
+        if (geoJson.hasOwnProperty(propertyName)) {
+            ++numProperties;
+            if (numProperties > 1) {
+                break; // no need to count past 2 properties.
+            }
+        }
+    }
+
+    var name;
+    if (numProperties === 1) {
+        name = propertyName;
+        geoJson = geoJson[propertyName];
+
+        // If we don't already have a name, or our name is just derived from our URL, update the name.
+        if (!defined(geoJsonItem.name) || geoJsonItem.name.length === 0 || nameIsDerivedFromUrl(geoJsonItem.name, geoJsonItem.url)) {
+            geoJsonItem.name = name;
+        }
+    }
+
+    // Reproject the features if they're not already EPSG:4326.
+    var promise = reprojectToGeographic(geoJsonItem, geoJson);
+
+    return when(promise, function() {
+        // If we don't already have a rectangle, compute one.
+        if (!defined(geoJsonItem.rectangle) || Rectangle.equals(geoJsonItem.rectangle, Rectangle.MAX_VALUE)) {
+            geoJsonItem.rectangle = getGeoJsonExtent(geoJson);
+        }
+
+        geoJsonItem._readyData = geoJson;
+
+        return loadGeoJson(geoJsonItem);
+    });
+}
+
+function nameIsDerivedFromUrl(name, url) {
+    if (name === url) {
+        return true;
+    }
+
+    if (!url) {
+        return false;
+    }
+
+    // Is the name just the end of the URL?
+    var indexOfNameInUrl = url.lastIndexOf(name);
+    if (indexOfNameInUrl >= 0 &amp;&amp; indexOfNameInUrl === url.length - name.length) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * Get a random color for the data based on the passed string (usually dataset name).
+ * @private
+ * @param  {String[]} cssColors Array of css colors, eg. ['#AAAAAA', 'red'].
+ * @param  {String} name Name to base the random choice on.
+ * @return {String} A css color, eg. 'red'.
+ */
+function getRandomCssColor(cssColors, name) {
+    var index = hashFromString(name || '') % cssColors.length;
+    return cssColors[index];
+}
+
+
+function loadGeoJson(geoJsonItem) {
+    /* Style information is applied as follows, in decreasing priority:
+    - simple-style properties set directly on individual features in the GeoJSON file
+    - simple-style properties set as the 'Style' property on the catalog item
+    - our 'options' set below (and point styling applied after Cesium loads the GeoJSON)
+    - if anything is underspecified there, then Cesium's defaults come in.
+
+    See https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0
+    */
+
+    function defaultColor(colorString, name) {
+        if (colorString === undefined) {
+            var color = Color.fromCssColorString(getRandomCssColor(standardCssColors.highContrast, name));
+            color.alpha = 1;
+            return color;
+        } else {
+            return Color.fromCssColorString(colorString);
+        }
+    }
+
+    function getColor(color) {
+        if (typeof color === 'string' || color instanceof String) {
+            return Color.fromCssColorString(color);
+        } else {
+            return color;
+        }
+    }
+
+    function parseMarkerSize(sizeString) {
+        var sizes = {
+            small : 24,
+            medium : 48,
+            large : 64
+        };
+
+        if (sizeString === undefined) {
+            return undefined;
+        }
+
+        if (sizes[sizeString]) {
+            return sizes[sizeString];
+        }
+        return parseInt(sizeString, 10); // SimpleStyle doesn't allow 'marker-size: 20', but people will do it.
+    }
+
+    var dataSource = geoJsonItem._dataSource;
+
+    var style = defaultValue(geoJsonItem.style, {});
+
+    var options = {
+        describe: describeWithoutUnderscores,
+        markerSize : defaultValue(parseMarkerSize(style['marker-size']), 20),
+        markerSymbol: style['marker-symbol'], // and undefined if none
+        markerColor : defaultColor(style['marker-color'], geoJsonItem.name),
+        strokeWidth : defaultValue(style['stroke-width'], 2),
+        polygonStroke: getColor(defaultValue(style.stroke, '#000000')),
+        polylineStroke: defaultColor(style.stroke, geoJsonItem.name),
+        markerOpacity: style['marker-opacity'] // not in SimpleStyle spec or supported by Cesium but see below
+    };
+
+    options.fill = defaultColor(style.fill, (geoJsonItem.name || '') + ' fill');
+    if (defined(style['stroke-opacity'])) {
+        options.stroke.alpha = parseFloat(style['stroke-opacity']);
+    }
+    if (defined(style['fill-opacity'])) {
+        options.fill.alpha = parseFloat(style['fill-opacity']);
+    } else {
+        options.fill.alpha = 0.75;
+    }
+
+    return dataSource.load(geoJsonItem._readyData, options).then(function() {
+        var entities = dataSource.entities.values;
+
+        for (var i = 0; i &lt; entities.length; ++i) {
+            var entity = entities[i];
+
+            /* If no marker symbol was provided but Cesium has generated one for a point, then turn it into
+               a filled circle instead of the default marker. */
+            var properties = entity.properties || {};
+            if (defined(entity.billboard) &amp;&amp;
+                !defined(properties['marker-symbol']) &amp;&amp;
+                !defined(options.markerSymbol)) {
+                entity.point = new PointGraphics({
+                    color: getColor(defaultValue(properties['marker-color'], options.markerColor)),
+                    pixelSize: defaultValue(properties['marker-size'], options.markerSize / 2),
+                    outlineWidth: defaultValue(properties['stroke-width'], options.strokeWidth),
+                    outlineColor: getColor(defaultValue(properties.stroke, options.polygonStroke))
+                });
+                if (defined (properties['marker-opacity'])) {
+                    // not part of SimpleStyle spec, but why not?
+                    entity.point.color.alpha = parseFloat(properties['marker-opacity']);
+                }
+                entity.billboard = undefined;
+            }
+            if (defined(entity.billboard) &amp;&amp; defined(properties['marker-opacity'])) {
+                entity.billboard.color = new Color(1.0, 1.0, 1.0, parseFloat(properties['marker-opacity']));
+            }
+
+            // Cesium on Windows can't render polygons with a stroke-width > 1.0.  And even on other platforms it
+            // looks bad because WebGL doesn't mitre the lines together nicely.
+            // As a workaround for the special case where the polygon is unfilled anyway, change it to a polyline.
+            if (defined(entity.polygon) &amp;&amp; polygonHasWideOutline(entity.polygon) &amp;&amp; !polygonIsFilled(entity.polygon)) {
+                entity.polyline = new PolylineGraphics();
+                entity.polyline.show = entity.polygon.show;
+
+                if (defined(entity.polygon.outlineColor)) {
+                    entity.polyline.material = new ColorMaterialProperty(entity.polygon.outlineColor.getValue());
+                }
+
+                var hierarchy = entity.polygon.hierarchy.getValue();
+
+                var positions = hierarchy.positions;
+                closePolyline(positions);
+
+                entity.polyline.positions = positions;
+                entity.polyline.width = entity.polygon.outlineWidth;
+
+                createEntitiesFromHoles(dataSource.entities, hierarchy.holes, entity);
+
+                entity.polygon = undefined;
+            }
+        }
+    });
+}
+
+function createEntitiesFromHoles(entityCollection, holes, mainEntity) {
+    if (!defined(holes)) {
+        return;
+    }
+
+    for (var i = 0; i &lt; holes.length; ++i) {
+        createEntityFromHole(entityCollection, holes[i], mainEntity);
+    }
+}
+
+function createEntityFromHole(entityCollection, hole, mainEntity) {
+    if (!defined(hole) || !defined(hole.positions) || hole.positions.length === 0) {
+        return;
+    }
+
+    var entity = new Entity();
+
+    entity.name = mainEntity.name;
+    entity.availability = mainEntity.availability;
+    entity.description = mainEntity.description;
+    entity.properties = mainEntity.properties;
+
+    entity.polyline = new PolylineGraphics();
+    entity.polyline.show = mainEntity.polyline.show;
+    entity.polyline.material = mainEntity.polyline.material;
+    entity.polyline.width = mainEntity.polyline.width;
+
+    closePolyline(hole.positions);
+    entity.polyline.positions = hole.positions;
+
+    entityCollection.add(entity);
+
+    createEntitiesFromHoles(entityCollection, hole.holes, mainEntity);
+}
+
+function closePolyline(positions) {
+    // If the first and last positions are more than a meter apart, duplicate the first position so the polyline is closed.
+    if (positions.length >= 2 &amp;&amp; !Cartesian3.equalsEpsilon(positions[0], positions[positions.length - 1], 0.0, 1.0)) {
+        positions.push(positions[0]);
+    }
+}
+
+function polygonHasWideOutline(polygon) {
+    return defined(polygon.outlineWidth) &amp;&amp; polygon.outlineWidth.getValue() > 1;
+}
+
+function polygonIsFilled(polygon) {
+    var fill = true;
+    if (defined(polygon.fill)) {
+        fill = polygon.fill.getValue();
+    }
+
+    if (!fill) {
+        return false;
+    }
+
+    if (!defined(polygon.material)) {
+        // The default is solid white.
+        return true;
+    }
+
+    var materialProperties = polygon.material.getValue();
+    if (defined(materialProperties) &amp;&amp; defined(materialProperties.color) &amp;&amp; materialProperties.color.alpha === 0.0) {
+        return false;
+    }
+
+    return true;
+}
+
+function reprojectToGeographic(geoJsonItem, geoJson) {
+    var code;
+
+    if (!defined(geoJson.crs)) {
+        code = undefined;
+    } else if (geoJson.crs.type === 'EPSG') {
+        code = 'EPSG:' + geoJson.crs.properties.code;
+    } else if (geoJson.crs.type === 'name' &amp;&amp;
+               defined(geoJson.crs.properties) &amp;&amp;
+               defined(geoJson.crs.properties.name)) {
+        code = Reproject.crsStringToCode(geoJson.crs.properties.name);
+    }
+
+    geoJson.crs = {
+        type: 'EPSG',
+        properties: {
+            code: '4326'
+        }
+    };
+
+    if (!Reproject.willNeedReprojecting(code)) {
+        return true;
+    }
+
+   return when(Reproject.checkProjection(geoJsonItem.terria.configParameters.proj4ServiceBaseUrl, code), function(result) {
+        if (result) {
+            filterValue(
+                geoJson,
+                'coordinates',
+                function(obj, prop) {
+                    obj[prop] = filterArray(
+                        obj[prop],
+                        function(pts) {
+                            return reprojectPointList(pts, code);
+                        });
+                });
+        } else {
+            throw new DeveloperError('The crs code for this datasource is unsupported.');
+        }
+    });
+}
+
+// Reproject a point list based on the supplied crs code.
+function reprojectPointList(pts, code) {
+    if (!(pts[0] instanceof Array)) {
+        return Reproject.reprojectPoint(pts, code, "EPSG:4326");
+    }
+    var pts_out = [];
+    for (var i = 0; i &lt; pts.length; i++) {
+        pts_out.push(Reproject.reprojectPoint(pts[i], code, "EPSG:4326"));
+    }
+    return pts_out;
+}
+
+// Find a member by name in the gml.
+function filterValue(obj, prop, func) {
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p) === false) {
+            continue;
+        }
+        else if (p === prop) {
+            if (func &amp;&amp; (typeof func === 'function')) {
+                (func)(obj, prop);
+            }
+        }
+        else if (typeof obj[p] === 'object') {
+            filterValue(obj[p], prop, func);
+        }
+    }
+}
+
+// Filter a geojson coordinates array structure.
+function filterArray(pts, func) {
+    if (!(pts[0] instanceof Array) || !((pts[0][0]) instanceof Array) ) {
+        pts = func(pts);
+        return pts;
+    }
+
+    var result = new Array(pts.length);
+    for (var i = 0; i &lt; pts.length; i++) {
+        result[i] = filterArray(pts[i], func);  //at array of arrays of points
+    }
+    return result;
+}
+
+// Get Extent of geojson.
+function getExtent(pts, ext) {
+    if (!(pts[0] instanceof Array) ) {
+        if (pts[0] &lt; ext.west)  { ext.west = pts[0];  }
+        if (pts[0] > ext.east)  { ext.east = pts[0];  }
+        if (pts[1] &lt; ext.south) { ext.south = pts[1]; }
+        if (pts[1] > ext.north) { ext.north = pts[1]; }
+    }
+    else if (!((pts[0][0]) instanceof Array) ) {
+        for (var i = 0; i &lt; pts.length; i++) {
+            getExtent(pts[i], ext);
+        }
+    }
+    else {
+        for (var j = 0; j &lt; pts.length; j++) {
+            getExtent(pts[j], ext);  // An array of arrays of points.
+        }
+    }
+}
+
+function getGeoJsonExtent(geoJson) {
+    var testGeometry = geoJson;
+    if(defined(geoJson.type) &amp;&amp; geoJson.type === 'Topology') {
+        testGeometry = topoJsonToFeaturesArray(geoJson);
+    }
+
+    var ext = {west:180, east:-180, south:90, north: -90};
+    filterValue(testGeometry, 'coordinates', function(obj, prop) { getExtent(obj[prop], ext); });
+    return Rectangle.fromDegrees(ext.west, ext.south, ext.east, ext.north);
+}
+
+function topoJsonToFeaturesArray(topoJsonData) {
+    var result = [];
+
+    for(var object in topoJsonData.objects) {
+        if(topoJsonData.objects.hasOwnProperty(object)) {
+            result.push(topojson.feature(topoJsonData, topoJsonData.objects[object]));
+        }
+    }
+
+    return result;
+}
+
+module.exports = GeoJsonCatalogItem;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:30 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

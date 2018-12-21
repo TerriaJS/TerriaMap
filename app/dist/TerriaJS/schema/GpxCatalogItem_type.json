@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "gpx"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing GPX data.",
+  "title": "GPX",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "GpxCatalogItem.json"
+    }
+  ]
+}

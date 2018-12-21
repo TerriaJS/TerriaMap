@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the WFS server."
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of the data sources in this group.\rThis property is an HTML string that must be sanitized before display to the user."
+    },
+    "blacklist": {
+      "type": "object",
+      "title": "Blacklist",
+      "description": "A hash of names of blacklisted data layers.  A layer that appears in this hash\rwill not be shown to the user.  In this hash, the keys should be the Title of the layers to blacklist,\rand the values should be \"true\".",
+      "additionalProperties": {
+        "type": "boolean",
+        "format": "checkbox"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

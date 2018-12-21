@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "datasetId": {
+      "type": "string",
+      "title": "Dataset ID",
+      "description": "The ID of the ABS dataset.  You can obtain a list of all datasets by querying\rhttp://stat.abs.gov.au/itt/query.jsp?method=GetDatasetList (or equivalent).  This property\ris observable."
+    },
+    "canDisplayPercent": {
+      "type": "boolean",
+      "title": "Can display percent",
+      "description": "Gets or sets whether this item can show percentages instead of raw values.",
+      "format": "checkbox"
+    },
+    "displayPercent": {
+      "type": "boolean",
+      "title": "Display percent",
+      "description": "Gets or sets whether to show percentages or raw values.",
+      "format": "checkbox"
+    },
+    "regionTypeConcept": {
+      "type": "string",
+      "title": "Region type concept",
+      "description": "The ABS region-type concept id used with the region code to set the region type.\rUsually defaults to 'REGIONTYPE'."
+    },
+    "regionConcept": {
+      "type": "string",
+      "title": "Region concept",
+      "description": "The ABS region concept id. Defaults to 'REGION'."
+    },
+    "conceptNamesUrl": {
+      "type": "string",
+      "title": "Concept names URL",
+      "description": "The URL of a JSON file containing human-readable names of Australian Bureau of Statistics concept codes."
+    },
+    "regionPopulationsUrlPrefix": {
+      "type": "string",
+      "title": "Region populations URL prefix",
+      "description": "The start of a URL of a csv file containing the total number of people in each region, eg.\rSA4,Tot_P_M,Tot_P_F,Tot_P_P\r101,100000,23450,123450\r102,130000,100000,234560\rThe region code and '.csv' are appended to the end of this URL for the request, eg.\r'data/2011Census_TOT_' -> 'data/2011Census_TOT_SA4.csv' (and other region types)."
+    },
+    "filter": {
+      "type": "array",
+      "title": "Filter",
+      "description": "Gets the list of initial concepts and codes on which to filter the data.  You can obtain a list of all available\rconcepts for a dataset by querying http://stat.abs.gov.au/itt/query.jsp?method=GetDatasetConcepts&datasetid=ABS_CENSUS2011_B25\r(or equivalent) and a list of the possible values for a concept by querying\rhttp://stat.abs.gov.au/itt/query.jsp?method=GetCodeListValue&datasetid=ABS_CENSUS2011_B25&concept=MEASURE&format=json.",
+      "format": "table",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conceptsNotToLoad": {
+      "type": "array",
+      "title": "Concepts not to load",
+      "description": "The array of concept ids which should not be loaded.\rDefaults to ['STATE', 'FREQUENCY', and the region concept (which defaults to 'REGION')].",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uniqueValuedConcepts": {
+      "type": "array",
+      "title": "Unique valued concepts",
+      "description": "The array of ids of concepts which are single-valued, in addition to the region type.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

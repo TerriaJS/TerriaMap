@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Models/CswCatalogGroup.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Models/CswCatalogGroup.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/*global require*/
+var ArcGisMapServerCatalogItem = require('./ArcGisMapServerCatalogItem');
+var CatalogGroup = require('./CatalogGroup');
+var clone = require('terriajs-cesium/Source/Core/clone');
+var CsvCatalogItem = require('./CsvCatalogItem');
+var defaultValue = require('terriajs-cesium/Source/Core/defaultValue');
+var defined = require('terriajs-cesium/Source/Core/defined');
+var defineProperties = require('terriajs-cesium/Source/Core/defineProperties');
+var formatError = require('terriajs-cesium/Source/Core/formatError');
+var freezeObject = require('terriajs-cesium/Source/Core/freezeObject');
+var GeoJsonCatalogItem = require('./GeoJsonCatalogItem');
+var inherit = require('../Core/inherit');
+var KmlCatalogItem = require('./KmlCatalogItem');
+var knockout = require('terriajs-cesium/Source/ThirdParty/knockout');
+var LegendUrl = require('../Map/LegendUrl');
+var loadWithXhr = require('../Core/loadWithXhr');
+var loadXML = require('../Core/loadXML');
+var proxyCatalogItemUrl = require('./proxyCatalogItemUrl');
+var TerriaError = require('../Core/TerriaError');
+var URI = require('urijs');
+var WebMapServiceCatalogGroup = require('./WebMapServiceCatalogGroup');
+var WebMapServiceCatalogItem = require('./WebMapServiceCatalogItem');
+var WebProcessingServiceCatalogGroup = require('./WebProcessingServiceCatalogGroup');
+var when = require('terriajs-cesium/Source/ThirdParty/when');
+var xml2json = require('../ThirdParty/xml2json');
+
+/**
+ * A {@link CatalogGroup} representing a collection of datasets queried from an OGC Catalog Service (CSW) server.
+ *
+ * @alias CswCatalogGroup
+ * @constructor
+ * @extends CatalogGroup
+ *
+ * @param {Terria} terria The Terria instance.
+ */
+var CswCatalogGroup = function(terria) {
+    CatalogGroup.call(this, terria, 'csw');
+
+    /**
+     * Gets or sets the URL of the CSW server.  This property is observable.
+     * @type {String}
+     */
+    this.url = '';
+
+    /**
+     * Gets or sets the template XML string to POST to the CSW server to query for catalog items.  If this property is undefined,
+     * {@link CswCatalogGroup.defaultGetRecordsTemplate} is used.  The XML string should have a `{startPosition}` placeholder to be
+     * replaced with the next start position in order to allow incremental paging of results.
+     * This property is observable.
+     * @type {String}
+     */
+    this.getRecordsTemplate = undefined;
+
+    /**
+     * True to allow WMS resources to be added to the catalog; otherwise, false.
+     * @type {Boolean}
+     * @default true
+     */
+    this.includeWms = true;
+
+    /**
+     * Gets or sets a regular expression that, when it matches the protocol attribute of a URI element of a record, indicates that the URI is a WMS resource.
+     * @type {RegExp}
+     */
+    this.wmsResourceFormat = /\bwms\b/i;
+
+    /**
+     * True to allow KML resources to be added to the catalog; otherwise, false.
+     * @type {Boolean}
+     * @default false
+     */
+    this.includeKml = false;
+
+    /**
+     * Gets or sets a regular expression that, when it matches the protocol attribute of a URI element of a record, indicates that the resource is a KML resource.
+     * @type {RegExp}
+     */
+    this.kmlResourceFormat = /\bkml\b/i;
+
+    /**
+     * True to allow CSV resources to be added to the catalog; otherwise, false.
+     * @type {Boolean}
+     */
+    this.includeCsv = false;
+
+    /**
+     * Gets or sets a regular expression that, when it matches the protocol attribute of a URI element of a record, indicates that the resource is a CSV resource.
+     * @type {RegExp}
+     */
+    this.csvResourceFormat = /\bcsv-geo-/i;
+
+    /**
+     * True to allow ESRI Map resources to be added to the catalog; otherwise, false.
+     * @type {Boolean}
+     * @default false
+     */
+    this.includeEsriMapServer = false;
+
+    /**
+     * Gets or sets a regular expression that, when it matches the protocol attribute of a URI element of a record, indicates that the resource is an Esri MapServer resource.
+     * @type {RegExp}
+     */
+    this.esriMapServerResourceFormat = /\besri rest\b/i;
+
+    /**
+     * True to allow GeoJSON resources to be added to the catalog; otherwise, false.
+     * @type {Boolean}
+     * @default false
+     */
+    this.includeGeoJson = false;
+
+    /**
+     * Gets or sets a regular expression that, when it matches the protocol attribute of a URI element of a record, indicates that the resource is a GeoJSON resource.
+     * @type {RegExp}
+     */
+    this.geoJsonResourceFormat = /\bgeojson\b/i;
+
+    /**
+     * Gets or sets a list of key value pairs that will be used to group resources returned from the catalog. The keys are used to match elements in the metadata and the values are used as names for the groups of resources to be created.
+     * @type {RegExp}
+     */
+    this.metadataGroups = [];
+
+    /**
+     * Gets or sets a description of a domain that will be pulled from the CSW service and used to define the metadataGroups. The domain is obtained by querying the CSW server for a particular property - the values of the property form the domain, the values are assumed to define a hierarchy eg. Wave Models | Wave Energy Flux - which is a two level hierarchy of groups that will be used to classify metadata records.
+     * @type {Object}
+     */
+    this.domainSpecification = undefined;
+
+    /**
+     * True to allow OGC:WPS service resources to be added to the catalog; otherwise, false.
+     * @type {Boolean}
+     * @default false
+     */
+    this.includeWps = false;
+
+    /**
+     * Gets or sets a regular expression that, when it matches the protocol attribute of a URI element of a record, indicates that the resource is a WPS resource.
+     * @type {RegExp}
+     */
+    this.wpsResourceFormat = /\bwps\b/i;
+
+    /**
+     * Gets or sets a hash of properties that will be set on the item created from the CKAN resource.
+     * For example, { "treat404AsError": false }
+     * @type {Object}
+     */
+    this.itemProperties = undefined;
+
+    knockout.track(this, ['url', 'getRecordsParameters', 'includeWms', 'includeKml', 'includeCsv', 'includeEsriMapServer', 'includeGeoJson', 'includeWps', 'itemProperties']);
+};
+
+CswCatalogGroup.defaultGetRecordsTemplate = require('./CswGetRecordsTemplate.xml');
+CswCatalogGroup.wpsGetRecordsTemplate = require('./CswGetRecordsWPSTemplate.xml');
+
+inherit(CatalogGroup, CswCatalogGroup);
+
+defineProperties(CswCatalogGroup.prototype, {
+    /**
+     * Gets the type of data member represented by this instance.
+     * @memberOf CswCatalogGroup.prototype
+     * @type {String}
+     */
+    type: {
+        get: function() {
+            return 'csw';
+        }
+    },
+
+    /**
+     * Gets a human-readable name for this type of data source, such as 'Catalogue Service (CSW)'.
+     * @memberOf CswCatalogGroup.prototype
+     * @type {String}
+     */
+    typeName: {
+        get: function() {
+            return 'Catalogue Service (CSW)';
+        }
+    },
+
+    /**
+     * Gets the set of functions used to update individual properties in {@link CatalogMember#updateFromJson}.
+     * When a property name in the returned object literal matches the name of a property on this instance, the value
+     * will be called as a function and passed a reference to this instance, a reference to the source JSON object
+     * literal, and the name of the property.
+     * @memberOf CswCatalogGroup.prototype
+     * @type {Object}
+     */
+    updaters: {
+        get: function() {
+            return CswCatalogGroup.defaultUpdaters;
+        }
+    },
+
+    /**
+     * Gets the set of functions used to serialize individual properties in {@link CatalogMember#serializeToJson}.
+     * When a property name on the model matches the name of a property in the serializers object literal,
+     * the value will be called as a function and passed a reference to the model, a reference to the destination
+     * JSON object literal, and the name of the property.
+     * @memberOf CswCatalogGroup.prototype
+     * @type {Object}
+     */
+    serializers: {
+        get: function() {
+            return CswCatalogGroup.defaultSerializers;
+        }
+    }
+});
+
+/**
+ * Gets or sets the set of default updater functions to use in {@link CatalogMember#updateFromJson}.  Types derived from this type
+ * should expose this instance - cloned and modified if necesary - through their {@link CatalogMember#updaters} property.
+ * @type {Object}
+ */
+CswCatalogGroup.defaultUpdaters = clone(CatalogGroup.defaultUpdaters);
+
+/* Deserializes a regex like ".foo" into a case-insensitive regex /.foo/i  */
+function regexDeserializer(fieldName) {
+    return function(catalogGroup, json, propertyName, options) {
+        if (defined(json[fieldName])) {
+            catalogGroup[fieldName] = new RegExp(json[fieldName], 'i');
+        }
+    };
+}
+
+CswCatalogGroup.defaultUpdaters.wmsResourceFormat = regexDeserializer('wmsResourceFormat');
+CswCatalogGroup.defaultUpdaters.kmlResourceFormat = regexDeserializer('kmlResourceFormat');
+CswCatalogGroup.defaultUpdaters.csvResourceFormat = regexDeserializer('csvResourceFormat');
+CswCatalogGroup.defaultUpdaters.esriMapServerResourceFormat = regexDeserializer('esriMapServerResourceFormat');
+CswCatalogGroup.defaultUpdaters.geoJsonResourceFormat = regexDeserializer('geoJsonResourceFormat');
+CswCatalogGroup.defaultUpdaters.wpsResourceFormat = regexDeserializer('wpsResourceFormat');
+
+freezeObject(CswCatalogGroup.defaultUpdaters);
+
+/**
+ * Gets or sets the set of default serializer functions to use in {@link CatalogMember#serializeToJson}.  Types derived from this type
+ * should expose this instance - cloned and modified if necesary - through their {@link CatalogMember#serializers} property.
+ * @type {Object}
+ */
+CswCatalogGroup.defaultSerializers = clone(CatalogGroup.defaultSerializers);
+
+CswCatalogGroup.defaultSerializers.items = CatalogGroup.enabledShareableItemsSerializer;
+
+/* Serializes a regex like /.foo/i into ".foo"  */
+function regexSerializer(fieldName) {
+    return function(cswGroup, json, propertyName, options) {
+        if (defined(cswGroup[fieldName])) {
+            json[fieldName] = cswGroup[fieldName].source;
+        }
+    };
+}
+
+CswCatalogGroup.defaultSerializers.wmsResourceFormat = regexSerializer('wmsResourceFormat');
+CswCatalogGroup.defaultSerializers.kmlResourceFormat = regexSerializer('kmlResourceFormat');
+CswCatalogGroup.defaultSerializers.csvResourceFormat = regexSerializer('csvResourceFormat');
+CswCatalogGroup.defaultSerializers.esriMapServerResourceFormat = regexSerializer('esriMapServerResourceFormat');
+CswCatalogGroup.defaultSerializers.geoJsonResourceFormat = regexSerializer('geoJsonResourceFormat');
+CswCatalogGroup.defaultSerializers.wpsResourceFormat = regexSerializer('wpsResourceFormat');
+
+freezeObject(CswCatalogGroup.defaultSerializers);
+
+CswCatalogGroup.prototype._getValuesThatInfluenceLoad = function() {
+    return [this.url, this.filterQuery, this.blacklist, this.filterByWmsGetCapabilities, this.minimumMaxScaleDenominator, this.allowEntireWmsServers, this.includeKml, this.includeWms, this.includeCsv, this.includeEsriMapServer, this.includeWps];
+};
+
+var resourceFormats = [
+    ['wmsResourceFormat', 'includeWms', WebMapServiceCatalogItem],
+    ['esriMapServerResourceFormat', 'includeEsriMapServer', ArcGisMapServerCatalogItem],
+    ['kmlResourceFormat', 'includeKml', KmlCatalogItem],
+    ['geoJsonResourceFormat', 'includeGeoJson', GeoJsonCatalogItem],
+    ['csvResourceFormat', 'includeCsv', CsvCatalogItem],
+    ['wpsResourceFormat', 'includeWps', WebProcessingServiceCatalogGroup]
+];
+
+CswCatalogGroup.prototype._load = function() {
+    var postDataTemplate;
+
+    // if we are only searching for wps resources, then use a faster (narrower) csw search
+    if (this.includeWps &amp;&amp; !anyResourceFormatExceptWps(this)) {
+        postDataTemplate = defaultValue(this.getRecordsTemplate, CswCatalogGroup.wpsGetRecordsTemplate);
+    } else {
+        postDataTemplate = defaultValue(this.getRecordsTemplate, CswCatalogGroup.defaultGetRecordsTemplate);
+    }
+
+    var that = this;
+    var startPosition = 1;
+    var lastPostData;
+
+    function loadNextPage() {
+        var postData = postDataTemplate.replace('{startPosition}', startPosition);
+
+        // Don't page endlessly if there's no {startPosition} placeholder.
+        if (postData === lastPostData) {
+            return;
+        }
+
+        return loadWithXhr({
+            url: proxyCatalogItemUrl(that, cleanUrl(that.url), '1d'),
+            responseType: 'document',
+            method: 'POST',
+            overrideMimeType: 'text/xml',
+            data: postData,
+            headers: {
+                'Content-Type': 'application/xml'
+            }
+        }).then(function(xml) {
+            if (!defined(xml)) {
+                return;
+            }
+
+            var json = xml2json(xml);
+
+            if (json.Exception) {
+                var errorMessage = 'The CSW server reported an unknown error.';
+                if (json.Exception.ExceptionText) {
+                    errorMessage = 'The CSW server reported an error:\n\n' + json.Exception.ExceptionText;
+                }
+                throw new TerriaError({
+                    sender: that,
+                    title: that.name,
+                    message: errorMessage
+                });
+            }
+
+            var searchResults = json.SearchResults;
+            if (!defined(searchResults) || !defined(searchResults.Record)) {
+                return;
+            }
+
+            var records = searchResults.Record;
+            if (!Array.isArray(records)) {
+                records = [records];
+            }
+
+            for (var i = 0; i &lt; records.length; ++i) {
+                var record = records[i];
+                var uris = record.URI || record.references;
+                if (!defined(uris)) {
+                    continue;
+                }
+
+                if (uris instanceof String || typeof uris === 'string') {
+                    uris = [uris];
+                }
+
+                // maybe more than one url that results in a data layer here - so check for
+                // the acceptable ones, store the others as downloadUrls that can be
+                // displayed in the metadata summary for the layer
+                var downloadUrls = [],
+                    acceptableUrls = [],
+                    legendUrl;
+                for (var m = 0; m &lt; uris.length; m++) {
+                    var url = uris[m];
+                    var excludedProtocol = false;
+                    for (var l = 0; l &lt; resourceFormats.length; l++) {
+                        var f = resourceFormats[l];
+                        var protocolOrScheme = url.protocol || url.scheme;
+                        if (protocolOrScheme &amp;&amp; protocolOrScheme.match(that[f[0]])) {
+                            excludedProtocol = true;
+                            acceptableUrls.push(url);
+                        }
+                    }
+                    if (!excludedProtocol) {
+                        if (url.description === 'LegendUrl') {
+                            legendUrl = url.toString();
+                        }
+                        downloadUrls.push({
+                            url: url.toString(),
+                            description: defined(url.description) ? url.description : url.name
+                        });
+                    }
+                }
+
+                // Now process the list of acceptable urls and hand the metadata
+                // record and the downloadUrls to each data layer item we create
+                for (var j = 0; j &lt; acceptableUrls.length; ++j) {
+                    var uri = acceptableUrls[j];
+
+                    var group = that;
+                    if (that.metadataGroups.length > 0) {
+                        group = findGroup(that, that.metadataGroups, record);
+                    }
+
+                    if (defined(group)) {
+                        var catalogItem = createItemForUri(that, record, uri, downloadUrls, legendUrl);
+                        if (defined(catalogItem)) {
+                            group.items.push(catalogItem);
+                        }
+                    } else {
+                        //console.log("Failed to find a group match for "+JSON.stringify(record));
+                    }
+                }
+            }
+
+            var nextRecord = parseInt(searchResults.nextRecord, 10);
+            if (nextRecord !== 0 &amp;&amp; nextRecord &lt; parseInt(searchResults.numberOfRecordsMatched, 10)) {
+                startPosition = nextRecord;
+                lastPostData = postData;
+                return loadNextPage();
+            }
+        });
+    }
+
+    function loadDomain() {
+        var getDomainUrl = cleanUrl(that.url) + '?service=CSW&amp;version=2.0.2&amp;request=GetDomain&amp;propertyname=' + that.domainSpecification.domainPropertyName;
+        return loadXML(proxyCatalogItemUrl(that, getDomainUrl, '1d')).then(function(xml) {
+            if (!xml || !xml.documentElement || (xml.documentElement.localName !== 'GetDomainResponse')) {
+                throw new TerriaError({
+                    sender: that,
+                    title: 'Catalogue service is not useable',
+                    message: '\
+Invalid response obtained when invoking GetDomain on the CSW server.  \
+&lt;p>This error may indicate that the catalogue server you specified is temporarily unavailable or there is a \
+problem with your internet connection.  Try opening the processing server again, and if the problem persists, please report it by \
+sending an email to &lt;a href="mailto:' + that.terria.supportEmail + '">' + that.terria.supportEmail + '&lt;/a>.&lt;/p>'
+                });
+            }
+            var json = xml2json(xml),
+                listOfValues = json.DomainValues.ListOfValues.Value;
+            for (var i = 0; i &lt; listOfValues.length; i++) {
+                var keys = listOfValues[i].split(that.domainSpecification.hierarchySeparator);
+                // recursively find the group that the last key in keys should belong to and add that key
+                findLevel(keys, 0, that.metadataGroups, that.domainSpecification.hierarchySeparator, that.domainSpecification.queryPropertyName);
+            }
+        }).otherwise(function(e) {
+            throw new TerriaError({
+                sender: that,
+                title: 'Catalogue service is not useable',
+                message: '\
+An error occurred while invoking GetDomain on the CSW server.  \
+&lt;p>This error may indicate that the catalogue server you specified is temporarily unavailable or there is a \
+problem with your internet connection.  Try opening the processing server again, and if the problem persists, please report it by \
+sending an email to &lt;a href="mailto:' + that.terria.supportEmail + '">' + that.terria.supportEmail + '&lt;/a>.&lt;/p>'
+            });
+        });
+    }
+
+    var domainPromise = when();
+
+    if (defined(that.domainSpecification)) {
+        domainPromise = loadDomain().otherwise(function(e) {
+            if (e instanceof TerriaError) {
+                throw e;
+            }
+            throw new TerriaError({
+                sender: that,
+                title: that.name,
+                message: '\
+Couldn\'t execute GetDomain on this CSW server.&lt;br/>&lt;br/>\
+If you entered the URL manually, please double-check it.&lt;br/>&lt;br/>\
+If it\'s your server, make sure &lt;a href="http://enable-cors.org/" target="_blank">CORS&lt;/a> is enabled.&lt;br/>&lt;br/>\
+Otherwise, if reloading doesn\'t fix it, please report the problem by sending an email to &lt;a href="mailto:' + that.terria.supportEmail + '">' + that.terria.supportEmail + '&lt;/a> with the technical details below.  Thank you!&lt;br/>&lt;br/>\
+&lt;pre>' + formatError(e) + '&lt;/pre>'
+            });
+        });
+    }
+
+    return when(domainPromise, function() {
+        return loadNextPage().otherwise(function(e) {
+            if (e instanceof TerriaError) {
+                throw e;
+            }
+            throw new TerriaError({
+                sender: that,
+                title: that.name,
+                message: '\
+Couldn\'t execute GetRecords on this CSW server.&lt;br/>&lt;br/>\
+If you entered the URL manually, please double-check it.&lt;br/>&lt;br/>\
+If it\'s your server, make sure &lt;a href="http://enable-cors.org/" target="_blank">CORS&lt;/a> is enabled.&lt;br/>&lt;br/>\
+Otherwise, if reloading doesn\'t fix it, please report the problem by sending an email to &lt;a href="mailto:' + that.terria.supportEmail + '">' + that.terria.supportEmail + '&lt;/a> with the technical details below.  Thank you!&lt;br/>&lt;br/>\
+&lt;pre>' + formatError(e) + '&lt;/pre>'
+            });
+        });
+    });
+
+};
+
+function findLevel(keys, index, group, separator, queryField) {
+    if (group.length === 0 || index === keys.length - 1) {
+        addMetadataGroup(keys, index, group, separator, queryField);
+        if (index === keys.length - 1) return;
+    }
+
+    var groupIndex = -1;
+    for (var i = 0; i &lt; group.length; i++) {
+        if (group[i].group === keys[index]) {
+            groupIndex = i;
+            break;
+        }
+    }
+
+    if (groupIndex === -1) { // not found so add it
+        addMetadataGroup(keys, index, group, separator, queryField);
+        groupIndex = group.length - 1;
+    }
+    if (!defined(group[groupIndex].children)) group[groupIndex].children = [];
+    findLevel(keys, index + 1, group[groupIndex].children, separator, queryField);
+}
+
+function addMetadataGroup(keys, index, group, separator, queryField) {
+
+    var value, regex = true;
+    // if we aren't at the last key, use a regex and tack on another separator to avoid mismatches
+    if (index + 1 !== keys.length) {
+        var sepRegex = separator.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&amp;");
+        value = "^" + keys.slice(0, index + 1).join(sepRegex) + sepRegex;
+    } else {
+        value = keys.slice(0, index + 1).join(separator);
+        regex = false;
+    }
+
+    group.push({
+        "field": queryField,
+        "value": value,
+        "regex": regex,
+        "group": keys[index]
+    });
+}
+
+// find groups that the record belongs to and create any that don't exist already
+function findGroup(catalogGroup, keywordsGroups, record) {
+    for (var i = 0; i &lt; keywordsGroups.length; i++) {
+        var kg = keywordsGroups[i];
+        var fields = record[kg.field];
+        var matched = false;
+        if (defined(fields)) {
+            if (fields instanceof String || typeof fields === 'string') {
+                fields = [fields];
+            }
+            for (var j = 0; j &lt; fields.length; j++) {
+                var field = fields[j];
+                if (matchValue(kg.value, field, kg.regex)) {
+                    matched = true;
+                    break;
+                }
+            }
+        }
+        if (matched) {
+            var newGroup = addGroupIfNotAlreadyPresent(kg.group ? kg.group : kg.value, catalogGroup);
+            if (kg.children &amp;&amp; defined(newGroup)) { // recurse to see if it fits into any of the children
+                catalogGroup = findGroup(newGroup, kg.children, record);
+                if (!defined(catalogGroup)) {
+                    //console.log("No match in children for record "+record.title+"::"+record.subject+"::"+record.title+", will assign to "+newGroup.name);
+                    catalogGroup = newGroup;
+                }
+            } else if (defined(newGroup)) {
+                catalogGroup = newGroup;
+            }
+            return catalogGroup;
+        }
+    }
+}
+
+function matchValue(value, recordValue, regex) {
+    if (defined(regex) &amp;&amp; regex) { // regular expression so parse it and check string against it
+        var regExp = new RegExp(value);
+        return regExp.test(recordValue);
+    } else {
+        return value === recordValue;
+    }
+}
+
+function addGroupIfNotAlreadyPresent(name, catalogGroup) {
+    var item = catalogGroup.findFirstItemByName(name);
+    if (!defined(item)) {
+        item = new CatalogGroup(catalogGroup.terria);
+        item.name = name;
+        catalogGroup.items.push(item);
+    }
+    return item;
+}
+
+function createItemForUri(catalogGroup, record, uri, downloadUrls, legendUrl) {
+    var layerName;
+    if (defined(uri.name)) {
+        layerName = uri.name;
+    }
+
+    var catalogItem;
+    resourceFormats.forEach(function(f) {
+        if (!defined(catalogItem) &amp;&amp; (uri.protocol || uri.scheme).match(catalogGroup[f[0]]) &amp;&amp; catalogGroup[f[1]]) {
+            if (f[2] === WebMapServiceCatalogItem &amp;&amp; !defined(layerName)) {
+                catalogItem = new WebMapServiceCatalogGroup(catalogGroup.terria);
+            } else {
+                catalogItem = new f[2](catalogGroup.terria);
+            }
+        }
+    });
+
+    if (defined(catalogItem)) {
+      if (catalogItem instanceof WebProcessingServiceCatalogGroup) { // only a few things we care about here
+        catalogItem.name = record.title;
+        catalogItem.url = uri.toString();
+      } else {
+        catalogItem.name = record.title;
+        catalogItem.description = record.description;
+        catalogItem.url = uri.toString();
+        catalogItem.dataCustodian = '';
+
+        if (defined(record.contributor)) {
+            catalogItem.info.push({
+                name: 'Data Responsibility',
+                content: record.contributor.toString()
+            });
+        }
+
+        catalogItem.info.push({
+            name: 'Links',
+            content: downloadUrls.reduce(function(previousValue, downloadUrl) {
+                return previousValue + '[' + downloadUrl.description + '](' + downloadUrl.url + ')\n\n';
+            }, '')
+        });
+
+        catalogItem.info.push({
+            name: 'Metadata Record URL',
+            content: catalogGroup.url + '?&amp;version=2.0.2&amp;service=CSW&amp;request=GetRecordById&amp;outputSchema=http://www.opengis.net/cat/csw/2.0.2&amp;ElementSetName=full&amp;id=' + record.identifier
+        });
+
+        if (defined(legendUrl)) {
+            catalogItem.legendUrl = new LegendUrl(legendUrl);
+        }
+
+        if (catalogItem.hasOwnProperty('layers') &amp;&amp; defined(layerName)) {
+            catalogItem.layers = layerName;
+        }
+
+        if (typeof(catalogGroup.itemProperties) === 'object') {
+            catalogItem.updateFromJson(catalogGroup.itemProperties);
+        }
+      }
+    }
+
+    return catalogItem;
+}
+
+function cleanUrl(url) {
+    // Strip off the search portion of the URL
+    var uri = new URI(url);
+    uri.search('');
+    return uri.toString();
+}
+
+function anyResourceFormatExceptWps(cswGroup) {
+    var result = false;
+    for (var i = 0; i &lt; resourceFormats.length; i++) {
+         var rf = resourceFormats[i][1];
+         if (defined(cswGroup[rf]) &amp;&amp; cswGroup[rf] &amp;&amp; rf !== 'includeWps') {
+              result = true;
+         }
+    }
+    return result;
+}
+
+CswCatalogGroup._findLevel = findLevel;
+module.exports = CswCatalogGroup;
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:29 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

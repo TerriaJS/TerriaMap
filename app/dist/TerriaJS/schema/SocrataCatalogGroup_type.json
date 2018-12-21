@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "socrata"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of layers from a [Socrata](http://Socrata.org) server. Only spatial layers with a defined Map\rvisualisation are shown, using WMS.",
+  "title": "Socrata Server",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "SocrataCatalogGroup.json"
+    }
+  ]
+}
