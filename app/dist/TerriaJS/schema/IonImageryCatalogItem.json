@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "ionAssetId": {
+      "type": "number",
+      "title": "Ion asset ID",
+      "description": "The ID of the Cesium Ion asset to access."
+    },
+    "ionAccessToken": {
+      "type": "string",
+      "title": "Ion access token",
+      "description": "The Cesium Ion access token to use to access the imagery. If not specified, the token specified\rusing the `cesiumIonAccessToken` property in `config.json` is used."
+    },
+    "ionServer": {
+      "type": "string",
+      "title": "Ion server",
+      "description": "The Cesium Ion access token to use to access the imagery. If not specified, the default Ion\rserver, `https://api.cesium.com/`, is used."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

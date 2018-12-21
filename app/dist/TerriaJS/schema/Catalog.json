@@ -1,0 +1,72 @@
+{
+  "required": [],
+  "type": "object",
+  "title": "Terria data source",
+  "description": "This file configures one or more data sources for TerriaJS.",
+  "defaultProperties": [
+    "catalog"
+  ],
+  "properties": {
+    "services": {
+      "title": "Services",
+      "propertyOrder": 2000,
+      "type": "array",
+      "items": {
+        "title": "Service"
+      }
+    },
+    "catalog": {
+      "title": "Catalog",
+      "$ref": "items.json",
+      "format": "",
+      "items": {
+        "title": "Top-level group"
+      }
+    },
+    "homeCamera": {
+      "title": "Home Camera",
+      "description": "Bounding box of initial view, given by four latitudes/longitudes",
+      "required": [
+        "east",
+        "north",
+        "south",
+        "west"
+      ],
+      "type": "object",
+      "format": "grid",
+      "properties": {
+        "west": {
+          "type": "number"
+        },
+        "east": {
+          "type": "number"
+        },
+        "north": {
+          "type": "number"
+        },
+        "south": {
+          "type": "number"
+        }
+      }
+    },
+    "baseMapName": {
+      "title": "Base map",
+      "description": "The name of the base map to use. For example: Bing Maps Roads, Australian Topography, Natural Earth II",
+      "type": "string"
+    },
+    "corsDomains": {
+      "title": "CORS Domains",
+      "description": "A list of domains that can be accessed directly, since they are known to support CORS (cross-origin resource sharing).",
+      "items": {
+        "title": "Host",
+        "description": "Host name without protocol. For example: arcgis.com",
+        "type": "string"
+      },
+      "type": "array",
+      "format": "tabs"
+    }
+  },
+  "options": {
+    "disable_collapse": true
+  }
+}

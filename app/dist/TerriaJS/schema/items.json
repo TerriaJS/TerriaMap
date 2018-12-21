@@ -1,0 +1,1477 @@
+{
+  "title": "Items",
+  "description": "List of items or groups",
+  "type": "array",
+  "format": "tabs",
+  "items": {
+    "type": "object",
+    "title": "item",
+    "headerTemplate": "{{ self.name }}",
+    "required": [
+      "name",
+      "type"
+    ],
+    "allOf": [
+      {
+        "$ref": "CatalogMember.json"
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "abs-itt"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "abs-itt"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "AbsIttCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "esri-featureServer"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "esri-featureServer"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "ArcGisFeatureServerCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "esri-mapServer"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "esri-mapServer"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "ArcGisMapServerCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "bing-maps"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "bing-maps"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "BingMapsCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "carto"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "carto"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CartoMapCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "3d-tiles"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "3d-tiles"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "Cesium3DTilesCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "cesium-terrain"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "cesium-terrain"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CesiumTerrainCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "ckan-resource"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "ckan-resource"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CkanCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "composite"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "composite"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CompositeCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "csv"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "csv"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CsvCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "czml"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "czml"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CzmlCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "geojson"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "geojson"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "GeoJsonCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "gpx"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "gpx"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "GpxCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "ion-imagery"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "ion-imagery"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "IonImageryCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "kml"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "kml"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "KmlCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "magda-distribution"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "magda-distribution"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "MagdaCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "mapbox-map"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "mapbox-map"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "MapboxMapCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "ogr"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "ogr"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "OgrCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "open-street-map"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "open-street-map"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "OpenStreetMapCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "result-pending"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "result-pending"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "ResultPendingCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "sdmx-json"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "sdmx-json"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "SdmxJsonCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "sos"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "sos"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "SensorObservationServiceCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "url-template"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "url-template"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "UrlTemplateCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "urthecast"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "urthecast"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "UrthecastCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wfs"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wfs"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebFeatureServiceCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wms"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wms"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebMapServiceCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wmts"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wmts"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebMapTileServiceCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wps-result"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wps-result"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebProcessingServiceCatalogItem_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "abs-itt-dataset-list"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "abs-itt-dataset-list"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "AbsIttCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "esri-group"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "esri-group"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "ArcGisCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "esri-featureServer-group"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "esri-featureServer-group"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "ArcGisFeatureServerCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "esri-mapServer-group"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "esri-mapServer-group"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "ArcGisMapServerCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "group"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "group"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "ckan"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "ckan"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CkanCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "csw"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "csw"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "CswCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "socrata"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "socrata"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "SocrataCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "urthecast-group"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "urthecast-group"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "UrthecastCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wfs-getCapabilities"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wfs-getCapabilities"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebFeatureServiceCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wms-getCapabilities"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wms-getCapabilities"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebMapServiceCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wmts-getCapabilities"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wmts-getCapabilities"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebMapTileServiceCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wps-getCapabilities"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wps-getCapabilities"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebProcessingServiceCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wfs-features-group"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wfs-features-group"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WfsFeaturesCatalogGroup_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "places-like-me-function"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "places-like-me-function"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "PlacesLikeMeCatalogFunction_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "spatial-detailing-function"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "spatial-detailing-function"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "SpatialDetailingCatalogFunction_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "terria-json"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "terria-json"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "TerriaJsonCatalogFunction_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "wps"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "wps"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WebProcessingServiceCatalogFunction_type.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "not": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "why-am-i-special-function"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "allOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "why-am-i-special-function"
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "WhyAmISpecialCatalogFunction_type.json"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

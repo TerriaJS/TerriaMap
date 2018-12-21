@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "carto"
+      ]
+    }
+  },
+  "description": "A ImageryLayerCatalogItem representing a named map from the Carto Maps API.\rhttps://carto.com/developers/maps-api/",
+  "title": "Carto Map",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "UrlTemplateCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CartoMapCatalogItem.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wmts-getCapabilities"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of layers from a Web Map Tile Service (WMTS) server.",
+  "title": "Web Map Tile Service (WMTS) Server",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WebMapTileServiceCatalogGroup.json"
+    }
+  ]
+}

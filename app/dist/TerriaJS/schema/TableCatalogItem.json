@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "data": {
+      "type": "string",
+      "title": "Data",
+      "description": "The data, represented as a binary Blob, a string, or a Promise for one of those things.\rIf this property is set, CatalogItem's url is ignored."
+    },
+    "dataSourceUrl": {
+      "type": "string",
+      "title": "Data source URL",
+      "description": "The URL from which the TableCatalogItem's data was obtained.  This is informational; it is not\rused.  This propery is observable."
+    },
+    "opacity": {
+      "type": "number",
+      "title": "Opacity",
+      "description": "The opacity (alpha) of the data item, where 0.0 is fully transparent and 1.0 is\rfully opaque."
+    },
+    "keepOnTop": {
+      "type": "boolean",
+      "title": "Keep on top",
+      "description": "Keeps the layer on top of all other imagery layers.",
+      "format": "checkbox"
+    },
+    "showWarnings": {
+      "type": "boolean",
+      "title": "Show warnings",
+      "description": "Should any warnings like failures in region mapping be displayed to the user?",
+      "format": "checkbox"
+    },
+    "colors": {
+      "type": "array",
+      "title": "Colors",
+      "description": "The array of color strings used for chart lines.\rTODO: make this customizable, eg. use colormap / colorPalette.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "idColumns": {
+      "type": "array",
+      "title": "ID columns",
+      "description": "The column identifiers (names or indices), so we can identify individual features\rwithin a table with a time column, or across multiple polled lat/lon files.\rEg. ['lat', 'lon'] for immobile features, or ['identifier'] if a unique identifier is provided\r(where these are column names in the table; column numbers work as well).\rFor region-mapped files, the region identifier is used instead.\rFor non-spatial files, the x-column is used instead.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "isSampled": {
+      "type": "boolean",
+      "title": "Is sampled",
+      "description": "A value indicating whether the rows correspond to \"sampled\" data.\rThis only makes a difference if there is a time column and idColumns.\rIn this case, if isSampled is true, then feature position, color and size are interpolated\rto produce smooth animation of the features over time.\rIf isSampled is false, then times are treated as the start of periods, so that\rfeature positions, color and size are kept constant from one time until the next,\rthen change suddenly.\rColor and size are never interpolated when they are drawn from a text column.",
+      "format": "checkbox"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

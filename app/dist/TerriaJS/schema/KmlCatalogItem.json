@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "dataSourceUrl": {
+      "type": "string",
+      "title": "Data source URL",
+      "description": "The URL from which the KmlCatalogItem's data was obtained.  This will be used\rto resolve any resources linked in the KML file, if any."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "DataSourceCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

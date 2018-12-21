@@ -1,0 +1,142 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the CKAN server."
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of the data sources in this group.\rThis property is an HTML string that must be sanitized before display to the user."
+    },
+    "filterQuery": {
+      "type": [
+        "array",
+        "array"
+      ],
+      "title": "Filter query",
+      "description": "The filter query to pass to CKAN when querying the available data sources and their groups. Each item in the\rarray causes an independent request to the CKAN, and the results are concatenated.  The\rsearch string is equivalent to what would be in the parameters segment of the url calling the CKAN search api.\rSee the [Solr documentation](http://wiki.apache.org/solr/CommonQueryParameters#fq) for information about filter queries.\rEach item can be either a URL-encoded string (\"fq=res_format%3awms\") or an object ({ fq: 'res_format:wms' }). The latter\rformat is easier to work with.\r  To get all the datasets with wms resources: [{ fq: 'res_format%3awms' }]\r  To get all wms/WMS datasets in the Surface Water group: [{q: 'groups=Surface Water', fq: 'res_format:WMS' }]\r  To get both wms and esri-mapService datasets: [{q: 'res_format:WMS'}, {q: 'res_format:\"Esri REST\"' }]\r  To get all datasets with no filter, you can use ['']\rThis property is required."
+    },
+    "blacklist": {
+      "type": "object",
+      "title": "Blacklist",
+      "description": "A hash of names of blacklisted groups and data sources.  A group or data source that appears in this hash\rwill not be shown to the user.  In this hash, the keys should be the names of the groups and data sources to blacklist,\rand the values should be \"true\".",
+      "additionalProperties": {
+        "type": "boolean",
+        "format": "checkbox"
+      }
+    },
+    "filterByWmsGetCapabilities": {
+      "type": "boolean",
+      "title": "Filter by WMS get capabilities",
+      "description": "A value indicating whether the CKAN datasets should be filtered by querying GetCapabilities from each\rreferenced WMS server and excluding datasets not found therein.",
+      "format": "checkbox"
+    },
+    "minimumMaxScaleDenominator": {
+      "type": "number",
+      "title": "Minimum max scale denominator",
+      "description": "The minimum MaxScaleDenominator that is allowed for a WMS dataset to be included in this CKAN group.\rIf this property is undefined or if CkanCatalogGroup's filterByWmsGetCapabilities is false, no\rfiltering based on MaxScaleDenominator is performed."
+    },
+    "wmsParameters": {
+      "type": "object",
+      "title": "WMS parameters",
+      "description": "Any extra wms parameters that should be added to the wms query urls in this CKAN group.\rIf this property is undefined then no extra parameters are added."
+    },
+    "groupBy": {
+      "type": "string",
+      "title": "Group by",
+      "description": "A value indicating how datasets should be grouped.  Valid values are:\r* `none` - Datasets are put in a flat list; they are not grouped at all.\r* `group` - Datasets are grouped according to their CKAN group.  Datasets that are not in any groups are put at the top level.\r* `organization` - Datasets are grouped by their CKAN organization.  Datasets that are not associated with an organization are put at the top level."
+    },
+    "ungroupedTitle": {
+      "type": "string",
+      "title": "Ungrouped title",
+      "description": "A title for the group holding all items that don't have a group in CKAN. If the value is a blank string or undefined,\rthese items will be left at the top level, not grouped."
+    },
+    "useResourceName": {
+      "type": "boolean",
+      "title": "Use resource name",
+      "description": "A value indicating whether each catalog item's name should be populated from\rindividual resources instead of from the CKAN dataset.",
+      "format": "checkbox"
+    },
+    "allowEntireWmsServers": {
+      "type": "boolean",
+      "title": "Allow entire WMS servers",
+      "description": "True to allow entire WMS servers (that is, WMS resources without a clearly-defined layer) to be\radded to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "allowEntireWfsServers": {
+      "type": "boolean",
+      "title": "Allow entire WFS servers",
+      "description": "True to allow entire WFS servers (that is, WFS resources without a clearly-defined layer) to be\radded to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeWms": {
+      "type": "boolean",
+      "title": "Include WMS",
+      "description": "True to allow WMS resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeWfs": {
+      "type": "boolean",
+      "title": "Include WFS",
+      "description": "True to allow WFS resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeKml": {
+      "type": "boolean",
+      "title": "Include KML",
+      "description": "True to allow KML resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeCsv": {
+      "type": "boolean",
+      "title": "Include CSV",
+      "description": "True to allow CSV resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeEsriMapServer": {
+      "type": "boolean",
+      "title": "Include esri map server",
+      "description": "True to allow ESRI MapServer resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeEsriFeatureServer": {
+      "type": "boolean",
+      "title": "Include esri feature server",
+      "description": "True to allow ESRI FeatureServer resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeGeoJson": {
+      "type": "boolean",
+      "title": "Include geo JSON",
+      "description": "True to allow GeoJSON resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeCzml": {
+      "type": "boolean",
+      "title": "Include CZML",
+      "description": "True to allow CZML resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "itemProperties": {
+      "type": "object",
+      "title": "Item properties",
+      "description": "A hash of properties that will be set on each child item.\rFor example, { \"treat404AsError\": false }"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

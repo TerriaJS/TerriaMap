@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "fileExtension": {
+      "type": "string",
+      "title": "File extension",
+      "description": "The file extension used to retrieve Open Street Map data"
+    },
+    "maximumLevel": {
+      "type": "string",
+      "title": "Maximum level",
+      "description": "The maximum tile level to retrieve from Open Street Map data"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

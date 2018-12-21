@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "tryToLoadObservationData": {
+      "type": "boolean",
+      "title": "Try to load observation data",
+      "description": "A flag. If true, the catalog item will load all features, then, if\rnumber of features < requestSizeLimit * requestNumberLimit, it will load all the observation data\rfor those features, and show that.\rIf false, or there are too many features, the observation data is only loaded when the feature is clicked on\r(via a chart in the feature info panel).\rDefaults to true.",
+      "format": "checkbox"
+    },
+    "proceduresName": {
+      "type": "string",
+      "title": "Procedures name",
+      "description": "The name seen by the user for the list of procedures.\rDefaults to \"Procedure\", but eg. for BoM, \"Frequency\" would be better."
+    },
+    "observablePropertiesName": {
+      "type": "string",
+      "title": "Observable properties name",
+      "description": "The name seen by the user for the list of observable properties.\rDefaults to \"Property\", but eg. for BoM, \"Observation type\" would be better."
+    },
+    "procedures": {
+      "type": "array",
+      "title": "Procedures",
+      "description": "The sensor observation service procedures that the user can choose from for this catalog item.\rAn array of objects with keys 'identifier', 'title' and (optionally) 'defaultDuration' and 'units', eg.\r    [{\r       identifier: 'http://bom.gov.au/waterdata/services/tstypes/Pat7_C_B_1_YearlyMean',\r       title: 'Annual Mean',\r       defaultDuration: '20y'  // Final character must be s, h, d or y for seconds, hours, days or years.\r    }]\rThe identifier is used for communication with the server, and the title is used for display to the user.\rIf there is only one object, the user is not presented with a choice.",
+      "format": "tabs",
+      "items": {
+        "type": "object"
+      }
+    },
+    "observableProperties": {
+      "type": "array",
+      "title": "Observable properties",
+      "description": "The sensor observation service observableProperties that the user can choose from for this catalog item.\rAn array of objects with keys 'identifier', 'title' and (optionally) 'defaultDuration' and 'units', eg.\r    [{\r       identifier: 'http://bom.gov.au/waterdata/services/parameters/Storage Level',\r       title: 'Storage Level',\r       units: 'metres'\r    }]\rThe identifier is used for communication with the server, and the title is used for display to the user.\rIf there is only one object, the user is not presented with a choice.",
+      "format": "tabs",
+      "items": {
+        "type": "object"
+      }
+    },
+    "initialProcedureIndex": {
+      "type": "number",
+      "title": "Initial procedure index",
+      "description": "The index of the initially selected procedure. Defaults to 0."
+    },
+    "initialObservablePropertyIndex": {
+      "type": "number",
+      "title": "Initial observable property index",
+      "description": "The index of the initially selected observable property. Defaults to 0."
+    },
+    "startDate": {
+      "type": "string",
+      "title": "Start date",
+      "description": "A start date in ISO8601 format. All requests filter to this start date. Set to undefined for no temporal filter."
+    },
+    "endDate": {
+      "type": "string",
+      "title": "End date",
+      "description": "An end date in ISO8601 format. All requests filter to this end date. Set to undefined to use the current date."
+    },
+    "requestTemplate": {
+      "type": "string",
+      "title": "Request template",
+      "description": "The template XML string to POST to the SOS server to query for GetObservation.\rIf this property is undefined,\rSensorObservationServiceCatalogItem.defaultRequestTemplate is used.\rThis is used as a Mustache template. See SensorObservationServiceRequestTemplate.xml for the default.\rBe careful with newlines inside tags: Mustache can add an extra space in the front of them,\rwhich causes the request to fail on the SOS server. Eg.\r<wsa:Action>\rhttp://www.opengis.net/...\r</wsa:Action>\rwill render as <wsa:Action> http://www.opengis.net/...</wsa:Action>\rThe space before the \"http\" will cause the request to fail."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "abs-itt-dataset-list"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of items from an Australian Bureau of Statistics\r(ABS) ITT server, formed by querying for all the codes in a given dataset and concept.",
+  "title": "ABS.Stat Dataset List",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "AbsIttCatalogGroup.json"
+    }
+  ]
+}

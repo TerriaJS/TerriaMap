@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the CSW server."
+    },
+    "getRecordsTemplate": {
+      "type": "string",
+      "title": "Get records template",
+      "description": "The template XML string to POST to the CSW server to query for catalog items.  If this property is undefined,\rCswCatalogGroup.defaultGetRecordsTemplate is used.  The XML string should have a `{startPosition}` placeholder to be\rreplaced with the next start position in order to allow incremental paging of results."
+    },
+    "includeWms": {
+      "type": "boolean",
+      "title": "Include WMS",
+      "description": "True to allow WMS resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeKml": {
+      "type": "boolean",
+      "title": "Include KML",
+      "description": "True to allow KML resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeCsv": {
+      "type": "boolean",
+      "title": "Include CSV",
+      "description": "True to allow CSV resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeEsriMapServer": {
+      "type": "boolean",
+      "title": "Include esri map server",
+      "description": "True to allow ESRI Map resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "includeGeoJson": {
+      "type": "boolean",
+      "title": "Include geo JSON",
+      "description": "True to allow GeoJSON resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "domainSpecification": {
+      "type": "object",
+      "title": "Domain specification",
+      "description": "A description of a domain that will be pulled from the CSW service and used to define the metadataGroups. The domain is obtained by querying the CSW server for a particular property - the values of the property form the domain, the values are assumed to define a hierarchy eg. Wave Models | Wave Energy Flux - which is a two level hierarchy of groups that will be used to classify metadata records."
+    },
+    "includeWps": {
+      "type": "boolean",
+      "title": "Include wps",
+      "description": "True to allow OGC:WPS service resources to be added to the catalog; otherwise, false.",
+      "format": "checkbox"
+    },
+    "itemProperties": {
+      "type": "object",
+      "title": "Item properties",
+      "description": "A hash of properties that will be set on the item created from the CKAN resource.\rFor example, { \"treat404AsError\": false }"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

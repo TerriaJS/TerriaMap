@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Charts/LineChart.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Charts/LineChart.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+import {mouse as d3Mouse, select as d3Select} from 'd3-selection';
+import {line as d3Line} from 'd3-shape';
+import {axisBottom as d3AxisBottom, axisLeft as d3AxisLeft} from 'd3-axis';
+import {transition as d3Transition} from 'd3-transition';
+
+import defaultValue from 'terriajs-cesium/Source/Core/defaultValue';
+import defined from 'terriajs-cesium/Source/Core/defined';
+
+import getUniqueValues from '../Core/getUniqueValues';
+import Scales from './Scales';
+import Size from './Size';
+import Title from './Title';
+import Tooltip from './Tooltip';
+
+// import ChartData from './ChartData';
+
+const yAxisLabelWidth = 21;
+
+const defaultMargin = {
+    top: 20,
+    right: 30,
+    bottom: 20,
+    left: 0
+};
+
+const defaultNoDataText = 'No preview available';
+
+const defaultTransitionDuration = 1000; // milliseconds
+
+const threshold = 1e-8; // Threshold for 'equal' x-values during mouseover.
+
+const LineChart = {
+
+    /**
+     * Create a Line Chart.
+     * @param  {DOMElement} element The DOM element in which to place the chart.
+     * @param  {Object} state The state of the chart.
+     * @param  {Number} state.width The width of the svg element.
+     * @param  {Number} state.height The height of the svg element.
+     * @param  {Object} [state.margin] The chart's margin.
+     * @param  {Number} state.margin.top The chart's top margin.
+     * @param  {Number} state.margin.right The chart's right margin.
+     * @param  {Number} state.margin.bottom The chart's bottom margin.
+     * @param  {Number} state.margin.left The chart's left margin.
+     * @param  {Object} [state.titleSettings] Information about the title section; see Title for the available options.
+     * @param  {Object} [state.domain] The x and y ranges to show; see Scales for the format.
+     * @param  {ChartData[]} state.data The data for each line.
+     * @param  {Object} [state.axisLabel] Labels for the x and y axes.
+     * @param  {String} [state.axisLabel.x] Label for the x axis.
+     * @param  {String} [state.axisLabel.y] Label for the y axis.
+     * @param  {Number} [state.xAxisHeight] Height of the x-axis; used in Size.
+     * @param  {Number} [state.xAxisLabelHeight] Height of the x-axis label; used in Size.
+     * @param  {Object} [state.grid] Grids for the x and y axes.
+     * @param  {Boolean} [state.grid.x] Do you want vertical gridlines?
+     * @param  {Boolean} [state.grid.y] Do you want horizontal gridlines?
+     * @param  {Boolean} [state.mini] If true, show minified axes.
+     * @param  {Number} [state.transitionDuration] Duration of transition effects, in milliseconds.
+     * @param  {Object} [state.tooltipSettings] Settings for the tooltip; see Tooltip for the available options.
+     * @param  {Number|String} [state.highlightX] Force a particular x-position to be highlighted.
+     */
+    create(element, state) {
+        if (!element) {
+            return;
+        }
+        const d3Element = d3Select(element);
+        d3Element.style('position', 'relative');
+
+        Title.create(d3Element, state.titleSettings);
+
+        const svg = d3Element.append('svg')
+            .attr('class', 'd3')
+            .attr('width', state.width)
+            .attr('height', state.height);
+
+        const lineChart = svg.append('g')
+            .attr('class', 'line-chart');
+
+        lineChart.append('rect')
+            .attr('class', 'plot-area')
+            .attr('x', '0')
+            .attr('y', '0');
+        lineChart.append('g')
+            .attr('class', 'x axis')
+            .style('opacity', 1e-6)
+            .append('text')
+            .attr('class', 'label');
+        lineChart.append('g')
+            .attr('class', 'y axes');
+        lineChart.append('g')
+            .attr('class', 'no-data')
+            .append('text');
+        lineChart.append('g')
+            .attr('class', 'selection');
+
+        Tooltip.create(state.tooltipSettings);
+
+        this.update(element, state);
+    },
+
+    update(element, state) {
+        render(element, state);
+    },
+
+    destroy(element, state) {
+        Tooltip.destroy(state.tooltipSettings);
+    }
+};
+
+function render(element, state) {
+    if (!defined(state.data)) {
+        return;
+    }
+    const margin = defaultValue(state.margin, defaultMargin);
+    const allUnits = getUniqueValues(state.data.map(line => line.units));
+    const size = Size.calculate(element, margin, state, state.mini ? 1 : allUnits.length);
+    const scales = Scales.calculate(size, state.domain, state.data);
+    const data = state.data;
+    const transitionDuration = defaultValue(state.transitionDuration, defaultTransitionDuration);
+    // The last condition in hasData checks that at least one y-value of one chart is defined.
+    const hasData = (data.length > 0 &amp;&amp; data[0].points.length > 0 &amp;&amp; data.some(d=>d.points.some(p=>defined(p.y))));
+
+    const d3Element = d3Select(element);
+    const svg = d3Element.select('svg')
+        .attr('width', state.width)
+        .attr('height', state.height);
+
+    const g = d3Select(element).selectAll('.line-chart');
+
+    const t = d3Transition().duration(transitionDuration);
+
+    // Some axis animations need to be a little different if this is the first time we are showing the graph.
+    // Assume it's the first time if we have no lines yet.
+    const lines = g.selectAll('.line').data(data, d => d.id).attr('class', 'line');
+    const isFirstLine = (!defined(lines.nodes()[0]));
+    const gTransform = 'translate(' + (margin.left + size.yAxesWidth) + ',' + (margin.top + Title.getHeight(state.titleSettings)) + ')';
+    if (isFirstLine) {
+        g.attr('transform', gTransform);
+    } else {
+        g.transition(t)
+            .attr('transform', gTransform);
+    }
+
+    const plotArea = d3Element.select('rect.plot-area');
+    plotArea.attr('width', size.width)
+        .attr('height', size.plotHeight);
+
+    // Returns a path function which can be called with an array of points.
+    function getPathForUnits(units) {
+        return d3Line()
+            // .curve(d3Shape.curveBasis)
+            .x(d => scales.x(d.x))
+            .y(d => scales.y[units](d.y));
+            // NOTE: it was originally 'basic', which is not a interpolation
+    }
+
+    // Enter.
+    // https://github.com/d3/d3/blob/master/CHANGES.md#selections-d3-selection
+    // If there are undefined or null y-values, just ignore them. This works well for initial and final undefined values,
+    // and simply interpolates over intermediate ones. This may not be what we want.
+    lines.enter().append('path')
+        .attr('class', 'line')
+        .attr('d', line => getPathForUnits(line.units || Scales.unknownUnits)(line.points.filter(point => defined(point.y))))
+        .style('fill', 'none')
+        .style('opacity', 1e-6)
+        .transition(t)
+        .style('opacity', 1)
+        .style('stroke', d => defined(d.color) ? d.color : '');
+
+    // Mouse event.
+    lines
+        .on('mouseover', fade(g, 0.33))
+        .on('mouseout', fade(g, 1));
+
+    // Update.
+    // Same approach to undefined or null y-values as enter.
+    lines
+        .transition(t)
+        .attr('d', line => getPathForUnits(line.units || Scales.unknownUnits)(line.points.filter(point => defined(point.y))))
+        .style('opacity', 1)
+        .style('stroke', d => defined(d.color) ? d.color : '');
+
+    // Exit.
+    lines.exit()
+        .transition(t)
+        .style('opacity', 1e-6)
+        .remove();
+
+    // Title.
+    Title.enterUpdateAndExit(d3Element, state.titleSettings, margin, data, transitionDuration);
+
+    // Hilighted data and tooltips.
+    if (defined(state.tooltipSettings)) {
+        const tooltip = Tooltip.select(state.tooltipSettings);
+        // Whenever the chart updates, remove the hilighted points and tooltips.
+        const boundHilightDataAndShowTooltip = highlightDataAndShowTooltip.bind(null, hasData, data, state, scales, g, tooltip);
+        unhilightDataAndHideTooltip(g, tooltip);
+        svg.on('mouseover', boundHilightDataAndShowTooltip)
+            .on('mousemove', boundHilightDataAndShowTooltip)
+            .on('click', boundHilightDataAndShowTooltip)
+            .on('mouseout', unhilightDataAndHideTooltip.bind(null, g, tooltip));
+    }
+
+    if (defined(state.highlightX)) {
+        const selectedData = findSelectedData(data, state.highlightX);
+        hilightData(selectedData, scales, g);
+    }
+
+    // Create the y-axes as needed.
+    const yAxisElements = g.select('.y.axes').selectAll('.y.axis').data(allUnits, d => d);
+    const newYAxisElements = yAxisElements.enter().append('g')
+        .attr('class', 'y axis')
+        .style('opacity', 1e-6);
+
+    newYAxisElements.append('g')
+        .attr('class', 'ticks');
+    newYAxisElements.append('g')
+        .attr('class', 'colors');
+    newYAxisElements.append('g')
+        .attr('class', 'units-label-shadow-group') // This doesn't yet do what we want, because it comes before the ticks.
+        .attr('transform', 'translate(' + -(Size.yAxisWidth - yAxisLabelWidth) + ',6)rotate(270)')
+            .append('text')
+            .attr('class', 'units-label-shadow')
+            .style('text-anchor', 'end');
+    newYAxisElements.append('g')
+        .attr('class', 'units-label-group')
+        .attr('transform', 'translate(' + -(Size.yAxisWidth - yAxisLabelWidth) + ',6)rotate(270)')
+            .append('text')
+            .attr('class', 'units-label')
+            .style('text-anchor', 'end');
+    yAxisElements.exit().remove();
+
+    // No data. Show message if no data to show.
+    var noData = g.select('.no-data')
+        .style('opacity', hasData ? 1e-6 : 1);
+
+    noData.select('text')
+        .text(defaultNoDataText)
+        .style('text-anchor', 'middle')
+        .attr('x', element.offsetWidth / 2 - margin.left - size.yAxesWidth)
+        .attr('y', (size.height - 24) / 2);
+
+    // Axes.
+    if (!defined(scales)) {
+        return;
+    }
+
+    // An extra calculation to decide whether we want the last automatically-generated tick value.
+    const xTickValues = Scales.truncatedTickValues(scales.x, Math.min(12, Math.floor(size.width / 150) + 1));
+    const xAxis = d3AxisBottom()
+        .tickValues(xTickValues);
+    if (defined(state.grid) &amp;&amp; state.grid.x) {
+        // Note this only extends up; if the axis is not at the bottom, we need to translate the ticks down too.
+        xAxis.tickSizeInner(-size.plotHeight);
+    }
+
+    const yAxis = d3AxisLeft()
+        .tickSizeOuter((allUnits.length > 1) ? 0 : 3);
+    let y0 = 0;
+    let mainYScale;
+    if (defined(scales)) {
+        mainYScale = scales.y[allUnits[0] || Scales.unknownUnits];
+        xAxis.scale(scales.x);
+
+        y0 = Math.min(Math.max(mainYScale(0), 0), size.plotHeight);
+    }
+    // Mini charts have the x-axis label at the bottom, regardless of where the x-axis would actually be.
+    if (state.mini) {
+        y0 = size.plotHeight;
+    }
+    // If this is the first line, start the x-axis in the right place straight away.
+    if (isFirstLine) {
+        g.select('.x.axis').attr('transform', 'translate(0,' + y0 + ')');
+    }
+
+    g.select('.x.axis')
+        .transition(t)
+        .attr('transform', 'translate(0,' + y0 + ')')
+        .style('opacity', 1)
+        .call(xAxis);
+    if (defined(state.grid) &amp;&amp; state.grid.x) {
+        // Recall the x-axis-grid lines only extended up; we need to translate the ticks down to the bottom of the plot.
+        g.selectAll('.x.axis line').attr('transform', 'translate(0,' + (size.plotHeight - y0) + ')');
+    }
+    // If mini with label, or no data: hide the ticks, but not the axis, so the x-axis label can still be shown.
+    var hasXLabel = defined(state.axisLabel) &amp;&amp; defined(state.axisLabel.x);
+    g.select('.x.axis')
+        .selectAll('.tick')
+        .transition(t)
+        .style('opacity', ((state.mini &amp;&amp; hasXLabel) || !hasData) ? 1e-6 : 1);
+
+    if (hasXLabel) {
+        g.select('.x.axis .label')
+            .style('text-anchor', 'middle')
+            .text(state.axisLabel.x)
+            .style('opacity', hasData ? 1 : 1e-6)
+                // Translate the x-axis-label to the bottom of the plot, even if the x-axis itself is in the middle or the top.
+                .attr('transform', 'translate(' + (size.width / 2) + ', ' + (size.height - y0) + ')');
+    }
+
+    if (state.mini) {
+        yAxis.tickSize(0, 0);
+    }
+    const yAxisElementsElements = g.select('.y.axes').selectAll('.y.axis');
+
+    yAxisElementsElements
+        .transition(t)
+        .attr('transform', (d, i) => ('translate(' + (- i * Size.yAxisWidth) + ', 0)'));
+
+    yAxisElementsElements.nodes().forEach(yAxisElement => {
+        const yAxisD3 = d3Select(yAxisElement);
+        const theseUnits = yAxisElement.__data__;
+        const thisYScale = scales.y[theseUnits || Scales.unknownUnits];
+        // Only show the horizontal grid lines for the main y-axis, or it gets too confusing.
+        const tickSizeInner = (thisYScale === mainYScale &amp;&amp; defined(state.grid) &amp;&amp; state.grid.y) ? -size.width : 3;
+        let yTickValues;
+        if (state.mini) {
+            yTickValues = thisYScale.domain();
+        } else {
+            const numYTicks = state.mini ? 2 : Math.min(6, Math.floor(size.plotHeight / 30) + 1);
+            yTickValues = Scales.truncatedTickValues(thisYScale, numYTicks);
+        }
+        yAxis
+            .tickValues(yTickValues)
+            .tickSizeInner(tickSizeInner)
+            .scale(thisYScale);
+        yAxisD3
+            .transition(t)
+            .style('opacity', hasData ? 1 : 1e-6)
+            .select('.ticks')
+                .call(yAxis);
+        let colorKeyHtml = '';
+        if (allUnits.length > 1) {
+            const unitColors = data.filter(line=>(line.units === theseUnits)).map(line=>line.color);
+            unitColors.forEach((color, index)=>{
+                const y = -1 - index * 4;
+                colorKeyHtml += '&lt;path d="M-30 ' + y + ' h 30" style="stroke:' + color + '"/>';
+            });
+        }
+        yAxisD3.select('.colors').html(colorKeyHtml);
+        yAxisD3.select('.units-label').text(theseUnits || '');
+        yAxisD3.select('.units-label-shadow').text(theseUnits || '');
+    });
+}
+
+// Returns only the data lines which have a selected point on them, with an added "point" property for the selected point.
+function findSelectedData(data, x) {
+    // For each chart line (pointArray), find the point with the closest x to the mouse.
+    const closestXPoints = data.map(line => line.points.reduce((previous, current) =>
+        Math.abs(current.x - x) &lt; Math.abs(previous.x - x) ? current : previous
+    ));
+    // Of those, find one with the closest x to the mouse.
+    const closestXPoint = closestXPoints.reduce((previous, current) =>
+        Math.abs(current.x - x) &lt; Math.abs(previous.x - x) ? current : previous
+    );
+    const nearlyEqualX = (thisPoint) => (Math.abs(thisPoint.x - closestXPoint.x) &lt; threshold);
+    // Only select the chart lines (pointArrays) which have their closest x to the mouse = the overall closest.
+    const selectedPoints = closestXPoints.filter(nearlyEqualX);
+
+    const isSelectedArray = closestXPoints.map(nearlyEqualX);
+    const selectedData = data.filter((line, i) => isSelectedArray[i]);
+    selectedData.forEach((line, i) => {line.point = selectedPoints[i];});  // TODO: this adds the property to the original data - bad.
+    return selectedData;
+}
+
+function hilightData(selectedData, scales, g) {
+    const verticalLine = g.select('.selection').selectAll('line').data(selectedData.length > 0 ? [selectedData[0]] : []);
+    verticalLine.enter().append('line')
+        .merge(verticalLine) // New pattern in d3 v4.0 https://github.com/d3/d3/blob/master/CHANGES.md#selections-d3-selection
+        .attr('x1', d => scales.x(d.point.x))
+        .attr('y1', d => scales.y[d.units || Scales.unknownUnits].range()[0])
+        .attr('x2', d => scales.x(d.point.x))
+        .attr('y2', d => scales.y[d.units || Scales.unknownUnits].range()[1]);
+    verticalLine.exit().remove();
+
+    const selection = g.select('.selection').selectAll('circle').data(selectedData);
+    selection.enter().append('circle')
+        .merge(selection)
+        .attr('cx', d => scales.x(d.point.x))
+        .attr('cy', d => scales.y[d.units || Scales.unknownUnits](d.point.y))
+        .style('fill', d => defined(d.color) ? d.color : '');
+    selection.exit().remove();
+}
+
+function highlightDataAndShowTooltip(hasData, data, state, scales, g, tooltip) {
+    if (!hasData) {
+        return;
+    }
+    const localCoords = d3Mouse(g.nodes()[0]);
+    const hoverX = scales.x.invert(localCoords[0]);
+    const selectedData = findSelectedData(data, hoverX);
+    hilightData(selectedData, scales, g);
+    const chartBoundingRect = g['_parents'][0].getBoundingClientRect();  // Strangely, g's own width can sometimes be far too wide.
+    Tooltip.show(Tooltip.html(selectedData), tooltip, state.tooltipSettings, chartBoundingRect);
+}
+
+function unhilightDataAndHideTooltip(g, tooltip) {
+    g.select('.selection').selectAll('circle').data([]).exit().remove();
+    g.select('.selection').selectAll('line').data([]).exit().remove();
+    Tooltip.hide(tooltip);
+}
+
+// Returns an event handler for fading chart lines in or out.
+function fade(d3Element, opacity) {
+    return function(selectedLine) {
+        d3Element.selectAll('.line')
+            .filter(function(thisLine) {
+                return thisLine.id !== selectedLine.id;
+            })
+            .transition()
+            .style('opacity', opacity);
+    };
+}
+
+
+
+module.exports = LineChart;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:30 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

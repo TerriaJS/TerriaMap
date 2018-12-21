@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "magda-distribution"
+      ]
+    }
+  },
+  "description": "A CatalogItem that queries a MAGDA server for a dataset or distribution, and then accesses\rthat the as WMS, GeoJSON, etc. depending on what it finds.",
+  "title": "MAGDA Distribution",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "MagdaCatalogItem.json"
+    }
+  ]
+}

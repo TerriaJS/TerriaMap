@@ -29,36 +29,55 @@ var watchOptions = {
     interval: 1000
 };
 
-gulp.task('build-app', ['check-terriajs-dependencies', 'write-version'], function(done) {
+gulp.task('build-frontend', ['check-terriajs-dependencies', 'write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
+    var webpackFrontendConfig = require('./webpack-frontend.config.js')(true);
 
     checkForDuplicateCesium();
 
-    runWebpack(webpack, webpackConfig, done);
+    runWebpack(webpack, webpackFrontendConfig, done);
+});
+
+gulp.task('build-backend', ['check-terriajs-dependencies', 'write-version'], function(done) {
+    var runWebpack = require('terriajs/buildprocess/runWebpack.js');
+    var webpack = require('webpack');
+    var webpackBackendConfig = require('./webpack-backend.config.js');
+
+    checkForDuplicateCesium();
+
+    runWebpack(webpack, webpackBackendConfig, done);
 });
 
 gulp.task('release-app', ['check-terriajs-dependencies', 'write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(false);
+    var webpackFrontendConfig = require('./webpack-frontend.config.js')(false);
+    var webpackBackendConfig = require('./webpack-backend.config.js');
 
     checkForDuplicateCesium();
 
-    runWebpack(webpack, Object.assign({}, webpackConfig, {
+    runWebpack(webpack, Object.assign({}, webpackFrontendConfig, {
         plugins: [
             new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
             new webpack.optimize.OccurrenceOrderPlugin(),
-        ].concat(webpackConfig.plugins || [])
+        ].concat(webpackFrontendConfig.plugins || [])
     }), done);
+    /*
+    runWebpack(webpack, Object.assign({}, webpackBackendConfig, {
+        plugins: [
+            new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
+            new webpack.optimize.OccurrenceOrderPlugin(),
+        ].concat(webpackBackendConfig.plugins || [])
+    }), done);
+    */
 });
 
 gulp.task('watch-app', ['check-terriajs-dependencies'], function(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
+    var webpackConfig = require('./webpack-frontend.config.js')(true, false);
 
     checkForDuplicateCesium();
 
@@ -67,9 +86,9 @@ gulp.task('watch-app', ['check-terriajs-dependencies'], function(done) {
 });
 
 gulp.task('copy-terriajs-assets', function() {
-    var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
+    var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'app');
     var sourceGlob = path.join(terriaWebRoot, '**');
-    var destPath = path.resolve(__dirname, 'wwwroot', 'build', 'TerriaJS');
+    var destPath = path.resolve(__dirname, 'app', 'dist', 'TerriaJS');
 
     return gulp
         .src([ sourceGlob ], { base: terriaWebRoot })
@@ -77,7 +96,7 @@ gulp.task('copy-terriajs-assets', function() {
 });
 
 gulp.task('watch-terriajs-assets', ['copy-terriajs-assets'], function() {
-    var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
+    var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'app');
     var sourceGlob = path.join(terriaWebRoot, '**');
 
     return gulp.watch(sourceGlob, watchOptions, [ 'copy-terriajs-assets' ]);
@@ -90,7 +109,7 @@ gulp.task('make-editor-schema', ['copy-editor'], function() {
 
     return generateSchema({
         sourceGlob: schemaSourceGlob,
-        dest: 'wwwroot/editor',
+        dest: 'app/editor',
         noversionsubdir: true,
         editor: true,
         quiet: true
@@ -101,7 +120,7 @@ gulp.task('copy-editor', function() {
     var glob = path.join(getPackageRoot('terriajs-catalog-editor'), '**');
 
     return gulp.src(glob)
-        .pipe(gulp.dest('./wwwroot/editor'));
+        .pipe(gulp.dest('./app/editor'));
 });
 
 gulp.task('lint', function() {
@@ -158,7 +177,7 @@ gulp.task('make-package', function() {
         preserveTimestamps: true
     };
 
-    fs.copySync('wwwroot', path.join(workingDir, 'wwwroot'), copyOptions);
+    fs.copySync('app', path.join(workingDir, 'app'), copyOptions);
     fs.copySync('node_modules', path.join(workingDir, 'node_modules'), copyOptions);
     fs.copySync('deploy/varnish', path.join(workingDir, 'varnish'), copyOptions);
 
@@ -172,10 +191,10 @@ gulp.task('make-package', function() {
     }
 
     if (argv.clientConfigOverride) {
-        var clientConfig = json5.parse(fs.readFileSync(path.join('wwwroot', 'config.json'), 'utf8'));
+        var clientConfig = json5.parse(fs.readFileSync(path.join('app', 'config.json'), 'utf8'));
         var clientConfigOverride = json5.parse(fs.readFileSync(argv.clientConfigOverride, 'utf8'));
         var productionClientConfig = mergeConfigs(clientConfig, clientConfigOverride);
-        fs.writeFileSync(path.join(workingDir, 'wwwroot', 'config.json'), JSON.stringify(productionClientConfig, undefined, '  '));
+        fs.writeFileSync(path.join(workingDir, 'app', 'config.json'), JSON.stringify(productionClientConfig, undefined, '  '));
     }
 
     // if we are on OSX make sure to use gtar for compatibility with Linux
@@ -199,7 +218,7 @@ gulp.task('clean', function() {
     var fs = require('fs-extra');
 
     // // Remove build products
-    fs.removeSync(path.join('wwwroot', 'build'));
+    fs.removeSync(path.join('app', 'build'));
 });
 
 function mergeConfigs(original, override) {
@@ -268,7 +287,7 @@ gulp.task('render-datasource-templates', function() {
             } catch (e) {
                 console.warn('Warning: Rendered template ' + outFilename + ' is not valid JSON');
             }
-            fs.writeFileSync(path.join('wwwroot/init', outFilename), new Buffer(result));
+            fs.writeFileSync(path.join('app/init', outFilename), new Buffer(result));
         }
     });
 

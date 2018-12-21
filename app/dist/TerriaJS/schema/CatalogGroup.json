@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "isOpen": {
+      "type": "boolean",
+      "title": "Is open",
+      "description": "A value indicating whether the group is currently expanded and showing\rits children.",
+      "format": "checkbox"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

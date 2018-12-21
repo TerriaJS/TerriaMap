@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "result-pending"
+      ]
+    }
+  },
+  "description": "A catalog item used to represent an in-progress asynchronous function in the Now Viewing.",
+  "title": "Result Pending",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "ResultPendingCatalogItem.json"
+    }
+  ]
+}

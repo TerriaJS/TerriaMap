@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "sos"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing data obtained from a Sensor Observation Service (SOS) 2.0 server.\rThe SOS specifications are available at http://www.opengeospatial.org/standards/sos .\rThis requires a json configuration file which specifies the procedures and observableProperties to show.\rIf more than one procedure or observableProperty is provided, the user can choose between the options.\rNote because of this need for configuration, there is no SOS catalog \"group\" (yet).\r\rThe offerings parameter is not used, and no spatial filters are provided.\rThe default soap XML request body can be overridden to handle custom requirements.",
+  "title": "SOS",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TableCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "SensorObservationServiceCatalogItem.json"
+    }
+  ]
+}

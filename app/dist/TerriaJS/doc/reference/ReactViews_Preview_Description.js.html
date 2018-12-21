@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ReactViews/Preview/Description.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ReactViews/Preview/Description.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+
+import createReactClass from 'create-react-class';
+
+import PropTypes from 'prop-types';
+
+import defined from 'terriajs-cesium/Source/Core/defined';
+
+import Collapsible from '../Custom/Collapsible/Collapsible';
+import DataPreviewSections from './DataPreviewSections';
+import DataUri from '../../Core/DataUri';
+import MetadataTable from './MetadataTable';
+import ObserveModelMixin from '../ObserveModelMixin';
+import parseCustomMarkdownToReact from '../Custom/parseCustomMarkdownToReact';
+import Styles from './mappable-preview.scss';
+
+/**
+ * CatalogItem description.
+ */
+const Description = createReactClass({
+    displayName: 'Description',
+    mixins: [ObserveModelMixin],
+
+    propTypes: {
+        item: PropTypes.object.isRequired,
+        printView: PropTypes.bool
+    },
+
+    render() {
+        const catalogItem = this.props.item;
+        const dataUrlType = catalogItem.dataUrlType;
+        let hasDataUriCapability;
+        let dataUri;
+        let dataUriFormat;
+        if (dataUrlType === 'data-uri' || dataUrlType === 'local') {
+            hasDataUriCapability = DataUri.checkCompatibility();
+            if (hasDataUriCapability) {
+                dataUri = catalogItem.dataUrl;
+                if (dataUri) {
+                    dataUriFormat = getDataUriFormat(dataUri);
+                }
+            }
+        }
+        return (
+            &lt;div className={Styles.description}>
+                &lt;If condition={catalogItem.description &amp;&amp; catalogItem.description.length > 0}>
+                    &lt;div>
+                        &lt;h4 className={Styles.h4}>Description&lt;/h4>
+                        {parseCustomMarkdownToReact(catalogItem.description, {catalogItem: catalogItem})}
+                    &lt;/div>
+                &lt;/If>
+
+                &lt;If condition={catalogItem.dataUrlType === 'local'}>
+                    &lt;p>This file only exists in your browser. To share it, you must load it onto a public web server.&lt;/p>
+                &lt;/If>
+
+                &lt;If condition={catalogItem.dataUrlType !== 'local' &amp;&amp; !catalogItem.hasDescription}>
+                    &lt;p>Please contact the provider of this data for more information, including information about usage rights and constraints.&lt;/p>
+                &lt;/If>
+
+                &lt;DataPreviewSections metadataItem={catalogItem}/>
+
+                &lt;If condition={catalogItem.dataCustodian &amp;&amp; catalogItem.dataCustodian.length > 0}>
+                    &lt;div>
+                        &lt;h4 className={Styles.h4}>Data Custodian&lt;/h4>
+                        {parseCustomMarkdownToReact(catalogItem.dataCustodian, {catalogItem: catalogItem})}
+                    &lt;/div>
+                &lt;/If>
+
+                &lt;If condition={!catalogItem.hideSource}>
+                    &lt;If condition={catalogItem.url}>
+                        &lt;h4 className={Styles.h4}>{catalogItem.typeName} URL&lt;/h4>
+                        &lt;Choose>
+                            &lt;When condition={catalogItem.type === 'wms'}>
+                                &lt;p key="wms-description">
+                                    This is a &lt;a href="https://en.wikipedia.org/wiki/Web_Map_Service" target="_blank" rel="noopener noreferrer">WMS
+                                    service&lt;/a>, which generates map images on request. It can be used in GIS software with this
+                                    URL:
+                                &lt;/p>
+                            &lt;/When>
+                            &lt;When condition={catalogItem.type === 'wfs'}>
+                                &lt;p key="wfs-description">
+                                    This is a &lt;a href="https://en.wikipedia.org/wiki/Web_Feature_Service" target="_blank" rel="noopener noreferrer">WFS
+                                    service&lt;/a>, which transfers raw spatial data on request. It can be used in GIS software with this
+                                    URL:
+                                &lt;/p>
+                            &lt;/When>
+                        &lt;/Choose>
+
+                        &lt;Choose>
+                            &lt;When condition={this.props.printView}>
+                                &lt;code>{catalogItem.url}&lt;/code>
+                            &lt;/When>
+                            &lt;Otherwise>
+                                &lt;input readOnly
+                                    className={Styles.field}
+                                    type="text"
+                                    value={catalogItem.url}
+                                    onClick={e => e.target.select()} />
+                            &lt;/Otherwise>
+                        &lt;/Choose>
+
+                        &lt;Choose>
+                            &lt;When condition={catalogItem.type === 'wms' || (catalogItem.type === 'esri-mapServer' &amp;&amp; defined(catalogItem.layers))}>
+                                &lt;p key="wms-layers">
+                                    Layer name{catalogItem.layers.split(',').length > 1 ? 's' : ''}: {catalogItem.layers}
+                                &lt;/p>
+                            &lt;/When>
+                            &lt;When condition={catalogItem.type === 'wfs'}>
+                                &lt;p key="wfs-typeNames">
+                                    Type name{catalogItem.typeNames.split(',').length > 1 ? 's' : ''}: {catalogItem.typeNames}
+                                &lt;/p>
+                            &lt;/When>
+                        &lt;/Choose>
+                    &lt;/If>
+
+                    &lt;If condition={catalogItem.metadataUrl}>
+                        &lt;h4 className={Styles.h4}>Metadata URL&lt;/h4>
+                        &lt;p>
+                            &lt;a href={catalogItem.metadataUrl} target="_blank" rel="noopener noreferrer"
+                               className={Styles.link}>{catalogItem.metadataUrl}&lt;/a>
+                        &lt;/p>
+                    &lt;/If>
+
+                    &lt;If condition={catalogItem.dataUrlType &amp;&amp; catalogItem.dataUrlType !== 'none' &amp;&amp; catalogItem.dataUrl}>
+                        &lt;h4 className={Styles.h4}>Data URL&lt;/h4>
+                        &lt;p>
+                            &lt;Choose>
+                                &lt;When condition={catalogItem.dataUrlType.indexOf('wfs') === 0 || catalogItem.dataUrlType.indexOf('wcs') === 0}>
+                                    Use the link below to download the data. See the{' '}
+                                    {catalogItem.dataUrlType.indexOf('wfs') === 0 &amp;&amp; &lt;a href="http://docs.geoserver.org/latest/en/user/services/wfs/reference.html" target="_blank" rel="noopener noreferrer" key="wfs">Web Feature Service (WFS) documentation&lt;/a>}
+                                    {catalogItem.dataUrlType.indexOf('wcs') === 0 &amp;&amp; &lt;a href="http://docs.geoserver.org/latest/en/user/services/wcs/reference.html" target="_blank" rel="noopener noreferrer" key="wms">Web Coverage Service (WCS) documentation&lt;/a>}
+                                    {' '} for more information on customising URL query parameters.
+                                    &lt;br/>
+                                    &lt;Link url={catalogItem.dataUrl} text={catalogItem.dataUrl}/>
+                                &lt;/When>
+                                &lt;When condition={dataUrlType === 'data-uri' || dataUrlType === 'local'}>
+                                    &lt;If condition={hasDataUriCapability}>
+                                        &lt;Link url={dataUri} text={"Download the currently selected data in " + dataUriFormat.toUpperCase() + " format"} download={getBetterFileName(dataUrlType, catalogItem.name, dataUriFormat)}/>
+                                    &lt;/If>
+                                    &lt;If condition={!hasDataUriCapability}>
+                                        Unfortunately your browser does not support the functionality needed to download this data as a file.
+                                        Please use Chrome, Firefox or Safari to download this data.
+                                    &lt;/If>
+                                &lt;/When>
+                                &lt;Otherwise>
+                                    Use the link below to download the data directly.
+                                    &lt;br/>
+                                    &lt;Link url={catalogItem.dataUrl} text={catalogItem.dataUrl}/>
+                                &lt;/Otherwise>
+                            &lt;/Choose>
+                        &lt;/p>
+                    &lt;/If>
+
+                    &lt;If condition={!this.props.printView &amp;&amp; defined(catalogItem.metadata)}>
+                        {/*
+                            // By default every catalog item has an error message here, so better to ignore it.
+                        &lt;If condition={defined(catalogItem.metadata.dataSourceErrorMessage)}>
+                            &lt;div className={Styles.error}>
+                                Error loading data source details: {catalogItem.metadata.dataSourceErrorMessage}
+                            &lt;/div>
+                        &lt;/If>
+                        */}
+                        &lt;If condition={defined(catalogItem.metadata.dataSourceMetadata) &amp;&amp; catalogItem.metadata.dataSourceMetadata.items.length > 0}>
+                            &lt;div className={Styles.metadata}>
+                                &lt;Collapsible title="Data Source Details" isInverse={true}>
+                                    &lt;MetadataTable metadataItem={catalogItem.metadata.dataSourceMetadata} />
+                                &lt;/Collapsible>
+                            &lt;/div>
+                        &lt;/If>
+
+                        {/*
+                        &lt;If condition={defined(catalogItem.metadata.serviceErrorMessage)}>
+                            &lt;div className={Styles.error}>
+                                Error loading data service details: {catalogItem.metadata.serviceErrorMessage}
+                            &lt;/div>
+                        &lt;/If>
+                        */}
+                        &lt;If condition={defined(catalogItem.metadata.dataSourceMetadata) &amp;&amp; catalogItem.metadata.dataSourceMetadata.items.length > 0}>
+                            &lt;div className={Styles.metadata}>
+                                &lt;Collapsible title="Data Service Details" isInverse={true}>
+                                    &lt;MetadataTable metadataItem={catalogItem.metadata.serviceMetadata} />
+                                &lt;/Collapsible>
+                            &lt;/div>
+                        &lt;/If>
+                    &lt;/If>
+
+                &lt;/If>
+            &lt;/div>
+        );
+    },
+});
+
+/**
+ * Read the format from the start of a data uri, eg. data:attachment/csv,...
+ * @param  {String} dataUri The data URI.
+ * @return {String} The format string, eg. 'csv', or undefined if none found.
+ */
+function getDataUriFormat(dataUri) {
+    if (defined(dataUri)) {
+        const slashIndex = dataUri.indexOf('/');
+        const commaIndex = dataUri.indexOf(',');
+        // Don't look into the data itself. Assume the format is somewhere in the first 40 chars.
+        if (slashIndex &lt; commaIndex &amp;&amp; commaIndex &lt; 40) {
+            return dataUri.slice(slashIndex + 1, commaIndex);
+        }
+    }
+}
+
+/**
+ * Return a nicer filename for this file.
+ * @private
+ */
+function getBetterFileName(dataUrlType, itemName, format) {
+    let name = itemName;
+    const extension = "." + format;
+    // Only add the extension if it's not already there.
+    if (name.indexOf(extension) !== name.length - extension.length) {
+        name = name + extension;
+    }
+    // For local files, the file already exists on the user's computer with the original name, so give it a modified name.
+    if (dataUrlType === 'local') {
+        name = "processed " + name;
+    }
+    return name;
+}
+
+const Link = createReactClass({
+    displayName: 'Link',
+    mixins: [ObserveModelMixin],
+
+    propTypes: {
+        url: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        download: PropTypes.string
+    },
+
+    render() {
+        return (
+            &lt;a href={this.props.url} className={Styles.link} download={this.props.download} target="_blank" rel="noopener noreferrer">{this.props.text}&lt;/a>
+        );
+    },
+});
+
+export default Description;
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:29 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

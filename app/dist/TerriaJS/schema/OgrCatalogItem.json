@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "dataSourceUrl": {
+      "type": "string",
+      "title": "Data source URL",
+      "description": "The URL from which the OgrCatalogItem's data was obtained.  This may be used\rto resolve any resources linked in the Ogr file, if any."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

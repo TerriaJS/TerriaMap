@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Map/LeafletVisualizer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Map/LeafletVisualizer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+"use strict";
+
+/*global require*/
+var L = require('leaflet');
+var AssociativeArray = require('terriajs-cesium/Source/Core/AssociativeArray');
+var Cartesian2 = require('terriajs-cesium/Source/Core/Cartesian2');
+var Cartesian3 = require('terriajs-cesium/Source/Core/Cartesian3');
+var Cartographic = require('terriajs-cesium/Source/Core/Cartographic');
+var CesiumMath = require('terriajs-cesium/Source/Core/Math');
+var Color = require('terriajs-cesium/Source/Core/Color');
+var defined = require('terriajs-cesium/Source/Core/defined');
+var destroyObject = require('terriajs-cesium/Source/Core/destroyObject');
+var DeveloperError = require('terriajs-cesium/Source/Core/DeveloperError');
+var Ellipsoid = require('terriajs-cesium/Source/Core/Ellipsoid');
+var Property = require('terriajs-cesium/Source/DataSources/Property');
+var writeTextToCanvas = require('terriajs-cesium/Source/Core/writeTextToCanvas');
+var PolylineGlowMaterialProperty = require('terriajs-cesium/Source/DataSources/PolylineGlowMaterialProperty');
+
+
+var defaultColor = Color.WHITE;
+var defaultOutlineColor = Color.BLACK;
+var defaultOutlineWidth = 1.0;
+var defaultPixelSize = 5.0;
+
+var defaultWidth = 5.0;
+
+//NOT IMPLEMENTED
+// Path primitive - no need identified
+// Ellipse primitive - no need identified
+// Ellipsoid primitive - 3d prim - no plans for this
+// Model primitive - 3d prim - no plans for this
+
+/**
+ * A {@link Visualizer} which maps {@link Entity#point} to Leaflet primitives.
+ * @alias LeafletGeomVisualizer
+ * @constructor
+ *
+ * @param {LeafletScene} leafletScene The Leaflet scene that the the primitives will be rendered in.
+ * @param {EntityCollection} entityCollection The entityCollection to visualize.
+ */
+var LeafletGeomVisualizer = function(leafletScene, entityCollection) {
+    if (!defined(leafletScene)) {
+        throw new DeveloperError('leafletScene is required.');
+    }
+    if (!defined(entityCollection)) {
+        throw new DeveloperError('entityCollection is required.');
+    }
+
+    var featureGroup = L.featureGroup().addTo(leafletScene.map);
+    entityCollection.collectionChanged.addEventListener(LeafletGeomVisualizer.prototype._onCollectionChanged, this);
+
+    this._leafletScene = leafletScene;
+    this._featureGroup = featureGroup;
+    this._entityCollection = entityCollection;
+    this._entitiesToVisualize = new AssociativeArray();
+    this._entityHash = {};
+
+    this._onCollectionChanged(entityCollection, entityCollection.values, [], []);
+};
+
+
+LeafletGeomVisualizer.prototype._onCollectionChanged = function(entityCollection, added, removed, changed) {
+    var i;
+    var entity;
+    var featureGroup = this._featureGroup;
+    var entities = this._entitiesToVisualize;
+    var entityHash = this._entityHash;
+
+    for (i = added.length - 1; i > -1; i--) {
+        entity = added[i];
+        if (((defined(entity._point) || defined(entity._billboard) || defined(entity._label)) &amp;&amp; defined(entity._position))
+            || defined(entity._polyline) || defined(entity._polygon)) {
+
+            entities.set(entity.id, entity);
+            entityHash[entity.id] = {};
+        }
+    }
+
+    for (i = changed.length - 1; i > -1; i--) {
+        entity = changed[i];
+        if (((defined(entity._point) || defined(entity._billboard) || defined(entity._label)) &amp;&amp; defined(entity._position))
+            || defined(entity._polyline) || defined(entity._polygon)) {
+            entities.set(entity.id, entity);
+            entityHash[entity.id] = entityHash[entity.id] || {};
+        } else {
+            cleanEntity(entity, featureGroup, entityHash);
+            entities.remove(entity.id);
+        }
+    }
+
+    for (i = removed.length - 1; i > -1; i--) {
+        entity = removed[i];
+        cleanEntity(entity, featureGroup, entityHash);
+        entities.remove(entity.id);
+    }
+};
+
+
+function cleanEntity(entity, group, entityHash) {
+    var details = entityHash[entity.id];
+
+    cleanPoint(entity, group, details);
+    cleanPolygon(entity, group, details);
+    cleanBillboard(entity, group, details);
+    cleanLabel(entity, group, details);
+    cleanPolyline(entity, group, details);
+
+    delete entityHash[entity.id];
+}
+
+function cleanPoint(entity, group, details) {
+    if (defined(details.point)) {
+        group.removeLayer(details.point.layer);
+        details.point = undefined;
+    }
+}
+
+function cleanPolygon(entity, group, details) {
+    if (defined(details.polygon)) {
+        group.removeLayer(details.polygon.layer);
+        details.polygon = undefined;
+    }
+}
+
+function cleanBillboard(entity, group, details) {
+    if (defined(details.billboard)) {
+        group.removeLayer(details.billboard.layer);
+        details.billboard = undefined;
+    }
+}
+
+function cleanLabel(entity, group, details) {
+    if (defined(details.label)) {
+        group.removeLayer(details.label.layer);
+        details.label = undefined;
+    }
+}
+
+function cleanPolyline(entity, group, details) {
+    if (defined(details.polyline)) {
+        group.removeLayer(details.polyline.layer);
+        details.polyline = undefined;
+    }
+}
+
+/**
+ * Updates the primitives created by this visualizer to match their
+ * Entity counterpart at the given time.
+ *
+ * @param {JulianDate} time The time to update to.
+ * @returns {Boolean} This function always returns true.
+ */
+LeafletGeomVisualizer.prototype.update = function(time) {
+    //>>includeStart('debug', pragmas.debug);
+    if (!defined(time)) {
+        throw new DeveloperError('time is required.');
+    }
+    //>>includeEnd('debug');
+
+    var entities = this._entitiesToVisualize.values;
+    var entityHash = this._entityHash;
+
+    for (var i = 0, len = entities.length; i &lt; len; i++) {
+        var entity = entities[i];
+        var entityDetails = entityHash[entity.id];
+
+        if (defined(entity._point)) {
+            this._updatePoint(entity, time, entityHash, entityDetails);
+        }
+        if (defined(entity._billboard)) {
+            this._updateBillboard(entity, time, entityHash, entityDetails);
+        }
+        if (defined(entity._label)) {
+            this._updateLabel(entity, time, entityHash, entityDetails);
+        }
+        if (defined(entity._polyline)) {
+            this._updatePolyline(entity, time, entityHash, entityDetails);
+        }
+        if (defined(entity._polygon)) {
+            this._updatePolygon(entity, time, entityHash, entityDetails);
+        }
+    }
+
+    return true;
+};
+
+var cartographicScratch = new Cartographic();
+
+function positionToLatLng(position) {
+    var cartographic = Ellipsoid.WGS84.cartesianToCartographic(position, cartographicScratch);
+    return L.latLng(CesiumMath.toDegrees(cartographic.latitude), CesiumMath.toDegrees(cartographic.longitude));
+}
+
+LeafletGeomVisualizer.prototype._updatePoint = function(entity, time, entityHash, entityDetails) {
+    var featureGroup = this._featureGroup;
+    var pointGraphics = entity._point;
+
+    var show = entity.isAvailable(time) &amp;&amp; Property.getValueOrDefault(pointGraphics._show, time, true);
+    if (!show) {
+        cleanPoint(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var details = entityDetails.point;
+    if (!defined(details)) {
+        details = entityDetails.point = {
+            layer: undefined,
+            lastPosition: new Cartesian3(),
+            lastPixelSize: 1,
+            lastColor: new Color(),
+            lastOutlineColor: new Color(),
+            lastOutlineWidth: 1
+        };
+    }
+
+    var position = Property.getValueOrUndefined(entity._position, time);
+    if (!defined(position)) {
+        cleanPoint(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var pixelSize = Property.getValueOrDefault(pointGraphics._pixelSize, time, defaultPixelSize);
+    var color = Property.getValueOrDefault(pointGraphics._color, time, defaultColor);
+    var outlineColor = Property.getValueOrDefault(pointGraphics._outlineColor, time, defaultOutlineColor);
+    var outlineWidth = Property.getValueOrDefault(pointGraphics._outlineWidth, time, defaultOutlineWidth);
+
+    var layer = details.layer;
+
+    if (!defined(layer)){
+        var pointOptions = {
+            radius: pixelSize / 2.0,
+            fillColor: color.toCssColorString(),
+            fillOpacity: color.alpha,
+            color: outlineColor.toCssColorString(),
+            weight: outlineWidth,
+            opacity: outlineColor.alpha
+        };
+
+        layer = details.layer = L.circleMarker(positionToLatLng(position), pointOptions);
+        layer.on('click', featureClicked.bind(undefined, this, entity));
+        layer.on('mousedown', featureMousedown.bind(undefined, this, entity));
+        featureGroup.addLayer(layer);
+
+        Cartesian3.clone(position, details.lastPosition);
+        details.lastPixelSize = pixelSize;
+        Color.clone(color, details.lastColor);
+        Color.clone(outlineColor, details.lastOutlineColor);
+        details.lastOutlineWidth = outlineWidth;
+
+        return;
+    }
+
+    if (!Cartesian3.equals(position, details.lastPosition)) {
+        layer.setLatLng(positionToLatLng(position));
+        Cartesian3.clone(position, details.lastPosition);
+    }
+
+    if (pixelSize !== details.lastPixelSize) {
+        layer.setRadius(pixelSize / 2.0);
+        details.lastPixelSize = pixelSize;
+    }
+
+    var options = layer.options;
+    var applyStyle = false;
+
+    if (!Color.equals(color, details.lastColor)) {
+        options.fillColor = color.toCssColorString();
+        options.fillOpacity = color.alpha;
+        Color.clone(color, details.lastColor);
+        applyStyle = true;
+    }
+
+    if (!Color.equals(outlineColor, details.lastOutlineColor)) {
+        options.color = outlineColor.toCssColorString();
+        options.opacity = outlineColor.alpha;
+        Color.clone(outlineColor, details.lastOutlineColor);
+        applyStyle = true;
+    }
+
+    if (outlineWidth !== details.lastOutlineWidth) {
+        options.weight = outlineWidth;
+        details.lastOutlineWidth = outlineWidth;
+        applyStyle = true;
+    }
+
+    if (applyStyle) {
+        layer.setStyle(options);
+    }
+};
+
+LeafletGeomVisualizer.prototype._updatePolygon = function(entity, time, entityHash, entityDetails) {
+    var featureGroup = this._featureGroup;
+    var polygonGraphics = entity._polygon;
+
+    var show = entity.isAvailable(time) &amp;&amp; Property.getValueOrDefault(polygonGraphics._show, time, true);
+    if (!show) {
+        cleanPolygon(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var details = entityDetails.polygon;
+    if (!defined(details)) {
+        details = entityDetails.polygon = {
+            layer: undefined,
+            lastHierarchy: undefined,
+            lastFill: undefined,
+            lastFillColor: new Color(),
+            lastOutline: undefined,
+            lastOutlineColor: new Color()
+        };
+    }
+
+    var hierarchy = Property.getValueOrUndefined(polygonGraphics._hierarchy, time);
+    if (!defined(hierarchy)) {
+        cleanPolygon(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var fill = Property.getValueOrDefault(polygonGraphics._fill, time, true);
+    var outline = Property.getValueOrDefault(polygonGraphics._outline, time, true);
+    var outlineColor = Property.getValueOrDefault(polygonGraphics._outlineColor, time, defaultOutlineColor);
+
+    var material = Property.getValueOrUndefined(polygonGraphics._material, time);
+    var fillColor;
+    if (defined(material) &amp;&amp; defined(material.color)) {
+        fillColor = material.color;
+    } else {
+        fillColor = defaultColor;
+    }
+
+    var layer = details.layer;
+    if (!defined(layer)) {
+        var polygonOptions = {
+            fill: fill,
+            fillColor: fillColor.toCssColorString(),
+            fillOpacity: fillColor.alpha,
+            weight: outline ? 1.0 : 0.0,
+            color: outlineColor.toCssColorString(),
+            opacity: outlineColor.alpha
+        };
+
+        layer = details.layer = L.polygon(hierarchyToLatLngs(hierarchy), polygonOptions);
+        layer.on('click', featureClicked.bind(undefined, this, entity));
+        layer.on('mousedown', featureMousedown.bind(undefined, this, entity));
+        featureGroup.addLayer(layer);
+
+        details.lastHierarchy = hierarchy;
+        details.lastFill = fill;
+        details.lastOutline = outline;
+        Color.clone(fillColor, details.lastFillColor);
+        Color.clone(outlineColor, details.lastOutlineColor);
+
+        return;
+    }
+
+    if (hierarchy !== details.lastHierachy) {
+        layer.setLatLngs(hierarchyToLatLngs(hierarchy));
+        details.lastHierachy = hierarchy;
+    }
+
+    var options = layer.options;
+    var applyStyle = false;
+
+    if (fill !== details.lastFill) {
+        options.fill = fill;
+        details.lastFill = fill;
+        applyStyle = true;
+    }
+
+    if (outline !== details.lastOutline) {
+        options.weight = outline ? 1.0 : 0.0;
+        details.lastOutline = outline;
+        applyStyle = true;
+    }
+
+    if (!Color.equals(fillColor, details.lastFillColor)) {
+        options.fillColor = fillColor.toCssColorString();
+        options.fillOpacity = fillColor.alpha;
+        Color.clone(fillColor, details.lastFillColor);
+        applyStyle = true;
+    }
+
+    if (!Color.equals(outlineColor, details.lastOutlineColor)) {
+        options.color = outlineColor.toCssColorString();
+        options.opacity = outlineColor.alpha;
+        Color.clone(outlineColor, details.lastOutlineColor);
+        applyStyle = true;
+    }
+
+    if (applyStyle) {
+        layer.setStyle(options);
+    }
+};
+
+function hierarchyToLatLngs(hierarchy) {
+    // This function currently does not handle polygons with holes.
+
+    var positions = Array.isArray(hierarchy) ? hierarchy : hierarchy.positions;
+    var carts = Ellipsoid.WGS84.cartesianArrayToCartographicArray(positions);
+    var latlngs = [];
+    for (var i = 0; i &lt; carts.length; ++i) {
+        latlngs.push(L.latLng(CesiumMath.toDegrees(carts[i].latitude), CesiumMath.toDegrees(carts[i].longitude)));
+    }
+
+    return latlngs;
+}
+
+//Recolor an image using 2d canvas
+function recolorBillboard(img, color) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    // Copy the image contents to the canvas
+    var context = canvas.getContext("2d");
+    context.drawImage(img, 0, 0);
+    var image = context.getImageData(0, 0, canvas.width, canvas.height);
+    var normClr = [color.red, color.green, color.blue, color.alpha];
+
+    var length = image.data.length;  //pixel count * 4
+    for (var i = 0; i &lt; length; i += 4) {
+        for (var j = 0; j &lt; 4; j++) {
+            image.data[j+i] *= normClr[j];
+        }
+    }
+
+    context.putImageData(image, 0, 0);
+    return canvas.toDataURL();
+//    return context.getImageData(0, 0, canvas.width, canvas.height);
+}
+
+//Single pixel black dot
+var tmpImage = "data:image/gif;base64,R0lGODlhAQABAPAAAAAAAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==";
+
+//NYI: currently skipping all the camera distance related properties
+LeafletGeomVisualizer.prototype._updateBillboard = function(entity, time, entityHash, entityDetails) {
+    var markerGraphics = entity._billboard;
+    var featureGroup = this._featureGroup;
+    var position, marker;
+
+    var details = entityDetails.billboard;
+    if (!defined(details)) {
+        details = entityDetails.billboard = {
+            layer: undefined
+        };
+    }
+
+    var geomLayer = details.layer;
+
+    var show = entity.isAvailable(time) &amp;&amp; Property.getValueOrDefault(markerGraphics._show, time, true);
+    if (show) {
+        position = Property.getValueOrUndefined(entity._position, time);
+        show = defined(position);
+    }
+    if (!show) {
+        cleanBillboard(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var cart = Ellipsoid.WGS84.cartesianToCartographic(position);
+    var latlng = L.latLng( CesiumMath.toDegrees(cart.latitude), CesiumMath.toDegrees(cart.longitude) );
+    var image = Property.getValueOrDefault(markerGraphics._image, time, undefined);
+    var height = Property.getValueOrDefault(markerGraphics._height, time, undefined);
+    var width = Property.getValueOrDefault(markerGraphics._width, time, undefined);
+    var color = Property.getValueOrDefault(markerGraphics._color, time, defaultColor);
+    var scale = Property.getValueOrDefault(markerGraphics._scale, time, 1.0);
+    var verticalOrigin = Property.getValueOrDefault(markerGraphics._verticalOrigin, time, 0);
+    var horizontalOrigin = Property.getValueOrDefault(markerGraphics._horizontalOrigin, time, 0);
+    var pixelOffset = Property.getValueOrDefault(markerGraphics._pixelOffset, time, Cartesian2.ZERO);
+
+    var imageUrl;
+    if (defined(image)) {
+        if (typeof image === 'string') {
+            imageUrl = image;
+        } else if (defined(image.toDataURL)) {
+            imageUrl = image.toDataURL();
+        } else {
+            imageUrl = image.src;
+        }
+    }
+
+    var iconOptions = {
+        color: color.toCssColorString(),
+        origUrl: imageUrl,
+        scale: scale,
+        horizontalOrigin: horizontalOrigin,  //value: left, center, right
+        verticalOrigin: verticalOrigin      //value: bottom, center, top
+    };
+
+    if (defined(height) || defined(width)) {
+        iconOptions.iconSize = [width, height];
+    }
+
+    var redrawIcon = false;
+    if (!defined(geomLayer)) {
+        var markerOptions = {icon: L.icon({iconUrl: tmpImage})};
+        marker = L.marker(latlng, markerOptions);
+        marker.on('click', featureClicked.bind(undefined, this, entity));
+        marker.on('mousedown', featureMousedown.bind(undefined, this, entity));
+        featureGroup.addLayer(marker);
+        details.layer = marker;
+        redrawIcon = true;
+    } else {
+        marker = geomLayer;
+        if (!marker._latlng.equals(latlng)) {
+            marker.setLatLng(latlng);
+        }
+        for (var prop in iconOptions) {
+            if (iconOptions[prop] !== marker.options.icon.options[prop]) {
+                redrawIcon = true;
+                break;
+            }
+        }
+    }
+
+    if (redrawIcon) {
+        var drawBillboard = function(image, dataurl) {
+            iconOptions.iconUrl = dataurl || image;
+            if (!defined(iconOptions.iconSize)) {
+                iconOptions.iconSize = [image.width * scale, image.height * scale];
+            }
+            var w = iconOptions.iconSize[0], h = iconOptions.iconSize[1];
+            var xOff = (w/2)*(1-horizontalOrigin) - pixelOffset.x;
+            var yOff = (h/2)*(1+verticalOrigin) - pixelOffset.y;
+            iconOptions.iconAnchor = [xOff, yOff];
+
+            if (!color.equals(defaultColor)) {
+                iconOptions.iconUrl = recolorBillboard(image, color);
+            }
+            marker.setIcon(L.icon(iconOptions));
+        };
+        var img = new Image();
+        img.onload = function() {
+            drawBillboard(img, imageUrl);
+        };
+        img.src = imageUrl;
+    }
+};
+
+
+LeafletGeomVisualizer.prototype._updateLabel = function(entity, time, entityHash, entityDetails) {
+    var labelGraphics = entity._label;
+    var featureGroup = this._featureGroup;
+    var position, marker;
+
+    var details = entityDetails.label;
+    if (!defined(details)) {
+        details = entityDetails.label = {
+            layer: undefined
+        };
+    }
+
+    var geomLayer = details.layer;
+
+    var show = entity.isAvailable(time) &amp;&amp; Property.getValueOrDefault(labelGraphics._show, time, true);
+    if (show) {
+        position = Property.getValueOrUndefined(entity._position, time);
+        show = defined(position);
+    }
+    if (!show) {
+        cleanLabel(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var cart = Ellipsoid.WGS84.cartesianToCartographic(position);
+    var latlng = L.latLng( CesiumMath.toDegrees(cart.latitude), CesiumMath.toDegrees(cart.longitude) );
+    var text = Property.getValueOrDefault(labelGraphics._text, time, undefined);
+    var font = Property.getValueOrDefault(labelGraphics._font, time, undefined);
+    var scale = Property.getValueOrDefault(labelGraphics._scale, time, 1.0);
+    var fillColor = Property.getValueOrDefault(labelGraphics._fillColor, time, defaultColor);
+    var verticalOrigin = Property.getValueOrDefault(labelGraphics._verticalOrigin, time, 0);
+    var horizontalOrigin = Property.getValueOrDefault(labelGraphics._horizontalOrigin, time, 0);
+    var pixelOffset = Property.getValueOrDefault(labelGraphics._pixelOffset, time, Cartesian2.ZERO);
+
+    var iconOptions = {
+        text: text,
+        font: font,
+        color: fillColor.toCssColorString(),
+        scale: scale,
+        horizontalOrigin: horizontalOrigin,  //value: left, center, right
+        verticalOrigin: verticalOrigin      //value: bottom, center, top
+    };
+
+    var redrawLabel = false;
+    if (!defined(geomLayer)) {
+        var markerOptions = {icon: L.icon({iconUrl: tmpImage})};
+        marker = L.marker(latlng, markerOptions);
+        marker.on('click', featureClicked.bind(undefined, this, entity));
+        marker.on('mousedown', featureMousedown.bind(undefined, this, entity));
+        featureGroup.addLayer(marker);
+        details.layer = marker;
+        redrawLabel = true;
+    } else {
+        marker = geomLayer;
+        if (!marker._latlng.equals(latlng)) {
+            marker.setLatLng(latlng);
+        }
+        for (var prop in iconOptions) {
+            if (iconOptions[prop] !== marker.options.icon.options[prop]) {
+                redrawLabel = true;
+                break;
+            }
+        }
+    }
+
+    if (redrawLabel) {
+        var drawBillboard = function(image, dataurl) {
+            iconOptions.iconUrl = dataurl || image;
+            if (!defined(iconOptions.iconSize)) {
+                iconOptions.iconSize = [image.width * scale, image.height * scale];
+            }
+            var w = iconOptions.iconSize[0], h = iconOptions.iconSize[1];
+            var xOff = (w/2)*(1-horizontalOrigin) - pixelOffset.x;
+            var yOff = (h/2)*(1+verticalOrigin) - pixelOffset.y;
+            iconOptions.iconAnchor = [xOff, yOff];
+            marker.setIcon(L.icon(iconOptions));
+        };
+
+        var canvas = writeTextToCanvas(text, {fillColor: fillColor, font: font});
+        var imageUrl = canvas.toDataURL();
+
+        var img = new Image();
+        img.onload = function() {
+            drawBillboard(img, imageUrl);
+        };
+        img.src = imageUrl;
+    }
+};
+
+LeafletGeomVisualizer.prototype._updatePolyline = function(entity, time, entityHash, entityDetails) {
+    var polylineGraphics = entity._polyline;
+    var featureGroup = this._featureGroup;
+    var positions, polyline;
+
+    var details = entityDetails.polyline;
+    if (!defined(details)) {
+        details = entityDetails.polyline = {
+            layer: undefined
+        };
+    }
+
+    var geomLayer = details.layer;
+
+    var show = entity.isAvailable(time) &amp;&amp; Property.getValueOrDefault(polylineGraphics._show, time, true);
+    if (show) {
+        positions = Property.getValueOrUndefined(polylineGraphics._positions, time);
+        show = defined(positions);
+    }
+    if (!show) {
+        cleanPolyline(entity, featureGroup, entityDetails);
+        return;
+    }
+
+    var carts = Ellipsoid.WGS84.cartesianArrayToCartographicArray(positions);
+    var latlngs = [];
+    for (var p = 0; p &lt; carts.length; p++) {
+        latlngs.push(L.latLng( CesiumMath.toDegrees(carts[p].latitude), CesiumMath.toDegrees(carts[p].longitude)));
+    }
+
+    var color;
+    var width;
+    if (polylineGraphics._material instanceof PolylineGlowMaterialProperty) {
+        color = defaultColor;
+        width = defaultWidth;
+    } else {
+        color = Property.getValueOrDefault(polylineGraphics._material.color, time, defaultColor);
+        width = Property.getValueOrDefault(polylineGraphics._width, time, defaultWidth);
+    }
+
+    var polylineOptions = {
+        color: color.toCssColorString(),
+        weight: width,
+        opacity: color.alpha
+    };
+
+    if (!defined(geomLayer)) {
+        if (latlngs.length > 0) {
+            polyline = L.polyline(latlngs, polylineOptions);
+            polyline.on('click', featureClicked.bind(undefined, this, entity));
+            polyline.on('mousedown', featureMousedown.bind(undefined, this, entity));
+            featureGroup.addLayer(polyline);
+            details.layer = polyline;
+        }
+    } else {
+        polyline = geomLayer;
+        var curLatLngs = polyline.getLatLngs();
+        var bPosChange = (latlngs.length !== curLatLngs.length);
+        for (var i = 0; i &lt; curLatLngs.length &amp;&amp; !bPosChange; i++) {
+            if (!curLatLngs[i].equals(latlngs[i])) {
+                bPosChange = true;
+            }
+        }
+        if (bPosChange) {
+            polyline.setLatLngs(latlngs);
+        }
+        for (var prop in polylineOptions) {
+            if (polylineOptions[prop] !== polyline.options[prop]) {
+                polyline.setStyle(polylineOptions);
+                break;
+            }
+        }
+    }
+};
+
+/**
+ * Returns true if this object was destroyed; otherwise, false.
+ *
+ * @returns {Boolean} True if this object was destroyed; otherwise, false.
+ */
+LeafletGeomVisualizer.prototype.isDestroyed = function() {
+    return false;
+};
+
+/**
+ * Removes and destroys all primitives created by this instance.
+ */
+LeafletGeomVisualizer.prototype.destroy = function() {
+    var entities = this._entitiesToVisualize.values;
+    var entityHash = this._entityHash;
+
+    for (var i = entities.length - 1; i > -1; i--) {
+        cleanEntity(entities[i], this._featureGroup, entityHash);
+    }
+
+    this._entityCollection.collectionChanged.removeEventListener(LeafletGeomVisualizer.prototype._onCollectionChanged, this);
+    this._leafletScene.map.removeLayer(this._featureGroup);
+    return destroyObject(this);
+};
+
+////////////////////////////////////////////////////////
+
+var LeafletVisualizer = function() {
+};
+
+LeafletVisualizer.prototype.visualizersCallback = function(leafletScene, entityCluster, dataSource) {
+    var entities = dataSource.entities;
+    return [new LeafletGeomVisualizer(leafletScene, entities)];
+};
+
+
+function featureClicked(visualizer, entity, event) {
+    visualizer._leafletScene.featureClicked.raiseEvent(entity, event);
+}
+
+function featureMousedown(visualizer, entity, event) {
+    visualizer._leafletScene.featureMousedown.raiseEvent(entity, event);
+}
+
+module.exports = LeafletVisualizer;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AbsCode.html">AbsCode</a></li><li><a href="AbsConcept.html">AbsConcept</a></li><li><a href="AbsDataset.html">AbsDataset</a></li><li><a href="AbsIttCatalogGroup.html">AbsIttCatalogGroup</a></li><li><a href="AbsIttCatalogItem.html">AbsIttCatalogItem</a></li><li><a href="AddressGeocoder.html">AddressGeocoder</a></li><li><a href="ArcGisCatalogGroup.html">ArcGisCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogGroup.html">ArcGisFeatureServerCatalogGroup</a></li><li><a href="ArcGisFeatureServerCatalogItem.html">ArcGisFeatureServerCatalogItem</a></li><li><a href="ArcGisMapServerCatalogGroup.html">ArcGisMapServerCatalogGroup</a></li><li><a href="ArcGisMapServerCatalogItem.html">ArcGisMapServerCatalogItem</a></li><li><a href="AugmentedVirtuality.html">AugmentedVirtuality</a></li><li><a href="BingMapsCatalogItem.html">BingMapsCatalogItem</a></li><li><a href="BooleanParameter.html">BooleanParameter</a></li><li><a href="BulkAddressGeocoderResult.html">BulkAddressGeocoderResult</a></li><li><a href="CameraView.html">CameraView</a></li><li><a href="CartoMapCatalogItem.html">CartoMapCatalogItem</a></li><li><a href="Catalog.html">Catalog</a></li><li><a href="CatalogFunction.html">CatalogFunction</a></li><li><a href="CatalogGroup.html">CatalogGroup</a></li><li><a href="CatalogItem.html">CatalogItem</a></li><li><a href="CatalogMember.html">CatalogMember</a></li><li><a href="Cesium.html">Cesium</a></li><li><a href="Cesium3DTilesCatalogItem.html">Cesium3DTilesCatalogItem</a></li><li><a href="CesiumDragPoints.html">CesiumDragPoints</a></li><li><a href="CesiumTerrainCatalogItem.html">CesiumTerrainCatalogItem</a></li><li><a href="CkanCatalogGroup.html">CkanCatalogGroup</a></li><li><a href="CkanCatalogItem.html">CkanCatalogItem</a></li><li><a href="Clock.html">Clock</a></li><li><a href="CompositeCatalogItem.html">CompositeCatalogItem</a></li><li><a href="Concept.html">Concept</a></li><li><a href="CorsProxy.html">CorsProxy</a></li><li><a href="CsvCatalogItem.html">CsvCatalogItem</a></li><li><a href="CswCatalogGroup.html">CswCatalogGroup</a></li><li><a href="CustomComponentType.html">CustomComponentType</a></li><li><a href="CzmlCatalogItem.html">CzmlCatalogItem</a></li><li><a href="DataSourceCatalogItem.html">DataSourceCatalogItem</a></li><li><a href="DateTimeParameter.html">DateTimeParameter</a></li><li><a href="DisplayVariablesConcept.html">DisplayVariablesConcept</a></li><li><a href="EnumerationParameter.html">EnumerationParameter</a></li><li><a href="Feature.html">Feature</a></li><li><a href="FunctionParameter.html">FunctionParameter</a></li><li><a href="GeoJsonCatalogItem.html">GeoJsonCatalogItem</a></li><li><a href="GlobeOrMap.html">GlobeOrMap</a></li><li><a href="GnafAddressGeocoder.html">GnafAddressGeocoder</a></li><li><a href="GnafApi.html">GnafApi</a></li><li><a href="GnafSearchProviderViewModel.html">GnafSearchProviderViewModel</a></li><li><a href="GpxCatalogItem.html">GpxCatalogItem</a></li><li><a href="HelpScreen.html">HelpScreen</a></li><li><a href="HelpSequence.html">HelpSequence</a></li><li><a href="HelpSequences.html">HelpSequences</a></li><li><a href="HelpViewState.html">HelpViewState</a></li><li><a href="ImageryLayerCatalogItem____.html">ImageryLayerCatalogItem</a></li><li><a href="IonImageryCatalogItem.html">IonImageryCatalogItem</a></li><li><a href="KmlCatalogItem.html">KmlCatalogItem</a></li><li><a href="Leaflet.html">Leaflet</a></li><li><a href="LeafletDataSourceDisplay.html">LeafletDataSourceDisplay</a></li><li><a href="LeafletDragPoints.html">LeafletDragPoints</a></li><li><a href="LeafletGeomVisualizer.html">LeafletGeomVisualizer</a></li><li><a href="LegendHelper.html">LegendHelper</a></li><li><a href="LegendUrl.html">LegendUrl</a></li><li><a href="LineParameter.html">LineParameter</a></li><li><a href="MagdaCatalogItem.html">MagdaCatalogItem</a></li><li><a href="MapboxMapCatalogItem.html">MapboxMapCatalogItem</a></li><li><a href="MapInteractionMode.html">MapInteractionMode</a></li><li><a href="Metadata.html">Metadata</a></li><li><a href="MetadataItem.html">MetadataItem</a></li><li><a href="module.html#.exports">exports</a></li><li><a href="OgrCatalogItem.html">OgrCatalogItem</a></li><li><a href="OpenStreetMapCatalogItem.html">OpenStreetMapCatalogItem</a></li><li><a href="PlacesLikeMeCatalogfunction.html">PlacesLikeMeCatalogfunction</a></li><li><a href="PointParameter.html">PointParameter</a></li><li><a href="Polling.html">Polling</a></li><li><a href="PolygonParameter.html">PolygonParameter</a></li><li><a href="RectangleParameter.html">RectangleParameter</a></li><li><a href="RegionDataParameter.html">RegionDataParameter</a></li><li><a href="RegionMapping.html">RegionMapping</a></li><li><a href="RegionParameter.html">RegionParameter</a></li><li><a href="RegionProvider.html">RegionProvider</a></li><li><a href="RegionProviderList.html">RegionProviderList</a></li><li><a href="RegionTypeParameter.html">RegionTypeParameter</a></li><li><a href="ResultPendingCatalogItem.html">ResultPendingCatalogItem</a></li><li><a href="SdmxJsonCatalogItem.html">SdmxJsonCatalogItem</a></li><li><a href="SensorObservationServiceCatalogItem.html">SensorObservationServiceCatalogItem</a></li><li><a href="SocrataCatalogGroup.html">SocrataCatalogGroup</a></li><li><a href="SpatialDetailingCatalogFunction.html">SpatialDetailingCatalogFunction</a></li><li><a href="StringParameter.html">StringParameter</a></li><li><a href="SummaryConcept.html">SummaryConcept</a></li><li><a href="TableCatalogItem.html">TableCatalogItem</a></li><li><a href="TableColumn.html">TableColumn</a></li><li><a href="TableColumnStyle.html">TableColumnStyle</a></li><li><a href="TableDataSource.html">TableDataSource</a></li><li><a href="TableStructure.html">TableStructure</a></li><li><a href="TableStyle.html">TableStyle</a></li><li><a href="TerrainCatalogItem.html">TerrainCatalogItem</a></li><li><a href="Terria.html">Terria</a></li><li><a href="TerriaError.html">TerriaError</a></li><li><a href="TerriaJsonCatalogFunction.html">TerriaJsonCatalogFunction</a></li><li><a href="TimeSeriesStack.html">TimeSeriesStack</a></li><li><a href="UrlTemplateCatalogItem.html">UrlTemplateCatalogItem</a></li><li><a href="UrthecastCatalogGroup.html">UrthecastCatalogGroup</a></li><li><a href="UrthecastServerCatalogItem.html">UrthecastServerCatalogItem</a></li><li><a href="UserDrawing.html">UserDrawing</a></li><li><a href="VariableConcept.html">VariableConcept</a></li><li><a href="ViewerModes..html">ViewerModes.</a></li><li><a href="WebFeatureServiceCatalogGroup.html">WebFeatureServiceCatalogGroup</a></li><li><a href="WebFeatureServiceCatalogItem.html">WebFeatureServiceCatalogItem</a></li><li><a href="WebMapServiceCatalogGroup.html">WebMapServiceCatalogGroup</a></li><li><a href="WebMapServiceCatalogItem.html">WebMapServiceCatalogItem</a></li><li><a href="WebMapTileServiceCatalogGroup.html">WebMapTileServiceCatalogGroup</a></li><li><a href="WebMapTileServiceCatalogItem.html">WebMapTileServiceCatalogItem</a></li><li><a href="WebProcessingServiceCatalogFunction.html">WebProcessingServiceCatalogFunction</a></li><li><a href="WebProcessingServiceCatalogGroup.html">WebProcessingServiceCatalogGroup</a></li><li><a href="WebProcessingServiceCatalogItem.html">WebProcessingServiceCatalogItem</a></li><li><a href="WfsFeaturesCatalogGroup.html">WfsFeaturesCatalogGroup</a></li><li><a href="WhyAmISpecialCatalogFunction.html">WhyAmISpecialCatalogFunction</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bumpyTerrainProvider">_bumpyTerrainProvider</a></li><li><a href="global.html#_terrain">_terrain</a></li><li><a href="global.html#activeTimeColumnNameIdOrIndex">activeTimeColumnNameIdOrIndex</a></li><li><a href="global.html#addBoundingBox">addBoundingBox</a></li><li><a href="global.html#addMarker">addMarker</a></li><li><a href="global.html#addUserCatalogMember">addUserCatalogMember</a></li><li><a href="global.html#allFeaturesAvailablePromise">allFeaturesAvailablePromise</a></li><li><a href="global.html#allShareKeys">allShareKeys</a></li><li><a href="global.html#arrayProduct">arrayProduct</a></li><li><a href="global.html#barHeightMax">barHeightMax</a></li><li><a href="global.html#barHeightMin">barHeightMin</a></li><li><a href="global.html#barLeft">barLeft</a></li><li><a href="global.html#barTop">barTop</a></li><li><a href="global.html#buildEmptyAccumulator">buildEmptyAccumulator</a></li><li><a href="global.html#buildRequestData">buildRequestData</a></li><li><a href="global.html#buildShareLink">buildShareLink</a></li><li><a href="global.html#buildShortShareLink">buildShortShareLink</a></li><li><a href="global.html#calculateFinishDatesFromStartDates">calculateFinishDatesFromStartDates</a></li><li><a href="global.html#canShorten">canShorten</a></li><li><a href="global.html#categoryName">categoryName</a></li><li><a href="global.html#ChartData">ChartData</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#ColorMap">ColorMap</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#combineFilters">combineFilters</a></li><li><a href="global.html#combineRepeated">combineRepeated</a></li><li><a href="global.html#combineValueArrays">combineValueArrays</a></li><li><a href="global.html#computeRingWindingOrder">computeRingWindingOrder</a></li><li><a href="global.html#computeScreenSpacePosition">computeScreenSpacePosition</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#containsAny">containsAny</a></li><li><a href="global.html#convertLuceneHit">convertLuceneHit</a></li><li><a href="global.html#convertToDates">convertToDates</a></li><li><a href="global.html#correctEntityHeight">correctEntityHeight</a></li><li><a href="global.html#createCatalogItemFromFileOrUrl">createCatalogItemFromFileOrUrl</a></li><li><a href="global.html#createCatalogItemFromUrl">createCatalogItemFromUrl</a></li><li><a href="global.html#createCatalogMemberFromType">createCatalogMemberFromType</a></li><li><a href="global.html#createLeafletCredit">createLeafletCredit</a></li><li><a href="global.html#createParameterFromType">createParameterFromType</a></li><li><a href="global.html#createRegexDeserializer">createRegexDeserializer</a></li><li><a href="global.html#createRegexSerializer">createRegexSerializer</a></li><li><a href="global.html#cssClass">cssClass</a></li><li><a href="global.html#CustomComponents">CustomComponents</a></li><li><a href="global.html#deIndexWithDescendants">deIndexWithDescendants</a></li><li><a href="global.html#Description">Description</a></li><li><a href="global.html#direction">direction</a></li><li><a href="global.html#disposeSubscription">disposeSubscription</a></li><li><a href="global.html#EarthGravityModel1996">EarthGravityModel1996</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#extendLoad">extendLoad</a></li><li><a href="global.html#extent">extent</a></li><li><a href="global.html#featureClicked">featureClicked</a></li><li><a href="global.html#featureDataToGeoJson">featureDataToGeoJson</a></li><li><a href="global.html#featureMousedown">featureMousedown</a></li><li><a href="global.html#features">features</a></li><li><a href="global.html#findKeyForGroupElement">findKeyForGroupElement</a></li><li><a href="global.html#flattenCatalog">flattenCatalog</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDateTime">formatDateTime</a></li><li><a href="global.html#formatNumberForLocale">formatNumberForLocale</a></li><li><a href="global.html#formatPropertyValue">formatPropertyValue</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getAncestors">getAncestors</a></li><li><a href="global.html#getColumnOptions">getColumnOptions</a></li><li><a href="global.html#getColumnWithNameIdOrIndex">getColumnWithNameIdOrIndex</a></li><li><a href="global.html#getDataUriFormat">getDataUriFormat</a></li><li><a href="global.html#getGroupChildren">getGroupChildren</a></li><li><a href="global.html#getShareData">getShareData</a></li><li><a href="global.html#getTemporalFiltersContext">getTemporalFiltersContext</a></li><li><a href="global.html#getUniqueValues">getUniqueValues</a></li><li><a href="global.html#gmlToGeoJson">gmlToGeoJson</a></li><li><a href="global.html#gradientColorMap">gradientColorMap</a></li><li><a href="global.html#hasAddress">hasAddress</a></li><li><a href="global.html#hasChildren">hasChildren</a></li><li><a href="global.html#hasLatitudeAndLongitude">hasLatitudeAndLongitude</a></li><li><a href="global.html#hostInDomains">hostInDomains</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#infoWithoutSources">infoWithoutSources</a></li><li><a href="global.html#isBrowserCompatible">isBrowserCompatible</a></li><li><a href="global.html#isCommonMobilePlatform">isCommonMobilePlatform</a></li><li><a href="global.html#isLoading">isLoading</a></li><li><a href="global.html#isVisible">isVisible</a></li><li><a href="global.html#itemHeight">itemHeight</a></li><li><a href="global.html#itemHeightMin">itemHeightMin</a></li><li><a href="global.html#items">items</a></li><li><a href="global.html#itemSpacing">itemSpacing</a></li><li><a href="global.html#itemWidth">itemWidth</a></li><li><a href="global.html#Legend">Legend</a></li><li><a href="global.html#legendUrl">legendUrl</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#markdownToHtml">markdownToHtml</a></li><li><a href="global.html#markerVisible">markerVisible</a></li><li><a href="global.html#name">name</a></li><li><a href="global.html#NowViewing">NowViewing</a></li><li><a href="global.html#overrideProperty">overrideProperty</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseCustomHtmlToReact">parseCustomHtmlToReact</a></li><li><a href="global.html#parseCustomMarkdownToReact">parseCustomMarkdownToReact</a></li><li><a href="global.html#PickedFeatures">PickedFeatures</a></li><li><a href="global.html#pickPosition">pickPosition</a></li><li><a href="global.html#point">point</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#position">position</a></li><li><a href="global.html#prettifyCoordinates">prettifyCoordinates</a></li><li><a href="global.html#prettifyProjection">prettifyProjection</a></li><li><a href="global.html#printWindow">printWindow</a></li><li><a href="global.html#processAddress">processAddress</a></li><li><a href="global.html#Proj4Definitions">Proj4Definitions</a></li><li><a href="global.html#propertyGetTimeValues">propertyGetTimeValues</a></li><li><a href="global.html#readJson">readJson</a></li><li><a href="global.html#rectangle">rectangle</a></li><li><a href="global.html#rectangleToLatLngBounds">rectangleToLatLngBounds</a></li><li><a href="global.html#RegionDataValue">RegionDataValue</a></li><li><a href="global.html#regionDetails">regionDetails</a></li><li><a href="global.html#registerCustomComponentTypes">registerCustomComponentTypes</a></li><li><a href="global.html#rememberRejections">rememberRejections</a></li><li><a href="global.html#removeMarker">removeMarker</a></li><li><a href="global.html#removeUserAddedData">removeUserAddedData</a></li><li><a href="global.html#replaceUnderscores">replaceUnderscores</a></li><li><a href="global.html#sanitiseAddressNumber">sanitiseAddressNumber</a></li><li><a href="global.html#selectBaseMap">selectBaseMap</a></li><li><a href="global.html#serializeToJson">serializeToJson</a></li><li><a href="global.html#ServerConfig">ServerConfig</a></li><li><a href="global.html#setClockCurrentTime">setClockCurrentTime</a></li><li><a href="global.html#shareKeyIndex">shareKeyIndex</a></li><li><a href="global.html#shouldBeUpdated">shouldBeUpdated</a></li><li><a href="global.html#showSelection">showSelection</a></li><li><a href="global.html#sortByFirst">sortByFirst</a></li><li><a href="global.html#sortedIndices">sortedIndices</a></li><li><a href="global.html#splitIntoBatches">splitIntoBatches</a></li><li><a href="global.html#supportsIntervals">supportsIntervals</a></li><li><a href="global.html#supportsWebGL">supportsWebGL</a></li><li><a href="global.html#TerriaViewer">TerriaViewer</a></li><li><a href="global.html#Title">Title</a></li><li><a href="global.html#toArrayOfRows">toArrayOfRows</a></li><li><a href="global.html#Tooltip">Tooltip</a></li><li><a href="global.html#triggerResize">triggerResize</a></li><li><a href="global.html#unionRectangleArray">unionRectangleArray</a></li><li><a href="global.html#unionRectangles">unionRectangles</a></li><li><a href="global.html#units">units</a></li><li><a href="global.html#up">up</a></li><li><a href="global.html#updateApplicationOnHashChange">updateApplicationOnHashChange</a></li><li><a href="global.html#updateFromJson">updateFromJson</a></li><li><a href="global.html#updateRectangleFromRegion">updateRectangleFromRegion</a></li><li><a href="global.html#variableNameLeft">variableNameLeft</a></li><li><a href="global.html#variableNameTop">variableNameTop</a></li><li><a href="global.html#ViewerMode">ViewerMode</a></li><li><a href="global.html#width">width</a></li><li><a href="global.html#yAxisMax">yAxisMax</a></li><li><a href="global.html#yAxisMin">yAxisMin</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 17 2018 16:39:30 GMT+1100 (AUS Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

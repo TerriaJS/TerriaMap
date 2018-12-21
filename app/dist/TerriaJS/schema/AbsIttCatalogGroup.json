@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the ABS ITT API, typically http://stat.abs.gov.au/itt/query.jsp."
+    },
+    "filter": {
+      "type": "array",
+      "title": "Filter",
+      "description": "The filter for the ABS dataset.  You can obtain a list of all datasets by querying\rhttp://stat.abs.gov.au/itt/query.jsp?method=GetDatasetList (or equivalent).  This property\ris observable.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conceptNamesUrl": {
+      "type": "string",
+      "title": "Concept names URL",
+      "description": "The URL of a JSON file containing human-readable names of Australian Bureau of Statistics concept codes."
+    },
+    "regionPopulationsUrlPrefix": {
+      "type": "string",
+      "title": "Region populations URL prefix",
+      "description": "The start of a URL of a csv file containing the total number of people in each region, eg.\rSA4,Tot_P_M,Tot_P_F,Tot_P_P\r101,100000,23450,123450\r102,130000,100000,234560\rThe region code and '.csv' are appended to the end of this URL for the request, eg.\r'data/2011Census_TOT_' -> 'data/2011Census_TOT_SA4.csv' (and other region types)."
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of the data sources in this group.\rThis property is an HTML string that must be sanitized before display to the user."
+    },
+    "blacklist": {
+      "type": "object",
+      "title": "Blacklist",
+      "description": "A hash of names of blacklisted datasets.  A dataset that appears in this hash\rwill not be shown to the user.  In this hash, the keys should be the name of the dataset to blacklist,\rand the values should be \"true\".",
+      "additionalProperties": {
+        "type": "boolean",
+        "format": "checkbox"
+      }
+    },
+    "whitelist": {
+      "type": "object",
+      "title": "Whitelist",
+      "description": "A hash of names of whitelisted datasets.  A dataset that doesn't appears in this hash\rwill not be shown to the user.  In this hash, the keys should be the name of the dataset to blacklist,\rand the values should be \"true\".",
+      "additionalProperties": {
+        "type": "boolean",
+        "format": "checkbox"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

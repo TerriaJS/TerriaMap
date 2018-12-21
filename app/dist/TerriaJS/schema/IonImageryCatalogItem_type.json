@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "ion-imagery"
+      ]
+    }
+  },
+  "description": "A ImageryLayerCatalogItem representing an imagery layer from Cesium Ion.",
+  "title": "Cesium Ion Imagery",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "IonImageryCatalogItem.json"
+    }
+  ]
+}

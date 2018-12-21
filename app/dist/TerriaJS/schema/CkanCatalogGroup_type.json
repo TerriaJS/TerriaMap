@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "ckan"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of layers from a [CKAN](http://ckan.org) server.",
+  "title": "CKAN Server",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CkanCatalogGroup.json"
+    }
+  ]
+}

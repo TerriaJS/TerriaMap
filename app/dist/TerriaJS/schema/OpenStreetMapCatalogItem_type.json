@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "open-street-map"
+      ]
+    }
+  },
+  "description": "A ImageryLayerCatalogItem representing a layer from the Open Street Map server.",
+  "title": "Open Street Map",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "OpenStreetMapCatalogItem.json"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string",
+      "title": "URL",
+      "description": "The URL of the WMS server."
+    },
+    "dataCustodian": {
+      "type": "string",
+      "title": "Data custodian",
+      "description": "A description of the custodian of the data sources in this group.\rThis property is an HTML string that must be sanitized before display to the user.",
+      "format": "textarea",
+      "options": {
+        "expand_height": true
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "title": "Parameters",
+      "description": "The additional parameters to pass to the WMS server when requesting images.\rAll parameter names must be entered in lowercase in order to be consistent with references in TerrisJS code.\rIf this property is undefiend, WebMapServiceCatalogItem.defaultParameters is used."
+    },
+    "blacklist": {
+      "type": "object",
+      "title": "Blacklist",
+      "description": "A hash of names of blacklisted data layers.  A layer that appears in this hash\rwill not be shown to the user.  In this hash, the keys should be the Title of the layers to blacklist,\rand the values should be \"true\".",
+      "additionalProperties": {
+        "type": "boolean",
+        "format": "checkbox"
+      }
+    },
+    "titleField": {
+      "type": "string",
+      "title": "Title field",
+      "description": "The field name to use as the primary title in the catalog view: each WMS layer's\r\"title\" (default), \"name\", or \"abstract\"."
+    },
+    "itemProperties": {
+      "type": "object",
+      "title": "Item properties",
+      "description": "A hash of properties that will be set on each child item.\rFor example, { 'treat404AsError': false }"
+    },
+    "flatten": {
+      "type": "boolean",
+      "title": "Flatten",
+      "description": "A value indicating whether the list of layers queried from GetCapabilities should be\rflattened into a list with no hierarchy.",
+      "format": "checkbox"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

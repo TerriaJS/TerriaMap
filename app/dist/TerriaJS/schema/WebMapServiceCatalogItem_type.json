@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wms"
+      ]
+    }
+  },
+  "description": "A ImageryLayerCatalogItem representing a layer from a Web Map Service (WMS) server.",
+  "title": "Web Map Service (WMS)",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WebMapServiceCatalogItem.json"
+    }
+  ]
+}

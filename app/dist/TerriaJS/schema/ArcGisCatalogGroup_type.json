@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "esri-group"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of ArcGIS Services,\reg. http://www.ga.gov.au/gis/rest/services/",
+  "title": "ArcGIS Service Group",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "ArcGisCatalogGroup.json"
+    }
+  ]
+}

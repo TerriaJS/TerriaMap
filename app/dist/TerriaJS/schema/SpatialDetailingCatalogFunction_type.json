@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "spatial-detailing-function"
+      ]
+    }
+  },
+  "description": "A Terria Spatial Inference function to predicts the characteristics of fine-grained regions by learning and\rexploiting correlations of coarse-grained data with Census characteristics.",
+  "title": "Spatial Detailing",
+  "allOf": [
+    {
+      "$ref": "CatalogFunction.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "SpatialDetailingCatalogFunction.json"
+    }
+  ]
+}

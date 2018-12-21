@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "group"
+      ]
+    },
+    "items": {
+      "$ref": "items.json"
+    }
+  },
+  "description": "A group of data items and other groups in the Catalog.  A group can contain\rCatalogMembers or other\rCatalogGroups.",
+  "title": "Group",
+  "allOf": [
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CatalogGroup.json"
+    }
+  ]
+}

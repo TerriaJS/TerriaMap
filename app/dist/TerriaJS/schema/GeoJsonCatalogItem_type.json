@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "geojson"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing GeoJSON feature data.",
+  "title": "GeoJSON",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "DataSourceCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "GeoJsonCatalogItem.json"
+    }
+  ]
+}

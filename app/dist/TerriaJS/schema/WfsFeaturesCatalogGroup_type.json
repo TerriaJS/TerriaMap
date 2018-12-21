@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wfs-features-group"
+      ]
+    }
+  },
+  "description": "A CatalogGroup representing a collection of individual features from a Web Feature\rService (WFS) server. By contrast to a WebFeatureServiceCatalogGroup, which creates one\rWebFeatureServiceCatalogItem per feature *type* (eg, one item for rivers, one for lakes),\rthis group creates one WebFeatureServiceCatalogItem per *feature* (eg, one item for each\rindividual river).",
+  "title": "Group of features in a Web Feature Service (WFS) Server",
+  "allOf": [
+    {
+      "$ref": "CatalogGroup.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WfsFeaturesCatalogGroup.json"
+    }
+  ]
+}

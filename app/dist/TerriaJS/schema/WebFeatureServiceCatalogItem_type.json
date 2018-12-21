@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "wfs"
+      ]
+    }
+  },
+  "description": "A CatalogItem representing a layer from a Web Feature Service (WFS) server.",
+  "title": "Web Feature Service (WFS)",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "WebFeatureServiceCatalogItem.json"
+    }
+  ]
+}

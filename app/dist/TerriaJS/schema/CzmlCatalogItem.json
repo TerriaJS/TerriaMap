@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "data": {
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Data",
+      "description": "The CZML data, represented as a binary Blob, JSON object or array literal, or a Promise for one of those things.\rIf this property is set, CatalogItem's url is ignored."
+    },
+    "dataSourceUrl": {
+      "type": "string",
+      "title": "Data source URL",
+      "description": "The URL from which the CzmlCatalogItem's data was obtained.  This will be used\rto resolve any resources linked in the CZML file, if any."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "DataSourceCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

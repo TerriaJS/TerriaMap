@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "config": {
+      "type": [
+        "string",
+        "object"
+      ],
+      "title": "Config",
+      "description": "The configuration information to pass to the Carto Maps API.\rIf not specified, empty configuration (`{}`) will be used."
+    },
+    "auth_token": {
+      "type": "string",
+      "title": "Auth_token",
+      "description": "Gets or set the authorization token to pass to the Carto Maps API."
+    },
+    "tileUrl": {
+      "type": "string",
+      "title": "Tile URL",
+      "description": "The template URL from which to get tiles."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "UrlTemplateCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

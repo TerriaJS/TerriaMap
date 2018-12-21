@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "isLoading": {
+      "type": "boolean",
+      "title": "Is loading",
+      "description": "A value indicating whether the group is currently loading.  This property\ris observable.",
+      "format": "checkbox"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

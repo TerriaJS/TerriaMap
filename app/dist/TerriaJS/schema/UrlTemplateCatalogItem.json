@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "defaultProperties": [
+    "name",
+    "type",
+    "url"
+  ],
+  "properties": {
+    "minimumLevel": {
+      "type": "string",
+      "title": "Minimum level",
+      "description": "The minimum tile level to retrieve from the map data"
+    },
+    "maximumLevel": {
+      "type": "string",
+      "title": "Maximum level",
+      "description": "The maximum tile level to retrieve from the map data"
+    },
+    "attribution": {
+      "type": "string",
+      "title": "Attribution",
+      "description": "The attribution to display with the data"
+    },
+    "subdomains": {
+      "type": "array",
+      "title": "Subdomains",
+      "description": "The array of subdomains, one of which will be prepended to each tile URL.",
+      "format": "tabs",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "ImageryLayerCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "places-like-me-function"
+      ]
+    }
+  },
+  "description": "A Terria Spatial Inference function to identify regions that are _most like_ a given region according to a\rgiven set of characteristics.",
+  "title": "Places Like Me",
+  "allOf": [
+    {
+      "$ref": "CatalogFunction.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "PlacesLikeMeCatalogFunction.json"
+    }
+  ]
+}

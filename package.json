@@ -46,6 +46,7 @@
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
     "json5": "^0.5.0",
+    "mysql": "^2.16.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.0.0",
     "prop-types": "^15.6.0",
@@ -66,6 +67,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.2",
+    "webpack-node-externals": "^1.7.2",
     "yargs": "^11.0.0"
   },
   "scripts": {
@@ -73,8 +75,11 @@
     "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
     "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
     "start": "bash ./node_modules/terriajs-server/run_server.sh --config-file devserverconfig.json",
+    "start-frontend": "./node_modules/.bin/webpack-dev-server --config webpack-frontend.config.js --open",
+    "start-backend": "node ./app/dist/bundle-backend.js",
+    "gulp-frontend": "gulp build-frontend",
+    "gulp-backend": "gulp build-backend",
     "stop": "bash ./node_modules/terriajs-server/stop_server.sh",
-    "gulp": "gulp",
     "postinstall": "echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "rm -rf node_modules && npm install && npm run deploy-without-reinstall",

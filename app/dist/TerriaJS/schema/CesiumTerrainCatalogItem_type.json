@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "options": {
+        "hidden": true
+      },
+      "type": "string",
+      "enum": [
+        "cesium-terrain"
+      ]
+    }
+  },
+  "description": "A TerrainCatalogItem representing a Cesium terrain provider.",
+  "title": "Cesium Terrain",
+  "allOf": [
+    {
+      "$ref": "CatalogItem.json"
+    },
+    {
+      "$ref": "TerrainCatalogItem.json"
+    },
+    {
+      "$ref": "CatalogMember.json"
+    },
+    {
+      "$ref": "CesiumTerrainCatalogItem.json"
+    }
+  ]
+}
