@@ -13,6 +13,10 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 Currrently under rough development. The repository is being refactored and merge with terriajs-server to develop a full-stack framework using TerriaJS modules with module management.
 
+## Draft Architecture Plan
+
+![Terria Plan Draft](terria-architecture.png "Terria Plan Draft")
+
 ## Directory Files and Structure
 
 [To be written]
