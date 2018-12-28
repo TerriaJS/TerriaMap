@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,400italic,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+/*
+
+// If your logo is big, set this to give it more room.
+//$logo-height: 120px;
+
+// If using a non-standard font, remember to include an @import statement in global.scss
+$font-base: 'Josefin Sans', sans-serif; 
+$font-pop: $font-base; // If you just want to use one font throughout, do this.
+
+// These variables are for buttons and text.
+// "color-secondary" should be a lighter color than "color-primary" but still readable contrasted with white.
+$color-primary: maroon;
+$color-secondary: hsl(60,80%,60%); // or: lighten($color-primary, 20%);
+
+// These variables set background panel colors
+$dark: hsl(0,30%,30%);
+$dark-with-overlay: hsl(0,30%,30%);;
+$dark-lighter: hsl(0,30%,50%);
+
+// You might find it helpful to define these and use them.
+$color-primary-light:lighten($color-primary,10%);
+$color-primary-dark:darken($color-primary,10%);
+$dark-darker: hsl(0,30%,15%);
+*/
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAvbGliL1N0eWxlcy92YXJpYWJsZXMuc2NzcyAoMikiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFFQTtBQUNBOztBQUVBO0FBQ0EsdUM7QUFDQSxzQkFBc0I7O0FBRXRCO0FBQ0E7QUFDQTtBQUNBLGtDQUFrQzs7QUFFbEM7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsImZpbGUiOiJUZXJyaWFGcmFtZXdvcmsuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypcblxuLy8gSWYgeW91ciBsb2dvIGlzIGJpZywgc2V0IHRoaXMgdG8gZ2l2ZSBpdCBtb3JlIHJvb20uXG4vLyRsb2dvLWhlaWdodDogMTIwcHg7XG5cbi8vIElmIHVzaW5nIGEgbm9uLXN0YW5kYXJkIGZvbnQsIHJlbWVtYmVyIHRvIGluY2x1ZGUgYW4gQGltcG9ydCBzdGF0ZW1lbnQgaW4gZ2xvYmFsLnNjc3NcbiRmb250LWJhc2U6ICdKb3NlZmluIFNhbnMnLCBzYW5zLXNlcmlmOyBcbiRmb250LXBvcDogJGZvbnQtYmFzZTsgLy8gSWYgeW91IGp1c3Qgd2FudCB0byB1c2Ugb25lIGZvbnQgdGhyb3VnaG91dCwgZG8gdGhpcy5cblxuLy8gVGhlc2UgdmFyaWFibGVzIGFyZSBmb3IgYnV0dG9ucyBhbmQgdGV4dC5cbi8vIFwiY29sb3Itc2Vjb25kYXJ5XCIgc2hvdWxkIGJlIGEgbGlnaHRlciBjb2xvciB0aGFuIFwiY29sb3ItcHJpbWFyeVwiIGJ1dCBzdGlsbCByZWFkYWJsZSBjb250cmFzdGVkIHdpdGggd2hpdGUuXG4kY29sb3ItcHJpbWFyeTogbWFyb29uO1xuJGNvbG9yLXNlY29uZGFyeTogaHNsKDYwLDgwJSw2MCUpOyAvLyBvcjogbGlnaHRlbigkY29sb3ItcHJpbWFyeSwgMjAlKTtcblxuLy8gVGhlc2UgdmFyaWFibGVzIHNldCBiYWNrZ3JvdW5kIHBhbmVsIGNvbG9yc1xuJGRhcms6IGhzbCgwLDMwJSwzMCUpO1xuJGRhcmstd2l0aC1vdmVybGF5OiBoc2woMCwzMCUsMzAlKTs7XG4kZGFyay1saWdodGVyOiBoc2woMCwzMCUsNTAlKTtcblxuLy8gWW91IG1pZ2h0IGZpbmQgaXQgaGVscGZ1bCB0byBkZWZpbmUgdGhlc2UgYW5kIHVzZSB0aGVtLlxuJGNvbG9yLXByaW1hcnktbGlnaHQ6bGlnaHRlbigkY29sb3ItcHJpbWFyeSwxMCUpO1xuJGNvbG9yLXByaW1hcnktZGFyazpkYXJrZW4oJGNvbG9yLXByaW1hcnksMTAlKTtcbiRkYXJrLWRhcmtlcjogaHNsKDAsMzAlLDE1JSk7XG4qL1xuIl0sInNvdXJjZVJvb3QiOiIifQ==*/
