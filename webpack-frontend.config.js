@@ -23,7 +23,7 @@ module.exports = function(devMode, hot) {
         },
         devtool: devMode ? 'cheap-inline-source-map' : 'source-map',
         module: {
-            loaders: [
+            rules: [
                 {
                     test: /\.html$/,
                     include: path.resolve(__dirname, './app', 'lib', 'Views'),
@@ -89,7 +89,7 @@ module.exports = function(devMode, hot) {
                 }
             ]
         },
-        plugins: [
+        plugins: [ 
             new webpack.DefinePlugin({
                 'process.env': {
                     'NODE_ENV': devMode ? '"development"' : '"production"'
