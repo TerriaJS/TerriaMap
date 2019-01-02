@@ -11,11 +11,58 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 ## Repository Status
 
-Currrently under rough development. The repository is being refactored and merge with terriajs-server to develop a full-stack framework using TerriaJS modules with module management.
+Currently under rough development. The repository is being refactored and merge with terriajs-server to develop a full-stack framework using TerriaJS modules with module management.
 
 ## Draft Architecture Plan
 
 ![Terria Plan Draft](terria-architecture.png "Terria Plan Draft")
+
+The boilerplate application template is just a space background with stars with the necessary buttons like the feedback button and copyrights currently in the TerriaMap template.
+
+Terria Framework is a javascript application that renders UI panels/layers/models/animations and performs processes via TerriaJS Library. Essentially the framework runs on top of a plugin javascript module that specifies how the framework behaves.
+
+The framework runs the whole thing and renders the application process to validate the geospatial requirement.
+
+Initially, the framework will be a blank slate with space/stars background. The framework then reads the instructions from TerriaJS/Polyglotic codebase and renders it.	
+
+An example code would be to render a planet model with scanned tiles data.
+
+```js
+
+'use strict';
+
+import Earth from 'terriajs/lib/models/earth';
+import Panel from 'terriajs/lib/ui/panel';
+import terriaJSCatalog from 'terriajs/lib/prebuilt/catalog';
+import ckan from 'terriajs/lib/connectors/ckan';
+import MyModule from 'myfiles/mymodule.js';
+
+var earth = new Earth(); // This should render Earth on top of the space/stars background when the framework starts.
+
+var regions = function() {
+	
+	dataLayer = ... // get regions data here
+
+	return dataLayer; // Probably a json data
+
+}
+
+earth.addLayer(regions); // Adds the regions
+
+var catalog = new terriaJSCatalog(); // Renders the catalog UI and its functionalities.
+var ckan = new ckan();
+catalog.init(); // Reads the catalog initialization file
+catalog.addGroup(ckan); // Adds a catalog group, just an example. Object options are omitted.
+
+var smallPanel = new Panel(x-position,y-position,height,width); // Renders a small panel in the x,y position in the browser screen.
+
+smallPanel.addModule(MyModule); // Module will run on the panel when the framework starts. myModule is a javascript polyglotic module that runs other languages/script files or codebase using a library called 'terriajs/lib/polyglotic/java' for java or something else.
+
+... // Other things, tasks, or processes.
+
+```
+
+The framework should be able to handle running scripts from other languages via public endpoints and/or a Javascript module in TerriaJS as things will be developed and built for the geospatial industry such as CKANnext in python that needs to be run inside the application process but in a different language.
 
 ## Directory Files and Structure
 
