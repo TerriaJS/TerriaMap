@@ -36,6 +36,7 @@ import Panel from 'terriajs/lib/ui/panel';
 import terriaJSCatalog from 'terriajs/lib/prebuilt/catalog';
 import ckan from 'terriajs/lib/connectors/ckan';
 import MyModule from 'myfiles/mymodule.js';
+import geocodingService from 'terriajs/lib/services/geocoder';
 
 var earth = new Earth(); // This should render Earth on top of the space/stars background when the framework starts.
 
@@ -57,6 +58,12 @@ catalog.addGroup(ckan); // Adds a catalog group, just an example. Object options
 var smallPanel = new Panel(x-position,y-position,height,width); // Renders a small panel in the x,y position in the browser screen.
 
 smallPanel.addModule(MyModule); // Module will run on the panel when the framework starts. myModule is a javascript polyglotic module that runs other languages/script files or codebase using a library called 'terriajs/lib/polyglotic/java' for java or something else.
+
+var geocoder = new geocodingService(...); // New instance of geocoder for boundary lookup service reverse and forward.
+
+var geocoderPanel = new Panel(...);
+
+geocoderPanel.addModule(geocoder.attachedUI()); // Runs the geocoding service UI.
 
 ... // Other things, tasks, or processes.
 
