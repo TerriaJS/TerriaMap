@@ -42,7 +42,7 @@ gulp.task('build-frontend', ['check-terriajs-dependencies', 'write-version'], fu
 gulp.task('build-backend', ['check-terriajs-dependencies', 'write-version'], function(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackBackendConfig = require('./webpack-backend.config.js')("production");
+    var webpackBackendConfig = require('./webpack-backend.config.js')("development");
 
     checkForDuplicateCesium();
 
