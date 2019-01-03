@@ -1,6 +1,6 @@
 'use strict';
 
-const TerriaDb = require('./TerriaDb.js');
+var database = require('database');
 
 var configureDatabase = function() {
 
@@ -19,9 +19,9 @@ var configureDatabase = function() {
 		connection = require('./DbConnectors/MysqlDbConnector.js');
 	}
 
-	var terriadb = new TerriaDb(config.database.type, config.database.host, config.database.username, config.database.password, connection);
+	var db = new database(config.database.type, config.database.host, config.database.username, config.database.password, connection);
 
-	return terriadb; // Return database object
+	return db; // Return database object
 
 };
 
