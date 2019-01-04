@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
 var options = require('./options');
 var fs = require('fs');
 var exists = require('./exists');
 var cluster = require('cluster');
-var makeserver = require('./makeserver');
+var configureserver = require('./configureserver');
 
 class app {
 
@@ -16,7 +16,7 @@ class app {
             options.init();
 
             if (fs.existsSync('terriajs.pid')) {
-                warn('TerriaJS-Server seems to already be running.');
+                warn('TerriaJS-Server seems to be running already.');
             }
                 
             portInUse(options.port, options.listenHost, function (inUse) {            
@@ -134,10 +134,19 @@ class app {
     }
 
     startServer(options) {
-        makeserver(options).listen(options.port, options.listenHost);
+
+        app = configureserver.start(options); // Set server configurations and generate server. We replace app here with the actual application server for proper naming conventions.
+        app.listen(options.port, options.listenHost, () => console.log(`Terria framework running on ${port}!`)); // Start HTTP/s server with expressjs middleware.
+
+        // Run database configuration and get database object for the framework.
+        db = configuredatabase();
+
+        // Extend app with database
+        app.db = db;
+
     }
 
 }
 
-app.init(); // Start application
+app.init(); // Start application. 
 

@@ -2,7 +2,7 @@
 if [ -f "/etc/init.d/varnish" ]; then
     sudo /etc/init.d/varnish restart
 fi
-date > terriajs-server.log
+date > server.log
 
 if [ "`which nohup`" == "" ]; then
     # There's no nohup on Windows. We just run node without it, which is fine in a dev environment.

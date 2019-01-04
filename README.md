@@ -67,6 +67,22 @@ geocoderPanel.addModule(geocoder.attachedUI()); // Runs the geocoding service UI
 
 ... // Other things, tasks, or processes.
 
+Later, we will have a single TerriaJS library object.
+
+const terriajs = require('terriajs');
+
+var module = terriajs.module;
+var anothermodule = terriajs.anothermodule;
+var service = terriajs.servicename; //  Which are really still javascript modules but it makes more sense to call them services.
+
+/*
+Every module/class should be an independent javascript module such that the modules should still run on the static browser aside from the framework environment that it will be loaded into. Each module should be independent and have its own UI and functionalities built into them. Essentially having React component built into the module to render its UI somehow like an <iframe> which makes up the panel but probably better. We'll probably extend iframe's functionality for civilian use.
+
+Obcourse without data source and backend stuff then the react component has to get the data statically embedded in the source code or json file.
+
+More into this later on.
+*/
+		
 ```
 
 The framework should be able to handle running scripts from other languages via public endpoints and/or a Javascript module in TerriaJS as things will be developed and built for the geospatial industry such as CKANnext in python that needs to be run inside the application process but in a different language.
