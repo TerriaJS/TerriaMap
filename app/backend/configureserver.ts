@@ -184,7 +184,7 @@ class configureserver {
     endpoint(path,router) {
 
         if (options.verbose) {
-            log('http://' + options.hostName + ':' + options.port + '/api/v1' + path, true);
+            this.log('http://' + options.hostName + ':' + options.port + '/api/v1' + path, true);
         }
         if (path !== 'proxyabledomains') {
             // deprecated endpoint that isn't part of V1
@@ -195,7 +195,6 @@ class configureserver {
 
     }
 
-
 }
 
-module.exports = configureserver;
+export = configureserver;

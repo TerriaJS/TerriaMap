@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-module.exports = function exists(pathName) {
+export = function exists(pathName) {
     try {
         fs.statSync(pathName);
         return true;

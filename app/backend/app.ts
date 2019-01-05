@@ -1,33 +1,42 @@
 'use strict';
 
-var options = require('./options');
+// Using require as it is simpler instead of typescript's import/export derived syntax. 
+// See typescript's "export = and import = require()" modules documentation section. 
+// Documentation: https://www.typescriptlang.org/docs/handbook/modules.html
+// This works well with the existing codebase.
+
 var fs = require('fs');
-var exists = require('./exists');
 var cluster = require('cluster');
+var exists = require('./exists');
+var options = require('./options');
 var configureserver = require('./configureserver');
+var configuredatabase = require('./configuredatabase');
 
 class app {
 
-    static init() {
+    public options = new options();
+    public db: any; 
+
+    init() {
                 
         if (cluster.isMaster) {
 
-            console.log ('TerriaJS Server ' + require('../package.json').version); // The master process just spins up a few workers and quits.
-            options.init();
+            console.log ('TerriaJS Server ' + require('../../package.json').version); // The master process just spins up a few workers and quits.
+            options.init(false);
 
             if (fs.existsSync('terriajs.pid')) {
-                warn('TerriaJS-Server seems to be running already.');
+                this.warn('TerriaJS-Server seems to be running already.');
             }
                 
-            portInUse(options.port, options.listenHost, function (inUse) {            
+            this.portInUse(options.port, options.listenHost, function (inUse) {            
                 if (inUse) {
-                    error('Port ' + options.port + ' is in use. Exiting.');
+                    this.error('Port ' + options.port + ' is in use. Exiting.');
                  } else {
                     if (options.listenHost !== 'localhost') {
-                        runMaster();
+                        this.runMaster();
                     } else {
                         // Let's equate non-public, localhost mode with "single-cpu, don't restart".
-                        startServer(options);
+                        this.startServer(options);
                     }
                 }
             });
@@ -37,8 +46,14 @@ class app {
         } else {
             // We're a forked process.
             options.init(true);
-            startServer(options);
+            this.startServer(options);
         }
+
+        // Run database configuration and get database object for the framework.
+        var db = configuredatabase();
+
+        // Extend app with database
+        this.db = db;
 
     }
 
@@ -93,20 +108,20 @@ class app {
         require('./controllers/convert')().testGdal();
 
         if (!exists(options.wwwroot)) {
-            warn('"' + options.wwwroot + '" does not exist.');
+            this.warn('"' + options.wwwroot + '" does not exist.');
         } else if (!exists(options.wwwroot + '/index.html')) {
-            warn('"' + options.wwwroot + '" is not a TerriaJS wwwroot directory.');
+            this.warn('"' + options.wwwroot + '" is not a TerriaJS wwwroot directory.');
         } else if (!exists(options.wwwroot + '/build')) {
-            warn('"' + options.wwwroot + '" has not been built. You should do this:\n\n' +
+            this.warn('"' + options.wwwroot + '" has not been built. You should do this:\n\n' +
                 '> cd ' + options.wwwroot + '/..\n' +
                 '> gulp\n');
         }
 
         if (typeof options.settings.allowProxyFor === 'undefined') {
-            warn('The configuration does not contain a "allowProxyFor" list.  The server will proxy _any_ request.');
+            this.warn('The configuration does not contain a "allowProxyFor" list.  The server will proxy _any_ request.');
         }
 
-        process.on('SIGTERM', handleExit);
+        process.on('SIGTERM', this.handleExit);
 
         // Listen for dying workers
         cluster.on('exit', function (worker) {
@@ -135,18 +150,17 @@ class app {
 
     startServer(options) {
 
-        app = configureserver.start(options); // Set server configurations and generate server. We replace app here with the actual application server for proper naming conventions.
+        var app = configureserver.start(options); // Set server configurations and generate server. We replace app here with the actual application server for proper naming conventions.
         app.listen(options.port, options.listenHost, () => console.log(`Terria framework running on ${port}!`)); // Start HTTP/s server with expressjs middleware.
-
-        // Run database configuration and get database object for the framework.
-        db = configuredatabase();
-
-        // Extend app with database
-        app.db = db;
 
     }
 
 }
 
-app.init(); // Start application. 
+var framework = new app();
+
+framework.init(); // Start application.
+
+// Testing framework database
+console.log(framework.db.getStatus());
 

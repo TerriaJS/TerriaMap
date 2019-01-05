@@ -1,12 +1,16 @@
 {
-  "compilerOptions": { 	    
-    "module": "commonjs",
+  "compilerOptions": {
+    "module": "commonjs", 	    
   	"sourceMap": true,
-    "target": "es5",
-    "jsx": "react",
+    "target": "ES2015",
+    "jsx": "React",
     "types": [ "node" ]
   },
+  "allowSyntheticDefaultImports": true,
+  "include": [
+    "app/backend/*"
+  ],
   "exclude": [
-  	"node_modules"
+    "node_modules",
   ]
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-var database = require('./database');
+import { database } from './database';
 
 class configuredatabase {
 
@@ -35,4 +35,4 @@ class configuredatabase {
 
 }
 
-module.exports = configuredatabase;
+export = configuredatabase;

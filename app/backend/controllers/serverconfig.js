@@ -9,7 +9,7 @@ module.exports = function(options) {
     var settings = Object.assign({}, options.settings), safeSettings = {};
     var safeAttributes = ['allowProxyFor', 'maxConversionSize', 'newShareUrlPrefix', 'proxyAllDomains'];
     safeAttributes.forEach(key => safeSettings[key] = settings[key]);
-    safeSettings.version = require('../../package.json').version;
+    safeSettings.version = require('../../../package.json').version;
     if (typeof settings.shareUrlPrefixes === 'object') {
         safeSettings.shareUrlPrefixes = {};
         Object.keys(settings.shareUrlPrefixes).forEach(function(key) {

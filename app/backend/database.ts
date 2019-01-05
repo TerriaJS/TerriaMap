@@ -6,9 +6,9 @@ class database {
 	public host: string;
 	private username: string;
 	private password: string;
-	public connection: object;
+	public connection: any;
 
-	constructor(type: string, host: string, username: string, password: string, connection: object) {
+	constructor(type: string, host: string, username: string, password: string, connection: any) {
 		this.type = type;
 		this.host = host;
 		this.username = username;
@@ -22,4 +22,4 @@ class database {
 
 }
 
-module.exports = database;
+export = database;
