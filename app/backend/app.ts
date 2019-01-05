@@ -8,21 +8,20 @@
 var fs = require('fs');
 var cluster = require('cluster');
 var exists = require('./exists');
-var options = require('./options');
+var opts = require('./options');
 var configureserver = require('./configureserver');
 var configuredatabase = require('./configuredatabase');
 
 class app {
 
-    public options = new options();
     public db: any; 
 
     init() {
-                
+
         if (cluster.isMaster) {
 
             console.log ('TerriaJS Server ' + require('../../package.json').version); // The master process just spins up a few workers and quits.
-            options.init(false);
+            options.init();
 
             if (fs.existsSync('terriajs.pid')) {
                 this.warn('TerriaJS-Server seems to be running already.');
@@ -33,7 +32,7 @@ class app {
                     this.error('Port ' + options.port + ' is in use. Exiting.');
                  } else {
                     if (options.listenHost !== 'localhost') {
-                        this.runMaster();
+                        framework.runMaster();
                     } else {
                         // Let's equate non-public, localhost mode with "single-cpu, don't restart".
                         this.startServer(options);
@@ -48,12 +47,6 @@ class app {
             options.init(true);
             this.startServer(options);
         }
-
-        // Run database configuration and get database object for the framework.
-        var db = configuredatabase();
-
-        // Extend app with database
-        this.db = db;
 
     }
 
@@ -151,16 +144,23 @@ class app {
     startServer(options) {
 
         var app = configureserver.start(options); // Set server configurations and generate server. We replace app here with the actual application server for proper naming conventions.
-        app.listen(options.port, options.listenHost, () => console.log(`Terria framework running on ${port}!`)); // Start HTTP/s server with expressjs middleware.
+        app.listen(options.port, options.listenHost, () => console.log(`Terria framework running on ${options.port}!`)); // Start HTTP/s server with expressjs middleware.
+
+
+        // Run database configuration and get database object for the framework.
+        var db = configuredatabase.start();
+
+        // Extend app with database
+        this.db = db;
+
+        // Testing framework database
+        console.log(framework.db.getStatus());
 
     }
 
 }
 
 var framework = new app();
-
+var options = new opts();
 framework.init(); // Start application.
-
-// Testing framework database
-console.log(framework.db.getStatus());
 

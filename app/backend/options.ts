@@ -1,3 +1,5 @@
+'use strict';
+
 var exists = require('./exists');
 var fs = require('fs');
 var json5 = require('json5');
@@ -5,16 +7,16 @@ var path = require('path');
 
 class options {
 
-    public listenHost: string;
-    public configFile: string;
+    public listenHost: any;
+    public configFile: any;
     public settings: any;
-    public proxyAuthFile: string;
-    public proxyAuth: string;
+    public proxyAuthFile: any;
+    public proxyAuth: any;
     public port: number;
-    public wwwroot: string;
-    public configDir: string;
+    public wwwroot: any;
+    public configDir: any;
     public verbose: any;
-    public hostName: string;
+    public hostName: any;
 
     getFilePath(fileName, warn) {
         if (exists(fileName)) {
@@ -24,7 +26,7 @@ class options {
         }
     }
 
-    getConfigFile(argFileName, defaultFileName): string {
+    getConfigFile(argFileName, defaultFileName): any {
         return argFileName ?  this.getFilePath(argFileName, true) : this.getFilePath(defaultFileName, true);
     }
 
@@ -111,7 +113,8 @@ class options {
         return argv;
     }
 
-    init(quiet) {
+    init(quiet: boolean) {
+
         var argv = this.loadCommandLine();
 
         this.listenHost = argv.public ? undefined : 'localhost';
@@ -130,8 +133,7 @@ class options {
         this.verbose = argv.verbose;
         this.hostName = this.listenHost || this.settings.hostName || 'localhost';
         this.settings.proxyAllDomains = this.settings.proxyAllDomains || typeof this.settings.allowProxyFor === 'undefined';
-        
-        return options;
+
     }
 
 }

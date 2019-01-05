@@ -1,9 +1,45 @@
-Wed 26 Dec 2018 17:12:17 AWST
-TerriaJS Server 2.9.1
-Using config file "/Users/mancajas/Documents/Projects/TerriaMap/devserverconfig.json".
-Serving directory "/Users/mancajas/Documents/Projects/TerriaMap/wwwroot" on port 3001 to the world.
-Warning: "/Users/mancajas/Documents/Projects/TerriaMap/wwwroot" does not exist.
-(TerriaJS-Server running with pid 12217)
+Sun  6 Jan 2019 05:38:27 AWST
+TerriaJS Server 0.0.1
+Using config file "/Users/mancajas/Documents/Projects/TerriaFramework/serverconfig.json".
+Warning: Can't open 'proxyauth.json'.
+Serving directory "app" on port 3001 to the world.
+Warning: "app" has not been built. You should do this:
+
+> cd app/..
+> gulp
+
+(TerriaJS-Server running with pid 30686)
 Launching 8 worker processes.
 Convert warning: ogr2ogr (gdal) is not installed or inaccessible, so the format conversion service will fail.
-(TerriaJS-Server exiting.)
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+Warning: Can't open 'proxyauth.json'.
+disconnected
+Terria framework running on 3001!
+Database established.
+disconnected
+disconnected
+Terria framework running on 3001!
+Terria framework running on 3001!
+disconnected
+Terria framework running on 3001!
+disconnected
+Database established.
+Database established.
+disconnected
+Database established.
+Terria framework running on 3001!
+Terria framework running on 3001!
+disconnected
+Terria framework running on 3001!
+Database established.
+Database established.
+disconnected
+Database established.
+Terria framework running on 3001!
+Database established.

@@ -1,10 +1,10 @@
 'use strict';
 
-import { database } from './database';
+var database = require('./database');
 
 class configuredatabase {
 
-	static start(): database {
+	static start(): any {
 
 		var connection;
 

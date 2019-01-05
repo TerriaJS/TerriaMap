@@ -13,34 +13,39 @@ var ExpressBrute = require('express-brute');
 /* Creates and returns a single express server. */
 class configureserver {
 
-    static start(options): express {
+    public static app: any;
+    public static opts: any;
+
+    static start(options): any {
         // eventually this mime type configuration will need to change
         // https://github.com/visionmedia/send/commit/d2cb54658ce65948b0ed6e5fb5de69d022bef941
         var mime = express.static.mime;
         mime.define({
-            'application/json' : ['czml', 'json', 'geojson'],
+            'this.application/json' : ['czml', 'json', 'geojson'],
             'text/plain' : ['glsl']
         });
 
-        // initialise app with standard middlewares
-        var app = express();
-        app.use(compression());
-        app.use(cors());
-        app.disable('etag');
+        this.opts = options;
+
+        // initialise this.app with standard middlewares
+        this.app = express();
+        this.app.use(compression());
+        this.app.use(cors());
+        this.app.disable('etag');
 
         if (options.verbose) {
-            app.use(require('morgan')('dev'));
+            this.app.use(require('morgan')('dev'));
         }
 
         if (typeof options.settings.trustProxy !== 'undefined') {
-            app.set('trust proxy', options.settings.trustProxy);
+            this.app.set('trust proxy', options.settings.trustProxy);
         }
 
         if (options.verbose) {
-            log('Listening on these endpoints:', true);
+            this.log('Listening on these this.endpoints:', true);
         }
 
-        endpoint('/ping', function(req, res){
+        this.endpoint('/ping', function(req, res){
           res.status(200).send('OK');
         });
 
@@ -48,7 +53,7 @@ class configureserver {
 
         if (options.settings.redirectToHttps) {
             var httpAllowedHosts = options.settings.httpAllowedHosts || ["localhost"];
-            app.use(function(req, res, next) {
+            this.app.use(function(req, res, next) {
                 if (httpAllowedHosts.indexOf(req.hostname) >= 0) {
                     return next();
                 }
@@ -77,7 +82,7 @@ class configureserver {
                 rateLimitOptions.maxWait = options.settings.rateLimit.maxWait;
             }
             var bruteforce = new ExpressBrute(store, rateLimitOptions);
-            app.use(bruteforce.prevent, function(req, res, next) {
+            this.app.use(bruteforce.prevent, function(req, res, next) {
                 var user = basicAuth(req);
                 if (user && user.name === auth.username && user.pass === auth.password) {
                     // Successful authentication, reset rate limiting.
@@ -90,10 +95,10 @@ class configureserver {
             });
         }
 
-        // Serve the bulk of our application as a static web directory.
+        // Serve the bulk of our this.application as a static web directory.
         var serveWwwRoot = exists(options.wwwroot + '/index.html');
         if (serveWwwRoot) {
-            app.use(express.static(options.wwwroot));
+            this.app.use(express.static(options.wwwroot));
         }
 
         // Proxy for servers that don't support CORS
@@ -104,7 +109,7 @@ class configureserver {
                 return map;
             }, {});
 
-        endpoint('/proxy', require('./controllers/proxy')({
+        this.endpoint('/proxy', require('./controllers/proxy')({
             proxyableDomains: options.settings.allowProxyFor,
             proxyAllDomains: options.settings.proxyAllDomains,
             proxyAuth: options.proxyAuth,
@@ -117,16 +122,16 @@ class configureserver {
 
         var esriTokenAuth = require('./controllers/esri-token-auth')(options.settings.esriTokenAuth);
         if (esriTokenAuth) {
-            endpoint('/esri-token-auth', esriTokenAuth);
+            this.endpoint('/esri-token-auth', esriTokenAuth);
         }
 
-        endpoint('/proj4def', require('./controllers/proj4lookup'));            // Proj4def lookup service, to avoid downloading all definitions into the client.
-        endpoint('/convert', require('./controllers/convert')(options).router); // OGR2OGR wrapper to allow supporting file types like Shapefile.
-        endpoint('/proxyabledomains', require('./controllers/proxydomains')({   // Returns JSON list of domains we're willing to proxy for
+        this.endpoint('/proj4def', require('./controllers/proj4lookup'));            // Proj4def lookup service, to avoid downloading all definitions into the client.
+        this.endpoint('/convert', require('./controllers/convert')(options).router); // OGR2OGR wrthis.apper to allow supporting file types like Shapefile.
+        this.endpoint('/proxyabledomains', require('./controllers/proxydomains')({   // Returns JSON list of domains we're willing to proxy for
             proxyableDomains: options.settings.allowProxyFor,
             proxyAllDomains: !!options.settings.proxyAllDomains,
         }));
-        endpoint('/serverconfig', require('./controllers/serverconfig')(options));
+        this.endpoint('/serverconfig', require('./controllers/serverconfig')(options));
 
         var errorPage = require('./errorpage');
         var show404 = serveWwwRoot && exists(options.wwwroot + '/404.html');
@@ -139,21 +144,21 @@ class configureserver {
             initPaths.push(path.join(options.wwwroot, 'init'));
         }
 
-        app.use('/init', require('./controllers/initfile')(initPaths, error404, options.configDir));
+        this.app.use('/init', require('./controllers/initfile')(initPaths, error404, options.configDir));
 
         var feedbackService = require('./controllers/feedback')(options.settings.feedback);
         if (feedbackService) {
-            endpoint('/feedback', feedbackService);
+            this.endpoint('/feedback', feedbackService);
         }
         
         var shareService = require('./controllers/share')(options.settings.shareUrlPrefixes, options.settings.newShareUrlPrefix, options.hostName, options.port);
         if (shareService) {
-            endpoint('/share', shareService);
+            this.endpoint('/share', shareService);
         }
 
-        app.use(error404);
-        app.use(error500);
-        var server = app;
+        this.app.use(error404);
+        this.app.use(error500);
+        var server = this.app;
         var osh = options.settings.https;
         if (osh && osh.key && osh.cert) {
             console.log('Launching in HTTPS mode.');
@@ -161,7 +166,7 @@ class configureserver {
             server = https.createServer({
                 key: fs.readFileSync(osh.key),
                 cert: fs.readFileSync(osh.cert)
-            }, app);
+            }, this.app);
         }
 
         process.on('uncaughtException', function(err) {
@@ -173,7 +178,7 @@ class configureserver {
 
     }
 
-    log(message, worker1only) {
+    static log(message, worker1only) {
 
         if (!worker1only || cluster.isWorker && cluster.worker.id === 1) {
             console.log(message);
@@ -181,17 +186,17 @@ class configureserver {
 
     }
 
-    endpoint(path,router) {
+    static endpoint(path,router) {
 
-        if (options.verbose) {
+        if (this.opts.verbose) {
             this.log('http://' + options.hostName + ':' + options.port + '/api/v1' + path, true);
         }
         if (path !== 'proxyabledomains') {
-            // deprecated endpoint that isn't part of V1
-            app.use('/api/v1' + path, router);
+            // deprecated this.endpoint that isn't part of V1
+            this.app.use('/api/v1' + path, router);
         }
-        // deprecated endpoint at `/`
-        app.use(path, router);
+        // deprecated this.endpoint at `/`
+        this.app.use(path, router);
 
     }
 
