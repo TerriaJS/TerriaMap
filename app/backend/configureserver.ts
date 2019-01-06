@@ -10,11 +10,13 @@ var basicAuth = require('basic-auth');
 var fs = require('fs');
 var ExpressBrute = require('express-brute');
 
-/* Creates and returns a single express server. */
+// This is a static class with static properties to configure the server. 
+// Creates and returns a single express server.
+// It does not need to be instantiated. 
 class configureserver {
 
     public static app: any;
-    public static opts: any;
+    public static options: any;
 
     static start(options): any {
         // eventually this mime type configuration will need to change
@@ -25,7 +27,7 @@ class configureserver {
             'text/plain' : ['glsl']
         });
 
-        this.opts = options;
+        this.options = options;
 
         // initialise this.app with standard middlewares
         this.app = express();
@@ -188,8 +190,8 @@ class configureserver {
 
     static endpoint(path,router) {
 
-        if (this.opts.verbose) {
-            this.log('http://' + options.hostName + ':' + options.port + '/api/v1' + path, true);
+        if (this.options.verbose) {
+            this.log('http://' + this.options.hostName + ':' + this.options.port + '/api/v1' + path, true);
         }
         if (path !== 'proxyabledomains') {
             // deprecated this.endpoint that isn't part of V1

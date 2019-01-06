@@ -15,12 +15,6 @@ module.exports = function(devMode, hot) {
             publicPath: hot ? 'http://localhost:3003/dist/' : 'dist/', // work around for google chrome browser needing sourcemaps
             sourcePrefix: '' // to avoid breaking multi-line string literals by inserting extra tabs.
         },
-        devServer: {
-            contentBase: path.resolve(__dirname, './app'),
-            watchContentBase: true,
-            compress: true,
-            port: 9001
-        },
         devtool: devMode ? 'cheap-inline-source-map' : 'source-map',
         module: {
             rules: [
@@ -36,7 +30,7 @@ module.exports = function(devMode, hot) {
                         path.resolve(__dirname, './app', 'lib')
                     ],
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
                         presets: ['env', 'react'],
                         plugins: [
@@ -48,7 +42,7 @@ module.exports = function(devMode, hot) {
                     test: /\.(png|jpg|svg|gif)$/,
                     include: path.resolve(__dirname, '..', 'app', 'images'),
                     loader: 'url-loader',
-                    query: {
+                    options: {
                         limit: 8192
                     }
                 },

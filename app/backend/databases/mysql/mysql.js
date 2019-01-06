@@ -11,7 +11,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
 	if (err) throw err;
-	console.log("Database established.");
+	console.log("Database established. Status: " + con.state);
 });
 
 module.exports = con;

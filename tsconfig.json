@@ -6,6 +6,9 @@
     "jsx": "React",
     "types": [ "node" ]
   },
+  "forceConsistentCasingInFilenames": true,
+  "noImplicitReturns": true,
+  "noImplicitUseStrict": true,
   "allowSyntheticDefaultImports": true,
   "include": [
     "app/backend/*"

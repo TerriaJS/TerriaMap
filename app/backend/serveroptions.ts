@@ -5,7 +5,7 @@ var fs = require('fs');
 var json5 = require('json5');
 var path = require('path');
 
-class options {
+class serveroptions {
 
     public listenHost: any;
     public configFile: any;
@@ -138,4 +138,4 @@ class options {
 
 }
 
-export = options;
+export = serveroptions;
