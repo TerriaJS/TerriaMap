@@ -1,6 +1,7 @@
 'use strict';
 
 var database = require('./database');
+var config = require('../config.json'); 
 
 class configuredatabase {
 
@@ -8,8 +9,6 @@ class configuredatabase {
 
 		var connection;
 
-		var config = require('../dbconfig.json');
-	
 		switch(config.database.type) {
 		case 'mysql':
 			connection = require('./databases/mysql/mysql.js');

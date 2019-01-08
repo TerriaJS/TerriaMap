@@ -12,14 +12,17 @@ var configuredatabase = require('./configuredatabase');
 
 class app {
 
+    // Framework APIs will be documented in the future.
+    public options: any; 
     public server: any;
-    public db: any; 
-    public options: any;
+    public db: any;
+    public loader: any; // Module loader
+    public panel: any; // Panel renderer
 
     public init() {
 
         this.options = new serveroptions();
-        this.options.init();
+        this.options.init(true);
 
         if (cluster.isMaster) {
 
@@ -35,11 +38,13 @@ class app {
                 this.runMaster();
             } else {
                 this.startServer(this.options);
+                this.connectDatabase();
             }     
 
         } else {
             // We're a forked process.
             this.startServer(this.options);
+            this.connectDatabase();
         }
 
     }
@@ -140,7 +145,11 @@ class app {
         this.server = configureserver.start(options); // Set server configurations and generate server. We replace app here with the actual application server for proper naming conventions.
         
         this.server.listen(options.port, options.listenHost, () => console.log(`Terria framework running on ${options.port}!`)); // Start HTTP/s server with expressjs middleware.
-        
+
+    }
+
+    public connectDatabase() {
+
         this.db = configuredatabase.start(); // Run database configuration and get database object for the framework.
 
     }

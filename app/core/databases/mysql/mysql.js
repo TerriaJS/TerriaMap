@@ -1,7 +1,7 @@
 'use strict';
 
 var mysql = require('mysql');
-var config = require('../../../dbconfig.json');
+var config = require('../../../config.json');
 
 var con = mysql.createConnection({
 	host: config.database.host,

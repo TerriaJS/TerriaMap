@@ -1,12 +1,29 @@
 'use strict';
 
-/*global require,window */
+/* PLUGIN MODULE - Main entry point of the application.  */
+
+var fs = require('fs');
+var cluster = require('cluster');
+var exists = require('./exists');
+var app = require('./app/core');
+
+var framework = new app();
+framework.init(); // Start application - At this point the framework should render the initial backgound and backend administration webpages. 
+
+// Example framework calls
+
+// var terriajs = require('terriajs');
+// var lib = new terriajs();
+// var catalog = lib.catalog;
+
+// framework.loadModule(catalog); // Lazy loading, browser will only load javascript module files that is loaded via this function into the framework and displays it.
+
+/* STATUS: Integration - TerriaJS example usage from TerriaMap
 
 var terriaOptions = {
-    baseUrl: 'build/TerriaJS'
+    baseUrl: 'dist/TerriaJS'
 };
 
-// checkBrowserCompatibility('ui');
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
@@ -121,4 +138,6 @@ terria.start({
         console.error(e.stack);
     }
 });
+
+*/
 

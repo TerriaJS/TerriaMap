@@ -97,7 +97,7 @@ class configureserver {
             });
         }
 
-        // Serve the bulk of our this.application as a static web directory.
+        // Serve the bulk of the application as a static web directory.
         var serveWwwRoot = exists(options.wwwroot + '/index.html');
         if (serveWwwRoot) {
             this.app.use(express.static(options.wwwroot));
