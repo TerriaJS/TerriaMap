@@ -3,6 +3,9 @@
 var database = require('./database');
 var config = require('../config.json'); 
 
+// This is a static class with static properties to configure the database. 
+// Creates and returns a single database object with connection property.
+// It does not need to be instantiated. 
 class configuredatabase {
 
 	static start(): any {

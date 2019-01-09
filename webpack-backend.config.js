@@ -17,7 +17,7 @@ var config = {
         target: "node", 
         externals: [nodeExternals()], // We exclude the nodejs modules from bundling
         entry: {
-                app: ["./app/backend/main.js"]
+                app: ["./app/index.js"]
         },
         output: {
                 path: path.resolve(__dirname, './app', 'dist'),

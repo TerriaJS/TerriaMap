@@ -19,6 +19,7 @@ class configureserver {
     public static options: any;
 
     static start(options): any {
+
         // eventually this mime type configuration will need to change
         // https://github.com/visionmedia/send/commit/d2cb54658ce65948b0ed6e5fb5de69d022bef941
         var mime = express.static.mime;
@@ -34,6 +35,8 @@ class configureserver {
         this.app.use(compression());
         this.app.use(cors());
         this.app.disable('etag');
+
+        //routes.init(this.app, this.options); // We configure the server by running the routes class.
 
         if (options.verbose) {
             this.app.use(require('morgan')('dev'));

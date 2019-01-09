@@ -1,11 +1,11 @@
 'use strict';
 
-/* PLUGIN MODULE - Main entry point of the application.  */
+/* PLUGIN MODULE - Main entry point of the application for webpack bundling */
 
 var fs = require('fs');
 var cluster = require('cluster');
-var exists = require('./exists');
-var app = require('./app/core');
+var exists = require('./core/exists');
+var app = require('./core/app');
 
 var framework = new app();
 framework.init(); // Start application - At this point the framework should render the initial backgound and backend administration webpages. 

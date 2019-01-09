@@ -11,7 +11,7 @@
   "noImplicitUseStrict": true,
   "allowSyntheticDefaultImports": true,
   "include": [
-    "app/backend/*"
+    "app/core/*"
   ],
   "exclude": [
     "node_modules",
