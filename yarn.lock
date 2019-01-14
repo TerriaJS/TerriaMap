@@ -9387,9 +9387,9 @@ terriajs-catalog-editor@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
 
-terriajs-cesium@1.50.1:
-  version "1.50.1"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.50.1.tgz#b9dfa03edc606e58daeb731aa06cfa45d10ead4f"
+terriajs-cesium@1.51.0:
+  version "1.51.0"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.51.0.tgz#e19102ab6442087794b3f12400a73d1c232c40fa"
   dependencies:
     deamdify "^0.1.1"
     dompurify "^1.0.2"

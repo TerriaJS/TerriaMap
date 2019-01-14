@@ -10,9 +10,9 @@ var terriaOptions = {
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
-import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
-import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
-import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
+// import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
+// import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
+// import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
 import Terria from 'terriajs/lib/Models/TerriaNew';
 // import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
@@ -24,16 +24,16 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 import render from './lib/Views/render';
 import { observable } from 'mobx';
 import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
-import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroupNew';
-import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem3';
+import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroup';
+import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
 import CommonStrata from 'terriajs/lib/Models/CommonStrata';
 
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
-registerCatalogMembers();
-registerAnalytics();
+// registerCatalogMembers();
+// registerAnalytics();
 
 terriaOptions.analytics = new GoogleAnalytics();
 
@@ -42,7 +42,7 @@ var terria = new Terria(terriaOptions);
 
 // Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
 // insert your custom version of the code in the registerCustomComponentTypes function here instead.
-registerCustomComponentTypes(terria);
+// registerCustomComponentTypes(terria);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
