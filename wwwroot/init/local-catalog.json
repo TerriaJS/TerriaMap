@@ -1,0 +1,51 @@
+{
+  "homeCamera": {
+    "north": -8,
+    "east": 158,
+    "south": -45,
+    "west": 109
+  },
+  "catalog": [
+    {
+      "name": "Example Datasets",
+      "type": "group",
+      "preserveOrder": true,
+      "isOpen": true,
+      "items": [
+        {
+          "name": "Small glTF 3D Models",
+          "description": "Demonstrations of adding 3D building data to the map using glTF.",
+          "type": "group",
+          "items": [
+            {
+              "name": "Smooth Geelong Buildings glTF Mini Demo",
+              "description": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using data made available from the [City of Greater Geelong](mailto:gis@geelongcity.vic.gov.au) under a Creative Commons license. The data used to create this demo was originally obtained via email in .skp format (> 100MB so not suitable for inclusion in this repo), however there is also a lower quality dataset of the same region available on data.gov.au in .kml/.dae format (this dataset does not seem to contain building textures).\n\nSee [readme.txt](test/3d/geelong/readme.txt) for more information.",
+              "attribution": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using a dataset obtained from the City of Greater Geelong. The original dataset is licensed under the CC BY 3.0 AU.",
+              "type": "czml",
+              "url": "test/3d/geelong/smooth.czml",
+              "rectangle": [
+                144.354,
+                -38.147,
+                144.358,
+                -38.150
+              ]
+            },
+            {
+              "name": "Terrain Geelong Buildings glTF Mini Demo",
+              "description": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using data made available from the [City of Greater Geelong](mailto:gis@geelongcity.vic.gov.au) under a Creative Commons license. The data used to create this demo was originally obtained via email in .skp format (> 100MB so not suitable for inclusion in this repo), however there is also a lower quality dataset of the same region available on data.gov.au in .kml/.dae format (this dataset does not seem to contain building textures).\n\nSee [readme.txt](test/3d/geelong/readme.txt) for more information.",
+              "attribution": "geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf was created using a dataset obtained from the City of Greater Geelong. The original dataset is licensed under the CC BY 3.0 AU.",
+              "type": "czml",
+              "url": "test/3d/geelong/terrain.czml",
+              "rectangle": [
+                144.354,
+                -38.147,
+                144.358,
+                -38.150
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
