@@ -13,7 +13,7 @@ import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 // import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
-import Terria from 'terriajs/lib/Models/TerriaNew';
+import Terria from 'terriajs/lib/Models/Terria';
 // import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
@@ -106,6 +106,7 @@ terria.start({
         };
         codedProperties.opacity = 1.0;
         codedProperties.isRequiredForRendering = true;
+        blackMarble.show = true;
         terria.baseMap = blackMarble;
         // const allBaseMaps = undefined;
 
