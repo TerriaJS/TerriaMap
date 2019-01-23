@@ -62,7 +62,7 @@ terria.start({
     // Note:
     // If it is a pure file name, e.g. 'config.json', it is assumed to be located at TerriaMap under the
     // directory of wwwwroot, e.g. wwwroot/config.json
-    configUrl: 'http://localhost:6100/api/v0/registry/records/terria-map-config-default/aspects/terria-config.json',
+    configUrl: 'http://localhost:6100/api/v0/registry/records/terria-tenant-default/aspects/terria-config',
     shareDataService: new ShareDataService({
         terria: terria
     })

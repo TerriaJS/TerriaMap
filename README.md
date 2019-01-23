@@ -25,13 +25,14 @@ Only combined-db-0, registry-api and magda-gateway are needed.
      yarn build
      yarn dev
   ```
-### Create Terria related aspects and records
-* Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
- 1. magda/magda-registry-aspects/terria-map-config.schema.json
- 2. magda/magda-registry-aspects/terria-catalog.schema.json
-* Post the following json data to http://localhost:6100/api/v0/registry/records
- 1. magda/magda-registry-api/src/main/resources/terria-map-config-default.json
- 2. magda/magda-registry-api/src/main/resources/terria-catalog-default.json
+### Create terria tenant aspects
+Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
+* magda/magda-registry-aspects/terria-map-config.schema.json
+* magda/magda-registry-aspects/terria-catalog.schema.json
+
+### Create a default terria tenant record
+Post the following json data to http://localhost:6100/api/v0/registry/records
+* magda/magda-registry-api/src/main/resources/terria-tenant-default.json
 
 ### Start TerriaMap
 Once the terria related records are in the database, we can start TerriaMap server.
