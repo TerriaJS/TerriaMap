@@ -30,9 +30,11 @@ Post the following json data to http://localhost:6100/api/v0/registry/aspects (F
 * magda/magda-registry-aspects/terria-map-config.schema.json
 * magda/magda-registry-aspects/terria-catalog.schema.json
 
-### Create a default terria tenant record
+### Create records for the default terria tenant and the demo terria tenant
 Post the following json data to http://localhost:6100/api/v0/registry/records
 * magda/magda-registry-api/src/main/resources/terria-tenant-default.json
+* magda/magda-registry-api/src/main/resources/terria-tenant-demo.json
+The registry now has two terria tenants, identified by "terria-tenant-default" and "terria-tenant-demo".
 
 ### Start TerriaMap
 Once the terria related records are in the database, we can start TerriaMap server.
@@ -41,5 +43,10 @@ Once the terria related records are in the database, we can start TerriaMap serv
     yarn start
   ```
 ### Testing
-* Open a browser, navigate to http://localhost:3001 to view the terria map.
-* Click on "Add data", "Data Catalog" window should pop out. The "Example datasets" should contain "Data.gov.au".
+#### For a default tenant
+* Open a browser, navigate to http://localhost:3001 or http://localhost:3001?tenantId=terria-tenant-default.
+* Click on "Add data", the "Example datasets" should contain "Data.gov.au" only.
+
+#### For a demo tenant
+* Open a browser, navigate to http://localhost:3001?tenantId=terria-tenant-demo.
+* Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.

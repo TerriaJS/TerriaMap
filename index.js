@@ -53,6 +53,24 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
+// See https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+function getParameterByName(name) {
+    var url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var theTenantId = getParameterByName("tenantId");
+if (!theTenantId) {
+    theTenantId = "terria-tenant-default";
+}
+
+console.info(`The current tenant id is ${theTenantId}.`);
+
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
@@ -62,7 +80,7 @@ terria.start({
     // Note:
     // If it is a pure file name, e.g. 'config.json', it is assumed to be located at TerriaMap under the
     // directory of wwwwroot, e.g. wwwroot/config.json
-    configUrl: 'http://localhost:6100/api/v0/registry/records/terria-tenant-default/aspects/terria-config',
+    configUrl: `http://localhost:6100/api/v0/registry/records/${theTenantId}/aspects/terria-config`,
     shareDataService: new ShareDataService({
         terria: terria
     })
