@@ -58,10 +58,7 @@ terria.start({
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
     // For experiment only.
-    // Retrieve terria config json file from a server (e.g. localhost).
-    // If the server is different from the TerriaMap (e.g. localhost:3001), need to handle CORS properly.
-    // See comment in wwwwroot/index.html.
-    // Replace it with a proper url in real deployment.
+    // Retrieve terria config json data from magda-gateway at http://localhost:6100.
     // Note:
     // If it is a pure file name, e.g. 'config.json', it is assumed to be located at TerriaMap under the
     // directory of wwwwroot, e.g. wwwroot/config.json
