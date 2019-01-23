@@ -9,15 +9,15 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 # Experiment with Magda
 ## Goals
-* Retrieve terria map config file from Magda gateway.
-* Retrieve terria map initial catalogs from Magda gateway.
+* Retrieve terria map config data from magda-gateway.
+* Retrieve terria map initial catalog data from magda-gateway.
 
 ## Local development instructions
 ### Start Magda
 Only combined-db-0, registry-api and magda-gateway are needed.
 * Check out magda branch "withTerria" from repository git@github.com:magda-io/magda.git.
 * Run magda database "combined-db-0" and make sure it is accessible at localhost:5432.
-* Start magda registry and make sure it is accessible at http://localhost:6101.
+* Start registry-api and make sure it is accessible at http://localhost:6101.
 * In magda-gateway/src/defaultConfig.ts, set "proxyRoutes.registry.auth" to false temporarily. 
 * Start magda-gateway and make sure it is accessible at http://localhost:6100.
   ```
@@ -27,11 +27,11 @@ Only combined-db-0, registry-api and magda-gateway are needed.
   ```
 ### Create Terria related aspects and records
 * Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
-** magda/magda-registry-aspects/terria-map-config.schema.json
-** magda/magda-registry-aspects/terria-catalog.schema.json
+ 1. magda/magda-registry-aspects/terria-map-config.schema.json
+ 2. magda/magda-registry-aspects/terria-catalog.schema.json
 * Post the following json data to http://localhost:6100/api/v0/registry/records
-** magda/magda-registry-api/src/main/resources/terria-map-config-default.json
-** magda/magda-registry-api/src/main/resources/terria-catalog-default.json
+ 1. magda/magda-registry-api/src/main/resources/terria-map-config-default.json
+ 2. magda/magda-registry-api/src/main/resources/terria-catalog-default.json
 
 ### Start TerriaMap
 Once the terria related records are in the database, we can start TerriaMap server.
