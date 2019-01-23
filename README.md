@@ -7,15 +7,38 @@ Terria Map
 
 This is a complete website built using the TerriaJS library. See the [TerriaJS README](https://github.com/TerriaJS/TerriaJS) for information about TerriaJS, and getting started using this repository.
 
-# Experiment
+# Experiment with Magda
 ## Goals
-* Retrieve terria config file from a different web server.
-* Retrieve terria initial catalog files from a different web server.
+* Retrieve terria map config file from Magda gateway.
+* Retrieve terria map initial catalogs from Magda gateway.
 
-## Approach
-* Copy all files under directory "files-to-be-copied-to-a-server" to a web server. Currently I enabled Windows IIS and save those files in C:\inetpub\wwwroot. For example, file terria-config.json can be retrieved via http://localhost/terria-config.json.
+## Local development instructions
+### Start Magda
+Only combined-db-0, registry-api and magda-gateway are needed.
+* Check out magda branch "withTerria" from repository git@github.com:magda-io/magda.git.
+* Run magda database "combined-db-0" and make sure it is accessible at localhost:5432.
+* Start magda registry and make sure it is accessible at http://localhost:6101.
+* In magda-gateway/src/defaultConfig.ts, set "proxyRoutes.registry.auth" to false temporarily. 
+* Start magda-gateway and make sure it is accessible at http://localhost:6100.
+  ```
+     cd magda-gateway
+     yarn build
+     yarn dev
+  ```
+### Create Terria related aspects and records
+* Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
+** magda/magda-registry-aspects/terria-map-config.schema.json
+** magda/magda-registry-aspects/terria-catalog.schema.json
+* Post the following json data to http://localhost:6100/api/v0/registry/records
+** magda/magda-registry-api/src/main/resources/terria-map-config-default.json
+** magda/magda-registry-api/src/main/resources/terria-catalog-default.json
 
-See https://docs.microsoft.com/en-us/previous-versions/ms181052(v=vs.80)
-
-* With vscode, run DEBUG "Lauch Server". (Other method of starting server may encounter CORS error, which is yet to be investigated.)
-* With a browser, go to http://localhost:3001 to view the terria map.
+### Start TerriaMap
+Once the terria related records are in the database, we can start TerriaMap server.
+  ```
+    yarn gulp
+    yarn start
+  ```
+### Testing
+* Open a browser, navigate to http://localhost:3001 to view the terria map.
+* Click on "Add data", "Data Catalog" window should pop out. The "Example datasets" should contain "Data.gov.au".
