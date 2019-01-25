@@ -16,11 +16,16 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 ### Build Magda-backed TerriaMap
 
 #### Define environment variables
-By default, a TerriaMap server is configured using file in ./wwwroot/config.json and serves contents in that directory wwwroot.
-To configure a TerriaMap with Magda as a backend, please create a .env file in the root directory, adding the following line in the file:
+By default, a TerriaMap server is built by using config file [wwwroot/config.json](wwwroot/config) and serves contents in directory wwwroot. 
+To build a TerriaMap using Magda as a backend, please create file ".env" in the root directory, adding the following line in the file:
 ```
 MAGDA=true
 ```
+You may also define more enviroment variables in ".env", e.g., adding a second line if you wish:
+```
+NODE_ENV=development
+```
+Please do not commit the ".env" file.
 
 #### Build TerriaMap
 Run command:
@@ -30,7 +35,7 @@ yarn gulp
 
 ### Start Magda
 Only combined-db-0, registry-api and magda-gateway are needed.
-* Check out magda branch "withTerria" from repository git@github.com:magda-io/magda.git.
+* Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository [magda](https://github.com/magda-io/magda.git).
 * Run magda database "combined-db-0" and make sure it is accessible at localhost:5432.
 * Start registry-api and make sure it is accessible at http://localhost:6101.
 * In magda-gateway/src/defaultConfig.ts, set "proxyRoutes.registry.auth" to false temporarily. 
