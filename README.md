@@ -14,14 +14,13 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 ## Local development instructions
 ### Build Magda-backed TerriaMap
+
 #### Define environment variables
 By default, a TerriaMap server is configured using file in ./wwwroot/config.json and serves contents in that directory wwwroot.
 To configure a TerriaMap with Magda as a backend, please create a .env file in the root directory, adding the following line in the file:
 ```
 MAGDA=true
-MAGDA_GATEWAY=localhost:6100
 ```
-localhost:6100 is for local development only. It is also a default value for MAGDA_GATEWAY.
 
 #### Build TerriaMap
 Run command:
