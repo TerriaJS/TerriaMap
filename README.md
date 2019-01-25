@@ -75,3 +75,5 @@ them from the file should you want to navigate to these two domains in the real 
 #### demo2
 * Open a browser, navigate to http://demo2.terria.magda:3001.
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.
+* To replace the datasets, use PATCH method to send data in "magda-registry/sample-records/demo2.json" to the magda gateway at http://localhost:6100/api/v0/registry/records/demo2.terria.magda
+* Refresh the browser, the "Example datasets" should be changed (a lot). 
