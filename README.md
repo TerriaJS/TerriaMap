@@ -13,6 +13,22 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 * Retrieve terria map initial catalog data from magda-gateway.
 
 ## Local development instructions
+### Build Magda-backed TerriaMap
+#### Define environment variables
+By default, a TerriaMap server is configured using file in ./wwwroot/config.json and serves contents in that directory wwwroot.
+To configure a TerriaMap with Magda as a backend, please create a .env file in the root directory, adding the following line in the file:
+```
+MAGDA=true
+MAGDA_GATEWAY=localhost:6100
+```
+localhost:6100 is for local development only. It is also a default value for MAGDA_GATEWAY.
+
+#### Build TerriaMap
+Run command:
+```
+yarn gulp
+```
+
 ### Start Magda
 Only combined-db-0, registry-api and magda-gateway are needed.
 * Check out magda branch "withTerria" from repository git@github.com:magda-io/magda.git.
@@ -27,20 +43,19 @@ Only combined-db-0, registry-api and magda-gateway are needed.
   ```
 ### Create terria tenant aspects
 Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
-* magda/magda-registry-aspects/terria-map-config.schema.json
-* magda/magda-registry-aspects/terria-catalog.schema.json
+* magda-registry/aspects/terria-config.schema.json
+* magda-registry/aspects/terria-catalog.schema.json
 
-### Create records for tenants with domains "demo1.terria.magda" and "demo2.terria.magda"
+### Create sample records for domains "demo1.terria.magda" and "demo2.terria.magda"
 Post the following json data to http://localhost:6100/api/v0/registry/records
-* magda/magda-registry-api/src/main/resources/terria-tenant-demo1.json
-* magda/magda-registry-api/src/main/resources/terria-tenant-demo2.json
+* magda-registry/sample-records/demo1.json
+* magda-registry/sample-records/demo2.json
 
 The registry now has two terria tenants, identified by "demo1.terria.magda" and "demo2.terria.magda", respectively.
 
 ### Start TerriaMap
 Once the terria related records are in the database, we can start TerriaMap server.
   ```
-    yarn gulp
     yarn start
   ```
 
@@ -54,10 +69,10 @@ them from the file should you want to navigate to these two domains in the real 
     127.0.0.1 demo2.terria.magda
 ```
 ### Testing
-#### For a demo1 tenant
+#### demo1
 * Open a browser, navigate to http://demo1.terria.magda:3001.
 * Click on "Add data", the "Example datasets" should contain "Data.gov.au" only.
 
-#### For a demo2 tenant
+#### demo2
 * Open a browser, navigate to http://demo2.terria.magda:3001.
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.

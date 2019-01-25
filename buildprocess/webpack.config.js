@@ -2,6 +2,7 @@
 
 /*global require*/
 var webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
@@ -90,7 +91,8 @@ module.exports = function(devMode, hot) {
                     'NODE_ENV': devMode ? '"development"' : '"production"'
                 }
             }),
-            new ExtractTextPlugin({filename: "TerriaMap.css", disable: hot, ignoreOrder: true, allChunks: true})
+            new ExtractTextPlugin({filename: "TerriaMap.css", disable: hot, ignoreOrder: true, allChunks: true}),
+            new Dotenv()
         ],
        resolve: {
             alias: {},

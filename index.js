@@ -53,9 +53,16 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
-var fromHostName = window.location.hostname;
-
-console.info(`fromHostName = ${fromHostName}`);
+var theConfig = 'config.json';
+if (process.env.MAGDA === "true") {
+    var webDomainName = window.location.hostname;
+    console.info(`webDomainName = ${webDomainName}`);
+    var magdaGateway = "localhost:6100";
+    if (process.env.MAGDA_GATEWAY === defined) {
+        magdaGateway = process.env.MAGDA_GATEWAY;
+    }
+    theConfig = `http://${magdaGateway}/api/v0/registry/records/${webDomainName}/aspects/terria-config`;
+}
 
 terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
@@ -66,7 +73,7 @@ terria.start({
     // Note:
     // If it is a pure file name, e.g. 'config.json', it is assumed to be located at TerriaMap under the
     // directory of wwwwroot, e.g. wwwroot/config.json
-    configUrl: `http://localhost:6100/api/v0/registry/records/${fromHostName}/aspects/terria-config`,
+    configUrl: theConfig,
     shareDataService: new ShareDataService({
         terria: terria
     })
