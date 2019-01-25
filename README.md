@@ -39,7 +39,7 @@ Only combined-db-0, registry-api and magda-gateway are needed.
   ```
      cd magda-gateway
      yarn build
-     yarn dev
+     yarn dev-for-terria
   ```
 ### Create terria tenant aspects
 Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
