@@ -61,19 +61,20 @@ Once the terria related records are in the database, we can start TerriaMap serv
 ### Resolve domain names for local development
 For Windows, add the following two lines to file "C:\Windows\System32\drivers\etc\hosts". 
 
-(You should remove
-them from the file should you want to navigate to these two domains in the real world.)
+(You should remove them from the file should you want to navigate to these two domains in the real world.)
 ```
     127.0.0.1 demo1.terria.magda
     127.0.0.1 demo2.terria.magda
 ```
 ### Testing
-#### demo1
+#### Visit website demo1.terria.magda
 * Open a browser, navigate to http://demo1.terria.magda:3001.
 * Click on "Add data", the "Example datasets" should contain "Data.gov.au" only.
 
-#### demo2
+#### Visit website demo2.terria.magda
 * Open a browser, navigate to http://demo2.terria.magda:3001.
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.
-* To replace the datasets, use PATCH method to send data in "magda-registry/sample-records/demo2.json" to the magda gateway at http://localhost:6100/api/v0/registry/records/demo2.terria.magda
-* Refresh the browser, the "Example datasets" should be changed (a lot). 
+
+#### Change datasets for website demo1.terria.magda
+* To replace its datasets, use PATCH method to send data in "magda-registry/sample-records/replace-first-catalog.json" to the magda gateway at http://localhost:6100/api/v0/registry/records/demo1.terria.magda
+* Refresh the browser at http://demo1.terria.magda:3001, the "Example datasets" should be changed (a lot). 
