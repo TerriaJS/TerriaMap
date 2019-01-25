@@ -42,13 +42,13 @@ Only combined-db-0, registry-api and magda-gateway are needed.
   ```
 ### Create terria tenant aspects
 Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
-* magda-registry/aspects/terria-config.schema.json
-* magda-registry/aspects/terria-catalog.schema.json
+* [magda-registry/aspects/terria-config.schema.json](magda-registry/aspects/terria-config.schema.json)
+* [magda-registry/aspects/terria-catalog.schema.json](magda-registry/aspects/terria-catalog.schema.json)
 
 ### Create sample records for domains "demo1.terria.magda" and "demo2.terria.magda"
 Post the following json data to http://localhost:6100/api/v0/registry/records
-* magda-registry/sample-records/demo1.json
-* magda-registry/sample-records/demo2.json
+* [magda-registry/sample-records/demo1.json](magda-registry/sample-records/demo1.json)
+* [magda-registry/sample-records/demo2.json](magda-registry/sample-records/demo2.json)
 
 The registry now has two terria tenants, identified by "demo1.terria.magda" and "demo2.terria.magda", respectively.
 
@@ -76,5 +76,5 @@ For Windows, add the following two lines to file "C:\Windows\System32\drivers\et
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.
 
 #### Change datasets for website demo1.terria.magda
-* To replace its datasets, use PATCH method to send data in "magda-registry/sample-records/replace-first-catalog.json" to the magda gateway at http://localhost:6100/api/v0/registry/records/demo1.terria.magda
+* To replace its datasets, use PATCH method to send data in [magda-registry/sample-records/replace-first-catalog.json](magda-registry/sample-records/replace-first-catalog.json) to the magda gateway at http://localhost:6100/api/v0/registry/records/demo1.terria.magda
 * Refresh the browser at http://demo1.terria.magda:3001, the "Example datasets" should be changed (a lot). 
