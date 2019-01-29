@@ -9,8 +9,16 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 # Experiment with Magda
 ## Goals
-* Retrieve terria map config data from magda-gateway.
-* Retrieve terria map initial catalog data from magda-gateway.
+* A single Terria Map server is able to serve many different Terria Map websites. Each website will have its own domain name.
+* The Terria Map server can dynamically provide customised configuration and initial catalog data for a website with specific domain name.
+* The customised data can be dynamically updated by Terria Map server admin.
+
+## Design
+* Terria Map websites domain names are different from Magda gateway and Terria Map servers.
+* A customised website data can be retrieved or updated via Magda gateway (NOT via the Terria Map server).
+* All Terria Map website domain names will be resolved to the same Terria Map server instead of the Magda gateway server. 
+  A Magda gateway content security policy (csp) usually only allows for same origin script loading. Were a Terria Map website domain name resolved to the gateway, a modern browser such as Chrome will only load scripts originated from the same domain as the gateway server, refusing to load scripts from other domain names such as cdn.polyfill.io, dev.virtualearth.net as well as terria website themselves. Although the gateway csp can be configured to accept scripts from those domains, it requires gateway restart whenever a domain is added or removed.
+
 
 ## Local development instructions
 ### Build Magda-backed TerriaMap
@@ -35,11 +43,12 @@ yarn gulp
 
 ### Start Magda
 Only combined-db-0, registry-api and magda-gateway are needed.
-* Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository [magda](https://github.com/magda-io/magda.git).
+* Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository [magda](https://github.com/magda-io/magda.git). 
+  The only difference between this branch and the master is that it provides
+a "dev-for-terria" script that disalble web access control for the experiment.
 * Run magda database "combined-db-0" and make sure it is accessible at localhost:5432.
 * Start registry-api and make sure it is accessible at http://localhost:6101.
-* In magda-gateway/src/defaultConfig.ts, set "proxyRoutes.registry.auth" to false temporarily. 
-* Start magda-gateway and make sure it is accessible at http://localhost:6100.
+* Build and start magda-gateway and make sure it is accessible at http://localhost:6100.
   ```
      cd magda-gateway
      yarn build
@@ -64,7 +73,8 @@ Once the terria related records are in the database, we can start TerriaMap serv
   ```
 
 ### Resolve domain names for local development
-For Windows, add the following two lines to file "C:\Windows\System32\drivers\etc\hosts". 
+This is to simulate Terria Map website domain names being resolved to a Terria Map server running on localhost. 
+For Windows platform, add the following two lines to file "C:\Windows\System32\drivers\etc\hosts". 
 
 (You should remove them from the file should you want to navigate to these two domains in the real world.)
 ```
