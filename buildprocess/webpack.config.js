@@ -8,10 +8,13 @@ var path = require('path');
 
 module.exports = function(devMode, hot) {
     var config = {
-        entry: './index.js',
+        entry: {
+          index: './index.js',
+          entry: './entry.js'
+         },
         output: {
             path: path.resolve(__dirname, '..', 'wwwroot', 'build'),
-            filename: 'TerriaMap.js',
+            filename: '[name].bundle.js',
             // work around chrome needing the full URL when using sourcemaps (http://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts/34133809#34133809)
             publicPath: hot ? 'http://localhost:3003/build/' : 'build/',
             sourcePrefix: '' // to avoid breaking multi-line string literals by inserting extra tabs.
