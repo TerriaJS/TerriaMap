@@ -24,7 +24,7 @@ link.setAttribute('href', 'loader.css');
 document.getElementsByTagName('head')[0].appendChild(link);
 
 // load the main chunk
-require.ensure(['./index'], (module)=> {
+require.ensure(['./index'], (require)=> {
   require('./index');
   loaderDiv.classList.add('loader-ui-hide');
-})
+});
