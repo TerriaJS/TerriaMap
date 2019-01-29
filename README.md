@@ -11,13 +11,19 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 ## Goals
 * A single Terria Map server is able to serve many different Terria Map websites. Each website will have its own domain name.
 * The Terria Map server can dynamically provide customised configuration and initial catalog data for a website with specific domain name.
-* The customised data can be dynamically updated by Terria Map server admin.
+* The customised data can be dynamically updated by admin.
 
 ## Design
-* Terria Map websites domain names are different from Magda gateway and Terria Map servers.
+* Terria Map websites domain names (e.g. demo1.terria.magda and demo2.terria.magda) are different from Magda gateway and
+  Terria Map servers (e.g. localhost).
 * A customised website data can be retrieved or updated via Magda gateway (NOT via the Terria Map server).
 * All Terria Map website domain names will be resolved to the same Terria Map server instead of the Magda gateway server. 
-  A Magda gateway content security policy (csp) usually only allows for same origin script loading. Were a Terria Map website domain name resolved to the gateway, a modern browser such as Chrome will only load scripts originated from the same domain as the gateway server, refusing to load scripts from other domain names such as cdn.polyfill.io, dev.virtualearth.net as well as terria website themselves. Although the gateway csp can be configured to accept scripts from those domains, it requires gateway restart whenever a domain is added or removed.
+  That is, the Terria Map server is not behind the Magda gateway. A Magda gateway content security policy (csp) usually
+  only allows for same origin script loading. Were a Terria Map website domain name resolved to the gateway, a modern
+  browser such as Chrome will only load scripts originated from the same domain as the gateway server, refusing to load
+  scripts from other domain names such as cdn.polyfill.io, dev.virtualearth.net as well as terria website themselves.
+  Although the gateway csp can be configured to accept scripts from those domains, it requires gateway restart whenever
+  a domain is added or removed.
 
 
 ## Local development instructions
@@ -73,8 +79,9 @@ Once the terria related records are in the database, we can start TerriaMap serv
   ```
 
 ### Resolve domain names for local development
-This is to simulate Terria Map website domain names being resolved to a Terria Map server running on localhost. 
-For Windows platform, add the following two lines to file "C:\Windows\System32\drivers\etc\hosts". 
+This is to simulate two Terria Map website domain names, demo1.terria.magda and demo2.terria.magda, being resolved to
+a Terria Map server running on localhost (127.0.0.1). For Windows platform, add the following two lines to file 
+"C:\Windows\System32\drivers\etc\hosts". 
 
 (You should remove them from the file should you want to navigate to these two domains in the real world.)
 ```
