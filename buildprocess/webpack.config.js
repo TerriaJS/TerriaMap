@@ -9,7 +9,6 @@ var path = require('path');
 module.exports = function(devMode, hot) {
     var config = {
         entry: {
-          index: './index.js',
           entry: './entry.js'
          },
         output: {
