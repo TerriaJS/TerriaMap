@@ -51,7 +51,7 @@ Only needs three services
 Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository 
 [magda](https://github.com/magda-io/magda.git). The only difference between this branch and the master is that it
 provides a "dev-for-terria" script for the experiment.
-### Start postgres database "combined-db-0"
+#### Start postgres database "combined-db-0"
 Make sure it is accessible at localhost:5432.
 #### Start registry-api
 Make sure it is accessible at http://localhost:6101.
