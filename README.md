@@ -52,7 +52,7 @@ a "dev-for-terria" script for the experiment.
   loading only and refuses inline script execution, which may cause problems for some browsers such as Chrome. To
   overcome the problems, the gateway's default csp will be customised by file 
   [terria-map-csp.json](magda/gateway/config/terria-map-csp.json). Please copy that json file to the root directory of
-  magda-gateway-api before starting the gateway server. The gateway must be restarted whenever this json file is changed.
+  magda-gateway before starting the gateway server. The gateway must be restarted whenever this json file is changed.
 
   ```
      cd magda-gateway
