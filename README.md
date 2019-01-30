@@ -99,5 +99,5 @@ the Magada gateway running on localhost (127.0.0.1). For Windows platform, add t
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.
 
 #### Change datasets for website demo1.terria.magda
-* To replace its datasets, use PATCH method to send data in [magda-registry/sample-records/replace-first-catalog.json](magda-registry/sample-records/replace-first-catalog.json) to the magda gateway at http://localhost:6100/api/v0/registry/records/demo1.terria.magda
+* To replace its datasets, use PATCH method to send data in [magda/registry/sample-records/replace-first-catalog.json](magda/registry/sample-records/replace-first-catalog.json) to the magda gateway at http://localhost:6100/api/v0/registry/records/demo1.terria.magda
 * Refresh the browser at http://demo1.terria.magda:6100, the "Example datasets" should be changed (a lot). 
