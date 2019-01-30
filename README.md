@@ -14,7 +14,9 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 * The initial catalogs can be dynamically updated via Magda registry api.
 
 ## Design
-* The Magda gateway will proxy the Terria Map server.
+* The Magda gateway will proxy the Terria Map server. The disadvantage of this arrangement is that the gateway's csp 
+  (content secuiryt policy) needs to list all Terria Map website domain names. 
+  See [this json file](magda/gateway/config/terria-map-csp.json) for example.
 * Terria Map website domain names (e.g. demo1.terria.magda and demo2.terria.magda) are different from Magda gateway and
   Terria Map servers (e.g. localhost).
 * A customised website configuration data can be created, deleted, retrieved, patched or updated via Magda gateway.
@@ -58,13 +60,13 @@ Make sure it is accessible at http://localhost:6101.
 #### Configure magda-gateway csp
 The  Magda gateway default content security policy (csp) allows for same origin script loading only and refuses 
 inline script execution, which may cause problems for some browsers such as Chrome. To overcome the problems, the
-gateway's default csp will be customised by file [terria-map-csp.json](magda/gateway/config/terria-map-csp.json). 
+gateway's default csp will be overridden by file [terria-map-csp.json](magda/gateway/config/terria-map-csp.json). 
 Please copy that json file to the root directory of magda-gateway before starting the gateway server. The gateway
 must be restarted whenever this json file is changed.
 #### Configure magda-gateway proxy-route
 For this experiment, we also override the default proxy routes settings by providing file
-[terria-map-proxy-routes.json](terria-map-proxy-routes.json). Before starting the gateway server, please copy that
-json file to the root directory of magda-gateway.
+[terria-map-proxy-routes.json](magda/gateway/config/terria-map-proxy-routes.json). Before starting the gateway server,
+please copy that json file to the root directory of magda-gateway.
 #### Build and start magda-gateway
   ```
      cd magda-gateway
