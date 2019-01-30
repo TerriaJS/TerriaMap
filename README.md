@@ -17,15 +17,16 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 * The Magda gateway will proxy the Terria Map server.
 * Terria Map website domain names (e.g. demo1.terria.magda and demo2.terria.magda) are different from Magda gateway and
   Terria Map servers (e.g. localhost).
-* A customised website configuration data can be retrieved or updated via Magda gateway (NOT via the Terria Map server).
+* A customised website configuration data can be created, deleted, retrieved, patched or updated via Magda gateway.
 * All Terria Map website domain names will be resolved to the Magda gateway. That is, the Terria Map server is behind
   the Magda gateway.
 
 ## Local development instructions
 ### Build Magda-backed TerriaMap
 #### Define environment variables
-By default, a TerriaMap server is built by using config file [wwwroot/config.json](wwwroot/config) and serves contents in directory wwwroot. 
-To build a TerriaMap using Magda as a backend, please create file ".env" in the root directory, adding the following line in the file:
+By default, a TerriaMap server is built by using config file [wwwroot/config.json](wwwroot/config) and serves contents
+in directory wwwroot. To build a TerriaMap using Magda as a backend, please create file ".env" in the root directory,
+adding the following line in the file:
 ```
 MAGDA=true
 ```
@@ -42,24 +43,35 @@ yarn gulp
 ```
 
 ### Start Magda
-Only combined-db-0, registry-api and magda-gateway are needed.
-* Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository [magda](https://github.com/magda-io/magda.git). 
-  The only difference between this branch and the master is that it provides
-a "dev-for-terria" script for the experiment.
-* Run magda database "combined-db-0" and make sure it is accessible at localhost:5432.
-* Start registry-api and make sure it is accessible at http://localhost:6101.
-* Build and start magda-gateway. The  Magda gateway default content security policy (csp) allows for same origin script
-  loading only and refuses inline script execution, which may cause problems for some browsers such as Chrome. To
-  overcome the problems, the gateway's default csp will be customised by file 
-  [terria-map-csp.json](magda/gateway/config/terria-map-csp.json). Please copy that json file to the root directory of
-  magda-gateway before starting the gateway server. The gateway must be restarted whenever this json file is changed.
-
+Only needs three services
+* postgres db "combined-db-0"
+* registry-api
+* magda-gateway
+#### Check out Magda
+Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository 
+[magda](https://github.com/magda-io/magda.git). The only difference between this branch and the master is that it
+provides a "dev-for-terria" script for the experiment.
+### Start postgres database "combined-db-0"
+Make sure it is accessible at localhost:5432.
+#### Start registry-api
+Make sure it is accessible at http://localhost:6101.
+#### Configure magda-gateway csp
+The  Magda gateway default content security policy (csp) allows for same origin script loading only and refuses 
+inline script execution, which may cause problems for some browsers such as Chrome. To overcome the problems, the
+gateway's default csp will be customised by file [terria-map-csp.json](magda/gateway/config/terria-map-csp.json). 
+Please copy that json file to the root directory of magda-gateway before starting the gateway server. The gateway
+must be restarted whenever this json file is changed.
+#### Configure magda-gateway proxy-route
+For this experiment, we also override the default proxy routes settings by providing file
+[terria-map-proxy-routes.json](terria-map-proxy-routes.json). Before starting the gateway server, please copy that
+json file to the root directory of magda-gateway.
+#### Build and start magda-gateway
   ```
      cd magda-gateway
      yarn build
      yarn dev-for-terria
   ```
-  Make sure it is accessible at http://localhost:6100.
+Make sure it is accessible at http://localhost:6100.
 
 ### Create terria tenant aspects
 Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
