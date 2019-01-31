@@ -54,14 +54,11 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
 }
 
 var theConfig = 'config.json';
-if (process.env.MAGDA === "true") {
+if (process.env.MAGDA_GATEWAY) {
     var webDomainName = window.location.hostname;
     console.debug(`webDomainName = ${webDomainName}`);
     // Default magda gateway, used for local development.
-    var magdaGateway = "localhost:6100";
-    if (process.env.MAGDA_GATEWAY) {
-        magdaGateway = process.env.MAGDA_GATEWAY;
-    }
+    var magdaGateway = process.env.MAGDA_GATEWAY;
     console.debug(`magdaGateway = ${magdaGateway}`);
     theConfig = `http://${magdaGateway}/api/v0/registry/records/${webDomainName}/aspects/terria-config`;
 }

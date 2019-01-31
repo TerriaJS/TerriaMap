@@ -2,5 +2,10 @@
     "registry": {
         "to": "http://localhost:6101/v0",
         "auth": false
+    },
+
+    "content": {
+        "to": "http://localhost:6119/v0",
+        "auth": false
     }
 }
