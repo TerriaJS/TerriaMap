@@ -1,4 +1,8 @@
 {
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "name": "terriajs-map",
   "version": "0.0.1",
   "description": "Geospatial catalog explorer based on TerriaJS.",
@@ -62,6 +66,7 @@
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.53.0",
     "terriajs-schema": "latest",
+    "terriajs-static": "^1.0.1",
     "urijs": "^1.18.12",
     "url-loader": "^0.5.7",
     "webpack": "^3.8.1",
@@ -80,6 +85,7 @@
     "deploy": "rm -rf node_modules && npm install && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
-    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json"
+    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
+    "generate-static-pages": "bash ./node_modules/terriajs-static/generate_page.sh"
   }
 }
