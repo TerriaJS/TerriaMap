@@ -105,6 +105,7 @@ Set up enviroment variables in the same way as described in Start magda-authoriz
   yarn build
   yarn dev
 ```
+Make sure it is accessible at http://localhost:6119.
 
 ### Create terria tenant aspects
 Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
