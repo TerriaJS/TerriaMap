@@ -2,7 +2,7 @@ const defined = require('terriajs-cesium/Source/Core/defined');
 const deprecationWarning = require('terriajs-cesium/Source/Core/deprecationWarning');
 const Promise = require('terriajs/lib/Core/Promise');
 
-function loadMainScript(loaderDiv) {
+function loadMainScript(callback) {
   //polyfill promoise since require.ensure relies on Promise
   if (!defined(window.Promise)) {
       deprecationWarning('promise-polyfill', 'This browser does not have Promise support. It will be polyfilled automatically, but an external polyfill (e.g. polyfill.io) will be required starting in TerriaJS v7.0');
@@ -11,7 +11,9 @@ function loadMainScript(loaderDiv) {
   // load the main chunk
   require.ensure(['./index'], function(require){
     require('./index');
-    loaderDiv.classList.add('loader-ui-hide');
+    if(callback && typeof callback === 'function'){
+      callback();
+    }
   }); 
 }
 
@@ -40,8 +42,10 @@ function createLoader(){
   link.setAttribute('type', 'text/css');
   link.setAttribute('href', 'loader.css');
   document.getElementsByTagName('head')[0].appendChild(link);
-
-  loadMainScript(loaderDiv);
+  
+  const callback = ()=> {loaderDiv.classList.add('loader-ui-hide');};
+  
+  loadMainScript(callback);
 }
 
 createLoader();
