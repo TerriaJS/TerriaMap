@@ -43,7 +43,14 @@ function createLoader(){
   link.setAttribute('href', 'loader.css');
   document.getElementsByTagName('head')[0].appendChild(link);
   
-  const callback = ()=> {loaderDiv.classList.add('loader-ui-hide');};
+  const callback = ()=> {
+    loaderDiv.classList.add('loader-ui-hide');
+    const timeout = setTimeout(()=> {
+      document.body.removeChild(loaderDiv);
+      clearTimeout(timeout);
+    }, 2000);
+
+  };
   
   loadMainScript(callback);
 }
