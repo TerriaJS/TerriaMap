@@ -50,6 +50,11 @@ module.exports = function(devMode, hot) {
                     }
                 },
                 {
+                    test: /loader\.css$/,
+                    include: [path.resolve(__dirname, '..', 'lib', 'Styles')],
+                    loader: ['style-loader', 'css-loader']
+                },
+                {
                     test: /\.scss$/,
                     include: [path.resolve(__dirname, '..', 'lib')],
                     loader: hot ? [
