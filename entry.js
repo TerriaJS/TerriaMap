@@ -41,9 +41,8 @@ function createLoader() {
 
     loadMainScript().then(() => {
         loaderDiv.classList.add('loader-ui-hide');
-        const timeout = setTimeout(()=> {
+        setTimeout(()=> {
             document.body.removeChild(loaderDiv);
-            clearTimeout(timeout);
         }, 2000);
     });
 }
