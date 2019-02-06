@@ -50,6 +50,14 @@ module.exports = function(devMode, hot) {
                     }
                 },
                 {
+                    test: /globe\.gif$/,
+                    include: path.resolve(__dirname, '..', 'lib', 'Styles'),
+                    loader: 'url-loader',
+                    query: {
+                        limit: 65536
+                    }
+                },
+                {
                     test: /loader\.css$/,
                     include: [path.resolve(__dirname, '..', 'lib', 'Styles')],
                     loader: ['style-loader', 'css-loader']

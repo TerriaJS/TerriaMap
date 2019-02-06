@@ -1,7 +1,7 @@
 const defined = require('terriajs-cesium/Source/Core/defined');
 const deprecationWarning = require('terriajs-cesium/Source/Core/deprecationWarning');
 const Promise = require('terriajs/lib/Core/Promise');
-const globeGif = require('./wwwroot/images/globe.gif');
+const globeGif = require('./lib/Styles/globe.gif');
 require('./lib/Styles/loader.css');
 
 function loadMainScript() {
