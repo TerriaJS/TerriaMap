@@ -8,7 +8,7 @@ var path = require('path');
 
 module.exports = function(devMode, hot) {
     var config = {
-        entry: './index.js',
+        entry: './entry.js',
         output: {
             path: path.resolve(__dirname, '..', 'wwwroot', 'build'),
             filename: 'TerriaMap.js',
@@ -28,7 +28,9 @@ module.exports = function(devMode, hot) {
                     test: /\.(js|jsx)$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
+                        path.resolve(__dirname, '..', 'entry.js'),
                         path.resolve(__dirname, '..', 'lib')
+                        
                     ],
                     loader: 'babel-loader',
                     query: {
@@ -46,6 +48,19 @@ module.exports = function(devMode, hot) {
                     query: {
                         limit: 8192
                     }
+                },
+                {
+                    test: /globe\.gif$/,
+                    include: path.resolve(__dirname, '..', 'lib', 'Styles'),
+                    loader: 'url-loader',
+                    query: {
+                        limit: 65536
+                    }
+                },
+                {
+                    test: /loader\.css$/,
+                    include: [path.resolve(__dirname, '..', 'lib', 'Styles')],
+                    loader: ['style-loader', 'css-loader']
                 },
                 {
                     test: /\.scss$/,
