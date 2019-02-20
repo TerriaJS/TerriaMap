@@ -59,10 +59,7 @@ gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-versi
     checkForDuplicateCesium();
 
     runWebpack(webpack, Object.assign({}, webpackConfig, {
-        plugins: [
-            new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
-            new webpack.optimize.OccurrenceOrderPlugin(),
-        ].concat(webpackConfig.plugins || [])
+        plugins: webpackConfig.plugins || []
     }), done);
 }));
 
