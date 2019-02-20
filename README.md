@@ -44,9 +44,9 @@ Run command:
 yarn gulp
 ```
 
-### Start Magda
+### Prepare Magda
 The following Magda components are needed:
-* postgres database "combined-db-0"
+* Combined database "combined-db-0"
 * magda-registry-api
 * magda-content-api
 * magda-authorization-api (required by magda-content-api)
@@ -54,11 +54,36 @@ The following Magda components are needed:
 
 #### Check out Magda
 Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository 
-[magda](https://github.com/magda-io/magda.git). The only difference between this branch and the master is that it
-provides a "dev-for-terria" script for the experiment.
+[magda](https://github.com/magda-io/magda.git).
 
-#### Start postgres database "combined-db-0"
-Make sure it is accessible at localhost:5432.
+#### Create a fresh "postgres" database in "combined-db-0"
+Make sure "combined-db-0" is accessible at localhost:5432. 
+```
+kubectl.exe port-forward combined-db-0 5432:5432
+```
+At this experimental stage, neither the schemas nor the migration strategy for database "postgres" have been finalised. Therefore use [this sql script](magda/database/registry-db/multi-tenants.sql) to prepare a fresh "postgres" database.
+
+
+##### Populate database with sample data.
+```
+CREATE TABLE IF NOT EXISTS Tenants (
+    domainName varchar(100) PRIMARY KEY,
+    id bigserial UNIQUE NOT NULL,
+    description varchar(1000)
+);
+
+INSERT INTO public.tenants(
+	domainname, id, description)
+	VALUES ('localhost', 0, 'default tenant');
+
+INSERT INTO public.tenants(
+	domainname, description)
+	VALUES ('demo1.terria.magda', 'terria map demo1');
+
+INSERT INTO public.tenants(
+	domainname, description)
+	VALUES ('demo2.terria.magda', 'terria map demo2');
+```
 
 #### Start magda-registry-api
 Make sure it is accessible at http://localhost:6101.
@@ -112,13 +137,16 @@ Post the following json data to http://localhost:6100/api/v0/registry/aspects (F
 * [magda/registry/aspects/terria-config.schema.json](magda/registry/aspects/terria-config.schema.json)
 * [magda/registry/aspects/terria-catalog.schema.json](magda/registry/aspects/terria-catalog.schema.json)
 
-### Create sample records for domains "demo1.terria.magda" and "demo2.terria.magda"
-Post the following json data to http://localhost:6100/api/v0/registry/records
-* [magda/registry/sample-records/demo1.json](magda/registry/sample-records/demo1.json)
-* [magda/registry/sample-records/demo2.json](magda/registry/sample-records/demo2.json)
+### Create some sample tenants
+
+### Create some sample records
+Note: The URLs are different in the post.
+#### Create a record for domain "demo1.terria.magda"
+Post the json data in [magda/registry/sample-records/demo1.json](magda/registry/sample-records/demo1.json) to http://demo1.terria.magda:6100/api/v0/registry/records
+#### Create a record for domain "demo2.terria.magda"
+Post the json data in [magda/registry/sample-records/demo2.json](magda/registry/sample-records/demo2.json) to http://demo2.terria.magda:6100/api/v0/registry/records
 
 The registry now has two terria tenants, identified by "demo1.terria.magda" and "demo2.terria.magda", respectively.
-(The "initializationUrls" specified within the above json files also assumes Magda gateway is at http://localhost:6100.)
 
 ### Create terria tenant contents
 Use the following script to create two records in the content database:
