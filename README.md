@@ -56,34 +56,12 @@ The following Magda components are needed:
 Check out branch [withTerria](https://github.com/magda-io/magda/tree/withTerria) from repository 
 [magda](https://github.com/magda-io/magda.git).
 
-#### Create a fresh "postgres" database in "combined-db-0"
-Make sure "combined-db-0" is accessible at localhost:5432. 
+#### Create fresh "records", "recordaspects" and "tentants" tables in database "postgres"
+Make sure "combined-db-0" is accessible at localhost:5432. For example,
 ```
 kubectl.exe port-forward combined-db-0 5432:5432
 ```
-At this experimental stage, neither the schemas nor the migration strategy for database "postgres" have been finalised. Therefore use [this sql script](magda/database/registry-db/multi-tenants.sql) to prepare a fresh "postgres" database.
-
-
-##### Populate database with sample data.
-```
-CREATE TABLE IF NOT EXISTS Tenants (
-    domainName varchar(100) PRIMARY KEY,
-    id bigserial UNIQUE NOT NULL,
-    description varchar(1000)
-);
-
-INSERT INTO public.tenants(
-	domainname, id, description)
-	VALUES ('localhost', 0, 'default tenant');
-
-INSERT INTO public.tenants(
-	domainname, description)
-	VALUES ('demo1.terria.magda', 'terria map demo1');
-
-INSERT INTO public.tenants(
-	domainname, description)
-	VALUES ('demo2.terria.magda', 'terria map demo2');
-```
+At this experimental stage, neither the schemas nor the migration strategy for those tables have been finalised. Therefore use [this sql script](magda/database/registry-db/multi-tenants.sql) to prepare those fresh tables. The "tenants" table will also be populated with three tenants: "default", "demo1.terria.magda" and "demo2.terria.magda". The "default" tenant is a placeholder only.
 
 #### Start magda-registry-api
 Make sure it is accessible at http://localhost:6101.
@@ -132,21 +110,18 @@ Set up enviroment variables in the same way as described in Start magda-authoriz
 ```
 Make sure it is accessible at http://localhost:6119.
 
-### Create terria tenant aspects
-Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman)
+### Create terria aspects
+Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman). Note that the terria aspects are tenant-independent.
 * [magda/registry/aspects/terria-config.schema.json](magda/registry/aspects/terria-config.schema.json)
 * [magda/registry/aspects/terria-catalog.schema.json](magda/registry/aspects/terria-catalog.schema.json)
 
-### Create some sample tenants
-
-### Create some sample records
-Note: The URLs are different in the post.
+### Create some tenant records
+Note: The URLs used in the post are different among tenants.
 #### Create a record for domain "demo1.terria.magda"
 Post the json data in [magda/registry/sample-records/demo1.json](magda/registry/sample-records/demo1.json) to http://demo1.terria.magda:6100/api/v0/registry/records
 #### Create a record for domain "demo2.terria.magda"
 Post the json data in [magda/registry/sample-records/demo2.json](magda/registry/sample-records/demo2.json) to http://demo2.terria.magda:6100/api/v0/registry/records
 
-The registry now has two terria tenants, identified by "demo1.terria.magda" and "demo2.terria.magda", respectively.
 
 ### Create terria tenant contents
 Use the following script to create two records in the content database:
@@ -154,15 +129,16 @@ Use the following script to create two records in the content database:
 INSERT INTO public.content(id, type, content) VALUES ('demo1.terria.magda', 'text/html', 'This is about demo 1.');
 INSERT INTO public.content(id, type, content) VALUES ('demo2.terria.magda', 'text/html', 'This is about demo 2.');
 ```
+Note that this approach is preliminary.
 
 ### Start TerriaMap
-Once the terria related records are in the database, we can start TerriaMap server.
+Once the terria tenant related records are in the database, the TerriaMap server is ready to serve.
   ```
     yarn start
   ```
 
 ### Resolve domain names for local development
-This is to simulate two Terria Map website domain names, demo1.terria.magda and demo2.terria.magda, being resolved to
+This is to simulate two Terria Map websites. Domains "demo1.terria.magda" and "demo2.terria.magda" will be resolved to
 the Magada gateway running on localhost (127.0.0.1). For Windows platform, add the following two lines to file 
 "C:\Windows\System32\drivers\etc\hosts". 
 
@@ -184,5 +160,5 @@ the Magada gateway running on localhost (127.0.0.1). For Windows platform, add t
 * Click on "About" button, a new page should appear with content "This is about demo 2."
 
 #### Change datasets for website demo1.terria.magda
-* To replace its datasets, use PATCH method to send data in [magda/registry/sample-records/replace-first-catalog.json](magda/registry/sample-records/replace-first-catalog.json) to the magda gateway at http://localhost:6100/api/v0/registry/records/demo1.terria.magda
+* To replace its datasets, use PATCH method to send data in [magda/registry/sample-records/replace-first-catalog.json](magda/registry/sample-records/replace-first-catalog.json) to the magda gateway at http://demo1.terria.magda:6100/api/v0/registry/records/terria_map
 * Refresh the browser at http://demo1.terria.magda:6100, the "Example datasets" should be changed (a lot). 
