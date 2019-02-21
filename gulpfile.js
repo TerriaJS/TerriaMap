@@ -9,8 +9,8 @@
 // This matters if ever we have gulp tasks run from npm, especially post-install ones.
 var fs = require('fs');
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var path = require('path');
+var PluginError = require('plugin-error');
 
 var watchOptions = {
     interval: 1000
@@ -193,7 +193,7 @@ gulp.task('make-package', function(done) {
         shell: false
     });
     if (tarResult.status !== 0) {
-        throw new gutil.PluginError('tar', 'External module exited with an error.', { showStack: false });
+        throw new PluginError('tar', 'External module exited with an error.', { showStack: false });
     }
 
     done();
@@ -326,7 +326,7 @@ function checkForDuplicateCesium() {
                     'Also consider running:\n' +
                     '  npm run gulp sync-terriajs-dependencies\n' +
                     'to prevent this problem from recurring the next time you `npm install`.');
-        throw new gutil.PluginError('checkForDuplicateCesium', 'You have two copies of Cesium.', { showStack: false });
+        throw new PluginError('checkForDuplicateCesium', 'You have two copies of Cesium.', { showStack: false });
     }
 }
 
