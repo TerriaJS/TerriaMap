@@ -24,13 +24,29 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
   the Magda gateway.
 
 ## Local development instructions
+### Resolve domain names for local development
+The platform will host multi-tenants. Assume we have the following URLs:
+* The magda gateway external URL is http://admin.terria.magda:6100, being used for tenant management.
+* The first tenant URL is http://demo1.terria.magda:6100.
+* The second tenant URL is http://demo2.terria.magda:6100.
+
+For local development, those fake domain names will all be resolved to localhost where the magda gateway is running. 
+For Windows platform, add the following lines to file "C:\Windows\System32\drivers\etc\hosts". 
+
+(You should remove them from the file should you want to navigate to those domains in the real world.)
+```
+    127.0.0.1 admin.terria.magda
+    127.0.0.1 demo1.terria.magda
+    127.0.0.1 demo2.terria.magda
+```
+
 ### Build Magda-backed TerriaMap
 #### Define environment variables
 By default, a TerriaMap server is built by using config file [wwwroot/config.json](wwwroot/config) and serves contents
 in directory wwwroot. To build a TerriaMap using Magda as a backend, please create file ".env" in the root directory
 then add the following line in the file:
 ```
-MAGDA_GATEWAY=localhost:6100
+MAGDA_GATEWAY=true
 ```
 You may also define more enviroment variables in ".env", e.g., adding a second line if you wish:
 ```
@@ -61,8 +77,8 @@ Make sure "combined-db-0" is accessible at localhost:5432. For example,
 ```
 kubectl.exe port-forward combined-db-0 5432:5432
 ```
-At this experimental stage, neither the schemas nor the migration strategy for those tables have been finalised. Therefore use [this sql script](magda/database/registry-db/multi-tenants.sql) to prepare those fresh tables. The "tenants" table will also be populated with three tenants: "default", "demo1.terria.magda" and "demo2.terria.magda". The "default" tenant is a placeholder only.
-
+Ensure that the registry database has been migrated to magda-migrator-registry-db/sql/V2__Support_multi_tenants.sql.
+ 
 #### Start magda-registry-api
 Make sure it is accessible at http://localhost:6101.
 
@@ -84,7 +100,7 @@ please copy that json file to the root directory of magda-gateway.
   yarn build
   yarn dev-for-terria
   ```
-Make sure it is accessible at http://localhost:6100.
+Make sure it is accessible at http://admin.terria.magda:6100 or http://localhost:6100
 
 #### Start magda-authorization-api
 Assume the user name and password for the postgres database is "postgres" and "postgres". Set up environment variables first:
@@ -111,15 +127,22 @@ Set up enviroment variables in the same way as described in Start magda-authoriz
 Make sure it is accessible at http://localhost:6119.
 
 ### Create terria aspects
-Post the following json data to http://localhost:6100/api/v0/registry/aspects (For example, use Postman). Note that the terria aspects are tenant-independent.
+Post the following json data to the magda admin portal http://admin.terria.magda:6100/api/v0/registry/aspects (For example, use Postman).
 * [magda/registry/aspects/terria-config.schema.json](magda/registry/aspects/terria-config.schema.json)
 * [magda/registry/aspects/terria-catalog.schema.json](magda/registry/aspects/terria-catalog.schema.json)
+Note: This action should only be performed by magda admin.
+
+### Create some tenants
+Post the following json data to the magda admin portal http://admin.terria.magda:6100/api/v0/registry/tenants.
+* [magda/registry/tenants/tenant1.json](magda/registry/tenants/tenant2.json)
+* [magda/registry/tenants/tenant2.json](magda/registry/tenants/tenant2.json)
+Note: This action should only be performed by magda admin.
 
 ### Create some tenant records
-Note: The URLs used in the post are different among tenants.
-#### Create a record for domain "demo1.terria.magda"
+Note: The URLs used in the post are tenant specific.
+#### Create a record for tenant of domain "demo1.terria.magda"
 Post the json data in [magda/registry/sample-records/demo1.json](magda/registry/sample-records/demo1.json) to http://demo1.terria.magda:6100/api/v0/registry/records
-#### Create a record for domain "demo2.terria.magda"
+#### Create a record for tenant of domain "demo2.terria.magda"
 Post the json data in [magda/registry/sample-records/demo2.json](magda/registry/sample-records/demo2.json) to http://demo2.terria.magda:6100/api/v0/registry/records
 
 
@@ -136,17 +159,6 @@ Once the terria tenant related records are in the database, the TerriaMap server
   ```
     yarn start
   ```
-
-### Resolve domain names for local development
-This is to simulate two Terria Map websites. Domains "demo1.terria.magda" and "demo2.terria.magda" will be resolved to
-the Magada gateway running on localhost (127.0.0.1). For Windows platform, add the following two lines to file 
-"C:\Windows\System32\drivers\etc\hosts". 
-
-(You should remove them from the file should you want to navigate to these two domains in the real world.)
-```
-    127.0.0.1 demo1.terria.magda
-    127.0.0.1 demo2.terria.magda
-```
 
 ### Testing
 #### Visit website demo1.terria.magda
