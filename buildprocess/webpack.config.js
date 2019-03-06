@@ -14,7 +14,8 @@ module.exports = function(devMode, hot) {
             filename: 'TerriaMap.js',
             // work around chrome needing the full URL when using sourcemaps (http://stackoverflow.com/questions/34133808/webpack-ots-parsing-error-loading-fonts/34133809#34133809)
             publicPath: hot ? 'http://localhost:3003/build/' : 'build/',
-            sourcePrefix: '' // to avoid breaking multi-line string literals by inserting extra tabs.
+            sourcePrefix: '', // to avoid breaking multi-line string literals by inserting extra tabs.
+            globalObject: '(self || window)' // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
         },
         devtool: devMode ? 'cheap-inline-source-map' : 'source-map',
         module: {
