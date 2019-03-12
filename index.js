@@ -97,7 +97,7 @@ terria.start({
         // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
         const blackMarble = new WebMapServiceCatalogItem('basemap-black-marble', terria);
-        const codedProperties = blackMarble.addStratum(CommonStrata.user);
+        const codedProperties = blackMarble.getOrCreateStratum(CommonStrata.user);
         codedProperties.name = 'NASA Black Marble';
         codedProperties.url = 'http://geoserver.nationalmap.nicta.com.au/imagery/nasa-black-marble/wms';
         codedProperties.layers = 'nasa-black-marble:dnb_land_ocean_ice.2012.54000x27000_geo';
