@@ -12,7 +12,7 @@
     },
     "model":{
       "gltf":{
-        "uri":"/test/3d/geelong/geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf"
+        "uri":"test/3d/geelong/geelong_mini_demo_bin_linux_v1.0-draft_x64.gltf"
       },
       "scale":{
         "number":[

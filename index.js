@@ -10,10 +10,10 @@ var terriaOptions = {
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
-import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
-import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
-import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
-import Terria from 'terriajs/lib/Models/TerriaNew';
+// import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
+// import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
+// import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
+import Terria from 'terriajs/lib/Models/Terria';
 // import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
@@ -24,13 +24,16 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 import render from './lib/Views/render';
 import { observable } from 'mobx';
 import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
-import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroupNew';
+import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroup';
+import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
+import CommonStrata from 'terriajs/lib/Models/CommonStrata';
+
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
-registerCatalogMembers();
-registerAnalytics();
+// registerCatalogMembers();
+// registerAnalytics();
 
 terriaOptions.analytics = new GoogleAnalytics();
 
@@ -39,7 +42,7 @@ var terria = new Terria(terriaOptions);
 
 // Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
 // insert your custom version of the code in the registerCustomComponentTypes function here instead.
-registerCustomComponentTypes(terria);
+// registerCustomComponentTypes(terria);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
@@ -58,7 +61,7 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
-terria.start({
+module.exports = terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
@@ -93,7 +96,20 @@ terria.start({
 
         // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
-        const allBaseMaps = undefined;
+        const blackMarble = new WebMapServiceCatalogItem('basemap-black-marble', terria);
+        const codedProperties = blackMarble.getOrCreateStratum(CommonStrata.user);
+        codedProperties.name = 'NASA Black Marble';
+        codedProperties.url = 'http://geoserver.nationalmap.nicta.com.au/imagery/nasa-black-marble/wms';
+        codedProperties.layers = 'nasa-black-marble:dnb_land_ocean_ice.2012.54000x27000_geo';
+        codedProperties.parameters = {
+            tiled: true
+        };
+        codedProperties.opacity = 1.0;
+        codedProperties.isRequiredForRendering = true;
+        blackMarble.loadData();
+        blackMarble.show = true;
+        terria.baseMap = blackMarble;
+        // const allBaseMaps = undefined;
 
         // Show a modal disclaimer before user can do anything else.
         // if (defined(terria.configParameters.globalDisclaimer)) {
@@ -121,7 +137,7 @@ terria.start({
         //     }
         // }
 
-        render(terria, allBaseMaps, viewState);
+        render(terria, [], viewState);
     } catch (e) {
         console.error(e);
         console.error(e.stack);

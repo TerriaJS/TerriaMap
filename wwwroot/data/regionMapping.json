@@ -534,6 +534,50 @@
             "description": "ABS approximations of suburbs (2016)",
             "regionIdsFile": "data/regionids/region_map-SSC_2016_AUST_SSC_NAME16.json"
         },
+        "LGA_2018": {
+            "layerName": "LGA_2018_AUST",
+            "server": "https://vector-tiles.terria.io/LGA_2018_AUST/{z}/{x}/{y}.pbf",
+            "serverType": "MVT",
+            "serverMaxNativeZoom": 12,
+            "serverMaxZoom": 28,
+            "bbox": [
+                96.81694139400008,
+                -43.74050960205758,
+                167.99803499600011,
+                -9.142175976703571
+            ],
+            "uniqueIdProp": "FID",
+            "regionProp": "LGA_CODE18",
+            "nameProp": "LGA_NAME18",
+            "aliases": [
+                "lga_code_2018",
+                "lga_code",
+                "lga"
+            ],
+            "description": "Local Government Areas 2018 (ABS)",
+            "regionIdsFile": "data/regionids/region_map-LGA_2018_AUST_LGA_CODE18.json"
+        },
+        "LGA_2017": {
+            "layerName": "LGA_2017_AUST",
+            "server": "https://vector-tiles.terria.io/LGA_2017_AUST/{z}/{x}/{y}.pbf",
+            "serverType": "MVT",
+            "serverMaxNativeZoom": 12,
+            "serverMaxZoom": 28,
+            "bbox": [
+                96.81694139400008,
+                -43.74050960205758,
+                167.99803499600011,
+                -9.142175976703571
+            ],
+            "uniqueIdProp": "FID",
+            "regionProp": "LGA_CODE17",
+            "nameProp": "LGA_NAME17",
+            "aliases": [
+                "lga_code_2017"
+            ],
+            "description": "Local Government Areas 2017 (ABS)",
+            "regionIdsFile": "data/regionids/region_map-LGA_2017_AUST_LGA_CODE17.json"
+        },
         "LGA_2016": {
             "layerName": "LGA_2016_AUST",
             "server": "https://vector-tiles.terria.io/LGA_2016_AUST/{z}/{x}/{y}.pbf",
@@ -550,15 +594,13 @@
             ],
             "regionProp": "LGA_CODE16",
             "aliases": [
-                "lga_code_2016",
-                "lga_code",
-                "lga"
+                "lga_code_2016"
             ],
             "nameProp": "LGA_NAME16",
             "description": "Local government areas (2016)",
             "regionIdsFile": "data/regionids/region_map-LGA_2016_AUST_LGA_CODE16.json"
         },
-        "LGA": {
+        "LGA_2015": {
             "layerName": "FID_LGA_2015_AUST",
             "server": "https://vector-tiles.terria.io/FID_LGA_2015_AUST/{z}/{x}/{y}.pbf",
             "analyticsWmsLayerName": "region_map:FID_LGA_2015_AUST",
@@ -566,9 +608,7 @@
             "regionProp": "LGA_CODE15",
             "aliases": [
                 "lga_code_2015",
-                "lga_code_2014",
-                "lga_code_2012",
-                "lga_code_2010"
+                "lga_code_2014"
             ],
             "digits": 5,
             "description": "Local government areas",
@@ -593,7 +633,8 @@
             "analyticsWmsServer": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "LGA_CODE13",
             "aliases": [
-                "lga_code_2013"
+                "lga_code_2013",
+                "lga_code_2012"
             ],
             "digits": 5,
             "description": "Local government areas",
@@ -618,7 +659,8 @@
             "analyticsWmsServer": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "LGA_CODE11",
             "aliases": [
-                "lga_code_2011"
+                "lga_code_2011",
+                "lga_code_2010"
             ],
             "digits": 5,
             "description": "Local government areas",
@@ -644,9 +686,8 @@
             "analyticsWmsServer": "http://geoserver.nationalmap.nicta.com.au/region_map/ows",
             "regionProp": "LGA_NAME11",
             "aliases": [
-                "lga_name_2011",
                 "lga_name",
-                "lga name",
+                "lga_name_2011",
                 "lga_name_2015",
                 "lga_name_2014",
                 "lga_name_2013",
@@ -693,8 +734,8 @@
                     " "
                 ]
             ],
-            "disambigProp": "STE_NAME11",
-            "disambigRegionId": "STE_NAME_2011",
+            "disambigProp": "STE_NAME16",
+            "disambigRegionId": "STE_NAME_2016",
             "description": "Local government areas",
             "regionIdsFile": "data/regionids/region_map-FID_LGA_2011_AUST_LGA_NAME11.json",
             "regionDisambigIdsFile": "data/regionids/region_map-FID_LGA_2011_AUST_STE_NAME11.json",
