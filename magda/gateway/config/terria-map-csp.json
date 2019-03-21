@@ -1,6 +1,6 @@
 {
     "directives": {
-        "scriptSrc": ["'self'", "'unsafe-inline'", "*.terria.magda", "https://cdn.polyfill.io", "https://dev.virtualearth.net"],
+        "scriptSrc": ["'self'", "'unsafe-inline'", "*.dev.magda.io", "https://cdn.polyfill.io", "https://dev.virtualearth.net"],
         "objectSrc": ["'none'"]
     },
     "browserSniff": false

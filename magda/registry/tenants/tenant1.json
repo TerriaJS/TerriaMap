@@ -1,6 +1,6 @@
 {
-    "domainName": "demo1.terria.magda",
+    "domainName": "web1-multi-tenant.terria.magda",
     "id": 0,
     "enabled": true,
-    "description": "The first demo website."
+    "description": "The website 1."
 }
