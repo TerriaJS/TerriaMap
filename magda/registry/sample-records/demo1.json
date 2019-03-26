@@ -1,6 +1,6 @@
 {
     "id": "terria_map",
-    "name": "Demo1 terria tenant",
+    "name": "website 1 of terria tenant",
     "aspects": {
         "terria-config": {
             "parameters": {
@@ -22,7 +22,7 @@
                 "experimentalFeatures": true
             },
             "initializationUrls": [
-                "http://demo1.terria.magda:6100/api/v0/registry/records/terria_map/aspects/terria-catalog.json"
+                "https://web1-multi-tenant.dev.magda.io/api/v0/registry/records/terria_map/aspects/terria-catalog.json"
             ]
         },
         "terria-catalog.json": {
