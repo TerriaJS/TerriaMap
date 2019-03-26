@@ -15,8 +15,7 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 * Other contents are also served dynamically based on website domain names.
 
 ## Design
-* The Magda gateway will proxy the Terria Map server. The gateway's csp (content security policy) must list all tenants'
-  domain names.  See [this json file](magda/gateway/config/terria-map-csp.json) for example.
+* The Magda gateway will proxy the Terria Map server.
 * A customised website configuration data can be created, deleted, retrieved, patched or updated via the website's admin portal.
 * All Terria Map website domain names will resolve to the Magda gateway external IP address.
 * The Terria Map server is behind the Magda gateway.
@@ -274,7 +273,6 @@ The magda will be accessible via port 30100. Note that the ingress is not deploy
 Post the following json data to the magda admin portal http://admin-multi-tenant.dev.magda.io.local:30100/api/v0/registry/aspects. Note that we must specify port number 30100.
 * [magda/registry/aspects/terria-config.schema.json](magda/registry/aspects/terria-config.schema.json)
 * [magda/registry/aspects/terria-catalog.schema.json](magda/registry/aspects/terria-catalog.schema.json)
-Note: This action should only be performed by magda admin.
 
 ### Create some tenants
 Post the following json data to the magda admin portal http://admin-multi-tenant.dev.magda.io.local:30100/api/v0/registry/tenants.
@@ -311,13 +309,13 @@ Post the json data in [magda/registry/sample-records/demo2.json](magda/registry/
 
 ### Testing
 #### Visit website web1-multi-tenant.dev.magda.io
-* Open a browser, navigate to http://web1-multi-tenant.dev.magda.io:30100.
+* Open a browser, navigate to http://web1-multi-tenant.dev.magda.io.local:30100.
 * Click on "Add data", the "Example datasets" should contain "Data.gov.au" only.
 
 #### Visit website web2-multi-tenant.dev.magda.io
-* Open a browser, navigate to http://web2-multi-tenant.dev.magda.io:30100.
+* Open a browser, navigate to http://web2-multi-tenant.dev.magda.io.local:30100.
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.
 
 #### Change datasets for website web1-multi-tenant.dev.magda.io
-* To replace its datasets, use PATCH method to send data in [magda/registry/sample-records/replace-first-catalog.json](magda/registry/sample-records/replace-first-catalog.json) to URL http://web1-multi-tenant.dev.magda.io:30100/api/v0/registry/records/terria_map
-* Refresh the browser at http://web1-multi-tenant.dev.magda.io:30100, the "Example datasets" should be changed a lot. 
+* To replace its datasets, use PATCH method to send data in [magda/registry/sample-records/replace-first-catalog.json](magda/registry/sample-records/replace-first-catalog.json) to URL http://web1-multi-tenant.dev.magda.io.local:30100/api/v0/registry/records/terria_map
+* Refresh the browser at http://web1-multi-tenant.dev.magda.io.local:30100, the "Example datasets" should be changed a lot. 
