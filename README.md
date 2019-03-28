@@ -194,6 +194,32 @@ Now all write accesses require authentication. For example, you will get message
 
 Unfortunately, the redeployment also changes the ingress. We need to edit it again according to [Resolve domain names](#Resolve-domain-names).
 
+#### Login as admin user
+Before an admin UI and a login UI become available, we have to manually create user account and manually login onto magda. Magda uses third-party authentication service, such as data.gov.au, facebook and google. 
+
+Take data.gov.au as an example.
+##### Create your account
+To create your data.gov.au account, navigate to https://data.gov.au/data/user/register and set your `username` and `password`.
+
+To create your magda admin account, manually insert a record in table "users" of database "auth" in Magda, using the following sql script (Replace <> with real values):
+```
+INSERT INTO public.users(
+	id, "displayName", email, "photoURL", source, "sourceId", "isAdmin")
+	VALUES ('<a uuid>', '<My Name>', '<my email address>', '<my photo url>', 'ckan', '<username>', true);
+```
+After the insertion, the user `<username>` will become an admin user.
+##### Login
+Navigate to https://admin-multi-tenant.dev.magda.io/auth/login/ckan
+A very primative UI will appear. Fill in your data.gov.au username and password then submit. If successful, another very primative UI will appear, indicating that "You are logged in."
+##### Access to private data
+Once you are logged in as admin, you can view private data in the "auth" database.
+Navigate to https://admin-multi-tenant.dev.magda.io/api/v0/auth/users/all. You should see all users.
+
+#### Perform terria related admin tasks
+Once you are able to login as magda admin, you will be able to perform all admin tasks [here](#Magda-admin-tasks) and [here](#Tenant-website-admin-tasks) without skipping registry authorization.
+
+At the moment, Magda treats all admin users the same. That is, any admin users will be able to perform any admin tasks. In the future, a role based access model will be used. For example, when that model is implemented, web1 admin will not have write access to web2's data.
+
 ## Deploy Terria Map server to Google Cloud
 The standard gitlab pileline job does not deploy the Terria Map server. We need to manually deploy it ourself by executing the following two commands.
 ```
@@ -239,7 +265,7 @@ kubectl.exe --context minikube create service clusterip terria-map --tcp 3001:30
 ### Prepare Magda
 
 #### Check out Magda
-Check out branch [mult-tenant](https://github.com/magda-io/magda/tree/mult-tenant) from repository 
+Check out branch [multi-tenant](https://github.com/magda-io/magda/tree/multi-tenant) from repository 
 [magda](https://github.com/magda-io/magda.git).
 
 #### Build local docker images
@@ -299,7 +325,7 @@ to
 ```
 Note that 
 1. "https" is replaced by "http".
-2. "web1-multi-tenant.dev.magda.io" is replaced by "/web1-multi-tenant.dev.magda.io.local:30100".
+2. "web1-multi-tenant.dev.magda.io" is replaced by "web1-multi-tenant.dev.magda.io.local:30100".
 
 After the revision, post [it](magda/registry/sample-records/demo1.json) to http://web1-multi-tenant.dev.magda.io.local:30100/api/v0/registry/records.
 
@@ -308,14 +334,14 @@ Post the json data in [magda/registry/sample-records/demo2.json](magda/registry/
 
 
 ### Testing
-#### Visit website web1-multi-tenant.dev.magda.io
+#### Visit website web1-multi-tenant.dev.magda.io.local
 * Open a browser, navigate to http://web1-multi-tenant.dev.magda.io.local:30100.
 * Click on "Add data", the "Example datasets" should contain "Data.gov.au" only.
 
-#### Visit website web2-multi-tenant.dev.magda.io
+#### Visit website web2-multi-tenant.dev.magda.io.local
 * Open a browser, navigate to http://web2-multi-tenant.dev.magda.io.local:30100.
 * Click on "Add data", the "Example datasets" should contain "Small glTF 3D Models" only.
 
-#### Change datasets for website web1-multi-tenant.dev.magda.io
+#### Change datasets for website web1-multi-tenant.dev.magda.io.local
 * To replace its datasets, use PATCH method to send data in [magda/registry/sample-records/replace-first-catalog.json](magda/registry/sample-records/replace-first-catalog.json) to URL http://web1-multi-tenant.dev.magda.io.local:30100/api/v0/registry/records/terria_map
 * Refresh the browser at http://web1-multi-tenant.dev.magda.io.local:30100, the "Example datasets" should be changed a lot. 
