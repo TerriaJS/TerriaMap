@@ -1,6 +1,5 @@
 {
-    "domainName": "web1-multi-tenant.dev.magda.io",
+    "domainName": "web1-withterria.dev.magda.io",
     "id": 0,
-    "enabled": true,
-    "description": "The website 1."
+    "enabled": true
 }

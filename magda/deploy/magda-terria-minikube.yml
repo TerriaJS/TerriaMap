@@ -1,5 +1,5 @@
 global:
-  externalUrl: http://admin-multi-tenant.dev.magda.io.local:30100
+  externalUrl: http://admin-withterria.dev.magda.io.local:30100
   rollingUpdate:
     maxUnavailable: 1
   exposeNodePorts: true
@@ -45,7 +45,7 @@ gateway:
       scriptSrc:
       - "''self''"
       - "''unsafe-inline''"
-      - "*.terria.magda"
+      - "*.dev.magda.io.local"
       - "https://cdn.polyfill.io"
       - "https://dev.virtualearth.net"
       - browser-update.org

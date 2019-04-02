@@ -22,7 +22,7 @@
                 "experimentalFeatures": true
             },
             "initializationUrls": [
-                "https://web1-multi-tenant.dev.magda.io/api/v0/registry/records/terria_map/aspects/terria-catalog.json"
+                "https://web1-withterria.dev.magda.io/api/v0/registry/records/terria_map/aspects/terria-catalog.json"
             ]
         },
         "terria-catalog.json": {
