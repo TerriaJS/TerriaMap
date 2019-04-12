@@ -26,6 +26,7 @@ import { observable } from 'mobx';
 import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
 import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroup';
 import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
+import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
 import CommonStrata from 'terriajs/lib/Models/CommonStrata';
 
 
@@ -50,6 +51,7 @@ const viewState = new ViewState({
 });
 
 CatalogMemberFactory.register('wms-group', WebMapServiceCatalogGroup);
+CatalogMemberFactory.register('geojson', GeoJsonCatalogItem);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
