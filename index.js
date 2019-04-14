@@ -108,7 +108,7 @@ module.exports = terria.start({
         };
         codedProperties.opacity = 1.0;
         codedProperties.isRequiredForRendering = true;
-        blackMarble.loadData();
+        blackMarble.loadMapItems();
         terria.baseMap = blackMarble;
         // const allBaseMaps = undefined;
 
