@@ -4,6 +4,11 @@
             "type": "wms-group",
             "name": "Test",
             "url": "https://programs.communications.gov.au/geoserver/ows"
+        },
+        {
+            "type": "geojson",
+            "name": "GeoJSON Test",
+            "url": "test/bike_racks.geojson"
         }
     ]
 }
