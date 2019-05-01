@@ -9,6 +9,17 @@
             "type": "geojson",
             "name": "GeoJSON Test",
             "url": "test/bike_racks.geojson"
+        },
+        {
+            "type": "wms-group",
+            "name": "Marine water quality grids for the Great Barrier Reef region - monthly data",
+            "url": "/proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
+        },
+        {
+            "type": "magda",
+            "url": "https://data.gov.au",
+            "name": "Magda Item",
+            "datasetId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
         }
     ]
 }
