@@ -13,7 +13,6 @@
   "dependencies": {
     "dotenv-webpack": "1.7.0",
     "terriajs-server": "^2.9.1"
-
   },
   "config": {
     "awsProfile": "terria",
@@ -45,7 +44,7 @@
     "fs-extra": "^7.0.1",
     "generate-terriajs-schema": "^1.4.0",
     "gulp": "^4.0.0",
-    "json5": "^0.5.0",
+    "json5": "^2.1.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.11.0",
     "plugin-error": "^1.0.1",
@@ -59,9 +58,9 @@
     "semver": "^5.0.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "^4.1.3",
-    "terriajs": "7.0.2",
+    "terriajs": "7.4.0",
     "terriajs-catalog-editor": "^0.2.0",
-    "terriajs-cesium": "1.55.0",
+    "terriajs-cesium": "1.57.0",
     "terriajs-schema": "latest",
     "urijs": "^1.18.12",
     "url-loader": "^1.1.2",
@@ -79,7 +78,7 @@
     "gulp": "gulp",
     "postinstall": "echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
-    "deploy": "rm -rf node_modules && npm install && npm run deploy-without-reinstall",
+    "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && rm -rf node_modules && npm install --no-package-lock && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json"
