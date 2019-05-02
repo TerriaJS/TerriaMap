@@ -1,0 +1,3 @@
+[
+	{"op": "replace", "path": "/aspects/terria-config/initializationUrls/0", "value": "http://static.nationalmap.nicta.com.au/init/2018-11-20.json"}
+]

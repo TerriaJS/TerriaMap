@@ -1,0 +1,31 @@
+{
+    "id": "terria-catalog.json",
+    "tenantId": "1",
+    "name": "schema for terria catalog",
+    "jsonSchema": {
+        "type": "object",
+        "title": "Aspect for a terria caltalog record",
+        "$schema": "http://json-schema.org/schema#",
+        "homeCamera": {
+            "type": "object",
+            "north": {
+                "type": "double"
+            },
+            "east": {
+                "type": "double"
+            },
+            "south": {
+                "type": "double"
+            },
+            "west": {
+                "type": "double"
+            }
+        },
+        "catalog": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        }
+    }
+}

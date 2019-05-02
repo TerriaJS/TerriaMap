@@ -53,11 +53,25 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
+
+var theConfig = 'config.json';
+if (process.env.MAGDA_GATEWAY) {
+    var webDomainName = window.location.hostname;
+    console.debug(`webDomainName = ${webDomainName}`);
+    theConfig = `api/v0/registry/records/terria_map/aspects/terria-config`;
+}
+
+console.debug(`theConfig = ${theConfig}`);
+
 module.exports = terria.start({
+
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
-    configUrl: 'config.json',
+
+    // If it is a pure file name, e.g. 'config.json', it is assumed to be located at TerriaMap under the
+    // directory of wwwwroot, e.g. wwwroot/config.json
+    configUrl: theConfig,
     shareDataService: new ShareDataService({
         terria: terria
     })

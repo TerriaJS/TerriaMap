@@ -1,6 +1,9 @@
 'use strict';
 
 /*global require*/
+var webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
+
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var path = require('path');
@@ -100,7 +103,15 @@ module.exports = function(devMode, hot) {
             ]
         },
         plugins: [
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': devMode ? '"development"' : '"production"'
+                }
+            }),
+
+            new Dotenv(),
             new MiniCssExtractPlugin({filename: "TerriaMap.css", disable: hot, ignoreOrder: true, allChunks: true})
+
         ],
        resolve: {
             alias: {},

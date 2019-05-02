@@ -1,0 +1,53 @@
+global:
+  externalUrl: http://admin-withterria.dev.magda.io.local:30100
+  rollingUpdate:
+    maxUnavailable: 1
+  exposeNodePorts: true
+  image:
+    repository: "localhost:5000/data61"
+    tag: "latest"
+    pullPolicy: Always
+  noDbAuth: true
+  useCloudSql: false
+  useCombinedDb: true
+  enablePriorityClass: false
+
+tags:
+  all: false
+  gateway: true
+  registry-api: true
+  combined-db: true
+  authorization-api: true
+  registry-db: true
+  authorization-db: true
+  session-db: true
+
+registry-api:
+  skipAuthorization: true
+
+gateway:
+  ckanRedirectionDomain: "ckan.data.gov.au"
+  ckanRedirectionPath: ""
+  enableCkanRedirection: true
+  enableAuthEndpoint: true
+  cors:
+    credentials: true
+    origin: true
+  auth:
+    facebookClientId: "173073926555600"
+    googleClientId: "275237095477-f7ej2gsvbl2alb8bcqcn7r5jk0ur719p.apps.googleusercontent.com"
+    ckanAuthenticationUrl: https://data.gov.au/data
+  enableMultiTenants: true  
+  magdaAdminPortalName: admin-withterria.dev.magda.io.local
+  web: http://terria-map:3001
+  csp:
+    directives:
+      scriptSrc:
+      - "''self''"
+      - "''unsafe-inline''"
+      - "*.dev.magda.io.local"
+      - "https://cdn.polyfill.io"
+      - "https://dev.virtualearth.net"
+      - browser-update.org
+      objectSrc:
+      - "''none''"
