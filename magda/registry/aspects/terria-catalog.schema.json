@@ -1,5 +1,6 @@
 {
     "id": "terria-catalog.json",
+    "tenantId": "1",
     "name": "schema for terria catalog",
     "jsonSchema": {
         "type": "object",

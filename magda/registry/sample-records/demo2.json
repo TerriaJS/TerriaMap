@@ -1,5 +1,6 @@
 {
     "id": "terria_map",
+    "tenantId": "2",
     "name": "website 2 of terria tenant",
     "aspects": {
         "terria-config": {

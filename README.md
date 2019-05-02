@@ -190,14 +190,16 @@ becomes available, we have to use other tools such as Postman to do the jobs. Th
 the website according to the following instructions.
 
 #### Login to magda
-Open a Chrome browser and navigate to https://web1-withterria.dev.magda.io/auth/login/ckan to login.
+Open a Chrome browser and navigate to https://web1-withterria.dev.magda.io/auth/login/ckan to login. Try again if failure.
 
 #### Add terria aspects
 Use Postman to post the following json data to https://web1-withterria.dev.magda.io/api/v0/registry-auth/aspects.
+Must ensure `{"tenantId": "1"}` in both files.
 * [magda/registry/aspects/terria-config.schema.json](magda/registry/aspects/terria-config.schema.json)
 * [magda/registry/aspects/terria-catalog.schema.json](magda/registry/aspects/terria-catalog.schema.json)
 
 #### Add a terria configuration record
+Must ensure `{"tenantId": "1"}` in the file.
 Post the json data in [magda/registry/sample-records/demo1.json](magda/registry/sample-records/demo1.json) to https://web1-withterria.dev.magda.io/api/v0/registry-auth/records
 
 ### Configure website https://web2-withterria.dev.magda.io
@@ -205,11 +207,13 @@ Post the json data in [magda/registry/sample-records/demo1.json](magda/registry/
 Open a Chrome browser and navigate to https://web2-withterria.dev.magda.io/auth/login/ckan to login.
 
 #### Add terria aspects
+Must ensure `{"tenantId": "2"}` in both files.
 Use Postman to post the following json data to https://web2-withterria.dev.magda.io/api/v0/registry-auth/aspects.
 * [magda/registry/aspects/terria-config.schema.json](magda/registry/aspects/terria-config.schema.json)
 * [magda/registry/aspects/terria-catalog.schema.json](magda/registry/aspects/terria-catalog.schema.json)
 
 #### Add a terria configuration record
+Must ensure `{"tenantId": "2"}` in the file.
 Login into https://web2-withterria.dev.magda.io/auth/login/ckan then post the json data in [magda/registry/sample-records/demo2.json](magda/registry/sample-records/demo2.json)
  to https://web2-withterria.dev.magda.io/api/v0/registry-auth/records
 

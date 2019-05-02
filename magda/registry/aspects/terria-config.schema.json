@@ -1,5 +1,6 @@
 {
     "id": "terria-config",
+    "tenantId": "1",
     "name": "config for terria",
     "jsonSchema": {
         "type": "object",
