@@ -20,6 +20,11 @@
             "url": "https://data.gov.au",
             "name": "Magda Item",
             "datasetId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
+        },
+        {
+            "type": "csv",
+            "url": "test/incidents_notime.csv",
+            "name": "CSV Test"
         }
     ]
 }
