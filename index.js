@@ -28,6 +28,7 @@ import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogG
 import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
 import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
 import MagdaCatalogItem from "terriajs/lib/Models/MagdaCatalogItem";
+import CsvCatalogItem from "terriajs/lib/Models/CsvCatalogItem";
 import CommonStrata from 'terriajs/lib/Models/CommonStrata';
 
 
@@ -55,6 +56,7 @@ CatalogMemberFactory.register(WebMapServiceCatalogItem.type, WebMapServiceCatalo
 CatalogMemberFactory.register(WebMapServiceCatalogGroup.type, WebMapServiceCatalogGroup);
 CatalogMemberFactory.register(GeoJsonCatalogItem.type, GeoJsonCatalogItem);
 CatalogMemberFactory.register(MagdaCatalogItem.type, MagdaCatalogItem);
+CatalogMemberFactory.register(CsvCatalogItem.type, CsvCatalogItem);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
