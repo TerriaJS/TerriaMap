@@ -1,5 +1,7 @@
 language: node_js
 node_js:
-- '6'
+- '8'
 script:
 - gulp lint release
+env:
+- NODE_OPTIONS=--max_old_space_size=2048
