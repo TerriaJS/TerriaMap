@@ -23,18 +23,6 @@ write_files:
     NFILES=131072
     MEMLOCK=82000
     DAEMON_OPTS="-a :80 -T localhost:6082 -f /etc/varnish/default.vcl -S /etc/varnish/secret -s memcache=malloc,1G -s filecache=file,/tmp/varnish_storage.bin,10G"
-  
- - path: /etc/rsyslog.d/30-natmap.conf
-   content: |
-    :syslogtag, isequal, "natmap:" /var/log/natmap.log
-    & ~
-
- - path: /etc/init/natmap.conf
-   content: |
-    start on (net-device-up and local-filesystems and runlevel [2345])
-    stop on runlevel [016]
-    console log
-    exec bash -c "cd /opt/{{deploymentName}} && /opt/{{deploymentName}}/node_modules/terriajs-server/run_server.sh --config-file /opt/{{deploymentName}}/productionserverconfig.json 2>&1 | logger -t natmap"
 
 # run all the commands to set this instance up
 runcmd:
@@ -44,7 +32,7 @@ runcmd:
 # copy and extract the webapps from S3
  - mkdir /tmp/ramfs
 
-# natmap
+# TerriaJS app
  - mount -t ramfs ramfs /tmp/ramfs
  - aws s3 cp --region ap-southeast-2 s3://terria-apps/map/{{deploymentName}}.tar.gz /tmp/ramfs/
  - mkdir /opt/{{deploymentName}}
@@ -55,7 +43,12 @@ runcmd:
  - cp /opt/{{deploymentName}}/varnish/default.vcl /etc/varnish
  - umount /tmp/ramfs
 
+# Create service
+ - cd /opt/{{deploymentName}}
+ - ./node_modules/pm2/bin/pm2 startup upstart -u ubuntu --hp /home/ubuntu
+ - sudo -u ubuntu ./node_modules/.bin/pm2 start ecosystem-production.config.js --update-env --env production
+ - sudo -u ubuntu ./node_modules/.bin/pm2 save
+
 # start/restart services
  - service rsyslog restart
  - service varnish restart
- - service natmap start
