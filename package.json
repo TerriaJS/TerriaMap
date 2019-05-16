@@ -11,7 +11,7 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "terriajs-server": "^2.9.1"
+    "terriajs-server": "^3.0.0"
   },
   "config": {
     "awsProfile": "terria",
