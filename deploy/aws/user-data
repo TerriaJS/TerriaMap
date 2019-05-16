@@ -2,7 +2,7 @@
 
 # update and install packages, reboot if necessary
 apt_sources:
-  - source: deb https://deb.nodesource.com/node_8.x trusty main
+  - source: deb https://deb.nodesource.com/node_8.x bionic main
     keyid: 1655a0ab68576280
 
 package_upgrade: true
