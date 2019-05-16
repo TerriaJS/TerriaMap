@@ -1,9 +1,4 @@
 {
-  "private": true,
-  "workspaces": {
-    "packages": ["packages/terriajs", "packages/terriajs-server"],
-    "nohoist": ["**/husky"]
-  },
   "name": "terriajs-map",
   "version": "0.0.1",
   "description": "Geospatial catalog explorer based on TerriaJS.",
@@ -17,7 +12,7 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "3.0.0-test-3"
+    "terriajs-server": "^3.0.0"
   },
   "config": {
     "awsProfile": "terria",
