@@ -13,7 +13,7 @@ import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 // import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
-import Terria from 'terriajs/lib/Models/Terria';
+import Terria, { BaseMapViewModel } from 'terriajs/lib/Models/Terria';
 // import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
@@ -30,6 +30,7 @@ import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
 import MagdaCatalogItem from "terriajs/lib/Models/MagdaCatalogItem";
 import CsvCatalogItem from "terriajs/lib/Models/CsvCatalogItem";
 import CommonStrata from 'terriajs/lib/Models/CommonStrata';
+import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
@@ -95,26 +96,14 @@ module.exports = terria.start({
 
         // Create the various base map options.
         // var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-        // var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
         // var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
 
         // var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
-        // var globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
+        const globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
+        terria.baseMaps.push(...globalBaseMaps);
 
         // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
-        const blackMarble = new WebMapServiceCatalogItem('basemap-black-marble', terria);
-        const codedProperties = blackMarble.getOrCreateStratum(CommonStrata.user);
-        codedProperties.name = 'NASA Black Marble';
-        codedProperties.url = 'http://geoserver.nationalmap.nicta.com.au/imagery/nasa-black-marble/wms';
-        codedProperties.layers = 'nasa-black-marble:dnb_land_ocean_ice.2012.54000x27000_geo';
-        codedProperties.parameters = {
-            tiled: true
-        };
-        codedProperties.opacity = 1.0;
-        codedProperties.isRequiredForRendering = true;
-        blackMarble.loadMapItems();
-        terria.baseMap = blackMarble;
         // const allBaseMaps = undefined;
 
         // Show a modal disclaimer before user can do anything else.
