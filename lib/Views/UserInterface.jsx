@@ -1,6 +1,8 @@
 import { Menu, Nav, ExperimentalMenu } from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups';
 import MeasureTool from 'terriajs/lib/ReactViews/Map/Navigation/MeasureTool';
 import MenuItem from 'terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem';
+import HelpMenuPanel from 'terriajs/lib/ReactViews/HelpScreens/HelpMenuPanel';
+import HelpOverlay from 'terriajs/lib/ReactViews/HelpScreens/HelpOverlay.jsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import RelatedMaps from './RelatedMaps';
@@ -23,8 +25,10 @@ function isBrowserSupportedAV() {
 
 export default function UserInterface(props) {
     return (
+    <React.Fragment>
         <StandardUserInterface {... props} version={version}>
             <Menu>
+                <HelpMenuPanel helpViewState={props.helpViewState} helpSequences={props.helpSequences} viewState={props.viewState}/>
                 <RelatedMaps viewState={props.viewState} />
                 <MenuItem caption="About" href="about.html" key="about-link"/>
             </Menu>
@@ -37,10 +41,14 @@ export default function UserInterface(props) {
                 </If>
             </ExperimentalMenu>
         </StandardUserInterface>
+        <HelpOverlay helpViewState={props.helpViewState} helpSequences={props.helpSequences} viewState={props.viewState}/>
+    </React.Fragment>
     );
 }
 
 UserInterface.propTypes = {
     terria: PropTypes.object,
-    viewState: PropTypes.object
+    viewState: PropTypes.object,
+    helpViewState: PropTypes.object,
+    helpSequences: PropTypes.object
 };

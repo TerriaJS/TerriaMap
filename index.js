@@ -22,6 +22,8 @@ import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerS
 import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
+import getHelpSequences from './lib/Views/getHelpSequences';
+import HelpViewState from 'terriajs/lib/ReactViewModels/HelpViewState';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -114,8 +116,9 @@ module.exports = terria.start({
                 viewState.notifications.push(options);
             }
         }
-
-        render(terria, allBaseMaps, viewState);
+        var helpSequences = getHelpSequences();
+        var helpViewState = new HelpViewState();
+        render(terria, allBaseMaps, viewState, helpSequences, helpViewState);
     } catch (e) {
         console.error(e);
         console.error(e.stack);
