@@ -25,6 +25,11 @@
             "type": "csv",
             "url": "test/incidents_notime.csv",
             "name": "CSV Test"
+        },
+        {
+            "type": "csv",
+            "url": "test/localphotostories20092014.csv",
+            "name": "ABC Photo Stories"
         }
     ]
 }
