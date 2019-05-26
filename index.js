@@ -13,7 +13,7 @@ import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 // import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
-import Terria, { BaseMapViewModel } from 'terriajs/lib/Models/Terria';
+import Terria from 'terriajs/lib/Models/Terria';
 // import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
@@ -22,14 +22,12 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
-import { observable } from 'mobx';
 import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
 import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroup';
 import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
 import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
 import MagdaCatalogItem from "terriajs/lib/Models/MagdaCatalogItem";
 import CsvCatalogItem from "terriajs/lib/Models/CsvCatalogItem";
-import CommonStrata from 'terriajs/lib/Models/CommonStrata';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 
 
