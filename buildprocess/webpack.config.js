@@ -3,6 +3,9 @@
 /*global require*/
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var generateRoutes = require("./generate-init-routes");
+var PrerenderSPAPlugin = require("prerender-spa-plugin");
+var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
 
 module.exports = function(devMode, hot) {
@@ -100,7 +103,26 @@ module.exports = function(devMode, hot) {
             ]
         },
         plugins: [
-            new MiniCssExtractPlugin({filename: "TerriaMap.css", disable: hot, ignoreOrder: true, allChunks: true})
+            new MiniCssExtractPlugin({filename: "TerriaMap.css", disable: hot, ignoreOrder: true, allChunks: true}),
+            new PrerenderSPAPlugin({
+                staticDir: path.resolve(__dirname, '..', "wwwroot/"),
+                indexPath: path.resolve(__dirname, '..', "wwwroot/", 'index_prerender.html'),
+                // routes: [
+                //     "/",
+                //     "/catalog/",
+                //   "/catalog/Root%20Group%2FExample%20Datasets%2FChart%20examples%2FStar%20Stations",
+                //   "/catalog/Root%20Group%2FExample%20Datasets%2FChart%20examples%2FTime%20series",
+                // ],
+                // routes: generateRoutes(require('../wwwroot/config.json')),
+                routes: generateRoutes(["terria"]),
+                renderer: new Renderer({
+                  // renderAfterDocumentEvent: 'some terria catalog loaded event', 
+                  // renderAfterElementExists: 'some element? instead of event?',
+                //   renderAfterTime: 5000,
+                    maxConcurrentRoutes: 4,
+                //   headless: false, // set to false for debugging
+                }),
+              }),
         ],
        resolve: {
             alias: {},
