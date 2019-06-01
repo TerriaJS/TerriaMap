@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: terriajs-map-config-client
+  labels:
+    pod: terriajs-map
+data:
+  config.json: {{ toJson .Values.clientConfig | indent 2 | quote }}
+  helm.json: {{ toJson .Values.initConfig | indent 2 | quote }}

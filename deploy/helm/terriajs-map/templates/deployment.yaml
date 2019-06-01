@@ -1,0 +1,54 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: terriajs-map
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: {{ .Values.global.rollingUpdate.maxUnavailable | default 0 }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        service: terriajs-map
+    spec:
+{{- if and (.Capabilities.APIVersions.Has "scheduling.k8s.io/v1beta1") .Values.global.enablePriorityClass }}
+      priorityClassName: magda-8
+{{- end }}
+      containers:
+      - name: web
+        readinessProbe:
+          httpGet:
+            path: "/ping"
+            port: 3001
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 10
+{{- if .Values.global.enableLivenessProbes }}
+        livenessProbe:
+          httpGet:
+            path: "/ping"
+            port: 3001
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 10
+{{- end }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        env:
+        - name: NODE_ENV
+          value: production
+        image: {{ .Values.image.full | quote }}
+        imagePullPolicy: {{ .Values.image.pullPolicy | default .Values.global.image.pullPolicy }}
+        volumeMounts:
+          - name: terriajs-map-config-client
+            mountPath: /etc/config/client
+          - name: terriajs-map-config-server
+            mountPath: /etc/config/server
+      volumes:
+        - name: terriajs-map-config-client
+          configMap:
+            name: terriajs-map-config-client
+        - name: terriajs-map-config-server
+          configMap:
+            name: terriajs-map-config-server
