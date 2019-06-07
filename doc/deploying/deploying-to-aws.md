@@ -120,3 +120,7 @@ map.terria.io -> terriajs-map-2016-05-17.terria.io
 ### Troubleshooting
 
 The default Mac OS `tar` command [causes trouble](http://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt). You'll need to replace it with `gtar`, eg. using Homebrew.
+
+## After releasing
+
+Make sure you delete the old CloudFormation stacks for the previous version of the app. Otherwise they'll keep running (and costing money!).
