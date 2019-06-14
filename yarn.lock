@@ -9101,10 +9101,10 @@ terriajs-server@^3.0.0:
     when "^3.7.7"
     yargs "^13.2.4"
 
-terriajs@7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.6.0.tgz#103cd30f48afd5de42e53a5f85b52750854bebee"
-  integrity sha512-7AQvdut0z86wadBvTI2J+78/TOpT8pNZyMDEEJAXWYrhMZ4VFLQtMEJCPHh0u4wqqfjeBG7LRDBXcJ7Skxe7Jw==
+terriajs@7.6.2:
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.6.2.tgz#03f58854d588d42697dfcfc75ce780c6cd5c6364"
+  integrity sha512-MsX9EPaGR25wbhdQpQFIj8fiYK8jlUb5jSEu4upbFkBq/PozwYOcpArfzLQHX38wzcl0YSddro9PRYXtSyNsVA==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
