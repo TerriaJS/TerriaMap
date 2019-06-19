@@ -75,9 +75,12 @@ module.exports = terria.start({
     shareDataService: new ShareDataService({
         terria: terria
     })
-}).otherwise(function(e) {
+}).catch(function(e) {
     raiseErrorToUser(terria, e);
-}).always(function() {
+}).finally(function() {
+    terria.loadInitSources().catch(e => {
+        raiseErrorToUser(terria, e);
+    });
     try {
         // viewState.searchState.locationSearchProviders = [
         //     new BingMapsSearchProviderViewModel({
