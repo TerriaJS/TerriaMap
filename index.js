@@ -56,6 +56,7 @@ CatalogMemberFactory.register(WebMapServiceCatalogGroup.type, WebMapServiceCatal
 CatalogMemberFactory.register(GeoJsonCatalogItem.type, GeoJsonCatalogItem);
 CatalogMemberFactory.register(MagdaCatalogItem.type, MagdaCatalogItem);
 CatalogMemberFactory.register(CsvCatalogItem.type, CsvCatalogItem);
+CatalogMemberFactory.register(GltfCatalogItem.type, GltfCatalogItem);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
