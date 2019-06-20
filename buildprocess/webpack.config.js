@@ -5,6 +5,7 @@ var fs = require('fs');
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var generateRoutes = require("./generate-init-routes");
+var generateTerriaSitemap = require("./generate-terria-sitemap");
 var PrerenderSPAPlugin = require("prerender-spa-plugin");
 var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
@@ -118,13 +119,30 @@ module.exports = function(devMode, hot) {
         var configJsonPath = fs.readFileSync(path.resolve(__dirname, '..','wwwroot', 'config.json'), 'utf8');
         var configJson = json5.parse(configJsonPath);
         var prerenderRoutes =
-          (configJson &&
-            configJson.initializationUrls &&
-            configJson.initializationUrls.length > 0 &&
-            generateRoutes(configJson.initializationUrls)) ||
-          [];
+            (configJson &&
+                configJson.initializationUrls &&
+                configJson.initializationUrls.length > 0 &&
+                generateRoutes(configJson.initializationUrls)) ||
+            [];
+        var appBaseUrl =
+            (configJson &&
+                configJson.appBaseUrl &&
+                configJson.appBaseUrl.length > 0 &&
+                configJson.appBaseUrl);
+
         console.log('The following routes generated from config.json\'s initializationUrls will be prerendered:');
         console.log(prerenderRoutes);
+
+        if (appBaseUrl) {
+            try {
+                var sitemap = generateTerriaSitemap(appBaseUrl, prerenderRoutes);
+                var sitemapPath = path.resolve(__dirname, '..', 'wwwroot', 'sitemap.xml');
+                fs.writeFileSync(sitemapPath, new Buffer(sitemap));
+                console.log('Wrote out sitemap to: ' + sitemapPath);
+            } catch (e) {
+                console.error("Couldn't generate sitemap?", e);
+            }
+        }
         config.plugins = [...config.plugins, new PrerenderSPAPlugin({
             staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
             outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
