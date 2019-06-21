@@ -126,15 +126,17 @@ module.exports = function(devMode, hot) {
             [];
         var appBaseUrl =
             (configJson &&
-                configJson.appBaseUrl &&
-                configJson.appBaseUrl.length > 0 &&
-                configJson.appBaseUrl);
+                configJson.parameters &&
+                configJson.parameters.appBaseUrl &&
+                configJson.parameters.appBaseUrl.length > 0 &&
+                configJson.parameters.appBaseUrl);
 
         console.log('The following routes generated from config.json\'s initializationUrls will be prerendered:');
         console.log(prerenderRoutes);
 
         if (appBaseUrl) {
             try {
+                console.log('Attempting to write sitemap with appBaseUrl: ', appBaseUrl);
                 var sitemap = generateTerriaSitemap(appBaseUrl, prerenderRoutes);
                 var sitemapPath = path.resolve(__dirname, '..', 'wwwroot', 'sitemap.xml');
                 fs.writeFileSync(sitemapPath, new Buffer(sitemap));
@@ -142,6 +144,8 @@ module.exports = function(devMode, hot) {
             } catch (e) {
                 console.error("Couldn't generate sitemap?", e);
             }
+        } else {
+            console.warn("Warning - no appBaseUrl specified, no sitemap will be generated.")
         }
         config.plugins = [...config.plugins, new PrerenderSPAPlugin({
             staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
@@ -149,10 +153,8 @@ module.exports = function(devMode, hot) {
             indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
             routes: prerenderRoutes,
             renderer: new Renderer({
-                // renderAfterDocumentEvent: 'some terria catalog loaded event', 
-                // renderAfterElementExists: 'some element? instead of event?',
-                renderAfterTime: 13000,
-                maxConcurrentRoutes: 8,
+                renderAfterDocumentEvent: 'prerender-end', 
+                maxConcurrentRoutes: 12,
                 // headless: false, // set to false for debugging
             }),
         })];
