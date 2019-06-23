@@ -1,4 +1,6 @@
 const globeGif = require('./lib/Styles/globe.gif');
+const polyfill = require("terriajs/lib/Core/polyfill");
+
 require('./lib/Styles/loader.css');
 
 function loadMainScript() {
@@ -23,24 +25,24 @@ function createLoader() {
     loaderGrabber.classList.add('loader-ui-grabber');
     const loaderRight = document.createElement('div');
     loaderRight.classList.add("loader-ui-right");
-    loaderRight.append(loaderGif);
+    loaderRight.appendChild(loaderGif);
 
-    loaderDiv.append(loaderLeft);
-    loaderDiv.append(loaderRight);
-    loaderDiv.append(loaderGrabber);
+    loaderDiv.appendChild(loaderLeft);
+    loaderDiv.appendChild(loaderRight);
+    loaderDiv.appendChild(loaderGrabber);
     loaderDiv.style.backgroundColor ='#383F4D';
     document.body.appendChild(loaderDiv);
 
-    loadMainScript().catch(() => {
-        // Ignore errors and try to show the map anyway
-    }).then(() => {
-        loaderDiv.classList.add('loader-ui-hide');
-        setTimeout(()=> {
-            document.body.removeChild(loaderDiv);
-        }, 2000);
+    polyfill(function() {
+        loadMainScript().catch(() => {
+            // Ignore errors and try to show the map anyway
+        }).then(() => {
+            loaderDiv.classList.add('loader-ui-hide');
+            setTimeout(()=> {
+                document.body.removeChild(loaderDiv);
+            }, 2000);
+        });
     });
 }
 
 createLoader();
-
-
