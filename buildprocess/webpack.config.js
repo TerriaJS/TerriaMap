@@ -147,17 +147,17 @@ module.exports = function(devMode, hot) {
         } else {
             console.warn("Warning - no appBaseUrl specified, no sitemap will be generated.")
         }
-        config.plugins = [...config.plugins, new PrerenderSPAPlugin({
-            staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
-            outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
-            indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
-            routes: prerenderRoutes,
-            renderer: new Renderer({
-                renderAfterDocumentEvent: 'prerender-end', 
-                maxConcurrentRoutes: 12,
-                // headless: false, // set to false for debugging
-            }),
-        })];
+        // config.plugins = [...config.plugins, new PrerenderSPAPlugin({
+        //     staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
+        //     outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
+        //     indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
+        //     routes: prerenderRoutes,
+        //     renderer: new Renderer({
+        //         renderAfterDocumentEvent: 'prerender-end', 
+        //         maxConcurrentRoutes: 12,
+        //         // headless: false, // set to false for debugging
+        //     }),
+        // })];
     }
     return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
 };
