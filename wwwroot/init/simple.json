@@ -1,78 +1,84 @@
 {
-    "catalog": [
+  "homeCamera": {
+    "north": -8,
+    "east": 158,
+    "south": -45,
+    "west": 109
+  },
+  "catalog": [
+    {
+      "type": "wms-group",
+      "name": "Test",
+      "url": "https://programs.communications.gov.au/geoserver/ows",
+      "members": [
         {
-            "type": "wms-group",
-            "name": "Test",
-            "url": "https://programs.communications.gov.au/geoserver/ows",
-            "members": [
+          "type": "wms",
+          "localId": "mybroadband%3AMyBroadband_ADSL_Availability",
+          "legends": [
+            {
+              "items": [
                 {
-                    "type": "wms",
-                    "localId": "mybroadband%3AMyBroadband_ADSL_Availability",
-                    "legends": [
-                        {
-                            "items": [
-                                {
-                                    "title": "A - Best",
-                                    "color": "#6B0038"
-                                },
-                                {
-                                    "title": "B",
-                                    "color": "#F41911"
-                                },
-                                {
-                                    "title": "C",
-                                    "color": "#F67F00"
-                                },
-                                {
-                                    "title": "D",
-                                    "color": "#D78B6D"
-                                },
-                                {
-                                    "title": "E - Worst",
-                                    "color": "#ECD2BE"
-                                },
-                                {
-                                    "title": "No data",
-                                    "color": "rgba(0,0,0,0)",
-                                    "outlineColor": "black",
-                                    "addSpacingAbove": true
-                                }
-                            ]
-                        }
-                    ]
+                  "title": "A - Best",
+                  "color": "#6B0038"
+                },
+                {
+                  "title": "B",
+                  "color": "#F41911"
+                },
+                {
+                  "title": "C",
+                  "color": "#F67F00"
+                },
+                {
+                  "title": "D",
+                  "color": "#D78B6D"
+                },
+                {
+                  "title": "E - Worst",
+                  "color": "#ECD2BE"
+                },
+                {
+                  "title": "No data",
+                  "color": "rgba(0,0,0,0)",
+                  "outlineColor": "black",
+                  "addSpacingAbove": true
                 }
-            ]
-        },
-        {
-            "type": "geojson",
-            "name": "GeoJSON Test",
-            "url": "test/bike_racks.geojson"
-        },
-        {
-            "type": "wms-group",
-            "name": "Marine water quality grids for the Great Barrier Reef region - monthly data",
-            "url": "/proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
-        },
-        {
-            "type": "magda",
-            "url": "https://data.gov.au",
-            "name": "Magda Item",
-            "datasetId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
-        },
-        {
-            "type": "csv",
-            "url": "test/incidents_notime.csv",
-            "name": "CSV Test"
-        },
-        {
-            "type": "csv",
-            "url": "test/localphotostories20092014.csv",
-            "name": "ABC Photo Stories"
-        },
-        {
-            "type": "csv",
-            "url": "test/NSW_LGA_NEXIS_201212.csv",
-            "name": "NSW LGA NEXIS 2012"
+              ]
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "type": "geojson",
+      "name": "GeoJSON Test",
+      "url": "test/bike_racks.geojson"
+    },
+    {
+      "type": "wms-group",
+      "name": "Marine water quality grids for the Great Barrier Reef region - monthly data",
+      "url": "/proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
+    },
+    {
+      "type": "magda",
+      "url": "https://data.gov.au",
+      "name": "Magda Item",
+      "datasetId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
+    },
+    {
+      "type": "csv",
+      "url": "test/incidents_notime.csv",
+      "name": "CSV Test"
+    },
+    {
+      "type": "csv",
+      "url": "test/localphotostories20092014.csv",
+      "name": "ABC Photo Stories"
+    },
+    {
+      "type": "csv",
+      "url": "test/NSW_LGA_NEXIS_201212.csv",
+      "name": "NSW LGA NEXIS 2012"
+    }
+  ]
 }
