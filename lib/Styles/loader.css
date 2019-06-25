@@ -1,3 +1,6 @@
+      .tjs-explorer-window__modal-wrapper {
+        z-index:10000 !important;
+      }
       .loader-ui-right img{
         display: block;
         margin: calc(50vh - 150px) auto;

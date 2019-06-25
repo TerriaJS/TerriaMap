@@ -2,21 +2,21 @@
 @import "~terriajs/lib/Sass/global/global";
 
 body {
-    margin: 0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 
 :global {
-    @media print {
-        .nationalmap-print-disclaimer {
-            color: #000;
-            display: block;
-        }
+  @media print {
+    .nationalmap-print-disclaimer {
+      color: #000;
+      display: block;
     }
+  }
 
-    // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
-    // You will also want to uncomment and change values in lib/Styles/variables.scss
-    /*
+  // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
+  // You will also want to uncomment and change values in lib/Styles/variables.scss
+  /*
     // Import any custom fonts here
     //@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700);
 
@@ -152,5 +152,4 @@ body {
         color:$color-secondary;
     }
     */
-
 }

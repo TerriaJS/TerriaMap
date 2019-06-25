@@ -1,9 +1,15 @@
 'use strict';
 
 /*global require*/
+var fs = require('fs');
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var generateRoutes = require("./generate-init-routes");
+var generateTerriaSitemap = require("./generate-terria-sitemap");
+var PrerenderSPAPlugin = require("prerender-spa-plugin");
+var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
+var json5 = require("json5");
 
 module.exports = function(devMode, hot) {
     var config = {
@@ -108,5 +114,51 @@ module.exports = function(devMode, hot) {
         }
     };
     config.resolve.alias['terriajs-variables'] = require.resolve('../lib/Styles/variables.scss');
+
+    if (!devMode) {
+        var configJsonPath = fs.readFileSync(path.resolve(__dirname, '..','wwwroot', 'config.json'), 'utf8');
+        var configJson = json5.parse(configJsonPath);
+        var prerenderRoutes =
+            (configJson &&
+                configJson.initializationUrls &&
+                configJson.initializationUrls.length > 0 &&
+                generateRoutes(configJson.initializationUrls)) ||
+            [];
+        var appBaseUrl =
+            (configJson &&
+                configJson.parameters &&
+                configJson.parameters.appBaseUrl &&
+                configJson.parameters.appBaseUrl.length > 0 &&
+                configJson.parameters.appBaseUrl);
+
+        console.log('The following routes generated from config.json\'s initializationUrls will be prerendered:');
+        console.log(prerenderRoutes);
+
+        if (appBaseUrl) {
+            try {
+                console.log('Attempting to write sitemap with appBaseUrl: ', appBaseUrl);
+                var sitemap = generateTerriaSitemap(appBaseUrl, prerenderRoutes);
+                var sitemapPath = path.resolve(__dirname, '..', 'wwwroot', 'sitemap.xml');
+                fs.writeFileSync(sitemapPath, new Buffer(sitemap));
+                console.log('Wrote out sitemap to: ' + sitemapPath);
+            } catch (e) {
+                console.error("Couldn't generate sitemap?", e);
+            }
+        } else {
+            console.warn("Warning - no appBaseUrl specified, no sitemap will be generated.")
+        }
+        config.plugins = [...config.plugins, new PrerenderSPAPlugin({
+            staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
+            outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
+            indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
+            routes: prerenderRoutes,
+            renderer: new Renderer({
+                timeout: 3000,
+                renderAfterDocumentEvent: 'prerender-end', 
+                maxConcurrentRoutes: 12,
+                // headless: false, // set to false for debugging
+            }),
+        })];
+    }
     return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
 };
