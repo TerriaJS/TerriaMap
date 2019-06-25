@@ -13,6 +13,19 @@ function loadMainScript() {
 }
 
 function createLoader() {
+    // We only want this briefly so the explorer-window modal can be displayed
+    // until we load in other modal-like-things like disclaimer windows,
+    // but also other notification windows like error messages
+    // So, reset it back to app defaults after
+    const catalogzIndexOverride = document.createElement('style');
+    catalogzIndexOverride.setAttribute('type', 'text/css');
+    catalogzIndexOverride.innerHTML = `
+        .tjs-explorer-window__modal-wrapper {
+            z-index:10000 !important;
+        }
+    `;
+    document.body.appendChild(catalogzIndexOverride);
+
     const loaderDiv = document.createElement('div');
     loaderDiv.classList.add("loader-ui");
     const loaderGif = document.createElement('img');
@@ -34,10 +47,16 @@ function createLoader() {
     loadMainScript().catch(() => {
         // Ignore errors and try to show the map anyway
     }).then(() => {
-        loaderDiv.classList.add('loader-ui-hide');
-        setTimeout(()=> {
+        const removeLoaderElements = () => {
             document.body.removeChild(loaderDiv);
-        }, 2000);
+            document.body.removeChild(catalogzIndexOverride);
+        };
+        loaderDiv.classList.add('loader-ui-hide');
+        setTimeout(() => document.body.removeChild(catalogzIndexOverride), 300);
+        loaderDiv.addEventListener('transitionend', removeLoaderElements);
+        // also fallback with setTimeout here
+        // so we can remove the elements anyway in case of transitionend event failure
+        setTimeout(removeLoaderElements, 2000);
     });
 }
 
