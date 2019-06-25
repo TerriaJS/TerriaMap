@@ -153,6 +153,7 @@ module.exports = function(devMode, hot) {
             indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
             routes: prerenderRoutes,
             renderer: new Renderer({
+                timeout: 3000,
                 renderAfterDocumentEvent: 'prerender-end', 
                 maxConcurrentRoutes: 12,
                 // headless: false, // set to false for debugging
