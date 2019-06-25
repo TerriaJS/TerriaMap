@@ -1,7 +1,15 @@
 language: node_js
+dist: trusty
+addons:
+  apt:
+    packages:
+      - libnss3
 node_js:
 - '8'
 script:
 - gulp lint release
 env:
 - NODE_OPTIONS=--max_old_space_size=2048
+before_install:
+  # Enable user namespace cloning
+  - "sysctl kernel.unprivileged_userns_clone=1"
