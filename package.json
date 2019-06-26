@@ -48,10 +48,13 @@
     "fs-extra": "^7.0.1",
     "generate-terriajs-schema": "^1.4.0",
     "gulp": "^4.0.0",
+    "husky": "^2.4.1",
     "json5": "^2.1.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.11.0",
     "plugin-error": "^1.0.1",
+    "prettier": "1.17.0",
+    "pretty-quick": "^1.10.0",
     "prop-types": "^15.6.0",
     "raw-loader": "^1.0.0",
     "react": "^16.3.2",
@@ -86,6 +89,14 @@
     "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && npm ci && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
-    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json"
+    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
+    "prettier": "prettier --write \"**/*\"",
+    "pretty-quick": "pretty-quick",
+    "prettier-check": "prettier --check \"**/*\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
