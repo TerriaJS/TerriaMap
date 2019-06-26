@@ -15,14 +15,18 @@ import version from "../../version";
 import "./global.scss";
 
 // function loadAugmentedVirtuality(callback) {
-//     require.ensure('terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool', () => {
-//         const AugmentedVirtualityTool = require('terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool');
-//         callback(AugmentedVirtualityTool);
-//     }, 'AugmentedVirtuality');
+//   require.ensure(
+//     "terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool",
+//     () => {
+//       const AugmentedVirtualityTool = require("terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool");
+//       callback(AugmentedVirtualityTool);
+//     },
+//     "AugmentedVirtuality"
+//   );
 // }
 
 // function isBrowserSupportedAV() {
-//     return /Android|iPhone|iPad/i.test(navigator.userAgent);
+//   return /Android|iPhone|iPad/i.test(navigator.userAgent);
 // }
 
 export default function UserInterface(props) {
@@ -30,13 +34,20 @@ export default function UserInterface(props) {
     <StandardUserInterface {...props} version={version}>
       <Menu>
         {/* <RelatedMaps viewState={props.viewState} />
-                <MenuItem caption="About" href="about.html" key="about-link"/> */}
+        <MenuItem caption="About" href="about.html" key="about-link" /> */}
       </Menu>
-      <Nav>{/* <MeasureTool terria={props.terria} key="measure-tool"/> */}</Nav>
+      <Nav>
+        {/* <MeasureTool terria={props.viewState.terria} key="measure-tool" /> */}
+      </Nav>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>
-                    <SplitPoint loadComponent={loadAugmentedVirtuality} viewState={props.viewState} terria={props.terria} experimentalWarning={true}/>
-                </If> */}
+          <SplitPoint
+            loadComponent={loadAugmentedVirtuality}
+            viewState={props.viewState}
+            terria={props.viewState.terria}
+            experimentalWarning={true}
+          />
+        </If> */}
       </ExperimentalMenu>
     </StandardUserInterface>
   );
