@@ -17,7 +17,7 @@ import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
-// import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
+import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
@@ -28,6 +28,7 @@ import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogIt
 import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
 import MagdaCatalogItem from "terriajs/lib/Models/MagdaCatalogItem";
 import CsvCatalogItem from "terriajs/lib/Models/CsvCatalogItem";
+import CzmlCatalogItem from "terriajs/lib/Models/CzmlCatalogItem";
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 
 
@@ -56,6 +57,7 @@ CatalogMemberFactory.register(WebMapServiceCatalogGroup.type, WebMapServiceCatal
 CatalogMemberFactory.register(GeoJsonCatalogItem.type, GeoJsonCatalogItem);
 CatalogMemberFactory.register(MagdaCatalogItem.type, MagdaCatalogItem);
 CatalogMemberFactory.register(CsvCatalogItem.type, CsvCatalogItem);
+CatalogMemberFactory.register(CzmlCatalogItem.type, CzmlCatalogItem);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
@@ -82,14 +84,14 @@ module.exports = terria.start({
         raiseErrorToUser(terria, e);
     });
     try {
-        // viewState.searchState.locationSearchProviders = [
-        //     new BingMapsSearchProviderViewModel({
-        //         terria: terria,
-        //         key: terria.configParameters.bingMapsKey
-        //     }),
-        //     new GazetteerSearchProviderViewModel({terria}),
-        //     new GnafSearchProviderViewModel({terria})
-        // ];
+        viewState.searchState.locationSearchProviders = [
+            new BingMapsSearchProviderViewModel({
+                terria: terria,
+                key: terria.configParameters.bingMapsKey
+            }),
+            // new GazetteerSearchProviderViewModel({terria}),
+            // new GnafSearchProviderViewModel({terria})
+        ];
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
