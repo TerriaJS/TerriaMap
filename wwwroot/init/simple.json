@@ -79,6 +79,67 @@
       "type": "csv",
       "url": "test/NSW_LGA_NEXIS_201212.csv",
       "name": "NSW LGA NEXIS 2012"
+    },
+    {
+      "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
+      "type": "esri-mapServer",
+      "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+      "name": "Surface Geology",
+      "rectangle": { "west": 106, "south": -52, "east": 172, "north": -8 },
+      "info": [
+        {
+          "name": "Licence",
+          "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+        }
+      ]
+    },
+    {
+      "name": "Brisbane 3D city model (aero3Dpro)",
+      "type": "3d-tiles",
+      "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+      "url": "https://sample.aero3dpro.com.au/BrisbaneCBD/Scene/recon_h_3DTiles.json",
+      "options": {
+        "maximumScreenSpaceError": 1,
+        "maximumNumberOfLoadedTiles": 1000
+      },
+      "rectangle": {
+        "west": 153.01,
+        "south": -27.484,
+        "east": 153.034,
+        "north": -27.46
+      }
+    },
+    {
+      "name": "Melbourne 3D city model (aero3Dpro)",
+      "type": "3d-tiles",
+      "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+      "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
+      "options": {
+        "maximumScreenSpaceError": 1,
+        "maximumNumberOfLoadedTiles": 1000
+      },
+      "rectangle": {
+        "west": 144.868,
+        "south": -37.885,
+        "east": 145.018,
+        "north": -37.775
+      }
+    },
+    {
+      "name": "Sydney 3D city model (aero3Dpro)",
+      "type": "3d-tiles",
+      "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+      "url": "https://sample.aero3dpro.com.au/Sydney/Scene/recon_h_3DTiles.json",
+      "options": {
+        "maximumScreenSpaceError": 1,
+        "maximumNumberOfLoadedTiles": 1000
+      },
+      "rectangle": {
+        "west": 151.161,
+        "south": -33.923,
+        "east": 151.3075,
+        "north": -33.796
+      }
     }
   ]
 }

@@ -29,6 +29,8 @@ import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
 import MagdaCatalogItem from "terriajs/lib/Models/MagdaCatalogItem";
 import CsvCatalogItem from "terriajs/lib/Models/CsvCatalogItem";
 import CzmlCatalogItem from "terriajs/lib/Models/CzmlCatalogItem";
+import ArcGisMapServerCatalogItem from "terriajs/lib/Models/ArcGisMapServerCatalogItem";
+import Cesium3DTilesCatalogItem from "terriajs/lib/Models/Cesium3DTilesCatalogItem";
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 
 
@@ -58,6 +60,8 @@ CatalogMemberFactory.register(GeoJsonCatalogItem.type, GeoJsonCatalogItem);
 CatalogMemberFactory.register(MagdaCatalogItem.type, MagdaCatalogItem);
 CatalogMemberFactory.register(CsvCatalogItem.type, CsvCatalogItem);
 CatalogMemberFactory.register(CzmlCatalogItem.type, CzmlCatalogItem);
+CatalogMemberFactory.register(ArcGisMapServerCatalogItem.type, ArcGisMapServerCatalogItem);
+CatalogMemberFactory.register(Cesium3DTilesCatalogItem.type, Cesium3DTilesCatalogItem);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
