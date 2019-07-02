@@ -1,0 +1,1716 @@
+{
+    "homeCamera": {
+        "north": -26.5,
+        "east": 154.3,
+        "south": -38.4,
+        "west": 139
+    },
+    "corsDomains": [
+        "aremi.data61.io",
+        "maps.six.nsw.gov.au",
+        "sixtest.nsw.gov.au",
+        "ows.services.dea.ga.gov.au",
+        "gsky.nci.org.au"
+    ],
+    "catalog": [
+        {
+            "name": "Penrith",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Penrith Swimming Pool Register",
+                    "nameInCatalog": "Swimming Pool Register",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/wms",
+                    "layers": "swimmingpoolregister_penrithsuburb",
+                    "description": "This is `SwimmingPoolRegister_PenrithSuburb` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Trees (3D)",
+                    "nameInCatalog": "Trees (3D)",
+                    "type": "3d-tiles",
+                    "url": "nsw/Trees/tileset.json",
+                    "options": {
+                        "pointCloudShading": {
+                            "attenuation": true,
+                            "geometricErrorScale": 0.25
+                        }
+                    },
+                    "description": "This is `Trees` from `4D_FSDF_03.gdb`."
+                },
+                {
+                    "name": "Penrith Railways",
+                    "nameInCatalog": "Railways",
+                    "type": "geojson",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=nsw:railway_3d&outputFormat=application%2Fjson",
+                    "description": "This is `Railway_3D` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Roads",
+                    "nameInCatalog": "Roads",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows",
+                    "layers": "nsw:roadsegment_3d",
+                    "description": "This is `RoadSegment_3D` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Address Points",
+                    "nameInCatalog": "Address Points",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/wms",
+                    "layers": "address_3d",
+                    "opacity": 1.0,
+                    "description": "This is `Address_3D` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith General Cultural Points",
+                    "nameInCatalog": "General Cultural Points",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/wms",
+                    "layers": "generalculturalpoint_3d",
+                    "opacity": 1.0,
+                    "description": "This is `GeneralCulturalPoint_3D` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Local Government Area",
+                    "nameInCatalog": "Local Government Area",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/wms",
+                    "layers": "localgovernmentarea_penrith",
+                    "description": "This is `LocalGovernmentArea_Penrith` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Transport Facility Points",
+                    "nameInCatalog": "Transport Facility Points",
+                    "type": "geojson",
+                    "url": "nsw/TransportFacilityPoint_3d-styled.geojson",
+                    "clampToGround": true,
+                    "description": "This is `TransportFacilityPoint_3d` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Place Points",
+                    "nameInCatalog": "Place Points",
+                    "type": "geojson",
+                    "url": "nsw/PlacePoint_3d.geojson",
+                    "clampToGround": true,
+                    "style": {
+                        "marker-symbol": "city",
+                        "marker-size": "medium"
+                    },
+                    "description": "This is `PlacePoint_3d` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith 5m Elevation Data (3D)",
+                    "nameInCatalog": "5m Elevation Data (3D)",
+                    "type": "cesium-terrain",
+                    "ionAssetId": 7023,
+                    "supportsSplitting": true,
+                    "depthTestAgainstTerrain": true,
+                    "description": "This is `Penrith_5m_elev.asc`."
+                },
+                {
+                    "name": "Penrith Sewer Mains (Draped)",
+                    "nameInCatalog": "Sewer Mains (Draped)",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows",
+                    "layers": "nsw:sewermains3d_penrithlga",
+                    "opacity": 1.0,
+                    "description": "This is `SewerMains3D_PenrithLGA` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Sewer Mains (Underground)",
+                    "nameInCatalog": "Sewer Mains (Underground)",
+                    "type": "geojson",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=nsw:sewermains3d_penrithlga&outputFormat=application%2Fjson",
+                    "style": {
+                        "stroke": "#E69800",
+                        "stroke-width": 3
+                    },
+                    "description": "This is `SewerMains3D_PenrithLGA` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Water Mains (Underground)",
+                    "nameInCatalog": "Water Mains (Underground)",
+                    "type": "geojson",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=nsw:watermains3d_penrith_assumeddepths&outputFormat=application%2Fjson",
+                    "style": {
+                        "stroke": "#005CE6",
+                        "stroke-width": 3
+                    },
+                    "description": "This is `WaterMains3D_Penrith_AssumedDepths` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Water Mains (Draped)",
+                    "nameInCatalog": "Water Mains (Draped)",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows",
+                    "layers": "nsw:watermains3d_penrith_assumeddepths",
+                    "opacity": 1.0,
+                    "description": "This is `WaterMains3D_Penrith_AssumedDepths` from `PenrithLGA_3D.gdb`."
+                }
+            ]
+        },
+        {
+            "name": "Buildings",
+            "type": "group",
+            "preserveOrder": "true",
+            "items": [
+                {
+                    "name": "Buildings (3D)",
+                    "type": "3d-tiles",
+                    "url": "nsw/Buildings/tileset.json",
+                    "style": {
+                        "color": "color('#FFFFFF', 0.8)"
+                    },
+                    "description": "This is `Buildings_3D` layer from `4D_FSDF_03.gdb`.",
+                    "info": [
+                        {
+                            "name": "Import Process",
+                            "content": "1. Import the Buildings_3D layer from 4D_FSDF_03.gdb into an ArcGIS Pro Scene.\n2. Export the layer as an Indexed 3D Scene (i3s) SLPK file using the \"Create Scene Layer Package\" Geoprocessing tool.\n3. Extract the SLPK file by changing its file extension to `.zip` and using a regular unzip tool.\n4. Use [i3s-to-3dtiles](https://github.com/TerriaJS/i3s-to-3dtiles) to convert it to Cesium 3D Tiles.\n5. Convert the layer to GeoJSON using: `ogr2ogr -f \"GeoJSON\" Buildings-properties.json ../4D_FSDF_03.gdb Buildings_3D`.\n6. Extra properties files for use by feature info by running `writeProperties.js` in the i3s-to-3dtiles repo."
+                        }
+                    ],
+                    "featureInfoUrlTemplate": "nsw/Buildings/FeatureInfo/{id}.json"
+                },
+                {
+                    "name": "Penrith Strata (3D)",
+                    "nameInCatalog": "Strata (3D)",
+                    "type": "3d-tiles",
+                    "url": "nsw/Strata_3D/tileset.json",
+                    "description": "This is `Strata_3D` from `4D_FSDF_03.gdb`.",
+                    "info": [
+                        {
+                            "name": "Import Process",
+                            "content": "   * Convert the feature class to GeoJSON using OGR: `ogr2ogr -f GeoJSON ../converted-4D_FSDF_03/Strata_3D.geojson 4D_FSDF_03.gdb Strata _3D`\n   * Use [transform-geojson](https://github.com/TerriaJS/transform-geojson) to add properties for top and bottom extruded polygon heights, computed from the `stratumlev` property: `node index.js --in Strata_3D.geojson --out Strata_3D-styled.geojson --transformer style-nsw-strata.js`\n   * Convert the styled GeoJSON to Cesium 3D Tiles using [geojson-to-3dtiles](https://github.com/TerriaJS/geojson-to-3dtiles): `node ./index.js --in Strata_3D-styled.geojson --out Strata_3D --heightProperty estimatedHeightBottom --extrudedHeightProperty estimatedHeightTop --terrain 7023 --accessToken [Ion access token] --commonHeightKey planoid`\n\nThe colours are assigned in the transform-to-geojson / style-nsw-strata step.\n\nCurrently there is no level of detail or culling happening; we're just brute-force rendering the whole model. It works reasonably well because glTF is fast. But better would be to cut it into multiple tiles."
+                        }
+                    ],
+                    "filters": [
+                        {
+                            "name": "Stratum Level",
+                            "property": "stratumlev",
+                            "minimumValue": -2,
+                            "maximumValue": 11,
+                            "minimumShown": -2,
+                            "maximumShown": 11
+                        }
+                    ]
+                },
+                {
+                    "name": "Richmond Chapel Street (3D BIM)",
+                    "type": "gltf",
+                    "url": "nsw/Chapel Street Richmond_08112018-transformed.glb",
+                    "origin": {
+                        "longitude": 150.74207167960805,
+                        "latitude": -33.595221586910704,
+                        "height": 44.454699
+                    }
+                },
+                {
+                    "name": "Penrith Building Footprints (Attributed)",
+                    "nameInCatalog": "Building Footprints (Attributed)",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/wms",
+                    "layers": "penrithfootprints_attributed_2d",
+                    "description": "This is `PenrithFootprints_attributed_2D` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "Penrith Building Complex Points",
+                    "nameInCatalog": "Building Complex Points",
+                    "type": "geojson",
+                    "url": "nsw/BuildingComplexPoint_3D-styled.geojson",
+                    "clampToGround": true,
+                    "description": "This is `BuildingComplexPoint_3D` from `PenrithLGA_3D.gdb`."
+                }
+            ]
+        },
+        {
+            "name": "Cadastre",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Penrith Cadastre (over time)",
+                    "nameInCatalog": "Cadastre (over time)",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/ows",
+                    "layers": "lot_history",
+                    "cacheDuration": "0s",
+                    "useOwnClock": true,
+                    "maxRefreshIntervals": 10000
+                },
+                {
+                    "name": "Penrith Cadastral Fabric",
+                    "nameInCatalog": "Cadastral Fabric",
+                    "type": "wms",
+                    "url": "http://nsw-digital-twin-data.terria.io:8080/geoserver/nsw/wms",
+                    "layers": "nsw:penfabrictfoip3d_aoi",
+                    "cacheDuration": "0s",
+                    "description": "This is `CadastralFabric_3D` from `PenrithLGA_3D.gdb`."
+                },
+                {
+                    "name": "NSW Cadastre WFS (MapServer)",
+                    "url": "https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Cadastre_WFS/MapServer",
+                    "type": "esri-mapServer-group"
+                }
+            ]
+        },
+        {
+            "name": "Infrastructure",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Live Transport",
+                    "type": "group",
+                    "items": [
+                        {
+                            "name": "Buses",
+                            "type": "esri-rest-vector",
+                            "refreshInterval": 30,
+                            "url": "http://maps.data.nsw.gov.au/api/system/services/vehiclePositions/buses",
+                            "featureInfoTemplate": {
+                                "name": "{{vehicle_trip_bus_number}}",
+                                "template": "Bus: {{vehicle_trip_bus_number}}<br>Occupancy: {{vehicle_occupancy_status}}<br>Speed: {{vehicle_position_speed}}<br>direction: <span class='glyphicon glyphicon-arrow-up pivoticon-rotation-{{vehicle_position_compass}}' aria-hidden='true'></span>"
+                            },
+                            "model": {
+                                "url": "lowpoly_bus/scene.gltf",
+                                "scale": 0.3048,
+                                "maximumDistance": 1000.0,
+                                "bearingDirectionProperty": "vehicle.position.bearing",
+                                "compassDirectionProperty": "vehicle.position.compass"
+                            },
+                            "renderer": {
+                                "type": "unique-value",
+                                "field": "vehicle.position.compass",
+                                "defaultLabel": "Sydney Buses",
+                                "defaultSymbol": {
+                                    "angle": 0,
+                                    "contentType": "image/png",
+                                    "height": 15,
+                                    "type": "picture-marker",
+                                    "url": "/images/icons/sydneybus.png",
+                                    "text": "Bus",
+                                    "width": 15,
+                                    "xoffset": 0,
+                                    "yoffset": 0
+                                },
+                                "uniqueValueInfos": [
+                                    {
+                                        "value": "n",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_n.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "ne",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_ne.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "e",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_e.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "se",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_se.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "s",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_s.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "sw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_sw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "w",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_w.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "nw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/sydneybus/sydneybus_nw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "NSW Trains",
+                            "type": "esri-rest-vector",
+                            "refreshInterval": 30,
+                            "url": "http://maps.data.nsw.gov.au/api/system/services/vehiclePositions/nswtrains",
+                            "featureInfoTemplate": {
+                                "name": "{{vehicle_vehicle_id}}",
+                                "template": "{{vehicle_vehicle_label}}"
+                            },
+                            "renderer": {
+                                "type": "unique-value",
+                                "field": "vehicle.position.compass",
+                                "defaultLabel": "NSW Trains",
+                                "defaultSymbol": {
+                                    "angle": 0,
+                                    "contentType": "image/png",
+                                    "height": 15,
+                                    "type": "picture-marker",
+                                    "url": "/images/icons/sydneytrain.png",
+                                    "text": "Bus",
+                                    "width": 15,
+                                    "xoffset": 0,
+                                    "yoffset": 0
+                                },
+                                "uniqueValueInfos": [
+                                    {
+                                        "value": "n",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_n.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "ne",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_ne.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "e",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_e.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "se",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_se.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "s",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_s.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "sw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_sw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "w",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_w.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "nw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/trains/sydney_trains_nw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Sydney Trains",
+                            "type": "esri-rest-vector",
+                            "refreshInterval": 30,
+                            "url": "http://maps.data.nsw.gov.au/api/system/services/vehiclePositions/sydneytrains",
+                            "featureInfoTemplate": {
+                                "name": "{{vehicle_runid}}",
+                                "template": "{{vehicle_vehicle_label}}<br><br>Occupying berth: {{vehicle_stop_id}}<br>Number of carriages: {{vehicle_number_of_cars}}"
+                            },
+                            "renderer": {
+                                "type": "simple",
+                                "description": "",
+                                "symbol": {
+                                    "angle": 0,
+                                    "contentType": "image/png",
+                                    "height": 15,
+                                    "type": "picture-marker",
+                                    "url": "/images/icons/sydneytrain.png",
+                                    "width": 15,
+                                    "xoffset": 0,
+                                    "yoffset": 0
+                                }
+                            }
+                        },
+                        {
+                            "name": "Light Rail",
+                            "type": "esri-rest-vector",
+                            "refreshInterval": 30,
+                            "url": "http://maps.data.nsw.gov.au/api/system/services/vehiclePositions/lightrail",
+                            "featureInfoTemplate": {
+                                "template": "direction: <span class='glyphicon glyphicon-arrow-up pivoticon-rotation-{vehicle_position_compass}' aria-hidden='true'></span>"
+                            },
+                            "renderer": {
+                                "type": "unique-value",
+                                "field": "vehicle.position.compass",
+                                "defaultLabel": "Live Light Rail",
+                                "defaultSymbol": {
+                                    "angle": 0,
+                                    "contentType": "image/png",
+                                    "height": 15,
+                                    "type": "picture-marker",
+                                    "url": "/images/icons/lightrail/lightrail.png",
+                                    "text": "Bus",
+                                    "width": 15,
+                                    "xoffset": 0,
+                                    "yoffset": 0
+                                },
+                                "uniqueValueInfos": [
+                                    {
+                                        "value": "n",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_n.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "ne",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_ne.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "e",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_e.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "se",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_se.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "s",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_s.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "sw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_sw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "w",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_w.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "nw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/lightrail/lightrail_nw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Ferries",
+                            "type": "esri-rest-vector",
+                            "refreshInterval": 30,
+                            "url": "http://maps.data.nsw.gov.au/api/system/services/vehiclePositions/ferries",
+                            "featureInfoTemplate": {
+                                "name": "{{vehicle_vehicle_label}}",
+                                "template": "{{vehicle_vehicle_label}}<br>direction: <span class='glyphicon glyphicon-arrow-up pivoticon-rotation-{{vehicle_position_compass}}' aria-hidden='true'></span>"
+                            },
+                            "renderer": {
+                                "type": "unique-value",
+                                "field": "vehicle.position.compass",
+                                "defaultLabel": "Sydney Ferries",
+                                "defaultSymbol": {
+                                    "angle": 0,
+                                    "contentType": "image/png",
+                                    "height": 15,
+                                    "type": "picture-marker",
+                                    "url": "/images/icons/sydneyferry.png",
+                                    "text": "Bus",
+                                    "width": 15,
+                                    "xoffset": 0,
+                                    "yoffset": 0
+                                },
+                                "uniqueValueInfos": [
+                                    {
+                                        "value": "n",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_n.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "ne",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_ne.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "e",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_e.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "se",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_se.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "s",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_s.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "sw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_sw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "w",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_w.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    },
+                                    {
+                                        "value": "nw",
+                                        "symbol": {
+                                            "angle": 0,
+                                            "contentType": "image/png",
+                                            "height": 15,
+                                            "type": "picture-marker",
+                                            "url": "/images/icons/ferries/sydney_ferries_nw.png",
+                                            "width": 15,
+                                            "xoffset": 0,
+                                            "yoffset": 0
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Live NEM Power Generation",
+                    "type": "group",
+                    "preserveOrder": true,
+                    "items": [
+                        {
+                            "id": "54a553b4",
+                            "name": "All generation types",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/all",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "54a553c8",
+                            "name": "Renewable",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/renewables",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using renewable sources of energy.<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "54a553dc",
+                            "name": "Fossil",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/fossil",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using fossil fuels (black and brown coal, diesel, natural gas, coal seam methane, kerosene, etc.).<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "54a553f0",
+                            "name": "Bioenergy",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/bio",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using biological processes for power generation (biomass, bagasse, landfill/biogas and sewerage).<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5a1fac9d",
+                            "name": "Gas",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/gas",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using any form of gas combustion for power generation (both natural gas and biogas).<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "54a55404",
+                            "name": "Hydro",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/hydro",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using hydro generation (typically large and small scale hydroelectric dams including pumped hydro).<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "54a55418",
+                            "name": "Solar",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/solar",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using solar (PV or solar thermal).<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "54a5542c",
+                            "name": "Wind",
+                            "url": "https://services.aremi.data61.io/aemo/v6/csv/wind",
+                            "type": "csv",
+                            "cacheDuration": "5m",
+                            "featureInfoTemplate": {
+                                "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+                                "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+                            },
+                            "polling": {
+                                "seconds": 300,
+                                "replace": true
+                            },
+                            "rectangle": ["134.0", "-47.0", "155.0", "-13.0"],
+                            "tableStyle": {
+                                "dataVariable": "Current % of Max Cap",
+                                "timeColumn": null,
+                                "replaceWithZeroValues": [],
+                                "replaceWithNullValues": ["-"],
+                                "nullColor": "rgba(255,255,255,0.1)",
+                                "nullLabel": "No value",
+                                "scaleByValue": true,
+                                "scale": 1.5,
+                                "colorBins": 10,
+                                "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                                "columns": {
+                                    "Station Name": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Participant": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Physical Unit No.": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Aggregation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "DUID": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for last 24h": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "CSV for all data": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Latest 24h generation": {
+                                        "type": "HIDDEN"
+                                    },
+                                    "Unit Size (MW)": {
+                                        "type": "HIDDEN"
+                                    }
+                                }
+                            },
+                            "info": [
+                                {
+                                    "name": "Description",
+                                    "content": "This layer includes only generators using wind.<br/><br/>The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                                },
+                                {
+                                    "name": "Updates",
+                                    "content": "The Actual Generation and Load data is updated in 5-minute intervals."
+                                },
+                                {
+                                    "name": "Data Custodian",
+                                    "content": "AEMO is the data custodian of electricity generation data displayed on AREMI. Please refer to attribution, licensing and copyrights provisions further on this page. <br/> <br/>The Australian Energy Market Operator (AEMO) was established by the Council of Australian Governments (COAG) to manage the National Electricity Market (NEM) and gas markets from 1 July 2009. <br/> <br/>AEMO’s core functions can be grouped into the following areas: 1) Electricity Market Operator; 2) Gas Markets Operator; 3) National Transmission Planner; 4) Transmission Services; 5) Energy Market Development. <br/> <br/>AEMO operates on a cost recovery basis as a corporate entity limited by guarantee under the Corporations Law. Its membership structure is split between government and industry, respectively 60 and 40 percent. Government members of AEMO include the Queensland, New South Wales, Victorian, South Australian and Tasmanian state governments, the Commonwealth and the Australian Capital Territory. <br/> <br/>As part of the role of managing the NEM and assisting industry, AEMO publishes electricity market data updated in 5 minute intervals and on a daily, monthly and annual basis. Categories of data published are: <br/> <br/>1) Price and demand; <br/>2) Forecast supply and demand; <br/>3) Market notices; <br/>4) Ancillary services; <br/>5) Network data; <br/>6) Pre-dispatch demand forecasting performance; <br/>7) Settlements; <br/>8) Market management system (MMS) (which includes Generation & Load data). <br/> <br/>More information on AEMO and services provided is available here: <br/> <br/>[http://aemo.com.au/About-AEMO](http://aemo.com.au/About-AEMO)"
+                                },
+                                {
+                                    "name": "Licensing, Terms & Conditions",
+                                    "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "NSW Infrastructure",
+                    "type": "group",
+                    "items": [
+                        {
+                            "name": "Road points",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/Roads/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Light Rail",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/LightRail/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Heavy Rail",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/HeavyRail/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        },
+                        {
+                            "name": "General Hospital",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/GeneralHospital/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        },
+                        {
+                            "name": "School",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/School/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Railway Station",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/RailwayStation/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Bus Interchange",
+                            "url": "http://gh3.sixtest.nsw.gov.au/arcgis/rest/services/WFS/BusInterchange/MapServer",
+                            "layers": "0",
+                            "type": "esri-mapServer",
+                            "opacity": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Photo reality meshes",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Young 3D Model",
+                    "type": "3d-tiles",
+                    "ionAssetId": 7839
+                },
+                {
+                    "name": "Brisbane 3D city model (aero3Dpro)",
+                    "type": "3d-tiles",
+                    "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
+                    "url": "https://sample.aero3dpro.com.au/BrisbaneCBD/Scene/recon_h_3DTiles.json",
+                    "options": {
+                        "maximumScreenSpaceError": 1,
+                        "maximumNumberOfLoadedTiles": 1000
+                    },
+                    "rectangle": [153.01, -27.484, 153.034, -27.46]
+                },
+                {
+                    "name": "Melbourne 3D city model (aero3Dpro)",
+                    "type": "3d-tiles",
+                    "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
+                    "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
+                    "options": {
+                        "maximumScreenSpaceError": 1,
+                        "maximumNumberOfLoadedTiles": 1000
+                    },
+                    "rectangle": [144.868, -37.885, 145.018, -37.775]
+                },
+                {
+                    "name": "Sydney 3D city model (aero3Dpro)",
+                    "type": "3d-tiles",
+                    "description": "Aero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/",
+                    "url": "https://sample.aero3dpro.com.au/Sydney/Scene/recon_h_3DTiles.json",
+                    "options": {
+                        "maximumScreenSpaceError": 1,
+                        "maximumNumberOfLoadedTiles": 1000
+                    },
+                    "rectangle": [151.161, -33.923, 151.3075, -33.796]
+                }
+            ]
+        },
+        {
+            "name": "Queensland",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Brisbane CBD",
+                    "type": "3d-tiles",
+                    "url": "nsw/qldrm/CBD/tileset.json"
+                },
+                {
+                    "name": "Brisbane North",
+                    "type": "3d-tiles",
+                    "url": "nsw/qldrm/North/tileset.json"
+                },
+                {
+                    "name": "Brisbane South",
+                    "type": "3d-tiles",
+                    "url": "nsw/qldrm/South/tileset.json"
+                }
+            ]
+        },
+        {
+            "name": "NSW Live - maps.data.nsw.gov.au",
+            "type": "nsw-live-group",
+            "servicesUrl": "http://maps.data.nsw.gov.au/api/config/map/layerServices.json",
+            "tocUrl": "http://maps.data.nsw.gov.au/config/map/TOC.json",
+            "cacheDuration": "0s"
+        },
+        {
+            "name": "Digital Earth Australia Satellite Imagery",
+            "type": "group",
+            "items": [
+                {
+                    "name": "Landsat 16 day aggregate terrain corrected surface reflectance",
+                    "type": "group",
+                    "preserveOrder": true,
+                    "description": "The publication of the Digital Earth Australia (DEA) Landsat data on NationalMap is the result of the 12 month collaborative project “TerriaCube” between the National Computation Infrastructure (NCI), Geoscience Australia, Department of the Environment and Energy (DoEE) and CSIRO Land & Water and Data61 teams.<p>Each stakeholder contribution was essential for the project’s success: the NCI developed the data services; Geoscience Australia provided the data; Department of Environment and CSIRO Land and Water, provided insights and the user stories; and CSIRO Data61 provided the software development of terriaJS.</p><p>The project aimed to enable access to the DEA satellite imagery data managed by the NCI on NationalMap; and built functionalities in terriaJS to allow users to easily interact with the data. The project results were twofold:<ol><li>users have now access to terrain corrected surface reflectance from Landsat 5, 7 and 8 presented as true colour and false colour composites and</li><li>all applications using the open source terriaJS have the “screen splitter” and “date picker” functionalities developed, allowing users to make comparisons of imagery for different points in time.</li></ol></p><center><img style='padding: 10px' height='100px' src='/proxy/_1s/http://static.nationalmap.nicta.com.au/images/DEA.jpg'/><img style='padding: 10px' height='100px' src='/proxy/_1s/http://static.nationalmap.nicta.com.au/images/Data61.png'/><img style='padding: 10px' height='100px' src='/proxy/_1s/http://static.nationalmap.nicta.com.au/images/NCI.svg'/></center><br/><center><img style='padding: 10px' height='100px' src='/proxy/_1s/http://static.nationalmap.nicta.com.au/images/GA.jpg'/><img style='padding: 10px' height='100px' src='/proxy/_1s/http://static.nationalmap.nicta.com.au/images/DoEE.png'/></center>",
+                    "items": [
+                        {
+                            "name": "Landsat 8 - March 2013 - onwards",
+                            "type": "group",
+                            "items": [
+                                {
+                                    "id": "c96cf4c2",
+                                    "name": "16-day DEA Landsat 8 terrain corrected surface reflectance",
+                                    "url": "https://gsky.nci.org.au/ows/dea",
+                                    "layers": "landsat8_nbart_16day",
+                                    "type": "wms",
+                                    "styles": "tc",
+                                    "ignoreUnknownTileErrors": true,
+                                    "useOwnClock": true,
+                                    "opacity": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Landsat 7 - May 1999 - onwards",
+                            "type": "group",
+                            "items": [
+                                {
+                                    "id": "23bc7bd6",
+                                    "name": "16-day DEA Landsat 7 terrain corrected surface reflectance",
+                                    "url": "https://gsky.nci.org.au/ows/dea",
+                                    "layers": "landsat7_nbart_16day",
+                                    "type": "wms",
+                                    "styles": "tc",
+                                    "ignoreUnknownTileErrors": true,
+                                    "useOwnClock": true,
+                                    "opacity": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Landsat 5 - August 1986 - November 2011",
+                            "type": "group",
+                            "items": [
+                                {
+                                    "id": "230c13e8",
+                                    "name": "16-day DEA Landsat 5 terrain corrected surface reflectance",
+                                    "url": "https://gsky.nci.org.au/ows/dea",
+                                    "layers": "landsat5_nbart_16day",
+                                    "type": "wms",
+                                    "styles": "tc",
+                                    "ignoreUnknownTileErrors": true,
+                                    "useOwnClock": true,
+                                    "opacity": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Sentinel-2 A/B Near Real-Time (NRT) terrain corrected surface reflectance",
+                    "type": "group",
+                    "items": [
+                        {
+                            "id": "55921c56",
+                            "name": "Near Real-Time Surface Reflectance (Sentinel 2A)",
+                            "layers": "s2a_nrt_granule_nbar_t",
+                            "url": "https://ows.services.dea.ga.gov.au",
+                            "type": "wms",
+                            "ignoreUnknownTileErrors": true,
+                            "opacity": 1
+                        },
+                        {
+                            "id": "eef9ae2c",
+                            "name": "Near Real-Time Surface Reflectance (Sentinel 2B)",
+                            "layers": "s2b_nrt_granule_nbar_t",
+                            "url": "https://ows.services.dea.ga.gov.au",
+                            "type": "wms",
+                            "ignoreUnknownTileErrors": true,
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Full Sentinel-2 archive prototype",
+                            "type": "group",
+                            "items": [
+                                {
+                                    "id": "edc90d32",
+                                    "name": "Sentinel Definitive Surface Reflectance (Sentinel 2 (A and B combined))",
+                                    "layers": "s2_nrt_granule_nbar_t",
+                                    "url": "https://dave.services.devkube.dea.ga.gov.au",
+                                    "type": "wms",
+                                    "ignoreUnknownTileErrors": true,
+                                    "opacity": 1
+                                },
+                                {
+                                    "id": "22e6893b",
+                                    "name": "Sentinel Definitive Surface Reflectance (Sentinel 2A)",
+                                    "layers": "s2a_ard_granule_nbar_t",
+                                    "url": "https://dave.services.devkube.dea.ga.gov.au",
+                                    "type": "wms",
+                                    "ignoreUnknownTileErrors": true,
+                                    "opacity": 1
+                                },
+                                {
+                                    "id": "24d414b7",
+                                    "name": "Sentinel Definitive Surface Reflectance (Sentinel 2B)",
+                                    "layers": "s2b_ard_granule_nbar_t",
+                                    "url": "https://dave.services.devkube.dea.ga.gov.au",
+                                    "type": "wms",
+                                    "ignoreUnknownTileErrors": true,
+                                    "opacity": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Surface Reflectance 25m Annual Geomedian",
+                    "type": "group",
+                    "preserveOrder": true,
+                    "items": [
+                        {
+                            "name": "Surface Reflectance 25m Annual Geomedian (Landsat 8)",
+                            "url": "https://ows.services.dea.ga.gov.au/",
+                            "layers": "ls8_nbart_geomedian_annual",
+                            "type": "wms",
+                            "useOwnClock": true,
+                            "ignoreUnknownTileErrors": true,
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Surface Reflectance 25m Annual Geomedian (Landsat 7)",
+                            "url": "https://ows.services.dea.ga.gov.au/",
+                            "layers": "ls7_nbart_geomedian_annual",
+                            "type": "wms",
+                            "ignoreUnknownTileErrors": true,
+                            "useOwnClock": true,
+                            "opacity": 1
+                        },
+                        {
+                            "name": "Surface Reflectance 25m Annual Geomedian (Landsat 5)",
+                            "url": "https://ows.services.dea.ga.gov.au/",
+                            "layers": "ls5_nbart_geomedian_annual",
+                            "type": "wms",
+                            "ignoreUnknownTileErrors": true,
+                            "useOwnClock": true,
+                            "opacity": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

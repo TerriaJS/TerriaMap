@@ -1,0 +1,69 @@
+{
+    "catalog": [
+        {
+            "name": "Cemeteries (GeoJSON)",
+            "type": "geojson",
+            "url": "test/cemeteries.geojson"
+        },
+        {
+            "name": "Test descriptions",
+            "type": "geojson",
+            "url": "build/TerriaJS/test/GeoJSON/test-descriptions.geojson"
+        },
+        {
+            "name": "ESRI Envelope",
+            "type": "geojson",
+            "url": "build/TerriaJS/test/GeoJSON/EsriEnvelope.geojson"
+        },
+        {
+            "name": "Centrelink Sites (GME->GeoJSON)",
+            "type": "geojson",
+            "url": "test/gme.geojson"
+        },
+        {
+            "name": "Bike Racks (GeoJSON:reproj)",
+            "type": "geojson",
+            "url": "test/bike_racks.geojson"
+        },
+        {
+            "name": "Test styled and unstyled features",
+            "type": "geojson",
+            "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson"
+        },
+        {
+            "name": "Test overriding styled and unstyled features",
+            "type": "geojson",
+            "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson",
+            "style": {
+                "marker-size": "200",
+                "marker-color": "#ff3333",
+                "marker-symbol": "rail"
+            }
+        },
+        {
+            "name": "Testing stroke styles applied to embedded unstyled point.",
+            "type": "geojson",
+            "url": "build/TerriaJS/test/GeoJSON/test-styles.geojson",
+            "style": {
+                "stroke-width": "20",
+                "stroke": "red",
+                "marker-size": "200"
+            },
+            "geoJsonData": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "Thick red border, unspecified centre"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [146.469, -40.83]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
