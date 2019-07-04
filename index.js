@@ -1,7 +1,5 @@
 'use strict';
 
-import runtime from "regenerator-runtime/runtime";
-
 /*global require,window */
 
 var terriaOptions = {

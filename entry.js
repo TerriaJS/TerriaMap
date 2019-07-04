@@ -6,11 +6,12 @@ require('./lib/Styles/loader.css');
 function loadMainScript() {
     // load the main chunk
     return new Promise((resolve, reject) => {
+      require.ensure(['terriajs/lib/Core/prerequisites'], function(require) {
+        require('terriajs/lib/Core/prerequisites');
         require.ensure(['./index'], function(require) {
-            resolve(require('./index'));
-        }, function(error) {
-            reject(error);
-        }, 'index'); 
+          resolve(require('./index'));
+        }, reject, 'index');
+      }, reject, 'index');
     });
 }
 
