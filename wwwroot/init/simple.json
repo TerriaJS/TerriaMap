@@ -140,6 +140,18 @@
         "east": 151.3075,
         "north": -33.796
       }
+    },
+    {
+      "type": "gltf",
+      "url": "https://cesiumjs.org/Cesium/Apps/SampleData/models/CesiumAir/Cesium_Air.glb",
+      "name": "Cesium Air",
+      "origin": {
+          "longitude": 151.197,
+          "latitude": -33.895,
+          "height": 100
+      },
+      "upAxis": "Y",
+      "forwardAxis": "X"
     }
   ]
 }

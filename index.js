@@ -25,6 +25,7 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
 import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
+import GltfCatalogItem from 'terriajs/lib/Models/GltfCatalogItem';
 import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroup';
 import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
 import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
@@ -58,6 +59,7 @@ const viewState = new ViewState({
 
 CatalogMemberFactory.register(WebMapServiceCatalogItem.type, WebMapServiceCatalogItem);
 CatalogMemberFactory.register(WebMapServiceCatalogGroup.type, WebMapServiceCatalogGroup);
+CatalogMemberFactory.register(GltfCatalogItem.type, GltfCatalogItem);
 CatalogMemberFactory.register(GeoJsonCatalogItem.type, GeoJsonCatalogItem);
 CatalogMemberFactory.register(MagdaCatalogItem.type, MagdaCatalogItem);
 CatalogMemberFactory.register(CsvCatalogItem.type, CsvCatalogItem);
