@@ -152,6 +152,25 @@
       },
       "upAxis": "Y",
       "forwardAxis": "X"
+    },
+    {
+      "type": "gtfs",
+      "url": "https://api.transport.nsw.gov.au/v1/gtfs/vehiclepos/buses",
+      "image": "images/icons/sydney_bus_icon_smaller.png",
+      "name": "NSW Live Transport - Buses",
+      "apiKey": "l4VnvZi4uQLSvD7lwN2ac7vIDJUJ3epYva4l",
+      "refreshInterval": 5,
+      "featureInfoTemplate": {
+        "name": "{{vehicle_trip_bus_number}}",
+        "template": "<b>Bus:</b> {{route_short_name}}<br><b>Occupancy:</b> {{occupancy_status_str}}<br><b>Speed:</b> {{speed_km}} km/h<br><b style='padding-right: 5px'>Direction:</b> <span style='transform: rotate({{bearing}}deg); width: 10px; display: inline-block' aria-label='{{bearing}} degrees' role='img' title='{{bearing}} degrees'>&#x2B06;</div>"
+      },
+      "model": {
+        "url": "lowpoly_bus/scene.gltf",
+        "scale": 0.3048,
+        "maximumDistance": 500.0,
+        "bearingDirectionProperty": "vehicle.position.bearing",
+        "compassDirectionProperty": "vehicle.position.compass"
+      }
     }
   ]
 }
