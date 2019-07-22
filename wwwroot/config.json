@@ -59,7 +59,10 @@
         mobileDefaultViewerMode: "2d",
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
-        "experimentalFeatures": true
+        "experimentalFeatures": true,
+
+        // To override TerriaJS's region mapping file with a local one.
+        // regionMappingDefinitionsUrl: "data/regionMapping.json"
     }
 }
 
