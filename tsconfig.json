@@ -1,0 +1,3 @@
+{
+    "extends": "terriajs/tsconfig.json"
+}
