@@ -26,22 +26,27 @@ module.exports = function(devMode, hot) {
                     loader: 'raw-loader'
                 },
                 {
-                    test: /\.(js|jsx)$/,
+                    test: /\.(ts|js)x$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
                         path.resolve(__dirname, '..', 'entry.js'),
                         path.resolve(__dirname, '..', 'lib')
                         
                     ],
-                    loader: 'babel-loader',
-                    options: {
-                        sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: [
-                            'babel-plugin-jsx-control-statements',
-                            '@babel/plugin-transform-modules-commonjs'
-                        ]
-                    }
+                    use: [
+                        {
+                        loader: 'babel-loader',
+                            options: {
+                                sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
+                                presets: ['@babel/preset-env', '@babel/preset-react'],
+                                plugins: [
+                                    'babel-plugin-jsx-control-statements',
+                                    '@babel/plugin-transform-modules-commonjs'
+                                    ]
+                            }
+                        },
+                        require.resolve('ts-loader')
+                    ]
                 },
                 {
                     test: /\.(png|jpg|svg|gif)$/,
