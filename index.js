@@ -36,6 +36,13 @@ import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBase
 import GtfsCatalogItem from 'terriajs/lib/Models/GtfsCatalogItem';
 import CesiumTerrainProviderCatalogItem from 'terriajs/lib/Models/CesiumTerrainCatalogItem';
 
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
+import { PrimitiveArrayTrait } from 'terriajs/lib/Traits/primitiveArrayTrait';
+import { PrimitiveTrait } from 'terriajs/lib/Traits/primitiveTrait';
+import { ObjectArrayTrait } from 'terriajs/lib/Traits/objectArrayTrait';
+import { ObjectTrait } from 'terriajs/lib/Traits/objectTrait';
+
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -68,6 +75,87 @@ CatalogMemberFactory.register(ArcGisMapServerCatalogItem.type, ArcGisMapServerCa
 CatalogMemberFactory.register(Cesium3DTilesCatalogItem.type, Cesium3DTilesCatalogItem);
 CatalogMemberFactory.register(GtfsCatalogItem.type, GtfsCatalogItem);
 CatalogMemberFactory.register(CesiumTerrainProviderCatalogItem.type, CesiumTerrainProviderCatalogItem);
+const catalogMembers = [
+  'ArcGisMapServerCatalogItem',
+  'BingMapsCatalogItem',
+  'CatalogGroupNew',
+  'Cesium3DTilesCatalogItem',
+  'CesiumTerrainCatalogItem',
+  'CsvCatalogItem',
+  'CzmlCatalogItem',
+  'GeoJsonCatalogItem',
+  'GltfCatalogItem',
+  'GtfsCatalogItem',
+  'IonImageryCatalogItem',
+  'MagdaCatalogGroup',
+  'MagdaCatalogItem',
+  'OpenStreetMapCatalogItem',
+  'WebMapServiceCatalogGroup',
+  'WebMapServiceCatalogItem'
+];
+
+const zip = new JSZip();
+const models = zip.folder('models');
+
+function markdownFromTraitType(trait) {
+  let base = '';
+  if (trait instanceof PrimitiveTrait || trait instanceof PrimitiveArrayTrait) {
+    base = trait.type;
+  } else if (trait instanceof ObjectTrait || trait instanceof ObjectArrayTrait ) {
+    base = 'object';
+  }
+  if (trait instanceof PrimitiveArrayTrait || trait instanceof ObjectArrayTrait) {
+    return base + '[]';
+  } else {
+    return base;
+  }
+}
+
+function markdownFromObjectTrait(objectTrait) {
+  return [
+    '_Properties_:',
+    ...Object.entries(objectTrait.type.traits).map(([k, trait]) => {
+      let line1 = '* `' + k + '`';
+      const traitType = markdownFromTraitType(trait);
+      if (traitType) {
+        line1 += ': **' + traitType + '**';
+      }
+      let description = trait.description.replace(/\n/g, '\r').replace(/\r+\s+/g, '\r    ');
+
+      return line1 + ', ' + description;
+    })
+  ];
+}
+
+catalogMembers.forEach(m => {
+  const Member = require(`terriajs/lib/Models/${m}.ts`).default;
+
+  let content = '!!! note\r\r' +
+    '    This page is automatically generated from the source code, and is a bit rough.  If you have\r' +
+    '    trouble, check the [source code for this type](https://github.com/TerriaJS/terriajs/blob/mobx/lib/Models/' + m + '.ts) or post a message to the [forum](https://groups.google.com/forum/#!forum/terriajs).\r\r';
+  content += '## [Initialization File](../../customizing/initialization-files.md) properties:\r\r';
+  content += '`"type": "' + Member.type + '"`\r\r';
+
+  Object.entries(Member.traits).forEach(([k, trait]) => {
+    content += '\r\r-----\r\r';
+    content += '`' + k + '`';
+    const traitType = markdownFromTraitType(trait);
+    if (traitType) {
+      content += ': **' + traitType + '**';
+    }
+    content += '\r\r';
+    content += trait.description + '\r\r';
+    if (trait instanceof ObjectTrait || trait instanceof ObjectArrayTrait ) {
+      content += markdownFromObjectTrait(trait).join('\r\r') + '\r\r';
+    }
+  });
+  models.file(`${Member.type}.md`, content);
+  console.log(content);
+});
+
+zip.generateAsync({type:"blob"}).then(function(content) {
+  saveAs(content, "models.zip");
+});
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
