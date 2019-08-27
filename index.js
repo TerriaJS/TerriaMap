@@ -111,20 +111,33 @@ function markdownFromTraitType(trait) {
   }
 }
 
-function markdownFromObjectTrait(objectTrait) {
-  return [
-    '_Properties_:',
-    ...Object.entries(objectTrait.type.traits).map(([k, trait]) => {
-      let line1 = '* `' + k + '`';
-      const traitType = markdownFromTraitType(trait);
-      if (traitType) {
-        line1 += ': **' + traitType + '**';
-      }
-      let description = trait.description.replace(/\n/g, '\r').replace(/\r+\s+/g, '\r    ');
+function visitObjectTraitProperties(objectTrait, callback, depth=0) {
+  Object.entries(objectTrait.type.traits).forEach(([k, trait]) => {
+    callback(k, trait, depth);
+    if (trait instanceof ObjectTrait || trait instanceof ObjectArrayTrait) {
+      visitObjectTraitProperties(trait, callback, depth+1);
+    }
+  });
+}
 
-      return line1 + ', ' + description;
-    })
-  ];
+function markdownFromObjectTrait(objectTrait) {
+  const lines = ['_Properties_:'];
+  const callback = (name, trait, depth) => {
+    let spaces = '';
+    for (let i = 0; i < depth; i++) {
+      spaces += '    ';
+    }
+    let line1 = spaces + '* `' + name + '`';
+    const traitType = markdownFromTraitType(trait);
+    if (traitType) {
+      line1 += ': **' + traitType + '**';
+    }
+    const description = trait.description.replace(/\n/g, '\r').replace(/\r+\s+/g, '\r' + spaces);
+
+    lines.push(line1 + ', ' + description);
+  };
+  visitObjectTraitProperties(objectTrait, callback);
+  return lines;
 }
 
 catalogMembers.forEach(m => {
