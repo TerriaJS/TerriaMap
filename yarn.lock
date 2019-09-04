@@ -7092,9 +7092,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-"pell@git://github.com/TerriaJS/pell.git#master":
+"pell@git://github.com/TerriaJS/pell#master":
   version "1.0.6"
-  resolved "git://github.com/TerriaJS/pell.git#7cd23a55cdfd130fedf3679433991bb7d958fc42"
+  resolved "git://github.com/TerriaJS/pell#7cd23a55cdfd130fedf3679433991bb7d958fc42"
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -9268,10 +9268,10 @@ terriajs-catalog-editor@^0.2.0:
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
   integrity sha1-2cZnnlPE2S6HpTGviWxhSIiO2OQ=
 
-terriajs-cesium@1.60.1:
-  version "1.60.1"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.60.1.tgz#54d8b05171a605879bdfebaa5bd8ffa64ab61caa"
-  integrity sha512-4l153lirExIVoH3RMx77AaR6OhfC+v3HyZrkuYx8pK4ma6P8euQZGAmsIsSo8IABPoCCcAhwf55gll1peOLPoA==
+terriajs-cesium@1.61.0:
+  version "1.61.0"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.61.0.tgz#0c9c4768b7cf083294ed563535aff5b10038f9a9"
+  integrity sha512-ppnvZb6O7PxFXGDaQRA9jzmJ3UKddNDTY+nR58McdppmtQR2iX4jHwJqEoiQPiYdNK2KjxcMmH1osTTDTOswgw==
   dependencies:
     deamdify "^0.1.1"
     dompurify "^1.0.2"
@@ -9330,10 +9330,10 @@ terriajs-server@^3.0.1:
     when "^3.7.7"
     yargs "^13.2.4"
 
-terriajs@7.6.9:
-  version "7.6.9"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.6.9.tgz#a6ee73c62440d56401c81e6f15b01ea589207af0"
-  integrity sha512-6GQLCRAaxZWYN22nOz6DDR6jrowBBJgCuaEnPUurnQeq39jTw1lQnTGaV0UU44Ic4lsecsua2xtQyBlxAcekSg==
+terriajs@7.6.10:
+  version "7.6.10"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.6.10.tgz#a1ec41205498334853d818c2cd6a5e0b9cf5d6e6"
+  integrity sha512-ACwtNT+a8VPTYAYnQk465YyfLCtqHJP6CuwPP+P8l1z3aZhu5T+cJwoGi6wMZBM6kqtXoc8BBGTLyXq0qiH24A==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
@@ -9400,7 +9400,7 @@ terriajs@7.6.9:
     string-replace-webpack-plugin "^0.1.3"
     style-loader "^0.23.1"
     svg-sprite-loader "4.1.3"
-    terriajs-cesium "1.60.1"
+    terriajs-cesium "1.61.0"
     terriajs-html2canvas "1.0.0-alpha.12-terriajs-1"
     urijs "^1.18.12"
     url-loader "^1.1.2"
