@@ -15,6 +15,8 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
+    "geotiff": "^1.0.0-beta.6",
+    "plotty": "^0.4.1",
     "pm2": "^3.2.2",
     "terriajs-server": "^3.0.0"
   },

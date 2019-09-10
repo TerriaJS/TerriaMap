@@ -1,0 +1,31 @@
+{
+    "homeCamera": {
+      "north": 68,
+      "east": 49,
+      "south": 36,
+      "west": -20
+    },
+    "catalog": [
+        {
+          "type": "gtfs",
+          "url": "http://gtfs.ovapi.nl/nl/vehiclePositions.pb",
+          "name": "Netherlands Live Transport - Buses",
+          "refreshInterval": 15,
+          "info": [
+            {
+            "name": "Attribution",
+            "content": "Data sourced from [datahub](https://old.datahub.io/dataset/gtfs-nl)"
+            },
+            {
+              "name": "License",
+              "content": "[Creative Commons CCZero](https://opendefinition.org/licenses/cc-zero/)"
+            }
+          ]
+        },
+        {
+          "type": "geotiff",
+          "name": "Test GeoTiff",
+          "url": "data/test-1.tiff"
+        }
+    ]
+  }

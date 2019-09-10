@@ -35,6 +35,7 @@ import Cesium3DTilesCatalogItem from "terriajs/lib/Models/Cesium3DTilesCatalogIt
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import GtfsCatalogItem from 'terriajs/lib/Models/GtfsCatalogItem';
 import CesiumTerrainProviderCatalogItem from 'terriajs/lib/Models/CesiumTerrainCatalogItem';
+import GeotiffCatalogItem from './lib/Models/GeotiffCatalogItem';
 
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
@@ -68,6 +69,8 @@ CatalogMemberFactory.register(ArcGisMapServerCatalogItem.type, ArcGisMapServerCa
 CatalogMemberFactory.register(Cesium3DTilesCatalogItem.type, Cesium3DTilesCatalogItem);
 CatalogMemberFactory.register(GtfsCatalogItem.type, GtfsCatalogItem);
 CatalogMemberFactory.register(CesiumTerrainProviderCatalogItem.type, CesiumTerrainProviderCatalogItem);
+
+CatalogMemberFactory.register(GeotiffCatalogItem.type, GeotiffCatalogItem);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
