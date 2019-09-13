@@ -7092,9 +7092,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-"pell@git://github.com/TerriaJS/pell#master":
+"pell@git://github.com/TerriaJS/pell.git#master":
   version "1.0.6"
-  resolved "git://github.com/TerriaJS/pell#7cd23a55cdfd130fedf3679433991bb7d958fc42"
+  resolved "git://github.com/TerriaJS/pell.git#7cd23a55cdfd130fedf3679433991bb7d958fc42"
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -9330,10 +9330,10 @@ terriajs-server@^3.0.1:
     when "^3.7.7"
     yargs "^13.2.4"
 
-terriajs@7.6.10:
-  version "7.6.10"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.6.10.tgz#a1ec41205498334853d818c2cd6a5e0b9cf5d6e6"
-  integrity sha512-ACwtNT+a8VPTYAYnQk465YyfLCtqHJP6CuwPP+P8l1z3aZhu5T+cJwoGi6wMZBM6kqtXoc8BBGTLyXq0qiH24A==
+terriajs@7.6.11:
+  version "7.6.11"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.6.11.tgz#ba0243bcd113d25c330255461f099104b4ecc840"
+  integrity sha512-uOmCO25VGkPVHUgXv04LjBugq5unmWQbXX/uQ/vbIpv9D6A1rCuFxa51iqDS/F3ZegQMXrCbC/sQpoO5oKETEg==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
