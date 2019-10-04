@@ -57,7 +57,7 @@
     {
       "type": "wms-group",
       "name": "Marine water quality grids for the Great Barrier Reef region - monthly data",
-      "url": "/proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
+      "url": "proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
     },
     {
       "type": "magda",
