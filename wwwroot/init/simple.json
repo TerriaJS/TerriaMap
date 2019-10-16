@@ -146,9 +146,9 @@
       "url": "https://cesiumjs.org/Cesium/Apps/SampleData/models/CesiumAir/Cesium_Air.glb",
       "name": "Cesium Air",
       "origin": {
-          "longitude": 151.197,
-          "latitude": -33.895,
-          "height": 100
+        "longitude": 151.197,
+        "latitude": -33.895,
+        "height": 100
       },
       "upAxis": "Y",
       "forwardAxis": "X"
@@ -244,6 +244,11 @@
           "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
         }
       ]
+    },
+    {
+      "name": "XY Plot",
+      "type": "csv",
+      "url": "build/TerriaJS/test/csv_nongeo/xy.csv"
     }
   ]
 }
