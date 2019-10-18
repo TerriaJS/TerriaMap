@@ -26,23 +26,39 @@ module.exports = function(devMode, hot) {
                     loader: 'raw-loader'
                 },
                 {
-                    test: /\.(ts|js)x$/,
+                    test: /\.(ts|js)x?$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
                         path.resolve(__dirname, '..', 'entry.js'),
                         path.resolve(__dirname, '..', 'lib')
-                        
                     ],
                     use: [
                         {
-                        loader: 'babel-loader',
+                            // Replace Babel's super.property getter with one that is MobX aware.
+                            loader: require.resolve('string-replace-loader'),
                             options: {
-                                sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
-                                presets: ['@babel/preset-env', '@babel/preset-react'],
+                                search: 'function _get\\(target, property, receiver\\).*',
+                                replace: 'var _get = require(\'terriajs/lib/Core/superGet\').default;',
+                                flags: 'g'
+                            }
+                        },
+                        {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [
+                                  [
+                                    '@babel/preset-env',
+                                    {
+                                      corejs: 3,
+                                      useBuiltIns: "usage"
+                                    }
+                                  ],
+                                  '@babel/preset-react'
+                                ],
                                 plugins: [
                                     'babel-plugin-jsx-control-statements',
                                     '@babel/plugin-transform-modules-commonjs'
-                                    ]
+                                ]
                             }
                         },
                         require.resolve('ts-loader')
