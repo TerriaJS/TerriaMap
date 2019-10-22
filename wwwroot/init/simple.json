@@ -62,10 +62,8 @@
     {
       "type": "magda",
       "url": "https://data.gov.au",
-      "hints": {
-        "name": "Magda Item",
-        "isMappable": true
-      },
+      "name": "Magda Item",
+      "isMappable": true,
       "recordId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
     },
     {
