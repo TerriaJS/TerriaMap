@@ -22,21 +22,8 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
-import CatalogMemberFactory from 'terriajs/lib/Models/CatalogMemberFactory';
-import GltfCatalogItem from 'terriajs/lib/Models/GltfCatalogItem';
-import WebMapServiceCatalogGroup from 'terriajs/lib/Models/WebMapServiceCatalogGroup';
-import WebMapServiceCatalogItem from 'terriajs/lib/Models/WebMapServiceCatalogItem';
-import GeoJsonCatalogItem from "terriajs/lib/Models/GeoJsonCatalogItem";
-import MagdaCatalogItem from "terriajs/lib/Models/MagdaCatalogItem";
-import CsvCatalogItem from "terriajs/lib/Models/CsvCatalogItem";
-import CzmlCatalogItem from "terriajs/lib/Models/CzmlCatalogItem";
-import ArcGisMapServerCatalogItem from "terriajs/lib/Models/ArcGisMapServerCatalogItem";
-import Cesium3DTilesCatalogItem from "terriajs/lib/Models/Cesium3DTilesCatalogItem";
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
-import GtfsCatalogItem from 'terriajs/lib/Models/GtfsCatalogItem';
-import CesiumTerrainProviderCatalogItem from 'terriajs/lib/Models/CesiumTerrainCatalogItem';
-import KmlCatalogItem from 'terriajs/lib/Models/KmlCatalogItem';
-
+import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -58,18 +45,7 @@ const viewState = new ViewState({
     terria: terria
 });
 
-CatalogMemberFactory.register(WebMapServiceCatalogItem.type, WebMapServiceCatalogItem);
-CatalogMemberFactory.register(WebMapServiceCatalogGroup.type, WebMapServiceCatalogGroup);
-CatalogMemberFactory.register(GltfCatalogItem.type, GltfCatalogItem);
-CatalogMemberFactory.register(GeoJsonCatalogItem.type, GeoJsonCatalogItem);
-CatalogMemberFactory.register(MagdaCatalogItem.type, MagdaCatalogItem);
-CatalogMemberFactory.register(CsvCatalogItem.type, CsvCatalogItem);
-CatalogMemberFactory.register(CzmlCatalogItem.type, CzmlCatalogItem);
-CatalogMemberFactory.register(ArcGisMapServerCatalogItem.type, ArcGisMapServerCatalogItem);
-CatalogMemberFactory.register(Cesium3DTilesCatalogItem.type, Cesium3DTilesCatalogItem);
-CatalogMemberFactory.register(GtfsCatalogItem.type, GtfsCatalogItem);
-CatalogMemberFactory.register(CesiumTerrainProviderCatalogItem.type, CesiumTerrainProviderCatalogItem);
-CatalogMemberFactory.register(KmlCatalogItem.type, KmlCatalogItem);
+registerCatalogMembers();
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
