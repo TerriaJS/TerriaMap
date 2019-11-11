@@ -250,6 +250,11 @@
       "name": "XY Plot",
       "type": "csv",
       "url": "build/TerriaJS/test/csv_nongeo/xy.csv"
+    },
+    {
+      "name": "Dark Sky",
+      "type": "dark-sky",
+      "url": "proxy/_0d/https://api.darksky.net/forecast/e8865f8e1ea46729c3f870e7cb934037"
     }
   ]
 }

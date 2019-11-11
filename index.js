@@ -24,6 +24,8 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 import render from './lib/Views/render';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
+import CatalogMemberFactory from "terriajs/lib/Models/CatalogMemberFactory";
+import DarkSkyCatalogFunction from "./lib/Models/DarkSkyCatalogFunction";
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -46,6 +48,12 @@ const viewState = new ViewState({
 });
 
 registerCatalogMembers();
+
+CatalogMemberFactory.register(
+  DarkSkyCatalogFunction.type,
+  DarkSkyCatalogFunction
+);
+
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
