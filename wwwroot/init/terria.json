@@ -7,10 +7,10 @@
   },
   "catalog": [
     {
-      "name": "Example Datasets",
+      "name": "澳洲範例 Example Datasets",
       "type": "group",
       "preserveOrder": true,
-      "isOpen": true,
+      "isOpen": false,
       "items": [
         {
           "name": "Data.gov.au",

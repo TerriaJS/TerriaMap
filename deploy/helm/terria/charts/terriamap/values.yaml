@@ -23,9 +23,9 @@ clientConfig:
     developerAttribution:
       text: "Your organisation"
       link: "http://www.example.com"
-    appName: "Terria Map"
+    appName: "Terria Map 台灣版"
     brandBarElements: ["", "<a target=\"_blank\" href=\"http://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>", ""]
-    supportEmail: "help@example.com"
+    supportEmail: "tsejen.tw@gmail.com"
     mobileDefaultViewerMode: "2d"
     experimentalFeatures: true
 initConfig:

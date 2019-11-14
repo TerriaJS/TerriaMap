@@ -1,0 +1,81 @@
+{
+    "corsDomains": [],
+    "homeCamera": {
+        "north": 25,
+        "east": 122,
+        "south": 21.5,
+        "west": 120
+    },
+    "baseMapName": "Positron (Light)",
+    "initialViewerMode": "3dSmooth",
+    "services": [],
+    "catalog": [
+        {
+            "name": "範例資料集",
+            "type": "group",
+            "preserveOrder": true,
+            "isOpen": true,
+            "items": [
+                {
+                    "name": "ABC Photo Stories (2009-2014)",
+                    "description": "Australia Broadcasting Company stories from 2009-2014 with accompanying photos.\n\nThis dataset demonstrates the ability to show users a custom feature info panel when they click on a feature on the map.",
+                    "type": "csv",
+                    "url": "test/localphotostories20092014.csv",
+                    "featureInfoTemplate": {
+                        "template": "<div class='abc'><small>{{Date}}</small>{{#Primary image}}<figure><img src='{{Primary image}}'/><figcaption>{{Primary image caption}}</figcaption></figure>{{/Primary image}}<p><a target='_blank' href={{URL}}>Read More</a></div>"
+                    },
+                    "tableStyle": {
+                        "dataVariable": "State",
+                        "timeColumn": null
+                    }
+                },
+                {
+                    "name": "地政司 縣(市)行政區域界線(臺灣本島地區)",
+                    "description": "TBD",
+                    "dataCustodian": "TBD",
+                    "url": "http://ogcmap.tgos.nat.gov.tw/35123/SimpleWMS.aspx",
+                    "layers": "city",
+                    "type": "wms"
+                },
+                {
+                    "name": "空氣品質",
+                    "url": "test/test.csv",
+                    "type": "csv",
+                    "cacheDuration": "5m",
+                    "polling": {
+                        "seconds": 300,
+                        "replace": true
+                    },
+                    "featureInfoTemplate": {
+                        "name": "{{site_name}}",
+                        "template": "<h3>{{site_name}}</h3><table><tbody><tr><td>County</td><tdclass='strong'>{{county}}</td></tr><tr><td>AQI</td><td><chartid='{{site_id}}'title='{{site_name}}({{site_id}})'poll-seconds='300'poll-replace='true'sources='http://localhost:3002/test/test2.csv'source-names='default'column-names='publish_time,aqi'column-units='DateTime,aqi'></chart></td></tr></tbody></table>"
+                      },
+                    "rectangle": {
+                        "north": 25,
+                        "east": 122,
+                        "south": 21.5,
+                        "west": 120
+                    },
+                    "info": [
+                        {
+                            "name": "Description",
+                            "content": "The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                        },
+                    ]
+                },
+                {
+                    "name": "Taichung 3D city model citygml",
+                    "type": "3d-tiles",
+                    "description": "Taichung city 3d tile set",
+                    "ionAssetId": "54927",
+                    "ionAccessToken": "token",
+                    "options": {
+                        "maximumScreenSpaceError": 1,
+                        "maximumNumberOfLoadedTiles": 1000
+                    }
+                     
+                  },
+            ]
+        }
+    ]
+}
