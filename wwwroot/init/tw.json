@@ -39,7 +39,7 @@
                 },
                 {
                     "name": "空氣品質",
-                    "url": "test/test.csv",
+                    "url": "https://map.owlfox.org/aqi/sites",
                     "type": "csv",
                     "cacheDuration": "5m",
                     "polling": {
@@ -48,7 +48,7 @@
                     },
                     "featureInfoTemplate": {
                         "name": "{{site_name}}",
-                        "template": "<h3>{{site_name}}</h3><table><tbody><tr><td>County</td><tdclass='strong'>{{county}}</td></tr><tr><td>AQI</td><td><chartid='{{site_id}}'title='{{site_name}}({{site_id}})'poll-seconds='300'poll-replace='true'sources='http://localhost:3002/test/test2.csv'source-names='default'column-names='publish_time,aqi'column-units='DateTime,aqi'></chart></td></tr></tbody></table>"
+                        "template": "<h3>{{site_name}}</h3><table><tbody><tr><td>County</td><tdclass='strong'>{{county}}</td></tr><tr><td>AQI</td><td><chartid='{{site_id}}'title='{{site_name}}({{site_id}})'poll-seconds='300'poll-replace='true'sources='https://map.owlfox.org/aqi/{{site_id}}'source-names='default'column-names='publish_time,aqi'column-units='DateTime,aqi'></chart></td></tr></tbody></table>"
                       },
                     "rectangle": {
                         "north": 25,
@@ -68,7 +68,7 @@
                     "type": "3d-tiles",
                     "description": "Taichung city 3d tile set",
                     "ionAssetId": "54927",
-                    "ionAccessToken": "token",
+                    "ionAccessToken": "",
                     "options": {
                         "maximumScreenSpaceError": 1,
                         "maximumNumberOfLoadedTiles": 1000
