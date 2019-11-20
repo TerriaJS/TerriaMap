@@ -1,7 +1,8 @@
+
 {
     "corsDomains": [],
     "homeCamera": {
-        "north": 25,
+        "north": 25.5,
         "east": 122,
         "south": 21.5,
         "west": 120
@@ -16,27 +17,15 @@
             "preserveOrder": true,
             "isOpen": true,
             "items": [
-                {
-                    "name": "ABC Photo Stories (2009-2014)",
-                    "description": "Australia Broadcasting Company stories from 2009-2014 with accompanying photos.\n\nThis dataset demonstrates the ability to show users a custom feature info panel when they click on a feature on the map.",
-                    "type": "csv",
-                    "url": "test/localphotostories20092014.csv",
-                    "featureInfoTemplate": {
-                        "template": "<div class='abc'><small>{{Date}}</small>{{#Primary image}}<figure><img src='{{Primary image}}'/><figcaption>{{Primary image caption}}</figcaption></figure>{{/Primary image}}<p><a target='_blank' href={{URL}}>Read More</a></div>"
-                    },
-                    "tableStyle": {
-                        "dataVariable": "State",
-                        "timeColumn": null
-                    }
-                },
-                {
-                    "name": "地政司 縣(市)行政區域界線(臺灣本島地區)",
-                    "description": "TBD",
-                    "dataCustodian": "TBD",
-                    "url": "http://ogcmap.tgos.nat.gov.tw/35123/SimpleWMS.aspx",
-                    "layers": "city",
-                    "type": "wms"
-                },
+                // {
+                //     "name": "地政司 縣(市)行政區域界線(臺灣本島地區)",
+                //     "description": "TBD",
+                //     "dataCustodian": "TBD",
+                //     "url": "http://ogcmap.tgos.nat.gov.tw/35123/SimpleWMS.aspx",
+                //     "layers": "city",
+                //     "type": "wms"
+                // },
+
                 {
                     "name": "空氣品質",
                     "url": "https://map.owlfox.org/aqi/sites",
@@ -48,18 +37,43 @@
                     },
                     "featureInfoTemplate": {
                         "name": "{{site_name}}",
-                        "template": "<h3>{{site_name}}</h3><table><tbody><tr><td>County</td><tdclass='strong'>{{county}}</td></tr><tr><td>AQI</td><td><chartid='{{site_id}}'title='{{site_name}}({{site_id}})'poll-seconds='300'poll-replace='true'sources='https://map.owlfox.org/aqi/{{site_id}}'source-names='default'column-names='publish_time,aqi'column-units='DateTime,aqi'></chart></td></tr></tbody></table>"
+			            "template": "<h3>{{county}} - {{site_name}}</h3><table><tbody><tr><td>空氣品質指標AQI</td><td class='strong'>{{aqi}}, {{status}}</td></tr><tr><td>PM2.5 小時濃度/移動平均 (μg/m3)</td><td class='strong'>{{PM2p5}}/{{PM2p5_AVG}}</td></tr><tr><td>PM10 小時濃度/移動平均 (μg/m3)</td><td class='strong'>{{PM10}}/{{PM10_AVG}}</td></tr><tr><td>臭氧 (O3) 小時濃度/ 8 小時移動平均 (ppb)</td><td class='strong'>{{O3}}/{{O3_8hr}}</td></tr><tr><td>一氧化碳 (CO) 小時濃度/ 8 小時移動平均 (ppm)</td><td class='strong'>{{CO}}/{{CO_8hr}}</td></tr><tr><td>二氧化硫 (SO2) 小時濃度(ppb)</td><td class='strong'>{{SO2}}</td></tr><tr><td>二氧化氮 (NO2) 小時濃度(ppb)</td><td class='strong'>{{NO2}}</td></tr><tr><td>AQI 趨勢圖</td><td><chart id='{{site_id}}' title='{{site_name}} (測站編號： {{site_id}})' poll-seconds='300' poll-replace='true'ources='https://map.owlfox.org/aqi/{{site_id}}'ource-names='前 12 小時資料' preview-x-label='Last 12 hours'olumn-units='Time,AQI' column-names='Time,AQI'></chart></td></tr></tbody></table>"
                       },
                     "rectangle": {
-                        "north": 25,
+                        "north": 25.5,
                         "east": 122,
                         "south": 21.5,
                         "west": 120
                     },
+                    "tableStyle": {
+                        "dataVariable": "aqi",
+                        "timeColumn": null,
+                        "replaceWithZeroValues": [],
+                        "replaceWithNullValues": [
+                            "-"
+                        ],
+                        "nullColor": "rgba(255,255,255,0.1)",
+                        "nullLabel": "No value",
+                        "scaleByValue": true,
+                        "scale": 1.5,
+                        "colorBins": 10,
+                        "colorMap": "rgb(94,79,162)-rgb(50,136,189)-rgb(102,194,165)-rgb(171,221,164)-rgb(230,245,152)-rgb(254,224,139)-rgb(253,174,97)-rgb(244,109,67)-rgb(213,62,79)-rgb(158,1,66)",
+                        "columns": {
+                            "site_id": {
+                            "type": "HIDDEN"
+                            },
+                            "site_name": {
+                                "type": "HIDDEN"
+                            },
+                            "publish_time": {
+                                "type": "HIDDEN"
+                            },
+                        },
+                    },
                     "info": [
                         {
-                            "name": "Description",
-                            "content": "The AEMO Actual Generation and Load data represents actual generation data for each scheduled generation unit, semi-scheduled generation unit, and non-scheduled generating systems (a non-scheduled generating system comprising non-scheduled generating units) for registered units in the National Electricity Market (NEM). The data is given in MegaWatt (MW). <br/> <br/>Detailed information about the AEMO Generation and Load data is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load](http://aemo.com.au/Electricity/Data/Market-Management-System-MMS/Generation-and-Load) <br/> <br/>Visualisation of AEMO current generation data is based on data files generated every 5 minutes available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/CURRENT/Dispatch_SCADA/) <br/> <br/>Visualisation of AEMO historic data is based on daily data files available here: <br/> <br/>[http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/](http://www.nemweb.com.au/REPORTS/ARCHIVE/Dispatch_SCADA/) <br/> <br/>AEMO provides a range of data. Raw data is provided in Comma Separated Values (CSV) flat file format to enable access to a range of market data. Recent files are stored in a directory for current reports, and older files are moved into the respective archive reports directory. <br/> <br/>All electricity data provided by AEMO is available here: <br/> <br/>[http://aemo.com.au/Electricity/Data](http://aemo.com.au/Electricity/Data)"
+                            "name": "介紹",
+                            "content": "環保署 AQI 開放資料"
                         },
                     ]
                 },
@@ -68,7 +82,7 @@
                     "type": "3d-tiles",
                     "description": "Taichung city 3d tile set",
                     "ionAssetId": "54927",
-                    "ionAccessToken": "",
+                    "ionAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5Y2MwMTg0OS1lMTg4LTQzNGQtYTQ0ZC1lNDQ4NTIyNDMwNDAiLCJpZCI6MTY3NzYsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzExODgyNjJ9.QobzzGsUmVC70YWbL5WAFRDlM6Ev-nTRpEF_LyFLKFU",
                     "options": {
                         "maximumScreenSpaceError": 1,
                         "maximumNumberOfLoadedTiles": 1000
