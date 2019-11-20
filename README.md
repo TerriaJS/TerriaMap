@@ -10,3 +10,8 @@ This is a complete website built using the TerriaJS library. See the [TerriaJS R
 
 
 For instructions on how to deploy your map, see [the documentation here](doc/deploying/deploying-to-aws.md).
+
+
+# for this fork (taiwan branch)
+I'm putting Taiwanese government data into the branch, see tw.json for details.
+I'm also working on i18n with zh-tw, hopefully make some contribution back to the upstream :P.
