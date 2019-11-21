@@ -1,8 +1,7 @@
 {
     /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
-        "tw",
-        "terria"
+        "tw"
     ],
     parameters: {
         googleUrlShortenerKey: null,
@@ -10,8 +9,8 @@
         googleAnalyticsOptions: null,
         /* Text that appears at the bottom of the map */
         disclaimer: {
-            text: "Disclaimer: This map must not be used for navigation or precise spatial analysis",
-            url: ""
+            text: "免責聲明：此服務尚在測試階段，如有問題請直接在 github 留言聯繫。",
+            url: "https://github.com/owlfox/TerriaMap/issues"
         },
         /*
         // Text that will be added to any pages printed from your site.
@@ -49,7 +48,7 @@
             ""
         ],
         // Shown when things go wrong.
-        supportEmail: "help@example.com",
+        supportEmail: "tsejen.tw@gmail.com",
         // You probably shouldn't change this.
         proj4ServiceBaseUrl: "proj4def/",
         // Or this
@@ -57,11 +56,11 @@
         // viewerMode:"3dSmooth",
         // Default mobile viewer mode when loading the map for the first time on mobile platforms.
         // Options are: "3DTerrain", "3DSmooth", "2D"
-        mobileDefaultViewerMode: "2d",
+        mobileDefaultViewerMode: "3DSmooth",
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
-        "experimentalFeatures": true,
-
+        "experimentalFeatures": false,
+        "useCesiumIonTerrain": false,
         // To override TerriaJS's region mapping file with a local one.
         // regionMappingDefinitionsUrl: "data/regionMapping.json"
     }

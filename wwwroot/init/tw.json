@@ -8,7 +8,7 @@
         "west": 120
     },
     "baseMapName": "Positron (Light)",
-    "initialViewerMode": "3dSmooth",
+    "initialViewerMode": "3DSmooth",
     "services": [],
     "catalog": [
         {
