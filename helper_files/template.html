@@ -33,10 +33,10 @@
             <td>AQI 趨勢圖</td>
             <td>
                 <chart id='{{site_id}}' title='{{site_name}} (測站編號： {{site_id}})' poll-seconds='300' poll-replace='true'
-                    sources='https://map.owlfox.org/aqi/{{site_id}},https://map.owlfox.org/aqi/{{site_id}}/3d'
-                    source-names='12h,3d'
-                    downloads='https://map.owlfox.org/aqi/{{site_id}},https://map.owlfox.org/aqi/{{site_id}}/3d'
-                    download-names='12h,3d' preview-x-label='Last 12 hours' column-units='Time,AQI'
+                    sources='https://map.owlfox.org/aqi/{{site_id}}/24h,https://map.owlfox.org/aqi/{{site_id}}/3d'
+                    source-names='24h,3d,'
+                    downloads='https://map.owlfox.org/aqi/{{site_id}}/24h,https://map.owlfox.org/aqi/{{site_id}}/3d'
+                    download-names='24h,3d' preview-x-label='Last 12 hours' column-units='Time,AQI'
                     column-names='Time,AQI'>
                 </chart>
             </td>
