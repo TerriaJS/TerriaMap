@@ -1,6 +1,6 @@
 Terria Map, Taiwan fork
 ==========
-![Taiwan Terria Map]("https://user-images.githubusercontent.com/3121302/69404805-1da6f780-0d39-11ea-9b7c-45b81202bf9e.png")
+![](https://user-images.githubusercontent.com/3121302/69404805-1da6f780-0d39-11ea-9b7c-45b81202bf9e.png)
 
 ![Terria logo](terria-logo.png "Terria logo")
 
