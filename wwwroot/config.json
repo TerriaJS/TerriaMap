@@ -9,7 +9,7 @@
         googleAnalyticsOptions: null,
         /* Text that appears at the bottom of the map */
         disclaimer: {
-            text: "免責聲明：此服務尚在測試階段，如有問題請直接在 github 留言聯繫。",
+            text: "免責聲明：此服務尚在測試階段，如有問題請直接在 github 留言聯繫。 Disclaimer: Please contact via gihub for any issue of this site.",
             url: "https://github.com/owlfox/TerriaMap/issues"
         },
         /*
@@ -39,7 +39,7 @@
             link: "http://www.example.com"
         },*/
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "Terria 地圖測試",
+        appName: "Terria Map Testing 地圖測試",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
@@ -52,7 +52,7 @@
         // You probably shouldn't change this.
         proj4ServiceBaseUrl: "proj4def/",
         // Or this
-        feedbackUrl: "feedback",
+        // feedbackUrl: "feedback", 
         // viewerMode:"3dSmooth",
         // Default mobile viewer mode when loading the map for the first time on mobile platforms.
         // Options are: "3DTerrain", "3DSmooth", "2D"

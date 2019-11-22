@@ -32,7 +32,6 @@ function isBrowserSupportedAV() {
 export default function UserInterface(props) {
   return (
     <StandardUserInterface {...props} version={version}>
-      <Menu />
       <Nav>
         <MeasureTool terria={props.viewState.terria} key="measure-tool" />
       </Nav>
