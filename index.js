@@ -115,6 +115,11 @@ module.exports = terria.start({
             }
         }
 
+        // Update the ViewState based on Terria config parameters.
+        if (defined(viewState.afterTerriaStarted)) {
+            viewState.afterTerriaStarted();
+        }
+
         render(terria, allBaseMaps, viewState);
     } catch (e) {
         console.error(e);
