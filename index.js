@@ -116,6 +116,7 @@ module.exports = terria.start({
         }
 
         // Update the ViewState based on Terria config parameters.
+        // Note: won't do anything unless terriajs version is >7.9.0
         if (defined(viewState.afterTerriaStarted)) {
             viewState.afterTerriaStarted();
         }
