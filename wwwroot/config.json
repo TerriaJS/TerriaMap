@@ -65,13 +65,13 @@
         // regionMappingDefinitionsUrl: "data/regionMapping.json"
 
         // True to display welcome message on startup.
-        // "showWelcomeMessage": true,
+        // "showWelcomeMessage": false,
 
         // True to display in-app guides.
-        // "showInAppGuides": true,
+        // "showInAppGuides": false,
 
         // True to display new feature popups.
-        // "showFeaturePrompts": true,
+        // "showFeaturePrompts": false,
 
     }
 }
