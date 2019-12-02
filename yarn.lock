@@ -11018,10 +11018,10 @@ terriajs-catalog-editor@^0.2.0:
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
   integrity sha1-2cZnnlPE2S6HpTGviWxhSIiO2OQ=
 
-terriajs-cesium@1.63.1:
-  version "1.63.1"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.63.1.tgz#b518a1114ea80a63968f83aeb5f4499f94c6e80a"
-  integrity sha512-FKu6sRS2fAMTS94CZHLHpIvHXu90+YwQOZYwqYIejYUjcvfYn/D5X/5qsjUV2zG6/FzbibOu2ej4P4hnpvG+fA==
+terriajs-cesium@1.63.2:
+  version "1.63.2"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.63.2.tgz#2e00cc577c790a4c347ff7f169019daa9e38d261"
+  integrity sha512-iPSSOBqHjvtgJlMlqcN7EPVMb5VrsdC5sNzfLtlZhGar7trttomzSp0kbSx7d78U5u9KESkqSryaHIktbtXhDw==
   dependencies:
     dompurify "^2.0.7"
     esm "^3.2.25"
