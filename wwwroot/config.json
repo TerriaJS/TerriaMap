@@ -67,6 +67,18 @@
 
         // To override TerriaJS's region mapping file with a local one.
         // regionMappingDefinitionsUrl: "data/regionMapping.json"
+
+        // "openAddData": true,
+
+        // True to display welcome message on startup.
+        // "showWelcomeMessage": true,
+
+        // True to display in-app guides.
+        // "showInAppGuides": true,
+
+        // True to display new feature popups.
+        // "showFeaturePrompts": true,
+
     }
 }
 
