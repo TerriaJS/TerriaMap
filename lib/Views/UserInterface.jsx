@@ -14,20 +14,21 @@ import version from "../../version";
 
 import "./global.scss";
 
-// function loadAugmentedVirtuality(callback) {
-//   require.ensure(
-//     "terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool",
-//     () => {
-//       const AugmentedVirtualityTool = require("terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool");
-//       callback(AugmentedVirtualityTool);
-//     },
-//     "AugmentedVirtuality"
-//   );
-// }
+function loadAugmentedVirtuality(callback) {
+  require.ensure(
+    "terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool",
+    () => {
+      const AugmentedVirtualityTool = require("terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool")
+        .default;
+      callback(AugmentedVirtualityTool);
+    },
+    "AugmentedVirtuality"
+  );
+}
 
-// function isBrowserSupportedAV() {
-//   return /Android|iPhone|iPad/i.test(navigator.userAgent);
-// }
+function isBrowserSupportedAV() {
+  return /Android|iPhone|iPad/i.test(navigator.userAgent);
+}
 
 export default function UserInterface(props) {
   return (
@@ -40,14 +41,14 @@ export default function UserInterface(props) {
         {/* <MeasureTool terria={props.viewState.terria} key="measure-tool" /> */}
       </Nav>
       <ExperimentalMenu>
-        {/* <If condition={isBrowserSupportedAV()}>
+        <If condition={isBrowserSupportedAV()}>
           <SplitPoint
             loadComponent={loadAugmentedVirtuality}
             viewState={props.viewState}
             terria={props.viewState.terria}
             experimentalWarning={true}
           />
-        </If> */}
+        </If>
       </ExperimentalMenu>
     </StandardUserInterface>
   );
