@@ -12,7 +12,7 @@ import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
-// import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
+import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
 import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
@@ -38,7 +38,7 @@ var terria = new Terria(terriaOptions);
 
 // Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
 // insert your custom version of the code in the registerCustomComponentTypes function here instead.
-// registerCustomComponentTypes(terria);
+registerCustomComponentTypes(terria);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
