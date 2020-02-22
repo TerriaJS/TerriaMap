@@ -6,6 +6,8 @@ var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
 
+import { runInAction } from "mobx";
+
 // checkBrowserCompatibility('ui');
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
@@ -91,7 +93,13 @@ module.exports = terria.start({
 
         // var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
         const globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
-        terria.baseMaps.push(...globalBaseMaps);
+                if (terria.updateBaseMaps) {
+          terria.updateBaseMaps([...globalBaseMaps]);
+        } else {
+          runInAction(() => {
+            terria.baseMaps.push(...globalBaseMaps);
+          });
+        }
 
         // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
         // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
