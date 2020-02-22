@@ -22,7 +22,7 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
-import defined from 'terriajs-cesium/Source/Core/defined';
+// import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
