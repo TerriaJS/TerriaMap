@@ -1,6 +1,8 @@
 Change Log
 ==========
 
+* Fix manifest.json start_url
+
 ### Next Release
 
 * Fix the hot reload script.
