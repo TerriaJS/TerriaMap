@@ -4,4 +4,4 @@ node_js:
 script:
 - gulp lint release
 env:
-- NODE_OPTIONS=--max_old_space_size=4096
+- NODE_OPTIONS=--max_old_space_size=5192
