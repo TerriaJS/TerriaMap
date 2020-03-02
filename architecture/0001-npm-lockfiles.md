@@ -1,4 +1,4 @@
-# 0. Record architecture decisions
+# 1. npm lockfiles - use package-lock.json
 
 Date: 2020-03-02
 
