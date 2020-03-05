@@ -48,5 +48,7 @@ that way our users can use the tool they prefer
 
 Keep both, but force travis to use npm, npm ci, package-lock.json etc(?), at the cost of having to keep yarn.lock up to date as well.
 
+Continue building production/"gulp release" builds of TerriaMap using package-lock.json, keeping yarn.lock in source as well.
+
 ## Consequences
 We still use two different tools for generating lock files, npm for releasing, yarn for developing. This could lead to instances where there are 'non-reproducible dev builds' (but always-reproducible production builds), even though a given `package.json` should resolve to roughly the same versions with the two tools.
