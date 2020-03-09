@@ -1250,7 +1250,7 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/urijs@^1.19.1":
+"@types/urijs@1.19.1":
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/@types/urijs/-/urijs-1.19.1.tgz#da69e8479eec0bb4580c7cc218d218f107d2d526"
   integrity sha512-5waMuQ9z8pH8+5yAyX05bsA7SOl50l5ZkeMripxoOgN2+nSQb4TOSuhWoRlPt7FPIIohk6iBrX/rEktUJa8KfQ==
