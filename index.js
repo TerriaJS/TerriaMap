@@ -19,6 +19,7 @@ import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 // import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
+// import RollbarErrorProvider from 'terriajs/lib/Models/RollbarErrorProvider';
 import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
@@ -82,6 +83,10 @@ module.exports = terria.start({
             // new GazetteerSearchProviderViewModel({terria}),
             // new GnafSearchProviderViewModel({terria})
         ];
+
+       //  viewState.errorHandler = new RollbarErrorProvider({
+       //    terria: terria
+       // });
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
