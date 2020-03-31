@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+### MobX Development
+* Default to console analytics in development
+
 ### Next Release
 
 * Fix the hot reload script.
