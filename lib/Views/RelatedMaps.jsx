@@ -19,6 +19,7 @@ function RelatedMaps(props) {
       smallScreen={props.smallScreen}
       viewState={props.viewState}
       btnTitle="See related maps"
+      showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
         <label className={PanelStyles.heading}>Related Maps</label>

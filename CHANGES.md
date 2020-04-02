@@ -1,6 +1,9 @@
 Change Log
 ==========
 
+### MobX Development
+* Move About & Related Maps to left hand side
+
 ### Next Release
 
 * Fix the hot reload script.
