@@ -2,6 +2,7 @@ Change Log
 ==========
 
 ### MobX Development
+* Fix manifest.json start_url 
 * Move About & Related Maps to left hand side
 
 ### Next Release
