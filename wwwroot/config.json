@@ -43,9 +43,13 @@
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
-            "",
-            "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
-            ""
+            "<a target=\"_blank\" id=\"ogclogo\" href=\"https://ogc.org/\"><img src=\"images/OGC_Logo_2D_Blue_x_0_0.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+            "<span id=\"site-title\"> 3D Container and Tiles API Pilot</span>",
+            "<a target=\"_blank\" id=\"cesiumlogo\" href=\"https://terria.io\"><img src=\"images/cesium_color_white.png\" height=\"52\" title=\"Version: {{version}}\" /></a>"
+            // "<div class='title'><div class='title-md'><a href='https://www.ogc.org/' target='_blank'><img class='left' src='images/OGC_Logo_2D_Blue_x_0_0.png' alt='OGC Making Location Count' /></a> <a href='https://cesium.com' target='_blank'><img class='right' src='images/cesium_color_white.png' alt='Cesium' style=\"width: 55px; height: 33px\"/></a> <br/> <strong>3D Container and Tiles</strong> <br/> <small>Pilot</small></div><div class='title-sm'><strong>OGC Pilot</strong></div></div>"
+            // "<a target=\"_blank\" href=\"\"><img style=\"background-color: white;\" src=\"images/OGC_Logo_2D_Blue_x_0_0.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+            // "<a target=\"_blank\" href=\"\"><img style=\"height: 35px\" src=\"images/cesium_color_white.png\" title=\"Version: {{version}}\" /></a>",
+            // "3D Container and Tiles Pilot"
         ],
         // Shown when things go wrong.
         supportEmail: "help@example.com",

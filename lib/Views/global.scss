@@ -14,6 +14,69 @@ body {
     }
   }
 
+  .tjs-branding__branding {
+    display: flex;
+
+    a,
+    span {
+      display: block;
+    }
+
+    #site-title {
+      font-family: "Montserrat", sans-serif;
+      color: whitesmoke;
+      line-height: 1;
+      font-weight: 600;
+      font-size: 14px;
+      flex-basis: 130px;
+      text-align: left;
+      margin: 7px 2px;
+    }
+    #ogclogo {
+      img {
+        background-color: white;
+      }
+    }
+    #cesiumlogo {
+      flex-basis: 60px;
+      margin: 7px 0px;
+      text-align: right;
+    }
+
+    @media screen and (min-width: $sm - 1) {
+      justify-content: space-between;
+      border: 5px solid $dark;
+      border-radius: 7px;
+    }
+  }
+
+  .tjs-mobile-header__mobile-header {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    a,
+    span {
+      display: block;
+      height: 100%;
+    }
+
+    #ogclogo {
+      display: none;
+    }
+    #cesiumlogo {
+      display: none;
+      height: 30px;
+    }
+
+    .tjs-branding__branding {
+      display: inline-block;
+    }
+
+    @media screen and (max-width: 530px) {
+      #site-title {
+        font-size: 12px;
+      }
+    }
+  }
+
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
   /*

@@ -19,9 +19,9 @@
     "terriajs-server": "^3.0.1"
   },
   "config": {
-    "awsProfile": "terria",
+    "awsProfile": "kotachrome",
     "awsS3PackagesPath": "s3://terria-apps/map",
-    "awsRegion": "ap-southeast-2",
+    "awsRegion": "us-east-2",
     "awsEc2InstanceType": "t2.small",
     "awsEc2ImageId": "ami-0065540df76a93885",
     "awsKeyName": "terria-kring",
