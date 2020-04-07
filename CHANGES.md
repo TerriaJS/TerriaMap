@@ -2,8 +2,10 @@ Change Log
 ==========
 
 ### MobX Development
+
 * Fix manifest.json start_url 
 * Move About & Related Maps to left hand side
+* Default to console analytics in development
 
 ### Next Release
 
