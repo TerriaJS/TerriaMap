@@ -22,7 +22,9 @@
         "gov.uk",
         "gov.nz",
         "sample.aero3dpro.com.au",
-        "services.aremi.data61.io"
+        "services.aremi.data61.io",
+        "helyxapache2.eastus.azurecontainer.io",
+        "www.steinbeis-3dps.eu:8080",
+        "13.82.99.186:5050"
     ]
 }
-
