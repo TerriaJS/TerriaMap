@@ -26,7 +26,7 @@ write_files:
     Type=simple
     LimitNOFILE=131072
     LimitMEMLOCK=82000
-    ExecStart=/usr/sbin/varnishd -j unix,user=vcache -F -a :80 -T localhost:6082 -f /etc/varnish/default.vcl -S /etc/varnish/secret -s memcache=malloc,1G -s filecache=file,/tmp/varnish_storage.bin,1G
+    ExecStart=/usr/sbin/varnishd -j unix,user=vcache -F -a :80 -T localhost:6082 -f /etc/varnish/default.vcl -S /etc/varnish/secret -s memcache=malloc,64M -s filecache=file,/tmp/varnish_storage.bin,1G
     ExecReload=/usr/share/varnish/varnishreload
     ProtectSystem=full
     ProtectHome=true
@@ -44,15 +44,13 @@ runcmd:
  - mkdir /tmp/ramfs
 
 # TerriaJS app
- - mount -t ramfs ramfs /tmp/ramfs
- - aws s3 cp --region ap-southeast-2 s3://hypotheticalhorse-apps/map/{{deploymentName}}.tar.gz /tmp/ramfs/
+ - aws s3 cp --region ap-southeast-2 s3://hypotheticalhorse-apps/map/{{deploymentName}}.tar.gz /opt/
  - mkdir /opt/{{deploymentName}}
- - tar xzf /tmp/ramfs/{{deploymentName}}.tar.gz -C /opt/{{deploymentName}}
- - ARCHIVE_DIR=`sha256sum /tmp/ramfs/{{deploymentName}}.tar.gz | awk '{print $1}'`
+ - tar xzf /opt/{{deploymentName}}.tar.gz -C /opt/{{deploymentName}}
+ - ARCHIVE_DIR=`sha256sum /opt/{{deploymentName}}.tar.gz | awk '{print $1}'`
  - mkdir -p /opt/{{deploymentName}}/wwwroot/$ARCHIVE_DIR
- - cp /tmp/ramfs/{{deploymentName}}.tar.gz /opt/{{deploymentName}}/wwwroot/$ARCHIVE_DIR
+ - cp /opt/{{deploymentName}}.tar.gz /opt/{{deploymentName}}/wwwroot/$ARCHIVE_DIR
  - cp /opt/{{deploymentName}}/varnish/default.vcl /etc/varnish
- - umount /tmp/ramfs
 
 # Create service
  - cd /opt/{{deploymentName}}
