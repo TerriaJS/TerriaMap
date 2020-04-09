@@ -1,6 +1,6 @@
 {
- "name": "NationalMap",
- "start_url": "index.html",
+ "name": "TerriaJS",
+ "start_url": "/",
  "display": "standalone",
  "icons": [
   {
