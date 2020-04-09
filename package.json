@@ -23,7 +23,7 @@
     "awsS3PackagesPath": "s3://hypotheticalhorse-apps/map",
     "awsRegion": "us-east-2",
     "awsEc2InstanceType": "t3.nano",
-    "awsEc2ImageId": "ami-07ec7aee8a573b2ae",
+    "awsEc2ImageId": "ami-004d3abe7e5109c79",
     "awsKeyName": "kring",
     "awsS3ServerConfigOverridePath": "s3://hypotheticalhorse-apps/map/privateserverconfig-2020-04-09.json",
     "awsS3ClientConfigOverridePath": "s3://hypotheticalhorse-apps/map/privateclientconfig-2020-04-09.json",
