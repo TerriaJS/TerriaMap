@@ -14,7 +14,7 @@ module.exports = {
             ...devApp,
             name: devApp.name + '-production',
             args: '--config-file productionserverconfig.json',
-            instances: Math.max(4, os.cpus().length)
+            instances: 1
         }
     ]
 };

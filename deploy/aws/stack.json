@@ -32,7 +32,7 @@
   },
   "Parameters": {
     "HostedZoneName": {
-      "Default": "terria.io.",
+      "Default": "hypotheticalhorse.com.",
       "Type": "String"
     },
     "ImageId": {
@@ -164,7 +164,7 @@
             "InstancePort": "80",
             "LoadBalancerPort": "443",
             "Protocol": "HTTPS",
-            "SSLCertificateId": "arn:aws:acm:ap-southeast-2:278900443360:certificate/4162729d-14b1-435f-84e1-cb318b8f5934"
+            "SSLCertificateId": "arn:aws:acm:us-east-2:774880055860:certificate/22f5e0c6-14a9-4387-a72d-5915075950ca"
           }
         ]
       },
@@ -322,8 +322,8 @@
                   ],
                   "Effect": "Allow",
                   "Resource": [
-                    "arn:aws:s3:::terriamap-sharing",
-                    "arn:aws:s3:::terriamap-sharing/*"
+                    "arn:aws:s3:::hypotheticalhorse-sharing",
+                    "arn:aws:s3:::hypotheticalhorse-sharing/*"
                   ]
                 }
               ]

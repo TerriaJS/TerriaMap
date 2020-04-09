@@ -43,7 +43,7 @@
             link: "http://www.example.com"
         },*/
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "Terria Map",
+        appName: "Cesium client app for OGC 3D Container and Tiles API Pilot",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
@@ -56,11 +56,11 @@
             // "3D Container and Tiles Pilot"
         ],
         // Shown when things go wrong.
-        supportEmail: "help@example.com",
+        supportEmail: "kevin@cesium.com",
         // You probably shouldn't change this.
         proj4ServiceBaseUrl: "proj4def/",
         // Or this
-        feedbackUrl: "feedback",
+        // feedbackUrl: "feedback",
 
         // Default mobile viewer mode when loading the map for the first time on mobile platforms.
         // Options are: "3DTerrain", "3DSmooth", "2D"
