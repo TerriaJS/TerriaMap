@@ -1,4 +1,6 @@
+import { toJS } from "mobx";
 import filterOutUndefined from "terriajs/lib/Core/filterOutUndefined";
+import { JsonObject } from "terriajs/lib/Core/Json";
 import loadJson from "terriajs/lib/Core/loadJson";
 import ReferenceMixin from "terriajs/lib/ModelMixins/ReferenceMixin";
 import UrlMixin from "terriajs/lib/ModelMixins/UrlMixin";
@@ -9,14 +11,24 @@ import CreateModel from "terriajs/lib/Models/CreateModel";
 import { BaseModel } from "terriajs/lib/Models/Model";
 import proxyCatalogItemUrl from "terriajs/lib/Models/proxyCatalogItemUrl";
 import Terria from "terriajs/lib/Models/Terria";
+import anyTrait from "terriajs/lib/Traits/anyTrait";
 import CatalogMemberReferenceTraits from "terriajs/lib/Traits/CatalogMemberReferenceTraits";
 import mixTraits from "terriajs/lib/Traits/mixTraits";
 import UrlTraits from "terriajs/lib/Traits/UrlTraits";
+import updateModelFromJson from "terriajs/lib/Models/updateModelFromJson";
 
 export class Ogc3dContainerReferenceTraits extends mixTraits(
   CatalogMemberReferenceTraits,
   UrlTraits
-) {}
+) {
+  @anyTrait({
+    name: "Override",
+    description:
+      "The properties to apply to the dereferenced item, overriding properties that " +
+      "come from the OGC API itself."
+  })
+  override?: JsonObject;
+}
 
 export default class Ogc3dContainerReference extends UrlMixin(
   ReferenceMixin(CreateModel(Ogc3dContainerReferenceTraits))
@@ -36,6 +48,7 @@ export default class Ogc3dContainerReference extends UrlMixin(
 
     const id = this.uniqueId;
     const name = this.name;
+    const override = toJS(this.override);
 
     const proxiedUrl = proxyCatalogItemUrl(this, this.uri.toString(), "0d");
     return loadJson(proxiedUrl).then(json => {
@@ -46,7 +59,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
           id,
           name,
           json,
-          previousTarget
+          previousTarget,
+          override
         );
       } else if (json.links !== undefined) {
         return Ogc3dContainerReference.loadFromLandingPage(
@@ -55,7 +69,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
           id,
           name,
           json,
-          previousTarget
+          previousTarget,
+          override
         );
       }
       return undefined;
@@ -68,7 +83,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
     id: string | undefined,
     name: string | undefined,
     json: any,
-    previousTarget: BaseModel
+    previousTarget: BaseModel,
+    override: JsonObject | undefined
   ): Promise<BaseModel | undefined> {
     const links = json.links;
     const dataLinks = links.filter(
@@ -92,7 +108,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
           id,
           name,
           json,
-          previousTarget
+          previousTarget,
+          override
         );
       }
       return undefined;
@@ -105,7 +122,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
     id: string | undefined,
     name: string | undefined,
     json: any,
-    previousTarget: BaseModel
+    previousTarget: BaseModel,
+    override: JsonObject | undefined
   ): Promise<BaseModel | undefined> {
     return Ogc3dContainerReference.loadGroup(
       terria,
@@ -113,7 +131,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
       id,
       name,
       json,
-      previousTarget
+      previousTarget,
+      override
     );
   }
 
@@ -123,7 +142,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
     id: string | undefined,
     name: string | undefined,
     json: any,
-    previousTarget: BaseModel
+    previousTarget: BaseModel,
+    override: JsonObject | undefined
   ): Promise<BaseModel> {
     let group: BaseModel;
     if (previousTarget && previousTarget instanceof CatalogGroup) {
@@ -174,6 +194,10 @@ export default class Ogc3dContainerReference extends UrlMixin(
     );
 
     group.setTrait(CommonStrata.definition, "members", ids);
+
+    if (override) {
+      updateModelFromJson(group, CommonStrata.override, override, true);
+    }
 
     return Promise.resolve(group);
   }
