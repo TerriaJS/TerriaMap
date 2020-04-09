@@ -10,25 +10,49 @@
       "name": "Cesium (Hypothetical Horse)",
       "type": "ogc3d",
       "url": "https://3d.hypotheticalhorse.com",
-      "isGroup": true
+      "isGroup": true,
+      "info": [
+        {
+          "name": "OGC 3D Container and Tiles API URL",
+          "content": "https://3d.hypotheticalhorse.com"
+        }
+      ]
     },
     {
       "name": "Helyx",
       "type": "ogc3d",
       "url": "http://helyxapache2.eastus.azurecontainer.io/",
-      "isGroup": true
+      "isGroup": true,
+      "info": [
+        {
+          "name": "OGC 3D Container and Tiles API URL",
+          "content": "http://helyxapache2.eastus.azurecontainer.io/"
+        }
+      ]
     },
     {
       "name": "Steinbeis",
       "type": "ogc3d",
-      "url": "http://www.steinbeis-3dps.eu:8080/3DContainerPilot/collections",
-      "isGroup": true
+      "url": "http://www.steinbeis-3dps.eu:8080/3DContainerPilot/",
+      "isGroup": true,
+      "info": [
+        {
+          "name": "OGC 3D Container and Tiles API URL",
+          "content": "http://www.steinbeis-3dps.eu:8080/3DContainerPilot/"
+        }
+      ]
     },
     {
       "name": "Skymantics",
       "type": "ogc3d",
       "url": "http://13.82.99.186:5050/",
-      "isGroup": true
+      "isGroup": true,
+      "info": [
+        {
+          "name": "OGC 3D Container and Tiles API URL",
+          "content": "http://13.82.99.186:5050/"
+        }
+      ]
     }
   ]
 }

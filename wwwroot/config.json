@@ -1,7 +1,7 @@
 {
     /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
-        "simple"
+        "https://raw.githubusercontent.com/kring/TerriaMap/ogc3d/wwwroot/init/simple.json"
     ],
     parameters: {
         googleUrlShortenerKey: null,
