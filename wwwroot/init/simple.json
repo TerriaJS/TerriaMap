@@ -7,7 +7,7 @@
   },
   "catalog": [
     {
-      "name": "Hypothetical Horse",
+      "name": "Cesium (Hypothetical Horse)",
       "type": "ogc3d",
       "url": "https://3d.hypotheticalhorse.com",
       "isGroup": true
