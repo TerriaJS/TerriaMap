@@ -60,6 +60,11 @@
       "url": "proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
     },
     {
+      "type": "wms-group",
+      "name": "WMS layers for the Australian Renewable Energy Mapping Infrastructure project.",
+      "url": "https://gis.aremi.data61.io/bom/wms"
+    },
+    {
       "type": "magda",
       "url": "https://data.gov.au",
       "name": "Magda Item",
