@@ -19,7 +19,7 @@
             url: "#"
         },
         */
-         
+
         // Pop-up disclaimer that will be shown at the start
         // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
         // globalDisclaimer: {
@@ -32,7 +32,7 @@
         //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
         //     enableOnLocalhost: true // If false, don't show this when running on localhost
         // },
-        
+
         /*
         developerAttribution: {
             text: "Your organisation",
@@ -72,6 +72,7 @@
 
         // True to display new feature popups.
         // "showFeaturePrompts": false,
+      "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlZTAwNDI5Yy02N2MwLTQxYjEtYmVhNy0yODdkM2ZkMWQ1YmEiLCJpZCI6MjU1OTAsInNjb3BlcyI6WyJhc2wiLCJhc3IiLCJhc3ciLCJnYyIsInByIl0sImlhdCI6MTU4NjI3MzIxMH0.LerByi6jRkrePIgwwnvWQ4l5kK5RM7JsAwibqz7DnmE"
 
     }
 }
