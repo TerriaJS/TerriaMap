@@ -61,6 +61,20 @@
           }
         ]
       }
+    },
+    {
+      "name": "Cognitics",
+      "type": "ogc3d",
+      "url": "http://cdb.cognitics.net:3000/",
+      "isGroup": true,
+      "override": {
+        "info": [
+          {
+            "name": "OGC 3D Container and Tiles API URL",
+            "content": "http://cdb.cognitics.net:3000/"
+          }
+        ]
+      }
     }
   ]
 }
