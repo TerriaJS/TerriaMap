@@ -5,6 +5,10 @@
     "south": -45,
     "west": 109
   },
+  "workbench": [
+    "testcsv",
+    "ppbin"
+  ],
   "catalog": [
     {
       "type": "wms-group",
@@ -79,14 +83,20 @@
     {
       "type": "csv",
       "url": "test/NSW_LGA_NEXIS_201212.csv",
-      "name": "NSW LGA NEXIS 2012"
+      "name": "NSW LGA NEXIS 2012",
+      "id": "testcsv"
     },
     {
       "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
       "type": "esri-mapServer",
       "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
       "name": "Surface Geology",
-      "rectangle": { "west": 106, "south": -52, "east": 172, "north": -8 },
+      "rectangle": {
+        "west": 106,
+        "south": -52,
+        "east": 172,
+        "north": -8
+      },
       "info": [
         {
           "name": "Licence",
@@ -192,7 +202,9 @@
       },
       "activeStyle": "Current % of Max Cap",
       "defaultColumn": {
-        "replaceWithNullValues": ["-"],
+        "replaceWithNullValues": [
+          "-"
+        ],
         "replaceWithZeroValues": []
       },
       "defaultStyle": {
@@ -250,6 +262,13 @@
       "name": "XY Plot",
       "type": "csv",
       "url": "build/TerriaJS/test/csv_nongeo/xy.csv"
+    },
+    {
+      "name": "Mean for point or region (Monthly)",
+      "url": "http://gsky.nci.org.au/ows/geoglam",
+      "type": "wps",
+      "identifier": "geometryDrill",
+      "description": "This function returns the mean value for the monthly vegetation fractional cover fractions and precipitation for a given region or pixel. Fractional cover includes green cover, non-green cover and bare ground. Total vegetation cover is green+non-green. \n\nYou can provide the name of the polygon or pixel. You can click on a point, draw a polygon or select a polygon already displayed in the screen.\n\nThe output is a graph and the data can be downloaded as a csv file. "
     }
   ]
 }
