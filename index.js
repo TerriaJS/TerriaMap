@@ -9,6 +9,7 @@ var terriaOptions = {
 import { runInAction } from "mobx";
 
 // checkBrowserCompatibility('ui');
+import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
@@ -35,7 +36,12 @@ import CsvCatalogItemOverride from "./lib/Models/CsvCatalogItemOverride";
 // registerCatalogMembers();
 // registerAnalytics();
 
-terriaOptions.analytics = new GoogleAnalytics();
+// we check exact match for development to reduce chances that production flag isn't set on builds(?)
+if (process.env.NODE_ENV === "development") {
+    terriaOptions.analytics = new ConsoleAnalytics();
+} else {
+    terriaOptions.analytics = new GoogleAnalytics();
+}
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria(terriaOptions);

@@ -9,6 +9,10 @@
         googleAnalyticsOptions: null,
         "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NTQzN2MwYy03NGU0LTQ5YjUtODEwZi0xNDNiZDMwZmZkYzciLCJpZCI6MTQyNjksInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjUxNTAxNDB9.e33YBYrCmOBUt492bAfoxbCEF24DhuhdMzb5dyr0oSE",
         
+
+        // Log ConsoleAnalytics events to console
+        // logToConsole: true,
+
         /* Text that appears at the bottom of the map */
         disclaimer: {
             text: "Disclaimer: This map must not be used for navigation or precise spatial analysis",
