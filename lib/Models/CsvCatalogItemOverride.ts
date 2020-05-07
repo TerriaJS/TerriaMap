@@ -11,7 +11,7 @@ export default class CsvCatalogItemOverride extends CsvCatalogItem {
   ) {
     super(id, terria);
 
-    this.setTrait(CommonStrata.underride, "enableManualRegionMapping", true);
+    // this.setTrait(CommonStrata.underride, "enableManualRegionMapping", true);
 
     console.log(this);
   }

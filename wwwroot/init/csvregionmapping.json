@@ -1,0 +1,20 @@
+{
+  "homeCamera": {
+    "north": -8,
+    "east": 158,
+    "south": -45,
+    "west": 109
+  },
+  "workbench": [
+    "testcsv"
+  ],
+  "catalog": [
+    {
+      "type": "csv",
+      "url": "test/NSW_LGA_NEXIS_201212.csv",
+      "name": "NSW LGA NEXIS 2012",
+      "id": "testcsv",
+      "enableManualRegionMapping": true
+    }
+  ]
+}

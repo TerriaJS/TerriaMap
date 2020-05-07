@@ -92,6 +92,12 @@
       "id": "testcsv"
     },
     {
+      "name": "Clermont 2014 Lidar",
+      "type": "3d-tiles",
+      "ionAssetId": 87924,
+      "ionAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NTQzN2MwYy03NGU0LTQ5YjUtODEwZi0xNDNiZDMwZmZkYzciLCJpZCI6MTQyNjksInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjUxNTAxNDB9.e33YBYrCmOBUt492bAfoxbCEF24DhuhdMzb5dyr0oSE"
+    },
+    {
       "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
       "type": "esri-mapServer",
       "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
