@@ -37,13 +37,13 @@
     {
       "name": "Steinbeis",
       "type": "ogc3d",
-      "url": "http://www.steinbeis-3dps.eu:8080/3DContainerPilot/",
+      "url": "http://steinbeis-3dps.eu:8080/3DContainerTile/collections",
       "isGroup": true,
       "override": {
         "info": [
           {
             "name": "OGC 3D Container and Tiles API URL",
-            "content": "http://www.steinbeis-3dps.eu:8080/3DContainerPilot/"
+            "content": "http://steinbeis-3dps.eu:8080/3DContainerTile/collections"
           }
         ]
       }
