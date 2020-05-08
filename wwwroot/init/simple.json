@@ -75,6 +75,20 @@
           }
         ]
       }
+    },
+    {
+      "name": "Ecere",
+      "type": "ogc3d",
+      "url": "https://maps.ecere.com/geoapi/?f=json",
+      "isGroup": true,
+      "override": {
+        "info": [
+          {
+            "name": "OGC 3D Container and Tiles API URL",
+            "content": "https://maps.ecere.com/geoapi/?f=json"
+          }
+        ]
+      }
     }
   ]
 }

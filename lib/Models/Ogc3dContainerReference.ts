@@ -16,6 +16,7 @@ import CatalogMemberReferenceTraits from "terriajs/lib/Traits/CatalogMemberRefer
 import mixTraits from "terriajs/lib/Traits/mixTraits";
 import UrlTraits from "terriajs/lib/Traits/UrlTraits";
 import updateModelFromJson from "terriajs/lib/Models/updateModelFromJson";
+import URI from "urijs";
 
 export class Ogc3dContainerReferenceTraits extends mixTraits(
   CatalogMemberReferenceTraits,
@@ -60,7 +61,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
           name,
           json,
           previousTarget,
-          override
+          override,
+          proxiedUrl
         );
       } else if (json.links !== undefined) {
         return Ogc3dContainerReference.loadFromLandingPage(
@@ -70,7 +72,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
           name,
           json,
           previousTarget,
-          override
+          override,
+          proxiedUrl
         );
       }
       return undefined;
@@ -84,7 +87,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
     name: string | undefined,
     json: any,
     previousTarget: BaseModel,
-    override: JsonObject | undefined
+    override: JsonObject | undefined,
+    proxiedLandingPageUrl: string
   ): Promise<BaseModel | undefined> {
     const links = json.links;
     const dataLinks = links.filter(
@@ -95,9 +99,12 @@ export default class Ogc3dContainerReference extends UrlMixin(
     }
 
     const firstDataLink = dataLinks[0];
+    const resolvedUri = URI(firstDataLink.href).absoluteTo(
+      proxiedLandingPageUrl
+    );
     const proxiedUrl = proxyCatalogItemUrl(
       sourceReference,
-      firstDataLink.href,
+      resolvedUri.toString(),
       "0d"
     );
     return loadJson(proxiedUrl).then(json => {
@@ -109,7 +116,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
           name,
           json,
           previousTarget,
-          override
+          override,
+          proxiedUrl
         );
       }
       return undefined;
@@ -123,7 +131,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
     name: string | undefined,
     json: any,
     previousTarget: BaseModel,
-    override: JsonObject | undefined
+    override: JsonObject | undefined,
+    proxiedCollectionsUrl: string
   ): Promise<BaseModel | undefined> {
     return Ogc3dContainerReference.loadGroup(
       terria,
@@ -132,7 +141,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
       name,
       json,
       previousTarget,
-      override
+      override,
+      proxiedCollectionsUrl
     );
   }
 
@@ -143,7 +153,8 @@ export default class Ogc3dContainerReference extends UrlMixin(
     name: string | undefined,
     json: any,
     previousTarget: BaseModel,
-    override: JsonObject | undefined
+    override: JsonObject | undefined,
+    proxiedCollectionsUrl: string
   ): Promise<BaseModel> {
     let group: BaseModel;
     if (previousTarget && previousTarget instanceof CatalogGroup) {
@@ -187,7 +198,11 @@ export default class Ogc3dContainerReference extends UrlMixin(
           "description",
           collection.description
         );
-        model.setTrait(CommonStrata.definition, "url", compatibleLinks[0].href);
+
+        const resolvedUri = URI(compatibleLinks[0].href).absoluteTo(
+          proxiedCollectionsUrl
+        );
+        model.setTrait(CommonStrata.definition, "url", resolvedUri.toString());
 
         return model.uniqueId;
       })
