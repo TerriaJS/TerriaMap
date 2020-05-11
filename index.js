@@ -23,13 +23,20 @@ import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProvi
 import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
 
+import NswTrafficVolume from './lib/Models/NswTrafficVolume';
+import PolylineCsv from './lib/Models/PolylineCsv';
+
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
 registerAnalytics();
 
+
 terriaOptions.analytics = new GoogleAnalytics();
+
+NswTrafficVolume.register();
+PolylineCsv.register();
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria(terriaOptions);

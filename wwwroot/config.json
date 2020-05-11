@@ -1,9 +1,14 @@
 {
     /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
-        "terria"
+        "samplecatalog"
     ],
     parameters: {
+        "initFragmentPaths": [
+            "https://terria-apps.s3-ap-southeast-2.amazonaws.com/ev-map/"
+        ],
+      cesiumIonAccessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1N2FjOWNlOS00ODljLTQ1ZGYtOTljNS03ZTA4YTI2YTdmYmMiLCJpZCI6Mjk5MiwiaWF0IjoxNTM1NTE3ODU5fQ.bWb_9_fE065ZEaVEcoia4LTpsasoSAb2sb5PloLH8gk",
+
         googleUrlShortenerKey: null,
         googleAnalyticsKey: null,
         googleAnalyticsOptions: null,
@@ -19,7 +24,7 @@
             url: "#"
         },
         */
-         
+
         // Pop-up disclaimer that will be shown at the start
         // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
         // globalDisclaimer: {
@@ -32,7 +37,7 @@
         //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
         //     enableOnLocalhost: true // If false, don't show this when running on localhost
         // },
-        
+
         /*
         developerAttribution: {
             text: "Your organisation",
