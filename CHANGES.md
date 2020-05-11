@@ -6,6 +6,7 @@ Change Log
 * Fix manifest.json start_url 
 * Move About & Related Maps to left hand side
 * Default to console analytics in development
+* Allow translation overrides via gulp
 
 ### Next Release
 
