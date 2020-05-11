@@ -29,6 +29,8 @@ nvm use 10 ## if using nvm locally to ensure you are on nodejs version 10
 npm start
 npx gulp watch
 ```
+Note: if the map doesn't load, you may have to clear your browser cache, cookies and other site data. (Only clearing the cache is not enough!)
+
 Happy coding :)
 
 
