@@ -22,7 +22,7 @@ Note: you may need to run gulp sync-terriajs-dependencies and then yarn install 
 Note 2: PM2 causes problems with old installations. run `rm -rf ~/.pm2` to clean up or `npx pm2 update`
  
  
- ## Runnin locally
+ ## Run locally
 from TerriaMaps folder:
 ```
 nvm use 10 ## if using nvm locally to ensure you are on nodejs version 10
