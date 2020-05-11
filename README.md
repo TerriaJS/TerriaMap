@@ -29,15 +29,21 @@ nvm use 10 ## if using nvm locally to ensure you are on nodejs version 10
 npm start
 npx gulp watch
 ```
-Note: if the map doesn't load, you may have to clear your browser cache, cookies and other site data. (Only clearing the cache is not enough!)
 
-Happy coding :)
+## Manual deploy
+The deploy pipeline runs when pushing to release branch (master on 'receipt').
+```
+npx gulp release
+
+```
 
 
 ### Please note:
-Master Banches for out forks are named 'receipt'
+- If the map doesn't load, you may have to clear your browser cache, cookies and other site data. (Only clearing the cache is not enough!)
+
+- Master Banches for out forks are named 'receipt'
 If you create a feature branch, try to change one branch at the time, and make sure that everything runs properly with the master branches of the rest of the repositories before pushing.
-Use prettier while formatting your code and set it up to prettify on 'file save'
+- Use prettier while formatting your code and set it up to prettify on 'file save'
 Cesium Access token
 
   
