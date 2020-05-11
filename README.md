@@ -25,6 +25,7 @@ Note 2: PM2 causes problems with old installations. run `rm -rf ~/.pm2` to clean
  ## Runnin locally
 from TerriaMaps folder:
 ```
+nvm use 10 ## if using nvm lovally to ensure you are on nodejs version 10
 npm start
 npx gulp watch
 ```
