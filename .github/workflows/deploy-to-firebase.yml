@@ -19,7 +19,7 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           node-version: '10.x'
-        cmd: install
+          cmd: install
       - name: Build release
         uses: mikeal/npx@master
         with:
