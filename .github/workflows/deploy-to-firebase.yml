@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - receipt
+#     - release/*
+
+jobs:
+  firebase-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout packages folder
+        uses: actions/checkout@master
+        with:
+          repository: RECEIPT-H2020/terriajs
+          path: packages       
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          node-version: '10.x'
+          cmd: install && npx gulp release # will run `yarn install` 
+    
+#       - name: Debloy to firebase hosting
+#         uses: w9jds/firebase-action@master
+#         with:
+#           args: deploy --only hosting
+#         env:
+#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
