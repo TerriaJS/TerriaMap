@@ -21,10 +21,11 @@ jobs:
           node-version: '10.x'
         cmd: install
       - name: Build release
-        uses: mikeal/npx@master
+        uses: actions/setup-node@master
         with:
           node-version: '10.x'
-          cmd: npx gulp release
+          run: npm run release
+
 
 #       - name: Debloy to firebase hosting
 #         uses: w9jds/firebase-action@master
