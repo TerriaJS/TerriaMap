@@ -1,12 +1,12 @@
 
-New Install
+# Receipt Project
 Last edited: 4/28
 
-Set up
+## Set up
 Requirements:
 Yarn and Node v10. (V10 its important, otherwise gulp may fail).
  
-Installation
+Steps: 
 ```
 git clone https://github.com/RECEIPT-H2020/TerriaMap.git
 cd TerriaMap
@@ -22,7 +22,7 @@ Note: you may need to run gulp sync-terriajs-dependencies and then yarn install 
 Note 2: PM2 causes problems with old installations. run `rm -rf ~/.pm2` to clean up or `npx pm2 update`
  
  
-Run local server
+ ## Runnin locally
 from TerriaMaps folder:
 ```
 npm start
@@ -30,7 +30,8 @@ npx gulp watch
 ```
 Happy coding :)
 
-Please note:
+
+### Please note:
 Master Banches for out forks are named 'receipt'
 If you create a feature branch, try to change one branch at the time, and make sure that everything runs properly with the master branches of the rest of the repositories before pushing.
 Use prettier while formatting your code and set it up to prettify on 'file save'
@@ -44,3 +45,5 @@ You can create a new token at https://cesium.com/ion or use the temporary token:
 inside the parameters object: 
 
 ```cesiumIonAccessToken: <ACCESS_TOKEN>```
+
+
