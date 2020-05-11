@@ -19,7 +19,7 @@ npx gulp
 ```
 
 Note: you may need to run gulp sync-terriajs-dependencies and then yarn install and npx gulp again
-Note 2: PM2 causes problems with old installations. run rm -rf ~/.pm2 to clean up or npx pm2 update
+Note 2: PM2 causes problems with old installations. run `rm -rf ~/.pm2` to clean up or `npx pm2 update`
  
  
 Run local server
