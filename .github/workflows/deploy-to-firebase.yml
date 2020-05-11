@@ -14,13 +14,18 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: RECEIPT-H2020/terriajs
-          path: packages       
+          path: packages
       - name: Install dependencies
         uses: borales/actions-yarn@v2.0.0
         with:
           node-version: '10.x'
-          cmd: install && npx gulp release # will run `yarn install` 
-    
+        cmd: install
+      - name: Build release
+        uses: mikeal/npx@master
+        with:
+          node-version: '10.x'
+          cmd: npx gulp release
+
 #       - name: Debloy to firebase hosting
 #         uses: w9jds/firebase-action@master
 #         with:
