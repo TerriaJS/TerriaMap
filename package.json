@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^7.12.4",
     "file-loader": "^3.0.1",
     "fs-extra": "^7.0.1",
-    "generate-terriajs-schema": "^1.4.0",
+    "generate-terriajs-schema": "^1.5.0",
     "gulp": "^4.0.0",
     "husky": "^2.2.0",
     "json5": "^2.1.0",
@@ -98,7 +98,8 @@
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
-    "prettier-check": "prettier --check \"**/*\""
+    "prettier-check": "prettier --check \"**/*\"",
+    "release": "gulp release"
   },
   "husky": {
     "hooks": {

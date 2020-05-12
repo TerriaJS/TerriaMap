@@ -1,0 +1,36 @@
+name: CI
+
+on: [push, pull_request] # Run on Push and Pull Requests
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x] # Only run the 10.x build
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Checkout packages folder
+      uses: actions/checkout@master
+      with:
+        repository: RECEIPT-H2020/terriajs
+        path: packages
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@master
+      with:
+        path: ~/
+        node-version: ${{ matrix.node-version }}
+    - run: npm install -g yarn
+    - name: yarn install and build gulp release
+      run: |
+        yarn
+        yarn release
+    - name: Debloy to firebase hosting
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
