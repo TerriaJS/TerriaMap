@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#d80002",
+        "stroke-width": 6,
+        "stroke-opacity": 0.8
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3515625,
+            7.18810087117902
+          ],
+          [
+            4.93011474609375,
+            52.32526831457077
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff9300",
+        "marker-size": "large",
+        "marker-symbol": "industrial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.93011474609375,
+          52.32526831457077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#4f8f00",
+        "marker-size": "large",
+        "marker-symbol": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3515625,
+          7.18810087117902
+        ]
+      }
+    }
+  ]
+}
