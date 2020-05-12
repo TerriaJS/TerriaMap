@@ -1,36 +1,69 @@
 name: CI
 
-on:
-  push:
-    branches:
-    - receipt
-#     - release/*
+
+
+on: [push, pull_request] # Run on Push and Pull Requests
 
 jobs:
-  firebase-deploy:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x] # Only run the 10.x build
+
     steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@master
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install -g yarn
+    - name: yarn install and build gulp release
+      run: |
+        yarn
+        yarn release
+    - name: Debloy to firebase hosting
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+
+
+# on:
+#   push:
+#     branches:
+#     - receipt
+#     - release/*
+
+# jobs:
+#   firebase-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
 #       - name: Checkout packages folder
 #         uses: actions/checkout@master
 #         with:
 #           repository: RECEIPT-H2020/terriajs
 #           path: packages
-      - name: Install dependencies
-        uses: borales/actions-yarn@v2.0.0
-        with:
+#       - name: Install dependencies
+#         uses: borales/actions-yarn@v2.0.0
+#         with:
           # go back to the root folder
 #           path: ~/ 
-          node-version: '10.x'
-          run: yarn install
-      - name: Create release
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          node-version: '10.x'
-          run: release
+#           node-version: '10.x'
+#           run: yarn install
+#       - name: Create release
+#         uses: borales/actions-yarn@v2.0.0
+#         with:
+#           node-version: '10.x'
+#           run: release
 
-      - name: Debloy to firebase hosting
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+#       - name: Debloy to firebase hosting
+#         uses: w9jds/firebase-action@master
+#         with:
+#           args: deploy --only hosting
+#         env:
+#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
