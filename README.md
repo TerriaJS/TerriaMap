@@ -36,8 +36,13 @@ The deploy pipeline runs when pushing to release branch (master on 'receipt').
 npx gulp release
 
 ```
-
-
+### Set up deploy
+on Firebase hosting is needed to get a auth_token:
+Github requires a FIREBASE_TOKEN to be able to deploy your Angular app to Firebase. Generate a token for firebase ci:
+```
+install npm i -g firebase-tools
+firebase login:ci ##returns a token to be used in a CI server
+```
 ### Please note:
 - If the map doesn't load, you may have to clear your browser cache, cookies and other site data. (Only clearing the cache is not enough!)
 
