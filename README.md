@@ -43,6 +43,8 @@ Github requires a FIREBASE_TOKEN to be able to deploy your Angular app to Fireba
 install npm i -g firebase-tools
 firebase login:ci ##returns a token to be used in a CI server
 ```
+Add the token into Github project -> settings -> secrets: FIREBASE_TOKEN:<your token> 
+
 ### Please note:
 - If the map doesn't load, you may have to clear your browser cache, cookies and other site data. (Only clearing the cache is not enough!)
 
