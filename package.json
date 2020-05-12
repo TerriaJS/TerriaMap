@@ -2,8 +2,12 @@
   "name": "terriajs-map",
   "private": true,
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/husky"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/husky"
+    ]
   },
   "version": "0.0.1",
   "description": "Geospatial catalog explorer based on TerriaJS.",
@@ -82,6 +86,7 @@
     "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
     "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
     "start": "pm2 start ecosystem.config.js --update-env -- --config-file devserverconfig.json",
+    "serve": "pm2 delete all && yarn start && gulp watch",
     "stop": "pm2 stop ecosystem.config.js",
     "pm2": "pm2",
     "gulp": "gulp",
