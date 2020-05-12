@@ -31,7 +31,7 @@
     "awsEc2InstanceType": "t2.small",
     "awsEc2ImageId": "ami-0065540df76a93885",
     "awsKeyName": "terria-kring",
-    "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-08-31.json",
+    "awsS3ServerConfigOverridePath": "s3://terria-apps/ev-map/privateserverconfig-2020-05-12.json",
     "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2018-11-19.json",
     "docker": {
       "name": "data61/terria-terriamap",
