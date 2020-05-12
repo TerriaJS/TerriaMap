@@ -14,7 +14,7 @@ jobs:
         node-version: [10.x] # Only run the 10.x build
 
     steps:
-    - uses: actions/checkout@vmaster
+    - uses: actions/checkout@master
     - name: Checkout packages folder
       uses: actions/checkout@master
       with:
