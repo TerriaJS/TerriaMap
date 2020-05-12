@@ -19,11 +19,11 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           node-version: '10.x'
-          run: yarn ci
-#      - uses: borales/actions-yarn@v2.0.0
-#        with:
-#          node-version: '10.x'
-#          cmd: release
+          run: yarn install
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          node-version: '10.x'
+          run: release
 
 
 #       - name: Debloy to firebase hosting
