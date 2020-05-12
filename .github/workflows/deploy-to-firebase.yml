@@ -18,6 +18,8 @@ jobs:
       - name: Install dependencies
         uses: borales/actions-yarn@v2.0.0
         with:
+          # go back to the root folder
+          path: ~/ 
           node-version: '10.x'
           run: yarn install
       - name: Create release
