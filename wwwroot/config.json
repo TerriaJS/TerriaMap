@@ -29,7 +29,7 @@
         globalDisclaimer: {
             confirmationRequired: false,
             buttonTitle: "I agree",
-            denyText: "Cancel",
+            title: "Disclaimer",
             // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
             // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
             //prodHostRegex: "gov.\\.au$",

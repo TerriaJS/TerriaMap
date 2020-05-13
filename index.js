@@ -138,8 +138,10 @@ module.exports = terria.start({
                     message: message,
                     horizontalPadding : 100
                 };
-                viewState.disclaimerSettings = options;
-                viewState.disclaimerVisible = true;
+                runInAction(() => {
+                    viewState.disclaimerSettings = options;
+                    viewState.disclaimerVisible = true;
+                });
             }
         }
 
