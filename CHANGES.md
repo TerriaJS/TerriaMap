@@ -8,6 +8,7 @@ Change Log
 * Default to console analytics in development
 * Allow translation overrides via gulp
 * Re-enabled disclaimer via newly ported disclaimer component
+* Re-enabled measure tool
 
 ### Next Release
 

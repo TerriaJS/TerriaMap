@@ -67,6 +67,9 @@
         // To enable welcome message when map first loads
         // "showWelcomeMessage": true,
 
+        // True to display in-app guides.
+        // "showInAppGuides": false,
+
         "helpContent": [
             {
                 "itemName": "gettingstarted",

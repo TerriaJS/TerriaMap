@@ -37,7 +37,7 @@ export default function UserInterface(props) {
         <RelatedMaps viewState={props.viewState} />
       </MenuLeft>
       <Nav>
-        {/* <MeasureTool terria={props.viewState.terria} key="measure-tool" /> */}
+        <MeasureTool terria={props.viewState.terria} key="measure-tool" />
       </Nav>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>
