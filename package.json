@@ -1,8 +1,12 @@
 {
   "private": true,
   "workspaces": {
-    "packages": ["packages/terriajs"],
-    "nohoist": ["**/husky"]
+    "packages": [
+      "packages/terriajs"
+    ],
+    "nohoist": [
+      "**/husky"
+    ]
   },
   "name": "terriajs-map",
   "version": "0.0.1",
