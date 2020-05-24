@@ -24,6 +24,7 @@ import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
 
 import NswTrafficVolume from './lib/Models/NswTrafficVolume';
+import NswTrafficHourlyVolume from './lib/Models/NswTrafficHourlyVolume';
 import PolylineCsv from './lib/Models/PolylineCsv';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
@@ -36,6 +37,7 @@ registerAnalytics();
 terriaOptions.analytics = new GoogleAnalytics();
 
 NswTrafficVolume.register();
+NswTrafficHourlyVolume.register();
 PolylineCsv.register();
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.

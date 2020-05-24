@@ -7,6 +7,14 @@
   },
   "catalog": [
     {
+      "type": "nsw-traffic-hourly-volume",
+      "name": "Average hourly volume - Weekday"
+    },
+    {
+      "type": "nsw-traffic-volume",
+      "name": "Average annual volume"
+    },
+    {
       "name": "Example Datasets",
       "type": "group",
       "preserveOrder": true,

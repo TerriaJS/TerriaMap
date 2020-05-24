@@ -1,12 +1,12 @@
 {
     /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
-        "samplecatalog"
+        "terria"
     ],
     parameters: {
-        "initFragmentPaths": [
-            "/proxy/_0s/https://terria-apps.s3-ap-southeast-2.amazonaws.com/ev-map/"
-        ],
+        // "initFragmentPaths": [
+        //     // "/proxy/_0s/https://terria-apps.s3-ap-southeast-2.amazonaws.com/ev-map/"
+        // ],
       cesiumIonAccessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1N2FjOWNlOS00ODljLTQ1ZGYtOTljNS03ZTA4YTI2YTdmYmMiLCJpZCI6Mjk5MiwiaWF0IjoxNTM1NTE3ODU5fQ.bWb_9_fE065ZEaVEcoia4LTpsasoSAb2sb5PloLH8gk",
 
         googleUrlShortenerKey: null,
