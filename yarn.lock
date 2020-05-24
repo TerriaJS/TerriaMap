@@ -4036,11 +4036,6 @@ eslint@^5.14.1:
     table "^5.2.3"
     text-table "^0.2.0"
 
-esm@^3.2.25:
-  version "3.2.25"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
-  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
-
 espree@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/espree/-/espree-5.0.1.tgz#5d6526fa4fc7f0788a5cf75b15f30323e2f81f7a"
@@ -4770,17 +4765,6 @@ gaze@^1.0.0:
   integrity sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
   dependencies:
     globule "^1.0.0"
-
-generate-terriajs-schema@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/generate-terriajs-schema/-/generate-terriajs-schema-1.4.0.tgz#481a95c3bc8874b74d9d50ccf559a7564ef51bc0"
-  integrity sha512-3rjsIPaXzSgdiZj7vbncZ9IVn1dmn+CTrvVd/knIFsuP/pVoPsqiB8RsrCIyXz17gVEOd19I1WaqMGOBtlDmPQ==
-  dependencies:
-    esprima "^2.7.1"
-    glob-all "^3.0.1"
-    jsdoc-to-markdown "^4.0.1"
-    when "^3.7.7"
-    yargs "^3.32.0"
 
 generate-terriajs-schema@^1.5.0:
   version "1.5.0"
@@ -10672,14 +10656,6 @@ terriajs-catalog-editor@^0.2.0:
   resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
   integrity sha1-2cZnnlPE2S6HpTGviWxhSIiO2OQ=
 
-terriajs-cesium@1.66.0:
-  version "1.66.0"
-  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.66.0.tgz#f10fa9d78f73d0dc431192503f0218f339b10a80"
-  integrity sha512-Grht6r4KHbWUEMcPDoysQsuZsD7uBlFr8LLmVpBw9W1OTDhjm0Q3faVe6iweDwULck8vRqWSJOxlnGoVqgaJLA==
-  dependencies:
-    dompurify "^2.0.7"
-    esm "^3.2.25"
-
 terriajs-cesium@1.68.0:
   version "1.68.0"
   resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.68.0.tgz#17a794fa8b01eb1ee38d89a5707f0423d65d6bd5"
@@ -10723,32 +10699,6 @@ terriajs-server@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-3.1.0.tgz#373738885b1a55ef1a1459b5e74a7e6a1de316a4"
   integrity sha512-vamuDCbvX/p96dRJhQ6Q1ZPmQNDj5voVs/1mTiwDV82aoBqfVxmiKxoy3/hr+0nM9KjjKdS8z665mTJV6QXu7g==
-  dependencies:
-    aws-sdk "^2.456.0"
-    base-x "^3.0.5"
-    basic-auth "^2.0.1"
-    body-parser "^1.15.0"
-    compression "^1.6.0"
-    cors "^2.7.1"
-    express "^4.8.0"
-    express-brute "^1.0.1"
-    formidable "^1.0.17"
-    json5 "^2.1.0"
-    morgan "^1.7.0"
-    pm2 "^3.2.2"
-    proj4 "^2.3.12"
-    proj4js-defs "0.0.1"
-    range_check "^1.4.0"
-    request "^2.67.0"
-    request-promise "^4.0.1"
-    terriajs-ogr2ogr "^1.0.0"
-    when "^3.7.7"
-    yargs "^13.2.4"
-
-terriajs-server@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-3.2.0.tgz#c5cddefba65be3e0d9b46acd5cf0bde1ac0ce031"
-  integrity sha512-6++R+j2Cp2w4N92ie6D2LISpEP5xdfQLOTDdCwfUqZaRV7qYa+acfDLq9MNFjDwPoy5+33OSUlirfQ1+OgEmOA==
   dependencies:
     aws-sdk "^2.456.0"
     base-x "^3.0.5"
