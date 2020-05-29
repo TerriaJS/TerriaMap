@@ -255,6 +255,32 @@
       "name": "XY Plot",
       "type": "csv",
       "url": "build/TerriaJS/test/csv_nongeo/xy.csv"
+    },
+    {
+      "name": "Duck",
+      "type": "gltf",
+      "url": "test/3d/duck.gltf",
+      "origin": {
+        "longitude": 151.197,
+        "latitude": -33.895,
+        "height": 100
+      }
+    },
+    {
+      "name": "Cube",
+      "type": "gltf",
+      "url": "test/3d/cube.gltf",
+      "origin": {
+        "longitude": 151.197,
+        "latitude": -33.895,
+        "height": 50
+      }
+    },
+    {
+      "name": "brisvegas",
+      "type": "3d-tiles",
+      "ionAssetId": 104449,
+      "ionAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZDY5MDE1YS0yNGFlLTQ1MzctYWNkNy0wNDQ1YWNiNTM5MDIiLCJpZCI6Mjk5Miwic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTUzODAzMzgyNn0.a2uTotdiHUo8FiHsO4MVNZ1KT5pOF0rb7CFdwbRAsOo"
     }
   ]
 }

@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/terriajs"
+      "packages/terriajs",
+      "packages/cesium"
     ],
     "nohoist": [
       "**/husky"
@@ -70,9 +71,9 @@
     "semver": "^5.0.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "4.1.3",
-    "terriajs": "7.10.0-mobx-29",
+    "terriajs": "7.10.0-mobx-30",
     "terriajs-catalog-editor": "^0.2.0",
-    "terriajs-cesium": "1.66.0",
+    "terriajs-cesium": "1.69.0",
     "terriajs-schema": "latest",
     "ts-loader": "^5.3.3",
     "typescript": "^3.7.0",
@@ -100,11 +101,6 @@
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
     "prettier-check": "prettier --check \"**/*\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   },
   "pancake": {
     "auto-save": true,
