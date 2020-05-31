@@ -56,7 +56,7 @@ const viewState = new ViewState({
 });
 
 registerCatalogMembers();
-CatalogMemberFactory.register(CsvCatalogItemOverride.type, CsvCatalogItemOverride)
+CatalogMemberFactory.register(CsvCatalogItemOverride.type, CsvCatalogItemOverride);
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
