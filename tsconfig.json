@@ -1,6 +1,3 @@
 {
-  "extends": "terriajs/tsconfig.json",
-  "include": [
-    "./lib/**/*"
-  ]
+    "extends": "terriajs/tsconfig.json"
 }

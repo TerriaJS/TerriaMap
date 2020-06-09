@@ -5,6 +5,10 @@ var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpac
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var path = require('path');
 
+var SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+var smp = new SpeedMeasurePlugin();
+
+
 module.exports = function(devMode, hot) {
     var config = {
         mode: devMode ? 'development' : 'production',
@@ -129,5 +133,5 @@ module.exports = function(devMode, hot) {
         }
     };
     config.resolve.alias['terriajs-variables'] = require.resolve('../lib/Styles/variables.scss');
-    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
+    return smp.wrap(configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin));
 };
