@@ -72,11 +72,53 @@
 
         "helpContent": [
             {
+                "title": "Getting started with the map",
                 "itemName": "gettingstarted",
+                "paneMode": "videoAndContent",
                 "markdownText": "# Getting started with the map\n\nIf you're new to the map or using spatial data, our Getting Started video quickly covers the basic functionality you'll need to use to add and interrogate data sets.\n\nIf you don't have time to watch the video, we suggest exploring the following areas:\n\n1. Search for a location to quickly find an area of interest\n2. Use 'Explore map data' to view the catalogue of available data sets and add them to the map\n3. Interact with the data layer, including opacity and toggling on and off on the left in your workbench\n4. Click on the data on the map to view more detailed data, including the raw data\n5. Change your basemap using options in 'Map Settings' to help make some data sets more visible\n6. Zoom and change your view, including tilting the view angle using the controls on the right-hand side of the screen",
                 "icon": "video",
                 "videoUrl": "https://www.youtube.com/embed/NTtSM70rIvI",
                 "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+            },
+            {
+                "title": "Step by step guide",
+                "itemName": "stepbystepguide",
+                "paneMode": "trainer",
+                "markdownText": "# Step by step guide\n\nLaunch a step by step guide for various popular workflows below:",
+                "trainerItems": [
+                    {
+                        "title":"Adding satellite imagery",
+                        "steps": [
+                            "Open the data catalogue by clicking Explore map data",
+                            "Navigate to some satellite data on the left hand side of the data catalog",
+                            "Select the satellite catalog item of interest",
+                            "Click Add to the map",
+                            "You may need to adjust your zoom level to see the scope of the satellite imagery for the given date [...]"
+                        ]
+                    },
+                    {
+                        "title":"Adding data to the map",
+                        "steps": [
+                            "Open the data catalogue by clicking Explore map data",
+                            "Select a catalog item of interest",
+                            "Select a catalog item of interest"
+                        ]
+                    },
+                    {
+                        "title":"Change detection",
+                        "steps": [
+                            "Placeholder"
+                        ]
+                    },
+                    {
+                        "title":"Compare 2 dates",
+                        "steps": [
+                            "Placeholder"
+                        ]
+                    }
+
+                ],
+                "icon": "oneTwoThree"
             }
         ]
     }
