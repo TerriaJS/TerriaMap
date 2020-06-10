@@ -60,7 +60,7 @@
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
         "experimentalFeatures": true,
-
+        "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ODY5M2VjZi01MGE5LTQwMGYtYmU0Ni1kOGIzNWUxYzZlNzQiLCJpZCI6Mjc1ODksInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1ODk3OTIyMjl9.P7XCpfHLYOnfxZqq89HQrLEMbFe6XzVKwBAjrH68GLs",
         // To override TerriaJS's region mapping file with a local one.
         // regionMappingDefinitionsUrl: "data/regionMapping.json"
 
