@@ -5,3 +5,4 @@ To run the docker image:
 Command to execute to launch Terria:
 
 `node ./node_modules/terriajs-server/lib/app.js --port <port>`
+
