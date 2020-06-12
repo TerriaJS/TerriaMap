@@ -100,7 +100,12 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        'resolve-url-loader?sourceMap',
+                        {                                                                                                                                                                                                                                                                                           
+                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
+                            options: {                                                                                                                                                                                                                                                                                
+                                sourceMap: false                                                                                                                                                                                                                                                                        
+                            }                                                                                                                                                                                                                                                                                         
+                        },
                         'sass-loader?sourceMap'
                     ] : [
                         MiniCssExtractPlugin.loader,
@@ -114,7 +119,12 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        'resolve-url-loader?sourceMap',
+                        {                                                                                                                                                                                                                                                                                           
+                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
+                            options: {                                                                                                                                                                                                                                                                                
+                                sourceMap: false                                                                                                                                                                                                                                                                        
+                            }                                                                                                                                                                                                                                                                                         
+                        },
                         'sass-loader?sourceMap'
                     ]
                 }
