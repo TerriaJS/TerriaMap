@@ -1,14 +1,17 @@
 # Docker image for the primary terria map application server
-FROM node:10
+FROM osgeo/gdal:alpine-small-3.1.0 as build
 
-RUN apt-get update && apt-get install -y gdal-bin
-
-RUN mkdir -p /usr/src/app && mkdir -p /etc/config/client
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh npm
+RUN mkdir -p /etc/config/client
 WORKDIR /usr/src/app
 
 COPY ./package.json ./
 RUN npm install
-COPY . /usr/src/app
+
+COPY . .
+
+RUN npm run gulp
 
 RUN ln -s /etc/config/client/config.json wwwroot/config.json
 
