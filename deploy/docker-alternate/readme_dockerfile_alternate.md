@@ -1,3 +1,6 @@
+Before build the image the following env variable needs to be ser:
+`export DOCKER_BUILDKIT=1`
+
 To run the docker image: 
 
 `docker run --rm -it  -p <port>:<port>/tcp -v <host absolute path to confing.json>:/etc/config/client/config.json <image name>:<TAG>`
