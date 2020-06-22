@@ -14,6 +14,45 @@ body {
     }
   }
 
+  $isf-max-width: 400px;
+
+  dl.isf-info {
+    text-align: right;
+    width: 100%;
+    // max-width: 100%;//$isf-max-width;
+    // @extend .clearfix;
+    overflow: auto;
+
+    dt {
+      float: left;
+      text-align: left;
+      font-weight: bold;
+      padding-right: 10px;
+      margin-top: 5px;
+      clear: left;
+      max-width: 50%;
+      clear: both;
+      // border-top: white 1px solid;
+    }
+    dd {
+      float: right;
+      text-align: right;
+      margin-top: 3px;
+      max-width: 90%;
+      // border-top: gray 1px solid;
+    }
+  }
+
+  .isf-note,
+  dl dd.isf-note {
+    max-width: $isf-max-width;
+    font-weight: lighter;
+  }
+
+  .isf-table tbody th {
+    padding: 0px 10px 0px 10px;
+  }
+
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
   /*
@@ -61,11 +100,11 @@ body {
 
     // All kinds of buttons in various screens
     .tjs-_buttons__btn {
-        &-primary { 
-            font-family: $font-base; 
+        &-primary {
+            font-family: $font-base;
         }
-        &:hover { 
-            color: $color-primary;             
+        &:hover {
+            color: $color-primary;
         }
     }
 
@@ -77,11 +116,11 @@ body {
 
     // Lat/lon buttons
     .tjs-legend__locationBar, .tjs-legend__distanceLegend {
-        
+
         background:$dark;
         color:white;
         &:hover,&:focus { background: $dark; color: white; }
-    
+
     }
 
     // Progress bar while datasets are loading
@@ -96,7 +135,7 @@ body {
     }
 
     .tjs-timeline__text-cell {
-        font-family: $font-base; 
+        font-family: $font-base;
     }
 
     .tjs-timeline__timeline {
@@ -140,15 +179,15 @@ body {
     .tjs-data-catalog-item__btn-catalog-item--is-previewed {
         ,&:focus {color: $color-primary; }
     }
-      // The tabs at the top 
-    .tjs-tabs__btn--tab {    
+      // The tabs at the top
+    .tjs-tabs__btn--tab {
         font-family:$font-base
     }
 
     .tjs-tabs__btn--selected {
         color:$color-primary-dark;
     }
-    .tjs-tabs__btn--tab:hover {    
+    .tjs-tabs__btn--tab:hover {
         color:$color-secondary;
     }
     */
