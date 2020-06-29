@@ -66,6 +66,12 @@
         "experimentalFeatures": true,
         // To enable welcome message when map first loads
         // "showWelcomeMessage": true,
+        // To override the welcome message video displayed on the welcome message
+        // By default, the Getting Started to Terria video is displayed 
+        // "welcomeMessageVideo": {
+        //     "videoUrl": "https://www.youtube.com/embed/NTtSM70rIvI", // use an embedded video link
+        //     "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+        // },
 
         // True to display in-app guides.
         // "showInAppGuides": false,
