@@ -4,6 +4,7 @@ FROM osgeo/gdal:alpine-small-3.1.0 as build
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh npm
 RUN mkdir -p /etc/config/client
+RUN mkdir -p /etc/config/server
 WORKDIR /usr/src/app
 
 COPY ./package.json ./
