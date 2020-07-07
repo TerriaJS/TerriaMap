@@ -7,6 +7,7 @@
         googleUrlShortenerKey: null,
         googleAnalyticsKey: null,
         googleAnalyticsOptions: null,
+
         // Log ConsoleAnalytics events to console
         // logToConsole: true,
 
@@ -73,7 +74,7 @@
         // },
 
         // True to display in-app guides.
-        // "showInAppGuides": true,
+        // "showInAppGuides": false,
 
         "helpContent": [
             {
