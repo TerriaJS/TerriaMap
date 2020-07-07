@@ -67,6 +67,8 @@
 
         // To enable welcome message when map first loads
         // "showWelcomeMessage": true,
+        // To override the welcome message video displayed on the welcome message
+        // By default, the Getting Started to Terria video is displayed 
         // "welcomeMessageVideo": {
         //     "videoTitle": "Getting started with the map",
         //     "videoUrl": "https://www.youtube.com/embed/NTtSM70rIvI",
