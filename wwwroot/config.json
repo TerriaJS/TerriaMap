@@ -76,14 +76,122 @@
 
         // True to display in-app guides.
         // "showInAppGuides": false,
-
+		"languageConfiguration" : {
+			"enabled": false,
+			"debug": false,
+			"languages": {
+				"en": "english",
+				"sr": "serbian"
+			},
+			"fallbackLanguage": "en"
+		},
         "helpContent": [
             {
+                "title": "helpItem1.title",
                 "itemName": "gettingstarted",
-                "markdownText": "# Getting started with the map\n\nIf you're new to the map or using spatial data, our Getting Started video quickly covers the basic functionality you'll need to use to add and interrogate data sets.\n\nIf you don't have time to watch the video, we suggest exploring the following areas:\n\n1. Search for a location to quickly find an area of interest\n2. Use 'Explore map data' to view the catalogue of available data sets and add them to the map\n3. Interact with the data layer, including opacity and toggling on and off on the left in your workbench\n4. Click on the data on the map to view more detailed data, including the raw data\n5. Change your basemap using options in 'Map Settings' to help make some data sets more visible\n6. Zoom and change your view, including tilting the view angle using the controls on the right-hand side of the screen",
+                "paneMode": "videoAndContent",
+                "markdownText": "helpItem1.markdownText",
                 "icon": "video",
-                "videoUrl": "https://www.youtube.com/embed/NTtSM70rIvI",
-                "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+                "videoUrl": "helpItem1.videoUrl",
+                "placeholderImage": "helpItem1.placeholderImage"
+            },
+            {
+                "title": "helpItem2.title",
+                "itemName": "stepbystepguide",
+                "paneMode": "trainer",
+                "markdownText": "helpItem2.markdownText",
+                "icon": "oneTwoThree",
+                "trainerItems": [
+                    {
+                        "title": "helpItem2.trainerItem1.title",
+                        "footnote": "helpItem2.trainerItem1.footnote",
+                        "steps": [
+                            {
+                                "title": "helpItem2.trainerItem1.step1.title",
+                                "markdownDescription": "helpItem2.trainerItem1.step1.markdownDescription"
+                            },
+                            {
+                                "title": "helpItem2.trainerItem1.step2.title",
+                                "markdownDescription": "helpItem2.trainerItem1.step2.markdownDescription"
+                            },
+                            {
+                                "title": "helpItem2.trainerItem1.step3.title",
+                                "markdownDescription": "helpItem2.trainerItem1.step3.markdownDescription"
+                            },
+                            {
+                                "title": "helpItem2.trainerItem1.step4.title",
+                                "markdownDescription": "helpItem2.trainerItem1.step4.markdownDescription"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "helpItem2.trainerItem2.title",
+                        "footnote": "helpItem2.trainerItem2.footnote",
+                        "steps": [
+                            {
+                                "title": "helpItem2.trainerItem2.step1.title",
+                                "markdownDescription": "helpItem2.trainerItem2.step1.markdownDescription"
+                            },
+                            {
+                                "title": "helpItem2.trainerItem2.step2.title",
+                                "markdownDescription": "helpItem2.trainerItem2.step2.markdownDescription"
+                            },
+                            {
+                                "title": "helpItem2.trainerItem2.step3.title",
+                                "markdownDescription": "helpItem2.trainerItem2.step3.markdownDescription"
+                            },
+                            {
+                                "title": "helpItem2.trainerItem2.step4.title",
+                                "markdownDescription": "helpItem2.trainerItem2.step4.markdownDescription"
+                            }
+                        ]
+                    }
+                ]
+            },
+            // For maps with satellite imagery, also see `showInAppGuides`
+            // {
+            //     "itemName": "satelliteimagery",
+            //     "title": "Satellite Imagery",
+            //     "paneMode": "slider",
+            //     "icon": "satellite"
+            // }
+        ],
+        "helpContentTerms": [
+            {
+                "term": "helpContentTerm1.term",
+                "aliases": "helpContentTerm1.aliases",
+                "content": "helpContentTerm1.content"
+            },
+            {
+                "term": "helpContentTerm2.term",
+                "aliases": "helpContentTerm2.aliases",
+                "content": "helpContentTerm1.content"
+            },
+            {
+                "term": "helpContentTerm3.term",
+                "content": "helpContentTerm3.content"
+            },
+            {
+                "term": "helpContentTerm4.term",
+                "content": "helpContentTerm4.content"
+            },
+            {
+                "term": "helpContentTerm5.term",
+                "aliases": ["catalogue"],
+                "content": "helpContentTerm5.content"
+            },
+            {
+                "term": "helpContentTerm6.term",
+                "aliases": "helpContentTerm6.aliases",
+                "content": "helpContentTerm6.content"
+            },
+            {
+                "term": "helpContentTerm7.term",
+                "content": "helpContentTerm7.content"
+            },
+            {
+                "term": "helpContentTerm8.term",
+                "content": "helpContentTerm8.content"
             }
         ]
     }
