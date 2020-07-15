@@ -68,22 +68,14 @@ module.exports = function(devMode, hot) {
                                 ]
                             }
                         },
-                        // {
-                        //     loader: 'babel-loader',
-                        //     options: {
-                        //         cacheDirectory: true,
-                        //         sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
-                        //         presets: ['@babel/preset-env', '@babel/preset-react'],
-                        //         plugins: [
-                        //             'babel-plugin-styled-components',
-                        //             'babel-plugin-jsx-control-statements',
-                        //             '@babel/plugin-transform-modules-commonjs'
-                        //         ]
-                        //     }
-                        // },
+                        // Re-enable this if we need to observe any differences in the
+                        // transpilation via ts-loader, & babel's stripping of types,
+                        // or if TypeScript has newer features that babel hasn't
+                        // caught up with
                         // {
                         //     loader: require.resolve('ts-loader'),
                         //     options: {
+                        //          transpileOnly: true
                         //         // configFile: path.resolve(__dirname, '..', 'node_modules', 'terriajs', 'tsconfig.json')
                         //     }
                         // }
