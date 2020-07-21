@@ -11,7 +11,7 @@ RUN npm install
 
 COPY . .
 
-RUN ln -s /etc/config/client/config.json wwwroot/config.json
+RUN rm wwwroot/config.json && ln -s /etc/config/client/config.json wwwroot/config.json
 
 RUN npm run gulp
 
