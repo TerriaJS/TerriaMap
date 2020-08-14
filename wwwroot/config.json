@@ -80,8 +80,7 @@
 			"enabled": false,
 			"debug": false,
 			"languages": {
-				"en": "english",
-				"sr": "serbian"
+				"en": "english"
 			},
 			"fallbackLanguage": "en"
 		},
