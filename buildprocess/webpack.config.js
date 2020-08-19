@@ -17,7 +17,7 @@ module.exports = function(devMode, hot) {
             sourcePrefix: '', // to avoid breaking multi-line string literals by inserting extra tabs.
             globalObject: '(self || window)' // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
         },
-        devtool: 'source-map', //devMode ? 'cheap-inline-source-map' : 'source-map',
+        devtool: devMode ? 'eval-cheap-module-source-map' : 'source-map',
         module: {
             rules: [
                 {
@@ -45,6 +45,7 @@ module.exports = function(devMode, hot) {
                         {
                             loader: 'babel-loader',
                             options: {
+                                cacheDirectory: true,
                                 presets: [
                                   [
                                     '@babel/preset-env',
@@ -53,15 +54,31 @@ module.exports = function(devMode, hot) {
                                       useBuiltIns: "usage"
                                     }
                                   ],
-                                  '@babel/preset-react'
+                                  '@babel/preset-react',
+                                  ['@babel/typescript', {allowNamespaces: true}]
                                 ],
                                 plugins: [
                                     'babel-plugin-jsx-control-statements',
-                                    '@babel/plugin-transform-modules-commonjs'
+                                    '@babel/plugin-transform-modules-commonjs',
+                                    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+                                    '@babel/proposal-class-properties',
+                                    '@babel/proposal-object-rest-spread',
+                                    'babel-plugin-styled-components',
+                                    require.resolve('@babel/plugin-syntax-dynamic-import')
                                 ]
                             }
                         },
-                        require.resolve('ts-loader')
+                        // Re-enable this if we need to observe any differences in the
+                        // transpilation via ts-loader, & babel's stripping of types,
+                        // or if TypeScript has newer features that babel hasn't
+                        // caught up with
+                        // {
+                        //     loader: require.resolve('ts-loader'),
+                        //     options: {
+                        //          transpileOnly: true
+                        //         // configFile: path.resolve(__dirname, '..', 'node_modules', 'terriajs', 'tsconfig.json')
+                        //     }
+                        // }
                     ]
                 },
                 {
