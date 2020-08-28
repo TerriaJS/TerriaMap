@@ -1,4 +1,9 @@
 language: node_js
+dist: trusty
+addons:
+  apt:
+    packages:
+      - libnss3
 node_js:
 - '10'
 install:

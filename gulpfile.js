@@ -250,6 +250,14 @@ function mergeConfigs(original, override) {
 gulp.task('render-datasource-templates', function(done) {
     var ejs = require('ejs');
     var JSON5 = require('json5');
+    var serverConfig = JSON5.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
+
+    var index = fs.readFileSync('wwwroot/index.ejs', 'utf8');
+    var baseHrefFromConfig = serverConfig.baseHref;
+    var indexResult = ejs.render(index, { baseHref: baseHrefFromConfig || "/"});
+
+    fs.writeFileSync(path.join('wwwroot', 'index.html'), new Buffer(indexResult));
+
     var templateDir = 'datasources';
 
     // until https://github.com/TerriaJS/terriajs/pull/4227 is ready,
