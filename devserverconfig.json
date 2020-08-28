@@ -3,6 +3,12 @@
 
     "baseHref": "/",
 
+    // progresive spa options
+    "singlePageRouting": {
+        "resolvePathRelativeToWwwroot": "/index.html",
+        "resolveUnmatchedPathsWithIndexHtml": true
+    },
+
     "allowProxyFor" : [
         "nicta.com.au",
         "gov.au",

@@ -1,9 +1,11 @@
 var fs = require("fs");
 var path = require("path");
 var URI = require("urijs");
-var CATALOG_ROUTE = require("terriajs/lib/ReactViewModels/TerriaRouting").CATALOG_ROUTE;
+// var CATALOG_ROUTE = require("terriajs/lib/ReactViewModels/TerriaRouting").CATALOG_ROUTE;
+var CATALOG_ROUTE = `/catalog/`;
 
-const rootGroupName = "Root Group";
+// const rootGroupName = "Root Group";
+const rootGroupName = "/";
 
 const getNameFromItem = item => item.name;
 const getIdFromItem = item => item.id;
@@ -25,13 +27,13 @@ const getRoutes = (topCatalogItem, currentRoute = rootGroupName) =>
 /**
  * Given an array of init names for files in wwwroot/init/, traverse the catalog
  * and generate a list of routes to be prerendered at build time
- * 
+ *
  * @param  {Array} initUrls
  */
 function generateRoutes(initUrls) {
   const resUrl = url =>
     path.resolve(__dirname, "..", "wwwroot", "init", `${url}.json`);
-  
+
   const getCatalogFromInitName = initName => resUrl(initName);
 
   const routesFromInitCatalogs = initUrls.reduce((acc, initName) => {

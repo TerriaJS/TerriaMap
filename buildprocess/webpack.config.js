@@ -123,11 +123,11 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        {                                                                                                                                                                                                                                                                                           
-                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
-                            options: {                                                                                                                                                                                                                                                                                
-                                sourceMap: false                                                                                                                                                                                                                                                                        
-                            }                                                                                                                                                                                                                                                                                         
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: false
+                            }
                         },
                         'sass-loader?sourceMap'
                     ] : [
@@ -142,11 +142,11 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        {                                                                                                                                                                                                                                                                                           
-                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
-                            options: {                                                                                                                                                                                                                                                                                
-                                sourceMap: false                                                                                                                                                                                                                                                                        
-                            }                                                                                                                                                                                                                                                                                         
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: false
+                            }
                         },
                         'sass-loader?sourceMap'
                     ]
