@@ -56,8 +56,8 @@ function createLoader() {
             //     document.body.removeChild(loaderDiv);
             // }, 2000);
           const removeLoaderElements = () => {
-              document.body.removeChild(loaderDiv);
-              document.body.removeChild(catalogzIndexOverride);
+              if (loaderDiv) document.body.removeChild(loaderDiv);
+              if (catalogzIndexOverride) document.body.removeChild(catalogzIndexOverride);
           };
           loaderDiv.classList.add('loader-ui-hide');
           setTimeout(() => document.body.removeChild(catalogzIndexOverride), 300);
