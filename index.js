@@ -23,6 +23,7 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
+import CatalogSearchProvider from 'terriajs/lib/Models/CatalogSearchProvider';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
@@ -89,6 +90,10 @@ module.exports = terria.start({
             // new GazetteerSearchProviderViewModel({terria}),
             // new GnafSearchProviderViewModel({terria})
         ];
+        viewState.searchState.catalogSearchProvider = 
+            new CatalogSearchProvider({
+                terria: terria
+            });
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
