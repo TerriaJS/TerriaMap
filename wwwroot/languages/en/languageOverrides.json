@@ -1,14 +1,45 @@
 {
-  "helpItem1": {
+  "gettingstarted": {
     "title": "Getting started with the map",
     "markdownText": "# Getting started with the map\n\nIf you're new to the map or using spatial data, our Getting Started video quickly covers the basic functionality you'll need to use to add and interrogate data sets.\n\nIf you don't have time to watch the video, we suggest exploring the following areas:\n\n1. Search for a location to quickly find an area of interest\n2. Use 'Explore map data' to view the catalogue of available data sets and add them to the map\n3. Interact with the data layer, including opacity and toggling on and off on the left in your workbench\n4. Click on the data on the map to view more detailed data, including the raw data\n5. Change your basemap using options in 'Map Settings' to help make some data sets more visible\n6. Zoom and change your view, including tilting the view angle using the controls on the right-hand side of the screen",
     "videoUrl": "https://www.youtube.com/embed/FjSxaviSLhc",
     "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
   },
-  "helpItem2": {
+  "stepbystepguide": {
     "title": "Step by step guide",
     "markdownText": "# Step by step guide\n\nLaunch a step by step guide for various popular workflows below:",
-    "trainerItem1": {
+    "gettingstarted": {
+      "title": "Getting started with the map",
+      "step1": {
+        "markdownDescription": "The search is at the top of the workbench on the left.",
+        "title": "Search for a location to find an area of interest"
+      },
+      "step2": {
+        "markdownDescription": "You can view the catalogue at any time",
+        "title": "Use \"Explore map data\" to view data catalogue"
+      },
+      "step3": {
+        "markdownDescription": "Find a dataset of interest",
+        "title": "Search for data or browse catalogue"
+      },
+      "step4": {
+        "title": "Add data to map by clicking on + sign or \"Add to map\" button in preview window",
+        "markdownDescription": ""
+      },
+      "step5": {
+        "title": "Interact with data, including opacity and toggling on & off on the left in your workbench"
+      },
+      "step6": {
+        "title": "Click on data on the map to view more details by triggering Feature Information panel"
+      },
+      "step7": {
+        "title": "Change your basemap using options in \"Map Settings\" to improve contrast"
+      },
+      "step8": {
+        "title": "Zoom and change view using the controls on the right-hand side of the screen"
+      }
+    },
+    "satelliteimagery": {
       "title": "Adding satellite imagery",
       "footnote": "Important: Satellite imagery can take a little while to load so please be patient. If images don’t seem to be loading, zoom out a little bit",
       "step1": {
@@ -28,7 +59,7 @@
         "markdownDescription": "- Use the date picker to select a time and date. Cycle backwards through previous years using the back arrow\n - Choose another date if your imagery is obscured by clouds. You can quickly cycle back and forward using the arrows next to the date picker"
       }
     },
-    "trainerItem2": {
+    "comparetimeseries": {
       "title": "View and compare different points in time",
       "footnote": "Important: Any time series data can be compared using the Split Screen Mode, not just satellite imagery",
       "step1": {
@@ -81,8 +112,8 @@
     "term": "source dataset",
     "content": "The dataset you added to your workbench that allows for difference calculations"
   },
-  "helpContentTerm8":{
-	"term": "preview style",
-	"content": "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
+  "helpContentTerm8": {
+    "term": "preview style",
+    "content": "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
   }
 }

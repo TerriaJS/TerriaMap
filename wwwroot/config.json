@@ -85,77 +85,111 @@
           },
           "fallbackLanguage": "en"
         },
-        "helpContent": [
+      "helpContent": [
+        {
+          "title": "gettingstarted.title",
+          "itemName": "gettingstarted",
+          "paneMode": "videoAndContent",
+          "markdownText": "gettingstarted.markdownText",
+          "icon": "video",
+          "videoUrl": "gettingstarted.videoUrl",
+          "placeholderImage": "gettingstarted.placeholderImage"
+        },
+        {
+          "title": "stepbystepguide.title",
+          "itemName": "stepbystepguide",
+          "paneMode": "trainer",
+          "markdownText": "stepbystepguide.markdownText",
+          "icon": "oneTwoThree",
+          "trainerItems": [
             {
-                "title": "helpItem1.title",
-                "itemName": "gettingstarted",
-                "paneMode": "videoAndContent",
-                "markdownText": "helpItem1.markdownText",
-                "icon": "video",
-                "videoUrl": "helpItem1.videoUrl",
-                "placeholderImage": "helpItem1.placeholderImage"
+              "title": "stepbystepguide.gettingstarted.title",
+              "footnote": "stepbystepguide.gettingstarted.footnote",
+              "steps": [
+                {
+                  "title": "stepbystepguide.gettingstarted.step1.title",
+                  "markdownDescription": "stepbystepguide.gettingstarted.step1.markdownDescription"
+                },
+                {
+                  "title": "stepbystepguide.gettingstarted.step2.title",
+                  "markdownDescription": "stepbystepguide.gettingstarted.step2.markdownDescription"
+                },
+                {
+                  "title": "stepbystepguide.gettingstarted.step3.title",
+                  "markdownDescription": "stepbystepguide.gettingstarted.step3.markdownDescription"
+                },
+                {
+                  "title": "stepbystepguide.gettingstarted.step4.title"
+                },
+                {
+                  "title": "stepbystepguide.gettingstarted.step5.title"
+                },
+                {
+                "title": "stepbystepguide.gettingstarted.step6.title"
+                },
+                {
+                  "title": "stepbystepguide.gettingstarted.step7.title"
+                },
+                {
+                  "title": "stepbystepguide.gettingstarted.step8.title"
+                }
+              ]
             },
-            {
-                "title": "helpItem2.title",
-                "itemName": "stepbystepguide",
-                "paneMode": "trainer",
-                "markdownText": "helpItem2.markdownText",
-                "icon": "oneTwoThree",
-                "trainerItems": [
-                    {
-                        "title": "helpItem2.trainerItem1.title",
-                        "footnote": "helpItem2.trainerItem1.footnote",
-                        "steps": [
-                            {
-                                "title": "helpItem2.trainerItem1.step1.title",
-                                "markdownDescription": "helpItem2.trainerItem1.step1.markdownDescription"
-                            },
-                            {
-                                "title": "helpItem2.trainerItem1.step2.title",
-                                "markdownDescription": "helpItem2.trainerItem1.step2.markdownDescription"
-                            },
-                            {
-                                "title": "helpItem2.trainerItem1.step3.title",
-                                "markdownDescription": "helpItem2.trainerItem1.step3.markdownDescription"
-                            },
-                            {
-                                "title": "helpItem2.trainerItem1.step4.title",
-                                "markdownDescription": "helpItem2.trainerItem1.step4.markdownDescription"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "helpItem2.trainerItem2.title",
-                        "footnote": "helpItem2.trainerItem2.footnote",
-                        "steps": [
-                            {
-                                "title": "helpItem2.trainerItem2.step1.title",
-                                "markdownDescription": "helpItem2.trainerItem2.step1.markdownDescription"
-                            },
-                            {
-                                "title": "helpItem2.trainerItem2.step2.title",
-                                "markdownDescription": "helpItem2.trainerItem2.step2.markdownDescription"
-                            },
-                            {
-                                "title": "helpItem2.trainerItem2.step3.title",
-                                "markdownDescription": "helpItem2.trainerItem2.step3.markdownDescription"
-                            },
-                            {
-                                "title": "helpItem2.trainerItem2.step4.title",
-                                "markdownDescription": "helpItem2.trainerItem2.step4.markdownDescription"
-                            }
-                        ]
-                    }
-                ]
-            },
-            // For maps with satellite imagery, also see `showInAppGuides`
+            // -- Uncomment to enable the following trainer guides --
             // {
-            //     "itemName": "satelliteimagery",
-            //     "title": "Satellite Imagery",
-            //     "paneMode": "slider",
-            //     "icon": "satellite"
+            //   "title": "stepbystepguide.satelliteimagery.title",
+            //   "footnote": "stepbystepguide.satelliteimagery.footnote",
+            //   "steps": [
+            //     {
+            //       "title": "stepbystepguide.satelliteimagery.step1.title",
+            //       "markdownDescription": "stepbystepguide.satelliteimagery.step1.markdownDescription"
+            //     },
+            //     {
+            //       "title": "stepbystepguide.satelliteimagery.step2.title",
+            //       "markdownDescription": "stepbystepguide.satelliteimagery.step2.markdownDescription"
+            //     },
+            //     {
+            //       "title": "stepbystepguide.satelliteimagery.step3.title",
+            //     "markdownDescription": "stepbystepguide.satelliteimagery.step3.markdownDescription"
+            //     },
+            //     {
+            //       "title": "stepbystepguide.satelliteimagery.step4.title",
+            //       "markdownDescription": "stepbystepguide.satelliteimagery.step4.markdownDescription"
+            //     }
+            //   ]
+            // },
+            // {
+            //   "title": "stepbystepguide.comparetimeseries.title",
+            //   "footnote": "stepbystepguide.comparetimeseries.footnote",
+            //   "steps": [
+            //     {
+            //       "title": "stepbystepguide.comparetimeseries.step1.title",
+            //       "markdownDescription": "stepbystepguide.comparetimeseries.step1.markdownDescription"
+            //     },
+            //     {
+            //       "title": "stepbystepguide.comparetimeseries.step2.title",
+            //       "markdownDescription": "stepbystepguide.comparetimeseries.step2.markdownDescription"
+            //     },
+            //     {
+            //       "title": "stepbystepguide.comparetimeseries.step3.title",
+            //       "markdownDescription": "stepbystepguide.comparetimeseries.step3.markdownDescription"
+            //     },
+            //     {
+            //       "title": "stepbystepguide.comparetimeseries.step4.title",
+            //       "markdownDescription": "stepbystepguide.comparetimeseries.step4.markdownDescription"
+            //     }
+            //   ]
             // }
-        ],
+          ]
+        }
+        // For maps with satellite imagery, also see `showInAppGuides`
+        // {
+        //     "itemName": "satelliteimagery",
+        //     "title": "Satellite Imagery",
+        //     "paneMode": "slider",
+        //     "icon": "satellite"
+        // }
+      ],
         "helpContentTerms": [
             {
                 "term": "helpContentTerm1.term",
@@ -328,4 +362,3 @@
         // ]
     }
 }
-
