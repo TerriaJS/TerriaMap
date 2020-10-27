@@ -10561,10 +10561,9 @@ terriajs-server@^3.0.1:
     when "^3.7.7"
     yargs "^13.2.4"
 
-terriajs@8.0.0-alpha.56:
-  version "8.0.0-alpha.56"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.0.0-alpha.56.tgz#9ba1cb946c91b6339525129f7c12a19e9c0c331a"
-  integrity sha512-vCZvORzsUvojQe/xyjHTaNPq9Bs1vs6q7NOI1V6a9SyzwqRYwInwd3wiGKXElbx/fC9BrXPC6zCEQ2z4I5GJ2Q==
+terriajs@TerriaJs/terriajs#6ad06bf6ee1a3115d846b60afd38e60a489fb536:
+  version "8.0.0-alpha.58"
+  resolved "https://codeload.github.com/TerriaJs/terriajs/tar.gz/6ad06bf6ee1a3115d846b60afd38e60a489fb536"
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-proposal-decorators" "^7.10.4"
