@@ -11,7 +11,7 @@ var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
 var json5 = require("json5");
 
-module.exports = function(devMode, hot) {
+module.exports = function(webpack, devMode, hot) {
     var config = {
         mode: devMode ? 'development' : 'production',
         entry: './entry.js',
@@ -195,17 +195,52 @@ module.exports = function(devMode, hot) {
         } else {
             console.warn("Warning - no appBaseUrl specified, no sitemap will be generated.")
         }
-        config.plugins = [...config.plugins, new PrerenderSPAPlugin({
+      config.plugins = [
+        ...config.plugins,
+        new webpack.DefinePlugin({
+          // styled-component uses CSSOM for rendering styles,
+          // but when pre-rendering, we want all styles to be applied via the DOM instead.
+          // This env variable instructs styled-component to use DOM instead of CSSOM
+          // for applying styles
+          'process.env.SC_DISABLE_SPEEDY': "true",
+        }),
+        new PrerenderSPAPlugin({
             staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
             outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
             indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
             routes: prerenderRoutes,
+            server: {
+              // If a server is running in the default terria port
+              // use it to proxy the following paths
+              proxy: {
+                "/proxyabledomains": {
+                  target: 'http://localhost:3001'
+                },
+                "/proxy": {
+                  target: 'http://localhost:3001'
+                }
+              }
+            },
             renderer: new Renderer({
                 renderAfterDocumentEvent: 'prerender-end',
                 // If you run out of memory, try a lower value here
                 maxConcurrentRoutes: 8,
                 // headless: false, // set to false for debugging
             }),
+            postProcess(context) {
+                // Hide any errors or popups in the rendered page.
+                const bodyTag = "<body>";
+                const catalogzIndexOverride = `
+                    <style id="catalogStyleOverride" type="text/css">
+                        .tjs-explorer-window__modal-wrapper {
+                            z-index:1000000 !important;
+                        }
+                    </style>
+                `;
+                const htmlSplit = context.html.split(bodyTag); // Only one <body> tag so it'll be split into 2
+                context.html = htmlSplit[0] + bodyTag + catalogzIndexOverride + htmlSplit[1];
+                return context;
+            }
         })];
     }
     return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
