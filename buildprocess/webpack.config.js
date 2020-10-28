@@ -210,6 +210,18 @@ module.exports = function(devMode, hot) {
             outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
             indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
             routes: prerenderRoutes,
+            server: {
+              // If a server is running in the default terria port
+              // use it to proxy the following paths
+              proxy: {
+                "/proxyabledomains": {
+                  target: 'http://localhost:3001'
+                },
+                "/proxy": {
+                  target: 'http://localhost:3001'
+                }
+              }
+            },
             renderer: new Renderer({
                 renderAfterDocumentEvent: 'prerender-end',
                 // If you run out of memory, try a lower value here
