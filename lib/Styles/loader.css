@@ -44,6 +44,7 @@
 
       .loader-ui{
         transition: opacity, 2s;
+        transition-timing-function: cubic-bezier(.2,1.22,.83,.89);
         opacity: 1;
         height: 100vh;
         width: 100vw;
