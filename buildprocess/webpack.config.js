@@ -225,8 +225,9 @@ module.exports = function(webpack, devMode, hot) {
             renderer: new Renderer({
                 renderAfterDocumentEvent: 'prerender-end',
                 // If you run out of memory, try a lower value here
-                maxConcurrentRoutes: 8,
+                maxConcurrentRoutes: 12,
                 // headless: false, // set to false for debugging
+                timeout: 3000
             }),
             postProcess(context) {
                 // Hide any errors or popups in the rendered page.
