@@ -10,6 +10,7 @@ var PrerenderSPAPlugin = require("prerender-spa-plugin");
 var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
 var json5 = require("json5");
+var webpack = require('webpack');
 
 module.exports = function(devMode, hot) {
     var config = {
@@ -195,7 +196,16 @@ module.exports = function(devMode, hot) {
         } else {
             console.warn("Warning - no appBaseUrl specified, no sitemap will be generated.")
         }
-        config.plugins = [...config.plugins, new PrerenderSPAPlugin({
+      config.plugins = [
+        ...config.plugins,
+        new webpack.DefinePlugin({
+          // styled-component uses CSSOM for rendering styles,
+          // but when pre-rendering, we want all styles to be applied via the DOM instead.
+          // This env variable instructs styled-component to use DOM instead of CSSOM
+          // for applying styles
+          'process.env.SC_DISABLE_SPEEDY': "true",
+        }),
+        new PrerenderSPAPlugin({
             staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
             outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
             indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
