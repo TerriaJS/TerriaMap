@@ -10,9 +10,8 @@ var PrerenderSPAPlugin = require("prerender-spa-plugin");
 var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
 var json5 = require("json5");
-var webpack = require('webpack');
 
-module.exports = function(devMode, hot) {
+module.exports = function(webpack, devMode, hot) {
     var config = {
         mode: devMode ? 'development' : 'production',
         entry: './entry.js',
