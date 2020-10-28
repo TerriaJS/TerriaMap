@@ -6,6 +6,7 @@ addons:
       - libnss3
 node_js:
 - '10'
+- '14'
 install:
 - npm ci
 script:
