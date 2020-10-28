@@ -228,6 +228,20 @@ module.exports = function(devMode, hot) {
                 maxConcurrentRoutes: 8,
                 // headless: false, // set to false for debugging
             }),
+            postProcess(context) {
+                // Hide any errors or popups in the rendered page.
+                const bodyTag = "<body>";
+                const catalogzIndexOverride = `
+                    <style id="catalogStyleOverride" type="text/css">
+                        .tjs-explorer-window__modal-wrapper {
+                            z-index:1000000 !important;
+                        }
+                    </style>
+                `;
+                const htmlSplit = context.html.split(bodyTag); // Only one <body> tag so it'll be split into 2
+                context.html = htmlSplit[0] + bodyTag + catalogzIndexOverride + htmlSplit[1];
+                return context;
+            }
         })];
     }
     return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
