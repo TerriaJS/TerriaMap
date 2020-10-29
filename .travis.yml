@@ -15,4 +15,4 @@ env:
 - NODE_OPTIONS=--max_old_space_size=4096
 before_install:
   # Enable user namespace cloning
-  - "sysctl kernel.unprivileged_userns_clone=1"
+  # - "sysctl kernel.unprivileged_userns_clone=1"
