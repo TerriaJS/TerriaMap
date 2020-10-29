@@ -17,7 +17,7 @@ const getRoutes = (topCatalogItem, currentRoute = rootGroupName) =>
     // Id is used for uniqueid, so disregard any pathing
     const idFromItem = getIdFromItem(catalogItem);
     const finalRoute = idFromItem || `${currentRoute}/${nameForCurrentItem}`;
-    const items = catalogItem.items && getRoutes(catalogItem.items, finalRoute);
+    const items = catalogItem.members && getRoutes(catalogItem.members, finalRoute);
 
     if (items) {
       return [...acc, ...items, finalRoute];
