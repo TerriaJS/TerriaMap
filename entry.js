@@ -47,6 +47,8 @@ function createLoader() {
     loaderDiv.style.backgroundColor ='#383F4D';
     document.body.appendChild(loaderDiv);
 
+    const catalogzIndexOverrideFromWebpack = document.getElementById("catalogStyleOverride");
+
     polyfill(function() {
         loadMainScript().catch(() => {
             // Ignore errors and try to show the map anyway
@@ -55,9 +57,17 @@ function createLoader() {
             // setTimeout(()=> {
             //     document.body.removeChild(loaderDiv);
             // }, 2000);
+          const removeElement = (element) => {
+            const parent = element.parentNode;
+            if (parent) {
+              parent.removeChild(element);
+            }
+          };
+
           const removeLoaderElements = () => {
-              if (loaderDiv) document.body.removeChild(loaderDiv);
-              if (catalogzIndexOverride) document.body.removeChild(catalogzIndexOverride);
+            removeElement(catalogzIndexOverrideFromWebpack);
+            removeElement(loaderDiv);
+            removeElement(catalogzIndexOverride);
           };
           loaderDiv.classList.add('loader-ui-hide');
           setTimeout(() => document.body.removeChild(catalogzIndexOverride), 300);
