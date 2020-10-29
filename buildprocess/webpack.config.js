@@ -227,6 +227,7 @@ module.exports = function(webpack, devMode, hot) {
                 // If you run out of memory, try a lower value here
                 maxConcurrentRoutes: 8,
                 // headless: false, // set to false for debugging
+                timeout: 5000
             }),
             postProcess(context) {
                 // Hide any errors or popups in the rendered page.
