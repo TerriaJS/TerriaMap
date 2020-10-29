@@ -58,7 +58,7 @@ function createLoader() {
             //     document.body.removeChild(loaderDiv);
             // }, 2000);
           const removeElement = (element) => {
-            const parent = element.parentNode;
+            const parent = element?.parentNode;
             if (parent) {
               parent.removeChild(element);
             }
