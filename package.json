@@ -2,6 +2,7 @@
   "private": true,
   "workspaces": {
     "packages": [
+      "packages/terriajs-server",
       "packages/terriajs"
     ],
     "nohoist": [
@@ -21,7 +22,7 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.0.1"
+    "terriajs-server": "^3.3.1"
   },
   "config": {
     "awsProfile": "terria",
@@ -60,19 +61,21 @@
     "node-notifier": "^5.1.2",
     "node-sass": "^4.14.1",
     "plugin-error": "^1.0.1",
+    "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^1.10.0",
     "prop-types": "^15.6.0",
     "raw-loader": "^1.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-router-dom": "^5.0.0",
     "redbox-react": "^1.3.6",
     "resolve-url-loader": "^3.0.1",
     "sass-loader": "^7.1.0",
     "semver": "^5.0.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "4.1.3",
-    "terriajs": "8.0.0-alpha.56",
+    "terriajs": "8.0.0-alpha.59",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.73.1",
     "terriajs-schema": "latest",

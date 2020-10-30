@@ -44,7 +44,7 @@ gulp.task('write-version', function(done) {
 gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, true);
 
     checkForDuplicateCesium();
 
@@ -54,7 +54,7 @@ gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version
 gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(false);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, false);
 
     checkForDuplicateCesium();
 
@@ -67,7 +67,7 @@ gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watch
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, true, false);
 
     checkForDuplicateCesium();
 
@@ -250,6 +250,14 @@ function mergeConfigs(original, override) {
 gulp.task('render-datasource-templates', function(done) {
     var ejs = require('ejs');
     var JSON5 = require('json5');
+    var serverConfig = JSON5.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
+
+    var index = fs.readFileSync('wwwroot/index.ejs', 'utf8');
+    var baseHrefFromConfig = serverConfig.baseHref;
+    var indexResult = ejs.render(index, { baseHref: baseHrefFromConfig || "/"});
+
+    fs.writeFileSync(path.join('wwwroot', 'index.html'), new Buffer(indexResult));
+
     var templateDir = 'datasources';
 
     // until https://github.com/TerriaJS/terriajs/pull/4227 is ready,
