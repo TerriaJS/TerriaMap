@@ -163,8 +163,8 @@ module.exports = function(webpack, devMode, hot) {
     };
     config.resolve.alias['terriajs-variables'] = require.resolve('../lib/Styles/variables.scss');
 
-    // Disable this block if you wish to opt out of pre-rendering
-    if (!devMode) {
+    // Enable this block if you wish to opt into pre-rendering
+    if (!devMode && 1 === 2) {
         var configJsonPath = fs.readFileSync(path.resolve(__dirname, '..','wwwroot', 'config.json'), 'utf8');
         var configJson = json5.parse(configJsonPath);
         var prerenderRoutes =
