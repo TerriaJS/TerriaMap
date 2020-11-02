@@ -4,10 +4,6 @@
         "simple"
     ],
     parameters: {
-        // For sitemap.xml generation, specify the protocol + fully qualified domain
-        // name + path of where you'll be serving your site, e.g.:
-        // appBaseUrl: "https://nationalmap.gov.au/",
-
         googleUrlShortenerKey: null,
         googleAnalyticsKey: null,
         googleAnalyticsOptions: null,
