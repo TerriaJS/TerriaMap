@@ -179,59 +179,9 @@
       }
     },
     {
-      "id": "54a553b4",
-      "name": "All generation types",
-      "url": "https://services.aremi.data61.io/aemo/v6/csv/all",
       "type": "csv",
-      "cacheDuration": "5m",
-      "featureInfoTemplate": {
-        "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
-        "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-titles='Time (UTC):Time,MW:Power Generation' column-units='Time (UTC):Date,MW:MW'></chart></td></tr>  </tbody></table>"
-      },
-      // "polling": { "seconds": 300, "replace": true },
-      "rectangle": {
-        "west": 134.0,
-        "south": -47.0,
-        "east": 155.0,
-        "north": -13.0
-      },
-      "activeStyle": "Current % of Max Cap",
-      "defaultColumn": {
-        "replaceWithNullValues": ["-"],
-        "replaceWithZeroValues": []
-      },
-      "defaultStyle": {
-        "time": {
-          // "timeColumn": null
-        },
-        "color": {
-          "nullColor": "rgba(255,255,255,0.1)",
-          "nullLabel": "No value",
-          "numberOfBins": 10,
-          "binColors": [
-            "rgb(94,79,162)",
-            "rgb(50,136,189)",
-            "rgb(102,194,165)",
-            "rgb(171,221,164)",
-            "rgb(230,245,152)",
-            "rgb(254,224,139)",
-            "rgb(253,174,97)",
-            "rgb(244,109,67)",
-            "rgb(213,62,79)",
-            "rgb(158,1,66)"
-          ]
-        },
-        "pointSize": {
-          "pointSizeColumn": "Reg Cap (MW)",
-          "sizeFactor": 20
-        }
-      },
-      "styles": [
-        {
-          "id": "Aggregation",
-          "title": null
-        }
-      ],
+      "name": "All generation types",
+      "id": "54a553b4",
       "info": [
         {
           "name": "Description",
@@ -249,7 +199,88 @@
           "name": "Licensing, Terms & Conditions",
           "content": "Australian Energy Market Operator (AEMO) is the data custodian for Generation & Load data sets, available on AEMO’s website. <br/><br/>AREMI is displaying the data under AEMO’s licencing and copyright conditions detailed below. <br/><br/>The data is provided for information only and is not intended for commercial use. AEMO does not guarantee the accuracy of the data or its availability at all times.<br/><br/>AEMO, or its licensors, are the owners of all copyright and all other intellectual property rights in the contents of the AEMO website (including text and images). Users may only use such contents for personal use or as authorised by AEMO. Here are the details of the AEMO’s copyright permissions: <br/><br/>AEMO Material comprises documents, reports, sound and video recordings and any other material created by or on behalf of AEMO and made publicly available by AEMO. All AEMO Material is protected by copyright under Australian law. A publication is protected even if it does not display the © symbol.  <br/><br/>In addition to the uses permitted under copyright laws, AEMO confirms its general permission for anyone to use AEMO Material for any purpose, but only with accurate and appropriate attribution of the relevant AEMO Material and AEMO as its author. There is no need to obtain specific permission to use AEMO Material in this way. Confidential documents and any reports commissioned by another person or body who may own the copyright in them and NOT AEMO Material, and these permissions do not apply to those documents. <br/><br/>More information on conditions of use of AEMO generated data and information is available on the AEMO website: [http://aemo.com.au/About-AEMO/Legal-Notices](http://aemo.com.au/About-AEMO/Legal-Notices)"
         }
-      ]
+      ],
+      "url": "https://services.aremi.data61.io/aemo/v6/csv/all",
+      "cacheDuration": "5m",
+      "rectangle": {
+        "west": 134,
+        "south": -47,
+        "east": 155,
+        "north": -13
+      },
+      "polling": {
+        "seconds": 300,
+        "shouldReplaceData": true
+      },
+      "columns": [
+        {
+          "name": "Station Name",
+          "type": "hidden"
+        },
+        {
+          "name": "Participant",
+          "type": "hidden"
+        },
+        {
+          "name": "Physical Unit No.",
+          "type": "hidden"
+        },
+        {
+          "name": "Aggregation",
+          "type": "hidden"
+        },
+        {
+          "name": "DUID",
+          "type": "hidden"
+        },
+        {
+          "name": "CSV for last 24h",
+          "type": "hidden"
+        },
+        {
+          "name": "CSV for all data",
+          "type": "hidden"
+        },
+        {
+          "name": "Latest 24h generation",
+          "type": "hidden"
+        },
+        {
+          "name": "Unit Size (MW)",
+          "type": "hidden"
+        }
+      ],
+      "activeStyle": "Current % of Max Cap",
+      "defaultColumn": {
+        "replaceWithZeroValues": [],
+        "replaceWithNullValues": ["-"]
+      },
+      "defaultStyle": {
+        "time": {
+          "timeColumn": null
+        },
+        "color": {
+          "nullColor": "rgba(255,255,255,0.1)",
+          "nullLabel": "No value",
+          "numberOfBins": 10,
+          "binColors": [
+            "rgb(94,79,162)",
+            "rgb(50,136,189)",
+            "rgb(102,194,165)",
+            "rgb(171,221,164)",
+            "rgb(230,245,152)",
+            "rgb(254,224,139)",
+            "rgb(253,174,97)",
+            "rgb(244,109,67)",
+            "rgb(213,62,79)",
+            "rgb(158,1,66)"
+          ]
+        }
+      },
+      "featureInfoTemplate": {
+        "name": "{{DUID}} - {{Station Name}}: {{Current % of Max Cap}}%",
+        "template": "<h3>{{Station Name}} ({{DUID}})</h3><p><strong>{{Participant}}</strong><div><strong>{{Current Output (MW)}}MW</strong> at {{Most Recent Output Time (AEST)}}</div><div><strong>{{Current % of Reg Cap}}%</strong> of {{Reg Cap (MW)}}MW registered capacity</div><div><strong>{{Current % of Max Cap}}%</strong> of {{Max Cap (MW)}}MW maximum capacity</div></p><table>  <tbody>    <tr>      <td>Category</td>      <td class='strong'>{{Category}}</td>    </tr>    <tr>      <td>Classification</td>      <td class='strong'>{{Classification}}</td>    </tr>    <tr>      <td>Fuel Source</td>      <td class='strong'>{{Fuel Source - Primary}} ({{Fuel Source - Descriptor}})</td>    </tr>    <tr>      <td>Technology Type</td>      <td class='strong'>{{Technology Type - Primary}} ({{Technology Type - Descriptor}})</td>    </tr>    <tr>      <td>Physical Unit No.</td>      <td class='strong'>{{Physical Unit No_}}</td>    </tr>    <tr>      <td>Unit Size (MW)</td>      <td class='strong'>{{Unit Size (MW)}}</td>    </tr>    <tr>      <td>Aggregation</td>      <td class='strong'>{{Aggregation}}</td>    </tr>    <tr>      <td>Region</td>      <td class='strong'>{{Region}}</td>    </tr>    <tr><td>Power generation</td><td><chart id='{{DUID}}' title='{{Station Name}} ({{DUID}})' poll-seconds='300' poll-replace='true' sources='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M' source-names='1d,7d,1m,3m' downloads='https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=7D,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=1M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}?offset=3M,https://services.aremi.data61.io/aemo/v6/duidcsv/{{#terria.urlEncodeComponent}}{{DUID}}{{/terria.urlEncodeComponent}}' download-names='7d,1m,3m,All available' preview-x-label='Last 24 hours' column-names='Time,Power Generation' column-units='Date,MW'></chart></td></tr>  </tbody></table>"
+      }
     },
     {
       "name": "XY Plot",
