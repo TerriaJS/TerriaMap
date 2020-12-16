@@ -20,7 +20,7 @@ function createLoader() {
     // until we load in other modal-like-things like disclaimer windows,
     // but also other notification windows like error messages
     // So, reset it back to app defaults after
-    const catalogzIndexOverride = document.createElement('style');
+    let catalogzIndexOverride = document.createElement('style');
     catalogzIndexOverride.setAttribute('type', 'text/css');
     catalogzIndexOverride.innerHTML = `
         .tjs-explorer-window__modal-wrapper {
@@ -29,7 +29,7 @@ function createLoader() {
     `;
     document.body.appendChild(catalogzIndexOverride);
 
-    const loaderDiv = document.createElement('div');
+    let loaderDiv = document.createElement('div');
     loaderDiv.classList.add("loader-ui");
     const loaderGif = document.createElement('img');
     loaderGif.src = globeGif;
@@ -56,11 +56,16 @@ function createLoader() {
             //     document.body.removeChild(loaderDiv);
             // }, 2000);
           const removeLoaderElements = () => {
-              if (loaderDiv) document.body.removeChild(loaderDiv);
-              if (catalogzIndexOverride) document.body.removeChild(catalogzIndexOverride);
+              if (loaderDiv) {
+                  document.body.removeChild(loaderDiv);
+                  loaderDiv=null;
+              }
+              if (catalogzIndexOverride) {
+                  document.body.removeChild(catalogzIndexOverride);
+                  catalogzIndexOverride=null;
+              }
           };
           loaderDiv.classList.add('loader-ui-hide');
-          setTimeout(() => document.body.removeChild(catalogzIndexOverride), 300);
           loaderDiv.addEventListener('transitionend', removeLoaderElements);
           // also fallback with setTimeout here
           // so we can remove the elements anyway in case of transitionend event failure

@@ -41,7 +41,20 @@ gulp.task('write-version', function(done) {
     done();
 });
 
-gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
+gulp.task('render-index', function renderIndex(done) {
+  var ejs = require('ejs');
+  var JSON5 = require('json5');
+  var serverConfig = JSON5.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
+
+  var index = fs.readFileSync('wwwroot/index.ejs', 'utf8');
+  var baseHrefFromConfig = serverConfig.baseHref;
+  var indexResult = ejs.render(index, { baseHref: baseHrefFromConfig || "/"});
+
+  fs.writeFileSync(path.join('wwwroot', 'index.html'), indexResult);
+  done();
+});
+
+gulp.task('build-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, true);
@@ -49,7 +62,7 @@ gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version
     checkForDuplicateCesium();
 
     runWebpack(webpack, webpackConfig, done);
-}));
+})));
 
 gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
@@ -63,7 +76,11 @@ gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-versi
     }), done);
 }));
 
-gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watchApp(done) {
+gulp.task('watch-render-index', gulp.series('render-index', function watchRenderIndex() {
+  return gulp.watch(['wwwroot/index.ejs', 'devserverconfig.json'], gulp.series('render-index'));
+}));
+
+gulp.task('watch-app', gulp.parallel('watch-render-index', gulp.series('check-terriajs-dependencies', function watchApp(done) {
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
@@ -73,7 +90,7 @@ gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watch
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);
-}));
+})));
 
 gulp.task('copy-terriajs-assets', function() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
@@ -250,14 +267,6 @@ function mergeConfigs(original, override) {
 gulp.task('render-datasource-templates', function(done) {
     var ejs = require('ejs');
     var JSON5 = require('json5');
-    var serverConfig = JSON5.parse(fs.readFileSync('devserverconfig.json', 'utf8'));
-
-    var index = fs.readFileSync('wwwroot/index.ejs', 'utf8');
-    var baseHrefFromConfig = serverConfig.baseHref;
-    var indexResult = ejs.render(index, { baseHref: baseHrefFromConfig || "/"});
-
-    fs.writeFileSync(path.join('wwwroot', 'index.html'), new Buffer(indexResult));
-
     var templateDir = 'datasources';
 
     // until https://github.com/TerriaJS/terriajs/pull/4227 is ready,
