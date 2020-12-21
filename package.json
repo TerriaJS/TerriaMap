@@ -46,7 +46,7 @@
     "gulp": "^4.0.0",
     "husky": "^2.2.0",
     "json5": "^2.1.0",
-    "node-notifier": "^5.1.2",
+    "node-notifier": "^8.0.1",
     "node-sass": "^4.14.1",
     "plugin-error": "^1.0.1",
     "prettier": "1.17.0",
