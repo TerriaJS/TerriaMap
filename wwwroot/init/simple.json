@@ -256,5 +256,7 @@
       "type": "csv",
       "url": "build/TerriaJS/test/csv_nongeo/xy.csv"
     }
-  ]
+  ],
+  "baseMapId": "basemap-bing-aerial-with-labels",
+  "previewBaseMapId": "basemap-positron"
 }
