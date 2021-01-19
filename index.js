@@ -20,7 +20,7 @@ import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
-import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
+// import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/SearchProvider/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
@@ -28,7 +28,7 @@ import render from './lib/Views/render';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
-
+import registerSearchProviders from 'terriajs/lib/Models/SearchProvider/registerSearchProviders'
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
@@ -55,6 +55,9 @@ const viewState = new ViewState({
 });
 
 registerCatalogMembers();
+// Register custom search providers in the core TerriaJS. If you only want to register a subset of them, or to add your own,
+// insert your custom version of the code in the registerSearchProviders function here instead.
+registerSearchProviders();
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
@@ -81,14 +84,12 @@ module.exports = terria.start({
         raiseErrorToUser(terria, e);
     });
     try {
-        viewState.searchState.locationSearchProviders = [
-            new BingMapsSearchProviderViewModel({
-                terria: terria,
-                key: terria.configParameters.bingMapsKey
-            }),
+        /* viewState.searchState.locationSearchProviders = [
+            new BingMapsSearchProviderViewModel("bing-search", terria),
             // new GazetteerSearchProviderViewModel({terria}),
             // new GnafSearchProviderViewModel({terria})
-        ];
+        ]; */
+        viewState.searchState.locationSearchProviders = terria.locationSearchProvidersArray;
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
