@@ -3,7 +3,8 @@
 /*global require,window */
 
 var terriaOptions = {
-    baseUrl: 'build/TerriaJS'
+    baseUrl: 'build/TerriaJS',
+    cesiumIonAccessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3NDU1NGQ4NC1iOWQ3LTRiYjgtYjNkNi1iZDdlZWY4ZTU4NjQiLCJpZCI6Mjk5MiwiaWF0IjoxNTM3NDQ1NzYxfQ.fjQUGky7Y4XZhBk1I6SyvzNlVufeEUJXQNHmNz8Ikiw'
 };
 
 import { runInAction } from "mobx";
@@ -28,6 +29,8 @@ import render from './lib/Views/render';
 import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
+import CatalogMemberFactory from "terriajs/lib/Models/CatalogMemberFactory";
+import MagdaSearchCatalogGroup from "./lib/Models/MagdaSearchCatalogGroup";
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -55,6 +58,12 @@ const viewState = new ViewState({
 });
 
 registerCatalogMembers();
+
+CatalogMemberFactory.register(
+    MagdaSearchCatalogGroup.type,
+    MagdaSearchCatalogGroup
+);
+  
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;

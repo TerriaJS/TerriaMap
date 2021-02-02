@@ -1,0 +1,38 @@
+{
+    "homeCamera": {
+      "north": -8,
+      "east": 158,
+      "south": -45,
+      "west": 109
+    },
+    "catalog": [
+
+      {
+        "type": "magda",
+        "url": "https://data.gov.au",
+        "name": "Magda Item 1",
+        "isMappable": true,
+        "recordId": "ds-dga-2bf938e7-f98c-4f30-8cae-cf4905fcf429"
+      },
+      {
+        "type": "magda",
+        "url": "https://data.gov.au",
+        "name": "Magda Item 2",
+        "isMappable": true,
+        "recordId": "ds-launceston-https://opendata.launceston.tas.gov.au/datasets/cc86127bce3447d6bc49b30a46209a39_20"
+      },
+      {
+          "type": "group",
+          "name": "Harvested DGA",
+          "isOpen": false,
+          "members": [
+              {
+                  "type": "magda-portal",
+                  "name": "Group 1",
+                  "url": "https://data.gov.au/api/v0/search/organisations?limit=1000"
+              } 
+          ]
+      }
+    ]
+  }
+  
