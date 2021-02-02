@@ -3,7 +3,7 @@ import { action, computed, runInAction } from "mobx";
 import URI from "urijs";
 import loadJson from "terriajs/lib/Core/loadJson";
 import TerriaError from "terriajs/lib/Core/TerriaError";
-import AccessControlMixin from "terriajs/lib/ModelMixins/AccessControlMixin";
+// import AccessControlMixin from "terriajs/lib/ModelMixins/AccessControlMixin";
 import CatalogMemberMixin from "terriajs/lib/ModelMixins/CatalogMemberMixin";
 import GroupMixin from "terriajs/lib/ModelMixins/GroupMixin";
 import MagdaReferenceTraits from "terriajs/lib/Traits/MagdaReferenceTraits";
@@ -13,9 +13,10 @@ import {
   MagdaGroupSearchResponse,
   MagdaRecordSearchResponse
 } from "./MagdaSearchDefinitions";
-import CatalogGroup from "terriajs/lib/Models//CatalogGroupNew";
+import CatalogGroup from "terriajs/lib/Models/CatalogGroupNew";
 import CommonStrata from "terriajs/lib/Models//CommonStrata";
 import CreateModel from "terriajs/lib/Models//CreateModel";
+// import Group from "terriajs/lib/Models/Group";
 import LoadableStratum from "terriajs/lib/Models//LoadableStratum";
 import { BaseModel } from "terriajs/lib/Models//Model";
 import proxyCatalogItemUrl from "terriajs/lib/Models//proxyCatalogItemUrl";
@@ -23,11 +24,17 @@ import StratumOrder from "terriajs/lib/Models//StratumOrder";
 import Terria from "terriajs/lib/Models//Terria";
 import CatalogGroupTraits from "terriajs/lib/Traits/CatalogGroupTraits";
 
+interface GroupDataSets {
+  [Key: string]: MagdaItem[];
+}
+
 export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
   static stratumName = "magdaPortal";
+
   groups: CatalogGroup[] = [];
   filteredGroups: CatalogGroup[] = [];
   dataSets: MagdaItem[] = [];
+  groupDataSets: GroupDataSets = {};
   filteredDatasets: MagdaItem[] = [];
 
   constructor(
@@ -59,7 +66,20 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
       | MagdaRecordSearchResponse
       | undefined = undefined;
 
-    // /api/v0/search/datasets?publisher=AADC&format=geojson&format=kml&format=kmz&format=wms&format=wfs&publishingState=published
+    const groupSearchUri = new URI(
+      "https://data.gov.au/api/v0/search/organisations"
+    );
+
+    magdaGroupSearchResponse = await paginateThroughResults(
+      groupSearchUri,
+      catalogGroup
+    );
+
+    if (magdaGroupSearchResponse === undefined) return undefined;
+
+    magdaGroupSearchResponse.organisations.map(group => {});
+
+    // https://data.gov.au/api/v0/search/datasets?publisher=AADC&format=geojson&format=kml&format=kmz&format=wms&format=wfs&format=ogc%20wms&publishingState=published
     const itemSearchUri = new URI(
       "https://data.gov.au/api/v0/search/datasets?publisher=City%20of%20Launceston&format=ogc%20wms&publishingState=published&limit=5"
     );
@@ -94,10 +114,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
   }
 
   private getGroups(): CatalogGroup[] {
-    let groups: CatalogGroup[] = [
-      ...createUngroupedGroup(this),
-      ...createGroupsByPortalGroups(this)
-    ];
+    let groups: CatalogGroup[] = [...createGroupsByPortalGroups(this)];
     groups.sort(function(a, b) {
       if (a.nameInCatalog === undefined || b.nameInCatalog === undefined)
         return 0;
@@ -118,25 +135,67 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
   }
 
   @action
-  createMembersFromDatasets() {
-    const items = this.dataSets.map(ds => {
+  async createGroupDatasets(
+    groupId: string | undefined,
+    groupName: string | undefined
+  ) {
+    if (groupId === undefined || groupName === undefined) return;
+    const theGroup = this._catalogGroup.terria.getModelById(
+      CatalogGroup,
+      groupId
+    );
+
+    // https://data.gov.au/api/v0/search/datasets?publisher=AADC&format=geojson&format=kml&format=kmz&format=wms&format=wfs&format=ogc%20wms&publishingState=published
+    const itemSearchUri = new URI(
+      `https://data.gov.au/api/v0/search/datasets?publisher=${groupName}&format=geojson&format=wms&format=wfs&format=ogc%20wms&publishingState=published&limit=5`
+    );
+    // const itemSearchUri = new URI("https://data.gov.au")
+    //   .segment("/api/v0/search/datasets")
+    //   .addQuery({ limit: 10, publisher: groupName, format: "ogc%20wms", publishingState: "published"});
+
+    let res: MagdaRecordSearchResponse | undefined = undefined;
+
+    res = await paginateThroughResults(itemSearchUri, this._catalogGroup);
+
+    if (res === undefined) return;
+
+    const items = res.dataSets.map(ds => {
       return {
-        id: ds.id,
-        name: ds.name,
-        recordId: ds.id,
+        id: ds.title,
+        name: ds.title,
+        recordId: ds.identifier,
         url: "https://data.gov.au",
         type: "magda",
         isMappable: true
       };
     });
 
-    const theGroup = this.groups.length > 0 ? this.groups[0] : undefined;
-    theGroup?.terria.catalog.group.addMembersFromJson(
-      CommonStrata.definition,
-      items
-    );
-    // theGroup?.addMembersFromJson(CommonStrata.definition, items);
+    theGroup?.addMembersFromJson(CommonStrata.definition, items);
     theGroup?.terria.catalog.group.loadMembers();
+  }
+
+  @action
+  createMembersFromGroups() {
+    const items = this.groups.map(group => {
+      return {
+        id: group.uniqueId,
+        name: group.name,
+        description: group.description,
+        type: "group",
+        isGroup: true,
+        isOpen: false
+      };
+    });
+
+    const theGroup = this._catalogGroup.terria.getModelById(
+      MagdaSearchCatalogGroup,
+      "dga-datasets-grouped-by-organisations"
+    );
+    theGroup?.addMembersFromJson(CommonStrata.definition, items);
+    theGroup?.loadMembers();
+    items.map(it => {
+      this.createGroupDatasets(it.id, it.name);
+    });
   }
 
   @action
@@ -190,7 +249,7 @@ StratumOrder.addLoadStratum(MagdaStratum.stratumName);
 export default class MagdaSearchCatalogGroup extends GroupMixin(
   CatalogMemberMixin(CreateModel(CatalogGroupTraits))
 ) {
-  static readonly type = "magda-portal";
+  static readonly type = "magda-groups";
   url: string = "";
   hideEmptyGroups: boolean = true;
 
@@ -225,7 +284,8 @@ export default class MagdaSearchCatalogGroup extends GroupMixin(
         this.strata.get(MagdaStratum.stratumName)
       );
       if (portalStratum) {
-        portalStratum.createMembersFromDatasets();
+        // portalStratum.createMembersFromDatasets();
+        portalStratum.createMembersFromGroups();
       }
     });
   }
@@ -257,35 +317,32 @@ function createUngroupedGroup(magdaPortal: MagdaStratum) {
 function createGroupsByPortalGroups(magdaPortal: MagdaStratum) {
   if (magdaPortal._magdaGroupResponse === undefined) return [];
   const out: CatalogGroup[] = [];
-  magdaPortal._magdaGroupResponse.results.forEach((group: MagdaPortalGroup) => {
-    const groupId = magdaPortal._catalogGroup.uniqueId + "/" + group.id;
-    let existingGroup = magdaPortal._catalogGroup.terria.getModelById(
-      CatalogGroup,
-      groupId
-    );
-    if (existingGroup === undefined) {
-      existingGroup = createGroup(
-        groupId,
-        magdaPortal._catalogGroup.terria,
-        group.title
+  magdaPortal._magdaGroupResponse.organisations.forEach(
+    (group: MagdaPortalGroup) => {
+      const groupId =
+        magdaPortal._catalogGroup.uniqueId + "/" + group.identifier;
+      let existingGroup = magdaPortal._catalogGroup.terria.getModelById(
+        CatalogGroup,
+        groupId
       );
-      if (group.description) {
-        existingGroup.setTrait(
-          CommonStrata.definition,
-          "description",
-          group.description
+      if (existingGroup === undefined) {
+        existingGroup = createGroup(
+          groupId,
+          magdaPortal._catalogGroup.terria,
+          group.name
         );
+        if (group.description) {
+          existingGroup.setTrait(
+            CommonStrata.definition,
+            "description",
+            group.description
+          );
+        }
       }
-    }
 
-    if (
-      AccessControlMixin.isMixedInto(existingGroup) &&
-      group.access !== undefined
-    ) {
-      existingGroup.setAccessType(group.access);
+      out.push(existingGroup);
     }
-    out.push(existingGroup);
-  });
+  );
   return out;
 }
 

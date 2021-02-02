@@ -6,38 +6,21 @@ export interface MagdaItem {
 }
 
 export interface MagdaPortalGroup {
-  id: string;
-  title: string;
-  isInvitationOnly: boolean;
-  owner: string;
-  description: string;
-  snippet: string;
-  tags: string[];
-  phone: string;
-  sortField: string;
-  sortOrder: string;
-  isViewOnly: boolean;
-  isFav: boolean;
-  thumbnail: string;
-  created: number;
-  modified: number;
-  access: string;
-  userMembership?: {
-    username: string;
-    memberType: string;
-  };
-  protected: boolean;
-  autoJoin: boolean;
-  hasCategorySchema: boolean;
-  isOpenData: boolean;
+  identifier: string;
+  name: string;
+  datasetCount: number;
+  jurisdiction?: string;
+  description?: string;
+  email?: string;
+  aggKeywords: string;
+  website: string;
 }
 
 export interface MagdaGroupSearchResponse {
-  total: number;
+  hitCount: number;
   start: number;
-  num: number;
   nextStart: number;
-  results: MagdaPortalGroup[];
+  organisations: MagdaPortalGroup[];
 }
 
 export interface MagdaRecordSearchResponse {

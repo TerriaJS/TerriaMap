@@ -22,16 +22,12 @@
         "recordId": "ds-launceston-https://opendata.launceston.tas.gov.au/datasets/cc86127bce3447d6bc49b30a46209a39_20"
       },
       {
-          "type": "group",
-          "name": "Harvested DGA",
-          "isOpen": false,
-          "members": [
-              {
-                  "type": "magda-portal",
-                  "name": "Group 1",
-                  "url": "https://data.gov.au/api/v0/search/organisations?limit=1000"
-              } 
-          ]
+        "id": "dga-datasets-grouped-by-organisations",  
+        "name": "DGA groups",
+        "isOpen": false,
+        "type": "magda-groups",
+        "url": "https://data.gov.au/api/v0/search/organisations?limit=1000"
+
       }
     ]
   }
