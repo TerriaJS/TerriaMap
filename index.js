@@ -145,7 +145,9 @@ module.exports = terria.start({
             }
         }
 
-        render(terria, [], viewState);
+        document.title = terria.appName;
+
+        render(terria, [], viewState, {themeOverrides: terria.configParameters.theme});
     } catch (e) {
         console.error(e);
         console.error(e.stack);

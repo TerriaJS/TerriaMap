@@ -3,15 +3,16 @@ import RedBox from "redbox-react";
 import React from "react";
 import Variables from "../Styles/variables.scss";
 
-export default function renderUi(terria, allBaseMaps, viewState) {
+export default function renderUi(terria, allBaseMaps, viewState, uiProps) {
   let render = () => {
     const UI = require("./UserInterface").default;
     ReactDOM.render(
       <UI
+        {...uiProps}
         terria={terria}
         allBaseMaps={allBaseMaps}
         viewState={viewState}
-        themeOverrides={Variables}
+        themeOverrides={Object.assign({}, Variables, uiProps.themeOverrides)}
       />,
       document.getElementById("ui")
     );
