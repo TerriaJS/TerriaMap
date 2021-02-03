@@ -3,7 +3,6 @@ import { action, computed, runInAction } from "mobx";
 import URI from "urijs";
 import loadJson from "terriajs/lib/Core/loadJson";
 import TerriaError from "terriajs/lib/Core/TerriaError";
-// import AccessControlMixin from "terriajs/lib/ModelMixins/AccessControlMixin";
 import CatalogMemberMixin from "terriajs/lib/ModelMixins/CatalogMemberMixin";
 import GroupMixin from "terriajs/lib/ModelMixins/GroupMixin";
 import MagdaReferenceTraits from "terriajs/lib/Traits/MagdaReferenceTraits";
@@ -16,7 +15,6 @@ import {
 import CatalogGroup from "terriajs/lib/Models/CatalogGroupNew";
 import CommonStrata from "terriajs/lib/Models//CommonStrata";
 import CreateModel from "terriajs/lib/Models//CreateModel";
-// import Group from "terriajs/lib/Models/Group";
 import LoadableStratum from "terriajs/lib/Models//LoadableStratum";
 import { BaseModel } from "terriajs/lib/Models//Model";
 import proxyCatalogItemUrl from "terriajs/lib/Models//proxyCatalogItemUrl";
@@ -28,30 +26,25 @@ interface GroupDataSets {
   [Key: string]: MagdaItem[];
 }
 
+const queryFormats =
+  "format=geojson&format=kml&format=kmz&format=wms&format=wfs&format=ogc%20wms&publishingState=published";
+
 export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
   static stratumName = "magdaPortal";
 
   groups: CatalogGroup[] = [];
-  filteredGroups: CatalogGroup[] = [];
-  dataSets: MagdaItem[] = [];
-  groupDataSets: GroupDataSets = {};
-  filteredDatasets: MagdaItem[] = [];
 
   constructor(
     readonly _catalogGroup: MagdaSearchCatalogGroup,
-    readonly _magdaItemResponse: MagdaRecordSearchResponse,
     readonly _magdaGroupResponse: MagdaGroupSearchResponse | undefined
   ) {
     super();
-    this.dataSets = this.getDataSets();
     this.groups = this.getGroups();
-    this.filteredGroups = this.getFilteredGroups();
   }
 
   duplicateLoadableStratum(model: BaseModel): this {
     return new MagdaStratum(
       model as MagdaSearchCatalogGroup,
-      this._magdaItemResponse,
       this._magdaGroupResponse
     ) as this;
   }
@@ -67,7 +60,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
       | undefined = undefined;
 
     const groupSearchUri = new URI(
-      "https://data.gov.au/api/v0/search/organisations"
+      "https://data.gov.au/api/v0/search/organisations?limit=1000"
     );
 
     magdaGroupSearchResponse = await paginateThroughResults(
@@ -77,40 +70,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
 
     if (magdaGroupSearchResponse === undefined) return undefined;
 
-    magdaGroupSearchResponse.organisations.map(group => {});
-
-    // https://data.gov.au/api/v0/search/datasets?publisher=AADC&format=geojson&format=kml&format=kmz&format=wms&format=wfs&format=ogc%20wms&publishingState=published
-    const itemSearchUri = new URI(
-      "https://data.gov.au/api/v0/search/datasets?publisher=City%20of%20Launceston&format=ogc%20wms&publishingState=published&limit=5"
-    );
-    // const itemSearchUri = new URI(catalogGroup.url)
-    //   .segment("/api/v0/search/datasets")
-    //   .addQuery({ limit: 100, publisher: "json" });
-
-    magdaItemSearchResponse = await paginateThroughResults(
-      itemSearchUri,
-      catalogGroup
-    );
-
-    if (magdaItemSearchResponse === undefined) return undefined;
-
-    return new MagdaStratum(
-      catalogGroup,
-      magdaItemSearchResponse,
-      magdaGroupSearchResponse
-    );
-  }
-
-  @computed
-  get members(): MagdaItem[] {
-    return this.dataSets;
-  }
-
-  private getDataSets(): MagdaItem[] {
-    const dataSets: MagdaItem[] = this._magdaItemResponse.dataSets.map(ds => {
-      return { id: ds.identifier, name: ds.title };
-    });
-    return dataSets;
+    return new MagdaStratum(catalogGroup, magdaGroupSearchResponse);
   }
 
   private getGroups(): CatalogGroup[] {
@@ -129,13 +89,8 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
     return groups;
   }
 
-  private getFilteredGroups(): CatalogGroup[] {
-    if (this.groups.length === 0) return [];
-    return this.groups;
-  }
-
   @action
-  async createGroupDatasets(
+  async createDatasetsForSubGroup(
     groupId: string | undefined,
     groupName: string | undefined
   ) {
@@ -145,13 +100,9 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
       groupId
     );
 
-    // https://data.gov.au/api/v0/search/datasets?publisher=AADC&format=geojson&format=kml&format=kmz&format=wms&format=wfs&format=ogc%20wms&publishingState=published
     const itemSearchUri = new URI(
-      `https://data.gov.au/api/v0/search/datasets?publisher=${groupName}&format=geojson&format=wms&format=wfs&format=ogc%20wms&publishingState=published&limit=5`
+      `https://data.gov.au/api/v0/search/datasets?publisher=${groupName}&${queryFormats}&limit=1000`
     );
-    // const itemSearchUri = new URI("https://data.gov.au")
-    //   .segment("/api/v0/search/datasets")
-    //   .addQuery({ limit: 10, publisher: groupName, format: "ogc%20wms", publishingState: "published"});
 
     let res: MagdaRecordSearchResponse | undefined = undefined;
 
@@ -161,7 +112,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
 
     const items = res.dataSets.map(ds => {
       return {
-        id: ds.title,
+        id: "dga-" + ds.title,
         name: ds.title,
         recordId: ds.identifier,
         url: "https://data.gov.au",
@@ -175,7 +126,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
   }
 
   @action
-  createMembersFromGroups() {
+  createSubGroups() {
     const items = this.groups.map(group => {
       return {
         id: group.uniqueId,
@@ -194,53 +145,8 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
     theGroup?.addMembersFromJson(CommonStrata.definition, items);
     theGroup?.loadMembers();
     items.map(it => {
-      this.createGroupDatasets(it.id, it.name);
+      this.createDatasetsForSubGroup(it.id, it.name);
     });
-  }
-
-  @action
-  addCatalogItemToCatalogGroup(
-    catalogItem: any,
-    dataset: MagdaItem,
-    groupId: string
-  ) {
-    let group:
-      | CatalogGroup
-      | undefined = this._catalogGroup.terria.getModelById(
-      CatalogGroup,
-      groupId
-    );
-    if (group !== undefined) {
-      group.add(CommonStrata.definition, catalogItem);
-    }
-  }
-
-  // @action
-  // addCatalogItemByPortalGroupsToCatalogGroup(
-  //   catalogItem: any,
-  //   dataset: MagdaItem
-  // ) {
-  //   if (dataset.groupId === undefined) {
-  //     const groupId = this._catalogGroup.uniqueId + "/ungrouped";
-  //     this.addCatalogItemToCatalogGroup(catalogItem, dataset, groupId);
-  //     return;
-  //   }
-  //   const groupId = this._catalogGroup.uniqueId + "/" + dataset.groupId;
-  //   this.addCatalogItemToCatalogGroup(catalogItem, dataset, groupId);
-  // }
-
-  @action
-  createMemberFromDataset(dataSet: MagdaItem) {
-    const json = {
-      name: dataSet.title,
-      recordId: dataSet.id,
-      url: "https://data.gov.au",
-      type: "magda",
-      isMappable: true
-    };
-    const theGroup = this.groups.length > 0 ? this.groups[0] : undefined;
-    theGroup?.addMembersFromJson(CommonStrata.definition, [json]);
-    theGroup?.loadMembers();
   }
 }
 
@@ -284,8 +190,7 @@ export default class MagdaSearchCatalogGroup extends GroupMixin(
         this.strata.get(MagdaStratum.stratumName)
       );
       if (portalStratum) {
-        // portalStratum.createMembersFromDatasets();
-        portalStratum.createMembersFromGroups();
+        portalStratum.createSubGroups();
       }
     });
   }
@@ -296,22 +201,6 @@ function createGroup(groupId: string, terria: Terria, groupName: string) {
   g.setTrait(CommonStrata.definition, "name", groupName);
   terria.addModel(g);
   return g;
-}
-
-function createUngroupedGroup(magdaPortal: MagdaStratum) {
-  const groupId = magdaPortal._catalogGroup.uniqueId + "/ungrouped";
-  let existingGroup = magdaPortal._catalogGroup.terria.getModelById(
-    CatalogGroup,
-    groupId
-  );
-  if (existingGroup === undefined) {
-    existingGroup = createGroup(
-      groupId,
-      magdaPortal._catalogGroup.terria,
-      "unknown"
-    );
-  }
-  return [existingGroup];
 }
 
 function createGroupsByPortalGroups(magdaPortal: MagdaStratum) {

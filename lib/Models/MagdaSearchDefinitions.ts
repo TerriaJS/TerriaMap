@@ -24,7 +24,7 @@ export interface MagdaGroupSearchResponse {
 }
 
 export interface MagdaRecordSearchResponse {
-  total: number;
+  hitCount: number;
   start: number;
   num: number;
   nextStart: number;
