@@ -1,13 +1,15 @@
 export interface DataSet {
   identifier: string;
   title?: string;
-  type: string;
-  isMappable: boolean;
   publisher: {
     identifier: string;
     name: string;
     description: string;
     aggKeywords: string;
+  };
+  catalog: string;
+  source: {
+    name: string;
   };
 }
 
@@ -17,7 +19,6 @@ export interface MagdaItem {
   recordId: string;
   url: string;
   type: string;
-  isMappable: boolean;
 }
 
 export interface MagdaPortalGroup {

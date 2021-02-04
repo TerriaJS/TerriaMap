@@ -26,7 +26,7 @@
       {
         "id": "dga-datasets-grouped-by-publishers",  
         "name": "DGA groups",
-        "description": "Experimental only",
+        "description": "Search for datasets from the portal now. Typically takes less than 30 seconds.",
         "isOpen": false,
         "type": "magda-portal",
         "url": "https://data.gov.au"

@@ -107,6 +107,11 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
       thePortalGroupId
     );
     theGroup?.addMembersFromJson(CommonStrata.definition, items);
+    theGroup?.setTrait(
+      CommonStrata.definition,
+      "description",
+      `<p> Contains ${items.length} groups.</p> <p>This is still in experimental stage. The quality of datasets varies. Some might not be added to the map.</p>`
+    );
     theGroup?.loadMembers();
   }
 }
@@ -174,25 +179,29 @@ function createGroupsFromDataSets(magdaPortal: MagdaStratum) {
   magdaPortal._magdaRecordSearchResponse.dataSets.forEach(
     (dataSet: DataSet) => {
       const publisher = dataSet.publisher;
-      const groupId =
-        magdaPortal._catalogGroup.uniqueId + "/" + publisher?.identifier;
+      const groupName =
+        publisher && publisher.name
+          ? publisher.name
+          : dataSet.catalog
+          ? dataSet.catalog
+          : dataSet.source && dataSet.source.name
+          ? dataSet.source.name
+          : "Unamed Group";
+
+      const groupId = magdaPortal._catalogGroup.uniqueId + "/" + groupName;
+
       let existingGroup = magdaPortal._catalogGroup.terria.getModelById(
         CatalogGroup,
         groupId
       );
+
       if (existingGroup === undefined) {
-        const groupName =
-          publisher && publisher.name ? publisher.name : "Unamed Group";
         existingGroup = createGroup(
           groupId,
           magdaPortal._catalogGroup.terria,
           groupName
         );
-        if (
-          publisher !== null &&
-          publisher !== undefined &&
-          (publisher.description || publisher.aggKeywords)
-        ) {
+        if (publisher && (publisher.description || publisher.aggKeywords)) {
           existingGroup.setTrait(
             CommonStrata.definition,
             "description",
@@ -201,21 +210,20 @@ function createGroupsFromDataSets(magdaPortal: MagdaStratum) {
               : publisher.aggKeywords
           );
         }
+
+        out.push(existingGroup);
       }
 
       const item: MagdaItem = {
-        id: "dga-" + (dataSet.title ? dataSet.title : dataSet.identifier),
+        id: "dga-" + dataSet.identifier,
         name: dataSet.title ? dataSet.title : dataSet.identifier,
         recordId: dataSet.identifier,
         url: portalUrl,
-        type: "magda",
-        isMappable: true
+        type: "magda"
       };
 
       existingGroup.addMembersFromJson(CommonStrata.definition, [item]);
       existingGroup.terria.catalog.group.loadMembers();
-
-      out.push(existingGroup);
     }
   );
   return out;
