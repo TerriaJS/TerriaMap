@@ -1,8 +1,17 @@
+export interface DataSet {
+  identifier: string;
+  title?: string;
+  type: string;
+  isMappable: boolean;
+}
+
 export interface MagdaItem {
   id: string;
   name?: string;
-  title?: string;
-  description?: string;
+  recordId: string;
+  url: string;
+  type: string;
+  isMappable: boolean;
 }
 
 export interface MagdaPortalGroup {
@@ -28,5 +37,5 @@ export interface MagdaRecordSearchResponse {
   start: number;
   num: number;
   nextStart: number;
-  dataSets: any[];
+  dataSets: DataSet[];
 }

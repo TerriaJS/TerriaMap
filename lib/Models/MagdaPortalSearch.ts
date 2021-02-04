@@ -22,10 +22,6 @@ import StratumOrder from "terriajs/lib/Models//StratumOrder";
 import Terria from "terriajs/lib/Models//Terria";
 import CatalogGroupTraits from "terriajs/lib/Traits/CatalogGroupTraits";
 
-interface GroupDataSets {
-  [Key: string]: MagdaItem[];
-}
-
 const queryFormats =
   "format=geojson&format=kml&format=kmz&format=wms&format=wfs&format=ogc%20wms&publishingState=published";
 
@@ -35,7 +31,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
   groups: CatalogGroup[] = [];
 
   constructor(
-    readonly _catalogGroup: MagdaSearchCatalogGroup,
+    readonly _catalogGroup: MagdaSearchGroups,
     readonly _magdaGroupResponse: MagdaGroupSearchResponse | undefined
   ) {
     super();
@@ -44,13 +40,13 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
 
   duplicateLoadableStratum(model: BaseModel): this {
     return new MagdaStratum(
-      model as MagdaSearchCatalogGroup,
+      model as MagdaSearchGroups,
       this._magdaGroupResponse
     ) as this;
   }
 
   static async load(
-    catalogGroup: MagdaSearchCatalogGroup
+    catalogGroup: MagdaSearchGroups
   ): Promise<MagdaStratum | undefined> {
     let magdaGroupSearchResponse:
       | MagdaGroupSearchResponse
@@ -110,10 +106,10 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
 
     if (res === undefined) return;
 
-    const items = res.dataSets.map(ds => {
+    const items: MagdaItem[] = res.dataSets.map(ds => {
       return {
-        id: "dga-" + ds.title,
-        name: ds.title,
+        id: "dga-" + (ds.title ? ds.title : ds.identifier),
+        name: ds.title ? ds.title : ds.identifier,
         recordId: ds.identifier,
         url: "https://data.gov.au",
         type: "magda",
@@ -139,7 +135,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
     });
 
     const theGroup = this._catalogGroup.terria.getModelById(
-      MagdaSearchCatalogGroup,
+      MagdaSearchGroups,
       "dga-datasets-grouped-by-organisations"
     );
     theGroup?.addMembersFromJson(CommonStrata.definition, items);
@@ -152,10 +148,10 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
 
 StratumOrder.addLoadStratum(MagdaStratum.stratumName);
 
-export default class MagdaSearchCatalogGroup extends GroupMixin(
+export default class MagdaSearchGroups extends GroupMixin(
   CatalogMemberMixin(CreateModel(CatalogGroupTraits))
 ) {
-  static readonly type = "magda-groups";
+  static readonly type = "magda-portal";
   url: string = "";
   hideEmptyGroups: boolean = true;
 
@@ -220,11 +216,11 @@ function createGroupsByPortalGroups(magdaPortal: MagdaStratum) {
           magdaPortal._catalogGroup.terria,
           group.name
         );
-        if (group.description) {
+        if (group.description || group.aggKeywords) {
           existingGroup.setTrait(
             CommonStrata.definition,
             "description",
-            group.description
+            group.description ? group.description : group.aggKeywords
           );
         }
       }
@@ -237,7 +233,7 @@ function createGroupsByPortalGroups(magdaPortal: MagdaStratum) {
 
 async function paginateThroughResults(
   uri: any,
-  catalogGroup: MagdaSearchCatalogGroup
+  catalogGroup: MagdaSearchGroups
 ) {
   const magdaPortalResponse = await getPortalInformation(uri, catalogGroup);
   if (magdaPortalResponse === undefined || !magdaPortalResponse) {
@@ -266,10 +262,7 @@ async function paginateThroughResults(
   return magdaPortalResponse;
 }
 
-async function getPortalInformation(
-  uri: any,
-  catalogGroup: MagdaSearchCatalogGroup
-) {
+async function getPortalInformation(uri: any, catalogGroup: MagdaSearchGroups) {
   try {
     const response = await loadJson(
       proxyCatalogItemUrl(
@@ -287,7 +280,7 @@ async function getPortalInformation(
 
 async function getMoreResults(
   uri: any,
-  catalogGroup: MagdaSearchCatalogGroup,
+  catalogGroup: MagdaSearchGroups,
   baseResults: MagdaRecordSearchResponse,
   nextResultStart: number
 ) {

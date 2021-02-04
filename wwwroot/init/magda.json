@@ -8,6 +8,7 @@
     "catalog": [
 
       {
+        "id": "nm-magda-item-1",
         "type": "magda",
         "url": "https://data.gov.au",
         "name": "Magda Item 1",
@@ -15,6 +16,7 @@
         "recordId": "ds-dga-2bf938e7-f98c-4f30-8cae-cf4905fcf429"
       },
       {
+        "id": "nm-magda-item-2",
         "type": "magda",
         "url": "https://data.gov.au",
         "name": "Magda Item 2",
@@ -24,9 +26,10 @@
       {
         "id": "dga-datasets-grouped-by-organisations",  
         "name": "DGA groups",
+        "description": "Experimental only",
         "isOpen": false,
-        "type": "magda-groups",
-        "url": "https://data.gov.au/api/v0/search/organisations?limit=1000"
+        "type": "magda-portal",
+        "url": "https://data.gov.au"
 
       }
     ]
