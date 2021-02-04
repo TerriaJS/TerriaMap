@@ -24,7 +24,7 @@
         "recordId": "ds-launceston-https://opendata.launceston.tas.gov.au/datasets/cc86127bce3447d6bc49b30a46209a39_20"
       },
       {
-        "id": "dga-datasets-grouped-by-organisations",  
+        "id": "dga-datasets-grouped-by-publishers",  
         "name": "DGA groups",
         "description": "Experimental only",
         "isOpen": false,

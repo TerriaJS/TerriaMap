@@ -3,6 +3,12 @@ export interface DataSet {
   title?: string;
   type: string;
   isMappable: boolean;
+  publisher: {
+    identifier: string;
+    name: string;
+    description: string;
+    aggKeywords: string;
+  };
 }
 
 export interface MagdaItem {
@@ -25,17 +31,7 @@ export interface MagdaPortalGroup {
   website: string;
 }
 
-export interface MagdaGroupSearchResponse {
+export interface MagdaDataSetSearchResponse {
   hitCount: number;
-  start: number;
-  nextStart: number;
-  organisations: MagdaPortalGroup[];
-}
-
-export interface MagdaRecordSearchResponse {
-  hitCount: number;
-  start: number;
-  num: number;
-  nextStart: number;
   dataSets: DataSet[];
 }
