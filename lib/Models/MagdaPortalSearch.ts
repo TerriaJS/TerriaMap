@@ -295,9 +295,8 @@ async function getMoreResults(
       magdaItemSearchResponse.dataSets
     );
 
-    const start = nextResultStart + magdaItemSearchResponse.dataSets.length;
-    // return start >= magdaItemSearchResponse.hitCount ? -1 : start;
-    return start < magdaItemSearchResponse.hitCount - 1 ? start : -1;
+    const start = nextResultStart + queryLimit;
+    return start >= magdaItemSearchResponse.hitCount ? -1 : start;
   } catch (err) {
     console.log(err);
     return -1;

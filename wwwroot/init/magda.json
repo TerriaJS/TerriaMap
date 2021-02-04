@@ -6,31 +6,13 @@
       "west": 109
     },
     "catalog": [
-
-      {
-        "id": "nm-magda-item-1",
-        "type": "magda",
-        "url": "https://data.gov.au",
-        "name": "Magda Item 1",
-        "isMappable": true,
-        "recordId": "ds-dga-2bf938e7-f98c-4f30-8cae-cf4905fcf429"
-      },
-      {
-        "id": "nm-magda-item-2",
-        "type": "magda",
-        "url": "https://data.gov.au",
-        "name": "Magda Item 2",
-        "isMappable": true,
-        "recordId": "ds-launceston-https://opendata.launceston.tas.gov.au/datasets/cc86127bce3447d6bc49b30a46209a39_20"
-      },
       {
         "id": "dga-datasets-grouped-by-publishers",  
-        "name": "DGA groups",
-        "description": "Search for datasets from the portal now. Typically takes less than 30 seconds.",
+        "name": "Selected Groups from data.gov.au",
+        "description": "Search for datasets from the portal now, typically taking less than 30 seconds.",
         "isOpen": false,
         "type": "magda-portal",
         "url": "https://data.gov.au"
-
       }
     ]
   }
