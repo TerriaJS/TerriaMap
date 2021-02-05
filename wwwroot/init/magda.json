@@ -8,7 +8,7 @@
     "catalog": [
       {
         "id": "dga-datasets-grouped-by-publishers",  
-        "name": "Selected Groups from data.gov.au",
+        "name": "Selected Datasets from data.gov.au",
         "description": "Search for datasets from the portal now, typically taking less than 30 seconds.",
         "isOpen": false,
         "type": "magda-portal",

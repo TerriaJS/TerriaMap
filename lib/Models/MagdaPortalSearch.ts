@@ -110,7 +110,7 @@ export class MagdaStratum extends LoadableStratum(MagdaReferenceTraits) {
     theGroup?.setTrait(
       CommonStrata.definition,
       "description",
-      `<p> Contains ${items.length} groups.</p> <p>This is still in experimental stage. The quality of datasets varies. Some might not be added to the map.</p>`
+      `<p> Found ${this._magdaRecordSearchResponse?.hitCount} datasets grouped by ${items.length} publishers.</p> <p>This is still in experimental stage. The quality of datasets varies. Not all datasets can be added to the map.</p>`
     );
     theGroup?.loadMembers();
   }
