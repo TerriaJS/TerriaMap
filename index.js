@@ -1,7 +1,5 @@
 'use strict';
 
-/*global require,window */
-
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
