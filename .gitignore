@@ -2,6 +2,8 @@ node_modules/
 .idea/
 wwwroot/build/
 wwwroot/doc/
+wwwroot/prerendered/
+wwwroot/index.html
 npm-debug.log
 version.js
 wwwroot/init/nm.json
