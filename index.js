@@ -1,7 +1,5 @@
 'use strict';
 
-/*global require,window */
-
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
@@ -18,14 +16,13 @@ import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
 import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
-// import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
+import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchProvider';
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
-import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
 
@@ -92,25 +89,7 @@ module.exports = terria.start({
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
-        // updateApplicationOnMessageFromParentWindow(terria, window);
-
-        // Create the various base map options.
-        // var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-        // var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
-
-        // var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
-        const globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
-                if (terria.updateBaseMaps) {
-          terria.updateBaseMaps([...globalBaseMaps]);
-        } else {
-          runInAction(() => {
-            terria.baseMaps.push(...globalBaseMaps);
-          });
-        }
-
-        // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-        // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
-        // const allBaseMaps = undefined;
+        updateApplicationOnMessageFromParentWindow(terria, window);
 
         // Show a modal disclaimer before user can do anything else.
         if (defined(terria.configParameters.globalDisclaimer)) {

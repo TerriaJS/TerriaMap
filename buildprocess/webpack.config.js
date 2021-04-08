@@ -1,17 +1,11 @@
 'use strict';
 
 /*global require*/
-var fs = require('fs');
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var generateRoutes = require("./generate-init-routes");
-var generateTerriaSitemap = require("./generate-terria-sitemap");
-var PrerenderSPAPlugin = require("prerender-spa-plugin");
-var Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 var path = require('path');
-var json5 = require("json5");
 
-module.exports = function(webpack, devMode, hot) {
+module.exports = function(devMode, hot) {
     var config = {
         mode: devMode ? 'development' : 'production',
         entry: './entry.js',

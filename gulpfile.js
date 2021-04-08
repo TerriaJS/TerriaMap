@@ -57,7 +57,7 @@ gulp.task('render-index', function renderIndex(done) {
 gulp.task('build-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, true);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(true);
 
     checkForDuplicateCesium();
 
@@ -67,7 +67,7 @@ gulp.task('build-app', gulp.parallel('render-index', gulp.series('check-terriajs
 gulp.task('release-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, false);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(false);
 
     checkForDuplicateCesium();
 
@@ -84,7 +84,7 @@ gulp.task('watch-app', gulp.parallel('watch-render-index', gulp.series('check-te
     var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
-    var webpackConfig = require('./buildprocess/webpack.config.js')(webpack, true, false);
+    var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
 
     checkForDuplicateCesium();
 
