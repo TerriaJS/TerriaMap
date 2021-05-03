@@ -10,7 +10,6 @@ import { runInAction } from "mobx";
 import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
-import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
@@ -72,10 +71,10 @@ module.exports = terria.start({
         terria: terria
     })
 }).catch(function(e) {
-    raiseErrorToUser(terria, e);
+  terria.raiseErrorToUser(e);
 }).finally(function() {
     terria.loadInitSources().catch(e => {
-        raiseErrorToUser(terria, e);
+      terria.raiseErrorToUser( e);
     });
     try {
         viewState.searchState.locationSearchProviders = [
@@ -109,7 +108,7 @@ module.exports = terria.start({
                     title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
                     confirmText: (globalDisclaimer.buttonTitle || "Ok"),
                     denyText: (globalDisclaimer.denyText || "Cancel"),
-                    denyAction: function() { 
+                    denyAction: function() {
                         window.location = globalDisclaimer.afterDenyLocation || "https://terria.io/";
                     },
                     width: 600,
