@@ -108,9 +108,9 @@ module.exports = terria.start({
                     title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
                     confirmText: (globalDisclaimer.buttonTitle || "Ok"),
                     denyText: (globalDisclaimer.denyText || "Cancel"),
-                    denyAction: function() {
-                        window.location = globalDisclaimer.afterDenyLocation || "https://terria.io/";
-                    },
+                    denyAction: globalDisclaimer.afterDenyLocation ? function() {
+                        window.location = globalDisclaimer.afterDenyLocation;
+                    } : undefined,
                     width: 600,
                     height: 550,
                     message: message,
