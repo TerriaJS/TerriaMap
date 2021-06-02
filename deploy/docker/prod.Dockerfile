@@ -10,7 +10,6 @@ ARG no_proxy
 # COPY ./CA-Cert.crt /usr/local/share/ca-certificates/
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        git \
         ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
@@ -18,12 +17,7 @@ RUN apt-get update \
 # git -- required for node package url-loader
 ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 # Add Proxy / CA Certs for Git, Yarn, NPM
-RUN git config --global http.proxy ${http_proxy} \
-    && git config --global https.proxy ${https_proxy} \
-    && git config --global url."https://github.com/".insteadOf git@github.com: \
-    && git config --global url."https://".insteadOf git:// \
-    && git config --global http.sslCAInfo /etc/ssl/certs/ca-certificates.crt \
-    && yarn config set proxy $http_proxy \
+RUN yarn config set proxy $http_proxy \
     && yarn config set https-proxy $https_proxy \
     && yarn config set no-proxy $no_proxy \
     && yarn config set cafile /etc/ssl/certs/ca-certificates.crt \
@@ -39,6 +33,18 @@ LABEL "NODE_IMG_VERSION"="${NODE_IMG_VERSION}" \
 
 
 FROM base as build
+ARG http_proxy
+ARG https_proxy
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+RUN git config --global http.proxy ${http_proxy} \
+    && git config --global https.proxy ${https_proxy} \
+    && git config --global url."https://github.com/".insteadOf git@github.com: \
+    && git config --global url."https://".insteadOf git:// \
+    && git config --global http.sslCAInfo /etc/ssl/certs/ca-certificates.crt
 WORKDIR /opt/app
 # Add TerriaMap and any modified packages (terriajs, cesium)
 COPY . .
@@ -49,7 +55,6 @@ RUN npm run gulp release
 FROM base as runtime
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        git \
         gdal-bin \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
