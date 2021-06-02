@@ -16,11 +16,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && update-ca-certificates
 # git -- required for node package url-loader
-## DELME
-COPY --from=redhbr001.cgg.com/satmap/debian:buster \
-    /etc/ssl/certs/ca-certificates.crt \
-    /etc/ssl/certs/ca-certificates.crt
-## DELME
 ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 # Add Proxy / CA Certs for Git, Yarn, NPM
 RUN git config --global http.proxy ${http_proxy} \
