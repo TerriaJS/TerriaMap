@@ -87,51 +87,51 @@
     },
     "helpContent": [
       {
-        "title": "gettingstarted.title",
+        "title": "translate#gettingstarted.title",
         "itemName": "gettingstarted",
         "paneMode": "videoAndContent",
-        "markdownText": "gettingstarted.markdownText",
+        "markdownText": "translate#gettingstarted.markdownText",
         "icon": "video",
-        "videoUrl": "gettingstarted.videoUrl",
-        "placeholderImage": "gettingstarted.placeholderImage"
+        "videoUrl": "translate#gettingstarted.videoUrl",
+        "placeholderImage": "translate#gettingstarted.placeholderImage"
       },
       {
-        "title": "stepbystepguide.title",
+        "title": "translate#stepbystepguide.title",
         "itemName": "stepbystepguide",
         "paneMode": "trainer",
-        "markdownText": "stepbystepguide.markdownText",
+        "markdownText": "translate#stepbystepguide.markdownText",
         "icon": "oneTwoThree",
         "trainerItems": [
           {
-            "title": "stepbystepguide.gettingstarted.title",
-            "footnote": "stepbystepguide.gettingstarted.footnote",
+            "title": "translate#stepbystepguide.gettingstarted.title",
+            "footnote": "translate#stepbystepguide.gettingstarted.footnote",
             "steps": [
               {
-                "title": "stepbystepguide.gettingstarted.step1.title",
-                "markdownDescription": "stepbystepguide.gettingstarted.step1.markdownDescription"
+                "title": "translate#stepbystepguide.gettingstarted.step1.title",
+                "markdownDescription": "translate#stepbystepguide.gettingstarted.step1.markdownDescription"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step2.title",
-                "markdownDescription": "stepbystepguide.gettingstarted.step2.markdownDescription"
+                "title": "translate#stepbystepguide.gettingstarted.step2.title",
+                "markdownDescription": "translate#stepbystepguide.gettingstarted.step2.markdownDescription"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step3.title",
-                "markdownDescription": "stepbystepguide.gettingstarted.step3.markdownDescription"
+                "title": "translate#stepbystepguide.gettingstarted.step3.title",
+                "markdownDescription": "translate#stepbystepguide.gettingstarted.step3.markdownDescription"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step4.title"
+                "title": "translate#stepbystepguide.gettingstarted.step4.title"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step5.title"
+                "title": "translate#stepbystepguide.gettingstarted.step5.title"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step6.title"
+                "title": "translate#stepbystepguide.gettingstarted.step6.title"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step7.title"
+                "title": "translate#stepbystepguide.gettingstarted.step7.title"
               },
               {
-                "title": "stepbystepguide.gettingstarted.step8.title"
+                "title": "translate#stepbystepguide.gettingstarted.step8.title"
               }
             ]
           }
@@ -198,40 +198,40 @@
     ],
     "helpContentTerms": [
       {
-        "term": "helpContentTerm1.term",
-        "aliases": "helpContentTerm1.aliases",
-        "content": "helpContentTerm1.content"
+        "term": "translate#helpContentTerm1.term",
+        "aliases": "translate#helpContentTerm1.aliases",
+        "content": "translate#helpContentTerm1.content"
       },
       {
-        "term": "helpContentTerm2.term",
-        "aliases": "helpContentTerm2.aliases",
-        "content": "helpContentTerm1.content"
+        "term": "translate#helpContentTerm2.term",
+        "aliases": "translate#helpContentTerm2.aliases",
+        "content": "translate#helpContentTerm1.content"
       },
       {
-        "term": "helpContentTerm3.term",
-        "content": "helpContentTerm3.content"
+        "term": "translate#helpContentTerm3.term",
+        "content": "translate#helpContentTerm3.content"
       },
       {
-        "term": "helpContentTerm4.term",
-        "content": "helpContentTerm4.content"
+        "term": "translate#helpContentTerm4.term",
+        "content": "translate#helpContentTerm4.content"
       },
       {
-        "term": "helpContentTerm5.term",
+        "term": "translate#helpContentTerm5.term",
         "aliases": ["catalogue"],
-        "content": "helpContentTerm5.content"
+        "content": "translate#helpContentTerm5.content"
       },
       {
-        "term": "helpContentTerm6.term",
-        "aliases": "helpContentTerm6.aliases",
-        "content": "helpContentTerm6.content"
+        "term": "translate#helpContentTerm6.term",
+        "aliases": "translate#helpContentTerm6.aliases",
+        "content": "translate#helpContentTerm6.content"
       },
       {
-        "term": "helpContentTerm7.term",
-        "content": "helpContentTerm7.content"
+        "term": "translate#helpContentTerm7.term",
+        "content": "translate#helpContentTerm7.content"
       },
       {
-        "term": "helpContentTerm8.term",
-        "content": "helpContentTerm8.content"
+        "term": "translate#helpContentTerm8.term",
+        "content": "translate#helpContentTerm8.content"
       }
     ]
     // Or direct strings
