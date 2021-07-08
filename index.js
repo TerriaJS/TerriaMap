@@ -1,7 +1,5 @@
 'use strict';
 
-/*global require,window */
-
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
@@ -12,7 +10,6 @@ import { runInAction } from "mobx";
 import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
-import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
@@ -25,7 +22,6 @@ import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
-import createGlobalBaseMapOptions from 'terriajs/lib/ViewModels/createGlobalBaseMapOptions';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
 import registerSearchProviders from 'terriajs/lib/Models/SearchProvider/registerSearchProviders';
@@ -78,10 +74,10 @@ module.exports = terria.start({
         terria: terria
     })
 }).catch(function(e) {
-    raiseErrorToUser(terria, e);
+  terria.raiseErrorToUser(e);
 }).finally(function() {
     terria.loadInitSources().catch(e => {
-        raiseErrorToUser(terria, e);
+      terria.raiseErrorToUser( e);
     });
     try {
         /* viewState.searchState.locationSearchProviders = [
@@ -94,24 +90,6 @@ module.exports = terria.start({
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
         updateApplicationOnMessageFromParentWindow(terria, window);
-
-        // Create the various base map options.
-        // var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-        // var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
-
-        // var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
-        const globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
-                if (terria.updateBaseMaps) {
-          terria.updateBaseMaps([...globalBaseMaps]);
-        } else {
-          runInAction(() => {
-            terria.baseMaps.push(...globalBaseMaps);
-          });
-        }
-
-        // var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-        // selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
-        // const allBaseMaps = undefined;
 
         // Show a modal disclaimer before user can do anything else.
         if (defined(terria.configParameters.globalDisclaimer)) {
@@ -131,9 +109,9 @@ module.exports = terria.start({
                     title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
                     confirmText: (globalDisclaimer.buttonTitle || "Ok"),
                     denyText: (globalDisclaimer.denyText || "Cancel"),
-                    denyAction: function() { 
-                        window.location = globalDisclaimer.afterDenyLocation || "https://terria.io/";
-                    },
+                    denyAction: globalDisclaimer.afterDenyLocation ? function() {
+                        window.location = globalDisclaimer.afterDenyLocation;
+                    } : undefined,
                     width: 600,
                     height: 550,
                     message: message,

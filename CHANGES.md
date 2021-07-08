@@ -13,6 +13,7 @@ Change Log
 * Added default help content & `languageOverrides.json` for i18n
 * Add back updateApplicationOnMessageFromParentWindow
 * Update youtube urls to nocookie version
+* Removed cancel/deny button from global disclaimer unless `globalDisclaimer.afterDenyLocation` is set with a website to navigate to.
 
 ### Next Release
 
