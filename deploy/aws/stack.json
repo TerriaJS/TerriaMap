@@ -303,6 +303,9 @@
           ]
         },
         "Path": "/",
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+        ],
         "Policies": [
           {
             "PolicyDocument": {
