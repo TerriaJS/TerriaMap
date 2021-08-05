@@ -94,6 +94,7 @@
     "stop": "pm2 stop ecosystem.config.js",
     "pm2": "pm2",
     "gulp": "gulp",
+    "gulp:watch": "gulp watch",
     "postinstall": "echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && npm ci && npm run deploy-without-reinstall",
