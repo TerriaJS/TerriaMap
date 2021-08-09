@@ -73,9 +73,7 @@ module.exports = terria.start({
 }).catch(function(e) {
   terria.raiseErrorToUser(e);
 }).finally(function() {
-    terria.loadInitSources().catch(e => {
-      terria.raiseErrorToUser( e);
-    });
+    terria.loadInitSources().then(result => result.raiseError(terria));
     try {
         viewState.searchState.locationSearchProviders = [
             new BingMapsSearchProviderViewModel({
