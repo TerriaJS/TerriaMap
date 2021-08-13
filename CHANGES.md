@@ -1,6 +1,20 @@
 Change Log
 ==========
 
+### MobX Development
+
+* Fix manifest.json start_url 
+* Move About & Related Maps to left hand side
+* Default to console analytics in development
+* Allow translation overrides via gulp
+* Re-enabled disclaimer via newly ported disclaimer component
+* Re-enabled measure tool
+* Development builds sped up by 3~20x - ts-loader is now optional & TypeScript being transpiled by babel-loader, keeping type check safety on a separate thread
+* Added default help content & `languageOverrides.json` for i18n
+* Add back updateApplicationOnMessageFromParentWindow
+* Update youtube urls to nocookie version
+* Removed cancel/deny button from global disclaimer unless `globalDisclaimer.afterDenyLocation` is set with a website to navigate to.
+
 * Fix manifest.json start_url
 
 ### Next Release

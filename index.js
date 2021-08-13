@@ -1,35 +1,42 @@
 'use strict';
 
-/*global require,window */
-
 var terriaOptions = {
     baseUrl: 'build/TerriaJS'
 };
 
+import { runInAction } from "mobx";
+
 // checkBrowserCompatibility('ui');
+import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
-import raiseErrorToUser from 'terriajs/lib/Models/raiseErrorToUser';
-import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
-import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
+// import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
+// import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
 import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
-import BingMapsSearchProviderViewModel from 'terriajs/lib/ViewModels/BingMapsSearchProviderViewModel.js';
-import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
-import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
-import defined from 'terriajs-cesium/Source/Core/defined';
+import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/SearchProviders/BingMapsSearchProvider';
+// import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
+// import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
+// import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
+import registerCatalogMembers from 'terriajs/lib/Models/Catalog/registerCatalogMembers';
+import defined from 'terriajs-cesium/Source/Core/defined';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
-registerCatalogMembers();
-registerAnalytics();
+// registerCatalogMembers();
+// registerAnalytics();
 
-terriaOptions.analytics = new GoogleAnalytics();
+// we check exact match for development to reduce chances that production flag isn't set on builds(?)
+if (process.env.NODE_ENV === "development") {
+    terriaOptions.analytics = new ConsoleAnalytics();
+} else {
+    terriaOptions.analytics = new GoogleAnalytics();
+}
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 var terria = new Terria(terriaOptions);
@@ -42,6 +49,8 @@ registerCustomComponentTypes(terria);
 const viewState = new ViewState({
     terria: terria
 });
+
+registerCatalogMembers();
 
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
@@ -61,33 +70,23 @@ module.exports = terria.start({
     shareDataService: new ShareDataService({
         terria: terria
     })
-}).otherwise(function(e) {
-    raiseErrorToUser(terria, e);
-}).always(function() {
+}).catch(function(e) {
+  terria.raiseErrorToUser(e);
+}).finally(function() {
+    terria.loadInitSources().then(result => result.raiseError(terria));
     try {
         viewState.searchState.locationSearchProviders = [
             new BingMapsSearchProviderViewModel({
                 terria: terria,
                 key: terria.configParameters.bingMapsKey
             }),
-            new GazetteerSearchProviderViewModel({terria}),
-            new GnafSearchProviderViewModel({terria})
+            // new GazetteerSearchProviderViewModel({terria}),
+            // new GnafSearchProviderViewModel({terria})
         ];
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
         updateApplicationOnMessageFromParentWindow(terria, window);
-
-        // Create the various base map options.
-        var createAustraliaBaseMapOptions = require('terriajs/lib/ViewModels/createAustraliaBaseMapOptions');
-        var createGlobalBaseMapOptions = require('terriajs/lib/ViewModels/createGlobalBaseMapOptions');
-        var selectBaseMap = require('terriajs/lib/ViewModels/selectBaseMap');
-
-        var australiaBaseMaps = createAustraliaBaseMapOptions(terria);
-        var globalBaseMaps = createGlobalBaseMapOptions(terria, terria.configParameters.bingMapsKey);
-
-        var allBaseMaps = australiaBaseMaps.concat(globalBaseMaps);
-        selectBaseMap(terria, allBaseMaps, 'Bing Maps Aerial with Labels', true);
 
         // Show a modal disclaimer before user can do anything else.
         if (defined(terria.configParameters.globalDisclaimer)) {
@@ -106,22 +105,23 @@ module.exports = terria.start({
                 var options = {
                     title: (globalDisclaimer.title !== undefined) ? globalDisclaimer.title : 'Warning',
                     confirmText: (globalDisclaimer.buttonTitle || "Ok"),
+                    denyText: (globalDisclaimer.denyText || "Cancel"),
+                    denyAction: globalDisclaimer.afterDenyLocation ? function() {
+                        window.location = globalDisclaimer.afterDenyLocation;
+                    } : undefined,
                     width: 600,
                     height: 550,
                     message: message,
                     horizontalPadding : 100
                 };
-                viewState.notifications.push(options);
+                runInAction(() => {
+                    viewState.disclaimerSettings = options;
+                    viewState.disclaimerVisible = true;
+                });
             }
         }
 
-        // Update the ViewState based on Terria config parameters.
-        // Note: won't do anything unless terriajs version is >7.9.0
-        if (defined(viewState.afterTerriaStarted)) {
-            viewState.afterTerriaStarted();
-        }
-
-        render(terria, allBaseMaps, viewState);
+        render(terria, [], viewState);
     } catch (e) {
         console.error(e);
         console.error(e.stack);

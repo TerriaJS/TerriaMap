@@ -17,7 +17,7 @@ module.exports = function(devMode, hot) {
             sourcePrefix: '', // to avoid breaking multi-line string literals by inserting extra tabs.
             globalObject: '(self || window)' // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
         },
-        devtool: devMode ? 'cheap-inline-source-map' : 'source-map',
+        devtool: devMode ? 'eval-cheap-module-source-map' : 'source-map',
         module: {
             rules: [
                 {
@@ -26,22 +26,60 @@ module.exports = function(devMode, hot) {
                     loader: 'raw-loader'
                 },
                 {
-                    test: /\.(js|jsx)$/,
+                    test: /\.(ts|js)x?$/,
                     include: [
                         path.resolve(__dirname, '..', 'index.js'),
                         path.resolve(__dirname, '..', 'entry.js'),
                         path.resolve(__dirname, '..', 'lib')
-                        
                     ],
-                    loader: 'babel-loader',
-                    options: {
-                        sourceMap: false, // generated sourcemaps are currently bad, see https://phabricator.babeljs.io/T7257
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: [
-                            'babel-plugin-jsx-control-statements',
-                            '@babel/plugin-transform-modules-commonjs'
-                        ]
-                    }
+                    use: [
+                        {
+                            // Replace Babel's super.property getter with one that is MobX aware.
+                            loader: require.resolve('string-replace-loader'),
+                            options: {
+                                search: 'function _get\\(target, property, receiver\\).*',
+                                replace: 'var _get = require(\'terriajs/lib/Core/superGet\').default;',
+                                flags: 'g'
+                            }
+                        },
+                        {
+                            loader: 'babel-loader',
+                            options: {
+                                cacheDirectory: true,
+                                presets: [
+                                  [
+                                    '@babel/preset-env',
+                                    {
+                                      corejs: 3,
+                                      useBuiltIns: "usage"
+                                    }
+                                  ],
+                                  '@babel/preset-react',
+                                  ['@babel/typescript', {allowNamespaces: true}]
+                                ],
+                                plugins: [
+                                    'babel-plugin-jsx-control-statements',
+                                    '@babel/plugin-transform-modules-commonjs',
+                                    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+                                    '@babel/proposal-class-properties',
+                                    '@babel/proposal-object-rest-spread',
+                                    'babel-plugin-styled-components',
+                                    require.resolve('@babel/plugin-syntax-dynamic-import')
+                                ]
+                            }
+                        },
+                        // Re-enable this if we need to observe any differences in the
+                        // transpilation via ts-loader, & babel's stripping of types,
+                        // or if TypeScript has newer features that babel hasn't
+                        // caught up with
+                        // {
+                        //     loader: require.resolve('ts-loader'),
+                        //     options: {
+                        //          transpileOnly: true
+                        //         // configFile: path.resolve(__dirname, '..', 'node_modules', 'terriajs', 'tsconfig.json')
+                        //     }
+                        // }
+                    ]
                 },
                 {
                     test: /\.(png|jpg|svg|gif)$/,
@@ -79,7 +117,12 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        'resolve-url-loader?sourceMap',
+                        {                                                                                                                                                                                                                                                                                           
+                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
+                            options: {                                                                                                                                                                                                                                                                                
+                                sourceMap: false                                                                                                                                                                                                                                                                        
+                            }                                                                                                                                                                                                                                                                                         
+                        },
                         'sass-loader?sourceMap'
                     ] : [
                         MiniCssExtractPlugin.loader,
@@ -93,7 +136,12 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        'resolve-url-loader?sourceMap',
+                        {                                                                                                                                                                                                                                                                                           
+                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
+                            options: {                                                                                                                                                                                                                                                                                
+                                sourceMap: false                                                                                                                                                                                                                                                                        
+                            }                                                                                                                                                                                                                                                                                         
+                        },
                         'sass-loader?sourceMap'
                     ]
                 }

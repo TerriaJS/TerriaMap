@@ -1,14 +1,17 @@
 const globeGif = require('./lib/Styles/globe.gif');
+const polyfill = require("terriajs/lib/Core/polyfill");
+
 require('./lib/Styles/loader.css');
 
 function loadMainScript() {
     // load the main chunk
     return new Promise((resolve, reject) => {
+      require.ensure(['terriajs/lib/Core/prerequisites'], function(require) {
+        require('terriajs/lib/Core/prerequisites');
         require.ensure(['./index'], function(require) {
-            resolve(require('./index'));
-        }, function(error) {
-            reject(error);
-        }, 'index'); 
+          resolve(require('./index'));
+        }, reject, 'index');
+      }, reject, 'index');
     });
 }
 
@@ -23,24 +26,24 @@ function createLoader() {
     loaderGrabber.classList.add('loader-ui-grabber');
     const loaderRight = document.createElement('div');
     loaderRight.classList.add("loader-ui-right");
-    loaderRight.append(loaderGif);
+    loaderRight.appendChild(loaderGif);
 
-    loaderDiv.append(loaderLeft);
-    loaderDiv.append(loaderRight);
-    loaderDiv.append(loaderGrabber);
+    loaderDiv.appendChild(loaderLeft);
+    loaderDiv.appendChild(loaderRight);
+    loaderDiv.appendChild(loaderGrabber);
     loaderDiv.style.backgroundColor ='#383F4D';
     document.body.appendChild(loaderDiv);
 
-    loadMainScript().catch(() => {
-        // Ignore errors and try to show the map anyway
-    }).then(() => {
-        loaderDiv.classList.add('loader-ui-hide');
-        setTimeout(()=> {
-            document.body.removeChild(loaderDiv);
-        }, 2000);
+    polyfill(function() {
+        loadMainScript().catch(() => {
+            // Ignore errors and try to show the map anyway
+        }).then(() => {
+            loaderDiv.classList.add('loader-ui-hide');
+            setTimeout(()=> {
+                document.body.removeChild(loaderDiv);
+            }, 2000);
+        });
     });
 }
 
 createLoader();
-
-
