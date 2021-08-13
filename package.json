@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.0.1"
+    "terriajs-server": "^3.3.3"
   },
   "config": {
     "awsProfile": "terria",
