@@ -1,17 +1,19 @@
 Terria Map
 ==========
 
-# We will be deprecating our master branch (v7) of TerriaJS in early August 2021
+# We have deprecated TerriaJS v7
 What this means:
-- The [Next branch of TerriaMap](https://github.com/TerriaJS/TerriaMap/tree/next) will become our new main branch as this uses v8 of TerriaJS
-- We will be actively monitoring our issues in the [GitHub issue tracker](https://github.com/TerriaJS/terriajs/issues/new)
+- [Our new main branch of TerriaMap](https://github.com/TerriaJS/TerriaMap/tree/main) now uses v8+ of TerriaJS
+- [The terriajs7 branch of TerriaMap](https://github.com/TerriaJS/TerriaMap/tree/terriajs7) will use v7 TerriaJS
+- We have a [migration guide](https://docs.terria.io/guide/contributing/migration-guide/) available for users of TerriaJS v7 to help them upgrade their applications to TerriaJS v8
+- Please chat to us and the community in our [GitHub discussions forum](https://github.com/TerriaJS/terriajs/discussions)
 
 -------------------
 
+[![Build Status](https://github.com/TerriaJS/TerriaMap/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/TerriaJS/TerriaMap/actions/workflows/ci.yml) [![Docs](https://img.shields.io/badge/docs-online-blue.svg)](https://docs.terria.io/)
 
 ![Terria logo](terria-logo.png "Terria logo")
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/TerriaJS/TerriaMap.svg)](https://greenkeeper.io/)
 
 This is a complete website built using the TerriaJS library. See the [TerriaJS README](https://github.com/TerriaJS/TerriaJS) for information about TerriaJS, and getting started using this repository.
 
