@@ -9391,10 +9391,10 @@ terriajs-schema@latest:
     when "^3.7.7"
     yargs "^3.32.0"
 
-terriajs-server@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-3.1.0.tgz#373738885b1a55ef1a1459b5e74a7e6a1de316a4"
-  integrity sha512-vamuDCbvX/p96dRJhQ6Q1ZPmQNDj5voVs/1mTiwDV82aoBqfVxmiKxoy3/hr+0nM9KjjKdS8z665mTJV6QXu7g==
+terriajs-server@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-3.3.3.tgz#71104f9f0a12e3f1a881d5e1f5726a407f2a7867"
+  integrity sha512-2NWGEJZrv35peLI1mJvCdSBrP7a9OBuXIdxEZrxgbyu6PmlHF7C99hacVq907wCPjfRYw1RHNDaKa/RfeGPq2g==
   dependencies:
     aws-sdk "^2.456.0"
     base-x "^3.0.5"
@@ -9417,10 +9417,10 @@ terriajs-server@^3.0.1:
     when "^3.7.7"
     yargs "^13.2.4"
 
-terriajs@7.11.14:
-  version "7.11.14"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.11.14.tgz#7bd3fbcf25540e09ab376701fddc172dc884fa7c"
-  integrity sha512-bVZo4QBgFj8B6oOSrEezogOS365OofQliLSxD14AZMD0Kixn1kceSZMmQw477rE+l01seQG2490STZp9oYf5Ag==
+terriajs@7.11.17:
+  version "7.11.17"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-7.11.17.tgz#15bc27f8ca730c6b66e3739411202db2701589b7"
+  integrity sha512-k66vy8bsF7wmYiJ3qmJlunt480UQPuPdmOnxUfxHHRSVGgsDVxzlG5T10IEP6AiRXscHV2I/KE1WF74tFNdN6g==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
