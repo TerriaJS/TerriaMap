@@ -67,6 +67,7 @@ module.exports = terria.start({
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
     configUrl: 'config.json',
+    privateParametersUrl: 'private_parameters.json',
     shareDataService: new ShareDataService({
         terria: terria
     })
