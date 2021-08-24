@@ -7,36 +7,14 @@
     },
     "catalog":[
         {
-            "name":"GeoNorge",
-            "type":"group",
-            "isOpen":true,
-            "members":[
-                {
-                    "name":"Kommuner",
-                    "type": "wfs-group",
-                    "url":"https://wfs.geonorge.no/skwms1/wfs.dekningsoversikt"
-                },
-                {
-                    "name":"Grunnkretser",
-                    "type":"wms-group",
-                    "url":"https://openwms.statkart.no/skwms1/wms.grunnkretser"
-                }
-            ]
-        },
-        {
             "name":"FKB Bygninger Stavanger",
             "type":"geojson",
             "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/dttest/items?f=json"
         },
         {
-            "name":"INSPIRE buildings 2d core",
-            "type":"geojson",
-            "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/INSPIRE_buildings/items?f=json"
-        },
-        {
-            "name":"Kirkebygg",
-            "type":"geojson",
-            "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/kirkebygg/items?f=json"
+            "name":"Topografiske kart",
+            "type":"wmts-group",
+            "url":"https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts&request=getcapabilities"
         }
     ]
 }
