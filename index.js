@@ -62,11 +62,18 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
     document.styleSheets[0].disabled = true;
 }
 
+var userLang = navigator.language || navigator.userLanguage;
+//console.log("The language is: " + userLang);
+var language_config = 'config.json';
+if (userLang === "it-IT" || userLang === "it") {
+  language_config= 'config_it.json';
+}
+
 module.exports = terria.start({
     // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
     // as well as the call to "updateApplicationOnHashChange" further down.
     applicationUrl: window.location,
-    configUrl: 'config.json',
+    configUrl: language_config,
     shareDataService: new ShareDataService({
         terria: terria
     })

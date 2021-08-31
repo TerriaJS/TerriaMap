@@ -14,6 +14,30 @@ body {
     }
   }
 
+  // TODO Errore con versione 8, il nome non corrisponde più
+  .tjs-branding__branding {
+    a:first-child,
+    a:last-child {
+      display: none;
+
+      @media screen and (min-width: $sm) {
+        display: inline;
+      }
+    }
+
+    // Different font size for the branding
+    font-weight: 300;
+    color: white;
+    font-size: 26px;
+    height: 210px;
+  }
+
+  /* Da scommentare se si definisce l'altezza alla riga precedente
+  .tjs-workbench-list__workbench-content {
+    height: calc(100vh - 342px);
+  }
+  */
+
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
   /*
@@ -61,11 +85,11 @@ body {
 
     // All kinds of buttons in various screens
     .tjs-_buttons__btn {
-        &-primary { 
-            font-family: $font-base; 
+        &-primary {
+            font-family: $font-base;
         }
-        &:hover { 
-            color: $color-primary;             
+        &:hover {
+            color: $color-primary;
         }
     }
 
@@ -77,11 +101,11 @@ body {
 
     // Lat/lon buttons
     .tjs-legend__locationBar, .tjs-legend__distanceLegend {
-        
+
         background:$dark;
         color:white;
         &:hover,&:focus { background: $dark; color: white; }
-    
+
     }
 
     // Progress bar while datasets are loading
@@ -96,7 +120,7 @@ body {
     }
 
     .tjs-timeline__text-cell {
-        font-family: $font-base; 
+        font-family: $font-base;
     }
 
     .tjs-timeline__timeline {
@@ -140,15 +164,15 @@ body {
     .tjs-data-catalog-item__btn-catalog-item--is-previewed {
         ,&:focus {color: $color-primary; }
     }
-      // The tabs at the top 
-    .tjs-tabs__btn--tab {    
+      // The tabs at the top
+    .tjs-tabs__btn--tab {
         font-family:$font-base
     }
 
     .tjs-tabs__btn--selected {
         color:$color-primary-dark;
     }
-    .tjs-tabs__btn--tab:hover {    
+    .tjs-tabs__btn--tab:hover {
         color:$color-secondary;
     }
     */
