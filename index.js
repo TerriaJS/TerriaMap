@@ -10,7 +10,7 @@ import defined from 'terriajs-cesium/Source/Core/defined';
 import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
 import registerCatalogMembers from 'terriajs/lib/Models/Catalog/registerCatalogMembers';
-import registerSearchProviders from 'terriajs/lib/Models/SearchProvider/registerSearchProviders';
+import registerSearchProviders from 'terriajs/lib/Models/SearchProviders/registerSearchProviders';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
 import Terria from 'terriajs/lib/Models/Terria';
 import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
