@@ -34,7 +34,6 @@
         ],
         "enabledBaseMaps": [
             "topografisk-norgeskart-4", 
-            "norgeskart-offisiell",
             "basemap-bing-aerial-with-labels", 
             "basemap-bing-aerial", 
             "basemap-bing-aerial-with-labels",
