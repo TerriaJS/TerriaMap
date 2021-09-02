@@ -95,7 +95,7 @@
     "pm2": "pm2",
     "gulp": "gulp",
     "gulp:watch": "gulp watch",
-    "postinstall": "echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
+    "postinstall": "npm run replace && echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && npm ci && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
@@ -103,7 +103,9 @@
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
-    "prettier-check": "prettier --check \"**/*\""
+    "prettier-check": "prettier --check \"**/*\"",
+    "replace": "copy .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && copy .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ ",
+    "replace_un": "cp .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && cp .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ "
   },
   "husky": {
     "hooks": {

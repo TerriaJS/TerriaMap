@@ -15,7 +15,7 @@ body {
   }
 
   // TODO Errore con versione 8, il nome non corrisponde più
-  .tjs-branding__branding {
+  /*.tjs-branding__branding {
     a:first-child,
     a:last-child {
       display: none;
@@ -30,13 +30,12 @@ body {
     color: white;
     font-size: 26px;
     height: 210px;
-  }
+  }*/
 
-  /* Da scommentare se si definisce l'altezza alla riga precedente
+  //Da scommentare se si definisce l'altezza all'interndo della libreria come indicato in HowToDo.txt
   .tjs-workbench-list__workbench-content {
-    height: calc(100vh - 342px);
+    height: calc(100vh - 310px);
   }
-  */
 
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss

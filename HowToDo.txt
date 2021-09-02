@@ -1,0 +1,11 @@
+= Modificare l'altezza del blocco branding con il logo = 
+
+Sostituire i file Branding.tsx e SidePanel.jsx dalla cartella _dasostuire alla cartella node_modules\terriajs\lib\ReactViews\SidePanel dopo ogni npm install
+con il comando
+
+npm run replace
+
+Alla riga 52 del file node_modules\terriajs\lib\ReactViews\SidePanel\Branding.tsx impostare height al valore di 195px
+Riscalare gli spazi modificando la riga 55 del file node_modules\terriajs\lib\ReactViews\SidePanel\SidePanel.jsx impostando calc(100vh - 245px)
+
+Sostituire alla riga 47 del file node_modules\terriajs\lib\ReactViews\SidePanel\Branding.tsx display: flex; con display: block;
