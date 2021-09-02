@@ -5,26 +5,23 @@ var terriaOptions = {
 };
 
 import { runInAction } from "mobx";
-
+import defined from 'terriajs-cesium/Source/Core/defined';
 // checkBrowserCompatibility('ui');
 import ConsoleAnalytics from 'terriajs/lib/Core/ConsoleAnalytics';
 import GoogleAnalytics from 'terriajs/lib/Core/GoogleAnalytics';
+import registerCatalogMembers from 'terriajs/lib/Models/Catalog/registerCatalogMembers';
+import registerSearchProviders from 'terriajs/lib/Models/SearchProvider/registerSearchProviders';
 import ShareDataService from 'terriajs/lib/Models/ShareDataService';
+import Terria from 'terriajs/lib/Models/Terria';
+import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
 // import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from 'terriajs/lib/ReactViews/Custom/registerCustomComponentTypes';
-import Terria from 'terriajs/lib/Models/Terria';
 import updateApplicationOnHashChange from 'terriajs/lib/ViewModels/updateApplicationOnHashChange';
 import updateApplicationOnMessageFromParentWindow from 'terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow';
-import ViewState from 'terriajs/lib/ReactViewModels/ViewState';
-// import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/SearchProvider/BingMapsSearchProvider';
-// import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
-// import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from './lib/Views/render';
-import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
-import defined from 'terriajs-cesium/Source/Core/defined';
-import registerSearchProviders from 'terriajs/lib/Models/SearchProvider/registerSearchProviders';
+
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
 // the code in the registerCatalogMembers function here instead.
@@ -76,15 +73,8 @@ module.exports = terria.start({
 }).catch(function(e) {
   terria.raiseErrorToUser(e);
 }).finally(function() {
-    terria.loadInitSources().catch(e => {
-      terria.raiseErrorToUser( e);
-    });
+    terria.loadInitSources().then(result => result.raiseError(terria));
     try {
-        /* viewState.searchState.locationSearchProviders = [
-            new BingMapsSearchProviderViewModel("bing-search", terria),
-            // new GazetteerSearchProviderViewModel({terria}),
-            // new GnafSearchProviderViewModel({terria})
-        ]; */
         viewState.searchState.locationSearchProviders = terria.locationSearchProvidersArray;
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
