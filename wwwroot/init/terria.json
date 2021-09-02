@@ -290,6 +290,26 @@
           },
           "type": "wms",
           "url": "http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1A"
+        },
+        {
+          "layer": "s2cloudless",
+          "name": "Sentinel-2 cloudless world 2016",
+          "type": "wmts",
+          "url": "https://a.s2maps-tiles.eu/wmts/",
+          "tileMatrixSetID": "WGS84",
+          "tilingScheme": "geographic",
+          "style": "default",
+          "opacity": 1
+        },
+        {
+          "layer": "s2cloudless-2018",
+          "name": "Sentinel-2 cloudless world 2018",
+          "type": "wmts",
+          "url": "https://a.s2maps-tiles.eu/wmts/",
+          "tileMatrixSetID": "WGS84",
+          "tilingScheme": "geographic",
+          "style": "default",
+          "opacity": 1
         }
       ]
     }
