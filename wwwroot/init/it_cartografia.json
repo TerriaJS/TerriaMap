@@ -142,7 +142,9 @@
     "south": 35,
     "west": 6
   },
-  "defaultBaseMapId": "basemap-positron",
-  "previewBaseMapId": "basemap-positron",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
   "viewerMode": "2d"
 }
