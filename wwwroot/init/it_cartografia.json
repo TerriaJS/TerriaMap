@@ -1,13 +1,10 @@
 {
-  "workbench": [],
   "catalog": [
     {
-      "id": "83GgYL",
       "type": "group",
       "name": "cartografia",
       "members": [
         {
-          "id": "Bavppq",
           "type": "group",
           "name": "cartografia di base",
           "members": [
@@ -25,7 +22,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_terria",
-              "id": "xvgGmr",
+              "id": "confreg",
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/Confini regionali"
               ]
@@ -43,7 +40,6 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_province_terria",
-              "id": "pwiUdk",
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/Confini provinciali"
               ]
@@ -61,7 +57,6 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_comuni_terria",
-              "id": "p1yz3H",
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/Confini comunali"
               ]
@@ -79,7 +74,6 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "dati_condivisi:localita_11_3857",
-              "id": "YTpPdQ",
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/Centri abitati"
               ]
@@ -99,7 +93,6 @@
               "layers": "new_atlante_integrato:corine2018",
               "minScaleDenominator": 10000,
               "hideLayerAfterMinScaleDenominator": true,
-              "id": "8BZInn",
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/corine"
               ]
@@ -117,7 +110,6 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "batimetria_linea",
-              "id": "ZJncH8",
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/linee batimetriche"
               ]
@@ -135,16 +127,5 @@
         "Root Group/cartografia"
       ]
     }
-  ],
-  "homeCamera": {
-    "north": 48,
-    "east": 19,
-    "south": 35,
-    "west": 6
-  },
-  "baseMaps": {
-    "defaultBaseMapId": "basemap-positron",
-    "previewBaseMapId": "basemap-positron"
-  },
-  "viewerMode": "2d"
+  ]
 }

@@ -6,8 +6,9 @@
     //"it_infrastrutture",
     //"it_risorsa",
     //"it_impianti",
-    "it_consumi"//,
-    //"it_stime_energetiche"
+    "it_consumi",
+    //"it_stime_energetiche",
+    "it"
   ],
   "parameters": {
     "tabbedCatalog": true,

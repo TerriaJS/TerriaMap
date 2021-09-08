@@ -1,8 +1,6 @@
 {
-  "workbench": [],
   "catalog": [
     {
-      "id": "cNbNat",
       "type": "group",
       "name": "consumi elettrici",
       "members": [
@@ -22,12 +20,11 @@
           "parameters": {
             "cql_filter": "var_id=102"
           },
-          "id": "AVUJj8",
-		      "availableStyles": [
+          "availableStyles": [
             {"layerName":"consumi_reg"}
           ],
           "styles":"consumi_reg",
-          "show": true,
+          "id": "test2",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici totali a livello regionale (GWh)"
           ]
@@ -48,8 +45,7 @@
           "parameters": {
             "cql_filter": "var_id=99"
           },
-          "id": "DWGM5w",
-		      "availableStyles":[{"layerName":"t2_industriale_gwh"}],
+          "availableStyles":[{"layerName":"t2_industriale_gwh"}],
           "styles":"t2_industriale_gwh",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto industriale regionale (GWh)"
@@ -71,8 +67,7 @@
           "parameters": {
             "cql_filter": "var_id=98"
           },
-          "id": "AXAU2P",
-		      "availableStyles":[{"layerName":"t1_agricolo_gwh"}],
+          "availableStyles":[{"layerName":"t1_agricolo_gwh"}],
           "styles":"t1_agricolo_gwh",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto agricolo regionale (GWh)"
@@ -94,8 +89,7 @@
           "parameters": {
             "cql_filter": "var_id=100"
           },
-          "id": "XrtKhw",
-		      "availableStyles":[{"layerName":"t38_terziario_gwh"}],
+          "availableStyles":[{"layerName":"t38_terziario_gwh"}],
           "styles":"t38_terziario_gwh",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto terziario regionale (GWh)"
@@ -117,8 +111,7 @@
           "parameters": {
             "cql_filter": "var_id=101"
           },
-          "id": "665mBa",
-		      "availableStyles":[{"layerName":"t50_domestico_gwh"}],
+          "availableStyles":[{"layerName":"t50_domestico_gwh"}],
           "styles":"t50_domestico_gwh",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto domestico regionale (GWh)"
@@ -140,8 +133,7 @@
           "parameters": {
             "cql_filter": "var_id=209"
           },
-          "id": "pZge41",
-		      "availableStyles":[{"layerName":"consumi_fs_reg_gwh"}],
+          "availableStyles":[{"layerName":"consumi_fs_reg_gwh"}],
           "styles":"consumi_fs_reg_gwh",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici FS regionali (GWh)"
@@ -163,8 +155,7 @@
           "parameters": {
             "cql_filter": "var_id=80"
           },
-          "id": "J7EdNa",
-		    "availableStyles":[{"layerName":"cons_el_comparto_agr_prov"}],
+		      "availableStyles":[{"layerName":"cons_el_comparto_agr_prov"}],
           "styles":"cons_el_comparto_agr_prov",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto agricolo provinciale (GWh)"
@@ -186,8 +177,7 @@
           "parameters": {
             "cql_filter": "var_id=81"
           },
-          "id": "BV42Ym",
-		      "availableStyles":[{"layerName":"cons_el_comparto_ind_prov"}],
+          "availableStyles":[{"layerName":"cons_el_comparto_ind_prov"}],
           "styles":"cons_el_comparto_ind_prov",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto industriale provinciale (GWh)"
@@ -209,8 +199,7 @@
           "parameters": {
             "cql_filter": "var_id=82"
           },
-          "id": "GQi2xp",
-		      "availableStyles":[{"layerName":"cons_el_comparto_terz_prov"}],
+          "availableStyles":[{"layerName":"cons_el_comparto_terz_prov"}],
           "styles":"cons_el_comparto_terz_prov",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto terziario provinciale (GWh)"
@@ -232,8 +221,7 @@
           "parameters": {
             "cql_filter": "var_id=83"
           },
-          "id": "AarcMS",
-		      "availableStyles":[{"layerName":"cons_el_comparto_dom_prov"}],
+          "availableStyles":[{"layerName":"cons_el_comparto_dom_prov"}],
           "styles":"cons_el_comparto_dom_prov",
           "shareKeys": [
             "Root Group/consumi elettrici/Consumi elettrici del comparto domestico provinciale (GWh)"
@@ -255,7 +243,6 @@
           "parameters": {
             "cql_filter": "var_id=84"
           },
-          "id": "2w2zVP",
           "availableStyles":[{"layerName":"cons_el_tot_prov_no_FS"}],
           "styles":"cons_el_tot_prov_no_FS",
           "shareKeys": [
@@ -269,11 +256,5 @@
         "Root Group/consumi elettrici"
       ]
     }
-  ],
-  "homeCamera": {
-    "north": 48,
-    "east": 19,
-    "south": 35,
-    "west": 6
-  }
+  ]
 }
