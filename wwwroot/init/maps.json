@@ -1,0 +1,58 @@
+{
+    "homeCamera": {
+      "north": 72.2,
+      "east": 47,
+      "south": 48,
+      "west": -11
+    },
+    "initialCamera": {
+      "north": 72.2,
+      "east": 47,
+      "south": 48,
+      "west": -11
+    },
+    "catalog": [
+        {
+            "type": "wmts-group", 
+            "name": "kartverket kart", 
+            "url": "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts&request=getcapabilities"
+        }
+    ],
+    "baseMaps": {
+        "items": [
+            {
+                "item": {
+                    "id":"topografisk-norgeskart-4",
+                    "name": "Kartverket: Topografisk norgeskart 4",
+                    "type": "wmts",
+                    "url": "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts",
+                    "layer": "topo4",
+                    "opacity": 1.0
+                },
+                "image": "build/TerriaJS/images/topografisk_norgeskart_4.png"
+            },
+            {
+                "item": {
+                    "id":"norgeskart-bakgrunn",
+                    "name": "Kartverket: Norgeskart bakgrunn",
+                    "type": "wmts",
+                    "url": "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts",
+                    "layer": "norgeskart_bakgrunn",
+                    "opacity": 1.0
+                },
+                "image": "build/TerriaJS/images/topografisk_norgeskart_4.png"
+            }
+        ],
+        "enabledBaseMaps": [
+            "norgeskart-bakgrunn",
+            "topografisk-norgeskart-4", 
+            "basemap-bing-aerial-with-labels", 
+            "basemap-bing-aerial", 
+            "basemap-bing-aerial-with-labels",
+            "basemap-natural-earth-II",
+            "basemap-black-marble",
+            "basemap-positron",
+            "basemap-darkmatter"
+        ]
+    }
+}  
