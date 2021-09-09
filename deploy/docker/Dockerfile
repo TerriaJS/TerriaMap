@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y gdal-bin
 RUN mkdir -p /usr/src/app && mkdir -p /etc/config/client
 WORKDIR /usr/src/app/component
 COPY . /usr/src/app
-RUN rm wwwroot/config.json && ln -s /etc/config/client/config.json wwwroot/config.json
+# COPY ./packages /usr/src/app/node_modules
+# RUN rm wwwroot/config.json && ln -s /etc/config/client/config.json wwwroot/config.json
 
 EXPOSE 3001
 
