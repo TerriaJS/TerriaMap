@@ -1,0 +1,250 @@
+{
+  "workbench": [],
+  "catalog": [
+    {
+      "id": "territory",
+      "type": "group",
+      "name": "dati territoriali",
+      "members": [
+        {
+          "id": "vincoli",
+          "type": "group",
+          "name": "vincoli e aspetti ambientali",
+          "members": [
+            {
+              "type": "wms",
+              "name": "Elenco ufficiale aree protette (EUAP)",
+              "description": "VI Elenco Ufficiale Aree Naturali Protette (EUAP). Istituito in base alla legge 394/91 Legge quadro sulle aree protette, l\\'elenco ufficiale attualmente in vigore è quello relativo al 6° Aggiornamento approvato con D.M. 27/04/2010 e pubblicato nel Supplemento Ordinario n. 115 alla Gazzetta Ufficiale n. 125 del 31/05/2010. In base alla legge 394/91, le aree protette sono distinte in Parchi Nazionali (PNZ), Aree Naturali Marine Protette (MAR), Parchi Naturali Statali marini (PNZ_m), Riserve Naturali Statali (RNS), Parchi e Riserve Naturali Regionali (PNR - RNR), Parchi Naturali sommersi (GAPN), Altre Aree Naturali Protette (AAPN). L\\'Elenco è stilato, e periodicamente aggiornato, dal Ministero dell\\'Ambiente e della Tutela del Territorio e del Mare - Direzione Protezione della Natura.</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "euap",
+              "id": "euap",
+              "shareKeys": [
+                "Root Group/dati territoriali/vincoli e aspetti ambientali/Elenco ufficiale aree protette (EUAP)"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Siti di Importanza Comunitaria (SIC)",
+              "description": "Sono i siti di Importanza Comunitaria e Zone Speciali di Conservazione (ZSC) presenti sul territorio italiano aggiornati a gennaio 2017. Il Sito di Importanza Comunitaria (SIC) e la Zona Speciale di Conservazionee (ZSC), sono concetti definiti dalla Direttiva comunitaria n. 43 del 21 maggio 1992, (92/43/CEE), nota anche come Direttiva \\\"Habitat\\\", e recepita in Italia nel 1997. La Direttiva è relativa alla conservazione degli habitat naturali e seminaturali e della flora e della fauna selvatiche.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Direzione generale per la protezione della natura e del mare</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "sic",
+              "id": "sic",
+              "shareKeys": [
+                "Root Group/dati territoriali/vincoli e aspetti ambientali/Siti di Importanza Comunitaria (SIC)"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Zone di protezione speciale",
+              "description": "Zone di Protezione Speciale presenti sul territorio italiano aggiornate a gennaio 2017. Le zone di protezione speciale (ZPS), in Italia, ai sensi dell'art. 1 comma 5 della Legge n° 157/1992 sono zone di protezione scelte lungo le rotte di migrazione dell'avifauna, finalizzate al mantenimento ed alla sistemazione di idonei habitat per la conservazione e gestione delle popolazioni di uccelli selvatici migratori. La tabella associata contiene una serie di informazioni tra cui codice, denominazione, superficie, perimetro e Regione di appartenenza di ciascuna zona.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Direzione generale per la protezione della natura e del mare</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "zps",
+              "id": "zps",
+              "shareKeys": [
+                "Root Group/dati territoriali/vincoli e aspetti ambientali/Zone di protezione speciale"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Aree umide (Ramsar)",
+              "description": "Le aree Ramsar sono aree del territorio italiano rispondenti ai requisiti della convenzione internazionale relativa alle zone umide di importanza internazionale, soprattutto come habitat degli uccelli acquatici, nota come Convenzione di Ramsar. La Convenzione di Ramsar è un atto firmato a Ramsar, in Iran, il 2 febbraio 1971. La Convenzione di Ramsar è stata ratificata e resa esecutiva dall'Italia col DPR n. 448 del 13 marzo 1976 e con il successivo DPR n. 184 dell'11 febbraio 1987. Ai sensi della Convenzione si intendono per zone umide le paludi e gli acquitrini, le torbe oppure i bacini, naturali o artificiali, permanenti o temporanei, con acqua stagnante o corrente, dolce, salmastra, o salata, ivi comprese le distese di acqua marina la cui profondità, durante la bassa marea, non supera i sei metri. Ai sensi della convenzione si intendono per uccelli acquatici gli uccelli ecologicamente dipendenti dalle zone umide. Aggiornamento aree Ramsar settembre 2011.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Direzione generale per la protezione della natura</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "ramsar",
+              "id": "ramsar",
+              "shareKeys": [
+                "Root Group/dati territoriali/vincoli e aspetti ambientali/Aree umide (Ramsar)"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Specchi d'acqua interni",
+              "description": "Elementi poligonali appartenenti al DBPrior10K rappresentanti gli specchi d’acqua interni come laghi, lagune, stagni, bacini artificiali, ecc.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale - Centro interregionale per i sistemi informatici, geografici, statistici - Comitato permanente per i sistemi geografici</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "specchi_acqua_interni",
+              "id": "acqua",
+              "shareKeys": [
+                "Root Group/dati territoriali/vincoli e aspetti ambientali/Specchi d'acqua interni"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Important Bird Areas (IBA)",
+              "description": "Le Important Bird Areas o IBA, sono delle aree che rivestono un ruolo chiave per la salvaguardia degli uccelli e della biodiversità, la cui identificazione è parte di un progetto a carattere mondiale, curato da BirdLife International. Il progetto IBA nasce dalla necessità di individuare dei criteri omogenei e standardizzati per la designazione delle ZPS. Le IBA sono state utilizzate per valutare l’adeguatezza delle reti nazionali di ZPS designate negli Stati membri, il 71% della superficie delle IBA è anche ZPS. Per essere riconosciuto come IBA, un sito deve possedere almeno una delle seguenti caratteristiche: ospitare un numero significativo di individui di una o più specie minacciate a livello globale; fare parte di una tipologia di aree importante per la conservazione di particolari specie (es. zone umide); essere una zona in cui si concentra un numero particolarmente alto di uccelli in migrazione.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale - Lega Italiana Protezione Uccelli (LIPU)</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "iba",
+              "id": "iba",
+              "shareKeys": [
+                "Root Group/dati territoriali/vincoli e aspetti ambientali/Important Bird Areas (IBA)"
+              ]
+            }
+          ],
+          "description": "qui va scritta la descrizione degli strati del gruppo xxxx ",
+          "isOpen": true,
+          "shareKeys": [
+            "Root Group/dati territoriali/vincoli e aspetti ambientali"
+          ]
+        },
+        {
+          "id": "rischi",
+          "type": "group",
+          "name": "aspetti di valutazione dei rischi",
+          "members": [
+            {
+              "type": "wms",
+              "name": "Classificazione sismica dei comuni italiani al 2012",
+              "description": "Classificazione sismica dei comuni italiani al 2012 (Livello di pericolosita')\n\n Nel 2003 sono stati emanati i criteri di nuova classificazione sismica del territorio nazionale, basati sugli studi e le elaborazioni più recenti relative alla pericolosità sismica del territorio, ossia sull'analisi della probabilità che il territorio venga interessato in un certo intervallo di tempo (generalmente 50 anni) da un evento che superi una determinata soglia di intensità o magnitudo. A tal fine è stata pubblicata l'Ordinanza del Presidente del Consiglio dei Ministri n. 3274 del 20 marzo 2003, sulla Gazzetta Ufficiale n. 105 dell’8 maggio 2003. Un aggiornamento dello studio di pericolosità di riferimento nazionale (Gruppo di Lavoro, 2004), previsto dall'OPCM 3274/03, è stato adottato con l'Ordinanza del Presidente del Consiglio dei Ministri n. 3519 del 28 aprile 2006. Il nuovo studio di pericolosità, allegato all'OPCM n. 3519, ha fornito alle Regioni uno strumento aggiornato per la classificazione del proprio territorio, introducendo degli intervalli di accelerazione (ag), con probabilità di superamento pari al 10% in 50 anni, da attribuire alle 4 zone sismiche. Zona sismica 1: ag > 0.25; Zona sismica 2: 0.15 < ag <= 0.25; Zona sismica 3: 0.05 < ag <= 0.15; Zona sismica 4: ag <= 0.05. Nel rispetto degli indirizzi e criteri stabiliti a livello nazionale, alcune Regioni hanno classificato il territorio nelle quattro zone proposte, altre Regioni hanno classificato diversamente il proprio territorio, ad esempio adottando solo tre zone (zona 1, 2 e 3) e introducendo, in alcuni casi, delle sottozone per meglio adattare le norme alle caratteristiche di sismicità. Per il dettaglio e significato delle zonazioni di ciascuna Regione, si rimanda alle disposizioni normative regionali. La Protezione Civile, sul sito www.protezionecivile.gov.it, mette a disposizione la classificazione sismica dei comuni italiani 2012 in base all'ordinanza del Presidente del Consiglio dei Ministri n°3274/03 e successivi aggiornamenti nazionali e regionali. La tabella riporta la classificazione sismica associata alla denominazione e al codice ISTAT dei comuni rilasciati dall'ISTAT nel 2001. Per aggiornare l'elenco dei comuni e dei codici ISTAT al 2011 sono state incrociate le informazioni contenute nella suddetta tabella con quelle contenute nell'elenco dei comuni italiani tratto dal sito www.istat.it; le informazioni risultanti sono state associate ai limiti amministrativi non generalizzati 2011, forniti dall'ISTAT. Allo strato informativo risultante sono state associate inoltre le informazioni relative alle normative regionali e ai valori di accelerazione di picco su terreno rigido (OPCM 3519/06).<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "classificazione_sismica_2012",
+              "id": "sisma",
+              "shareKeys": [
+                "Root Group/dati territoriali/aspetti di valutazione dei rischi/Classificazione sismica dei comuni italiani al 2012"
+              ]
+            }
+          ],
+          "description": "qui va scritta la descrizione degli strati del gruppo xxxx ",
+          "isOpen": true,
+          "shareKeys": [
+            "Root Group/dati territoriali/aspetti di valutazione dei rischi"
+          ]
+        },
+        {
+          "id": "popol",
+          "type": "group",
+          "name": "popolazione residente",
+          "members": [
+            {
+              "type": "wms",
+              "name": "Popolazione residente a livello regionale",
+              "description": "Distribuzione regionale della popolazione residente comunale che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (anno 2015)</p>                ",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "new_atlante_integrato:v_regioni_t",
+              "parameters": {
+                "cql_filter": "var_id=88"
+              },
+              "id": "88",
+			        "styles":"popolazione_regionale",
+              "shareKeys": [
+                "Root Group/dati territoriali/popolazione residente/Popolazione residente a livello regionale"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Popolazione residente a livello provinciale",
+              "description": "Distribuzione provinciale della popolazione residente comunale che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (anno 2015)</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "new_atlante_integrato:v_province_t",
+              "parameters": {
+                "cql_filter": "var_id=87"
+              },
+              "id": "87",
+              "styles":"popolazione_provinciale",
+              "shareKeys": [
+                "Root Group/dati territoriali/popolazione residente/Popolazione residente a livello provinciale"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Popolazione residente a livello comunale",
+              "description": "Popolazione residente a livello comunale \n\n Distribuzione comunale della popolazione residente che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (anno 2015)</p>",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "new_atlante_integrato:v_comuni_t",
+              "parameters": {
+                "cql_filter": "var_id=65"
+              },
+              "id": "65",
+              "styles":"popolazione_comunale",
+              "shareKeys": [
+                "Root Group/dati territoriali/popolazione residente/Popolazione residente a livello comunale"
+              ]
+            }
+          ],
+          "description": "qui va scritta la descrizione degli strati del gruppo xxxx ",
+          "isOpen": true,
+          "shareKeys": [
+            "Root Group/dati territoriali/popolazione residente"
+          ]
+        }
+      ],
+      "isOpen": false,
+      "shareKeys": [
+        "Root Group/dati territoriali"
+      ]
+    }
+  ],
+  "homeCamera": {
+    "north": 48,
+    "east": 19,
+    "south": 35,
+    "west": 6
+  }
+}
