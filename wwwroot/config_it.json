@@ -12,6 +12,8 @@
   ],
   "parameters": {
     "tabbedCatalog": true,
+    "useCesiumIonTerrain": false,
+    "cesiumTerrainAssetId": false,
 
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
