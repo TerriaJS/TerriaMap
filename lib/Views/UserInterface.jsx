@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import RelatedMaps from "./RelatedMaps";
 import Multienergy from "./Multienergy";
+import AnalisiAvanzate from "./AnalisiAvanzate";
 import SplitPoint from "terriajs/lib/ReactViews/SplitPoint";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx";
 import version from "../../version";
@@ -35,6 +36,7 @@ export default function UserInterface(props) {
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
         <MenuItem caption="About" href="about.html" key="about-link" />
+        {/*
         <RelatedMaps viewState={props.viewState} />
         <Multienergy viewState={props.viewState} />
         <MenuItem
@@ -48,6 +50,8 @@ export default function UserInterface(props) {
           href="http://atlanteintegrato.rse-web.it/sankey.php"
           key="about-link"
         />
+        */}
+        <AnalisiAvanzate viewState={props.viewState} />
       </MenuLeft>
       <Nav>
         <MeasureTool terria={props.viewState.terria} key="measure-tool" />
