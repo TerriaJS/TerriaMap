@@ -1,10 +1,9 @@
 {
-  "baseMapName": "Positron (Light)",
-  "viewerMode":"2d",
   "catalog": [
     {
       "type": "group",
       "name": "TOTEM",
+      "isOpen": true,
       "members": [
         {
           "type": "wms",
@@ -18,17 +17,28 @@
             "template": "<p>Effettua il calcolo di TOTEMWeb sui dati:</p><p><b>Provincia</b>: {{den_uts}}<br><b>Anno</b>: {{anno}}</p><button><a href='http://localhost:5000/?anno={{anno}}&prov={{den_uts}}'>Avvia</a></button>"
           },
           "id": "totem",
-          "shareKeys": [
-            "Root Group/TOTEM/TOTEMWEB selezione provincia"
-          ]
+          "initialMessage": {
+            "title": "Tutorial",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet egestas diam, in gravida sem consectetur sed. Vestibulum congue massa ac eros cursus lacinia. Quisque lobortis sapien porttitor libero iaculis commodo.",
+            "key": "totem_warning",
+            "confirmation": true,
+            "confirmText": "Avvia"
+          }
         }
-      ],
-      "isOpen": true,
-      "shareKeys": [
-        "Root Group/TOTEM"
       ]
     }
   ],
+  "homeCamera": {
+    "north": 48,
+    "east": 19,
+    "south": 35,
+    "west": 6
+  },
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
+  "viewerMode": "2d",
   "workbench": [
     "totem"
   ]

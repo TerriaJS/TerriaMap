@@ -91,10 +91,24 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:corine2018",
-              "minScaleDenominator": 10000,
-              "hideLayerAfterMinScaleDenominator": true,
               "shareKeys": [
                 "Root Group/cartografia/cartografia di base/corine"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Corine 2018 (Copenicus)",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
+              "dataCustodian": "text",
+              "layers": "12",
+              "shareKeys": [
+                "Root Group/cartografia/cartografia di base/corine 2018"
               ]
             },
             {
