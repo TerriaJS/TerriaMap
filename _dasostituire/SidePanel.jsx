@@ -18,6 +18,10 @@ import Button from "../../Styled/Button";
 
 const BoxHelpfulHints = styled(Box)``;
 
+var reduced_Style = {
+  "margin-bottom": "45px"
+}
+
 const ResponsiveSpacing = styled(Box)`
   height: 110px;
   // Hardcoded px value, TODO: make it not hardcoded
@@ -61,7 +65,7 @@ function EmptyWorkbench(props) {
           </Text>
           <ResponsiveSpacing />
         </Box>
-        <BoxHelpfulHints column paddedRatio={3} overflowY="auto" scroll>
+        <BoxHelpfulHints column paddedRatio={3} overflowY="auto" style={reduced_Style} scroll>
           <Box left>
             <Text extraLarge bold>
               {t("emptyWorkbench.helpfulHints")}
