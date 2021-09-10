@@ -1,4 +1,6 @@
 {
+  "baseMapName": "Positron (Light)",
+  "viewerMode":"2d",
   "catalog": [
     {
       "type": "group",
