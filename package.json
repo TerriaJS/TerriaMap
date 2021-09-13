@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/TerriaJS/TerriaMap"
+    "url": "http://github.com/Kartverket/TerriaMap"
   },
   "dependencies": {
     "pm2": "^3.2.2",
@@ -34,7 +34,7 @@
     "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-08-31.json",
     "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2018-11-19.json",
     "docker": {
-      "name": "digtvil-karterket",
+      "name": "digtvil-kartverket",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
     }
   },
