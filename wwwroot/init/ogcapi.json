@@ -1,0 +1,31 @@
+{
+    "homeCamera":{
+        "north": 59,
+        "south": 58,
+        "west": 5.6,
+        "east":5.8
+    },
+    "catalog":[
+        {
+            "name": "OGCAPI",
+            "type": "group",
+            "members": [
+                {
+                    "name":"FKB Bygninger Stavanger",
+                    "type":"geojson",
+                    "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/dttest/items?f=json"
+                },
+                {
+                    "name":"INSPIRE bygninger",
+                    "type":"geojson",
+                    "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/INSPIRE_buildings/items?f=json"
+                },
+                {   
+                    "name": "Havomraader fra n50 data",
+                    "type": "geojson",
+                    "url": "https://ogcapitest.kartverket.no/pygeoapi/collections/n50vann/items?f=json&limit=100"
+                }
+            ]
+        }
+    ]
+}
