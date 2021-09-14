@@ -1,13 +1,13 @@
 {
   "homeCamera": {
-    "north": -8,
-    "east": 158,
-    "south": -45,
-    "west": 109
+    "north": 5.99,
+    "east": -70.83,
+    "south": -9.19,
+    "west": -93.16
   },
   "catalog": [
     {
-      "name": "Example Datasets",
+      "name": "Ejemplos de Datos",
       "type": "group",
       "preserveOrder": true,
       "isOpen": true,
@@ -63,8 +63,8 @@
               "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
               "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
               "options": {
-                  "maximumScreenSpaceError": 1,
-                  "maximumNumberOfLoadedTiles": 1000
+                "maximumScreenSpaceError": 1,
+                "maximumNumberOfLoadedTiles": 1000
               },
               "rectangle": [
                 144.868,
@@ -79,8 +79,8 @@
               "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
               "url": "https://sample.aero3dpro.com.au/Sydney/Scene/recon_h_3DTiles.json",
               "options": {
-                  "maximumScreenSpaceError": 1,
-                  "maximumNumberOfLoadedTiles": 1000
+                "maximumScreenSpaceError": 1,
+                "maximumNumberOfLoadedTiles": 1000
               },
               "rectangle": [
                 151.161,
@@ -251,17 +251,11 @@
           ]
         },
         {
-          "layers": "WaterSummary",
-          "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
+          "layer":"ja100_torre",
+          "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0",
           "type": "wms",
-          "rectangle": [
-            111,
-            -45,
-            155,
-            -10
-          ],
           "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
-          "name": "Water Observations from Space - Summary",
+          "name": "Estaciones Energias",
           "dataUrlType": "direct",
           "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
           "info": [
@@ -270,6 +264,13 @@
               "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
             }
           ]
+        },
+        {
+          "name": "Estimaciones de Cultivos",
+          "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+          "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+          "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
         },
         {
           "description": "Chlorophyll-a, reflecting wavelengths in the green part of the visible light spectrum, is the substance that helps plants capture the sun’s energy. In the water, it indicates the presence of microscopic green algae (phytoplankton). While these plants are a natural part of the reef ecosystem, elevated numbers (a bloom) of phytoplankton signal elevated nutrient levels, especially nitrogen, in the water. Typical sources are runoff from excess fertiliser being applied to crops and, to a lesser extent in the Great Barrier Reef region, sewage contamination from urban areas.",
