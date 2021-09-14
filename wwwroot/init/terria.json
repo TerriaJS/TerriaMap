@@ -251,11 +251,17 @@
           ]
         },
         {
-          "layer":"ja100_torre",
-          "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0",
+          "layers": "WaterSummary",
+          "url": "http://eos.ga.gov.au/geoserver/NFRIP-WOfS/wms",
           "type": "wms",
+          "rectangle": [
+            111,
+            -45,
+            155,
+            -10
+          ],
           "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)\n\n[nfrip@ga.gov.au](mailto:nfrip@ga.gov.au)",
-          "name": "Estaciones Energias",
+          "name": "Water Observations from Space - Summary",
           "dataUrlType": "direct",
           "dataUrl": "http://www.ga.gov.au/scientific-topics/hazards/flood/wofs",
           "info": [
@@ -264,13 +270,6 @@
               "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
             }
           ]
-        },
-        {
-          "name": "Estimaciones de Cultivos",
-          "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-          "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-          "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-          "type": "wms-getCapabilities"
         },
         {
           "description": "Chlorophyll-a, reflecting wavelengths in the green part of the visible light spectrum, is the substance that helps plants capture the sun’s energy. In the water, it indicates the presence of microscopic green algae (phytoplankton). While these plants are a natural part of the reef ecosystem, elevated numbers (a bloom) of phytoplankton signal elevated nutrient levels, especially nitrogen, in the water. Typical sources are runoff from excess fertiliser being applied to crops and, to a lesser extent in the Great Barrier Reef region, sewage contamination from urban areas.",
