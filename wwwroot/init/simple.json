@@ -65,6 +65,12 @@
       "url": "https://gis.aremi.data61.io/bom/wms"
     },
     {
+      "type": "wms-group",
+      "name": "Torres",
+      "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+      "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+    },
+    {
       "type": "magda",
       "url": "https://data.gov.au",
       "name": "Magda Item",
