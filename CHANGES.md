@@ -15,6 +15,8 @@ Change Log
 * Update youtube urls to nocookie version
 * Removed cancel/deny button from global disclaimer unless `globalDisclaimer.afterDenyLocation` is set with a website to navigate to.
 
+* Fix manifest.json start_url
+
 ### Next Release
 
 * Fix the hot reload script.
