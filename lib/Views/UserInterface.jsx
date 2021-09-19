@@ -5,7 +5,6 @@ import {
 } from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
 import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
 import PropTypes from "prop-types";
-import React from "react";
 import RelatedMaps from "./RelatedMaps";
 import SplitPoint from "terriajs/lib/ReactViews/SplitPoint";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx";
