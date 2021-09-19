@@ -54,7 +54,7 @@ module.exports = function(devMode, hot) {
                                       useBuiltIns: "usage"
                                     }
                                   ],
-                                  '@babel/preset-react',
+                                  ['@babel/preset-react', {"runtime": "automatic"}],
                                   ['@babel/typescript', {allowNamespaces: true}]
                                 ],
                                 plugins: [
