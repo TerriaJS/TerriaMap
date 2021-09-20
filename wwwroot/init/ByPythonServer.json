@@ -19,7 +19,7 @@
                     "name":"SeHavNivå Water level",
                     "type":"geojson",
                     "timeProperty":"time",
-                    "heightProperty": "value",
+                    
                     "url":"http://localhost:5000/sehavniva"
                 }
             ]
