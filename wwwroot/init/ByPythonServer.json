@@ -9,6 +9,7 @@
         {
             "name": "By python server",
             "type": "group",
+            "description": "Data sets piped through our Python/Flask server",
             "members": [
                 {
                     "name":"Yr weather",
