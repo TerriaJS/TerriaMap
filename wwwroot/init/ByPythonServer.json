@@ -14,14 +14,14 @@
                 {
                     "name":"Yr weather",
                     "type":"csv",
-                    "url":"http://localhost:5000/yr_weather"
+                    "url":"https://api.dtpoc.knowit.no/yr_weather"
                 },
                 {
                     "name":"SeHavNivå Water level",
                     "type":"geojson",
                     "timeProperty":"time",
                     
-                    "url":"http://localhost:5000/sehavniva"
+                    "url":"https://api.dtpoc.knowit.no/sehavniva"
                 }
             ]
         }
