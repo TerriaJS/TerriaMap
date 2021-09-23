@@ -7945,17 +7945,17 @@ mkpath@^0.1.0:
   resolved "https://registry.yarnpkg.com/mkpath/-/mkpath-0.1.0.tgz#7554a6f8d871834cc97b5462b122c4c124d6de91"
   integrity sha1-dVSm+Nhxg0zJe1RisSLEwSTW3pE=
 
-mobx-react-lite@>=2.0.6:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-2.0.7.tgz#1bfb3b4272668e288047cf0c7940b14e91cba284"
-  integrity sha512-YKAh2gThC6WooPnVZCoC+rV1bODAKFwkhxikzgH18wpBjkgTkkR9Sb0IesQAH5QrAEH/JQVmy47jcpQkf2Au3Q==
+mobx-react-lite@^2.2.0:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-2.2.2.tgz#87c217dc72b4e47b22493daf155daf3759f868a6"
+  integrity sha512-2SlXALHIkyUPDsV4VTKVR9DW7K3Ksh1aaIv3NrNJygTbhXe2A9GrcKHZ2ovIiOp/BXilOcTYemfHHZubP431dg==
 
-mobx-react@^6.2.2:
-  version "6.2.5"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.2.5.tgz#9020a17b79cc6dc3d124ad89ab36eb9ea540a45b"
-  integrity sha512-LxtXXW0GkOAO6VOIg2m/6WL6ZuKlzOWwESIFdrWelI0ZMIvtKCMZVUuulcO5GAWSDsH0ApaMkGLoaPqKjzyziQ==
+mobx-react@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.3.1.tgz#204f9756e42e19d91cb6598837063b7e7de87c52"
+  integrity sha512-IOxdJGnRSNSJrL2uGpWO5w9JH5q5HoxEqwOF4gye1gmZYdjoYkkMzSGMDnRCUpN/BNzZcFoMdHXrjvkwO7KgaQ==
   dependencies:
-    mobx-react-lite ">=2.0.6"
+    mobx-react-lite "^2.2.0"
 
 mobx-utils@^5.4.1:
   version "5.6.1"
@@ -8926,9 +8926,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-"pell@git://github.com/TerriaJS/pell#master":
+"pell@git://github.com/TerriaJS/pell.git#master":
   version "1.0.6"
-  resolved "git://github.com/TerriaJS/pell#7cd23a55cdfd130fedf3679433991bb7d958fc42"
+  resolved "git://github.com/TerriaJS/pell.git#7cd23a55cdfd130fedf3679433991bb7d958fc42"
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -11424,10 +11424,10 @@ terriajs-server@^3.3.3:
     when "^3.7.7"
     yargs "^13.2.4"
 
-terriajs@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.0.0.tgz#09471680714116a2a7d4cf91469c1d45af5c9076"
-  integrity sha512-Gq1Buz4S2tQD1KN+xJydP7y/PhNf3evyQjA/1LSICLQkwhaKiU+QiDGNkF5g0O00/7gO0RExBJgFo0igYac82Q==
+terriajs@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.1.0.tgz#0f923f2637485dbfeac0a9229d71c0886687b616"
+  integrity sha512-D3GupU2H9vk1gQDLtaaT1TChwXyfeueRdtP8HZjzjxbE2s99yr0ADMFw5Aci5vwDrG6OOu14HXn3dj3R9CvOcQ==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/parser" "^7.12.14"
@@ -11523,7 +11523,7 @@ terriajs@8.0.0:
     mini-css-extract-plugin "^0.5.0"
     minisearch "^3.0.2"
     mobx "^4.15.4"
-    mobx-react "^6.2.2"
+    mobx-react "^6.3.1"
     mobx-utils "^5.4.1"
     moment "2.24.0"
     mustache "^2.2.1"
