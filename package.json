@@ -104,8 +104,8 @@
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
     "prettier-check": "prettier --check \"**/*\"",
-    "replace": "copy .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && copy .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ ",
-    "replace_un": "cp .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && cp .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ "
+    "replace": "copy .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && copy .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && copy .\\_dasostituire\\WebMapServiceCatalogItem.ts .\\node_modules\\terriajs\\lib\\Models\\Catalog\\Ows\\",
+    "replace_un": "cp .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && cp .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ &&  cp .\\_dasostituire\\WebMapServiceCatalogItem.ts .\\node_modules\\terriajs\\lib\\Models\\Catalog\\Ows\\"
   },
   "husky": {
     "hooks": {
