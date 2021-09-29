@@ -10,12 +10,6 @@
           "type": "wms",
           "name": "Comuni con Cabine Primarie con inversione di flusso",
           "description": "Comuni con Cabine Primarie con inversione di flusso \n\n Distribuzione a scala comunale degli eventi di inversione del flusso di energia rilevati nel 2016 nelle Cabine primarie, categorizzati in base alla durata",
-          "info": [
-            {
-              "name": "Licence",
-              "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-            }
-          ],
           "url": "http://gis2.rse-web.it:8080/geoserver/wms",
           "dataCustodian": "text",
           "layers": "atlante_integrato:v_comuni_cabine_primarie",
@@ -28,12 +22,6 @@
           "type": "wms",
           "name": "Qualita' della tensione per apparecchiature non industriali (classe II)",
           "description": "Numero medio regionale di buchi di Tensione MT per punto di misura equivalente nel periodo 2012-2016, ricadenti nella zona pericolosa per apparecchiature non industriali (classe II)\n\n Qualità della tensione per apparecchiature non industriali (classe II). Statistiche pluriennali relative ai buchi di tensione registrati dal sistema di monitoraggio QuEEN \n\n Informazioni sul layer Buchi di Tensione MT </br><a href=\"http://queen.rse-web.it\" target=\"_blank\">QuEEN (Qualità dell'Energia Elettrica)</a>",
-          "info": [
-            {
-              "name": "Licence",
-              "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-            }
-          ],
           "url": "http://gis2.rse-web.it:8080/geoserver/wms",
           "dataCustodian": "text",
           "layers": "atlante_integrato:v_regioni_buchi_tensione",
@@ -47,12 +35,6 @@
           "type": "wms",
           "name": "Qualita' della tensione per apparecchiature industriali (classe III)",
           "description": "Numero medio regionale di buchi di Tensione MT per punto di misura equivalente nel periodo 2012-2016, ricadenti nella zona pericolosa per apparecchiature industriali (classe III)\n\n Qualita' della tensione per apparecchiature industriali (classe III). Statistiche pluriennali relative ai buchi di tensione registrati dal sistema di monitoraggio QuEEN",
-          "info": [
-            {
-              "name": "Licence",
-              "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-            }
-          ],
           "url": "http://gis2.rse-web.it:8080/geoserver/wms",
           "dataCustodian": "text",
           "styles":"regioni_buchi_tensione_n3b",
