@@ -15,17 +15,19 @@ function AnalisiAvanzate(props) {
   // to select language config.json depending on the browser language
   var userLang = navigator.language || navigator.userLanguage;
   var totem_link = "/#en_totemweb";
+  var analisi = "Advanced Analysis";
   if (userLang === "it-IT" || userLang === "it") {
     totem_link = "/#it_totemweb";
+    analisi = "Analisi Avanzate";
   }
 
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="Analisi Avanzate"
+      btnText={analisi}
       smallScreen={props.smallScreen}
       viewState={props.viewState}
-      btnTitle="Analisi Avanzate"
+      btnTitle={analisi}
     >
       {/* titolo della pagina */}
       <div className={classNames(PanelStyles.header)}>
