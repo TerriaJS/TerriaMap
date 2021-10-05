@@ -17,7 +17,7 @@ module.exports = function(devMode, hot) {
             sourcePrefix: '', // to avoid breaking multi-line string literals by inserting extra tabs.
             globalObject: '(self || window)' // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
         },
-        devtool: devMode ? 'eval-cheap-module-source-map' : 'source-map',
+        devtool: devMode ? 'eval-cheap-module-source-map' : false,
         module: {
             rules: [
                 {
@@ -117,11 +117,11 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        {                                                                                                                                                                                                                                                                                           
-                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
-                            options: {                                                                                                                                                                                                                                                                                
-                                sourceMap: false                                                                                                                                                                                                                                                                        
-                            }                                                                                                                                                                                                                                                                                         
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: false
+                            }
                         },
                         'sass-loader?sourceMap'
                     ] : [
@@ -136,11 +136,11 @@ module.exports = function(devMode, hot) {
                                 importLoaders: 2
                             }
                         },
-                        {                                                                                                                                                                                                                                                                                           
-                            loader: 'resolve-url-loader',                                                                                                                                                                                                                                                             
-                            options: {                                                                                                                                                                                                                                                                                
-                                sourceMap: false                                                                                                                                                                                                                                                                        
-                            }                                                                                                                                                                                                                                                                                         
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: false
+                            }
                         },
                         'sass-loader?sourceMap'
                     ]
