@@ -1,0 +1,25 @@
+{
+    "homeCamera":{
+        "north": 59,
+        "south": 58,
+        "west": 5.6,
+        "east":5.8
+    },
+    "catalog":[
+        {
+            "type": "group",
+            "name": "Data fra Geonorge",
+            "members": [
+                {
+                    "type": "wms",
+                    "name": "FKB - bygning - wms",
+                    "url": "https://openwms.statkart.no/skwms1/wms.fkb4?request=GetCapabilities&service=WMS",
+                    "layers": "Bygning",
+                    "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                    }
+                }
+            ]
+        }
+    ]
+}

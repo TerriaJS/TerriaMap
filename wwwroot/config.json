@@ -1,6 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["OSMbuildings", "ByPythonServer", "ogcapi","maps"],
+  "initializationUrls": ["geonorge", "OSMbuildings", "ByPythonServer", "ogcapi","maps"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
