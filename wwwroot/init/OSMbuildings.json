@@ -1,0 +1,27 @@
+{
+    "homeCamera":{
+        "north": 59,
+        "south": 58,
+        "west": 5.6,
+        "east":5.8
+    },
+    "catalog":[
+        {
+            "name": "OSM buildings",
+            "type": "group",
+            "description": "OSM buildings. It is a 3D buildings layer, derived from OpenStreetMap.",
+            "members": [
+                {
+                    "name": "3D from cesium ION",
+                    "type": "3d-tiles",           
+                    "description": "OSM buildings streamed through cesium ion, using Cesium 3D tiles (see https://github.com/CesiumGS/3d-tiles). The reference system that is being used is WGS84.",
+                    "ionAssetId": 96188,
+                    "style": {
+                        
+                    }
+                }
+            ]
+
+        }
+    ]
+}
