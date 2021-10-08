@@ -7,18 +7,24 @@
     },
     "catalog":[
         {
-            "name": "OSM buildings",
+            "name": "Cesium ION",
             "type": "group",
-            "description": "OSM buildings. It is a 3D buildings layer, derived from OpenStreetMap.",
+            "description": "Data streamed through Cesium ION",
             "members": [
                 {
-                    "name": "3D from cesium ION",
+                    "name": "OSM buildlings",
                     "type": "3d-tiles",           
                     "description": "OSM buildings streamed through cesium ion, using Cesium 3D tiles (see https://github.com/CesiumGS/3d-tiles). The reference system that is being used is WGS84.",
                     "ionAssetId": 96188,
                     "style": {
                         
                     }
+                },
+                {
+                    "name": "punktsky OSLO",
+                    "type": "3d-tiles",           
+                    "description": "Punkt sky i Oslo, streamet som 3D-tiles fra Cesium ion.",
+                    "ionAssetId": 629505
                 }
             ]
 
