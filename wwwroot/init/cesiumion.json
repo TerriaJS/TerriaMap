@@ -7,23 +7,24 @@
     },
     "catalog":[
         {
-            "name": "Cesium ION",
+            "name": "Via Cesium ION",
             "type": "group",
-            "description": "Data streamed through Cesium ION",
+            "isOpen": true,
+            "description": "Data streamet gjennom Cesium ION (se https://cesium.com/platform/cesium-ion/)",
             "members": [
                 {
                     "name": "OSM buildlings",
                     "type": "3d-tiles",           
-                    "description": "OSM buildings streamed through cesium ion, using Cesium 3D tiles (see https://github.com/CesiumGS/3d-tiles). The reference system that is being used is WGS84.",
+                    "description": "OSM buildings streamet gjennom Cesium ION. Dataformatet Cesium ION bruker er Cesium 3D tiles (se https://github.com/CesiumGS/3d-tiles). Referransesystemet som brukes er WGS84.",
                     "ionAssetId": 96188,
                     "style": {
                         
                     }
                 },
                 {
-                    "name": "punktsky OSLO",
+                    "name": "Punkt-sky i Oslo",
                     "type": "3d-tiles",           
-                    "description": "Punkt sky i Oslo, streamet som 3D-tiles fra Cesium ion.",
+                    "description": "Punkt-sky i Oslo, streamet som 3D-tiles fra Cesium ION. Dataene er lastet ned som en las-fil fra høydedata.no.<h3>PS:</h3>Punktene flyter langt over oslo, fordi:<ol><li>Kluss med referransesystemer</li><li>Vi har ikke lastet opp høydedata fra kartverket i Oslo-området</li></ol>",
                     "ionAssetId": 629505
                 }
             ]

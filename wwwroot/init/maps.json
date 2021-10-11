@@ -14,7 +14,7 @@
     "catalog": [
         {
             "type": "wmts-group", 
-            "name": "kartverket kart", 
+            "name": "Kartverkets kart", 
             "url": "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?Version=1.0.0&service=wmts&request=getcapabilities"
         }
     ],
