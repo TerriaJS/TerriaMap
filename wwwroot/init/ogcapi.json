@@ -7,22 +7,27 @@
     },
     "catalog":[
         {
-            "name": "OGCAPI",
+            "name": "OGC API",
             "type": "group",
+            "isOpen": true,
+            "description": "Test-data fra kartverket som følger standarden OGC API.<br>Disse dataene finner man her: https://ogcapitest.kartverket.no/pygeoapi/",
             "members": [
                 {
-                    "name":"FKB Bygninger Stavanger",
+                    "name":"FKB bygninger for Stavanger",
+                    "description": "Vi henter 100 polygoner som representerer fra Stavanger-området.",
                     "type":"geojson",
                     "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/dttest/items?f=json&limit=100"
                 },
                 {
                     "name":"INSPIRE bygninger",
                     "type":"geojson",
+                    "description": "Vi henter 100 punkter som representerer bygninger.",
                     "url":"https://ogcapitest.kartverket.no/pygeoapi/collections/INSPIRE_buildings/items?f=json&limit=100"
                 },
                 {   
                     "name": "Havomraader fra n50 data",
                     "type": "geojson",
+                    "description": "Vi henter 100 polygoner som representerer områder med kystlinje i stavanger område.<h3>PS:</h3> Dette datasettet er 2-dimensjonalt, og ser merkelig ut i 3D.",
                     "url": "https://ogcapitest.kartverket.no/pygeoapi/collections/n50vann/items?f=json&bbox=5.419,58.82,6.035,59.11&limit=100"
                 }
             ]

@@ -7,20 +7,22 @@
     },
     "catalog":[
         {
-            "name": "By python server",
+            "name": "Via Python/Flask server",
             "type": "group",
-            "description": "Data sets piped through our Python/Flask server",
+            "isOpen": true,
+            "description": "Data-sett som går gjennom Python/Flask serveren (se https://api.dtpoc.knowit.no/).",
             "members": [
                 {
-                    "name":"Yr weather",
+                    "name":"Yr vær",
                     "type":"csv",
+                    "description": "Her henter vi data fra API-et \"yr locationforcast\" (se https://api.met.no/weatherapi/locationforecast/2.0/documentation). <br>Da TerriaJS har bedre støtte for å vise hvordan atributter (feks temperatur) forandrer seg over tid for csv enn for GeoJSON, bruker vi flask-serveren som et mellomlag for å konvertere dataene fra GeoJSON til csv.",
                     "url":"https://api.dtpoc.knowit.no/yr_weather"
                 },
                 {
-                    "name":"SeHavNivå Water level",
+                    "name":"Se havnivå",
                     "type":"geojson",
                     "timeProperty":"time",
-                    
+                    "description": "Data hentet fra se-havnivå. For at man skal kunne visualisere disse dataene i 3D-rom, bruker vi flask-serveren til å konvertere punktene fra se-havnivå til polygoner.<h3>Settings</h3>For å kunne se disse dataene på en ordenlig måte, må man gå inn på \"Map Settings\" og huke av \"3D\" og \"Terrain hides underground features\". Man kan også se hvordan tidevannet påvirker vannstanden ved å dra i tidslinje-slideren nederst i vinduet.<h3>PS:</h3>Polygonene som blir vist er ligger litt for høyt i terrenget. Dette er sannsynligvis pga surr med ulike høyde-referransesystemer.",
                     "url":"https://api.dtpoc.knowit.no/sehavniva"
                 }
             ]

@@ -1,6 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["OSMbuildings", "ByPythonServer", "ogcapi","maps", "vectortiles"],
+  "initializationUrls": ["geonorge", "cesiumion", "ByPythonServer", "ogcapi", "vectortiles", "maps"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
@@ -77,11 +77,12 @@
 
     // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
-      "enabled": false,
+      "enabled": true,
       "debug": false,
       "languages": {
         "en": "English",
-        "fr": "Français"
+        "fr": "Français",
+        "nb": "Norsk"
       },
       "fallbackLanguage": "en"
     },
