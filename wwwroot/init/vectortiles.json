@@ -3,13 +3,14 @@
         {
             "name": "Vector tiles",
             "type": "group",
-            "description": "Vector tile service",
+            "description": "Data fra eksperimentel VectorTiles tjeneste",
             "members": [
                 {
                     "name":"Topografisk Vector tiles",
                     "type":"mvt",
                     "url":"https://cache.kartverket.no/test/vectortiles/landtopo/{z}/{x}/{y}.mvt",
-                    "styleUrl": "style.json"
+                    "styleUrl": "style.json",
+                    "description": "Data fra eksperimentel VectorTiles tjeneste"
                 }
             ]
         }

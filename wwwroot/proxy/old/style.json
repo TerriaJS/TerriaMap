@@ -44,22 +44,21 @@
       "source-layer": "hoydelag",
 	  "layout": {},
 	   "paint": {
-        "fill-color": "rgba(128, 255, 128, 1)",
-        "old-fill": [
-            "match",
-            ["get", "makshoyde"],
-            ["500","600"],
-            "rgba(255, 255, 204, 1)",
-            ["1000","1200"],
-            "rgba(255, 235, 179, 1)",
-            ["1500","1800"],
-            "rgba(242, 217, 153, 1)",
-            ["2000","2400"],
-            "rgba(224, 194, 140, 1)",
-            ["2500","3000"],
-            "rgba(209, 168, 128, 1)",
-            "rgba(1, 1, 1, 0)"
-        ]
+                "fill-color": [
+                    "match",
+                    ["get", "makshoyde"],
+                    ["500","600"],
+                    "rgba(255, 255, 204, 1)",
+                    ["1000","1200"],
+                    "rgba(255, 235, 179, 1)",
+					["1500","1800"],
+                    "rgba(242, 217, 153, 1)",
+					["2000","2400"],
+                    "rgba(224, 194, 140, 1)",
+					["2500","3000"],
+                    "rgba(209, 168, 128, 1)",
+                    "rgba(1, 1, 1, 0)"
+					]
       }
     },
   {
@@ -185,6 +184,23 @@
                     "rgba(250, 217, 188, 0)"
                 ]
         }
+    },
+	
+	{
+      "id": "fjellskygge1",
+      "type": "raster",
+      "source": "fjellskygge_cache",
+	  "minzoom": 1,
+      "maxzoom": 9
+    },
+	
+		{
+      "id": "fjellskygge2",
+      "type": "raster",
+      "source": "fjellskygge_cache",
+	  "minzoom": 8,
+      "maxzoom": 15,
+      "raster-opacity": 0.9
     },
 	
 	{
@@ -1622,6 +1638,85 @@
 		"circle-stroke-width": 0.3
       }
     },
+		
+	{		
+      "id": "turisthytte_betjent",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "bygningspunkter",
+	  "filter": [
+					"all",
+					["in","bygningstype","956", "56"],
+					["==","betjeningsgrad", "B"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "hytte---betjent_positiv",
+        "icon-allow-overlap": true,
+		"icon-size": 0.15
+      }
+
+	},
+	
+		{		
+      "id": "turisthytte_selvbetjent",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "bygningspunkter",
+  	  "filter": [
+					"all",
+					["in","bygningstype","956", "56"],
+					["==","betjeningsgrad","S"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "hytte---selvbetjent_positiv",
+        "icon-allow-overlap": true,
+		"icon-size": 0.15
+      }
+    },
+
+		{		
+      "id": "turisthytte_ubetjent",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "bygningspunkter",
+	  "filter": [
+					"all",
+					["in","bygningstype","956", "56"],
+					["==","betjeningsgrad","U"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "hytte---ubetjent_positiv",
+        "icon-allow-overlap": true,
+		"icon-size": 0.15
+      }
+    },
+	{		
+      "id": "parkeringsomrade",
+      "type": "symbol",
+      "minzoom": 11,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "vegpunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Parkeringsområde"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "parkeringsplass_positiv",
+        "icon-allow-overlap": true,
+		"icon-size": 0.2
+      }
+    },
 	{		
       "id": "vegbom",
       "type": "circle",
@@ -1641,6 +1736,197 @@
         "circle-color": "rgba(70,70,100,1)",
 		"circle-stroke-color": "rgba(1,1,1,1)",
 		"circle-stroke-width": 0.3
+      }
+    },
+		{		
+      "id": "jernbanestasjon",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "jernbanestasjoner",
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "jernbanestasjon_graa",
+        "icon-allow-overlap": true,
+		"icon-size": 0.13
+      }
+    },
+
+		{		
+      "id": "hoppbakke",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Hoppbakke"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "hoppbakke",
+        "icon-allow-overlap": true,
+		"icon-size": 0.2
+      }
+    },
+		{		
+      "id": "vindkraftverk",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Vindkraftverk"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "vindturbin",
+        "icon-allow-overlap": true,
+		"icon-size": 0.1
+      }
+    },
+			{		
+      "id": "Foss",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Foss"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "prikkerblaa",
+        "icon-allow-overlap": true,
+		"icon-size": 3
+      }
+    },
+			{		
+      "id": "Tårn",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Tårn"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "prikkerblaa",
+        "icon-allow-overlap": true
+      }
+    },
+	{		
+      "id": "tank",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Tank"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "prikkerblack",
+        "icon-allow-overlap": true
+      }
+    },
+	{		
+      "id": "telemast",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","MastTele"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "prikkerblack",
+        "icon-allow-overlap": true
+      }
+    },
+	{		
+      "id": "gruve",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Gruve"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "gruve",
+        "icon-allow-overlap": true,
+		"icon-size": 0.1
+      }
+    },
+	{		
+      "id": "fyr",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Navigasjonsinstallasjon"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "fyr",
+        "icon-allow-overlap": true,
+		"icon-size": 0.1
+      }
+    },
+	{		
+      "id": "Campingplass",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","Campingplass"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "campingplass_positiv",
+        "icon-allow-overlap": true,
+		"icon-size": 0.15
+      }
+    },
+	{		
+      "id": "spesielldetalj_P",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "Anleggspunkter",
+	   "filter": [
+					"all",
+					["in","objtype","SpesiellDetalj"]
+				],
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "prikkerblack",
+        "icon-allow-overlap": true
       }
     },
 	{		
@@ -1684,6 +1970,20 @@
 		"circle-stroke-color": "rgba(1,1,1,1)",
 		"circle-stroke-width": 0.3
       }  
+    },
+	{		
+      "id": "lufthavn",
+      "type": "symbol",
+      "minzoom": 1,
+	  "maxzoom": 15,
+      "source": "landtopo",
+      "source-layer": "lufthavn",
+      "layout": {
+        "visibility": "visible",
+		"icon-image": "airport-arctic-sdi",
+        "icon-allow-overlap": true,
+		"icon-size": 0.05
+      }
     },
 	{		
       "id": "pois",
