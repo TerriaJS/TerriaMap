@@ -81,7 +81,7 @@ function AnalisiAvanzate(props) {
             <a target="_blank" href="http://atlanteintegrato.rse-web.it/">
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/multienergy_new.png")}
+                src={require("../../wwwroot/images/location_Wtr.png")}
                 alt="multienergy"
               />
             </a>
@@ -111,20 +111,19 @@ function AnalisiAvanzate(props) {
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul>
           <li class="list-group-item">
-            <h2>Nesso Acqua Energia</h2>
+            <h2>Water-Energy Nexus</h2>
             <a
               target="_blank"
               href="http://atlanteintegrato.rse-web.it/sankey.php"
             >
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/WEN_logo_new.png")}
+                src={require("../../wwwroot/images/water-Energy.png")}
                 alt="WEN"
               />
             </a>
             <p>
-              Approfondisci il nesso tra acqua ed energia visualizzando i
-              grafici Sankey dei flussi annuali tra i due sistemi.
+            L'acqua per l'energia, l'energia per l'acqua. Flussi energetici e idrici nazionali scala nazionale.
             </p>
             <a
               target="_blank"
