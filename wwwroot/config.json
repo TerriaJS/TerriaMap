@@ -1,19 +1,12 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["simple"],
+  "initializationUrls": [
+    "simple"
+  ],
   "parameters": {
-    "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
-    "googleAnalyticsOptions": null,
-
     // Log ConsoleAnalytics events to console
     // logToConsole: true,
-
-    /* Text that appears at the bottom of the map */
-    "disclaimer": {
-      "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
-      "url": ""
-    },
     /*
         // Text that will be added to any pages printed from your site.
         printDisclaimer:{
@@ -21,7 +14,6 @@
             url: "#"
         },
         */
-
     // Pop-up disclaimer that will be shown at the start
     // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
     // globalDisclaimer: {
@@ -34,7 +26,6 @@
     //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
     //     enableOnLocalhost: true // If false, don't show this when running on localhost
     // },
-
     /*
         developerAttribution: {
             text: "Your organisation",
@@ -42,39 +33,39 @@
         },*/
     // This is used in various text messages. You should also set <title> in index.html
     "appName": "Terria Map",
-
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
-    "brandBarElements": [
-      "",
-      "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
-      ""
-    ],
+    "brandBar": {
+      "elements": [
+        "",
+        "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+        ""
+      ]
+    },
     // Shown when things go wrong.
     "supportEmail": "help@example.com",
     // You probably shouldn't change this.
     "proj4ServiceBaseUrl": "proj4def/",
     // Or this
     "feedbackUrl": "feedback",
-
     // Default mobile viewer mode when loading the map for the first time on mobile platforms.
     // Options are: "3DTerrain", "3DSmooth", "2D"
-    "mobileDefaultViewerMode": "2d",
+    //"mobileDefaultViewerMode": "2d",
     // Enable experimental features, since its nice to have the bleeding edge.
     // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
     "experimentalFeatures": true,
-    // To enable welcome message when map first loads
-    // "showWelcomeMessage": true,
-    // To override the welcome message video displayed on the welcome message
-    // By default, the Getting Started to Terria video is displayed
-    // "welcomeMessageVideo": {
-    //     "videoTitle": "Getting started with the map",
-    //     "videoUrl": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI", // use an embedded video link
+    // "welcomeMessage": {
+    //   // To enable welcome message when map first loads
+    //   "show": true,
+    //   // To override the welcome message video displayed on the welcome message
+    //   // By default, the Getting Started to Terria video is displayed
+    //   "video": {
+    //     "title": "Getting started with the map",
+    //     "url": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI", // use an embedded video link
     //     "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+    //   }
     // },
-
     // True to display in-app guides.
     // "showInAppGuides": false,
-
     // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
       "enabled": false,
@@ -85,7 +76,7 @@
       },
       "fallbackLanguage": "en"
     },
-    "helpContent": [
+    "helpItems": [
       {
         "title": "translate#gettingstarted.title",
         "itemName": "gettingstarted",
@@ -196,15 +187,19 @@
       //     "icon": "satellite"
       // }
     ],
-    "helpContentTerms": [
+    "helpTerms": [
       {
         "term": "translate#helpContentTerm1.term",
-        "aliases": "translate#helpContentTerm1.aliases",
+        "aliases": [
+          "translate#helpContentTerm1.aliases"
+        ],
         "content": "translate#helpContentTerm1.content"
       },
       {
         "term": "translate#helpContentTerm2.term",
-        "aliases": "translate#helpContentTerm2.aliases",
+        "aliases": [
+          "translate#helpContentTerm2.aliases"
+        ],
         "content": "translate#helpContentTerm1.content"
       },
       {
@@ -217,12 +212,16 @@
       },
       {
         "term": "translate#helpContentTerm5.term",
-        "aliases": ["catalogue"],
+        "aliases": [
+          "catalogue"
+        ],
         "content": "translate#helpContentTerm5.content"
       },
       {
         "term": "translate#helpContentTerm6.term",
-        "aliases": "translate#helpContentTerm6.aliases",
+        "aliases": [
+          "translate#helpContentTerm6.aliases"
+        ],
         "content": "translate#helpContentTerm6.content"
       },
       {
