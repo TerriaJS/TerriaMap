@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+### 2021-09-27
+
+* Disabled sourcemaps for production builds. To re-enable for your specific application, set "devtool" to 'source-map' in buildprocess/webpack.config.js
+
+
 ### MobX Development
 
 * Fix manifest.json start_url 
