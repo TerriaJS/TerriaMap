@@ -1,14 +1,14 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["simple"],
+  "initializationUrls": [
+    "simple"
+  ],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
-
     // Log ConsoleAnalytics events to console
     // logToConsole: true,
-
     /* Text that appears at the bottom of the map */
     "disclaimer": {
       "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
@@ -21,7 +21,6 @@
             url: "#"
         },
         */
-
     // Pop-up disclaimer that will be shown at the start
     // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
     // globalDisclaimer: {
@@ -34,7 +33,6 @@
     //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
     //     enableOnLocalhost: true // If false, don't show this when running on localhost
     // },
-
     /*
         developerAttribution: {
             text: "Your organisation",
@@ -42,7 +40,6 @@
         },*/
     // This is used in various text messages. You should also set <title> in index.html
     "appName": "Terria Map",
-
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
@@ -55,7 +52,6 @@
     "proj4ServiceBaseUrl": "proj4def/",
     // Or this
     "feedbackUrl": "feedback",
-
     // Default mobile viewer mode when loading the map for the first time on mobile platforms.
     // Options are: "3DTerrain", "3DSmooth", "2D"
     "mobileDefaultViewerMode": "2d",
@@ -71,10 +67,8 @@
     //     "videoUrl": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI", // use an embedded video link
     //     "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
     // },
-
     // True to display in-app guides.
     // "showInAppGuides": false,
-
     // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
       "enabled": false,
@@ -85,32 +79,30 @@
       },
       "fallbackLanguage": "en"
     },
-    "searchBar": {
-      "searchProviders": [
-        {
-          "id": "search-provider/bing-maps",
-          "type": "bing-maps-search-provider",
-          "name": "translate#viewModels.searchLocations",
-          "url": "https://dev.virtualearth.net/",
-          "flightDurationSeconds": 1.5,
-          "minCharacters": 5,
-          "isOpen": true
-        },
-        {
-          "id": "search-provider/australian-gazetteer",
-          "type": "australian-gazetteer-search-provider",
-          "name": "translate#viewModels.searchPlaceNames",
-          "url":
-            "http://services.ga.gov.au/gis/services/Australian_Gazetteer/MapServer/WFSServer",
-          "searchPropertyName": "Australian_Gazetteer:NameU",
-          "searchPropertyTypeName": "Australian_Gazetteer:Gazetteer_of_Australia",
-          "flightDurationSeconds": 1.5,
-          "minCharacters": 3,
-          "recommendedListLength": 3,
-          "isOpen": false
-        }
-      ]
-    },
+    "searchBarModel": {},
+    "searchProviders": [
+      {
+        "id": "search-provider/bing-maps",
+        "type": "bing-maps-search-provider",
+        "name": "translate#viewModels.searchLocations",
+        "url": "https://dev.virtualearth.net/",
+        "flightDurationSeconds": 1.5,
+        "minCharacters": 5,
+        "isOpen": true
+      },
+      {
+        "id": "search-provider/australian-gazetteer",
+        "type": "australian-gazetteer-search-provider",
+        "name": "translate#viewModels.searchPlaceNames",
+        "url": "http://services.ga.gov.au/gis/services/Australian_Gazetteer/MapServer/WFSServer",
+        "searchPropertyName": "Australian_Gazetteer:NameU",
+        "searchPropertyTypeName": "Australian_Gazetteer:Gazetteer_of_Australia",
+        "flightDurationSeconds": 1.5,
+        "minCharacters": 3,
+        "recommendedListLength": 3,
+        "isOpen": false
+      }
+    ],
     "helpContent": [
       {
         "title": "translate#gettingstarted.title",
@@ -243,7 +235,9 @@
       },
       {
         "term": "translate#helpContentTerm5.term",
-        "aliases": ["catalogue"],
+        "aliases": [
+          "catalogue"
+        ],
         "content": "translate#helpContentTerm5.content"
       },
       {
