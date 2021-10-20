@@ -1,10 +1,11 @@
 {
-  "workbench": [],
   "catalog": [
     {
       "id": "mzQgVb",
       "type": "group",
       "name": "stime energetiche",
+      "description": "Questa raccolta riporta il calcolo dal coefficiente di autoconsumo comunale.",
+      "isOpen": false,
       "members": [
         {
           "type": "wms",
@@ -14,23 +15,9 @@
           "dataCustodian": "text",
           "layers": "atlante_integrato:v_comuni_consumi",
           "styles":"autosuff",
-          "id": "autosuff",
-          "shareKeys": [
-            "Root Group/stime energetiche/Indice di autosufficienza"
-          ]
+          "id": "autosuff"
         }
-      ],
-      "description": "Questa raccolta riporta il calcolo dal coefficiente di autoconsumo comunale.",
-      "isOpen": false,
-      "shareKeys": [
-        "Root Group/stime energetiche"
       ]
     }
-  ],
-  "homeCamera": {
-    "north": 48,
-    "east": 19,
-    "south": 35,
-    "west": 6
-  }
+  ]
 }

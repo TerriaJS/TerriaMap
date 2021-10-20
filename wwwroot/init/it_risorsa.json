@@ -1,16 +1,18 @@
 {
-  "workbench": [],
   "catalog": [
     {
       "id": "risorsa",
       "type": "group",
       "name": "risorsa",
       "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio.",
+      "isOpen": false,
       "members": [
         {
           "id": "eolica",
           "type": "group",
           "name": "eolica",
+          "description": "ATTENZIONE questi strati sono siti su gis.rse-web.it:8080!!!!! \n\n tra l'altro non sempre sono attivi. nei prossimi mesi verranno migrati sul server gis2..... ",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -19,10 +21,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:vento_75",
-              "id": "eol_75",
-              "shareKeys": [
-                "Root Group/risorsa/eolica/Velocita' media annua del vento a 75 m s.l.t./s.l.m."
-              ]
+              "id": "eol_75"
             },
             {
               "type": "wms",
@@ -31,10 +30,7 @@
               "url": "http://gis.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "ATLAEOLICO:vento_100",
-              "id": "eol_100",
-              "shareKeys": [
-                "Root Group/risorsa/eolica/Velocita' media annua del vento a 100 m s.l.t./s.l.m."
-              ]
+              "id": "eol_100"
             },
             {
               "type": "wms",
@@ -43,10 +39,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:prod_75",
-              "id": "prod_75",
-              "shareKeys": [
-                "Root Group/risorsa/eolica/Producibilita' specifica a 75 m s.l.t./s.l.m."
-              ]
+              "id": "prod_75"
             },
             {
               "type": "wms",
@@ -55,22 +48,16 @@
               "url": "http://gis.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "ATLAEOLICO:prod_100",
-              "id": "prod_100",
-              "shareKeys": [
-                "Root Group/risorsa/eolica/Producibilita' specifica a 100 m s.l.t./s.l.m."
-              ]
+              "id": "prod_100"
             }
-          ],
-          "description": "ATTENZIONE questi strati sono siti su gis.rse-web.it:8080!!!!! \n\n tra l'altro non sempre sono attivi. nei prossimi mesi verranno migrati sul server gis2..... ",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/risorsa/eolica"
           ]
         },
         {
           "id": "idroel",
           "type": "group",
           "name": "idroelettrica",
+          "description": "In questa sezione sono riportati i dati della risorsa idroelettrica storici e derivati da collaborazione con ...... ",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -80,10 +67,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:bacini_view",
               "styles":"bacini",
-              "id": "bac",
-              "shareKeys": [
-                "Root Group/risorsa/idroelettrico/Idroelettrico tradizionale - potenziale massimo"
-              ]
+              "id": "bac"
             },
             {
               "type": "wms",
@@ -93,15 +77,14 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:bacini_view",
               "styles":"potenziale_specifico",
-              "id": "pot_bac",
-              "shareKeys": [
-                "Root Group/risorsa/idroelettrico/Idroelettrico tradizionale - potenziale specifico"
-              ]
+              "id": "pot_bac"
             },
             {
               "id": "dati",
               "type": "group",
               "name": "dati storici",
+              "description": "qui si possono visionare e scaricare i dati vecchi... ",
+              "isOpen": false,
               "members": [
                 {
                   "type": "wms",
@@ -110,10 +93,7 @@
                   "url": "http://gis2.rse-web.it:8080/geoserver/wms",
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_idrometri",
-                  "id": "idrom",
-                  "shareKeys": [
-                    "Root Group/risorsa/idroelettrico/dati storici/Dati idrometrici"
-                  ]
+                  "id": "idrom"
                 },
                 {
                   "type": "wms",
@@ -122,10 +102,7 @@
                   "url": "http://gis2.rse-web.it:8080/geoserver/wms",
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_pluviometri",
-                  "id": "pluvi",
-                  "shareKeys": [
-                    "Root Group/risorsa/idroelettrico/dati storici/Dati pluviometrici"
-                  ]
+                  "id": "pluvi"
                 },
                 {
                   "type": "wms",
@@ -135,29 +112,18 @@
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_stazioni",
                   "styles":"Stazioni_Mini_Idro_IT",
-                  "id": "mHydStaz",
-                  "shareKeys": [
-                    "Root Group/risorsa/idroelettrico/dati storici/Curva di durata portate"
-                  ]
+                  "id": "mHydStaz"
                 }
-              ],
-              "description": "qui si possono visionare e scaricare i dati vecchi... ",
-              "isOpen": false,
-              "shareKeys": [
-                "Root Group/risorsa/idroelettrico/dati storici"
               ]
             }
-          ],
-          "description": "In questa sezione sono riportati i dati della risorsa idroelettrica storici e derivati da collaborazione con ...... ",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/risorsa/idroelettrico"
           ]
         },
         {
           "id": "pompHyd",
           "type": "group",
           "name": "pompaggio idroelettrico",
+          "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa utile per il pompaggio idroelettrico. ",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -167,10 +133,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_trad",
               "styles":"comuni_pomp_trad_pot",
-              "id": "po_Pcom",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio tradizionale - potenza installabile fattibile (MW)"
-              ]
+              "id": "po_Pcom"
             },
             {
               "type": "wms",
@@ -180,10 +143,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_trad",
               "styles":"comuni_pomp_trad_acc",
-              "id": "po_CapCom",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio tradizionale - capacità di accumulo fattibile (MWh)"
-              ]
+              "id": "po_CapCom"
             },
             {
               "type": "wms",
@@ -193,10 +153,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_marino",
               "styles":"comuni_pomp_marino_pot",
-              "id": "po_Pmar",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio marino - potenza installabile fattibile (MW)"
-              ]
+              "id": "po_Pmar"
             },
             {
               "type": "wms",
@@ -206,10 +163,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_marino",
               "styles":"comuni_pomp_marino_acc",
-              "id": "po_CapMar",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio marino - capacità di accumulo fattibile (MWh)"
-              ]
+              "id": "po_CapMar"
             },
             {
               "type": "wms",
@@ -224,10 +178,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:pompaggio_laghi_esistenti_group_IT",
-              "id": "BGe5H2",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio tra laghi esistenti - schema dei siti potenziali"
-              ]
+              "id": "BGe5H2"
             },
             {
               "type": "wms",
@@ -237,10 +188,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
               "styles":"comuni_pomp_esistenti_pot",
-              "id": "IP4JhQ",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio tra laghi esistenti - potenza di pompaggio (MW)"
-              ]
+              "id": "IP4JhQ"
             },
             {
               "type": "wms",
@@ -250,10 +198,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
               "styles":"comuni_pomp_esistenti_acc",
-              "id": "BWejlZ",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio tra laghi esistenti - capacità di accumulo (MWh)"
-              ]
+              "id": "BWejlZ"
             },
             {
               "type": "wms",
@@ -263,10 +208,7 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_sott",
               "styles":"comuni_pomp_sott_pot",
-              "id": "po_sotCom",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio sotterraneo - potenza installabile fattibile (MW)"
-              ]
+              "id": "po_sotCom"
             },
             {
               "type": "wms",
@@ -276,22 +218,16 @@
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_pompaggio_sott",
               "styles":"comuni_pomp_sott_acc",
-              "id": "RBwPpK",
-              "shareKeys": [
-                "Root Group/risorsa/pompaggio idroelettrico/Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh)"
-              ]
+              "id": "RBwPpK"
             }
-          ],
-          "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa utile per il pompaggio idroelettrico. ",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/risorsa/pompaggio idroelettrico"
           ]
         },
         {
           "id": "sunny",
           "type": "group",
           "name": "solare",
+          "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa solare, Per ulteriori approfondimenti si rimanda al dedicato atlante solare ...(link)",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -300,22 +236,16 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "solare_10anni",
-              "id": "solare_10anni",
-              "shareKeys": [
-                "Root Group/risorsa/solare/Valore medio della somma annuale di radiazione globale (kWh/m2)"
-              ]
+              "id": "solare_10anni"
             }
-          ],
-          "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa solare, Per ulteriori approfondimenti si rimanda al dedicato atlante solare ...(link)",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/risorsa/solare"
           ]
         },
         {
           "id": "seaside",
           "type": "group",
           "name": "marina",
+          "description": "In questa sezione si riportamo le informazioni riguardo alle risorse marine",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -324,10 +254,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:siti_campagna_misura",
-              "id": "ondametrico",
-              "shareKeys": [
-                "Root Group/risorsa/marina/Campagne di misure ondametriche"
-              ]
+              "id": "ondametrico"
             },
             {
               "type": "wms",
@@ -336,10 +263,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:boa_mobi",
-              "id": "mobi",
-              "shareKeys": [
-                "Root Group/risorsa/marina/MOBI - Stazione di misure offshore"
-              ]
+              "id": "mobi"
             },
             {
               "type": "wms",
@@ -348,10 +272,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_strutture_portuali",
-              "id": "strutture_porti",
-              "shareKeys": [
-                "Root Group/risorsa/marina/Infrastrutture per sfruttamento del moto ondoso"
-              ]
+              "id": "strutture_porti"
             },
             {
               "type": "wms",
@@ -360,10 +281,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "onde",
-              "id": "onde",
-              "shareKeys": [
-                "Root Group/risorsa/marina/Potenza annuale del moto ondoso (kW/m)"
-              ]
+              "id": "onde"
             },
             {
               "type": "wms",
@@ -372,22 +290,16 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "correnti",
-              "id": "GItJMm",
-              "shareKeys": [
-                "Root Group/risorsa/marina/Flusso di potenza delle correnti (W/m2)"
-              ]
+              "id": "GItJMm"
             }
-          ],
-          "description": "In questa sezione si riportamo le informazioni riguardo alle risorse marine",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/risorsa/marina"
           ]
         },
         {
           "id": "geotermia",
           "type": "group",
           "name": "geotermica",
+          "description": "gli strati del gruppo risorsa geotermica. ",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -396,10 +308,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:aree_omogenee",
-              "id": "aree_geot",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Profondità delle aree a temperatura omogenea di 140° (metri)"
-              ]
+              "id": "aree_geot"
             },
             {
               "type": "wms",
@@ -408,10 +317,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:tetto_carbonati_clip3857",
-              "id": "tetto_carb",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Quota della sommità del potenziale serbatoio (m slm)"
-              ]
+              "id": "tetto_carb"
             },
             {
               "type": "wms",
@@ -420,10 +326,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:Flusso_calore_clip3857",
-              "id": "Flusso_cal",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Flusso di calore (mW/m2)"
-              ]
+              "id": "Flusso_cal"
             },
             {
               "type": "wms",
@@ -432,10 +335,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:mappa_T_1000_mt_clip3857",
-              "id": "yVNYSz",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Temperatura alla profondità di 1000 m (°C)"
-              ]
+              "id": "T_1000"
             },
             {
               "type": "wms",
@@ -444,10 +344,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:mappa_T_2000_mt_clip3857",
-              "id": "T_2000",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Temperatura alla profondità di 2000 m (°C)"
-              ]
+              "id": "T_2000"
             },
             {
               "type": "wms",
@@ -456,10 +353,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:mappa_T_3000_mt_clip3857",
-              "id": "T_3000",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Temperatura alla profondità di 3000 m (°C)"
-              ]
+              "id": "T_3000"
             },
             {
               "type": "wms",
@@ -468,29 +362,11 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_comuni_valori_mappe",
-              "id": "DkIrsf",
-              "shareKeys": [
-                "Root Group/risorsa/geotermica/Zonazione geotermica"
-              ]
+              "id": "Zon_Geoter"
             }
-          ],
-          "description": "gli strati del gruppo risorsa geotermica. ",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/risorsa/geotermica"
           ]
         }
-      ],
-      "isOpen": false,
-      "shareKeys": [
-        "Root Group/risorsa"
       ]
     }
-  ],
-  "homeCamera": {
-    "north": 48,
-    "east": 19,
-    "south": 35,
-    "west": 6
-  }
+  ]
 }

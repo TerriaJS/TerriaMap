@@ -1,15 +1,18 @@
 {
-  "workbench": [],
   "catalog": [
     {
       "id": "plants",
       "type": "group",
       "name": "impianti",
+      "description": "Questa raccolta comprende i dati regionali e provinciali relativi al parco produttivo degli impianti FER.",
+      "isOpen": false,
       "members": [
         {
           "id": "eolo",
           "type": "group",
           "name": "eolici",
+          "description": "Insieme di dati relativi agli impianti eolici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -32,10 +35,7 @@
                 "cql_filter": "var_id=89"
               },
               "id": "89",
-              "isGeoServer":"True",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti eolici - Potenza totale effettiva installata regionale (MW)"
-              ]
+              "isGeoServer": "true"
             },
             {
               "type": "wms",
@@ -55,10 +55,7 @@
                 "cql_filter": "var_id=103"
               },
               "id": "103",
-              "isGeoServer":"True",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti mini eolici - Potenza effettiva installata regionale (MW)"
-              ]
+              "isGeoServer": "true"
             },
             {
               "type": "wms",
@@ -76,10 +73,7 @@
               "parameters":{"cql_filter":"var_id=179"},
               "styles":"eo_num_impianti_reg",
               "id": "179",
-              "isGeoServer":"True",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Numero impianti regionali"
-              ]
+              "isGeoServer": "true"
             },
             {
               "type": "wms",
@@ -95,12 +89,9 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"eo_imp_reg_produzione",
-              "isGeoServer":"True",
+              "isGeoServer": "true",
               "dimensions": {"cql_filter":"var_id=90"},
-              "id": "90",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti eolici -  Produzione elettrica eolica regionale (GWh)"
-              ]
+              "id": "90"
             },
             {
               "type": "wms",
@@ -120,10 +111,7 @@
               },
               "id": "69",
               "styles":"eo_imp_prov_potenza",
-              "isGeoServer":"True",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti eolici - Potenza totale effettiva installata provinciale (MW)"
-              ]
+              "isGeoServer": "true"
             },
             {
               "type": "wms",
@@ -142,10 +130,7 @@
               "parameters": {
                 "cql_filter": "var_id=180"
               },
-              "id": "180",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti eolici - Potenza provinciale in % sul totale nazionale"
-              ]
+              "id": "180"
             },
             {
               "type": "wms",
@@ -164,10 +149,7 @@
               "parameters": {
                 "cql_filter": "var_id=70"
               },
-              "id": "70",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti eolici -  Produzione elettrica eolica provinciale (GWh)"
-              ]
+              "id": "70"
             },
             {
               "type": "wms",
@@ -186,10 +168,7 @@
               "parameters": {
                 "cql_filter": "var_id=85"
               },
-              "id": "85",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Impianti eolici - Potenza mini eolico installata provinciale (MW)"
-              ]
+              "id": "85"
             },
             {
               "type": "wms",
@@ -205,10 +184,7 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_impianti_eolici_raggruppamento_comune",
               "id": "eo_Pcom",
-              "styles":"eo_imp_com_potenza",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2018)"
-              ]
+              "styles":"eo_imp_com_potenza"
             },
             {
               "type": "wms",
@@ -224,22 +200,16 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_impianti_eolici_raggruppamento_comune",
               "id": "eo_Ncom",
-              "styles":"eo_num_impianti_com",
-              "shareKeys": [
-                "Root Group/impianti/eolici/Numero impianti eolici - raggruppamento comunale (anno di riferimento 2018)"
-              ]
+              "styles":"eo_num_impianti_com"
             }
-          ],
-          "description": "Insieme di dati relativi agli impianti eolici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/impianti/eolici"
           ]
         },
         {
           "id": "idro",
           "type": "group",
           "name": "idroelettrici",
+          "description": "Insieme di dati relativi agli impianti idroelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -254,10 +224,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:hesci_dighe2020",
-              "id": "H_dam",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Dighe (anno di riferimento 2020)"
-              ]
+              "id": "H_dam"
             },
             {
               "type": "wms",
@@ -272,10 +239,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:hesci_laghi2020",
-              "id": "H_lake",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Invasi (anno di riferimento 2020)"
-              ]
+              "id": "H_lake"
             },
             {
               "type": "wms",
@@ -284,10 +248,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:hesci_centrali2020",
-              "id": "H_plant",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti (anno di riferimento 2020)"
-              ]
+              "id": "H_plant"
             },
             {
               "type": "wms",
@@ -300,10 +261,7 @@
               "parameters": {
                 "cql_filter": "var_id=95"
               },
-              "id": "95",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti idroelettrici - Potenza totale effettiva installata regionale (MW)"
-              ]
+              "id": "95"
             },
             {
               "type": "wms",
@@ -316,10 +274,7 @@
               "parameters": {
                 "cql_filter": "var_id=104"
               },
-              "id": "104",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)"
-              ]
+              "id": "104"
             },
             {
               "type": "wms",
@@ -332,10 +287,7 @@
               "parameters": {
                 "cql_filter": "var_id=96"
               },
-              "id": "96",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti idroelettrici - Produzione totale annuale regionale (GWh)"
-              ]
+              "id": "96"
             },
             {
               "type": "wms",
@@ -348,10 +300,7 @@
               "parameters": {
                 "cql_filter": "var_id=183"
               },
-              "id": "183",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Idroelettrico - Numero impianti regionali"
-              ]
+              "id": "183"
             },
             {
               "type": "wms",
@@ -364,10 +313,7 @@
               "parameters": {
                 "cql_filter": "var_id=185"
               },
-              "id": "185",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Idroelettrico - Produzione idroelettrica regionale da impianti a bacino (GWh)"
-              ]
+              "id": "185"
             },
             {
               "type": "wms",
@@ -380,10 +326,7 @@
               "parameters": {
                 "cql_filter": "var_id=186"
               },
-              "id": "186",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Idroelettrico - Produzione idroelettrica regionale da impianti ad acqua fluente (GWh)"
-              ]
+              "id": "186"
             },
             {
               "type": "wms",
@@ -396,10 +339,7 @@
               "parameters": {
                 "cql_filter": "var_id=184"
               },
-              "id": "184",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Idroelettrico - Produzione idroelettrica regionale al netto del pompaggio (GWh)"
-              ]
+              "id": "184"
             },
             {
               "type": "wms",
@@ -412,10 +352,7 @@
               "parameters": {
                 "cql_filter": "var_id=188"
               },
-              "id": "188",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Idroelettrico - Produzione idroelettrica regionale da pompaggio (GWh)"
-              ]
+              "id": "188"
             },
             {
               "type": "wms",
@@ -428,10 +365,7 @@
               "parameters": {
                 "cql_filter": "var_id=187"
               },
-              "id": "187",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Idroelettrico - Produzione idroelettrica regionale da serbatoio al netto del pompaggio (GWh)"
-              ]
+              "id": "187"
             },
             {
               "type": "wms",
@@ -444,10 +378,7 @@
               "parameters": {
                 "cql_filter": "var_id=76"
               },
-              "id": "76",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti idroelettrici - Potenza totale effettiva installata provinciale (MW)"
-              ]
+              "id": "76"
             },
             {
               "type": "wms",
@@ -460,10 +391,7 @@
               "parameters": {
                 "cql_filter": "var_id=86"
               },
-              "id": "86",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti mini idroelettrici - Potenza effettiva installata provinciale (MW)"
-              ]
+              "id": "86"
             },
             {
               "type": "wms",
@@ -476,10 +404,7 @@
               "parameters": {
                 "cql_filter": "var_id=77"
               },
-              "id": "77",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti idroelettrici - Produzione totale annuale provinciale (GWh)"
-              ]
+              "id": "77"
             },
             {
               "type": "wms",
@@ -492,22 +417,16 @@
               "parameters": {
                 "cql_filter": "var_id=182"
               },
-              "id": "182",
-              "shareKeys": [
-                "Root Group/impianti/idroelettrici/Impianti idroelettrici - Potenza provinciale in % sul totale nazionale"
-              ]
+              "id": "182"
             }
-          ],
-          "description": "Insieme di dati relativi agli impianti idroelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/impianti/idroelettrici"
           ]
         },
         {
           "id": "sun",
           "type": "group",
           "name": "fotovoltaici",
+          "description": "Insieme di dati relativi agli impianti fotovoltaici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -605,17 +524,14 @@
                 "Root Group/impianti/fotovoltaici/Fotovoltaico - Numero di impianti fotovoltaici provinciali"
               ]
             }
-          ],
-          "description": "Insieme di dati relativi agli impianti fotovoltaici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/impianti/fotovoltaici"
           ]
         },
         {
           "id": "geot",
           "type": "group",
           "name": "geotermici",
+          "description": "Insieme di dati relativi agli impianti geotermici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni. <div><img src=\"/images/geotermoelettrico_imgbing.png\" style=\"width:400px;height:300px;\"></div>",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -628,10 +544,7 @@
               "parameters": {
                 "cql_filter": "var_id=93"
               },
-              "id": "93",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Potenza effettiva installata regionale (MW)"
-              ]
+              "id": "93"
             },
             {
               "type": "wms",
@@ -644,10 +557,7 @@
               "parameters": {
                 "cql_filter": "var_id=94"
               },
-              "id": "94",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Produzione annuale regionale (GWh)"
-              ]
+              "id": "94"
             },
             {
               "type": "wms",
@@ -660,10 +570,7 @@
               "parameters": {
                 "cql_filter": "var_id=177"
               },
-              "id": "177",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Numero impianti regionali"
-              ]
+              "id": "177"
             },
             {
               "type": "wms",
@@ -676,10 +583,7 @@
               "parameters": {
                 "cql_filter": "var_id=74"
               },
-              "id": "74",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Potenza effettiva installata provinciale (MW)"
-              ]
+              "id": "74"
             },
             {
               "type": "wms",
@@ -692,10 +596,7 @@
               "parameters": {
                 "cql_filter": "var_id=75"
               },
-              "id": "75",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Produzione annuale provinciale (GWh)"
-              ]
+              "id": "75"
             },
             {
               "type": "wms",
@@ -708,10 +609,7 @@
               "parameters": {
                 "cql_filter": "var_id=178"
               },
-              "id": "178",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Numero impianti provinciali"
-              ]
+              "id": "178"
             },
             {
               "type": "wms",
@@ -721,10 +619,7 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_impianti_geotermici_comune",
               "styles":"ge_num_impianti_com",
-              "id": "ge_Ncom",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Numero impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)"
-              ]
+              "id": "ge_Ncom"
             },
             {
               "type": "wms",
@@ -734,22 +629,16 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_impianti_geotermici_comune",
               "styles":"ge_pot_imp_com",
-              "id": "ge_Pcom",
-              "shareKeys": [
-                "Root Group/impianti/geotermici/Potenza impianti provinciali geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)"
-              ]
+              "id": "ge_Pcom"
             }
-          ],
-          "description": "Insieme di dati relativi agli impianti geotermici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni. <div><img src=\"/images/geotermoelettrico_imgbing.png\" style=\"width:400px;height:300px;\"></div>",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/impianti/geotermici"
           ]
         },
         {
           "id": "biom",
           "type": "group",
           "name": " a biomasse",
+          "description": "Insieme di dati relativi agli impianti a biomasse presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -762,10 +651,7 @@
               "parameters": {
                 "cql_filter": "var_id=78"
               },
-              "id": "78",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Potenza effettiva installata regionale (MW)"
-              ]
+              "id": "78"
             },
             {
               "type": "wms",
@@ -778,10 +664,7 @@
               "parameters": {
                 "cql_filter": "var_id=97"
               },
-              "id": "97",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - produzione effettiva regionale (GWh)"
-              ]
+              "id": "97"
             },
             {
               "type": "wms",
@@ -794,10 +677,7 @@
               "parameters": {
                 "cql_filter": "var_id=201"
               },
-              "id": "201",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse -  Numero Impianti Regionali"
-              ]
+              "id": "201"
             },
             {
               "type": "wms",
@@ -810,10 +690,7 @@
               "parameters": {
                 "cql_filter": "var_id=195"
               },
-              "id": "195",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica da biogas regionale (GWh)"
-              ]
+              "id": "195"
             },
             {
               "type": "wms",
@@ -826,10 +703,7 @@
               "parameters": {
                 "cql_filter": "var_id=189"
               },
-              "id": "189",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica da bioliquidi regionale (GWh)"
-              ]
+              "id": "189"
             },
             {
               "type": "wms",
@@ -842,10 +716,7 @@
               "parameters": {
                 "cql_filter": "var_id=198"
               },
-              "id": "198",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica da biomasse solide diverse dai rifiuti regionale (GWh) "
-              ]
+              "id": "198"
             },
             {
               "type": "wms",
@@ -858,10 +729,7 @@
               "parameters": {
                 "cql_filter": "var_id=192"
               },
-              "id": "192",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica da RU biodegradabili regionale (GWh)"
-              ]
+              "id": "192"
             },
             {
               "type": "wms",
@@ -874,10 +742,7 @@
               "parameters": {
                 "cql_filter": "var_id=79"
               },
-              "id": "79",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione annuale provinciale (GWh)"
-              ]
+              "id": "79"
             },
             {
               "type": "wms",
@@ -890,10 +755,7 @@
               "parameters": {
                 "cql_filter": "var_id=196"
               },
-              "id": "196",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da biogas in % sul totale nazionale"
-              ]
+              "id": "196"
             },
             {
               "type": "wms",
@@ -906,10 +768,7 @@
               "parameters": {
                 "cql_filter": "var_id=194"
               },
-              "id": "194",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili (GWh)"
-              ]
+              "id": "194"
             },
             {
               "type": "wms",
@@ -922,10 +781,7 @@
               "parameters": {
                 "cql_filter": "var_id=191"
               },
-              "id": "191",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da bioliquidi (GWh)"
-              ]
+              "id": "191"
             },
             {
               "type": "wms",
@@ -938,10 +794,7 @@
               "parameters": {
                 "cql_filter": "var_id=190"
               },
-              "id": "190",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da bioliquidi in % sul totale nazionale"
-              ]
+              "id": "190"
             },
             {
               "type": "wms",
@@ -954,10 +807,7 @@
               "parameters": {
                 "cql_filter": "var_id=200"
               },
-              "id": "200",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti (GWh)"
-              ]
+              "id": "200"
             },
             {
               "type": "wms",
@@ -970,10 +820,7 @@
               "parameters": {
                 "cql_filter": "var_id=199"
               },
-              "id": "199",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti in % sul totale nazionale"
-              ]
+              "id": "199"
             },
             {
               "type": "wms",
@@ -986,30 +833,11 @@
               "parameters": {
                 "cql_filter": "var_id=193"
               },
-              "id": "193",
-              "shareKeys": [
-                "Root Group/impianti/ a biomasse/Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili in % sul totale nazionale"
-              ]
+              "id": "193"
             }
-          ],
-          "description": "Insieme di dati relativi agli impianti a biomasse presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/impianti/ a biomasse"
           ]
         }
-      ],
-      "description": "Questa raccolta comprende i dati regionali e provinciali relativi al parco produttivo degli impianti FER.",
-      "isOpen": false,
-      "shareKeys": [
-        "Root Group/impianti"
       ]
     }
-  ],
-  "homeCamera": {
-    "north": 48,
-    "east": 19,
-    "south": 35,
-    "west": 6
-  }
+  ]
 }

@@ -4,10 +4,13 @@
       "type": "group",
       "name": "cartografia",
       "description": "Raccolta mappe cartografiche",
+      "isOpen": true,
       "members": [
         {
           "type": "group",
           "name": "cartografia di base",
+          "description": "Questa raccolta comprende la cartografia politica di base e tematismi generali.",
+          "isOpen": true,
           "members": [
             {
               "type": "wms",
@@ -17,10 +20,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_terria",
-              "id": "confreg",
-              "shareKeys": [
-                "Root Group/cartografia/cartografia di base/Confini regionali"
-              ]
+              "id": "confreg"
             },
             {
               "type": "wms",
@@ -28,10 +28,7 @@
               "description": "Limiti amministrativi provinciali selezionabili in differenti anni. Fonte dati ISTAT.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_terria",
-              "shareKeys": [
-                "Root Group/cartografia/cartografia di base/Confini provinciali"
-              ]
+              "layers": "new_atlante_integrato:v_province_terria"
             },
             {
               "type": "wms",
@@ -39,10 +36,7 @@
               "description": "Limiti amministrativi comunali selezionabili in differenti anni. Fonte dati ISTAT.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_comuni_terria",
-              "shareKeys": [
-                "Root Group/cartografia/cartografia di base/Confini comunali"
-              ]
+              "layers": "new_atlante_integrato:v_comuni_terria"
             },
             {
               "type": "wms",
@@ -50,10 +44,7 @@
               "description": "Centri abitati. \n\n Località italiane definite dal censimento ISTAT 2011",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
-              "layers": "dati_condivisi:localita_11_3857",
-              "shareKeys": [
-                "Root Group/cartografia/cartografia di base/Centri abitati"
-              ]
+              "layers": "dati_condivisi:localita_11_3857"
             },
             {
               "type": "wms",
@@ -61,10 +52,7 @@
               "description": "Uso del suolo (CORINE 2018)\n\nIl CORINE (COoRdination de l'INformation sur l'Environnement) Land Cover (CLC) 2012 è uno dei dataset prodotti nell'ambito delle operazioni iniziali sul monitoraggio del terreno del programma Copernicus (il programma europeo di monitoraggio della Terra precedentemente conosciuto come GMES).\n\n Il CLC fornisce informazioni coerenti sulla copertura del suolo e sui cambiamenti nell'uso del suolo in tutta Europa. Questo inventario è stato avviato nel 1985 (anno di riferimento 1990) e ha creato una serie temporale della copertura del suolo con aggiornamenti nel 2000, nel 2006 e nel 2012, ultimo aggiornamento.\n\n I prodotti CLC derivano da un lavoro di fotointerpretazione di immagini satellitari a cui partecipano i team di ogni Stato Membro dell’Agenzia Europea per l’Ambiente e i paesi cooperanti. Il processo produttivo ha seguito una metodologia e una nomenclatura standard con i seguenti parametri di base: nomenclatura Corine con tre livelli gerarchici e 44 classi; unità di mappatura minima (MMU) di 25 ettari; le larghezza minima degli elementi lineari è 100 metri. \n\nGli inventari nazionali sulla copertura del suolo derivati da questo lavoro sono stati successivamente integrati creando una mappa della copertura del suolo continua su tutta Europa. Come già avvenuto per il CLC 2000 IV livello e per il CLC 2006 IV livello, anche in questo caso e per il solo territorio italiano, si è deciso di ampliare la legenda al IV livello per alcune classi specifiche.<br><br>Aggiornamento al 2012 del database italiano Corine Land Cover. lo scopo principale del progetto è stato il rilevamento, l'identificazione e la mappatura di tutti i cambiamenti nella copertura del suolo superiore ai 5 ha. A tale scopo sono state utilizzate immagini satellitari a partire da settembre 2011.<br><br> Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale</p>",
               "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
               "dataCustodian": "text",
-              "layers": "12",
-              "shareKeys": [
-                "Root Group/cartografia/cartografia di base/corine 2018"
-              ]
+              "layers": "12"
             },
             {
               "type": "wms",
@@ -72,22 +60,10 @@
               "description": "Linee batimetriche (profondita' in metri) \n\n Punti e curve batimetriche ricavati dalle carte nautiche dell'Istituto Idrografico della Marina</p>  ",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
-              "layers": "batimetria_linea",
-              "shareKeys": [
-                "Root Group/cartografia/cartografia di base/linee batimetriche"
-              ]
+              "layers": "batimetria_linea"
             }
-          ],
-          "description": "Questa raccolta comprende la cartografia politica di base e tematismi generali.",
-          "isOpen": true,
-          "shareKeys": [
-            "Root Group/cartografia/cartografia di base"
           ]
         }
-      ],
-      "isOpen": true,
-      "shareKeys": [
-        "Root Group/cartografia"
       ]
     }
   ]

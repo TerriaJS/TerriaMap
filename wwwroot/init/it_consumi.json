@@ -3,6 +3,8 @@
     {
       "type": "group",
       "name": "consumi elettrici",
+      "description": "Questa raccolta comprende i dati dei consumi elettrici stimati a varie scale territoriali e temporali",
+      "isOpen": false,
       "members": [
         {
           "type": "wms",
@@ -18,10 +20,7 @@
             {"layerName":"consumi_reg"}
           ],
           "styles":"consumi_reg",
-          "id": "consumi_reg",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici totali a livello regionale (GWh)"
-          ]
+          "id": "consumi_reg"
         },
         {
           "type": "wms",
@@ -34,10 +33,7 @@
             "cql_filter": "var_id=99"
           },
           "availableStyles":[{"layerName":"t2_industriale_gwh"}],
-          "styles":"t2_industriale_gwh",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto industriale regionale (GWh)"
-          ]
+          "styles":"t2_industriale_gwh"
         },
         {
           "type": "wms",
@@ -50,10 +46,7 @@
             "cql_filter": "var_id=98"
           },
           "availableStyles":[{"layerName":"t1_agricolo_gwh"}],
-          "styles":"t1_agricolo_gwh",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto agricolo regionale (GWh)"
-          ]
+          "styles":"t1_agricolo_gwh"
         },
         {
           "type": "wms",
@@ -66,10 +59,7 @@
             "cql_filter": "var_id=100"
           },
           "availableStyles":[{"layerName":"t38_terziario_gwh"}],
-          "styles":"t38_terziario_gwh",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto terziario regionale (GWh)"
-          ]
+          "styles":"t38_terziario_gwh"
         },
         {
           "type": "wms",
@@ -82,10 +72,7 @@
             "cql_filter": "var_id=101"
           },
           "availableStyles":[{"layerName":"t50_domestico_gwh"}],
-          "styles":"t50_domestico_gwh",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto domestico regionale (GWh)"
-          ]
+          "styles":"t50_domestico_gwh"
         },
         {
           "type": "wms",
@@ -98,10 +85,7 @@
             "cql_filter": "var_id=209"
           },
           "availableStyles":[{"layerName":"consumi_fs_reg_gwh"}],
-          "styles":"consumi_fs_reg_gwh",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici FS regionali (GWh)"
-          ]
+          "styles":"consumi_fs_reg_gwh"
         },
         {
           "type": "wms",
@@ -114,10 +98,7 @@
             "cql_filter": "var_id=80"
           },
 		      "availableStyles":[{"layerName":"cons_el_comparto_agr_prov"}],
-          "styles":"cons_el_comparto_agr_prov",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto agricolo provinciale (GWh)"
-          ]
+          "styles":"cons_el_comparto_agr_prov"
         },
         {
           "type": "wms",
@@ -136,10 +117,7 @@
             "cql_filter": "var_id=81"
           },
           "availableStyles":[{"layerName":"cons_el_comparto_ind_prov"}],
-          "styles":"cons_el_comparto_ind_prov",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto industriale provinciale (GWh)"
-          ]
+          "styles":"cons_el_comparto_ind_prov"
         },
         {
           "type": "wms",
@@ -152,10 +130,7 @@
             "cql_filter": "var_id=82"
           },
           "availableStyles":[{"layerName":"cons_el_comparto_terz_prov"}],
-          "styles":"cons_el_comparto_terz_prov",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto terziario provinciale (GWh)"
-          ]
+          "styles":"cons_el_comparto_terz_prov"
         },
         {
           "type": "wms",
@@ -168,10 +143,7 @@
             "cql_filter": "var_id=83"
           },
           "availableStyles":[{"layerName":"cons_el_comparto_dom_prov"}],
-          "styles":"cons_el_comparto_dom_prov",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici del comparto domestico provinciale (GWh)"
-          ]
+          "styles":"cons_el_comparto_dom_prov"
         },
         {
           "type": "wms",
@@ -184,16 +156,8 @@
             "cql_filter": "var_id=84"
           },
           "availableStyles":[{"layerName":"cons_el_tot_prov_no_FS"}],
-          "styles":"cons_el_tot_prov_no_FS",
-          "shareKeys": [
-            "Root Group/consumi elettrici/Consumi elettrici totali a livello provinciale esclusi consumi FS (GWh)"
-          ]
+          "styles":"cons_el_tot_prov_no_FS"
         }
-      ],
-      "description": "Questa raccolta comprende i dati dei consumi elettrici stimati a varie scale territoriali e temporali",
-      "isOpen": false,
-      "shareKeys": [
-        "Root Group/consumi elettrici"
       ]
     }
   ]

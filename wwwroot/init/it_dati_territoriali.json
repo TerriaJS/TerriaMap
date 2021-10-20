@@ -1,16 +1,18 @@
 {
-  "workbench": [],
   "catalog": [
     {
       "id": "territory",
       "type": "group",
       "name": "dati territoriali",
       "description":"Il gruppo riporta informazioni di interesse territoriale quali le aree protette le zone a rischio sismico e dati residenziali del territorio italiano.",
+      "isOpen": false,
       "members": [
         {
           "id": "vincoli",
           "type": "group",
           "name": "vincoli e aspetti ambientali",
+          "description": "Questa raccolta comprende le aree di protezione ambientali del territorio.",
+          "isOpen": false,
           "members": [
             {
               "type": "wms",
@@ -19,10 +21,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "euap",
-              "id": "euap",
-              "shareKeys": [
-                "Root Group/dati territoriali/vincoli e aspetti ambientali/Elenco ufficiale aree protette (EUAP)"
-              ]
+              "id": "euap"
             },
             {
               "type": "wms",
@@ -31,10 +30,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "sic",
-              "id": "sic",
-              "shareKeys": [
-                "Root Group/dati territoriali/vincoli e aspetti ambientali/Siti di Importanza Comunitaria (SIC)"
-              ]
+              "id": "sic"
             },
             {
               "type": "wms",
@@ -43,10 +39,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "zps",
-              "id": "zps",
-              "shareKeys": [
-                "Root Group/dati territoriali/vincoli e aspetti ambientali/Zone di protezione speciale"
-              ]
+              "id": "zps"
             },
             {
               "type": "wms",
@@ -55,10 +48,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "ramsar",
-              "id": "ramsar",
-              "shareKeys": [
-                "Root Group/dati territoriali/vincoli e aspetti ambientali/Aree umide (Ramsar)"
-              ]
+              "id": "ramsar"
             },
             {
               "type": "wms",
@@ -67,10 +57,7 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "specchi_acqua_interni",
-              "id": "acqua",
-              "shareKeys": [
-                "Root Group/dati territoriali/vincoli e aspetti ambientali/Specchi d'acqua interni"
-              ]
+              "id": "acqua"
             },
             {
               "type": "wms",
@@ -79,22 +66,16 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "iba",
-              "id": "iba",
-              "shareKeys": [
-                "Root Group/dati territoriali/vincoli e aspetti ambientali/Important Bird Areas (IBA)"
-              ]
+              "id": "iba"
             }
-          ],
-          "description": "Questa raccolta comprende le aree di protezione ambientali del territorio.",
-          "isOpen": false,
-          "shareKeys": [
-            "Root Group/dati territoriali/vincoli e aspetti ambientali"
           ]
         },
         {
           "id": "rischi",
           "type": "group",
           "name": "aspetti di valutazione dei rischi",
+          "description": "Questa raccolta comprende informazioni sulla sismicità del territorio.",
+          "isOpen": true,
           "members": [
             {
               "type": "wms",
@@ -103,22 +84,16 @@
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "classificazione_sismica_2012",
-              "id": "sisma",
-              "shareKeys": [
-                "Root Group/dati territoriali/aspetti di valutazione dei rischi/Classificazione sismica dei comuni italiani al 2012"
-              ]
+              "id": "sisma"
             }
-          ],
-          "description": "Questa raccolta comprende informazioni sulla sismicità del territorio.",
-          "isOpen": true,
-          "shareKeys": [
-            "Root Group/dati territoriali/aspetti di valutazione dei rischi"
           ]
         },
         {
           "id": "popol",
           "type": "group",
           "name": "popolazione residente",
+          "description": "Il gruppo riporta informazioni e dati della popolazione del territorio italiano.",
+          "isOpen": true,
           "members": [
             {
               "type": "wms",
@@ -131,10 +106,7 @@
                 "cql_filter": "var_id=88"
               },
               "id": "88",
-			        "styles":"popolazione_regionale",
-              "shareKeys": [
-                "Root Group/dati territoriali/popolazione residente/Popolazione residente a livello regionale"
-              ]
+			        "styles":"popolazione_regionale"
             },
             {
               "type": "wms",
@@ -147,10 +119,7 @@
                 "cql_filter": "var_id=87"
               },
               "id": "87",
-              "styles":"popolazione_provinciale",
-              "shareKeys": [
-                "Root Group/dati territoriali/popolazione residente/Popolazione residente a livello provinciale"
-              ]
+              "styles":"popolazione_provinciale"
             },
             {
               "type": "wms",
@@ -163,29 +132,11 @@
                 "cql_filter": "var_id=65"
               },
               "id": "65",
-              "styles":"popolazione_comunale",
-              "shareKeys": [
-                "Root Group/dati territoriali/popolazione residente/Popolazione residente a livello comunale"
-              ]
+              "styles":"popolazione_comunale"
             }
-          ],
-          "description": "Il gruppo riporta informazioni e dati della popolazione del territorio italiano.",
-          "isOpen": true,
-          "shareKeys": [
-            "Root Group/dati territoriali/popolazione residente"
           ]
         }
-      ],
-      "isOpen": false,
-      "shareKeys": [
-        "Root Group/dati territoriali"
       ]
     }
-  ],
-  "homeCamera": {
-    "north": 48,
-    "east": 19,
-    "south": 35,
-    "west": 6
-  }
+  ]
 }

@@ -1,5 +1,4 @@
 {
-  "workbench": [],
   "stories":[
     {
     "id": "story1",
@@ -165,7 +164,8 @@
       "text":"prova questo testo",
       "id":"prova_2",
       "shareData":
-      {"version":"8.0.0",
+      {
+        "version":"8.0.0",
         "initSources":
         [
           {"stratum":"user",
