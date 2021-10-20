@@ -156,5 +156,88 @@ module.exports = function(devMode, hot) {
         }
     };
     config.resolve.alias['terriajs-variables'] = require.resolve('../lib/Styles/variables.scss');
+
+    // Disable this block if you wish to opt out of pre-rendering
+    if (!devMode) {
+        var configJsonPath = fs.readFileSync(path.resolve(__dirname, '..','wwwroot', 'config.json'), 'utf8');
+        var configJson = json5.parse(configJsonPath);
+        var prerenderRoutes =
+            (configJson &&
+                configJson.initializationUrls &&
+                configJson.initializationUrls.length > 0 &&
+                generateRoutes(configJson.initializationUrls)) ||
+            [];
+        var appBaseUrl =
+            (configJson &&
+                configJson.parameters &&
+                configJson.parameters.appBaseUrl &&
+                configJson.parameters.appBaseUrl.length > 0 &&
+                configJson.parameters.appBaseUrl);
+
+        console.log('The following routes generated from config.json\'s initializationUrls will be prerendered:');
+        console.log(prerenderRoutes);
+
+        if (appBaseUrl) {
+            try {
+                console.log('Attempting to write sitemap with appBaseUrl: ', appBaseUrl);
+                var sitemap = generateTerriaSitemap(appBaseUrl, prerenderRoutes);
+                var sitemapPath = path.resolve(__dirname, '..', 'wwwroot', 'sitemap.xml');
+                fs.writeFileSync(sitemapPath, new Buffer(sitemap));
+                console.log('Wrote out sitemap to: ' + sitemapPath);
+            } catch (e) {
+                console.error("Couldn't generate sitemap?", e);
+            }
+        } else {
+            console.warn("Warning - no appBaseUrl specified, no sitemap will be generated.")
+        }
+      config.plugins = [
+        ...config.plugins,
+        new webpack.DefinePlugin({
+          // styled-component uses CSSOM for rendering styles,
+          // but when pre-rendering, we want all styles to be applied via the DOM instead.
+          // This env variable instructs styled-component to use DOM instead of CSSOM
+          // for applying styles
+          'process.env.SC_DISABLE_SPEEDY': "true",
+        }),
+        new PrerenderSPAPlugin({
+            staticDir: path.resolve(__dirname, '..', 'wwwroot', ),
+            outputDir: path.resolve(__dirname, '..', 'wwwroot', 'prerendered'),
+            indexPath: path.resolve(__dirname, '..', 'wwwroot', 'index.html'),
+            routes: prerenderRoutes,
+            server: {
+              // If a server is running in the default terria port
+              // use it to proxy the following paths
+              proxy: {
+                "/proxyabledomains": {
+                  target: 'http://localhost:3001'
+                },
+                "/proxy": {
+                  target: 'http://localhost:3001'
+                }
+              }
+            },
+            renderer: new Renderer({
+                renderAfterDocumentEvent: 'prerender-end',
+                // If you run out of memory, try a lower value here
+                maxConcurrentRoutes: 12,
+                // headless: false, // set to false for debugging
+                timeout: 5000
+            }),
+            postProcess(context) {
+                // Hide any errors or popups in the rendered page.
+                const bodyTag = "<body>";
+                const catalogzIndexOverride = `
+                    <style id="catalogStyleOverride" type="text/css">
+                        .tjs-explorer-window__modal-wrapper {
+                            z-index:1000000 !important;
+                        }
+                    </style>
+                `;
+                const htmlSplit = context.html.split(bodyTag); // Only one <body> tag so it'll be split into 2
+                context.html = htmlSplit[0] + bodyTag + catalogzIndexOverride + htmlSplit[1];
+                return context;
+            }
+        })];
+    }
     return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
 };

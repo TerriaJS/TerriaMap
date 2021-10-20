@@ -16,7 +16,20 @@ function loadMainScript() {
 }
 
 function createLoader() {
-    const loaderDiv = document.createElement('div');
+    // We only want this briefly so the explorer-window modal can be displayed
+    // until we load in other modal-like-things like disclaimer windows,
+    // but also other notification windows like error messages
+    // So, reset it back to app defaults after
+    let catalogzIndexOverride = document.createElement('style');
+    catalogzIndexOverride.setAttribute('type', 'text/css');
+    catalogzIndexOverride.innerHTML = `
+        .tjs-explorer-window__modal-wrapper {
+            z-index:10000 !important;
+        }
+    `;
+    document.body.appendChild(catalogzIndexOverride);
+
+    let loaderDiv = document.createElement('div');
     loaderDiv.classList.add("loader-ui");
     const loaderGif = document.createElement('img');
     loaderGif.src = globeGif;
@@ -38,10 +51,25 @@ function createLoader() {
         loadMainScript().catch(() => {
             // Ignore errors and try to show the map anyway
         }).then(() => {
-            loaderDiv.classList.add('loader-ui-hide');
-            setTimeout(()=> {
-                document.body.removeChild(loaderDiv);
-            }, 2000);
+            // loaderDiv.classList.add('loader-ui-hide');
+            // setTimeout(()=> {
+            //     document.body.removeChild(loaderDiv);
+            // }, 2000);
+          const removeLoaderElements = () => {
+              if (loaderDiv) {
+                  document.body.removeChild(loaderDiv);
+                  loaderDiv=null;
+              }
+              if (catalogzIndexOverride) {
+                  document.body.removeChild(catalogzIndexOverride);
+                  catalogzIndexOverride=null;
+              }
+          };
+          loaderDiv.classList.add('loader-ui-hide');
+          loaderDiv.addEventListener('transitionend', removeLoaderElements);
+          // also fallback with setTimeout here
+          // so we can remove the elements anyway in case of transitionend event failure
+          setTimeout(removeLoaderElements, 2000);
         });
     });
 }
