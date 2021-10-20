@@ -5,6 +5,7 @@
       "id": "risorsa",
       "type": "group",
       "name": "risorsa",
+      "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio.",
       "members": [
         {
           "id": "eolica",
@@ -61,7 +62,7 @@
             }
           ],
           "description": "ATTENZIONE questi strati sono siti su gis.rse-web.it:8080!!!!! \n\n tra l'altro non sempre sono attivi. nei prossimi mesi verranno migrati sul server gis2..... ",
-          "isOpen": true,
+          "isOpen": false,
           "shareKeys": [
             "Root Group/risorsa/eolica"
           ]
@@ -69,7 +70,7 @@
         {
           "id": "idroel",
           "type": "group",
-          "name": "idroelettrico",
+          "name": "idroelettrica",
           "members": [
             {
               "type": "wms",
@@ -141,14 +142,14 @@
                 }
               ],
               "description": "qui si possono visionare e scaricare i dati vecchi... ",
-              "isOpen": true,
+              "isOpen": false,
               "shareKeys": [
                 "Root Group/risorsa/idroelettrico/dati storici"
               ]
             }
           ],
           "description": "In questa sezione sono riportati i dati della risorsa idroelettrica storici e derivati da collaborazione con ...... ",
-          "isOpen": true,
+          "isOpen": false,
           "shareKeys": [
             "Root Group/risorsa/idroelettrico"
           ]
@@ -282,7 +283,7 @@
             }
           ],
           "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa utile per il pompaggio idroelettrico. ",
-          "isOpen": true,
+          "isOpen": false,
           "shareKeys": [
             "Root Group/risorsa/pompaggio idroelettrico"
           ]
@@ -306,7 +307,7 @@
             }
           ],
           "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa solare, Per ulteriori approfondimenti si rimanda al dedicato atlante solare ...(link)",
-          "isOpen": true,
+          "isOpen": false,
           "shareKeys": [
             "Root Group/risorsa/solare"
           ]
@@ -378,7 +379,7 @@
             }
           ],
           "description": "In questa sezione si riportamo le informazioni riguardo alle risorse marine",
-          "isOpen": true,
+          "isOpen": false,
           "shareKeys": [
             "Root Group/risorsa/marina"
           ]
@@ -474,7 +475,7 @@
             }
           ],
           "description": "gli strati del gruppo risorsa geotermica. ",
-          "isOpen": true,
+          "isOpen": false,
           "shareKeys": [
             "Root Group/risorsa/geotermica"
           ]

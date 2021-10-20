@@ -35,21 +35,6 @@ export default function UserInterface(props) {
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
         <MenuItem caption="About" href="about.html" key="about-link" />
-        {/*
-        <RelatedMaps viewState={props.viewState} />
-        <Multienergy viewState={props.viewState} />
-        <MenuItem
-          caption="Geoportale"
-          //href="http://localhost:8081"
-          href="http://gis2.rse-web.it:8080/mapstore"
-          key="about-link"
-        />
-        <MenuItem
-          caption="WEN"
-          href="http://atlanteintegrato.rse-web.it/sankey.php"
-          key="about-link"
-        />
-        */}
         <AnalisiAvanzate viewState={props.viewState} />
       </MenuLeft>
       <ExperimentalMenu>

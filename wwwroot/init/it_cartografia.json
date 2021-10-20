@@ -3,6 +3,7 @@
     {
       "type": "group",
       "name": "cartografia",
+      "description": "Raccolta mappe cartografiche",
       "members": [
         {
           "type": "group",
@@ -11,7 +12,7 @@
             {
               "type": "wms",
               "name": "Confini regionali",
-              "description": "Limiti amministrativi regionali selezionabili in differenti anni. ",
+              "description": "Limiti amministrativi regionali selezionabili in differenti anni. Fonte dati ISTAT.",
               "show": true,
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
@@ -24,7 +25,7 @@
             {
               "type": "wms",
               "name": "Confini provinciali",
-              "description": "Limiti amministrativi provincialiselezionabili in differenti anni.",
+              "description": "Limiti amministrativi provinciali selezionabili in differenti anni. Fonte dati ISTAT.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_province_terria",
@@ -35,7 +36,7 @@
             {
               "type": "wms",
               "name": "Confini comunali",
-              "description": "Limiti amministrativi regionali selezionabili in differenti anni.",
+              "description": "Limiti amministrativi comunali selezionabili in differenti anni. Fonte dati ISTAT.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_comuni_terria",
@@ -77,7 +78,7 @@
               ]
             }
           ],
-          "description": "Cartografia di base e tematismi generali ",
+          "description": "Questa raccolta comprende la cartografia politica di base e tematismi generali.",
           "isOpen": true,
           "shareKeys": [
             "Root Group/cartografia/cartografia di base"

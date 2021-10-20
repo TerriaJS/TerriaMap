@@ -9,3 +9,5 @@ Alla riga 52 del file node_modules\terriajs\lib\ReactViews\SidePanel\Branding.ts
 Riscalare gli spazi modificando la riga 55 del file node_modules\terriajs\lib\ReactViews\SidePanel\SidePanel.jsx impostando calc(100vh - 245px)
 
 Sostituire alla riga 47 del file node_modules\terriajs\lib\ReactViews\SidePanel\Branding.tsx display: flex; con display: block;
+
+\wwwroot\build\TerriaJS\images\  si trovano le immagini rappresentative delle basemap, peccato che poi quando ricompila le legge e sovrascrive da un altra parte...

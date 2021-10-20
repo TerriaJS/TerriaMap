@@ -20,7 +20,7 @@
           ]
         }
       ],
-      "description": "riporta il calcolo dal coefficiente di autoconsumo comunale",
+      "description": "Questa raccolta riporta il calcolo dal coefficiente di autoconsumo comunale.",
       "isOpen": false,
       "shareKeys": [
         "Root Group/stime energetiche"

@@ -5,7 +5,7 @@
       "id": "territory",
       "type": "group",
       "name": "dati territoriali",
-      "description":"Il gruppo riporta informazioni di interesse territoriale quali le arre protette le zone a rischio sismico e dati residenziali del territorio italiano.",
+      "description":"Il gruppo riporta informazioni di interesse territoriale quali le aree protette le zone a rischio sismico e dati residenziali del territorio italiano.",
       "members": [
         {
           "id": "vincoli",
@@ -85,8 +85,8 @@
               ]
             }
           ],
-          "description": "qui va scritta la descrizione degli strati del gruppo xxxx ",
-          "isOpen": true,
+          "description": "Questa raccolta comprende le aree di protezione ambientali del territorio.",
+          "isOpen": false,
           "shareKeys": [
             "Root Group/dati territoriali/vincoli e aspetti ambientali"
           ]
@@ -109,7 +109,7 @@
               ]
             }
           ],
-          "description": "qui va scritta la descrizione degli strati del gruppo xxxx ",
+          "description": "Questa raccolta comprende informazioni sulla sismicità del territorio.",
           "isOpen": true,
           "shareKeys": [
             "Root Group/dati territoriali/aspetti di valutazione dei rischi"
@@ -123,7 +123,7 @@
             {
               "type": "wms",
               "name": "Popolazione residente a livello regionale",
-              "description": "Distribuzione regionale della popolazione residente comunale che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (anno 2015)</p>                ",
+              "description": "Distribuzione regionale della popolazione residente che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT</p>                ",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
@@ -139,7 +139,7 @@
             {
               "type": "wms",
               "name": "Popolazione residente a livello provinciale",
-              "description": "Distribuzione provinciale della popolazione residente comunale che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (anno 2015)</p>",
+              "description": "Distribuzione provinciale della popolazione residente (aggregazione del dato comunale) che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT </p>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_province_t",
@@ -155,7 +155,7 @@
             {
               "type": "wms",
               "name": "Popolazione residente a livello comunale",
-              "description": "Popolazione residente a livello comunale \n\n Distribuzione comunale della popolazione residente che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (anno 2015)</p>",
+              "description": "Popolazione residente a livello comunale \n\n Distribuzione comunale della popolazione residente che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (a partire dall'anno 2015/anni dal 2015 al 2019)</p>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_comuni_t",
@@ -169,7 +169,7 @@
               ]
             }
           ],
-          "description": "Il gruppo riporta informazioni e dati residenziali del territorio italiano.",
+          "description": "Il gruppo riporta informazioni e dati della popolazione del territorio italiano.",
           "isOpen": true,
           "shareKeys": [
             "Root Group/dati territoriali/popolazione residente"

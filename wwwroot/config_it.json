@@ -8,7 +8,8 @@
     "it_impianti",
     "it_consumi",
     "it_stime_energetiche",
-    "it"
+    "it",
+    "it_story"
   ],
   "parameters": {
     "tabbedCatalog": true,

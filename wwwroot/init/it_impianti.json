@@ -999,7 +999,7 @@
           ]
         }
       ],
-      "description": "Comprende i dati regionali e provinciali relativi al parco produttivo",
+      "description": "Questa raccolta comprende i dati regionali e provinciali relativi al parco produttivo degli impianti FER.",
       "isOpen": false,
       "shareKeys": [
         "Root Group/impianti"

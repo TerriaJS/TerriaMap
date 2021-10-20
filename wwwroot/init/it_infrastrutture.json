@@ -5,6 +5,7 @@
       "id": "rete",
       "type": "group",
       "name": "infrastrutture di rete",
+      "description": "Questa raccolta comprende informazioni su flussi e qualità della tensione.",
       "members": [
         {
           "type": "wms",
