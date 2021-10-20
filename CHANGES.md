@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+### 2021-09-27
+
+* Disabled sourcemaps for production builds. To re-enable for your specific application, set "devtool" to 'source-map' in buildprocess/webpack.config.js
+
+
 ### MobX Development
 
 * Fix manifest.json start_url 
@@ -13,6 +18,9 @@ Change Log
 * Added default help content & `languageOverrides.json` for i18n
 * Add back updateApplicationOnMessageFromParentWindow
 * Update youtube urls to nocookie version
+* Removed cancel/deny button from global disclaimer unless `globalDisclaimer.afterDenyLocation` is set with a website to navigate to.
+
+* Fix manifest.json start_url
 
 ### Next Release
 
