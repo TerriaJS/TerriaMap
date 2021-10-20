@@ -75,7 +75,7 @@ module.exports = terria.start({
 }).finally(function() {
     terria.loadInitSources().then(result => result.raiseError(terria));
     try {
-        viewState.searchState.locationSearchProviders = terria.locationSearchProvidersArray;
+        viewState.searchState.locationSearchProviders = terria.configParameters.searchBarModel.locationSearchProvidersArray;
 
         // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
         updateApplicationOnHashChange(terria, window);
