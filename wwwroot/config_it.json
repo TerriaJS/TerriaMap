@@ -94,10 +94,9 @@
       "enabled": false,
       "debug": false,
       "languages": {
-        "en": "English",
-        "fr": "Français"
+        "it": "Italiano"
       },
-      "fallbackLanguage": "en"
+      "fallbackLanguage": "it"
     },
     "helpContent": [
       {

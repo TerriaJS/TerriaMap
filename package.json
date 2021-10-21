@@ -73,7 +73,7 @@
     "semver": "^5.0.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "4.1.3",
-    "terriajs": "8.1.0",
+    "terriajs": "8.1.4",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.81.0",
     "terriajs-schema": "latest",
@@ -107,7 +107,7 @@
     "replace_brand": "copy .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && copy .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\",
     "replace_prev": "copy wwwroot\\images\\basemaps\\black-marble.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\dark-matter.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\natural-earth.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\positron.png .\\wwwroot\\build\\TerriaJS\\images\\",
     "replace_language": "copy node_modules\\terriajs\\lib\\Language\\it\\translation.json wwwroot\\languages\\it",
-    "pre_gulp": "npm run replace_brand && npm run replace_language",
+    "pre_gulp": "npm run replace_brand",
     "post_gulp": "npm run replace_prev"
   },
   "husky": {
