@@ -160,7 +160,7 @@
       }
     },
     {
-      "title":"Potenziale+di+pompaggio+in+Sardegna",
+      "title":"Potenziale di pompaggio in Sardegna",
       "text":"prova questo testo",
       "id":"prova_2",
       "shareData":
@@ -195,7 +195,7 @@
       }
     },
     {
-      "title":"misure+ondametriche+a+Civitavecchia",
+      "title":"misure ondametriche a Civitavecchia",
       "text":"","id":"76101fab-db82-42b8-adf7-536e1fbf83b8",
       "shareData":
       {
@@ -252,7 +252,7 @@
       }
     },
     {
-      "title":"Variazione+della+produzione+da+biomasse+nel+tempo",
+      "title":"Variazione della produzione da biomasse nel tempo",
       "text":"","id":"7349ee35-a7a6-4fae-a464-e7b28fb0beea",
       "shareData":
       {
@@ -279,8 +279,8 @@
                 "splitSourceItemId":"79",
                 "dereferenced":
                 {
-                  "name":"Impianti+a+biomasse+-+Produzione+annuale+provinciale+%28GWh%29+%28copy%29",
-                  "isOpenInWorkbench":false,
+                  "name":"Impianti a biomasse - Produzione annuale provinciale (GWh)",
+                  "isOpenInWorkbench":true,
                   "currentTime":"2016-01-01T00:00:00Z",
                   "splitDirection":-1
                 },
