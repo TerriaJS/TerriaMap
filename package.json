@@ -93,9 +93,9 @@
     "start": "pm2 start ecosystem.config.js --update-env -- --config-file devserverconfig.json",
     "stop": "pm2 stop ecosystem.config.js",
     "pm2": "pm2",
-    "gulp": "gulp && npm run replace_back",
+    "gulp": "npm run pre_gulp && gulp && npm run post_gulp",
     "gulp:watch": "gulp watch",
-    "postinstall": "npm run replace && echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
+    "postinstall": "echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && npm ci && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
@@ -106,6 +106,9 @@
     "prettier-check": "prettier --check \"**/*\"",
     "replace_brand": "copy .\\_dasostituire\\Branding.tsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\ && copy .\\_dasostituire\\SidePanel.jsx .\\node_modules\\terriajs\\lib\\ReactViews\\SidePanel\\",
     "replace_prev": "copy wwwroot\\images\\basemaps\\black-marble.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\dark-matter.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\natural-earth.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\positron.png .\\wwwroot\\build\\TerriaJS\\images\\",
+    "replace_language": "copy node_modules\\terriajs\\lib\\Language\\it\\translation.json wwwroot\\languages\\it",
+    "pre_gulp": "npm run replace_brand && npm run replace_language",
+    "post_gulp": "npm run replace_prev"
   },
   "husky": {
     "hooks": {
