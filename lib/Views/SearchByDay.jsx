@@ -9,7 +9,7 @@ import classNames from "classnames";
 function SearchByDay(props) {
   const dropdownTheme = {
     inner: Styles.dropdownInner,
-    icon: "gallery"
+    icon: "search"
   };
 
   return (
