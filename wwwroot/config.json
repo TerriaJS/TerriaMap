@@ -1,6 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["simple"],
+  "initializationUrls": ["apsviz"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,

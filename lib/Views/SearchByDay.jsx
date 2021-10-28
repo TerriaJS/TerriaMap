@@ -6,7 +6,7 @@ import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
 import Styles from "./related-maps.scss";
 import classNames from "classnames";
 
-function RelatedMaps(props) {
+function SearchByDay(props) {
   const dropdownTheme = {
     inner: Styles.dropdownInner,
     icon: "gallery"
@@ -15,19 +15,19 @@ function RelatedMaps(props) {
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="Related Maps"
+      btnText="Search By Day"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
       btnTitle="See related maps"
       showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Related Maps</label>
+        <label className={PanelStyles.heading}>Search by day</label>
       </div>
 
-      <p>Clicking on a map below will open it in a separate window or tab.</p>
+      {/* <p>Clicking on a map below will open it in a separate window or tab.</p> */}
 
-      <div className={classNames(PanelStyles.section, Styles.section)}>
+      {/* <div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://nationalmap.gov.au/renewables/">
           <img
             className={Styles.image}
@@ -49,9 +49,9 @@ function RelatedMaps(props) {
           Renewable Energy industry, sourced from Government, Industry and
           Research.
         </p>
-      </div>
+      </div> */}
 
-      <div className={classNames(PanelStyles.section, Styles.section)}>
+      {/* <div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://nationalmap.gov.au/northernaustralia/">
           <img
             className={Styles.image}
@@ -84,9 +84,9 @@ function RelatedMaps(props) {
           </a>
           .
         </p>
-      </div>
+      </div> */}
 
-      <div className={classNames(PanelStyles.section, Styles.section)}>
+      {/* <div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://neiiviewer.nicta.com.au">
           <img
             className={Styles.image}
@@ -117,9 +117,9 @@ function RelatedMaps(props) {
           </a>
           .
         </p>
-      </div>
+      </div> */}
 
-      <div className={classNames(PanelStyles.section, Styles.section)}>
+      {/* <div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://map.aurin.org.au">
           <img
             className={Styles.image}
@@ -140,14 +140,14 @@ function RelatedMaps(props) {
           AURIN Map provides access to datasets on urban infrastructure for
           urban researchers, policy and decision makers.
         </p>
-      </div>
+      </div> */}
     </MenuPanel>
   );
 }
 
-RelatedMaps.propTypes = {
+SearchByDay.propTypes = {
   viewState: PropTypes.object.isRequired,
   smallScreen: PropTypes.bool
 };
 
-export default RelatedMaps;
+export default SearchByDay;

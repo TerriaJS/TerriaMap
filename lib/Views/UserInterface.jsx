@@ -6,7 +6,7 @@ import {
 import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
 import PropTypes from "prop-types";
 import React from "react";
-import RelatedMaps from "./RelatedMaps";
+import SearchByDay from "./SearchByDay";
 import SplitPoint from "terriajs/lib/ReactViews/SplitPoint";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx";
 import version from "../../version";
@@ -33,7 +33,7 @@ export default function UserInterface(props) {
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
         <MenuItem caption="About" href="about.html" key="about-link" />
-        <RelatedMaps viewState={props.viewState} />
+        <SearchByDay viewState={props.viewState} />
       </MenuLeft>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>
