@@ -378,5 +378,16 @@
       "south": 20,
       "east": -61,
       "north": 46
+    },
+    "baseMaps": {
+      "items": [
+        {
+          "item": {
+            "id": "basemap-darkmatter",
+            "name": "Dark Matter"
+          },
+          "image": "build/TerriaJS/images/dark-matter-usa.jpeg"
+        }
+      ]
     }
   }
