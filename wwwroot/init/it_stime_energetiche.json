@@ -18,6 +18,42 @@
           "id": "autosuff"
         }
       ]
+    },
+    {
+      "id": "mzQgVb",
+      "type": "group",
+      "name": "stime energetiche",
+      "members": [
+        {
+          "type": "wms",
+          "name": "tiff",
+          "description": "rf_2011_01c prova di visualizzazione di un geotiff",
+          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "dataCustodian": "text",
+          "layers": "new_atlante_integrato:rf_2011_01c",
+          "id": "tiff",
+          "shareKeys": [
+            "Root Group/stime energetiche/tiff"
+          ]
+        },
+        {
+          "type": "wms",
+          "name": "netcdf",
+          "description": "wind sulcis prova di visualizzazione di un netcdf",
+          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "dataCustodian": "text",
+          "layers": "new_atlante_integrato:WSPD10",
+          "id": "WSPD10",
+          "shareKeys": [
+            "Root Group/stime energetiche/WSPD10"
+          ]
+        }
+      ],
+      "description": "Questa raccolta riporta il calcolo dal coefficiente di autoconsumo comunale.",
+      "isOpen": false,
+      "shareKeys": [
+        "Root Group/stime energetiche"
+      ]
     }
   ]
 }
