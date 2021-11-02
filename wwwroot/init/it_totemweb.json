@@ -14,12 +14,12 @@
           "styles": "polygon",
           "opacity": 0.5,
           "featureInfoTemplate": {
-            "template": "<p>Effettua il calcolo di TOTEMWeb sui dati:</p><p><b>Provincia</b>: {{den_uts}}<br><b>Anno</b>: {{anno}}</p><p style='display: block; text-align: center;'><button><a href='http://localhost:5000/?anno={{anno}}&prov={{den_uts}}' style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+            "template": "<br><p>Effettua il calcolo di TOTEMWeb per la provincia di <b>{{den_uts}}</b></p><p style='display: block; text-align: center;'><button><a href='http://localhost:5000/?prov={{den_uts}}' style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
           },
           "id": "totem",
           "initialMessage": {
             "title": "Per accedere:",
-            "content": " Selezionare sulla mappa il territorio provinciale e, nella barra temporale, l'anno in cui se vuole effettuare l'analisi. Quindi avviare TOTEMweb.",
+            "content": "Selezionare sulla mappa il territorio provinciale in cui se vuole effettuare l'analisi. Quindi avviare TOTEMweb.",
             "key": "totem_warning",
             "confirmation": true,
             "confirmText": "Avvia"
