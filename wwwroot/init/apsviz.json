@@ -386,7 +386,7 @@
             "id": "basemap-darkmatter",
             "name": "Dark Matter"
           },
-          "image": "build/TerriaJS/images/dark-matter-usa.jpeg"
+          "image": "build/TerriaJS/images/dark-matter.png"
         }
       ]
     }
