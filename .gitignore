@@ -22,3 +22,5 @@ deploy/packages/
 deploy/work/
 packages/
 pancake/
+
+package-lock.json
