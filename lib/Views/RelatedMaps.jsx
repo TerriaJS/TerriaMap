@@ -27,14 +27,14 @@ function RelatedMaps(props) {
 
       <p>Clicking on a map below will open it in a separate window or tab.</p>
 
-      <div className={classNames(PanelStyles.section, Styles.section)}>
+      {/*<div className={classNames(PanelStyles.section, Styles.section)}>
         <a target="_blank" href="http://nationalmap.gov.au/renewables/">
           <img
             className={Styles.image}
             src={require("../../wwwroot/images/aremi.jpg")}
             alt="AREMI"
           />
-        </a>
+        </a> 
 
         <a
           target="_blank"
@@ -140,7 +140,7 @@ function RelatedMaps(props) {
           AURIN Map provides access to datasets on urban infrastructure for
           urban researchers, policy and decision makers.
         </p>
-      </div>
+      </div>*/}
     </MenuPanel>
   );
 }

@@ -35,7 +35,7 @@
                 "cql_filter": "var_id=89"
               },
               "id": "89",
-              "isGeoServer": "true"
+              "isGeoServer": true
             },
             {
               "type": "wms",
@@ -55,7 +55,7 @@
                 "cql_filter": "var_id=103"
               },
               "id": "103",
-              "isGeoServer": "true"
+              "isGeoServer": true
             },
             {
               "type": "wms",
@@ -73,7 +73,7 @@
               "parameters":{"cql_filter":"var_id=179"},
               "styles":"eo_num_impianti_reg",
               "id": "179",
-              "isGeoServer": "true"
+              "isGeoServer": true
             },
             {
               "type": "wms",
@@ -89,7 +89,7 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"eo_imp_reg_produzione",
-              "isGeoServer": "true",
+              "isGeoServer": true,
               "dimensions": {"cql_filter":"var_id=90"},
               "id": "90"
             },
@@ -111,9 +111,9 @@
               },
               "id": "69",
               "styles":"eo_imp_prov_potenza",
-              "isGeoServer": "true"
+              "isGeoServer": true
             },
-            {
+            /* {
               "type": "wms",
               "name": "Impianti eolici - Potenza provinciale in % sul totale nazionale",
               "description": "Impianti eolici - Potenza provinciale in % sul totale nazionale\n\n Mappa della distribuzione provinciale della potenza eolica nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>",
@@ -131,7 +131,7 @@
                 "cql_filter": "var_id=180"
               },
               "id": "180"
-            },
+            }, */
             {
               "type": "wms",
               "name": "Impianti eolici -  Produzione elettrica eolica provinciale (GWh)",
@@ -405,8 +405,8 @@
                 "cql_filter": "var_id=77"
               },
               "id": "77"
-            },
-            {
+            }
+            /*             {
               "type": "wms",
               "name": "Impianti idroelettrici - Potenza provinciale in % sul totale nazionale",
               "description": "Impianti idroelettrici - Potenza provinciale in % sul totale nazionale\n\n Mappa della distribuzione provinciale della potenza idroelettrica % rispetto al totale nazionale.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
@@ -418,7 +418,7 @@
                 "cql_filter": "var_id=182"
               },
               "id": "182"
-            }
+            } */
           ]
         },
         {
@@ -439,10 +439,7 @@
               "parameters": {
                 "cql_filter": "var_id=91"
               },
-              "id": "91",
-              "shareKeys": [
-                "Root Group/impianti/fotovoltaici/Impianti fotovoltaici - Potenza effettiva installata regionale (MW)"
-              ]
+              "id": "91"
             },
             {
               "type": "wms",
@@ -455,10 +452,7 @@
               "parameters": {
                 "cql_filter": "var_id=92"
               },
-              "id": "92",
-              "shareKeys": [
-                "Root Group/impianti/fotovoltaici/Impianti fotovoltaici - Produzione annuale regionale (GWh)"
-              ]
+              "id": "92"
             },
             {
               "type": "wms",
@@ -471,10 +465,7 @@
               "parameters": {
                 "cql_filter": "var_id=71"
               },
-              "id": "71",
-              "shareKeys": [
-                "Root Group/impianti/fotovoltaici/Impianti fotovoltaici - Numero di impianti fotovoltaici regionali"
-              ]
+              "id": "71"
             },
             {
               "type": "wms",
@@ -487,10 +478,7 @@
               "parameters": {
                 "cql_filter": "var_id=72"
               },
-              "id": "72",
-              "shareKeys": [
-                "Root Group/impianti/fotovoltaici/Impianti fotovoltaici - Potenza effettiva installata provinciale (MW)"
-              ]
+              "id": "72"
             },
             {
               "type": "wms",
@@ -503,10 +491,7 @@
               "parameters": {
                 "cql_filter": "var_id=73"
               },
-              "id": "73",
-              "shareKeys": [
-                "Root Group/impianti/fotovoltaici/Impianti fotovoltaici - Produzione fotovoltaica effettiva provinciale (GWh)"
-              ]
+              "id": "73"
             },
             {
               "type": "wms",
@@ -519,10 +504,7 @@
               "parameters": {
                 "cql_filter": "var_id=181"
               },
-              "id": "181",
-              "shareKeys": [
-                "Root Group/impianti/fotovoltaici/Fotovoltaico - Numero di impianti fotovoltaici provinciali"
-              ]
+              "id": "181"
             }
           ]
         },
@@ -783,7 +765,7 @@
               },
               "id": "191"
             },
-            {
+            /* {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi in % sul totale nazionale",
               "description": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
@@ -795,7 +777,7 @@
                 "cql_filter": "var_id=190"
               },
               "id": "190"
-            },
+            }, */
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti (GWh)",
@@ -808,8 +790,8 @@
                 "cql_filter": "var_id=200"
               },
               "id": "200"
-            },
-            {
+            }
+            /* {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti in % sul totale nazionale",
               "description": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
@@ -834,7 +816,7 @@
                 "cql_filter": "var_id=193"
               },
               "id": "193"
-            }
+            }*/
           ]
         }
       ]
