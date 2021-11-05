@@ -1,7 +1,7 @@
 {
   "gettingstarted": {
     "title": "Come iniziare con la mappa",
-    "markdownText": "## Iniziare a usare la mappa\n\n Se sei nuovo alla mappa o all'uso dei dati spaziali, il nostro video introduttivo copre rapidamente le funzionalità di base che dovrai usare per aggiungere e interrogare i set di dati.\n\nSe non hai tempo di guardare il video, ti suggeriamo di esplorare le seguenti aree:\n\n1. Cerca una località per trovare rapidamente un'area di interesse. Usa 'Esplora i dati della mappa' per visualizzare il catalogo dei set di dati disponibili e aggiungerli alla mappa\n3. Interagisci con il livello dei dati, inclusa l'opacità e l'attivazione e la disattivazione a sinistra nel tuo workbench\n4. Clicca sui dati sulla mappa per visualizzare dati più dettagliati, inclusi i dati grezzi\n5. Cambia la tua mappa di base usando le opzioni in 'Map Settings' per aiutare a rendere più visibili alcune serie di dati\n6. Ingrandisci e cambia la tua vista, incluso l'inclinazione dell'angolo di vista usando i controlli sul lato destro dello schermo",
+    "markdownText": "## Iniziare a usare la mappa\n\n Se sei nuovo alla mappa o all'uso dei dati spaziali, il nostro video introduttivo copre rapidamente le funzionalità di base che dovrai usare per aggiungere e interrogare i set di dati.\n\nSe non hai tempo di guardare il video, ti suggeriamo di esplorare le seguenti aree:\n\n1. Cerca una località per trovare rapidamente un'area di interesse. Usa 'Esplora i dati della mappa' per visualizzare il catalogo dei set di dati disponibili e aggiungerli alla mappa\n3. Interagisci con il livello dei dati, inclusa l'opacità e l'attivazione e la disattivazione a sinistra nella tua workbench\n4. Clicca sui dati sulla mappa per visualizzare dati più dettagliati, inclusi i dati grezzi\n5. Cambia la tua mappa di base usando le opzioni in 'Map Settings' per aiutare a rendere più visibili alcune serie di dati\n6. Ingrandisci e cambia la tua vista, incluso l'inclinazione dell'angolo di vista usando i controlli sul lato destro dello schermo",
     "videoUrl": "https://www.youtube-nocookie.com/embed/FjSxaviSLhc",
     "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
   },
@@ -11,7 +11,7 @@
     "gettingstarted": {
       "title": "Come iniziare con la mappa",
       "step1": {
-        "markdownDescription": "La ricerca è in cima al banco di lavoro a sinistra",
+        "markdownDescription": "La ricerca è in cima alla workbench a sinistra",
         "title": "Cerca una località per trovare un'area di interesse"
       },
       "step2": {
@@ -52,7 +52,7 @@
       },
       "step3": {
         "title": "Filtrare le immagini per trovare le immagini satellitari",
-        "markdownDescription": "- Filtra le immagini per località per trovare rapidamente le immagini satellitari per quella località\n - I satelliti girano intorno al globo molte volte al giorno. Puoi aspettarti che le immagini satellitari siano disponibili per una località ogni due settimane\n - Se non hai già selezionato il tuo punto di interesse sulla mappa, ingrandisci per selezionarne uno. Vedrai il filtro applicato in blu nel Workbench a sinistra"
+        "markdownDescription": "- Filtra le immagini per località per trovare rapidamente le immagini satellitari per quella località\n - I satelliti girano intorno al globo molte volte al giorno. Puoi aspettarti che le immagini satellitari siano disponibili per una località ogni due settimane\n - Se non hai già selezionato il tuo punto di interesse sulla mappa, ingrandisci per selezionarne uno. Vedrai il filtro applicato in blu nella Workbench a sinistra"
       },
       "step4": {
         "title": "Seleziona un'ora e una data",
@@ -68,15 +68,15 @@
       },
       "step2": {
         "title": "Seleziona l'ora e la data",
-        "markdownDescription": "- Nel banco di lavoro a sinistra, seleziona l'ora e la data che aprirà il selezionatore di date\n- Seleziona un anno, un mese e una data, o naviga indietro ad altri anni e persino secoli usando la freccia indietro\n- Le date disponibili appaiono in blu"
+        "markdownDescription": "- Nella workbench a sinistra, seleziona l'ora e la data che aprirà il selezionatore di date\n- Seleziona un anno, un mese e una data, o naviga indietro ad altri anni e persino secoli usando la freccia indietro\n- Le date disponibili appaiono in blu"
       },
       "step3": {
         "title": "Confronta diverse date in una posizione",
-        "markdownDescription": "- Dal menu a discesa a 3 punti nel banco di lavoro, premi \"Confronta\" per attivare la modalità Split Screen\n- Una copia duplicata del tuo dataset apparirà nel banco di lavoro\n- Scegli le date che vuoi confrontare a sinistra e a destra dello schermo\n- Trascina il cursore usando il pulsante bianco per scorrere e confrontare le due date dell'immagine"
+        "markdownDescription": "- Dal menu a discesa a 3 punti nella workbench, premi \"Confronta\" per attivare la modalità Split Screen\n- Una copia duplicata del tuo dataset apparirà nella workbench\n- Scegli le date che vuoi confrontare a sinistra e a destra dello schermo\n- Trascina il cursore usando il pulsante bianco per scorrere e confrontare le due date dell'immagine"
       },
       "step4": {
         "title": "Chiudere la modalità schermo diviso",
-        "markdownDescription": "- Esci dalla modalità Split Screen premendo la 'x' del titolo Split Screen Mode nel workbench\n- Rimuovi la copia duplicata del tuo dataset nel workbench usando il menu a tendina dei 3 punti"
+        "markdownDescription": "- Esci dalla modalità Split Screen premendo la 'x' del titolo Split Screen Mode nella workbench\n- Rimuovi la copia duplicata del tuo dataset nella workbench usando il menu a tendina dei 3 punti"
       }
     }
   },
@@ -91,7 +91,7 @@
     "content": "Una sequenza di dati raccolti in diversi punti nel tempo, ad esempio i dati dei sensori di temperatura o una galleria di immagini dello stesso luogo"
   },
   "helpContentTerm3": {
-    "term": "banco di lavoro",
+    "term": "workbench",
     "content": "Il pannello sul lato sinistro dello schermo che mostra quali set di dati hai aggiunto alla mappa"
   },
   "helpContentTerm4": {
@@ -110,10 +110,13 @@
   },
   "helpContentTerm7": {
     "term": "set di dati sorgente",
-    "content": "Il dataset che hai aggiunto al tuo banco di lavoro che permette di calcolare le differenze"
+    "content": "Il dataset che hai aggiunto al tuo workbench che permette di calcolare le differenze"
   },
   "helpContentTerm8": {
     "term": "stile anteprima",
     "content": "Il modo in cui il set di dati appare nella finestra di anteprima. Consigliamo il true color per la ricerca di immagini senza nuvole"
+  },
+  "helpPanel": {
+    "terriaMapUserGuide": "Guida all'uso di TerraJS (EN)"
   }
 }
