@@ -34,8 +34,7 @@
               "parameters": {
                 "cql_filter": "var_id=89"
               },
-              "id": "89",
-              "isGeoServer": true
+              "id": "89"              
             },
             {
               "type": "wms",
@@ -54,8 +53,7 @@
               "parameters": {
                 "cql_filter": "var_id=103"
               },
-              "id": "103",
-              "isGeoServer": true
+              "id": "103"              
             },
             {
               "type": "wms",
@@ -72,8 +70,7 @@
               "layers": "new_atlante_integrato:v_regioni_t",
               "parameters":{"cql_filter":"var_id=179"},
               "styles":"eo_num_impianti_reg",
-              "id": "179",
-              "isGeoServer": true
+              "id": "179"              
             },
             {
               "type": "wms",
@@ -89,7 +86,6 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"eo_imp_reg_produzione",
-              "isGeoServer": true,
               "dimensions": {"cql_filter":"var_id=90"},
               "id": "90"
             },
@@ -110,8 +106,7 @@
                 "cql_filter": "var_id=69"
               },
               "id": "69",
-              "styles":"eo_imp_prov_potenza",
-              "isGeoServer": true
+              "styles":"eo_imp_prov_potenza"              
             },
             /* {
               "type": "wms",
