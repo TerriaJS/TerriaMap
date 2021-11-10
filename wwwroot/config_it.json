@@ -110,7 +110,7 @@
       },
       {
         "title": "translate#stepbystepguide.title",
-        "itemName": "stepbystepguide",
+        "itemName": "translate#stepbystepguide",
         "paneMode": "trainer",
         "markdownText": "translate#stepbystepguide.markdownText",
         "icon": "oneTwoThree",
@@ -148,48 +148,47 @@
               }
             ]
           },
-          // -- Uncomment to enable the following trainer guides --
           {
-            "title": "stepbystepguide.satelliteimagery.title",
-            "footnote": "stepbystepguide.satelliteimagery.footnote",
+            "title": "translate#stepbystepguide.satelliteimagery.title",
+            "footnote": "translate#stepbystepguide.satelliteimagery.footnote",
             "steps": [
               {
-                "title": "stepbystepguide.satelliteimagery.step1.title",
-                "markdownDescription": "stepbystepguide.satelliteimagery.step1.markdownDescription"
+                "title": "translate#stepbystepguide.satelliteimagery.step1.title",
+                "markdownDescription": "translate#stepbystepguide.satelliteimagery.step1.markdownDescription"
               },
               {
-                "title": "stepbystepguide.satelliteimagery.step2.title",
-                "markdownDescription": "stepbystepguide.satelliteimagery.step2.markdownDescription"
+                "title": "translate#stepbystepguide.satelliteimagery.step2.title",
+                "markdownDescription": "translate#stepbystepguide.satelliteimagery.step2.markdownDescription"
               },
               {
-                "title": "stepbystepguide.satelliteimagery.step3.title",
-              "markdownDescription": "stepbystepguide.satelliteimagery.step3.markdownDescription"
+                "title": "translate#stepbystepguide.satelliteimagery.step3.title",
+              "markdownDescription": "translate#stepbystepguide.satelliteimagery.step3.markdownDescription"
               },
               {
-                "title": "stepbystepguide.satelliteimagery.step4.title",
-                "markdownDescription": "stepbystepguide.satelliteimagery.step4.markdownDescription"
+                "title": "translate#stepbystepguide.satelliteimagery.step4.title",
+                "markdownDescription": "translate#stepbystepguide.satelliteimagery.step4.markdownDescription"
               }
             ]
           },
           {
-            "title": "stepbystepguide.comparetimeseries.title",
-            "footnote": "stepbystepguide.comparetimeseries.footnote",
+            "title": "translate#stepbystepguide.comparetimeseries.title",
+            "footnote": "translate#stepbystepguide.comparetimeseries.footnote",
             "steps": [
               {
-                "title": "stepbystepguide.comparetimeseries.step1.title",
-                "markdownDescription": "stepbystepguide.comparetimeseries.step1.markdownDescription"
+                "title": "translate#stepbystepguide.comparetimeseries.step1.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step1.markdownDescription"
               },
               {
-                "title": "stepbystepguide.comparetimeseries.step2.title",
-                "markdownDescription": "stepbystepguide.comparetimeseries.step2.markdownDescription"
+                "title": "translate#stepbystepguide.comparetimeseries.step2.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step2.markdownDescription"
               },
               {
-                "title": "stepbystepguide.comparetimeseries.step3.title",
-                "markdownDescription": "stepbystepguide.comparetimeseries.step3.markdownDescription"
+                "title": "translate#stepbystepguide.comparetimeseries.step3.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step3.markdownDescription"
               },
               {
-                "title": "stepbystepguide.comparetimeseries.step4.title",
-                "markdownDescription": "stepbystepguide.comparetimeseries.step4.markdownDescription"
+                "title": "translate#stepbystepguide.comparetimeseries.step4.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step4.markdownDescription"
               }
             ]
           }
@@ -201,7 +200,6 @@
         "markdownText": "## Condivisione & Migrazione delle Storie\n\n### Guida all'aggiornamento dei link di condivisione, incluse le storie. Se hai ricevuto un avviso che ti dice che un link di condivisione era basato su una vecchia versione di TerriaJS, dovrai fare alcune cose per ricrearlo nell'ultima versione di Terria!\n\n#### Creatore\n\n1. Identifica l'URL di condivisione che causa una notifica di sforzo di conservazione della condivisione quando li carichi in Terria. ad esempio potresti sapere dove sono incorporati, o incontrarli accidentalmente\n2. Aprili nell'applicazione più recente (v8) \n3. Controlla che tutto stia condividendo come ti aspetti, modifica i livelli per adattarli se alcuni mancano o non si comportano correttamente.\n4. Aggiorna il link di condivisione cliccando sul pulsante Condividi/Stampa e copia il nuovo link \n5. Se la distribuzione del link di condivisione è nota, aggiorna l'url nella tua pagina web (se incorporato), o invia il nuovo link agli utenti \n#### Utente\n1. Caricare l'URL di condivisione\n2. Se non è del tutto corretto, informa il fornitore in modo che possa seguire i passaggi precedenti per ricrearlo nell'ultima versione di Terria",
         "title": "Condivisione & Migrazione delle Storie"
       },
-      // For maps with satellite imagery, also see `showInAppGuides`
       {
           "itemName": "satelliteimagery",
           "title": "Immagini Satellitari",
