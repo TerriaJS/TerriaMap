@@ -71,26 +71,14 @@
       "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
     },
     {
-      "type": "magda",
-      "url": "https://data.gov.au",
-      "name": "Magda Item",
-      "isMappable": true,
-      "recordId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
+      "type": "wms",
+      "name": "Planificación territorial Zonal 6",
+      "url": "http://gis.uazuay.edu.ec/geoserver/VisorSenplades/wms?service=WMS&version=1.3.0&request=GetCapabilities"
     },
     {
-      "type": "csv",
-      "url": "test/incidents_notime.csv",
-      "name": "CSV Test"
-    },
-    {
-      "type": "csv",
-      "url": "test/localphotostories20092014.csv",
-      "name": "ABC Photo Stories"
-    },
-    {
-      "type": "csv",
-      "url": "test/NSW_LGA_NEXIS_201212.csv",
-      "name": "NSW LGA NEXIS 2012"
+      "type": "wms",
+      "name": "Instituto Geográfico Militar - Modelo Digital de Terreno",
+      "url": "http://www.geoportaligm.gob.ec/dtm/wms?service=WMS&version=1.3.0&request=GetCapabilities"
     },
     {
       "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
