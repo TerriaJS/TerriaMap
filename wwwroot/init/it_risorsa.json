@@ -4,14 +4,15 @@
       "id": "risorsa",
       "type": "group",
       "name": "risorsa",
-      "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio.",
+      // "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio. \n\n <a title=\"Zawizzle, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:ZKlaster.jpg\"><img width=\"512\" alt=\"ZKlaster\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ZKlaster.jpg/512px-ZKlaster.jpg\"></a>",
+      "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio. \n\n <div><img src=\"/images/1920-piccolo-lago-di-alta-montagna-con-trasparente.jpg\" style=\"width:640px;height:427px;\"</div> <a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
       "isOpen": false,
       "members": [
         {
           "id": "eolica",
           "type": "group",
           "name": "eolica",
-          "description": "ATTENZIONE questi strati sono siti su gis.rse-web.it:8080!!!!! \n\n tra l'altro non sempre sono attivi. nei prossimi mesi verranno migrati sul server gis2..... ",
+          "description": "Raccolta di tematismi relativi alla risorsa eolica media nazionale",
           "isOpen": false,
           "members": [
             {
@@ -298,7 +299,7 @@
           "id": "geotermia",
           "type": "group",
           "name": "geotermica",
-          "description": "gli strati del gruppo risorsa geotermica. ",
+          "description": "gli strati del gruppo risorsa geotermica. \n\n <a title=\"Virtual-Pano, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Hveravellir_thermal_energy.jpg\"><img width=\"512\" alt=\"Hveravellir thermal energy\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Hveravellir_thermal_energy.jpg/512px-Hveravellir_thermal_energy.jpg\"></a>",
           "isOpen": false,
           "members": [
             {

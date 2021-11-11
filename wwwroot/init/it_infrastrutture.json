@@ -4,7 +4,7 @@
       "id": "rete",
       "type": "group",
       "name": "infrastrutture di rete",
-      "description": "Questa raccolta comprende informazioni su flussi e qualità della tensione.",
+      "description": "Questa raccolta comprende informazioni su flussi e qualità della tensione.\n\n  <a title=\"Dominicus Johannes Bergsma, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Hoogspanningsmasten_in_het_Ketelmeer_30-06-2019._(d.j.b)._07.jpg\"><img width=\"512\" alt=\"Hoogspanningsmasten in het Ketelmeer 30-06-2019. (d.j.b). 07\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hoogspanningsmasten_in_het_Ketelmeer_30-06-2019._%28d.j.b%29._07.jpg/512px-Hoogspanningsmasten_in_het_Ketelmeer_30-06-2019._%28d.j.b%29._07.jpg\"></a>",
       "isOpen": true,
       "members": [
         {

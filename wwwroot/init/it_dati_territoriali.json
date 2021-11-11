@@ -4,7 +4,7 @@
       "id": "territory",
       "type": "group",
       "name": "dati territoriali",
-      "description":"Il gruppo riporta informazioni di interesse territoriale quali le aree protette le zone a rischio sismico e dati residenziali del territorio italiano.",
+      "description":"Il gruppo riporta informazioni di interesse territoriale quali le aree protette le zone a rischio sismico e dati residenziali del territorio italiano.\n\n\n <a title=\"Tesla Delacroix, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Isel_near_Clarah%C3%BCtte.jpg\"><img width=\"512\" alt=\"Isel near Clarahütte\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Isel_near_Clarah%C3%BCtte.jpg/512px-Isel_near_Clarah%C3%BCtte.jpg\"></a>",
       "isOpen": false,
       "members": [
         {
@@ -92,7 +92,7 @@
           "id": "popol",
           "type": "group",
           "name": "popolazione residente",
-          "description": "Il gruppo riporta informazioni e dati della popolazione del territorio italiano.",
+          "description": "Questa raccolta riporta informazioni e dati relativi alla popolazione del territorio italiano.",
           "isOpen": true,
           "members": [
             {

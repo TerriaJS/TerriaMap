@@ -4,14 +4,14 @@
       "id": "plants",
       "type": "group",
       "name": "impianti",
-      "description": "Questa raccolta comprende i dati regionali e provinciali relativi al parco produttivo degli impianti FER.",
+      "description": "Questa raccolta comprende i dati regionali e provinciali relativi al parco produttivo degli impianti FER. \n\n <div><img src=\"/images/1920-conduttura-della-pompa-dell-acqua.jpg\" style=\"width:640px;height:427px;\"></div><a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
       "isOpen": false,
       "members": [
         {
           "id": "eolo",
           "type": "group",
           "name": "eolici",
-          "description": "Insieme di dati relativi agli impianti eolici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "description": "Insieme di dati relativi agli impianti eolici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a href=\"https://creativecommons.org/licenses/by/2.5/ar/deed.en\" rel=\"license\">CC BY 2.5 AR</a>\n\n <a title=\"Juan Corral (Fotógrafo, Subdirección de Prensa y Contenidos Públicos del Municipio de Bahía Blanca), CC BY 2.5 AR &lt;https://creativecommons.org/licenses/by/2.5/ar/deed.en&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Parque_E%C3%B3lico_Molinos_Corti_(05).jpg\"><img width=\"512\" alt=\"Parque Eólico Molinos Corti (05)\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg/512px-Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -203,7 +203,7 @@
           "id": "idro",
           "type": "group",
           "name": "idroelettrici",
-          "description": "Insieme di dati relativi agli impianti idroelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "description": "Insieme di dati relativi agli impianti idroelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <div><img src=\"/images/vecteezy_2015-dnieper-river-england-hydroelectric-dam-on-the-dnieper-river_2186388.jpg\" style=\"width:400px;height:300px;\"></div><a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
           "isOpen": false,
           "members": [
             {
@@ -420,7 +420,7 @@
           "id": "sun",
           "type": "group",
           "name": "fotovoltaici",
-          "description": "Insieme di dati relativi agli impianti fotovoltaici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "description": "Insieme di dati relativi agli impianti fotovoltaici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a title=\"Jeffrey Beall, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Alamosa_Photovoltaic_Power_Plant.JPG\"><img width=\"512\" alt=\"Alamosa Photovoltaic Power Plant\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Alamosa_Photovoltaic_Power_Plant.JPG/512px-Alamosa_Photovoltaic_Power_Plant.JPG\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -507,7 +507,7 @@
           "id": "geot",
           "type": "group",
           "name": "geotermici",
-          "description": "Insieme di dati relativi agli impianti geotermici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni. <div><img src=\"/images/geotermoelettrico_imgbing.png\" style=\"width:400px;height:300px;\"></div>",
+          "description": "Insieme di dati relativi agli impianti geotermici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni. \n\n <a title=\"Mathieu Neville, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:The_Hellishei%C3%B0i_Geothermal_Power_Plant,_2018,_Iceland.jpg\"><img width=\"512\" alt=\"The Hellisheiði Geothermal Power Plant, 2018, Iceland\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Hellishei%C3%B0i_Geothermal_Power_Plant%2C_2018%2C_Iceland.jpg/512px-The_Hellishei%C3%B0i_Geothermal_Power_Plant%2C_2018%2C_Iceland.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -614,7 +614,7 @@
           "id": "biom",
           "type": "group",
           "name": " a biomasse",
-          "description": "Insieme di dati relativi agli impianti a biomasse presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.",
+          "description": "Insieme di dati relativi agli impianti a biomasse presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a title=\"Herzi Pinki, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg\"><img width=\"512\" alt=\"Biomasse - Fernheizwerk Mittleres Schwarzatal\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg/512px-Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
