@@ -22,7 +22,13 @@
         "gov.uk",
         "gov.nz",
         "sample.aero3dpro.com.au",
-        "services.aremi.data61.io"
+        "services.aremi.data61.io",
+        "gis.uazuay.edu.ec:8080",
+        "ambiente.gob.ec",
+        "geoportal.agricultura.gob.ec",
+        "geoportal.sigtierras.gob.ec:8080",
+        "ortofotos.sigtierras.gob.ec:8080",
+        "181.112.137.164:8080"
     ]
 }
 

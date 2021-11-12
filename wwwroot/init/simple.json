@@ -66,14 +66,29 @@
     },
     {
       "type": "wms-group",
+      "name": "UDA-Planificación territorial",
+      "url": "http://gis.uazuay.edu.ec:8080/geoserver/PlanificacionTerritorial/wms"
+    },
+    {
+      "type": "wms-group",
+      "name": "UDA-Información territorial Ecuador",
+      "url": "http://gis.uazuay.edu.ec:8080/geoserver/InformacionEcuador_es/wms"
+    },
+    {
+      "type": "wms-group",
+      "name": "Ministerio del Ambiente",
+      "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
+    },
+    {
+      "type": "wms-group",
+      "name": "SIGTIERRAS - Cartografía Temática",
+      "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms"
+    },
+    {
+      "type": "wms-group",
       "name": "Torres",
       "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
       "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
-    },
-    {
-      "type": "wms",
-      "name": "Planificación territorial Zonal 6",
-      "url": "http://gis.uazuay.edu.ec/geoserver/VisorSenplades/wms?service=WMS&version=1.3.0&request=GetCapabilities"
     },
     {
       "type": "wms",
