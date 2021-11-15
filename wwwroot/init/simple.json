@@ -7,82 +7,84 @@
   },
   "catalog": [
     {
-      "type": "wms-group",
-      "name": "Test",
-      "url": "https://programs.communications.gov.au/geoserver/ows",
+      "type": "group",
+      "name": "Universidad del Azuay",
       "members": [
         {
-          "type": "wms",
-          "localId": "mybroadband%3AMyBroadband_ADSL_Availability",
-          "legends": [
+          "type": "wms-group",
+          "name": "Información territorial Ecuador",
+          "url": "http://gis.uazuay.edu.ec:8080/geoserver/InformacionEcuador_es/wms",
+          "description": "Servicio de información como herramienta de apoyo en la planificación y toma de decisiones para los diferentes niveles de gobiernos autónomos descentralizados en general",
+          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+        },
+        {
+          "type": "wms-group",
+          "name": "Planificación territorial Zonal 6",
+          "url": "http://gis.uazuay.edu.ec:8080/geoserver/VisorSenplades/wms",
+          "description": "Servicio para sistematizar y organizar la información institucional de la zona 6 del Ecuador, como instrumento de planificación territorial que responda a una visión regional",
+          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+        },
+        {
+          "type": "wms-group",
+          "name": "Areas Verdes Cuenca",
+          "url": "http://gis.uazuay.edu.ec:8080/geoserver/areas_verdes_cuenca/wms",
+          "description": "Información de proyecto Áreas verdes de riberas de ríos, Áreas verdes de parques e Inventario forestal de Cuenca",
+          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+        },
+        {
+          "type": "wms-group",
+          "name": "Cartografía base y temática Azuay",
+          "url": "http://gis.uazuay.edu.ec:8080/geoserver/azuay_250k/wms",
+          "description": "Contiene cartografía base y temática de la provincia del Azuay a escala 1:250.000",
+          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+        }
+      ],
+      "isOpen": true,
+      "shareKeys": ["Root Group/WMS"]
+    },
+    {
+      "type": "group",
+      "name": "Instituaciones Gubernamentales ",
+      "members": [
+        {
+          "type": "wms-group",
+          "name": "Ministerio del Ambiente",
+          "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
+        },
+        {
+          "type": "group",
+          "name": "Instituto Geográfico Militar ",
+          "members": [
             {
-              "items": [
-                {
-                  "title": "A - Best",
-                  "color": "#6B0038"
-                },
-                {
-                  "title": "B",
-                  "color": "#F41911"
-                },
-                {
-                  "title": "C",
-                  "color": "#F67F00"
-                },
-                {
-                  "title": "D",
-                  "color": "#D78B6D"
-                },
-                {
-                  "title": "E - Worst",
-                  "color": "#ECD2BE"
-                },
-                {
-                  "title": "No data",
-                  "color": "rgba(0,0,0,0)",
-                  "outlineColor": "black",
-                  "addSpacingAbove": true
-                }
-              ]
+              "name": "Modelo Digital de Terreno",
+              "url": "http://www.geoportaligm.gob.ec/dtm/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms"
+            },
+            {
+              "name": "Ortofotos",
+              "url": "http://www.geoportaligm.gob.ec/orto/wms",
+              "type": "wms-group"
+            },
+            {
+              "name": "Información Nacional",
+              "url": "http://www.geoportaligm.gob.ec/nacional/wms",
+              "type": "wms-group"
+            },
+            {
+              "name": "Información Información Regional",
+              "url": "http://www.geoportaligm.gob.ec/regional/wms",
+              "type": "wms-group"
             }
           ]
+        },
+        {
+          "type": "wms-group",
+          "name": "SIGTIERRAS - Cartografía Temática",
+          "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms"
         }
-      ]
-    },
-    {
-      "type": "geojson",
-      "name": "GeoJSON Test",
-      "url": "test/bike_racks.geojson"
-    },
-    {
-      "type": "wms-group",
-      "name": "Marine water quality grids for the Great Barrier Reef region - monthly data",
-      "url": "proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
-    },
-    {
-      "type": "wms-group",
-      "name": "WMS layers for the Australian Renewable Energy Mapping Infrastructure project.",
-      "url": "https://gis.aremi.data61.io/bom/wms"
-    },
-    {
-      "type": "wms-group",
-      "name": "UDA-Planificación territorial",
-      "url": "http://gis.uazuay.edu.ec:8080/geoserver/PlanificacionTerritorial/wms"
-    },
-    {
-      "type": "wms-group",
-      "name": "UDA-Información territorial Ecuador",
-      "url": "http://gis.uazuay.edu.ec:8080/geoserver/InformacionEcuador_es/wms"
-    },
-    {
-      "type": "wms-group",
-      "name": "Ministerio del Ambiente",
-      "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
-    },
-    {
-      "type": "wms-group",
-      "name": "SIGTIERRAS - Cartografía Temática",
-      "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms"
+      ],
+      "isOpen": true,
+      "shareKeys": ["Root Group/WMS"]
     },
     {
       "type": "wms-group",
@@ -91,9 +93,30 @@
       "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
     },
     {
-      "type": "wms",
-      "name": "Instituto Geográfico Militar - Modelo Digital de Terreno",
-      "url": "http://www.geoportaligm.gob.ec/dtm/wms?service=WMS&version=1.3.0&request=GetCapabilities"
+      "type": "group",
+      "name": "ArcGis Servicios",
+      "members": [
+        {
+          "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+          "name": "Mapa físico del mundo"
+        },
+        {
+          "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+          "name": "Mapa de topografía del mundo"
+        },
+        {
+          "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+          "name": "Imágenes del mundo"
+        }
+      ],
+      "isOpen": true,
+      "shareKeys": ["Root Group/WMS"]
     },
     {
       "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
