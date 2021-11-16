@@ -30,7 +30,10 @@
         "ortofotos.sigtierras.gob.ec:8080",
         "181.112.137.164:8080",
         "geoportaligm.gob.ec:8080",
-        "server.arcgisonline.com:8080"
+        "server.arcgisonline.com:8080",
+        "ideportal.iee.gob.ec",
+        "geoinec.inec.gob.ec:443",
+        "geoinec.inec.gob.ec"
     ]
 }
 

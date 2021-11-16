@@ -7,23 +7,15 @@
   },
   "catalog": [
     {
+      "type": "wms-group",
+      "name": "CELEC",
+      "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+      "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+    },
+    {
       "type": "group",
       "name": "Universidad del Azuay",
       "members": [
-        {
-          "type": "wms-group",
-          "name": "Información territorial Ecuador",
-          "url": "http://gis.uazuay.edu.ec:8080/geoserver/InformacionEcuador_es/wms",
-          "description": "Servicio de información como herramienta de apoyo en la planificación y toma de decisiones para los diferentes niveles de gobiernos autónomos descentralizados en general",
-          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
-        },
-        {
-          "type": "wms-group",
-          "name": "Planificación territorial Zonal 6",
-          "url": "http://gis.uazuay.edu.ec:8080/geoserver/VisorSenplades/wms",
-          "description": "Servicio para sistematizar y organizar la información institucional de la zona 6 del Ecuador, como instrumento de planificación territorial que responda a una visión regional",
-          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
-        },
         {
           "type": "wms-group",
           "name": "Areas Verdes Cuenca",
@@ -37,6 +29,20 @@
           "url": "http://gis.uazuay.edu.ec:8080/geoserver/azuay_250k/wms",
           "description": "Contiene cartografía base y temática de la provincia del Azuay a escala 1:250.000",
           "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+        },
+        {
+          "type": "wms-group",
+          "name": "Información territorial Ecuador",
+          "url": "http://gis.uazuay.edu.ec:8080/geoserver/InformacionEcuador_es/wms",
+          "description": "Servicio de información como herramienta de apoyo en la planificación y toma de decisiones para los diferentes niveles de gobiernos autónomos descentralizados en general",
+          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+        },
+        {
+          "type": "wms-group",
+          "name": "Planificación territorial Zonal 6",
+          "url": "http://gis.uazuay.edu.ec:8080/geoserver/VisorSenplades/wms",
+          "description": "Servicio para sistematizar y organizar la información institucional de la zona 6 del Ecuador, como instrumento de planificación territorial que responda a una visión regional",
+          "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
         }
       ],
       "isOpen": true,
@@ -47,14 +53,19 @@
       "name": "Instituaciones Gubernamentales ",
       "members": [
         {
-          "type": "wms-group",
-          "name": "Ministerio del Ambiente",
-          "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
-        },
-        {
           "type": "group",
           "name": "Instituto Geográfico Militar ",
           "members": [
+            {
+              "name": "Información Nacional",
+              "url": "http://www.geoportaligm.gob.ec/nacional/wms",
+              "type": "wms-group"
+            },
+            {
+              "name": "Información Regional",
+              "url": "http://www.geoportaligm.gob.ec/regional/wms",
+              "type": "wms-group"
+            },
             {
               "name": "Modelo Digital de Terreno",
               "url": "http://www.geoportaligm.gob.ec/dtm/wms?service=WMS&version=1.3.0&request=GetCapabilities",
@@ -64,22 +75,22 @@
               "name": "Ortofotos",
               "url": "http://www.geoportaligm.gob.ec/orto/wms",
               "type": "wms-group"
-            },
-            {
-              "name": "Información Nacional",
-              "url": "http://www.geoportaligm.gob.ec/nacional/wms",
-              "type": "wms-group"
-            },
-            {
-              "name": "Información Información Regional",
-              "url": "http://www.geoportaligm.gob.ec/regional/wms",
-              "type": "wms-group"
             }
           ]
         },
         {
+          "type": "wfs-group",
+          "name": "Instituto Nacional de Estadísticas y Censos",
+          "url": "https://geoinec.inec.gob.ec/geoinec/ows"
+        },
+        {
           "type": "wms-group",
-          "name": "SIGTIERRAS - Cartografía Temática",
+          "name": "Ministerio del Ambiente",
+          "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
+        },
+        {
+          "type": "wms-group",
+          "name": "SIGTIERRAS",
           "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms"
         }
       ],
@@ -87,15 +98,39 @@
       "shareKeys": ["Root Group/WMS"]
     },
     {
-      "type": "wms-group",
-      "name": "Torres",
-      "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-      "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+      "type": "group",
+      "name": "Centro Sur",
+      "members": [
+        {
+          "name": "Área de Concesión",
+          "url": "https://geoservicios2.centrosur.gob.ec/geoservicios/rest/services/Cartografia/AreaConcesion/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[Centro Sur Servicios](https://geoservicios2.centrosur.gob.ec/geoservicios/rest/services/)"
+        },
+        {
+          "name": "Consignaciones",
+          "url": "https://geoservicios2.centrosur.gob.ec/geoservicios/rest/services/Geoportal_Comercial/ConsigAreas_hoy_manana/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[Centro Sur Servicios](https://geoservicios2.centrosur.gob.ec/geoservicios/rest/services/)"
+        },
+        {
+          "name": "Red público",
+          "url": "https://geoservicios2.centrosur.gob.ec/geoservicios/rest/services/Geoportal_Publico/GeopPublic_RedesDist_rsgis1/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[Centro Sur Servicios](https://geoservicios2.centrosur.gob.ec/geoservicios/rest/services/)"
+        }
+        ]
     },
     {
       "type": "group",
       "name": "ArcGis Servicios",
       "members": [
+        {
+          "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+          "name": "Imágenes del mundo"
+        },
         {
           "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer",
           "type": "esri-mapServer",
@@ -107,12 +142,6 @@
           "type": "esri-mapServer",
           "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
           "name": "Mapa de topografía del mundo"
-        },
-        {
-          "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
-          "type": "esri-mapServer",
-          "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
-          "name": "Imágenes del mundo"
         }
       ],
       "isOpen": true,
