@@ -4,7 +4,7 @@
       "id": "mzQgVb",
       "type": "group",
       "name": "stime energetiche",
-      "description": "Questa raccolta riporta il calcolo dal coefficiente di autoconsumo comunale.",
+      "description": "Questa raccolta riporta il calcolo del coefficiente di autoconsumo comunale.",
       "isOpen": false,
       "members": [
         {

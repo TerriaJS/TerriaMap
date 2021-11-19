@@ -7,7 +7,7 @@
       "members": [
         {
           "type": "wms",
-          "name": "TOTEMWEB selezione provincia",
+          "name": "TOTEMWEB",
           "url": "http://gis2.rse-web.it:8080/geoserver/wms",
           "dataCustodian": "text",
           "layers": "new_atlante_integrato:v_province_terria",

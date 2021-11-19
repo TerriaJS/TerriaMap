@@ -3,67 +3,59 @@
     {
       "type": "group",
       "name": "cartografia",
-      "description": "Questa raccolta comprende delle mappe cartografiche a diverso livello di aggregazione territoriale. \n\n <a title=\"Waterloo1883, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"><img width=\"512\" alt=\"Mapa físico de localización Huánuco\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png/512px-Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"></a> ",
+      "description": "Questa raccolta comprende delle mappe cartografiche a diverso livello di aggregazione territoriale e tematismi generali. \n\n <a title=\"Waterloo1883, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"><img width=\"512\" alt=\"Mapa físico de localización Huánuco\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png/512px-Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"></a> ",
       "isOpen": true,
       "members": [
-        {
-          "type": "group",
-          "name": "cartografia di base",
-          "description": "Questa raccolta comprende la cartografia politica di base e tematismi generali.",
-          "isOpen": true,
-          "members": [
-            {
-              "type": "wms",
-              "name": "Confini regionali",
-              "description": "Limiti amministrativi regionali selezionabili in differenti anni. Fonte dati ISTAT.",
-              "show": true,
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_regioni_terria",
-              "id": "confreg"
-            },
-            {
-              "type": "wms",
-              "name": "Confini provinciali",
-              "description": "Limiti amministrativi provinciali selezionabili in differenti anni. Fonte dati ISTAT.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_terria"
-            },
-            {
-              "type": "wms",
-              "name": "Confini comunali",
-              "description": "Limiti amministrativi comunali selezionabili in differenti anni. Fonte dati ISTAT.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_comuni_terria"
-            },
-            {
-              "type": "wms",
-              "name": "Centri abitati",
-              "description": "Centri abitati. \n\n Località italiane definite dal censimento ISTAT 2011",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "dati_condivisi:localita_11_3857"
-            },
-            {
-              "type": "wms",
-              "name": "Corine 2018 (Copenicus)",
-              "description": "Uso del suolo (CORINE 2018)\n\nIl CORINE (COoRdination de l'INformation sur l'Environnement) Land Cover (CLC) 2012 è uno dei dataset prodotti nell'ambito delle operazioni iniziali sul monitoraggio del terreno del programma Copernicus (il programma europeo di monitoraggio della Terra precedentemente conosciuto come GMES).\n\n Il CLC fornisce informazioni coerenti sulla copertura del suolo e sui cambiamenti nell'uso del suolo in tutta Europa. Questo inventario è stato avviato nel 1985 (anno di riferimento 1990) e ha creato una serie temporale della copertura del suolo con aggiornamenti nel 2000, nel 2006 e nel 2012, ultimo aggiornamento.\n\n I prodotti CLC derivano da un lavoro di fotointerpretazione di immagini satellitari a cui partecipano i team di ogni Stato Membro dell’Agenzia Europea per l’Ambiente e i paesi cooperanti. Il processo produttivo ha seguito una metodologia e una nomenclatura standard con i seguenti parametri di base: nomenclatura Corine con tre livelli gerarchici e 44 classi; unità di mappatura minima (MMU) di 25 ettari; le larghezza minima degli elementi lineari è 100 metri. \n\nGli inventari nazionali sulla copertura del suolo derivati da questo lavoro sono stati successivamente integrati creando una mappa della copertura del suolo continua su tutta Europa. Come già avvenuto per il CLC 2000 IV livello e per il CLC 2006 IV livello, anche in questo caso e per il solo territorio italiano, si è deciso di ampliare la legenda al IV livello per alcune classi specifiche.<br><br>Aggiornamento al 2012 del database italiano Corine Land Cover. lo scopo principale del progetto è stato il rilevamento, l'identificazione e la mappatura di tutti i cambiamenti nella copertura del suolo superiore ai 5 ha. A tale scopo sono state utilizzate immagini satellitari a partire da settembre 2011.<br><br> Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale</p>",
-              "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
-              "dataCustodian": "text",
-              "layers": "12"
-            },
-            {
-              "type": "wms",
-              "name": "linee batimetriche",
-              "description": "Linee batimetriche (profondita' in metri) \n\n Punti e curve batimetriche ricavati dalle carte nautiche dell'Istituto Idrografico della Marina</p>  ",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "batimetria_linea"
-            }
-          ]
-        }
+          {
+            "type": "wms",
+            "name": "Confini regionali",
+            "description": "Limiti amministrativi regionali selezionabili in differenti anni. Fonte dati ISTAT.",
+            "show": true,
+            "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+            "dataCustodian": "text",
+            "layers": "new_atlante_integrato:v_regioni_terria",
+            "id": "confreg"
+          },
+          {
+            "type": "wms",
+            "name": "Confini provinciali",
+            "description": "Limiti amministrativi provinciali selezionabili in differenti anni. Fonte dati ISTAT.",
+            "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+            "dataCustodian": "text",
+            "layers": "new_atlante_integrato:v_province_terria"
+          },
+          {
+            "type": "wms",
+            "name": "Confini comunali",
+            "description": "Limiti amministrativi comunali selezionabili in differenti anni. Fonte dati ISTAT.",
+            "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+            "dataCustodian": "text",
+            "layers": "new_atlante_integrato:v_comuni_terria"
+          },
+          {
+            "type": "wms",
+            "name": "Centri abitati",
+            "description": "Centri abitati. \n\n Località italiane definite dal censimento ISTAT 2011",
+            "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+            "dataCustodian": "text",
+            "layers": "dati_condivisi:localita_11_3857"
+          },
+          {
+            "type": "wms",
+            "name": "Corine 2018 (Copenicus)",
+            "description": "Uso del suolo (CORINE 2018)\n\nCLC2018 è uno dei set di dati Corine Land Cover (CLC) prodotti nell'ambito del Copernicus Land Monitoring Service che fa riferimento allo stato della copertura del suolo / uso del suolo dell'anno 2018. Il servizio CLC ha un patrimonio di lunga data (precedentemente noto come \"CORINE Land Cover Program \"), coordinato dall'Agenzia europea dell'ambiente (EEA). Fornisce informazioni coerenti e tematicamente dettagliate sulla copertura del suolo e sui cambiamenti della copertura del suolo in tutta Europa. I set di dati CLC si basano sulla classificazione delle immagini satellitari prodotte dalle squadre nazionali dei paesi partecipanti - i membri dell'EEA e i paesi cooperanti (EEA39). Gli inventari nazionali CLC vengono quindi ulteriormente integrati in una mappa della copertura continua del suolo dell'Europa. \n<br>Il database europeo risultante si basa su una metodologia e una nomenclatura standard con i seguenti parametri di base: 44 classi nella nomenclatura gerarchica CLC a 3 livelli; l'unità di mappatura minima (MMU) per i livelli di stato è di 25 ettari; la larghezza minima degli elementi lineari è di 100 metri. I livelli di modifica hanno una risoluzione più elevata, ovvero l'unità di mappatura minima (MMU) è di 5 ettari per i cambiamenti di copertura del suolo (LCC - Land Cover Changes) e la larghezza minima degli elementi lineari è di 100 metri. Il servizio CLC fornisce importanti set di dati a supporto dell'attuazione di aree prioritarie chiave dei programmi di azione per l'ambiente dell'Unione europea, come ad es. proteggere gli ecosistemi, arrestare la perdita di biodiversità, monitorare gli impatti dei cambiamenti climatici, monitorare l'occupazione del suolo urbano, valutare gli sviluppi in agricoltura o trattare le direttive sulle risorse idriche.\n<br>CLC appartiene alla componente paneuropea del Copernicus Land Monitoring Service (<a href=\"https://land.copernicus.eu/\" target=\"_blank\"> https://land.copernicus.eu/ </a>), parte del programma europeo Copernicus coordinato dall'Agenzia Europea dell'Ambiente (EEA), che fornisce informazioni ambientali da una combinazione di sistemi di osservazione spaziale e di aria, nonchè attraverso monitoraggi in situ. Ulteriori informazioni sulla descrizione del prodotto CLC comprese le guide alla mappatura, sono disponibili all'indirizzo <a href=\"https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf. </a> Le descrizioni delle classi CLC possono essere trovate su <a href=\"https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/ </a>.",
+            "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
+            "dataCustodian": "text",
+            "layers": "12"
+          },
+          {
+            "type": "wms",
+            "name": "linee batimetriche",
+            "description": "Linee batimetriche (profondita' in metri) \n\n Punti e curve batimetriche ricavati dalle carte nautiche dell'Istituto Idrografico della Marina</p>  ",
+            "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+            "dataCustodian": "text",
+            "layers": "batimetria_linea"
+          }
       ]
     }
   ]

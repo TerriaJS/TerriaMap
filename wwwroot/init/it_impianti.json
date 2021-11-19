@@ -11,7 +11,7 @@
           "id": "eolo",
           "type": "group",
           "name": "eolici",
-          "description": "Insieme di dati relativi agli impianti eolici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a href=\"https://creativecommons.org/licenses/by/2.5/ar/deed.en\" rel=\"license\">CC BY 2.5 AR</a>\n\n <a title=\"Juan Corral (Fotógrafo, Subdirección de Prensa y Contenidos Públicos del Municipio de Bahía Blanca), CC BY 2.5 AR &lt;https://creativecommons.org/licenses/by/2.5/ar/deed.en&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Parque_E%C3%B3lico_Molinos_Corti_(05).jpg\"><img width=\"512\" alt=\"Parque Eólico Molinos Corti (05)\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg/512px-Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg\"></a>",
+          "description": "Questa raccolta comprende dati relativi agli impianti eolici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a href=\"https://creativecommons.org/licenses/by/2.5/ar/deed.en\" rel=\"license\">CC BY 2.5 AR</a>\n\n <a title=\"Juan Corral (Fotógrafo, Subdirección de Prensa y Contenidos Públicos del Municipio de Bahía Blanca), CC BY 2.5 AR &lt;https://creativecommons.org/licenses/by/2.5/ar/deed.en&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Parque_E%C3%B3lico_Molinos_Corti_(05).jpg\"><img width=\"512\" alt=\"Parque Eólico Molinos Corti (05)\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg/512px-Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -108,25 +108,6 @@
               "id": "69",
               "styles":"eo_imp_prov_potenza"              
             },
-            /* {
-              "type": "wms",
-              "name": "Impianti eolici - Potenza provinciale in % sul totale nazionale",
-              "description": "Impianti eolici - Potenza provinciale in % sul totale nazionale\n\n Mappa della distribuzione provinciale della potenza eolica nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ],
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_t",
-              "styles":"eo_pot_prov_perc_sul_tot",
-              "parameters": {
-                "cql_filter": "var_id=180"
-              },
-              "id": "180"
-            }, */
             {
               "type": "wms",
               "name": "Impianti eolici -  Produzione elettrica eolica provinciale (GWh)",
@@ -167,8 +148,8 @@
             },
             {
               "type": "wms",
-              "name": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2018)",
-              "description": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2018)",
+              "name": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2019)",
+              "description": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2019)",
               "info": [
                 {
                   "name": "Licence",
@@ -183,8 +164,8 @@
             },
             {
               "type": "wms",
-              "name": "Numero impianti eolici - raggruppamento comunale (anno di riferimento 2018)",
-              "description": "Numero impianti eolici - raggruppamento comunale (anno di riferimento 2018)",
+              "name": "Numero impianti eolici - raggruppamento comunale (anno di riferimento 2019)",
+              "description": "Numero impianti eolici - raggruppamento comunale (anno di riferimento 2019)",
               "info": [
                 {
                   "name": "Licence",
@@ -203,7 +184,7 @@
           "id": "idro",
           "type": "group",
           "name": "idroelettrici",
-          "description": "Insieme di dati relativi agli impianti idroelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <div><img src=\"/images/vecteezy_2015-dnieper-river-england-hydroelectric-dam-on-the-dnieper-river_2186388.jpg\" style=\"width:400px;height:300px;\"></div><a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
+          "description": "Questa raccolta comprende dati relativi agli impianti idroelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <div><img src=\"/images/vecteezy_2015-dnieper-river-england-hydroelectric-dam-on-the-dnieper-river_2186388.jpg\" style=\"width:400px;height:300px;\"></div><a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
           "isOpen": false,
           "members": [
             {
@@ -261,7 +242,7 @@
             {
               "type": "wms",
               "name": "Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)",
-              "description": "Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)\n\n <p align=\"justify\">Mappa della distribuzione regionale della potenza mini idroelettrica installata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n ",
+              "description": "Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)\n\n <p> Mappa della distribuzione regionale della potenza mini idroelettrica installata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n ",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
@@ -401,26 +382,13 @@
               },
               "id": "77"
             }
-            /*             {
-              "type": "wms",
-              "name": "Impianti idroelettrici - Potenza provinciale in % sul totale nazionale",
-              "description": "Impianti idroelettrici - Potenza provinciale in % sul totale nazionale\n\n Mappa della distribuzione provinciale della potenza idroelettrica % rispetto al totale nazionale.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_t",
-              "styles":"id_pot_prov_perc_tot_naz",
-              "parameters": {
-                "cql_filter": "var_id=182"
-              },
-              "id": "182"
-            } */
           ]
         },
         {
           "id": "sun",
           "type": "group",
           "name": "fotovoltaici",
-          "description": "Insieme di dati relativi agli impianti fotovoltaici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a title=\"Jeffrey Beall, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Alamosa_Photovoltaic_Power_Plant.JPG\"><img width=\"512\" alt=\"Alamosa Photovoltaic Power Plant\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Alamosa_Photovoltaic_Power_Plant.JPG/512px-Alamosa_Photovoltaic_Power_Plant.JPG\"></a>",
+          "description": "Questa raccolta comprende dati relativi agli impianti fotovoltaici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a title=\"Jeffrey Beall, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Alamosa_Photovoltaic_Power_Plant.JPG\"><img width=\"512\" alt=\"Alamosa Photovoltaic Power Plant\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Alamosa_Photovoltaic_Power_Plant.JPG/512px-Alamosa_Photovoltaic_Power_Plant.JPG\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -507,7 +475,7 @@
           "id": "geot",
           "type": "group",
           "name": "geotermici",
-          "description": "Insieme di dati relativi agli impianti geotermici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni. \n\n <a title=\"Mathieu Neville, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:The_Hellishei%C3%B0i_Geothermal_Power_Plant,_2018,_Iceland.jpg\"><img width=\"512\" alt=\"The Hellisheiði Geothermal Power Plant, 2018, Iceland\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Hellishei%C3%B0i_Geothermal_Power_Plant%2C_2018%2C_Iceland.jpg/512px-The_Hellishei%C3%B0i_Geothermal_Power_Plant%2C_2018%2C_Iceland.jpg\"></a>",
+          "description": "Questa raccolta comprende dati relativi agli impianti geotermici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni. \n\n <a title=\"Mathieu Neville, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:The_Hellishei%C3%B0i_Geothermal_Power_Plant,_2018,_Iceland.jpg\"><img width=\"512\" alt=\"The Hellisheiði Geothermal Power Plant, 2018, Iceland\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Hellishei%C3%B0i_Geothermal_Power_Plant%2C_2018%2C_Iceland.jpg/512px-The_Hellishei%C3%B0i_Geothermal_Power_Plant%2C_2018%2C_Iceland.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -614,7 +582,7 @@
           "id": "biom",
           "type": "group",
           "name": " a biomasse",
-          "description": "Insieme di dati relativi agli impianti a biomasse presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a title=\"Herzi Pinki, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg\"><img width=\"512\" alt=\"Biomasse - Fernheizwerk Mittleres Schwarzatal\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg/512px-Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg\"></a>",
+          "description": "Questa raccolta comprende dati relativi agli impianti a biomasse presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale in diversi anni.\n\n <a title=\"Herzi Pinki, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg\"><img width=\"512\" alt=\"Biomasse - Fernheizwerk Mittleres Schwarzatal\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg/512px-Biomasse_-_Fernheizwerk_Mittleres_Schwarzatal.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
@@ -760,19 +728,6 @@
               },
               "id": "191"
             },
-            /* {
-              "type": "wms",
-              "name": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi in % sul totale nazionale",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_t",
-              "styles":"bi_bioliquidi_energia_percentuale_prov",
-              "parameters": {
-                "cql_filter": "var_id=190"
-              },
-              "id": "190"
-            }, */
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti (GWh)",
@@ -786,32 +741,110 @@
               },
               "id": "200"
             }
-            /* {
+          ]
+        },
+        {
+          "id": "impianti accumulo",
+          "type": "group",
+          "name": "impianti accumulo",
+          "description": "Questa raccolta comprende le caratteristiche dei potenziali impianti di pompaggio idroelettrico installabili nel territorio.\n\n <a href=\"https://creativecommons.org/licenses/by/2.5/ar/deed.en\" rel=\"license\">CC BY 2.5 AR</a>\n\n <a title=\"Juan Corral (Fotógrafo, Subdirección de Prensa y Contenidos Públicos del Municipio de Bahía Blanca), CC BY 2.5 AR &lt;https://creativecommons.org/licenses/by/2.5/ar/deed.en&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Parque_E%C3%B3lico_Molinos_Corti_(05).jpg\"><img width=\"512\" alt=\"Parque Eólico Molinos Corti (05)\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg/512px-Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg\"></a>",
+          "isOpen": false,
+          "members": [
+            {
               "type": "wms",
-              "name": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti in % sul totale nazionale",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "name": "Pompaggio tradizionale - potenza installabile fattibile (MW)",
+              "description": "Pompaggio tradizionale - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_t",
-              "styles":"bi_solide_energia_perc_prov",
-              "parameters": {
-                "cql_filter": "var_id=199"
-              },
-              "id": "199"
+              "layers": "atlante_integrato:v_comuni_pompaggio_trad",
+              "styles":"comuni_pomp_trad_pot",
+              "id": "po_Pcom"
             },
             {
               "type": "wms",
-              "name": "Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili in % sul totale nazionale",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "name": "Pompaggio tradizionale - capacità di accumulo fattibile (MWh)",
+              "description": "Pompaggio tradizionale - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile  con tempo di ritorno dell’investimento minore di 15 anni ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
-              "layers": "new_atlante_integrato:v_province_t",
-              "styles":"bi_ru_biodegradabili_energia_perc_prov",
-              "parameters": {
-                "cql_filter": "var_id=193"
-              },
-              "id": "193"
-            }*/
+              "layers": "atlante_integrato:v_comuni_pompaggio_trad",
+              "styles":"comuni_pomp_trad_acc",
+              "id": "po_CapCom"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio marino - potenza installabile fattibile (MW)",
+              "description": "Pompaggio marino - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:v_comuni_pompaggio_marino",
+              "styles":"comuni_pomp_marino_pot",
+              "id": "po_Pmar"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio marino - capacità di accumulo fattibile (MWh)",
+              "description": "Pompaggio marino - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:v_comuni_pompaggio_marino",
+              "styles":"comuni_pomp_marino_acc",
+              "id": "po_CapMar"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio tra laghi esistenti - schema dei siti potenziali",
+              "description": "Pompaggio tra laghi esistenti - schema dei siti potenziali \n\n Mappa con i dati caratteristici di 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti</p>. ",
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+                }
+              ],
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:pompaggio_laghi_esistenti_group_IT",
+              "id": "BGe5H2"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio tra laghi esistenti - potenza di pompaggio (MW)",
+              "description": "Pompaggio tra laghi esistenti - potenza di pompaggio (MW) \n\n Potenza di pompaggio (la massima tra pompa e turbina) derivata dagli 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
+              "styles":"comuni_pomp_esistenti_pot",
+              "id": "IP4JhQ"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio tra laghi esistenti - capacità di accumulo (MWh)",
+              "description": "Pompaggio tra laghi esistenti - capacità di accumulo (MWh)\n\n Capacità di accumulo, derivata dagli 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
+              "styles":"comuni_pomp_esistenti_acc",
+              "id": "BWejlZ"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio sotterraneo - potenza installabile fattibile (MW)",
+              "description": "Pompaggio sotterraneo - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico sotterraneo, ossia con uno degli invasi costruito in caverna.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:v_comuni_pompaggio_sott",
+              "styles":"comuni_pomp_sott_pot",
+              "id": "po_sotCom"
+            },
+            {
+              "type": "wms",
+              "name": "Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh)",
+              "description": "Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico sotterraneo, ossia con uno degli invasi costruito in caverna.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "atlante_integrato:v_comuni_pompaggio_sott",
+              "styles":"comuni_pomp_sott_acc",
+              "id": "RBwPpK"
+            }
           ]
         }
       ]

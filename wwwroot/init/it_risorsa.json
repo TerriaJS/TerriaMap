@@ -4,7 +4,6 @@
       "id": "risorsa",
       "type": "group",
       "name": "risorsa",
-      // "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio. \n\n <a title=\"Zawizzle, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:ZKlaster.jpg\"><img width=\"512\" alt=\"ZKlaster\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ZKlaster.jpg/512px-ZKlaster.jpg\"></a>",
       "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio. \n\n <div><img src=\"/images/1920-piccolo-lago-di-alta-montagna-con-trasparente.jpg\" style=\"width:640px;height:427px;\"</div> <a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
       "isOpen": false,
       "members": [
@@ -12,7 +11,7 @@
           "id": "eolica",
           "type": "group",
           "name": "eolica",
-          "description": "Raccolta di tematismi relativi alla risorsa eolica media nazionale",
+          "description": "Questa raccolta comprende dati della risorsa eolica media nazionale",
           "isOpen": false,
           "members": [
             {
@@ -57,7 +56,7 @@
           "id": "idroel",
           "type": "group",
           "name": "idroelettrica",
-          "description": "In questa sezione sono riportati i dati della risorsa idroelettrica storici e derivati da collaborazione con ...... ",
+          "description": "Questa raccolta comprende dati della risorsa idroelettrica storici e derivati da collaborazione con ...... ",
           "isOpen": false,
           "members": [
             {
@@ -94,6 +93,9 @@
                   "url": "http://gis2.rse-web.it:8080/geoserver/wms",
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_idrometri",
+                  "featureInfoTemplate": {
+                    "template": "<br><p>L'idrometro che hai selezionato è:  <b>{{'Staz'}}</b> , {{'CodStaz'}}</p><p style='display: block; text-align: center;'><button><a href='http://atlanteintegrato.rse-web.it/export_idro.php?language=IT/?CodStaz={{CodStaz}}' style='color: black; padding: 0px 10px 0px 10px'>Sacrica i dati</a></button></p>"
+                  },
                   "id": "idrom"
                 },
                 {
@@ -120,114 +122,10 @@
           ]
         },
         {
-          "id": "pompHyd",
-          "type": "group",
-          "name": "pompaggio idroelettrico",
-          "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa utile per il pompaggio idroelettrico. ",
-          "isOpen": false,
-          "members": [
-            {
-              "type": "wms",
-              "name": "Pompaggio tradizionale - potenza installabile fattibile (MW)",
-              "description": "Pompaggio tradizionale - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_trad",
-              "styles":"comuni_pomp_trad_pot",
-              "id": "po_Pcom"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio tradizionale - capacità di accumulo fattibile (MWh)",
-              "description": "Pompaggio tradizionale - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile  con tempo di ritorno dell’investimento minore di 15 anni ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_trad",
-              "styles":"comuni_pomp_trad_acc",
-              "id": "po_CapCom"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio marino - potenza installabile fattibile (MW)",
-              "description": "Pompaggio marino - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_marino",
-              "styles":"comuni_pomp_marino_pot",
-              "id": "po_Pmar"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio marino - capacità di accumulo fattibile (MWh)",
-              "description": "Pompaggio marino - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_marino",
-              "styles":"comuni_pomp_marino_acc",
-              "id": "po_CapMar"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio tra laghi esistenti - schema dei siti potenziali",
-              "description": "Pompaggio tra laghi esistenti - schema dei siti potenziali \n\n Mappa con i dati caratteristici di 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti</p>. ",
-              "info": [
-                {
-                  "name": "Licence",
-                  "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                }
-              ],
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:pompaggio_laghi_esistenti_group_IT",
-              "id": "BGe5H2"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio tra laghi esistenti - potenza di pompaggio (MW)",
-              "description": "Pompaggio tra laghi esistenti - potenza di pompaggio (MW) \n\n Potenza di pompaggio (la massima tra pompa e turbina) derivata dagli 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
-              "styles":"comuni_pomp_esistenti_pot",
-              "id": "IP4JhQ"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio tra laghi esistenti - capacità di accumulo (MWh)",
-              "description": "Pompaggio tra laghi esistenti - capacità di accumulo (MWh)\n\n Capacità di accumulo, derivata dagli 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
-              "styles":"comuni_pomp_esistenti_acc",
-              "id": "BWejlZ"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio sotterraneo - potenza installabile fattibile (MW)",
-              "description": "Pompaggio sotterraneo - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico sotterraneo, ossia con uno degli invasi costruito in caverna.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_sott",
-              "styles":"comuni_pomp_sott_pot",
-              "id": "po_sotCom"
-            },
-            {
-              "type": "wms",
-              "name": "Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh)",
-              "description": "Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico sotterraneo, ossia con uno degli invasi costruito in caverna.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:v_comuni_pompaggio_sott",
-              "styles":"comuni_pomp_sott_acc",
-              "id": "RBwPpK"
-            }
-          ]
-        },
-        {
           "id": "sunny",
           "type": "group",
           "name": "solare",
-          "description": "In questa sezione si riportamo le informazioni riguardo alla risorsa solare, Per ulteriori approfondimenti si rimanda al dedicato atlante solare ...(link)",
+          "description": "Questa raccolta comprende informazioni della risorsa solare. Per ulteriori approfondimenti si rimanda al dedicato atlante solare \n <a href=\"http://sunrise.rse-web.it/\" target=\"_blank\"> SunRISE </a>",
           "isOpen": false,
           "members": [
             {
@@ -245,31 +143,42 @@
           "id": "seaside",
           "type": "group",
           "name": "marina",
-          "description": "In questa sezione si riportamo le informazioni riguardo alle risorse marine",
+          "description": "Questa raccolta comprende informazioni riguardo alle risorse marine",
           "isOpen": false,
           "members": [
-            {
-              "type": "wms",
-              "name": "Campagne di misure ondametriche",
-              "description": "Campagne di misure ondametriche. \n\n Misure del moto ondoso e dei flussi di corrente realizzate nel periodo 9 feb 2017-12 mar 2017, nello specchio di mare antistante il porto di Civitavecchia a circa 40 m di profondit&#224;: altezza d'onda, correnti, velocità e direzione, periodo di picco, potenza disponibile. \n\n Informazioni sul layer Campagne di misure ondametriche</br></br>Documento 17002141</a>.",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:siti_campagna_misura",
-              "id": "ondametrico"
+            {  
+              "id": "monitor",
+              "type": "group",
+              "name": "dati di monitoraggio",
+              "description": "In questa sezione si riportano le misure effettuate in punti di monitoraggio",
+              "isOpen": false,
+              "members": [
+                {
+                  "type": "wms",
+                  "name": "Campagne di misure ondametriche",
+                  "description": "Campagne di misure ondametriche. \n\n Misure del moto ondoso e dei flussi di corrente realizzate nel periodo 9 feb 2017-12 mar 2017, nello specchio di mare antistante il porto di Civitavecchia a circa 40 m di profondit&#224;: altezza d'onda, correnti, velocità e direzione, periodo di picco, potenza disponibile. \n\n Informazioni sul layer Campagne di misure ondametriche</br></br>Documento 17002141</a>.",
+                  "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                  "dataCustodian": "text",
+                  "layers": "atlante_integrato:siti_campagna_misura",
+                  "id": "ondametrico"
+                },
+                {
+                  "type": "wms",
+                  "name": "MOBI - Stazione di misure offshore",
+                  "description": "MOBI - Stazione di misure offshore su boa galleggiante \n\n MOBI - Stazione di misure offshore",
+                  "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                  "dataCustodian": "text",
+                  "layers": "atlante_integrato:boa_mobi",
+                  "id": "mobi"
+                }
+              ]
+                
+              
             },
             {
               "type": "wms",
-              "name": "MOBI - Stazione di misure offshore",
-              "description": "MOBI - Stazione di misure offshore su boa galleggiante \n\n MOBI - Stazione di misure offshore",
-              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
-              "dataCustodian": "text",
-              "layers": "atlante_integrato:boa_mobi",
-              "id": "mobi"
-            },
-            {
-              "type": "wms",
-              "name": "Infrastrutture per sfruttamento del moto ondoso",
-              "description": "Infrastrutture per sfruttamento del moto ondoso \n\n Infrastrutture esistenti potenzialmente idonee allo sfruttamento del moto ondoso per la produzione di energia elettrica.</p>",
+              "name": "Moli sfruttabili per moto ondoso",
+              "description": "Moli disponibili per potenziale sfruttamento shoreline moto ondoso. \n\n Moli esistenti potenzialmente idonei allo sfruttamento del moto ondoso per la produzione di energia elettrica.</p>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "atlante_integrato:v_strutture_portuali",
@@ -299,7 +208,7 @@
           "id": "geotermia",
           "type": "group",
           "name": "geotermica",
-          "description": "gli strati del gruppo risorsa geotermica. \n\n <a title=\"Virtual-Pano, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Hveravellir_thermal_energy.jpg\"><img width=\"512\" alt=\"Hveravellir thermal energy\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Hveravellir_thermal_energy.jpg/512px-Hveravellir_thermal_energy.jpg\"></a>",
+          "description": "Questa raccolta comprende informazioni della risorsa geotermica. \n\n <a title=\"Virtual-Pano, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Hveravellir_thermal_energy.jpg\"><img width=\"512\" alt=\"Hveravellir thermal energy\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Hveravellir_thermal_energy.jpg/512px-Hveravellir_thermal_energy.jpg\"></a>",
           "isOpen": false,
           "members": [
             {
