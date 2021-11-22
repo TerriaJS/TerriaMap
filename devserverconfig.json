@@ -33,7 +33,12 @@
         "server.arcgisonline.com:8080",
         "ideportal.iee.gob.ec",
         "geoinec.inec.gob.ec:443",
-        "geoinec.inec.gob.ec"
+        "geoinec.inec.gob.ec",
+        "earthobs3.arcgis.com:8080",
+        "earthobs3.arcgis.com",
+        "test.globalsolaratlas.info:8080",
+        "test.globalsolaratlas.info",
+        "energydata.info:8080"
     ]
 }
 
