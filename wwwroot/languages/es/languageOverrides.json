@@ -156,13 +156,29 @@
     "resultsLabel": "Resultados de búsqueda"
   },
   "addData": {
+    "addDataBtnText": "Explorar datos de mapas",
+    "load": "Cargar datos locales / web",
+    "closeDataPanel": "Cerrar panel de datos",
+    "dataCatalogue": "Catálogo de datos",
+    "searchPlaceholderWhole": "Buscar en todo el catálogo",
+    "searchPlaceholder": "Buscar el catálogo",
+    "localAdd": "Agregar archivo local",
+    "localFileType": "<0>Paso 1:</0> Seleccionar tipo de archivo (opcional)",
+    "localFile": "<0>Paso 2:</0> Seleccionar archivo",
+    "webAdd": "Agregar datos web",
+    "webFileType": "<0>Paso 1:</0> Seleccionar tipo de archivo (opcional)",
+    "webFile": "<0>Paso 2:</0> Ingrese la URL del archivo de datos o servicio web",
+    "localTitle": "Agregar datos locales",
+    "webTitle": "Agregar datos web",
+    "urlInputBtn": "Añadir",
     "back": "Atrás",
     "dragDrop": "Arrastrar y soltar",
     "browse": "Navegar…",
-    "urlInputBtn": "Añadir",
     "myData": "Mis datos",
     "done": "Hecho",
-    "btnHide": "Ocultar"
+    "btnHide": "Ocultar",
+    "infoText": "<0>Arrastre y suelte un archivo aquí para verlo localmente en el mapa</0><1>(no se guardará ni se cargará en Internet)</1>",
+    "note": "<0>Nota: </0>Los datos agregados de esta manera no se guardan ni se hacen visibles para otros."
   },
   "satelliteGuidance": {
     "prevI": "No, gracias"
@@ -318,6 +334,30 @@
     "title": "Pichar y mover para rotar la cámara"
   },
   "preview": {
+    "doesNotContainGeospatialData": "Este archivo no contiene datos geoespaciales.",
+    "selectToPreview": "<0>Seleccione un conjunto de datos para ver una vista previa </0><1>- O -</1><2>Ir al mapa</2>",
+    "loading": "VISTA PREVIA CARGANDO...",
+    "preview": "{{appName}} vista previa",
+    "previewItemErrorTitle": "No se pudo obtener una vista previa del elemento del catálogo.",
+    "previewItemErrorMessage": "Se produjo un error al cargar el artículo del catálogo.",
+    "noPreviewAvailable": "NO HAY VISTA PREVIA DISPONIBLE",
+    "dataPreviewLoading": "CARGA DE VISTA PREVIA DE DATOS...",
+    "dataPreview": "VISTA PREVIA DE DATOS",
+    "dataPreviewError": "ERROR DE VISTA PREVIA DE DATOS",
+    "dataDescription": "Data Description",
+    "datasetDescription": "Descripción del conjunto de datos",
+    "serviceDescription": "Descripción del servicio",
+    "resourceDescription": "Descripción del recurso",
+    "accessConstraints": "Access Constraints",
+    "fees": "Tarifa",
+    "author": "Autor",
+    "contact": "Contacto",
+    "created": "Creado",
+    "modified": "Modificado",
+    "updateFrequency": "Frecuencia de actualización",
+    "dataCustodian": "Custodio de datos",
+    "mayBeExperiencingIssues": "Este conjunto de datos puede estar experimentando problemas actualmente",
+    "removeFromMap": "Eliminar del mapa",
     "addToMap": "Añadir al mapa",
     "licence": "Licencia",
     "disclaimer": "Descargo de responsabilidad"
@@ -329,5 +369,13 @@
   },
   "mobile": {
     "toggleNavigation": "Cambiar navegación"
+  },
+  "emptyWorkbenchMessage": "<0><0>Your workbench is empty</0><1><strong>Click '$t(addData.addDataBtnText)' above to </strong></1><2><0>Browse the Data Catalogue</0><1>Load your own data onto the map</1></2><3><0></0><strong>TIP.</strong><2>All your active data sets will be listed here</2></3></0>",
+  "emptyWorkbench": {
+    "emptyArea": "Tu mesa de trabajo está vacía",
+    "helpfulHints": "Consejos útiles",
+    "helpfulHintsOne": "Explore datos disponibles seleccionando  ‘Explorar datos de mapas’ o haga clic en‘Subir’ para agregar sus propios datos al mapa",
+    "helpfulHintsTwo": "Una vez que haya agregado datos al mapa, sus conjuntos de datos activos se enumeran aquí en su banco de trabajo. El mesa de trabajo le ayudará a interactuar con los datos",
+    "helpfulHintsThree": "En la mesa de trabajo puede activar y desactivar conjuntos de datos, cambiar su opacidad, activar la comparación de pantalla dividida, cambiar estilos y navegar por fechas y horas, si los datos admiten esta funcionalidad"
   }
 }
