@@ -18,7 +18,17 @@
       "goleftTitle": "Mostrar en el lado izquierdo"
     },
     "title": "Arrastrar a izquierda o derecha para ajustar vistas",
-    "toggleSplitterTool": "Habilitar comparación lado a lado entre diferentes conjuntos de datos"
+    "toggleSplitterTool": "Habilitar comparación lado a lado entre diferentes conjuntos de datos",
+    "toggleSplitterToolTitle": "Comparar"
+  },
+  "helpPanel": {
+    "btnText": "Ayuda",
+    "menuPaneTitle": "Estamos aquí para ayudar",
+    "menuPaneBody": "Encuentre consejos útiles sobre cómo usar TerriaJS consultando las guías a continuación o contactando al equipo en [info@terria.io](mailto:info@terria.io)",
+    "promptMessage": "Encuentre el recorrido, videos instructivos y otro contenido de ayuda aquí",
+    "dismissText": "Gracias!",
+    "takeTour": "Toma el recorrido",
+    "mapUserGuide": "Guía del usuario del mapa"
   },
   "viewModels": {
     "searchCatalogueItem": "Elementos del catálogo",
@@ -93,6 +103,20 @@
       "contact_point": "Contacto",
       "author": "Autor",
       "licence": "Licencia"
+    },
+    "userDrawing": {
+      "devError": "Terria requiere una instancia.",
+      "messageHeader": "Dibujar en el mapa",
+      "pointEntities": "Puntos",
+      "otherEntities": "Lineas y poligonos",
+      "line": "Línea",
+      "firstPoint": "Primer Punto",
+      "btnCancel": "Cancelar",
+      "btnDone": "Hecho",
+      "clickToAddFirstPoint": "Clic para agregar un punto",
+      "clickToAddAnotherPoint": "Clic para agregar otro punto",
+      "anotherPoint": "Otro punto",
+      "userPolygon": "Polígono de usuario"
     }
   },
   "analytics": {
@@ -130,7 +154,9 @@
   "clipboard": {
     "copy": "Copiar",
     "shareURL": "Compartir URL",
-    "success": "Copiado al portapapeles"
+    "success": "Copiado al portapapeles",
+    "unsuccessful": "Copia fallida...",
+    "shareExplanation": "Cualquiera con esta URL podrá acceder a este mapa."
   },
   "dateTime": {
     "timeline": {
@@ -139,6 +165,22 @@
     }
   },
   "workbench": {
+    "colorScaleRangeTitle": "Rango de escala de color no válido",
+    "colorScaleRangeMin": "El valor mínimo debe ser un número.",
+    "colorScaleRangeMax": "El valor máximo debe ser un número.",
+    "colorScaleRangeMinSmallerThanMax": "El valor mínimo del rango de la escala de colores debe ser menor que el valor máximo.",
+    "colorScaleRange": "Rango de escala de color",
+    "displayPercent": "Mostrar como porcentaje del total regional",
+    "zoomTo": "Zoom Ideal",
+    "previewItemTitle": "Acerca de estos datos",
+    "showMoreActionsTitle": "Mostrar más acciones",
+    "previewItem": "Acerca datos",
+    "splitItemTitle": "Duplicar y mostrar divisor",
+    "splitItem": "Comparar",
+    "diffImageTitle": "Ver diferencias de imagen entre dos fechas",
+    "diffImage": "Diferencia",
+    "exportDataTitle": "Exportar datos de mapa",
+    "removeFromMapTitle": "Eliminar estos datos",
     "removeAll": "Quitar Todos",
     "removeFromMap": "Quitar",
     "exportData": "Exportar",
@@ -149,11 +191,28 @@
     "opacity": "Opacidad:{{opacity}}%",
     "label": "Conjunto de Datos",
     "rangeMin": "Mínima:",
-    "rangeMax": "Máxima:"
+    "rangeMax": "Máxima:",
+    "collapseAll": "Desplegar Todo",
+    "expandAll": "Espandir Todo",
+    "toggleVisibility": "Datos mostrar/ocultar",
+    "addItemErrorTitle": "No se pudo agregar el elemento del catálogo en la mesa de trabajo.",
+    "addItemErrorMessage": "Se produjo un error al cargar el artículo del catálogo.",
+    "dimensionsSelector": {
+      "undefinedLabel": "No especificado"
+    },
+    "searchItem": "Buscar",
+    "searchItemTitle": "Buscar"
   },
   "search": {
     "data": "Datos",
-    "resultsLabel": "Resultados de búsqueda"
+    "resultsLabel": "Resultados de búsqueda",
+    "done": "Hecho",
+    "searchInDataCatalog": "Buscar <1>'{{locationSearchText}}'</1> in el cátalogo de datos",
+    "search": "Buscar '{{searchText}}' en el catalogo",
+    "viewLess": "Ver menos {{name}} resultados",
+    "viewMore": "Ver más {{name}} resultados",
+    "placeholder": "Buscar ubicaciones",
+    "searchCatalogue": "Buscar en el catálogo"
   },
   "addData": {
     "addDataBtnText": "Explorar datos de mapas",
@@ -188,7 +247,9 @@
     "editor": {
       "saveStory": "Guardar",
       "saveBtn": "guardar",
-      "cancelBtn": "cancelar"
+      "cancelBtn": "cancelar",
+      "placeholder": "Ingrese un título aquí",
+      "cancelEditing": "Cancelar"
     },
     "removeAllStories": "Eliminar Todos",
     "delete": "Eliminar",
@@ -197,7 +258,40 @@
     "editStory": "editar",
     "view": "Vista",
     "viewStory": "vista",
-    "storyEditor": "Editor de historias"
+    "storyEditor": "Editor de historias",
+    "panelTitle": "Story editor",
+    "panelBody": "Create and share interactive stories directly from your map",
+    "gettingStarted": "Getting started",
+    "gettingStartedTitle": "Getting started",
+    "badgeBarLabel": "Scenes",
+    "share": "Share",
+    "shareTitle": "share stories",
+    "recaptureStory": "re-capture",
+    "recapture": "Recapture",
+    "untitledScene": "untitled scene",
+    "doesNotExist": "Story does not exist",
+    "message": "<2>This is your story editor</2><1>Create and share interactive stories directly from your map<1><0><0></0>Getting Started </0></1></1>",
+    "removeAllStoriesDialog": "Are you sure you wish to delete {{ count }} scene?",
+    "removeAllStoriesDialog_plural": "Are you sure you wish to delete {{ count }} scenes?",
+    "removeStoryDialog": "Are you sure you wish to delete '<1>{{storyName}}</1>'?",
+    "preview": "preview stories",
+    "play": "Play",
+    "captureSceneTitle": "capture current scene",
+    "captureScene": "Capture Scene",
+    "locationBtn": "center scene",
+    "exitBtn": "exit story",
+    "previousBtn": "go to previous scene",
+    "untitled": "untitled scene",
+    "navBtn": "go to story {{title}}",
+    "nextBtn": "go to next scene",
+    "navBtnMobile": "go to story {{title}}",
+    "promptHtml1": "<0>You can view and create stories at any time by clicking here.</0>",
+    "promptHtml2": "<0><0>INTRODUCING</0><1>Data Stories</1><2>Create and share interactive stories directly from your map.</2></0>",
+    "dismissText": "Got it, thanks!",
+    "mobileViewStory": "View Stories {{storiesLength}}",
+    "hideStoryPanel": "hide story builder",
+    "loadSceneErrorTitle": "Error loading Story Scene",
+    "loadSceneErrorMessage": "An error occurred while loading data for story scene: `{{title}}`."
   },
   "featureInfo": {
     "noInfoAvailable": "No hay información disponible",
@@ -248,7 +342,10 @@
     "recount": "Recontando",
     "subTotals": "<div> {{name}}: {{items}} elementos/ {{groups}} grupos</div>",
     "totals": "<div>El catálogo contiene {{items}} elementos en {{groups}} grupos.</div>",
-    "countingMessage": "Contando, por favor espere…"
+    "countingMessage": "Contando, por favor espere…",
+    "noMapDataEnabled": "No hay datos de mapas habilitados",
+    "mapDataState": "{{count}} conjunto de datos habilitado en el mapa",
+    "mapDataState_plural": "{{count}} conjunto de datos habilitado en el mapa"
   },
   "share": {
     "printTitle": "Imprimir mapa",
@@ -272,28 +369,44 @@
     "printExplanation": "Abrir una versión imprimible de este mapa."
   },
   "settingPanel": {
-    "performanceLabel": "Rendimiento",
-    "qualityLabel": "Calidad",
-    "mapView": "Vista del mapa",
-    "screen": "pantalla",
-    "native": "nativa",
+    "none": "(Nada)",
     "viewerModeLabels": {
       "Leaflet": "2D",
       "CesiumTerrain": "3D Terreno",
       "CesiumEllipsoid": "3D Liso"
     },
-    "none": "(Nada)",
-    "imageOptimisation": "Optimización de Imagen",
-    "nativeResolutionLabel": "Presione para dejar de usar la resolución {{resolution1}} y comenzar a usar la resolución {{resolution2}}",
     "qualityLabels": {
       "lowerPerformance": "Máxima calidad, bajo rendimiento",
       "balancedPerformance": "Balance entre rendimiento y calidad",
       "maximumPerformance": "Máximo rendimiento, baja calidad"
     },
+    "performanceLabel": "Rendimiento",
+    "qualityLabel": "Calidad",
+    "mapView": "Vista del mapa",
+    "screen": "pantalla",
+    "native": "nativa",
+    "btnText": "Configuración de mapa",
+    "imageOptimisation": "Optimización de Imagen",
+    "nativeResolutionLabel": "Presione para dejar de usar la resolución {{resolution1}} y comenzar a usar la resolución {{resolution2}}",
     "mapQuality": "Calidad del Mapa Ráster:",
     "nativeResolutionHeader": "Usar resolución nativa del dispositivo",
     "btnTitle": "Cambiar vista",
-    "baseMap": "Mapa Base"
+    "baseMap": "Mapa Base",
+    "timeline": {
+      "title": "Cronología",
+      "alwaysShowLabel": "Presione para comenzar a mostrar solo la línea de tiempo cuando hay conjuntos de datos que varían en el tiempo en la mesa de trabajo",
+      "hideLabel": "Presione para comenzar a mostrar siempre la línea de tiempo, incluso cuando no haya conjuntos de datos que varíen en el tiempo en la mesa de trabajo",
+      "alwaysShow": "Siempre mostrar"
+    },
+    "terrain": {
+      "hideUnderground": "El terreno oculta las características subterráneas",
+      "showUndergroundFeatures": "Presione para comenzar a mostrar entidades que se encuentran debajo de la superficie del terreno",
+      "hideUndergroundFeatures": "Presione para comenzar a ocultar las características que se encuentran debajo de la superficie del terreno",
+      "sideLabel": "Mostrar terreno en el",
+      "left": "Izquierda",
+      "both": "Ambas",
+      "right": "Derecha"
+    }
   },
   "toolsPanel": {
     "btnText": "Herramienta",
@@ -327,7 +440,15 @@
   },
   "measure": {
     "measureTool": "Herramienta de Medición",
+    "measureToolTitle": "Línea de Medición",
     "measureDistance": "Medir distancia entre localizaciones"
+  },
+  "pedestrianMode": {
+    "toolButtonTitle": "Pedestrian Mode",
+    "dropPedestrianTooltipMessage": "<b>Left click</b> to select drop location<br /><b>Right click / Esc</b> to cancel",
+    "controls": {
+      "title": "Controls"
+    }
   },
   "compass": {
     "description": "Arrastrar anillo exterior: rotar vista.\nArrastre el giroscopio interior: órbita libre.\nHacer doble clic: restablecer la vista.\nSUGERENCIA: también puede liberar la órbita manteniendo presionada la tecla CTRL y arrastrando el mapa.",
