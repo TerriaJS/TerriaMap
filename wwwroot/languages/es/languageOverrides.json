@@ -146,19 +146,19 @@
       "reachedMaxFeatureLimit": "Warning: This layer has reached the WFS feature limit ({{maxFeatures}})"
     },
     "webMapServiceCatalogGroup": {
-      "wmsServer": "Web Map Service (WMS) Server",
-      "invalidWMSServerTitle": "Invalid WMS server",
-      "invalidWMSServerMessage": "An error occurred while invoking GetCapabilities on the WMS server. The server's response does not appear to be a valid GetCapabilities document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking GetCapabilities on the WMS server.",
-      "missingUrlTitle": "Unable to load GetCapabilities",
-      "missingUrlMessage": "Could not load the Web Map Service (WMS) GetCapabilities document because the catalog item does not have a `url`.",
-      "abstract": "Web Map Service Description",
-      "accessConstraints": "Web Map Service Access Constraints",
-      "fees": "Web Map Service Fees"
+      "wmsServer": "Servidor de Servicio de Mapas Web (WMS) ",
+      "invalidWMSServerTitle": "Servidor WMS no válido",
+      "invalidWMSServerMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMS. La respuesta del servidor no parece ser un documento GetCapabilities válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMS",
+      "missingUrlTitle": "No se puede cargar GetCapabilities",
+      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del Servicio de mapas web (WMS) porque el elemento del catálogo no tiene un`url`.",
+      "abstract": "Descripción del servicio de mapas web",
+      "accessConstraints": "Restricciones de acceso al servicio de mapas web",
+      "fees": "Tarifas del servicio de mapas web"
     },
     "webMapServiceCatalogItem": {
-      "wms": "Web Map Service (WMS)",
+      "wms": "Servicio de Mapas Web (WMS)",
       "dataDescription": "Descripción de datos",
       "serviceDescription": "Descripción de servicios",
       "metadataUrls": "Enlaces de metadatos",
@@ -176,16 +176,16 @@
       "missingUrlMessage": "No se pudo cargar el Servicio de Mapas Web (WMS) GetCapabilities documento porque el artículo del catálogo no tiene un `url`."
     },
     "webMapTileServiceCatalogGroup": {
-      "wmtsServer": "Web Map Tile Service (WMTS) Server",
-      "invalidWMTSServerTitle": "Invalid WMTS server",
-      "invalidWMTSServerMessage": "An error occurred while invoking GetCapabilities on the WMTS server. The server's response does not appear to be a valid GetCapabilities document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking GetCapabilities on the WMTS server.",
-      "abstract": "Web Map Service Description",
-      "accessConstraints": "Web Map Service Access Constraints",
-      "fees": "Web Map Service Fees",
-      "invalidCapabilitiesTitle": "Invalid GetCapabilities",
-      "invalidCapabilitiesMessage": "The URL {{url}} was retrieved successfully but it does not appear to be a valid Web Map Tile Service (WMTS) GetCapabilities document. \n\nEither the catalog file has been set up incorrectly, or the server address has changed."
+      "wmtsServer": "Servidor de servicio de mosaicos de mapas web (WMTS)",
+      "invalidWMTSServerTitle": "Servidor WMTS no válido",
+      "invalidWMTSServerMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMTS. La respuesta del servidor no parece ser un documento GetCapabilities válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMTS.",
+      "abstract": "Descripción del servicio de mapas web",
+      "accessConstraints": "Restricciones de acceso al servicio de mapas web",
+      "fees": "Tarifas del servicio de mapas web",
+      "invalidCapabilitiesTitle": "GetCapabilities no válido",
+      "invalidCapabilitiesMessage": "El URL {{url}} se recuperó correctamente, pero no parece ser un documento válido de GetCapabilities del Servicio de mosaicos de mapas web (WMTS). \n\nO el archivo de catálogo se ha configurado incorrectamente o la dirección del servidor ha cambiado."
     },
     "webMapTileServiceCatalogItem": {
       "wmts": "Web Map Tile Service (WMTS)",
