@@ -1,4 +1,15 @@
 {
+  "general": {
+    "delete": "Eliminar",
+    "skip": "Saltar",
+    "cancel": "Cancelar",
+    "next": "Sig",
+    "prev": "Ant",
+    "open": "Abrir",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "confirm": "Confirmar"
+  },
   "legend": {
     "elev": "Elev",
     "n": "N",
@@ -6,6 +17,9 @@
     "zone": "ZONA",
     "lon": "Lon",
     "lat": "Lat"
+  },
+  "languagePanel": {
+    "changeLanguage": "Cambiar idioma"
   },
   "splitterTool": {
     "workbench": {
@@ -145,36 +159,6 @@
       "missingUrlMessage": "Could not load the Web Feature Service (WFS) GetCapabilities document because the catalog item does not have a `url`.",
       "reachedMaxFeatureLimit": "Warning: This layer has reached the WFS feature limit ({{maxFeatures}})"
     },
-    "webMapServiceCatalogGroup": {
-      "wmsServer": "Servidor de Servicio de Mapas Web (WMS) ",
-      "invalidWMSServerTitle": "Servidor WMS no válido",
-      "invalidWMSServerMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMS. La respuesta del servidor no parece ser un documento GetCapabilities válido.",
-      "groupNotAvailableTitle": "El grupo no está disponible",
-      "groupNotAvailableMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMS",
-      "missingUrlTitle": "No se puede cargar GetCapabilities",
-      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del Servicio de mapas web (WMS) porque el elemento del catálogo no tiene un`url`.",
-      "abstract": "Descripción del servicio de mapas web",
-      "accessConstraints": "Restricciones de acceso al servicio de mapas web",
-      "fees": "Tarifas del servicio de mapas web"
-    },
-    "webMapServiceCatalogItem": {
-      "wms": "Servicio de Mapas Web (WMS)",
-      "dataDescription": "Descripción de datos",
-      "serviceDescription": "Descripción de servicios",
-      "metadataUrls": "Enlaces de metadatos",
-      "accessConstraints": "Restricciones de acceso",
-      "serviceContact": "Contacto de servicio",
-      "getCapabilitiesUrl": "GetCapabilities URL",
-      "defaultStyleLabel": "Estilo por defecto",
-      "noLayerFoundTitle": "No se encontró ninguna capa",
-      "noLayerFoundMessage": "El conjunto de datos de WMS '{{name}}' no tiene capas que coincidan '{{layers}}'. {{suggested}} {{line}}{{line}}O el archivo de catálogo se ha configurado incorrectamente o el servidor WMS ha cambiado.",
-      "badlyFormatedTitle": "Periodicidad mal formateada",
-      "badlyFormatedMessage": "El '{{name}}' el conjunto de datos tiene una periodicidad mal formada, '{{isoSegments}}'. Haga clic en el botón Información del conjunto de datos para obtener más información sobre el conjunto de datos y el custodio de datos.",
-      "missingDataTitle": "Datos perdidos",
-      "missingDataMessage": "The WMS dataset '{{name}}' did not return any data.{{line}}{{line}}Either the catalog file has been set up incorrectly, or the server address has changed.",
-      "missingUrlTitle": "No puede cargar GetCapabilities",
-      "missingUrlMessage": "No se pudo cargar el Servicio de Mapas Web (WMS) GetCapabilities documento porque el artículo del catálogo no tiene un `url`."
-    },
     "webMapTileServiceCatalogGroup": {
       "wmtsServer": "Servidor de servicio de mosaicos de mapas web (WMTS)",
       "invalidWMTSServerTitle": "Servidor WMTS no válido",
@@ -187,63 +171,81 @@
       "invalidCapabilitiesTitle": "GetCapabilities no válido",
       "invalidCapabilitiesMessage": "El URL {{url}} se recuperó correctamente, pero no parece ser un documento válido de GetCapabilities del Servicio de mosaicos de mapas web (WMTS). \n\nO el archivo de catálogo se ha configurado incorrectamente o la dirección del servidor ha cambiado."
     },
+    "webMapServiceCatalogGroup": {
+      "wmsServer": "Servidor de Servicio de Mapas Web (WMS) ",
+      "invalidWMSServerTitle": "Servidor WMS no válido",
+      "invalidWMSServerMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMS. La respuesta del servidor no parece ser un documento GetCapabilities válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar GetCapabilities en el servidor WMS",
+      "missingUrlTitle": "No se puede cargar GetCapabilities",
+      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del Servicio de mapas web (WMS) porque el elemento del catálogo no tiene un`url`.",
+      "abstract": "Descripción del servicio de mapas web",
+      "accessConstraints": "Restricciones de acceso al servicio de mapas web",
+      "fees": "Tarifas del servicio de mapas web"
+    },
     "webMapTileServiceCatalogItem": {
-      "wmts": "Web Map Tile Service (WMTS)",
-      "dataDescription": "Data Description",
-      "serviceDescription": "Service Description",
-      "accessConstraints": "Access Constraints",
-      "fees": "Web Map Tile Service Fees",
-      "serviceContact": "Service Contact",
-      "getCapabilitiesUrl": "GetCapabilities URL",
-      "missingUrlTitle": "Unable to load GetCapabilities",
-      "missingUrlMessage": "Could not load the Web Map Tile Service (WMTS) GetCapabilities document because the catalog item does not have a `url`.",
-      "noUsableTileMatrixTitle": "Warning",
-      "noUsableTileMatrixMessage": "This WMTS layer has no Web Mercator tile matrix set - it may not display correctly"
+      "wmts": "Servicio de mosaicos de mapas web (WMTS)",
+      "dataDescription": "Descripción de datos",
+      "serviceDescription": "Descripción del servicio",
+      "accessConstraints": "Restricciones de acceso",
+      "fees": "Tarifas del servicio de mosaicos de mapas web",
+      "serviceContact": "Contacto de servicio",
+      "getCapabilitiesUrl": "URL de GetCapabilities",
+      "missingUrlTitle": "No se puede cargar GetCapabilities",
+      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del Servicio de mosaicos de mapas web (WMTS) porque el elemento del catálogo no tiene un `url`.",
+      "noUsableTileMatrixTitle": "Advertencia",
+      "noUsableTileMatrixMessage": "Esta capa WMTS no tiene un conjunto de matrices de mosaicos de Web Mercator; es posible que no se muestre correctamente"
     },
     "webProcessingService": {
-      "wps": "Web Processing Service (WPS)",
-      "invalidWPSServerTitle": "Invalid WPS server",
-      "invalidWPSServerMessage": "An error occurred while invoking {{endpoint}} on the WPS server for process name {{name}}. The server's response does not appear to be a valid {{endpoint}} document.",
-      "processDescriptionErrorTitle": "Process does not have a process description",
-      "processDescriptionErrorMessage": "The WPS DescribeProcess for this process does not include a ProcessDescription.",
-      "processInputErrorTitle": "Process does not have any inputs",
-      "processInputErrorMessage": "This WPS process does not specify any inputs.",
-      "unsupportedParameterErrorTitle": "Unsupported parameter type",
-      "unsupportedParameterErrorMessage": "The parameter {{identifier}} is not a supported type of parameter.",
-      "invalidResponseErrorTitle": "Invalid WPS server response",
-      "invalidResponseErrorMessage": "An error occurred while accessing the status location on the WPS server for process name {{name}}.",
-      "invalidResponseError2Title": "Invalid response from WPS server",
-      "invalidResponseError2Message": "The response from the WPS server does not include a Status element.",
-      "failureReasonUnknowError": "The reason for failure is unknown.",
-      "asyncShortReportFailed": "Web Processing Service invocation failed.  More details are available on the Info panel.",
-      "errorDetails": "Error Details",
-      "resultPendingDescription": "This is the result of invoking the {{name}} process or service at {{timestamp}} with the input parameters below.",
-      "regionTypeDescription": "The type of region to analyze.",
-      "regionTypeName": "Region Type",
-      "regionParameterName": "Region Parameter",
-      "wpsServer": "Web Processing Service (WPS) Server",
-      "wpsResult": "Web Processing Service Result"
+      "wps": "Servicio de procesamiento web(WPS)",
+      "invalidWPSServerTitle": "Servidor WPS no válido",
+      "invalidWPSServerMessage": "Ocurrió un error al invocar {{endpoint}} en el servidor WPS para el nombre del proceso{{name}}. La respuesta del servidor no parece ser válida {{endpoint}} documento.",
+      "processDescriptionErrorTitle": "El proceso no tiene una descripción del proceso",
+      "processDescriptionErrorMessage": "El proceso de descripción de WPS para este proceso no incluye una descripción del proceso.",
+      "processInputErrorTitle": "El proceso no tiene ninguna entrada",
+      "processInputErrorMessage": "Este proceso de WPS no especifica ninguna entrada.",
+      "unsupportedParameterErrorTitle": "Tipo de parámetro no admitido",
+      "unsupportedParameterErrorMessage": "El parámetro {{identifier}} no es un tipo de parámetro admitido.",
+      "invalidResponseErrorTitle": "Respuesta del servidor WPS no válida",
+      "invalidResponseErrorMessage": "Se produjo un error al acceder a la ubicación de estado en el servidor WPS para el nombre del proceso {{name}}.",
+      "invalidResponseError2Title": "Respuesta no válida del servidor WPS",
+      "invalidResponseError2Message": "La respuesta del servidor WPS no incluye un elemento de estado.",
+      "failureReasonUnknowError": "Se desconoce el motivo del fracaso.",
+      "asyncShortReportFailed": "Error al invocar el servicio de procesamiento web. Más detalles están disponibles en el panel de información.",
+      "errorDetails": "Error de detalles",
+      "resultPendingDescription": "Este es el resultado de invocar el{{name}} proceso o servicio en{{timestamp}} con los parámetros de entrada a continuación.",
+      "regionTypeDescription": "El tipo de región a analizar.",
+      "regionTypeName": "Tipo de región",
+      "regionParameterName": "Parámetro de región",
+      "wpsServer": "Servidor del servicio de procesamiento web (WPS)",
+      "wpsResult": "Resultado del servicio de procesamiento web"
     },
     "webProcessingServiceCatalogGroup": {
-      "typeName": "Web Processing Service (WPS) Server",
-      "missingUrlTitle": "Unable to load GetCapabilities",
-      "missingUrlMessage": "Could not load the Web Processing Service (WPS) GetCapabilities document because the catalog item does not have a `url`.",
-      "invalidCapabilitiesTitle": "Invalid GetCapabilities",
-      "invalidCapabilitiesMessage": "The URL {{url}} was retrieved successfully but it does not appear to be a valid Web Processing Service (WPS) GetCapabilities document. \n\nEither the catalog file has been set up incorrectly, or the server address has changed.",
-      "invalidServerTitle": "Invalid WPS server",
-      "invalidServerMessage": "An error occurred while invoking GetCapabilities on the WPS server. The server's response does not appear to be a valid GetCapabilities document.",
-      "abstract": "Web Processing Service Description",
-      "accessConstraints": "Web Processing Service Access Constraints",
-      "fees": "Web Processing Service Fees",
-      "providerName": "Web Processing Service Provider Name",
-      "providerSite": "Web Processing Service Provider Site"
+      "typeName": "Servidor del servicio de procesamiento web (WPS)",
+      "missingUrlTitle": "No se puede cargar GetCapabilities",
+      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del Servicio de procesamiento web (WPS) porque el elemento del catálogo no tiene un `url`.",
+      "invalidCapabilitiesTitle": "GetCapabilities no válido",
+      "invalidCapabilitiesMessage": "El URL {{url}} se recuperó correctamente, pero no parece ser un documento GetCapabilities válido del Servicio de procesamiento web (WPS). \n\nO el archivo de catálogo se ha configurado incorrectamente o la dirección del servidor ha cambiado.",
+      "invalidServerTitle": "Servidor WPS no válido",
+      "invalidServerMessage": "Se produjo un error al invocar GetCapabilities en el servidor WPS. La respuesta del servidor no parece ser un documento GetCapabilities válido.",
+      "abstract": "Descripción del servicio de procesamiento web",
+      "accessConstraints": "Restricciones de acceso al servicio de procesamiento web",
+      "fees": "Tarifas del servicio de procesamiento web",
+      "providerName": "Nombre del proveedor de servicios de procesamiento web",
+      "providerSite": "Sitio del proveedor de servicios de procesamiento web"
     },
     "wfsFeatures": {
-      "featuresGroup": "Group of features in a Web Feature Service (WFS) Server",
-      "queryErrorTitle": "Error querying WFS server",
-      "queryErrorMessage": "An error occurred while invoking GetFeature on the WFS server. The server's response does not appear to be a valid GeoJSON document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking GetFeature on the WFS server."
+      "featuresGroup": "Grupo de características en un servidor de servicios de características web (WFS)",
+      "queryErrorTitle": "Error al consultar el servidor WFS",
+      "queryErrorMessage": "Se produjo un error al invocar GetFeature en el servidor WFS. La respuesta del servidor no parece ser un documento GeoJSON válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar GetFeature en el servidor WFS."
+    },
+    "raiseError": {
+      "errorTitle": "Ocurrió un error",
+      "notificationFeedback": "Si tiene preguntas o comentarios, haga clic aquí.",
+      "notificationFeedbackEmail": "Si tiene preguntas o comentarios, comuníquese con {{email}}",
+      "developerDetails": "Detalles del desarrollador"
     }
   },
   "analytics": {
@@ -558,15 +560,6 @@
     "zoomReset": "Restablecer zoom",
     "zoomIn": "Zoom +"
   },
-  "general": {
-    "delete": "Eliminar",
-    "skip": "Saltar",
-    "cancel": "Cancelar",
-    "next": "Sig",
-    "prev": "Ant",
-    "open": "Abrir",
-    "close": "Cerrar"
-  },
   "measure": {
     "measureTool": "Herramienta de Medición",
     "measureToolTitle": "Línea de Medición",
@@ -641,5 +634,76 @@
     "helpfulHintsOne": "Explore datos disponibles seleccionando  ‘Explorar datos de mapas’ o haga clic en‘Subir’ para agregar sus propios datos al mapa",
     "helpfulHintsTwo": "Una vez que haya agregado datos al mapa, sus conjuntos de datos activos se enumeran aquí en su banco de trabajo. El mesa de trabajo le ayudará a interactuar con los datos",
     "helpfulHintsThree": "En la mesa de trabajo puede activar y desactivar conjuntos de datos, cambiar su opacidad, activar la comparación de pantalla dividida, cambiar estilos y navegar por fechas y horas, si los datos admiten esta funcionalidad"
+  },
+  "core": {
+    "errors": {
+      "tooDeepAddedByUser": "Alcanzó 100 elementos del catálogo al verificar addedByUser y aterrizar en el ID: \"{{memberId}}\"? Compruebe que no tiene un grupo de catálogo recursivo."
+    },
+    "userAddedData": "Datos agregados por el usuario",
+    "chartData": "Chart de datos",
+    "dataUri": {
+      "errorTitle": "El navegador no admite la descarga de datos",
+      "errorMessage": "Lamentablemente, los navegadores de Microsoft (incluidas todas las versiones de Internet Explorer y Edge) no admiten la funcionalidad de uri de datos necesaria para descargar datos como un archivo. Para descargar, copie el siguiente uri en otro navegador como Chrome, Firefox o Safari: {{href}}"
+    },
+    "dataType": {
+      "auto": "Detectar automáticamente (recomendado)",
+      "wms-group": "Servidor de servicio de mapas web (WMS)",
+      "wmts-group": "Servidor de servicio de mosaicos de mapas web (WMTS)",
+      "wfs-group": "Servidor de servicio de características web (WFS)",
+      "wps-getCapabilities": "Servidor del servicio de procesamiento web (WPS)",
+      "esri-group": "Esri ArcGIS Server",
+      "esri-mapServer": "Esri ArcGIS MapServer (capa única)",
+      "esri-featureServer": "Esri ArcGIS FeatureServer (capa única)",
+      "3d-tiles": "3D Tiles",
+      "open-street-map": "Open Street Map Server",
+      "sdmx-group": "SDMX-JSON",
+      "opendatasoft-group": "Opendatasoft Portal",
+      "geojson": "GeoJSON",
+      "geoRss": "GeoRSS",
+      "kml": "KML or KMZ",
+      "csv": "CSV",
+      "czml": "CZML",
+      "gpx": "GPX",
+      "json": "JSON",
+      "carto": "Carto",
+      "gltf": "GLTF",
+      "shp": "Shapefile (zip)",
+      "other": "Otro (use el servicio de conversión)"
+    },
+    "printWindow": {
+      "errorTitle": "Error al imprimir",
+      "errorMessage": "La impresión no se inició en 10 segundos. Quizás este navegador web no admita la impresión?",
+      "printMediaStart": "inicio de medios impresos",
+      "printMediaEnd": "fin de los medios impresos",
+      "onbeforeprint": "onbeforeprint",
+      "onafterprint": "onafterprint"
+    },
+    "consoleAnalytics": {
+      "started": "ConsoleAnalytics se inició.",
+      "startedNoLogToConsole": "ConsoleAnalytics se inició, sin embargo `userParameters.logToConsole` No se definió ni se estableció en falso.",
+      "logStartedWithGAParameters": "ConsoleAnalytics se inició pero un `googleAnalyticsKey` o `googleAnalyticsOptions` se observó la clave en `userParameters`"
+    },
+    "googleAnalytics": {
+      "log": "El seguimiento de Google Analytics está inhabilitado porque no se especifica terria.configParameters.googleAnalyticsKey",
+      "logEnabledOnDevelopment": "Google Analytics se inicializó en un `development` ambiente"
+    },
+    "readText": {
+      "fileRequired": "el archivo es obligatorio"
+    },
+    "readXml": {
+      "xmlError": "El archivo no contiene XML válido."
+    },
+    "serverConfig": {
+      "failedToGet": "No se pudo obtener la configuración del servidor de {{serverConfigUrl}}. Esto significa que los servicios como proxy, conversión y acortamiento de URL pueden no funcionar."
+    },
+    "terriaError": {
+      "defaultTitle": "Ocurrió un error",
+      "defaultMessage": "Error desconocido",
+      "defaultCombineTitle": "Ocurrieron varios errores",
+      "defaultCombineMessage": "Los detalles de los errores se encuentran a continuación",
+      "networkRequestTitle": "Se produjo un error de solicitud de red",
+      "networkRequestMessage": "Es posible que los datos no estén disponibles o no se muestren correctamente debido a la interrupción del servicio del custodio de datos. Intente volver a cargar el mapa, acceder a los datos en una etapa posterior o seleccionar un conjunto de datos diferente. <feedbacklink feedback-message='If the problem persists, please submit feedback here.' email-message='If the problem persists, please report to {{email}}'/>",
+      "networkRequestMessageDetailed": "Esto puede indicar uno de los siguientes:\n\n* No se pudo resolver el nombre de host del servidor\n* El servidor no respondió a la solicitud o no está disponible temporalmente\n* El servidor negado[Cross-Origin Resource Sharing (CORS)](https://docs.terria.io/guide/connecting-to-data/cross-origin-resource-sharing/) acceso a esta URL\n* Hay un problema con tu conexión a Internet.\n\nSi ingresó el enlace manualmente, verifique que el enlace sea correcto."
+    }
   }
 }
