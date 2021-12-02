@@ -36,18 +36,6 @@
         },
         {
           "type": "group",
-          "name": "G2 Geologia",
-          "members": [
-            {
-              "type": "wms-group",
-              "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
-            }
-          ]
-        },
-        {
-          "type": "group",
           "name": "G3 Monitoreo Ambiente Agua Suelo",
           "members": [
             {
@@ -125,6 +113,126 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G5 Monitoreo Ambiente Biota",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G6 Infraestructura",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G7 Geografía Socioeconómica",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G8 Infraestructura transporte",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G9 Hidrología",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G10 Fisiografía",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G11 Cobertura y Uso del Suelo",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G12 Demarcación",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G13 Meteorología Clima",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G14 Varios",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         }
