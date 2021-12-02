@@ -7,10 +7,128 @@
   },
   "catalog": [
     {
-      "type": "wms-group",
-      "name": "CELEC",
-      "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-      "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+      "type": "group",
+      "name": "CELEC-EP",
+      "members": [
+        {
+          "type": "group",
+          "name": "G1 hidrometeorología",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+            ]
+        },
+        {
+          "type": "group",
+          "name": "G2 Geologia",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G2 Geologia",
+          "members": [
+            {
+              "type": "wms-group",
+              "name": "prueba",
+              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G3 Monitoreo Ambiente Agua Suelo",
+          "members": [
+            {
+              "name": "prueba",
+              "type": "wms"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G4 Energías Renovables",
+          "members": [
+            {
+              "type": "group",
+              "name": "Solar",
+              "members": [
+                {
+                  "type": "group",
+                  "name": "Atlas-Solar",
+                  "members": [
+                    {
+                      "name": "Mapa Irradiacion Global Inclinacion Optima",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-Global-Inclinacion-Optima-Ecuador",
+                      "type": "wms"
+                    },
+                    {
+                      "name": "Mapa Irradiacion Horizontal Difusa",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-horizontal-Difusa-Ecuador",
+                      "type": "wms"
+                    },
+                    {
+                      "name": "Mapa Irradiacion Horizontal Global",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-Horizontal-Global-Ecuador",
+                      "type": "wms"
+                    },
+                    {
+                      "name": "Mapa Irradiacion Normal Directa",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-Normal-Directa-Ecuador",
+                      "type": "wms"
+                    },
+                    {
+                      "name": "Mapa Temperatura",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Temperatura-Ecuador",
+                      "type": "wms"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Eólico",
+              "members": [
+                {
+                  "type": "group",
+                  "name": "Atlas-Viento",
+                  "members": [
+                    {
+                      "name": "Mapa Veolocidad Viento 100m",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Velocidad-Viento-100m",
+                      "type": "wms"
+                    },
+                    {
+                      "name": "Mapa Densidad Viento",
+                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Densidad-Viento-Ecuador-100m",
+                      "type": "wms"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "group",
