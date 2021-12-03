@@ -5,6 +5,9 @@
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
+    "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3NmY5NTBhYS0xMThhLTQxYzMtOGJlMS0wM2Q3MmU5M2Q2NmUiLCJpZCI6NzQ5MjUsImlhdCI6MTYzODIyNjIyNX0.GEOSoXSAavUDSAZbsA99QELpqRAGcoSc0P0b4cEzt8c",
+    "bingMapsKey": "Av4Zk9OUyBm3K_jHHTEM9yJwp5jJRfsRgfY6uyTag_4su7ABN84-7JjWstvOimA9",
+
 
     // Log ConsoleAnalytics events to console
     // logToConsole: true,
