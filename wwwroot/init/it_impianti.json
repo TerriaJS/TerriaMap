@@ -29,17 +29,20 @@
               "styles":"eo_imp_reg_potenza",
               "layers": "new_atlante_integrato:v_regioni_t",
               "featureInfoTemplate": {
-                "template": "<p>Variabile: {{var_id}}</p><p>Valore: {{valore}}</p><p format: 'dd-mm-yyyy'></p>"
+                "template": "<p>Potenza totale effettiva regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
               },
               "parameters": {
                 "cql_filter": "var_id=89"
               },
-              "id": "89"              
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=89&anno=2019"
+              }]             
             },
             {
               "type": "wms",
               "name": "Impianti mini eolici - Potenza effettiva installata regionale (MW)",
-              "description": "Impianti mini eolici - Potenza effettiva installata regionale (MW) \n\n Mappa della distribuzione regionale della potenza totale eolica installata nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti mini eolici - Potenza effettiva installata regionale (MW) \n\n Mappa della distribuzione regionale della potenza totale eolica installata nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "info": [
                 {
                   "name": "Licence",
@@ -50,6 +53,13 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"eo_imp_reg_potenza_mini",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza totale effettiva regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=103&anno=2019"
+              }],
               "parameters": {
                 "cql_filter": "var_id=103"
               },
@@ -58,7 +68,7 @@
             {
               "type": "wms",
               "name": "Numero impianti regionali",
-              "description": "Mappa della numerosità regionale della degli impianti eolici installati negli anni.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  Numero impianti regionali",
+              "description": "Mappa della numerosità regionale della degli impianti eolici installati negli anni.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>\n\n  Numero impianti regionali \n<a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "info": [
                 {
                   "name": "Licence",
@@ -69,13 +79,20 @@
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
               "parameters":{"cql_filter":"var_id=179"},
+              "featureInfoTemplate": {
+                "template": "<br><p>Numero impianti regionali <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=179&anno=2019"
+              }],
               "styles":"eo_num_impianti_reg",
               "id": "179"              
             },
             {
               "type": "wms",
               "name": "Impianti eolici -  Produzione elettrica eolica regionale (GWh)",
-              "description": "Impianti eolici -  Produzione elettrica eolica regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzione totale eolica.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>\n\n <a href=\\\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti eolici -  Produzione elettrica eolica regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzione totale eolica.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>\n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "info": [
                 {
                   "name": "Licence",
@@ -83,45 +100,66 @@
                 }
               ],
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"eo_imp_reg_produzione",
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=90&anno=2019"
+              }],
               "dimensions": {"cql_filter":"var_id=90"},
               "id": "90"
             },
             {
               "type": "wms",
               "name": "Impianti eolici - Potenza totale effettiva installata provinciale (MW)",
-              "description": "Impianti eolici - Potenza totale effettiva installata provinciale (MW)\n\n align=\"justify\">Mappa della distribuzione regionale della potenza eolica installata nel tempo, dati dall'anno 2016.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti eolici - Potenza totale effettiva installata provinciale (MW)\n\n Mappa della distribuzione regionale della potenza eolica installata nel tempo, dati dall'anno 2016.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "info": [
                 {
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
               ],
+              "featureInfoTemplate": {
+                "template": "<p>Potenza totale provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_province_t",
               "parameters": {
                 "cql_filter": "var_id=69"
               },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=69&anno=2019"
+              }],
               "id": "69",
               "styles":"eo_imp_prov_potenza"              
             },
             {
               "type": "wms",
               "name": "Impianti eolici -  Produzione elettrica eolica provinciale (GWh)",
-              "description": "Impianti eolici -  Produzione totale annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione totale eolica nel tempo <br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>\n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/Rapporto statistico\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti eolici -  Produzione totale annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione totale eolica nel tempo <br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>\n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "info": [
                 {
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
               ],
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"eo_imp_prov_produzione",
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=70&anno=2019"
+              }],
               "parameters": {
                 "cql_filter": "var_id=70"
               },
@@ -130,17 +168,24 @@
             {
               "type": "wms",
               "name": "Impianti eolici - Potenza mini eolico installata provinciale (MW)",
-              "description": "Impianti eolici - Potenza mini eolico installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza totale mini eolica nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/Rapporto statistico GSE\" target=\"_blank\"> GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti eolici - Potenza mini eolico installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza totale mini eolica nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "info": [
                 {
                   "name": "Licence",
                   "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
               ],
+              "featureInfoTemplate": {
+                "template": "<p>Potenza provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"eo_mini_potenza_mw",
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=85&anno=2019"
+              }],
               "parameters": {
                 "cql_filter": "var_id=85"
               },
@@ -156,7 +201,14 @@
                   "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
               ],
+              "featureInfoTemplate": {
+                "template": "<p>Potenza comunale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=204&anno=2019"
+              }],
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:v_impianti_eolici_raggruppamento_comune",
               "id": "eo_Pcom",
@@ -174,6 +226,13 @@
               ],
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero comunale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=204&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_impianti_eolici_raggruppamento_comune",
               "id": "eo_Ncom",
               "styles":"eo_num_impianti_com"
@@ -197,6 +256,10 @@
                   "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
                 }
               ],
+              "metadataUrls":[{
+                "title":"link metadato anno 2020",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=172&anno=2019"
+              }],
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "new_atlante_integrato:hesci_dighe2020",
@@ -214,6 +277,10 @@
               ],
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "metadataUrls":[{
+                "title":"link metadato anno 2020",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=173&anno=2019"
+              }],
               "layers": "new_atlante_integrato:hesci_laghi2020",
               "id": "H_lake"
             },
@@ -223,15 +290,26 @@
               "description": "Impianti (anno di riferimento 2020)\n\n Database HESCI - Impianti idroelettrici (anno di aggiornamento 2020)\n\n\n Database dei serbatoi\n\n Per alcune analisi effettuate e per predisporre dei dati utili ad approfondimenti di maggior dettaglio nel prosieguo dell’attività (LA1.09), sono stati reperiti e riorganizzati i dati dei serbatoi italiani raccolti nel database dei serbatoi italiani presentato in <i>A. Frigerio, M. Meghella, G. Bruno, G. Stella, «Valutazione del potenziale di accumulo di energia mediante centrali di pompaggio idroelettrico per il sistema elettrico italiano,» RSE - Rapporto RdS, Milano, 2011.</i>\n Le informazioni inserite nel database sono state reperite dalle seguenti fonti:\n • Il database del Registro Italiano Dighe (<a href=\"www.registroitalianodighe.it\">www.registroitalianodighe.it</a>) che raccoglie le informazioni relative alle grandi dighe italiane quali posizione, tipo, altezza e volume d’invaso secondo la L.584/94, volume d’invaso autorizzato, quota di massima regolazione e autorizzata, concessionario; • I database “Risentimenti Sismici” e “Costi/Benefici” che sono stati sviluppati nell’ambito della Ricerca di Sistema negli anni passati. Il primo individua, per un dato evento sismico, le dighe da sottoporre a controllo secondo le indicazioni del Registro Italiano Dighe; il secondo fornisce una valutazione a posteriori dei costi/benefici delle dighe italiane al fine di migliorare l’accettazione sociale della presenza dell’impianto sul territorio; • I volumi “Le dighe di ritenuta degli impianti idroelettrici italiani”, redatti a cura della commissione ANIDEL (Associazione Nazionale Imprese Produttrici e Distributrici di Energia Elettrica) nel 1961 e, successivamente, da ENEL nel 1974; • Il sito internet di Progetto Dighe (<a href=\"www.progettodighe.it\">www.progettodighe.it</a>) curato e aggiornato da un gruppo di appassionati di dighe, centrali idroelettriche e opere idrauliche, che si segnala per la completezza dei dati. Il database nella sezione “SKYdam” contiene, infatti, ben 577 dighe non solo italiane, ma anche francesi, statunitensi e svizzere. Una scheda riporta sia le loro caratteristiche principali sia una mappa di Google Maps con la posizione geografica.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "metadataUrls":[{
+                "title":"link metadato anno 2020",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=173&anno=2019"
+              }],
               "layers": "new_atlante_integrato:hesci_centrali2020",
               "id": "H_plant"
             },
             {
               "type": "wms",
               "name": "Impianti idroelettrici - Potenza totale effettiva installata regionale (MW)",
-              "description": "Impianti idroelettrici - Potenza totale effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza totale idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p>                ",
+              "description": "Impianti idroelettrici - Potenza totale effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza totale idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=95&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"new_atlante_integrato:id_imp_reg_pot_tot",
               "parameters": {
@@ -242,9 +320,16 @@
             {
               "type": "wms",
               "name": "Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)",
-              "description": "Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)\n\n <p> Mappa della distribuzione regionale della potenza mini idroelettrica installata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n ",
+              "description": "Impianti mini idroelettrici - Potenza effettiva installata regionale (MW)\n\n <p> Mappa della distribuzione regionale della potenza mini idroelettrica installata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=104&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"new_atlante_integrato:id_imp_reg_pot_mini",
               "parameters": {
@@ -255,9 +340,16 @@
             {
               "type": "wms",
               "name": "Impianti idroelettrici - Produzione totale annuale regionale (GWh)",
-              "description": "Impianti idroelettrici - Produzione totale annuale regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzione totale idroelettrica normalizzata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n ",
+              "description": "Impianti idroelettrici - Produzione totale annuale regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzione totale idroelettrica normalizzata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=96&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"new_atlante_integrato:id_imp_reg_produzione",
               "parameters": {
@@ -268,9 +360,16 @@
             {
               "type": "wms",
               "name": "Idroelettrico - Numero impianti regionali",
-              "description": "Idroelettrico - Numero impianti regionali\n\n <p align=\"justify\">Mappa della distribuzione regionale della numerosità degli impianti idroelettrici normalizzata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Idroelettrico - Numero impianti regionali\n\n <p align=\"justify\">Mappa della distribuzione regionale della numerosità degli impianti idroelettrici normalizzata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero impianti regionali <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=183&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"id_num_imp_reg",
               "parameters": {
@@ -281,9 +380,16 @@
             {
               "type": "wms",
               "name": "Idroelettrico - Produzione idroelettrica regionale da impianti a bacino (GWh)",
-              "description": "Idroelettrico - Produzione idroelettrica regionale da impianti a bacino (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Idroelettrico - Produzione idroelettrica regionale da impianti a bacino (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da impianti a bacino (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=185&anno=2019"
+              }],
               "styles":"id_prod_reg_bac",
               "layers": "new_atlante_integrato:v_regioni_t",
               "parameters": {
@@ -294,9 +400,16 @@
             {
               "type": "wms",
               "name": "Idroelettrico - Produzione idroelettrica regionale da impianti ad acqua fluente (GWh)",
-              "description": "Idroelettrico - Produzione idroelettrica regionale da impianti ad acqua fluente (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Idroelettrico - Produzione idroelettrica regionale da impianti ad acqua fluente (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da impianti ad acqua fluente (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=186&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"id_prod_reg_acqua_fluente",
               "parameters": {
@@ -307,9 +420,16 @@
             {
               "type": "wms",
               "name": "Idroelettrico - Produzione idroelettrica regionale al netto del pompaggio (GWh)",
-              "description": "Idroelettrico - Produzione idroelettrica regionale al netto del pompaggio (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Idroelettrico - Produzione idroelettrica regionale al netto del pompaggio (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale al netto del pompaggio (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=184&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"id_prod_reg_netto_pomp",
               "parameters": {
@@ -320,9 +440,16 @@
             {
               "type": "wms",
               "name": "Idroelettrico - Produzione idroelettrica regionale da pompaggio (GWh)",
-              "description": "Idroelettrico - Produzione idroelettrica regionale da pompaggio (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Idroelettrico - Produzione idroelettrica regionale da pompaggio (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da pompaggio (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=188&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"id_prod_reg_pomp",
               "parameters": {
@@ -333,9 +460,16 @@
             {
               "type": "wms",
               "name": "Idroelettrico - Produzione idroelettrica regionale da serbatoio al netto del pompaggio (GWh)",
-              "description": "Idroelettrico - Produzione idroelettrica regionale da serbatoio al netto del pompaggio (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Idroelettrico - Produzione idroelettrica regionale da serbatoio al netto del pompaggio (GWh)\n\n Mappa della distribuzione regionale della produzione idroelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da serbatoio al netto del pompaggio (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=187&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"id_prod_reg_serb_netto_pomp",
               "parameters": {
@@ -346,9 +480,16 @@
             {
               "type": "wms",
               "name": "Impianti idroelettrici - Potenza totale effettiva installata provinciale (MW)",
-              "description": "Impianti idroelettrici - Potenza totale effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza totale idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti idroelettrici - Potenza totale effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza totale idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=76&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"new_atlante_integrato:id_imp_prov_potenza_installata",
               "parameters": {
@@ -359,9 +500,16 @@
             {
               "type": "wms",
               "name": "Impianti mini idroelettrici - Potenza effettiva installata provinciale (MW)",
-              "description": "Impianti mini idroelettrici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza mini idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti mini idroelettrici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza mini idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=86&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"id_imp_prov_potenza_installata_mini",
               "parameters": {
@@ -372,9 +520,16 @@
             {
               "type": "wms",
               "name": "Impianti idroelettrici - Produzione totale annuale provinciale (GWh)",
-              "description": "Impianti idroelettrici - Produzione totale annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione totale idroelettrica normalizzata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti idroelettrici - Produzione totale annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione totale idroelettrica normalizzata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=77&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"id_imp_prov_produzione",
               "parameters": {
@@ -394,9 +549,16 @@
             {
               "type": "wms",
               "name": "Impianti fotovoltaici - Potenza effettiva installata regionale (MW)",
-              "description": "Impianti fotovoltaici - Potenza effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza fotovoltaica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti fotovoltaici - Potenza effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza fotovoltaica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=91&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"so_imp_reg_potenza_installata",
               "parameters": {
@@ -407,9 +569,16 @@
             {
               "type": "wms",
               "name": "Impianti fotovoltaici - Produzione annuale regionale (GWh)",
-              "description": "Impianti fotovoltaici - Produzione annuale regionale (GWh)\n\n Mappa della distribuzione regionale della produzione fotovoltaica.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti fotovoltaici - Produzione annuale regionale (GWh)\n\n Mappa della distribuzione regionale della produzione fotovoltaica.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=92&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"so_imp_reg_produzione",
               "parameters": {
@@ -420,9 +589,16 @@
             {
               "type": "wms",
               "name": "Impianti fotovoltaici - Numero di impianti fotovoltaici regionali",
-              "description": "Impianti fotovoltaici - Numero di impianti fotovoltaici regionali\n\n Mappa della distribuzione regionale della numerosità degli impianti fotovoltaici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti fotovoltaici - Numero di impianti fotovoltaici regionali\n\n Mappa della distribuzione regionale della numerosità degli impianti fotovoltaici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero regionale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=71&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"so_n_impianti_reg",
               "parameters": {
@@ -433,9 +609,16 @@
             {
               "type": "wms",
               "name": "Impianti fotovoltaici - Potenza effettiva installata provinciale (MW)",
-              "description": "Impianti fotovoltaici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza fotovoltaica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti fotovoltaici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza fotovoltaica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=72&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"so_imp_prov_potenza_installata",
               "parameters": {
@@ -446,9 +629,16 @@
             {
               "type": "wms",
               "name": "Impianti fotovoltaici - Produzione fotovoltaica effettiva provinciale (GWh)",
-              "description": "Impianti fotovoltaici - Produzione fotovoltaica effettiva provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione fotovoltaica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti fotovoltaici - Produzione fotovoltaica effettiva provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione fotovoltaica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=73&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"so_imp_prov_produzione",
               "parameters": {
@@ -459,9 +649,16 @@
             {
               "type": "wms",
               "name": "Fotovoltaico - Numero di impianti fotovoltaici provinciali",
-              "description": "Fotovoltaico - Numero di impianti fotovoltaici provinciali\n\n Mappa della distribuzione regionale della numerosità degli impianti fotovoltaici installati nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Fotovoltaico - Numero di impianti fotovoltaici provinciali\n\n Mappa della distribuzione regionale della numerosità degli impianti fotovoltaici installati nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero provinciale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=181&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"so_n_impianti_prov",
               "parameters": {
@@ -481,9 +678,16 @@
             {
               "type": "wms",
               "name": "Potenza effettiva installata regionale (MW)",
-              "description": "Impianti geotermoelettrici - Potenza effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza geotermoelettrica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti geotermoelettrici - Potenza effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza geotermoelettrica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=93&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"ge_imp_reg_potenza_installata",
               "parameters": {
@@ -494,9 +698,16 @@
             {
               "type": "wms",
               "name": "Produzione annuale regionale (GWh)",
-              "description": "Impianti geotermoelettrici - Produzione annuale regionale (GWh)\n\n Mappa della distribuzione regionale della produzione geotermoelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti geotermoelettrici - Produzione annuale regionale (GWh)\n\n Mappa della distribuzione regionale della produzione geotermoelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=94&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"ge_imp_reg_produzione",
               "parameters": {
@@ -507,9 +718,16 @@
             {
               "type": "wms",
               "name": "Numero impianti regionali",
-              "description": "Impianti geotermoelettrici - Numero impianti regionali\n\n Mappa della distribuzione regionale degli impianti geotermoelettrici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti geotermoelettrici - Numero impianti regionali\n\n Mappa della distribuzione regionale degli impianti geotermoelettrici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero regionale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=177&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"ge_num_impianti_reg",
               "parameters": {
@@ -520,9 +738,16 @@
             {
               "type": "wms",
               "name": "Potenza effettiva installata provinciale (MW)",
-              "description": "Impianti geotermoelettrici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza geotermoelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti geotermoelettrici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza geotermoelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=74&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"ge_imp_prov_potenza_installata",
               "parameters": {
@@ -533,9 +758,16 @@
             {
               "type": "wms",
               "name": "Produzione annuale provinciale (GWh)",
-              "description": "Impianti geotermoelettrici - Produzione annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione annua geotermoelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti geotermoelettrici - Produzione annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione annua geotermoelettrica nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=75&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"ge_imp_prov_produzione",
               "parameters": {
@@ -546,9 +778,16 @@
             {
               "type": "wms",
               "name": "Numero impianti provinciali",
-              "description": "Impianti geotermoelettrici - Numero impianti provinciali\n\n Mappa della distribuzione provinciale della numerosità degli impianti geotermoelettrici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti geotermoelettrici - Numero impianti provinciali\n\n Mappa della distribuzione provinciale della numerosità degli impianti geotermoelettrici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero di impianti provinciali <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=178&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"ge_num_impianti_prov",
               "parameters": {
@@ -562,16 +801,30 @@
               "description": "Impianti geotermoelettrici - Numero impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)\n\n Numero impianti geotermici - raggruppamento comunale (anno di riferimento 2018) ",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero comunale impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2018"
+              }],
               "layers": "new_atlante_integrato:v_impianti_geotermici_comune",
               "styles":"ge_num_impianti_com",
               "id": "ge_Ncom"
             },
             {
               "type": "wms",
-              "name": "Potenza impianti provinciali geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)",
+              "name": "Potenza impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)",
               "description": "Impianti geotermoelettrici - Potenza impianti provinciali\n\n Potenza impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza comunale impianti (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2018",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2018"
+              }],
               "layers": "new_atlante_integrato:v_impianti_geotermici_comune",
               "styles":"ge_pot_imp_com",
               "id": "ge_Pcom"
@@ -588,9 +841,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Potenza effettiva installata regionale (MW)",
-              "description": "Impianti a biomasse - Potenza effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza da bioenergie installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Potenza effettiva installata regionale (MW)\n\n Mappa della distribuzione regionale della potenza da bioenergie installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=78&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_imp_reg_potenza_installata",
               "parameters": {
@@ -600,10 +860,17 @@
             },
             {
               "type": "wms",
-              "name": "Impianti a biomasse - produzione effettiva regionale (GWh)",
-              "description": "Impianti a biomasse - produzione effettiva regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "name": "Impianti a biomasse - Produzione effettiva regionale (GWh)",
+              "description": "Impianti a biomasse - produzione effettiva regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=97&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_imp_reg_produzione",
               "parameters": {
@@ -614,9 +881,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse -  Numero Impianti Regionali",
-              "description": "Impianti a biomasse - Numero Impianti Regionali\n\n Mappa della distribuzione regionale del numero di impianti a bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Numero Impianti Regionali\n\n Mappa della distribuzione regionale del numero di impianti a bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Numero regionale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=201&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_num_imp_reg",
               "parameters": {
@@ -627,9 +901,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica da biogas regionale (GWh)",
-              "description": "Impianti a biomasse - Produzione elettrica da biogas regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica da biogas regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da biogas (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=195&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_prod_el_da_biogas_reg",
               "parameters": {
@@ -640,9 +921,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica da bioliquidi regionale (GWh)",
-              "description": "Impianti a biomasse - Produzione elettrica da bioliquidi regionale (GWh)\n\n Mappa della distribuzione regionale della produzione elettrica da bioliquidi nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica da bioliquidi regionale (GWh)\n\n Mappa della distribuzione regionale della produzione elettrica da bioliquidi nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da bioliquidi (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=189&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_bioliquidi_energia_reg",
               "parameters": {
@@ -653,9 +941,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica da biomasse solide diverse dai rifiuti regionale (GWh) ",
-              "description": "Impianti a biomasse - Produzione elettrica da biomasse solide diverse dai rifiuti regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica da biomasse solide diverse dai rifiuti regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da biomasse solide (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=198&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_solide_energia_reg",
               "parameters": {
@@ -666,9 +961,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica da RU biodegradabili regionale (GWh)",
-              "description": "Impianti a biomasse - Produzione elettrica da RU biodegradabili regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica da RU biodegradabili regionale (GWh)\n\n Mappa della distribuzione regionale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione regionale da RU biodegradabili (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=192&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_regioni_t",
               "styles":"bi_ru_biodegradabili_energia_reg",
               "parameters": {
@@ -679,9 +981,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione annuale provinciale (GWh)",
-              "description": "Impianti a biomasse - Produzione annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione annuale provinciale (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=79&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"bi_imp_prov_produzione",
               "parameters": {
@@ -692,9 +1001,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da biogas in % sul totale nazionale",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da biogas in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica provinciale da biogas in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale da biogas (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=196&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"bi_biogas_energia_perc_prov",
               "parameters": {
@@ -705,9 +1021,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili (GWh)",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica provinciale da RU biodegradabili (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale da RU biodegradabili (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=194&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"bi_ru_biodegradabili_energia_prov",
               "parameters": {
@@ -718,9 +1041,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi (GWh)",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica provinciale da bioliquidi (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale da bioliquidi (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=191&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"bi_bioliquidi_energia_prov",
               "parameters": {
@@ -731,9 +1061,16 @@
             {
               "type": "wms",
               "name": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti (GWh)",
-              "description": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+              "description": "Impianti a biomasse - Produzione elettrica provinciale da biomasse solide diverse dai rifiuti (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Produzione provinciale da biomasse (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=200&anno=2019"
+              }],
               "layers": "new_atlante_integrato:v_province_t",
               "styles":"bi_soli_energia_prov",
               "parameters": {
@@ -753,10 +1090,18 @@
             {
               "type": "wms",
               "name": "Pompaggio tradizionale - potenza installabile fattibile (MW)",
-              "description": "Pompaggio tradizionale - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi.",
+              "description": "Pompaggio tradizionale - stima della potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi. Valutazioni anno 2015.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
+              "featureInfoTemplate": {
+                "template": "<p>Potenza comunale fattibile (MW) <b>{{id_pomp_esistenti_nuovi_potenza_mw}}</b></p>", //<p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              //"metadataUrls":[{
+              //  "title":"link metadato anno 2015",
+              //  "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=44&anno=2015"
+              //}],
               "layers": "atlante_integrato:v_comuni_pompaggio_trad",
+              // "layers": "new_atlante_integrato:v_comuni_t",
               "styles":"comuni_pomp_trad_pot",
               "id": "po_Pcom"
             },

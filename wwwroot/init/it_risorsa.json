@@ -83,34 +83,37 @@
               "id": "dati",
               "type": "group",
               "name": "dati storici",
-              "description": "qui si possono visionare e scaricare i dati vecchi... ",
+              "description": "Questa raccolta comprende dati storici di pluviometri ed idrometri nonchè delle curve di durata di alcuni bacini idrografici. ",
               "isOpen": false,
               "members": [
                 {
                   "type": "wms",
                   "name": "Dati idrometrici",
-                  "description": "Dati idrometrici (</font><input type=\"image\" onmouseover=\"bigImg(this)\" onmouseout=\"normalImg(this)\" src=\"/immagini/save.png\" alt=\"Seleziona\" width=\"10\" height=\"10\" onclick=\"seleziona_idrometri();\"/><a onclick=\"seleziona_idrometri()\"><font color=\"\" + colore_idro + \"\"><i> Scarico dati</i>)</font></a>",
+                  "description": "Dati idrometrici attraverso questo strato informativo è possibile accedere ai dati e ad effettuare lo <i>scarico dati storici</i>.\n\n Misure idromentriche della banca dati IDROSTAZ derivanti dai dati storici pubblicati negli annali del Servizio Idrografico. Nota: il servizio ha cessato di raccogliere dati dal 1998 quando il servizio è stato trasferito alle regioni. <br> Per maggiori approfondimenti: https://www.isprambiente.gov.it/it/progetti/cartella-progetti-in-corso/acque-interne-e-marino-costiere-1/progetti-conclusi/progetto-annali/inquadramento-storico-del-monitoraggio-idro-meteografico-e-delle-relative-competenze \n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</br><a href=\"http://www.seehydropower.eu/\" target=\"_blank\">SEEHydroPower</a> ",
                   "url": "http://gis2.rse-web.it:8080/geoserver/wms",
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_idrometri",
                   "featureInfoTemplate": {
-                    "template": "<br><p>L'idrometro che hai selezionato è:  <b>{{'Staz'}}</b> , {{'CodStaz'}}</p><p style='display: block; text-align: center;'><button><a href='http://atlanteintegrato.rse-web.it/export_idro.php?language=IT/?CodStaz={{CodStaz}}' style='color: black; padding: 0px 10px 0px 10px'>Sacrica i dati</a></button></p>"
+                    "template": "<br><p>L'idrometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_idroNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
                   },
                   "id": "idrom"
                 },
                 {
                   "type": "wms",
                   "name": "Dati pluviometrici",
-                  "description": "Dati pluviometrici (</font><input type=\"image\" onmouseover=\"bigImg(this)\" onmouseout=\"normalImg(this)\" src=\"/immagini/save.png\" alt=\"Seleziona\" width=\"10\" height=\"10\" onclick=\"seleziona_pluviometri();\"/><a onclick=\"seleziona_pluviometri()\"><font color=\"\" + colore_idro + \"\"><i> Scarico dati</i>)</font></a> \n\n Misure pluviometriche della banca dati IDROSTAZ derivanti dai dati storici pubblicati negli annali del Servizio Idrografico</p> \n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</br><a href=\"http://www.seehydropower.eu/\" target=\"_blank\">SEEHydroPower</a>",
+                  "description": "Dati pluviometrici: attraverso questo strato informativo è possibile accedere ai dati e ad effettuare lo <i>scarico dati storici</i>.\n\n Misure pluviometriche della banca dati IDROSTAZ derivanti dai dati storici pubblicati negli annali del Servizio Idrografico. </p> Nota: il servizio ha cessato di raccogliere dati dal 1998 quando il servizio è stato trasferito alle regioni. <br> Per maggiori approfondimenti: https://www.isprambiente.gov.it/it/progetti/cartella-progetti-in-corso/acque-interne-e-marino-costiere-1/progetti-conclusi/progetto-annali/inquadramento-storico-del-monitoraggio-idro-meteografico-e-delle-relative-competenze  \n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</br><a href=\"http://www.seehydropower.eu/\" target=\"_blank\">SEEHydroPower</a>",
                   "url": "http://gis2.rse-web.it:8080/geoserver/wms",
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_pluviometri",
+                  "featureInfoTemplate": {
+                    "template": "<br><p>L'idrometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_pluvioNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
+                  },
                   "id": "pluvi"
                 },
                 {
                   "type": "wms",
                   "name": "Curva di durata portate",
-                  "description": "punti di calcolo delle curve di durata portate medie giornaliere \n\n Punti di calcolo di curve di durata delle portate</font>\n\n Curve di durata per la valutazione della disponibilità idrica prevedibile alla sezione di chiusura di un prefissato bacino idrografico. Sono disponibili le elaborazioni nelle seguenti zone: Abruzzo-Marche, Adamello e Orobie e Alpi Graie e Pennine</p>\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a> \n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</br><a href=\"http://www.seehydropower.eu/\" target=\"_blank\">SEEHydroPower</a>",
+                  "description": "Punti di calcolo delle curve di durata portate medie giornaliere \n\n Punti di calcolo di curve di durata delle portate</font>\n\n Curve di durata per la valutazione della disponibilità idrica prevedibile alla sezione di chiusura di un prefissato bacino idrografico. Sono disponibili le elaborazioni nelle seguenti zone: Abruzzo-Marche, Adamello e Orobie e Alpi Graie e Pennine</p>\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a>",
                   "url": "http://gis2.rse-web.it:8080/geoserver/wms",
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_stazioni",
@@ -150,7 +153,7 @@
               "id": "monitor",
               "type": "group",
               "name": "dati di monitoraggio",
-              "description": "In questa sezione si riportano le misure effettuate in punti di monitoraggio",
+              "description": "Questa raccolta comprende le misure effettuate in punti di monitoraggio",
               "isOpen": false,
               "members": [
                 {
@@ -171,9 +174,7 @@
                   "layers": "atlante_integrato:boa_mobi",
                   "id": "mobi"
                 }
-              ]
-                
-              
+              ]  
             },
             {
               "type": "wms",
@@ -184,13 +185,22 @@
               "layers": "atlante_integrato:v_strutture_portuali",
               "id": "strutture_porti"
             },
-            {
+            /*             {
               "type": "wms",
               "name": "Potenza annuale del moto ondoso (kW/m)",
               "description": "Potenza annuale del moto ondoso (kW/m). \n\n Questa mappa è una descrizione delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
               "url": "http://gis2.rse-web.it:8080/geoserver/wms",
               "dataCustodian": "text",
               "layers": "onde",
+              "id": "onde"
+            }, */
+            {
+              "type": "wms",
+              "name": "Potenziale offshore del moto ondoso (kW/m)",
+              "description": "Potenziale offshore del moto ondoso (kW/m). \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+              "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+              "dataCustodian": "text",
+              "layers": "new_atlante_integrato:ma_punti",
               "id": "onde"
             },
             {
@@ -201,6 +211,119 @@
               "dataCustodian": "text",
               "layers": "correnti",
               "id": "GItJMm"
+            },
+            {  
+              "id": "disp",
+              "type": "group",
+              "name": "dispositivi",
+              "description": "Questa raccolta comprende ...",
+              "isOpen": false,
+              "members": [
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: AquaBuOY",
+                "description": "CF dispositivo AquaBuOY. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=1"
+                },
+                "id": "id_AB"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: CycWEC",
+                "description": "CF dispositivo CycWEC. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=2"
+                },
+                "id": "id_Cw"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Drakoo",
+                "description": "CF dispositivo Drakoo. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=3"
+                },
+                "id": "id_dr"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Pelamis",
+                "description": "CF dispositivo Pelamis. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=4"
+                },
+                "id": "id_pe"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Seabased",
+                "description": "CF dispositivo Seabased. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=5"
+                },
+                "id": "id_se"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Symphony",
+                "description": "CF dispositivo Symphony. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=6"
+                },
+                "id": "id_sy"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Wavebob",
+                "description": "CF dispositivo Wavebob. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=7"
+                },
+                "id": "id_wb"
+              },
+              {
+                "type": "wms",
+                "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Wavedragon",
+                "description": "CF dispositivo Wavedragon. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) dove le onde incidenti non risentono dei bassi fondali o della morfologia costiera. Per riuscire a descrivere le coste sotto questo profilo, sono state raccolte tutte le fonti di dati disponibili, sia a livello nazionale che internazionale; dopo un'ampia analisi dei database disponibili si è deciso di utilizzare solo dati acquisiti sperimentalmente in situ, evitando di includere anche le numerose fonti di dati derivanti da modelli numerici. In Italia è principalmente la Rete Ondametrica Nazionale (RON) ad acquisire informazioni sui principali parametri del moto ondoso delle nostre coste, pubblicandoli sul sito www.idromare.it, dove vengono rappresentati in tabelle che prendono in considerazione i principali parametri, quali l'altezza d'onda significativa, periodo medio, periodo di picco e direzione di provenienza. Tuttavia, poiché gli ondametri della rete RON non offrono sufficiente copertura spaziale e temporale l'insieme dei dati è stato completato dalle misure messe a disposizione dall'ENEL che negli anni '80 e '90 aveva posizionato una serie di ondametri in corrispondenza delle centrali elettriche costiere. Dall'unione dei due set di dati è stato possibile ricostruire il clima d'onda di diverse aree costiere, facendo affidamento su una copertura sia spaziale che temporale notevolmente incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+                "dataCustodian": "text",
+                "layers": "new_atlante_integrato:v_dispositivi",
+                "styles":"new_atlante_integrato:onde_CF",
+                "parameters": {
+                  "cql_filter": "id_n_disp=8"
+                },
+                "id": "id_wd"
+              }
+              ]
             }
           ]
         },
