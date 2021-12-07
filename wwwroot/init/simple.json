@@ -16,7 +16,7 @@
           "members": [
             {
               "name": "Temperatura promedio mensual",
-              "description": "Australia Broadcasting Company stories from 2009-2014 with accompanying photos.\n\nThis dataset demonstrates the ability to show users a custom feature info panel when they click on a feature on the map.",
+              "description": "Dashboard temperatura promedio de todas las estaciones.\n\n Enlace  http://localhost:8800/d/N2p9Sphnk/g1-temperatura?orgId=1.",
               "type": "csv",
               "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3ATemperatura%20Promedio%20Mensual2&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
