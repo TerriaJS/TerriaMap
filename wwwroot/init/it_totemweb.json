@@ -14,7 +14,7 @@
           "styles": "polygon",
           "opacity": 0.5,
           "featureInfoTemplate": {
-            "template": "<br><p>Effettua il calcolo di TOTEMWeb per la provincia di <b>{{den_uts}}</b></p><p style='display: block; text-align: center;'><button><a href='http://localhost:5000/?prov={{den_uts}}' style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+            "template": "<br><p>Effettua il calcolo di TOTEMWeb per la provincia di <b>{{den_uts}}</b></p><p style='display: block; text-align: center;'><button><a href='http://172.25.121.220:5000/?prov={{den_uts}}' style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
           },
           "id": "totem",
           "initialMessage": {
