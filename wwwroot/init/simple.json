@@ -66,6 +66,19 @@
               "name": "Solar",
               "members": [
                 {
+                  "name": "Temperatura promedio mensual",
+                  "description": "Dashboard temperatura promedio de todas las estaciones.\n\n Enlace  http://localhost:8800/d/hBSn8thnk/g4-temperatura?orgId=1",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura%20Promedio%20Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": ["torre_id"]
+                    }
+
+                  }
+                },
+                {
                   "type": "group",
                   "name": "Atlas-Solar",
                   "members": [
