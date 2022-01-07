@@ -71,30 +71,35 @@
                   "members": [
                     {
                       "name": "Mapa Irradiacion Global Inclinacion Optima",
+                      "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Global-Inclinacion-Optima-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Difusa",
+                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-horizontal-Difusa-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Global",
+                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Horizontal-Global-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Normal Directa",
+                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Normal-Directa-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Temperatura",
+                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Temperatura-Ecuador",
                       "type": "wms"
@@ -108,8 +113,8 @@
               "name": "Eólico",
               "members": [
                 {
-                  "name": "Temperatura promedio mensual",
-                  "description": "Dashboard temperatura promedio de todas las estaciones.\n\n Enlace  http://localhost:8800/d/hBSn8thnk/g4-temperatura?orgId=1",
+                  "name": "Temperatura Media Mensual",
+                  "description": "Dashboard temperatura media mensual por estación.",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura%20Promedio%20Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -126,12 +131,14 @@
                   "members": [
                     {
                       "name": "Mapa Veolocidad Viento 100m",
+                      "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Velocidad-Viento-100m",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Densidad Viento",
+                      "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
                       "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Densidad-Viento-Ecuador-100m",
                       "type": "wms"
