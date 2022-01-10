@@ -15,12 +15,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.18
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.18.0
     - run: rm -rf node_modules && yarn install --frozen-lockfile
     - run: yarn gulp lint release
       env:
-        NODE_OPTIONS: --max_old_space_size=4096
+        NODE_OPTIONS: --max_old_space_size=4096gggggg 
