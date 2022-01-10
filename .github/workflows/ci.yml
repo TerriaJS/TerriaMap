@@ -19,7 +19,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.18.0
     - run: rm -rf node_modules && yarn install --frozen-lockfile
     - run: yarn gulp lint release
       env:

@@ -22,7 +22,6 @@ deploy/packages/
 deploy/work/
 packages/
 pancake/
-.yarn
 yarn-error.log
 
 package-lock.json
