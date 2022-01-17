@@ -119,7 +119,7 @@
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura%20Promedio%20Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
-                      "timeColumn": "timestamp_mes",
+                      "timeColumn": "fecha",
                       "idColumns": ["torre_id"]
                     }
 
