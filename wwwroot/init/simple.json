@@ -116,7 +116,20 @@
                   "name": "Temperatura Media Mensual",
                   "description": "Dashboard temperatura media mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura%20Promedio%20Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": ["torre_id"]
+                    }
+
+                  }
+                },
+                {
+                  "name": "Humedad Media Mensual",
+                  "description": "Dashboard temperatura media mensual por estación.",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "fecha",
