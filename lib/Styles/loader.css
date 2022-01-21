@@ -2,6 +2,16 @@
         display: block;
         margin: calc(50vh - 150px) auto;
       }
+
+      .react-datepicker__input-container {
+        color: #404854
+      }
+      .tm-related-maps__dropdown-inner {
+        width: 261px !important;
+    }
+    .react-datepicker__year-read-view, .react-datepicker__month-read-view {
+      color: white;
+  }
   
       @media (min-width: 768px){
         .loader-ui{
