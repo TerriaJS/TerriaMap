@@ -60,6 +60,19 @@
               "name": "Solar",
               "members": [
                 {
+                  "name": "Temperatura Mensual",
+                  "description": "Dashboard temperatura mensual por estación.",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Temperatura_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": ["est_id"]
+                    }
+
+                  }
+                },
+                {
                   "type": "group",
                   "name": "Atlas-Solar",
                   "members": [
@@ -137,6 +150,19 @@
                   "description": "Dashboard presión atmosferica mensual por estación.",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": ["cod_localidad"]
+                    }
+
+                  }
+                },
+                {
+                  "name": "Dirección del Viento Mensual",
+                  "description": "Dashboard dirección del viento mensual por estación.",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
