@@ -11,8 +11,15 @@
           "type": "wms",
           "name": "Indice di autosufficienza",
           "description": "Indice di autosufficienza. Rapporto tra produzione FER comunale e consumi elettrici comunali. Anno 2015, MT e BT. Riferimento rapporto atlante integrato.\n\n <a href=\"http://www.rse-web.it/documenti/documento/318553\" target=\"_blank\">Rapporto RSE 18007806 - Atlante Integrato per il Sistema Energetico Nazionale e le fonti rinnovabili (ai:SEN)</a></p>",
-          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
+          "featureInfoTemplate": {
+            "template": "<p>Indice di autosufficienza <b>{{consumi_autosufficienza}}</b> del comune {{comune}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
+          },
+          "metadataUrls":[{
+            "title":"link metadato anno 2015",
+            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8"
+          }],
           "layers": "atlante_integrato:v_comuni_consumi",
           "styles":"autosuff",
           "id": "autosuff"
@@ -22,13 +29,13 @@
     {
       "id": "altro",
       "type": "group",
-      "name": "stime energetiche",
+      "name": "prove rasters",
       "members": [
         {
           "type": "wms",
           "name": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon",
           "description": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon prova di visualizzazione di un geotiff",
-          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "layers": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon",
           "id": "eucordhi",
@@ -40,7 +47,7 @@
           "type": "wms",
           "name": "netcdf",
           "description": "wind sulcis prova di visualizzazione di un netcdf",
-          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "layers": "new_atlante_integrato:WSPD10",
           "id": "WSPD10",
@@ -52,7 +59,7 @@
           "type": "wms",
           "name": "batimetria",
           "description": " batimetria 2018 ",
-          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "layers": "new_atlante_integrato:bati_2018",
           "styles":"new_atlante_integrato:bati_2018",
@@ -65,7 +72,7 @@
           "type": "wms",
           "name": "tiff2",
           "description": "PercentDamage_0_T200 prova di visualizzazione di un geotiff a 2 livelli",
-          "url": "http://gis2.rse-web.it:8080/geoserver/wms",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "layers": "new_atlante_integrato:PercentDamage_0_T200",
           "id": "tiff2l",

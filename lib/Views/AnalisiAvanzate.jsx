@@ -123,7 +123,8 @@ function AnalisiAvanzate(props) {
               />
             </a>
             <p>
-            L'acqua per l'energia, l'energia per l'acqua. Flussi energetici e idrici nazionali scala nazionale.
+              L'acqua per l'energia, l'energia per l'acqua. Flussi energetici e
+              idrici nazionali scala nazionale.
             </p>
             <a
               target="_blank"
@@ -141,7 +142,7 @@ function AnalisiAvanzate(props) {
         <ul>
           <li class="list-group-item">
             <h2>Nuovo Geoportale Energia e Territorio</h2>
-            <a target="_blank" href="http://gis2.rse-web.it:8080/mapstore">
+            <a target="_blank" href="http://gis2.rse-web.it/mapstore">
               <img
                 className={Styles.image}
                 src={require("../../wwwroot/images/geo_ET_GG1_new.png")}
@@ -155,7 +156,7 @@ function AnalisiAvanzate(props) {
             </p>
             <a
               target="_blank"
-              href="http://gis2.rse-web.it:8080/mapstore"
+              href="http://gis2.rse-web.it/mapstore"
               className={Styles.link}
             >
               Geoportale Energia e Territorio

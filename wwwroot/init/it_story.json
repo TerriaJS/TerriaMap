@@ -242,7 +242,7 @@
             "pickedFeatures":
             {
               "providerCoords":{
-                "http://gis2.rse-web.it:8080/geoserver/wms":{"x":272,"y":189,"level":9}
+                "http://gis2.rse-web.it/geoserver/wms":{"x":272,"y":189,"level":9}
               },
             "pickCoords":{"lat":42.0962749824642,"lng":11.749877929687505,"height":9.313225746154785e-10},
             "current":{"hash":63582692601},"entities":[]
