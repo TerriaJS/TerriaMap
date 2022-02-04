@@ -15,10 +15,23 @@
           "name": "G1 hidrometeorología",
           "members": [
             {
-              "name": "Temperatura promedio mensual",
-              "description": "Dashboard temperatura promedio de todas las estaciones.\n\n Enlace  http://localhost:8800/d/N2p9Sphnk/g1-temperatura?orgId=1.",
+              "name": "Temperatura media mensual",
+              "description": "Dashboard temperatura media de todas las estaciones.\n\n Enlace  http://localhost:8800/d/N2p9Sphnk/g1-temperatura?orgId=1.",
               "type": "csv",
               "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3ATemperatura%20Promedio%20Mensual2&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": ["est_id"]
+                }
+
+              }
+            },
+            {
+              "name": "Humedad relativa media mensual",
+              "description": "Dashboard humedad relativa media de todas las estaciones",
+              "type": "csv",
+              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_humedad_relativa_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
@@ -34,15 +47,27 @@
           "name": "G2 Geologia",
           "members": [
             {
-              "type": "wms-group",
-              "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
-            },
-            {
               "name": "db110_fallas_cardenillo_200k",
               "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g2_geologia:db110_fallas_cardenillo_200k",
+              "type": "wms"
+            },
+            {
+              "name": "eb000_geologia",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:eb000_geologia",
+              "type": "wms"
+            },
+            {
+              "name": "eb000_geologia_cardenillo_200k",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:eb000_geologia_cardenillo_200k",
+              "type": "wms"
+            },
+            {
+              "name": "eb000_geologia_cardenillo_250k",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:eb000_geologia_cardenillo_250k",
               "type": "wms"
             }
           ]
@@ -70,6 +95,32 @@
                   "description": "Dashboard temperatura mensual por estación.",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Temperatura_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": ["est_id"]
+                    }
+
+                  }
+                },
+                {
+                  "name": "Humedad Relativa Mensual",
+                  "description": "Dashboard humedad relatica por estación.",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_Solar_Humedad_Relativa_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": ["est_id"]
+                    }
+
+                  }
+                },
+                {
+                  "name": "Radiación Mensual",
+                  "description": "Dashboard radiación por estación.",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
