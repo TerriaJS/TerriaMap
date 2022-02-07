@@ -12,7 +12,7 @@
       "members": [
         {
           "type": "group",
-          "name": "G1 hidrometeorología",
+          "name": "G1 Hidrometeorología",
           "members": [
             {
               "name": "Temperatura media mensual",
@@ -32,6 +32,45 @@
               "description": "Dashboard humedad relativa media de todas las estaciones",
               "type": "csv",
               "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_humedad_relativa_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": ["est_id"]
+                }
+
+              }
+            },
+            {
+              "name": "Radiación solar media mensual",
+              "description": "Dashboard radiacion solar media de todas las estaciones",
+              "type": "csv",
+              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_radiacion_solar_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": ["est_id"]
+                }
+
+              }
+            },
+            {
+              "name": "Caudal media mensual",
+              "description": "Dashboard caudal media de todas las estaciones",
+              "type": "csv",
+              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": ["est_id"]
+                }
+
+              }
+            },
+            {
+              "name": "Dirección viento media mensual",
+              "description": "Dashboard dirección del viento media de todas las estaciones",
+              "type": "csv",
+              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_direccion_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
