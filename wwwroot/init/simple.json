@@ -309,10 +309,40 @@
           "name": "G5 Monitoreo Ambiente Biota",
           "members": [
             {
-              "type": "wms-group",
-              "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "name": "fa210_pn_sangay_250k_crp",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:fa210_pn_sangay_250k_crp",
+              "type": "wms"
+            },
+            {
+              "name": "fa210_abvp_crp_100k",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:fa210_abvp_crp_100k",
+              "type": "wms"
+            },
+            {
+              "name": "ga000_herpetos",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga000_herpetos",
+              "type": "wms"
+            },
+            {
+              "name": "ga000_mamiferos_sopladora",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga000_mamiferos_sopladora",
+              "type": "wms"
+            },
+            {
+              "name": "ga000_parcelas_muestreo_fauna",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga000_parcelas_muestreo_fauna",
+              "type": "wms"
+            },
+            {
+              "name": "ga000_parcelas_muestreo_vegetacion",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga000_parcelas_muestreo_vegetacion",
+              "type": "wms"
             }
           ]
         },
