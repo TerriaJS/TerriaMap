@@ -343,6 +343,84 @@
               "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga000_parcelas_muestreo_vegetacion",
               "type": "wms"
+            },
+            {
+              "name": "ga000_transectos_herpetos",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga000_transectos_herpetos",
+              "type": "wms"
+            },
+            {
+              "name": "ga100_areas_aves",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga100_areas_aves",
+              "type": "wms"
+            },
+            {
+              "name": "ga100_puntos_aves",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ga100_puntos_aves",
+              "type": "wms"
+            },
+            {
+              "name": "gc000_muestras_flora_sopladora",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gc000_muestras_flora_sopladora",
+              "type": "wms"
+            },
+            {
+              "name": "ge100_franja_amortiguamiento",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:ge100_franja_amortiguamiento",
+              "type": "wms"
+            },
+            {
+              "name": "gf100_area_influencia_directa",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf100_area_influencia_directa",
+              "type": "wms"
+            },
+            {
+              "name": "gf100_buffer_500m_rio_paute_sopladora",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf100_buffer_500m_rio_paute_sopladora",
+              "type": "wms"
+            },
+            {
+              "name": "gf100_buffer_50m_aid_mazar",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf100_buffer_50m_aid_mazar",
+              "type": "wms"
+            },
+            {
+              "name": "gf100_buffer_mdt_900_1700",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf100_buffer_mdt_900_1700",
+              "type": "wms"
+            },
+            {
+              "name": "gf101_area_influencia_indirecta_50K",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf101_area_influencia_indirecta_50K",
+              "type": "wms"
+            },
+            {
+              "name": "gf101_areas_sectores_faja",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf101_areas_sectores_faja",
+              "type": "wms"
+            },
+            {
+              "name": "gf101_sectores_50k",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf101_sectores_50k",
+              "type": "wms"
+            },
+            {
+              "name": "gf101_zonas_sectores_aid_molino_25k",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g5_monitoreo_ambiental_biota:gf101_zonas_sectores_aid_molino_25k",
+              "type": "wms"
             }
           ]
         },
