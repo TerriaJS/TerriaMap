@@ -157,7 +157,7 @@
                 },
                 {
                   "name": "Radiación Mensual",
-                  "description": "Dashboard radiación por estación.",
+                  "description": "Dashboard radiación horaria por estación. \n\n Enlace http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
