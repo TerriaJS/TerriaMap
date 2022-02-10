@@ -429,10 +429,130 @@
           "name": "G6 Infraestructura",
           "members": [
             {
-              "type": "wms-group",
-              "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "name": "ad000_linea_transmision",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad000_linea_transmision",
+              "type": "wms"
+            },
+            {
+              "name": "ad001_torre_transmision",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad001_torre_transmision",
+              "type": "wms"
+            },
+            {
+              "name": "ad010_central_cardenillo",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad010_central_cardenillo",
+              "type": "wms"
+            },
+            {
+              "name": "ad100_red_tuneles",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad100_red_tuneles",
+              "type": "wms"
+            },
+            {
+              "name": "ad100_tuneles",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad100_tuneles",
+              "type": "wms"
+            },
+            {
+              "name": "ad101_patio_maniobras",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad101_patio_maniobras",
+              "type": "wms"
+            },
+            {
+              "name": "ad102_planta_desarenador",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad102_planta_desarenador",
+              "type": "wms"
+            },
+            {
+              "name": "ad103_poste_luz",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ad103_poste_luz",
+              "type": "wms"
+            },
+            {
+              "name": "ah101_red_agua",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ah101_red_agua",
+              "type": "wms"
+            },
+            {
+              "name": "ah101_tuberia",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ah101_tuberia",
+              "type": "wms"
+            },
+            {
+              "name": "ah101_tuberia_descarga_drenes",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ah101_tuberia_descarga_drenes",
+              "type": "wms"
+            },
+            {
+              "name": "ah101_tuberia_incendio",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ah101_tuberia_incendio",
+              "type": "wms"
+            },
+            {
+              "name": "ah102_caja",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ah102_caja",
+              "type": "wms"
+            },
+            {
+              "name": "ah103_descarga_de_hormigon",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:ah103_descarga_de_hormigon",
+              "type": "wms"
+            },
+            {
+              "name": "al300_muro_gavion",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:al300_muro_gavion",
+              "type": "wms"
+            },
+            {
+              "name": "al500_pozos",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:al500_pozos",
+              "type": "wms"
+            },
+            {
+              "name": "am070_tanques",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:am070_tanques",
+              "type": "wms"
+            },
+            {
+              "name": "bh011_bocatoma_desvio",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:bh011_bocatoma_desvio",
+              "type": "wms"
+            },
+            {
+              "name": "bh130_area_embalse_2153",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:bh130_area_embalse_2153",
+              "type": "wms"
+            },
+            {
+              "name": "bh130_longitud_embalse",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:bh130_longitud_embalse",
+              "type": "wms"
+            },
+            {
+              "name": "bi010_presas",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:bi010_presas",
+              "type": "wms"
             }
           ]
         },
