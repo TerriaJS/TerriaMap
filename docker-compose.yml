@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3002:3001"
