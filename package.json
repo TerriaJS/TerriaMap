@@ -58,6 +58,7 @@
     "gulp": "^4.0.0",
     "husky": "^2.7.0",
     "json5": "^2.1.0",
+    "node-env-file": "^0.1.8",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.14.1",
     "plugin-error": "^1.0.1",
