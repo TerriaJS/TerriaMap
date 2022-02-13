@@ -30,12 +30,13 @@ gulp.task('write-version', function(done) {
     var spawnSync = require('child_process').spawnSync;
 
     // Get a version string from "git describe".
-    var version = spawnSync('git', ['describe']).stdout.toString().trim();
-    var isClean = spawnSync('git', ['status', '--porcelain']).stdout.toString().length === 0;
-    if (!isClean) {
-        version += ' (plus local modifications)';
-    }
+    // var version = spawnSync('git', ['describe']).stdout.toString().trim();
+    // var isClean = spawnSync('git', ['status', '--porcelain']).stdout.toString().length === 0;
+    // if (!isClean) {
+    //     version += ' (plus local modifications)';
+    // }
 
+    var version = "CELEC-IERSE-UDA v1.0";
     fs.writeFileSync('version.js', 'module.exports = \'' + version + '\';');
 
     done();
