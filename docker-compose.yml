@@ -5,3 +5,9 @@ services:
       context: .
     ports:
       - "3002:3001"
+    networks:
+         - geoportal
+
+networks:
+  geoportal:
+    driver: bridge

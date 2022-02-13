@@ -8,6 +8,8 @@ COPY . /usr/src/app
 
 RUN rm wwwroot/build -fr 
 RUN rm node_modules -fr 
+ 
+RUN git config --global url."https://".insteadOf git://
 
 RUN yarn install 
 
