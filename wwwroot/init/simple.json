@@ -16,9 +16,9 @@
           "members": [
             {
               "name": "Temperatura media mensual",
-              "description": "Dashboard temperatura media de todas las estaciones.\n\n Enlace  http://localhost:8800/d/N2p9Sphnk/g1-temperatura?orgId=1.",
+              "description": "Dashboard temperatura media de todas las estaciones.\n\n Enlace  $GRAFANA_URL/d/N2p9Sphnk/g1-temperatura?orgId=1.",
               "type": "csv",
-              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3ATemperatura%20Promedio%20Mensual2&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "url": "$GEOSERVER_URL/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3ATemperatura%20Promedio%20Mensual2&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
@@ -31,7 +31,7 @@
               "name": "Humedad relativa media mensual",
               "description": "Dashboard humedad relativa media de todas las estaciones",
               "type": "csv",
-              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_humedad_relativa_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "url": "$GEOSERVER_URL/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_humedad_relativa_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
@@ -44,7 +44,7 @@
               "name": "Radiación solar media mensual",
               "description": "Dashboard radiacion solar media de todas las estaciones",
               "type": "csv",
-              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_radiacion_solar_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "url": "$GEOSERVER_URL/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_radiacion_solar_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
@@ -57,7 +57,7 @@
               "name": "Caudal media mensual",
               "description": "Dashboard caudal media de todas las estaciones",
               "type": "csv",
-              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "url": "$GEOSERVER_URL/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
@@ -70,7 +70,7 @@
               "name": "Dirección viento media mensual",
               "description": "Dashboard dirección del viento media de todas las estaciones",
               "type": "csv",
-              "url": "http://localhost:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_direccion_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "url": "$GEOSERVER_URL/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_direccion_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
@@ -87,25 +87,25 @@
           "members": [
             {
               "name": "db110_fallas_cardenillo_200k",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g2_geologia:db110_fallas_cardenillo_200k",
               "type": "wms"
             },
             {
               "name": "eb000_geologia",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g2_geologia:eb000_geologia",
               "type": "wms"
             },
             {
               "name": "eb000_geologia_cardenillo_200k",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g2_geologia:eb000_geologia_cardenillo_200k",
               "type": "wms"
             },
             {
               "name": "eb000_geologia_cardenillo_250k",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g2_geologia:eb000_geologia_cardenillo_250k",
               "type": "wms"
             }
@@ -133,7 +133,7 @@
                   "name": "Temperatura Mensual",
                   "description": "Dashboard temperatura mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Temperatura_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Temperatura_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -146,7 +146,7 @@
                   "name": "Humedad Relativa Mensual",
                   "description": "Dashboard humedad relatica por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_Solar_Humedad_Relativa_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_Solar_Humedad_Relativa_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -157,9 +157,9 @@
                 },
                 {
                   "name": "Radiación Mensual",
-                  "description": "Dashboard radiación horaria por estación. \n\n Enlace http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
+                  "description": "Dashboard radiación horaria por estación. \n\n Enlace $GRAFANA_URL/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -175,35 +175,35 @@
                     {
                       "name": "Mapa Irradiacion Global Inclinacion Optima",
                       "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Global-Inclinacion-Optima-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Difusa",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-horizontal-Difusa-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Global",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Horizontal-Global-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Normal Directa",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Normal-Directa-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Temperatura",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Temperatura-Ecuador",
                       "type": "wms"
                     }
@@ -219,7 +219,7 @@
                   "name": "Humedad Relativa Mensual",
                   "description": "Dashboard humedad mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -232,7 +232,7 @@
                   "name": "Temperatura Mensual",
                   "description": "Dashboard temperatura mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -245,7 +245,7 @@
                   "name": "Presión Atmosférica Mensual",
                   "description": "Dashboard presión atmosferica mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -258,7 +258,7 @@
                   "name": "Dirección del Viento Mensual",
                   "description": "Dashboard dirección del viento mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -271,7 +271,7 @@
                   "name": "Velocidad del Viento Mensual",
                   "description": "Dashboard velocidad del viento mensual por estación.",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -287,14 +287,14 @@
                     {
                       "name": "Mapa Veolocidad Viento 100m",
                       "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Velocidad-Viento-100m",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Densidad Viento",
                       "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Densidad-Viento-Ecuador-100m",
                       "type": "wms"
                     }
@@ -310,115 +310,115 @@
           "members": [
             {
               "name": "fa210_pn_sangay_250k_crp",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:fa210_pn_sangay_250k_crp",
               "type": "wms"
             },
             {
               "name": "fa210_abvp_crp_100k",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:fa210_abvp_crp_100k",
               "type": "wms"
             },
             {
               "name": "ga000_herpetos",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga000_herpetos",
               "type": "wms"
             },
             {
               "name": "ga000_mamiferos_sopladora",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga000_mamiferos_sopladora",
               "type": "wms"
             },
             {
               "name": "ga000_parcelas_muestreo_fauna",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga000_parcelas_muestreo_fauna",
               "type": "wms"
             },
             {
               "name": "ga000_parcelas_muestreo_vegetacion",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga000_parcelas_muestreo_vegetacion",
               "type": "wms"
             },
             {
               "name": "ga000_transectos_herpetos",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga000_transectos_herpetos",
               "type": "wms"
             },
             {
               "name": "ga100_areas_aves",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga100_areas_aves",
               "type": "wms"
             },
             {
               "name": "ga100_puntos_aves",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ga100_puntos_aves",
               "type": "wms"
             },
             {
               "name": "gc000_muestras_flora_sopladora",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gc000_muestras_flora_sopladora",
               "type": "wms"
             },
             {
               "name": "ge100_franja_amortiguamiento",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:ge100_franja_amortiguamiento",
               "type": "wms"
             },
             {
               "name": "gf100_area_influencia_directa",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf100_area_influencia_directa",
               "type": "wms"
             },
             {
               "name": "gf100_buffer_500m_rio_paute_sopladora",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf100_buffer_500m_rio_paute_sopladora",
               "type": "wms"
             },
             {
               "name": "gf100_buffer_50m_aid_mazar",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf100_buffer_50m_aid_mazar",
               "type": "wms"
             },
             {
               "name": "gf100_buffer_mdt_900_1700",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf100_buffer_mdt_900_1700",
               "type": "wms"
             },
             {
               "name": "gf101_area_influencia_indirecta_50K",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf101_area_influencia_indirecta_50K",
               "type": "wms"
             },
             {
               "name": "gf101_areas_sectores_faja",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf101_areas_sectores_faja",
               "type": "wms"
             },
             {
               "name": "gf101_sectores_50k",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf101_sectores_50k",
               "type": "wms"
             },
             {
               "name": "gf101_zonas_sectores_aid_molino_25k",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g5_monitoreo_ambiental_biota:gf101_zonas_sectores_aid_molino_25k",
               "type": "wms"
             }
@@ -430,127 +430,127 @@
           "members": [
             {
               "name": "ad000_linea_transmision",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad000_linea_transmision",
               "type": "wms"
             },
             {
               "name": "ad001_torre_transmision",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad001_torre_transmision",
               "type": "wms"
             },
             {
               "name": "ad010_central_cardenillo",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad010_central_cardenillo",
               "type": "wms"
             },
             {
               "name": "ad100_red_tuneles",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad100_red_tuneles",
               "type": "wms"
             },
             {
               "name": "ad100_tuneles",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad100_tuneles",
               "type": "wms"
             },
             {
               "name": "ad101_patio_maniobras",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad101_patio_maniobras",
               "type": "wms"
             },
             {
               "name": "ad102_planta_desarenador",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad102_planta_desarenador",
               "type": "wms"
             },
             {
               "name": "ad103_poste_luz",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ad103_poste_luz",
               "type": "wms"
             },
             {
               "name": "ah101_red_agua",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ah101_red_agua",
               "type": "wms"
             },
             {
               "name": "ah101_tuberia",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ah101_tuberia",
               "type": "wms"
             },
             {
               "name": "ah101_tuberia_descarga_drenes",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ah101_tuberia_descarga_drenes",
               "type": "wms"
             },
             {
               "name": "ah101_tuberia_incendio",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ah101_tuberia_incendio",
               "type": "wms"
             },
             {
               "name": "ah102_caja",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ah102_caja",
               "type": "wms"
             },
             {
               "name": "ah103_descarga_de_hormigon",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:ah103_descarga_de_hormigon",
               "type": "wms"
             },
             {
               "name": "al300_muro_gavion",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:al300_muro_gavion",
               "type": "wms"
             },
             {
               "name": "al500_pozos",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:al500_pozos",
               "type": "wms"
             },
             {
               "name": "am070_tanques",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:am070_tanques",
               "type": "wms"
             },
             {
               "name": "bh011_bocatoma_desvio",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:bh011_bocatoma_desvio",
               "type": "wms"
             },
             {
               "name": "bh130_area_embalse_2153",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:bh130_area_embalse_2153",
               "type": "wms"
             },
             {
               "name": "bh130_longitud_embalse",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:bh130_longitud_embalse",
               "type": "wms"
             },
             {
               "name": "bi010_presas",
-              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g6_infraestructura:bi010_presas",
               "type": "wms"
             }
@@ -563,8 +563,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -575,8 +575,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -587,8 +587,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -599,8 +599,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -611,8 +611,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -623,8 +623,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -635,8 +635,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -647,8 +647,8 @@
             {
               "type": "wms-group",
               "name": "prueba",
-              "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "getCapabilitiesUrl": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "url":"$GEOSERVER_URL/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         }

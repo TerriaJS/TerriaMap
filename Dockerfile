@@ -4,16 +4,14 @@ WORKDIR /usr/src/app
 
 RUN yarn global add gulp
 
-COPY package.json .
-COPY yarn.lock .
-RUN yarn install 
 COPY . /usr/src/app
 
 RUN rm wwwroot/build -fr 
+RUN rm node_modules -fr 
 
-RUN ls -l
+RUN yarn install 
 
-RUN cat gulpfile.js
+RUN npm run celec-init
 
 RUN npm run gulp release
 

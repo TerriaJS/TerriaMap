@@ -5,3 +5,6 @@ services:
       context: .
     ports:
       - "3002:3001"
+    environment:
+      GEOSERVER_URL: ${GEOSERVER_URL}
+      GRAFANA_URL: ${GRAFANA_URL}
