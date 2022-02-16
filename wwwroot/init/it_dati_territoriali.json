@@ -142,14 +142,13 @@
               "dataCustodian": "text",
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"https://rischi.protezionecivile.gov.it/it/sismico/attivita/classificazione-sismica"
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=214"
               }],
               "layers": "new_atlante_integrato:v_sismicita_21",
-              "styles":"sismica_IT",
               "parameters": {
                 "cql_filter": "data=2021"
               },
-              "id": "sisma"
+              "id": "sisma21"
             }
           ]
         },

@@ -76,10 +76,11 @@
             }],
             "layers": "12"
           },
-          {
+          // TODO Va inserita la batimetria nuova
+          /*           {
             "type": "wms",
             "name": "linee batimetriche",
-            "description": "Linee batimetriche (profondita' in metri) \n\n http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/wfs/Batimetrica.map\n\n Punti e curve batimetriche ricavati dalle carte nautiche dell'Istituto Idrografico della Marina</p>  ",
+            "description": "DA ELIMINARE Linee batimetriche (profondita' in metri) \n\n http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/wfs/Batimetrica.map\n\n Punti e curve batimetriche ricavati dalle carte nautiche dell'Istituto Idrografico della Marina</p>  ",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "dataCustodian": "text",
             
@@ -91,6 +92,16 @@
               "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=149"
             }],
             "layers": "batimetria_linea"
+          }, */
+          {
+            "type": "wms",
+            "name": "Batimetria",
+            "description": " batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
+            "url": "http://gis2.rse-web.it/geoserver/wms",
+            "dataCustodian": "text",
+            "layers": "new_atlante_integrato:bati_2018",
+            "styles":"new_atlante_integrato:bati_2018",
+            "id": "bati2018"
           }
       ]
     }
