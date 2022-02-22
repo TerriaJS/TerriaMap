@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.3.3"
+    "terriajs-server": "^3.3.3",
+    "react-datepicker": "^4.3.0"
   },
   "config": {
     "awsProfile": "terria",

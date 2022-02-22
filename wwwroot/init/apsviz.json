@@ -1,393 +1,419 @@
 {
-    "workbench": [
-      "2jctqB"
-    ],
-    "catalog": [
-      {
-        "id": "nGVPIj",
-        "type": "group",
-        "name": "ADCIRC Data - Current",
-        "members": [
-          {
-            "type": "wms",
-            "name": "Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)",
-            "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
-            "show": true,
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "isOpenInWorkbench": false,
-            "layers": "ADCIRC_2021:3822-2021092918-namforecast_maxele.63.0.10",
-            "legends": [
-              {
-                "url": "https://apsviz-geoserver.renci.org/obs_pngs/3822-2021092918-namforecast/maxele.63.colorbar.png"
-              }
-            ],
-            "id": "cctMAA",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Current/Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/ADCIRC Data - Current"
-        ]
-      },
-      {
-        "id": "qkwgBG",
-        "type": "group",
-        "name": "ADCIRC Data - Recent",
-        "members": [
-          {
-            "type": "wms",
-            "name": "Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: PRVI15 (maxwvel.63.0.10)",
-            "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
-            "show": false,
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "isOpenInWorkbench": false,
-            "layers": "ADCIRC_2021:3838-2021092918-namforecast_maxwvel.63.0.10",
-            "legends": [
-              {
-                "url": "https://apsviz-geoserver.renci.org/obs_pngs/3838-2021092918-namforecast/maxwvel.63.colorbar.png"
-              }
-            ],
-            "id": "4bJnlw",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Recent/Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: PRVI15 (maxwvel.63.0.10)"
-            ]
-          },
-          {
-            "type": "wms",
-            "name": "Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: PRVI15 (maxele.63.0.10)",
-            "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
-            "show": false,
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "isOpenInWorkbench": false,
-            "layers": "ADCIRC_2021:3838-2021092918-namforecast_maxele.63.0.10",
-            "legends": [
-              {
-                "url": "https://apsviz-geoserver.renci.org/obs_pngs/3838-2021092918-namforecast/maxele.63.colorbar.png"
-              }
-            ],
-            "id": "KMuVI6",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Recent/Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: PRVI15 (maxele.63.0.10)"
-            ]
-          },
-          {
-            "type": "wms",
-            "name": "Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)",
-            "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
-            "show": false,
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "isOpenInWorkbench": false,
-            "layers": "ADCIRC_2021:3822-2021092918-namforecast_maxwvel.63.0.10",
-            "legends": [
-              {
-                "url": "https://apsviz-geoserver.renci.org/obs_pngs/3822-2021092918-namforecast/maxwvel.63.colorbar.png"
-              }
-            ],
-            "id": "cuSwLL",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Recent/Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)"
-            ]
-          },
-          {
-            "type": "wms",
-            "name": "Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (swan)",
-            "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
-            "show": false,
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "isOpenInWorkbench": false,
-            "layers": "ADCIRC_2021:3822-2021092918-namforecast_swan_HS_max.63.0.10",
-            "legends": [
-              {
-                "url": "https://apsviz-geoserver.renci.org/obs_pngs/3822-2021092918-namforecast/swan_HS_max.63.colorbar.png"
-              }
-            ],
-            "id": "bUPeTw",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Recent/Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (swan)"
-            ]
-          },
-          {
-            "type": "wms",
-            "name": "Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)",
-            "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
-            "show": false,
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "isOpenInWorkbench": false,
-            "layers": "ADCIRC_2021:3822-2021092918-namforecast_maxele.63.0.10",
-            "legends": [
-              {
-                "url": "https://apsviz-geoserver.renci.org/obs_pngs/3822-2021092918-namforecast/maxele.63.colorbar.png"
-              }
-            ],
-            "id": "chSX6B",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Recent/Date: 09-29-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/ADCIRC Data - Recent"
-        ]
-      },
-      {
-        "id": "E2Kjyj",
-        "type": "group",
-        "name": "ADCIRC Data - Archive",
-        "members": [
-          {
-            "type": "wms-group",
-            "name": "ADCIRC Model Results Layers",
-            "description": "Example description",
-            "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
-            "dataCustodian": "RENCI",
-            "id": "sBvHCx",
-            "shareKeys": [
-              "Root Group/ADCIRC Data - Archive/ADCIRC Model Results Layers"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/ADCIRC Data - Archive"
-        ]
-      },
-      {
-        "id": "MEHXrI",
-        "type": "group",
-        "name": "NWS Forecasts Guidance Warnings: NHC_Atl_trop_cyclones (REST Service)",
-        "members": [
-          {
-            "type": "esri-mapServer-group",
-            "name": "NHC Layers",
-            "url": "https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Forecasts_Guidance_Warnings/NHC_Atl_trop_cyclones/MapServer",
-            "id": "ql6HMl",
-            "shareKeys": [
-              "Root Group/NWS Forecasts Guidance Warnings: NHC_Atl_trop_cyclones (REST Service)/NHC Layers"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/NWS Forecasts Guidance Warnings: NHC_Atl_trop_cyclones (REST Service)"
-        ]
-      },
-      {
-        "id": "nkfM86",
-        "type": "group",
-        "name": "RADAR TEST",
-        "members": [
-          {
-            "type": "wms-group",
-            "name": "Quality Controlled 1km x 1km CONUS Radar Base Reflectivity",
-            "url": "https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/ows?service=wms&version=1.3.0&request=GetCapabilities",
-            "id": "8WXYIZ",
-            "shareKeys": [
-              "Root Group/RADAR TEST/Quality Controlled 1km x 1km CONUS Radar Base Reflectivity"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/RADAR TEST"
-        ]
-      },
-      {
-        "id": "stGZn5",
-        "type": "group",
-        "name": "National Hurricane Center Data - Active Storm: Sam",
-        "members": [
-          {
-            "type": "kml",
-            "name": "Forecast Track",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_TRACK.kmz",
-            "dataCustodian": "NHC",
-            "id": "wTE4bl",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Forecast Track"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Wind, Watches, Warnings",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_038adv_WW.kmz",
-            "dataCustodian": "NHC",
-            "id": "GAdk7l",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Wind, Watches, Warnings"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Track Cone",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_CONE.kmz",
-            "dataCustodian": "NHC",
-            "id": "MPI1Dz",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Track Cone"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Initial Wind Extent",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_initialradii_048adv.kmz",
-            "dataCustodian": "NHC",
-            "id": "tnQyiF",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Initial Wind Extent"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Forecast Wind Radii GIS",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_forecastradii_048adv.kmz",
-            "dataCustodian": "NHC",
-            "id": "SbWzq6",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Forecast Wind Radii GIS"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Best Track GIS",
-            "url": "https://www.nhc.noaa.gov/gis/best_track/al182021_best_track.kmz",
-            "dataCustodian": "NHC",
-            "id": "r6IpbY",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Best Track GIS"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Earliest Arrival Time TSWinds GIS",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_earliest_reasonable_toa_34.kmz",
-            "dataCustodian": "NHC",
-            "id": "vilh6S",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Earliest Arrival Time TSWinds GIS"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Most Likely Time TSWinds GIS",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_most_likely_toa_34.kmz",
-            "dataCustodian": "NHC",
-            "id": "2lkBad",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Sam/Most Likely Time TSWinds GIS"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/National Hurricane Center Data - Active Storm: Sam"
-        ]
-      },
-      {
-        "id": "16r7mX",
-        "type": "group",
-        "name": "National Hurricane Center Data - Active Storm: Victor",
-        "members": [
-          {
-            "type": "kml",
-            "name": "Forecast Track",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_TRACK.kmz",
-            "dataCustodian": "NHC",
-            "id": "HcVad1",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Forecast Track"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Track Cone",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_CONE.kmz",
-            "dataCustodian": "NHC",
-            "id": "Im2YvB",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Track Cone"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Initial Wind Extent",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_initialradii_021adv.kmz",
-            "dataCustodian": "NHC",
-            "id": "4EIzjS",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Initial Wind Extent"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Forecast Wind Radii GIS",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_forecastradii_021adv.kmz",
-            "dataCustodian": "NHC",
-            "id": "ylBNN7",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Forecast Wind Radii GIS"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Best Track GIS",
-            "url": "https://www.nhc.noaa.gov/gis/best_track/al202021_best_track.kmz",
-            "dataCustodian": "NHC",
-            "id": "VLwiEE",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Best Track GIS"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Earliest Arrival Time TSWinds GIS",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_earliest_reasonable_toa_34.kmz",
-            "dataCustodian": "NHC",
-            "id": "6m2wwM",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Earliest Arrival Time TSWinds GIS"
-            ]
-          },
-          {
-            "type": "kml",
-            "name": "Most Likely Time TSWinds GIS",
-            "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_most_likely_toa_34.kmz",
-            "dataCustodian": "NHC",
-            "id": "kwXqQN",
-            "shareKeys": [
-              "Root Group/National Hurricane Center Data - Active Storm: Victor/Most Likely Time TSWinds GIS"
-            ]
-          }
-        ],
-        "shareKeys": [
-          "Root Group/National Hurricane Center Data - Active Storm: Victor"
-        ]
-      }
-    ],
-    "corsDomains": [
-      "corsproxy.com",
-      "programs.communications.gov.au",
-      "www.asris.csiro.au",
-      "mapsengine.google.com"
-    ],
-    "homeCamera": {
-      "west": -96,
-      "south": 20,
-      "east": -61,
-      "north": 46
-    },
-    "baseMaps": {
-      "items": [
+  "workbench": [
+    "2jctqB"
+  ],
+  "catalog": [
+    {
+      "id": "nGVPIj",
+      "type": "group",
+      "name": "ADCIRC Data - Current",
+      "members": [
         {
-          "item": {
-            "id": "basemap-darkmatter",
-            "name": "Dark Matter"
-          },
-          "image": "build/TerriaJS/images/dark-matter.png"
+          "type": "wms",
+          "name": "Cycle: 06 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "show": true,
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "isOpenInWorkbench": false,
+          "layers": "ADCIRC_2021:3918-2022021006-namforecast_maxele.63.0.10",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver.renci.org/obs_pngs/3918-2022021006-namforecast/maxele.63.colorbar.png"
+            }
+          ],
+          "id": "cctMAA",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Current/Date: 02-10-2022 Cycle: 06 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
+          ],
+          "info": [
+            {
+              "name": "Event Date",
+              "content": "02-10-2021",
+              "show": false
+            },
+
+            {
+              "name": "Event Type",
+              "content": "Namforecast",
+              "show": false
+            }
+          ]
         }
+      ],
+      "shareKeys": [
+        "Root Group/ADCIRC Data - Current"
+      ]
+    },
+    {
+      "id": "qkwgBG",
+      "type": "group",
+      "name": "ADCIRC Data - Recent",
+      "members": [
+        {
+          "type": "wms",
+          "name": "Cycle: 06 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "show": false,
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "isOpenInWorkbench": false,
+          "layers": "ADCIRC_2021:3918-2022021006-namforecast_maxwvel.63.0.10",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver.renci.org/obs_pngs/3918-2022021006-namforecast/maxwvel.63.colorbar.png"
+            }
+          ],
+          "id": "4bJnlw",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 06 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)"
+          ],
+          "info": [
+            {
+              "name": "Event Date",
+              "content": "02-10-2022",
+              "show": false
+            },
+
+            {
+              "name": "Event Type",
+              "content": "Namforecast",
+              "show": false
+            }
+          ]
+        },
+        {
+          "type": "wms",
+          "name": "Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "show": false,
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "isOpenInWorkbench": false,
+          "layers": "ADCIRC_2021:3918-2022021000-namforecast_maxele.63.0.10",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver.renci.org/obs_pngs/3918-2022021000-namforecast/maxele.63.colorbar.png"
+            }
+          ],
+          "id": "KMuVI6",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
+          ]
+        },
+        {
+          "type": "wms",
+          "name": "Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "show": false,
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "isOpenInWorkbench": false,
+          "layers": "ADCIRC_2021:3918-2022021000-namforecast_maxwvel.63.0.10",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver.renci.org/obs_pngs/3918-2022021000-namforecast/maxwvel.63.colorbar.png"
+            }
+          ],
+          "id": "cuSwLL",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)"
+          ]
+        },
+        {
+          "type": "wms",
+          "name": "Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (swan)",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "show": false,
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "isOpenInWorkbench": false,
+          "layers": "ADCIRC_2021:3918-2022021000-namforecast_swan_HS_max.63.0.10",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver.renci.org/obs_pngs/3918-2022021000-namforecast/swan_HS_max.63.colorbar.png"
+            }
+          ],
+          "id": "bUPeTw",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (swan)"
+          ]
+        },
+        {
+          "type": "wms",
+          "name": "Date: 02-09-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "show": false,
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "isOpenInWorkbench": false,
+          "layers": "ADCIRC_2021:3918-2022020918-namforecast_maxele.63.0.10",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver.renci.org/obs_pngs/3918-2022020918-namforecast/maxele.63.colorbar.png"
+            }
+          ],
+          "id": "chSX6B",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Recent/Date: 02-09-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
+          ]
+        }
+      ],
+      "shareKeys": [
+        "Root Group/ADCIRC Data - Recent"
+      ]
+    },
+    {
+      "id": "E2Kjyj",
+      "type": "group",
+      "name": "ADCIRC Data - Archive",
+      "members": [
+        {
+          "type": "wms-group",
+          "name": "ADCIRC Model Results Layers",
+          "description": "Example description",
+          "url": "https://apsviz-geoserver.renci.org/geoserver/ADCIRC_2021/wms/ADCIRC_2021?service=wfs&version=1.3.0&request=GetCapabilities",
+          "dataCustodian": "RENCI",
+          "id": "sBvHCx",
+          "shareKeys": [
+            "Root Group/ADCIRC Data - Archive/ADCIRC Model Results Layers"
+          ]
+        }
+      ],
+      "shareKeys": [
+        "Root Group/ADCIRC Data - Archive"
+      ]
+    },
+    {
+      "id": "MEHXrI",
+      "type": "group",
+      "name": "NWS Forecasts Guidance Warnings: NHC_Atl_trop_cyclones (REST Service)",
+      "members": [
+        {
+          "type": "esri-mapServer-group",
+          "name": "NHC Layers",
+          "url": "https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Forecasts_Guidance_Warnings/NHC_Atl_trop_cyclones/MapServer",
+          "id": "ql6HMl",
+          "shareKeys": [
+            "Root Group/NWS Forecasts Guidance Warnings: NHC_Atl_trop_cyclones (REST Service)/NHC Layers"
+          ]
+        }
+      ],
+      "shareKeys": [
+        "Root Group/NWS Forecasts Guidance Warnings: NHC_Atl_trop_cyclones (REST Service)"
+      ]
+    },
+    {
+      "id": "nkfM86",
+      "type": "group",
+      "name": "RADAR TEST",
+      "members": [
+        {
+          "type": "wms-group",
+          "name": "Quality Controlled 1km x 1km CONUS Radar Base Reflectivity",
+          "url": "https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "id": "8WXYIZ",
+          "shareKeys": [
+            "Root Group/RADAR TEST/Quality Controlled 1km x 1km CONUS Radar Base Reflectivity"
+          ]
+        }
+      ],
+      "shareKeys": [
+        "Root Group/RADAR TEST"
+      ]
+    },
+    {
+      "id": "stGZn5",
+      "type": "group",
+      "name": "National Hurricane Center Data - Active Storm: Sam",
+      "members": [
+        {
+          "type": "kml",
+          "name": "Forecast Track",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_TRACK.kmz",
+          "dataCustodian": "NHC",
+          "id": "wTE4bl",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Forecast Track"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Wind, Watches, Warnings",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_038adv_WW.kmz",
+          "dataCustodian": "NHC",
+          "id": "GAdk7l",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Wind, Watches, Warnings"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Track Cone",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_CONE.kmz",
+          "dataCustodian": "NHC",
+          "id": "MPI1Dz",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Track Cone"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Initial Wind Extent",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_initialradii_048adv.kmz",
+          "dataCustodian": "NHC",
+          "id": "tnQyiF",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Initial Wind Extent"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Forecast Wind Radii GIS",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_forecastradii_048adv.kmz",
+          "dataCustodian": "NHC",
+          "id": "SbWzq6",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Forecast Wind Radii GIS"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Best Track GIS",
+          "url": "https://www.nhc.noaa.gov/gis/best_track/al182021_best_track.kmz",
+          "dataCustodian": "NHC",
+          "id": "r6IpbY",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Best Track GIS"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Earliest Arrival Time TSWinds GIS",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_earliest_reasonable_toa_34.kmz",
+          "dataCustodian": "NHC",
+          "id": "vilh6S",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Earliest Arrival Time TSWinds GIS"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Most Likely Time TSWinds GIS",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL182021_048adv_most_likely_toa_34.kmz",
+          "dataCustodian": "NHC",
+          "id": "2lkBad",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Sam/Most Likely Time TSWinds GIS"
+          ]
+        }
+      ],
+      "shareKeys": [
+        "Root Group/National Hurricane Center Data - Active Storm: Sam"
+      ]
+    },
+    {
+      "id": "16r7mX",
+      "type": "group",
+      "name": "National Hurricane Center Data - Active Storm: Victor",
+      "members": [
+        {
+          "type": "kml",
+          "name": "Forecast Track",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_TRACK.kmz",
+          "dataCustodian": "NHC",
+          "id": "HcVad1",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Forecast Track"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Track Cone",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_CONE.kmz",
+          "dataCustodian": "NHC",
+          "id": "Im2YvB",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Track Cone"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Initial Wind Extent",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_initialradii_021adv.kmz",
+          "dataCustodian": "NHC",
+          "id": "4EIzjS",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Initial Wind Extent"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Forecast Wind Radii GIS",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_forecastradii_021adv.kmz",
+          "dataCustodian": "NHC",
+          "id": "ylBNN7",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Forecast Wind Radii GIS"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Best Track GIS",
+          "url": "https://www.nhc.noaa.gov/gis/best_track/al202021_best_track.kmz",
+          "dataCustodian": "NHC",
+          "id": "VLwiEE",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Best Track GIS"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Earliest Arrival Time TSWinds GIS",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_earliest_reasonable_toa_34.kmz",
+          "dataCustodian": "NHC",
+          "id": "6m2wwM",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Earliest Arrival Time TSWinds GIS"
+          ]
+        },
+        {
+          "type": "kml",
+          "name": "Most Likely Time TSWinds GIS",
+          "url": "https://www.nhc.noaa.gov/storm_graphics/api/AL202021_021adv_most_likely_toa_34.kmz",
+          "dataCustodian": "NHC",
+          "id": "kwXqQN",
+          "shareKeys": [
+            "Root Group/National Hurricane Center Data - Active Storm: Victor/Most Likely Time TSWinds GIS"
+          ]
+        }
+      ],
+      "shareKeys": [
+        "Root Group/National Hurricane Center Data - Active Storm: Victor"
       ]
     }
+  ],
+  "corsDomains": [
+    "corsproxy.com",
+    "programs.communications.gov.au",
+    "www.asris.csiro.au",
+    "mapsengine.google.com"
+  ],
+  "homeCamera": {
+    "west": -96,
+    "south": 20,
+    "east": -61,
+    "north": 46
+  },
+  "baseMaps": {
+    "items": [
+      {
+        "item": {
+          "id": "basemap-darkmatter",
+          "name": "Dark Matter"
+        },
+        "image": "build/TerriaJS/images/dark-matter.png"
+      }
+    ]
   }
+}
