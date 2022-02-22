@@ -49,7 +49,7 @@
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"http://ierse.uazuay.edu.ec/\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      "<img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" />",
       ""
     ],
     // Shown when things go wrong.
