@@ -131,7 +131,7 @@
               "members": [
                 {
                   "name": "Temperatura Mensual",
-                  "description": "Dashboard temperatura mensual por estación.",
+                  "description": "Dashboard temperatura mensual por estación.\n\n Enlace  http://localhost:8800/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Temperatura_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -144,7 +144,7 @@
                 },
                 {
                   "name": "Humedad Relativa Mensual",
-                  "description": "Dashboard humedad relatica por estación.",
+                  "description": "Dashboard humedad relatica por estación.\n\n Enlace  http://localhost:8800/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_Solar_Humedad_Relativa_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -157,7 +157,7 @@
                 },
                 {
                   "name": "Radiación Mensual",
-                  "description": "Dashboard radiación horaria por estación. \n\n Enlace http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
+                  "description": "Dashboard radiación horaria por estación.\n\n Enlace http://localhost:8800/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -217,7 +217,7 @@
               "members": [
                 {
                   "name": "Humedad Relativa Mensual",
-                  "description": "Dashboard humedad mensual por estación.",
+                  "description": "Dashboard humedad mensual por estación. \n\n Enlace http://localhost:8800/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -230,7 +230,7 @@
                 },
                 {
                   "name": "Temperatura Mensual",
-                  "description": "Dashboard temperatura mensual por estación.",
+                  "description": "Dashboard temperatura mensual por estación.  \n\n Enlace http://localhost:8800/d/EUlUJxAnz/g4_eolico_temperatura_mensual",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -243,7 +243,7 @@
                 },
                 {
                   "name": "Presión Atmosférica Mensual",
-                  "description": "Dashboard presión atmosferica mensual por estación.",
+                  "description": "Dashboard presión atmosferica mensual por estación.  \n\n Enlace http://localhost:8800/d/Rim4vwJ7z/g4_eolico_presion_mensual",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -256,7 +256,7 @@
                 },
                 {
                   "name": "Dirección del Viento Mensual",
-                  "description": "Dashboard dirección del viento mensual por estación.",
+                  "description": "Dashboard dirección del viento mensual por estación. \n\n Enlace http://localhost:8800/d/iCZxwgb7k/g4_eolico_direccion_viento_mensual",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -269,7 +269,7 @@
                 },
                 {
                   "name": "Velocidad del Viento Mensual",
-                  "description": "Dashboard velocidad del viento mensual por estación.",
+                  "description": "Dashboard velocidad del viento mensual por estación.\n\n Enlace http://localhost:8800/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
