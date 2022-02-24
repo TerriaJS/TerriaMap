@@ -144,10 +144,8 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=214"
               }],
-              "layers": "new_atlante_integrato:v_sismicita_21",
-              "parameters": {
-                "cql_filter": "data=2021"
-              },
+              "styles":"new_atlante_integrato:sism_21",
+              "layers": "new_atlante_integrato:class_sismica_2021",
               "id": "sisma21"
             }
           ]

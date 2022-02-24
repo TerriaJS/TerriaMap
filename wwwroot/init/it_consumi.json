@@ -3,13 +3,13 @@
     {
       "type": "group",
       "name": "consumi elettrici",
-      "description": "Questa raccolta comprende i dati dei consumi elettrici a varie scale.\n\n <div><img src=\"/images/vecteezy_electric-measuring-power-meter-for-energy-cost-at-home-and-office_3115062.jpg\" style=\"width:400px;height:300px;\"></div><a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
+      "description": "Questa raccolta comprende i dati dei consumi elettrici a varie scale.\n\n <div><img src=\"/images/vecteezy_electric-measuring-power-meter-for-energy-cost-at-home-and-office_3115062.jpg\" style=\"width:400px;height:300px;\"></div><a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
       "isOpen": false,
       "members": [
         {
           "type": "wms",
           "name": "Consumi elettrici totali a livello regionale (GWh)",
-          "description": "Consumi elettrici totali a livello regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici totali a livello regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici.\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -32,7 +32,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto industriale regionale (GWh)",
-          "description": "Consumi elettrici del comparto industriale regionale (GWh) \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto industriale (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto industriale regionale (GWh) \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto industriale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -52,7 +52,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto agricolo regionale (GWh)",
-          "description": "Consumi elettrici del comparto agricolo regionale (GWh) \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto agricolo (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto agricolo regionale (GWh) \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto agricolo (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -72,7 +72,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto terziario regionale (GWh)",
-          "description": "Consumi elettrici del comparto terziario regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto terziario (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto terziario regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto terziario (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "layers": "new_atlante_integrato:v_regioni_t",
@@ -92,7 +92,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto domestico regionale (GWh)",
-          "description": "Consumi elettrici del comparto domestico regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto domestico (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto domestico regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto domestico (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -112,7 +112,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici FS regionali (GWh)",
-          "description": "Consumi elettrici FS regionali (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici FS regionali (GWh).<br> SONO DI TERNA????  o Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici FS regionali (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici FS regionali (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -132,7 +132,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto agricolo provinciale (GWh)",
-          "description": "Consumi elettrici del comparto agricolo provinciale (GWh). \n\n Mappa della distribuzione dei consumi elettrici del comparto agricolo provinciale (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto agricolo provinciale (GWh). \n\n Mappa della distribuzione dei consumi elettrici del comparto agricolo provinciale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -152,7 +152,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto industriale provinciale (GWh)",
-          "description": "Consumi elettrici del comparto industriale provinciale (GWh). \n\n Mappa della distribuzione consumi elettrici del comparto industriale provinciale (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto industriale provinciale (GWh). \n\n Mappa della distribuzione consumi elettrici del comparto industriale provinciale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "info": [
             {
               "name": "Licence",
@@ -178,7 +178,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto terziario provinciale (GWh)",
-          "description": "Consumi elettrici del comparto terziario provinciale (GWh). \n\n Mappa della distribuzione Consumi elettrici del comparto terziario provinciale (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto terziario provinciale (GWh). \n\n Mappa della distribuzione Consumi elettrici del comparto terziario provinciale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -198,7 +198,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici del comparto domestico provinciale (GWh)",
-          "description": "Consumi elettrici del comparto domestico provinciale (GWh). \n\n Mappa della distribuzione dei consumi elettrici del comparto domestico provinciale (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici del comparto domestico provinciale (GWh). \n\n Mappa della distribuzione dei consumi elettrici del comparto domestico provinciale (GWh).<br> \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {
@@ -218,7 +218,7 @@
         {
           "type": "wms",
           "name": "Consumi elettrici totali a livello provinciale esclusi consumi FS (GWh)",
-          "description": "Consumi elettrici totali a livello provinciale esclusi consumi FS (GWh). \n\n Mappa della distribuzione dei consumi elettrici totali a livello provinciale esclusi consumi FS (GWh).<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/documenti_site/Documenti GSE/Rapporti statistici/\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+          "description": "Consumi elettrici totali a livello provinciale esclusi consumi FS (GWh). \n\n Mappa della distribuzione dei consumi elettrici totali a livello provinciale esclusi consumi FS (GWh).<br> \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "featureInfoTemplate": {

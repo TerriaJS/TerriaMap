@@ -695,19 +695,6 @@
                 },
                 {
                   "type": "wms",
-                  "name": "raggruppamento provinciale impianti",
-                  "description": "Fotovoltaico - raggruppamento provinciale impianti. \n\n Mappa della distribuzione provinciale degli impianti fotovoltaici installati.<br>\n\n",
-                  "url": "http://gis2.rse-web.it/geoserver/wms",
-                  "dataCustodian": "text",
-                  "featureInfoTemplate": {
-                    "template": "<p>raggruppamento provinciale impianti.</p>"
-                  },
-                  "layers": "new_atlante_integrato:v_fv_raggruppamento_provinciale",
-                  "styles":"new_atlante_integrato:pot_termo_prov",
-                  "id": "556"
-                },
-                {
-                  "type": "wms",
                   "name": "raggruppamento comunale impianti.",
                   "description": "Fotovoltaico - raggruppamento comunale impianti. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati.<br>\n\n",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
@@ -1065,8 +1052,8 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Produzione elettrica provinciale da biogas in % sul totale nazionale",
-                  "description": "Impianti a biomasse - Produzione elettrica provinciale da biogas in % sul totale nazionale\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+                  "name": "Produzione elettrica provinciale da biogas (GWh)",
+                  "description": "Impianti a biomasse - Produzione elettrica provinciale da biogas (GWh)\n\n Mappa della distribuzione provinciale della produzione da bioenergie nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "dataCustodian": "text",
                   "featureInfoTemplate": {
@@ -1074,12 +1061,12 @@
                   },
                   "metadataUrls":[{
                     "title":"link metadato anno 2019",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=196&anno=2019"
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=197&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
-                  "styles":"bi_biogas_energia_perc_prov",
+                  "styles":"bi_biogas_energia_prov",
                   "parameters": {
-                    "cql_filter": "var_id=196"
+                    "cql_filter": "var_id=197"
                   },
                   "id": "196"
                 },
@@ -1158,53 +1145,13 @@
               "id": "termoel",
               "type": "group",
               "name": "termoelettrici",
-              "description": "Questa raccolta comprende dati relativi agli impianti termoelettrici presenti sul territorio nazionale riferiti a differenti livelli di aggregazione spaziale.\n\n <a href=\"https://creativecommons.org/licenses/by/2.5/ar/deed.en\" rel=\"license\">CC BY 2.5 AR</a>\n\n <a title=\"Juan Corral (Fotógrafo, Subdirección de Prensa y Contenidos Públicos del Municipio de Bahía Blanca), CC BY 2.5 AR &lt;https://creativecommons.org/licenses/by/2.5/ar/deed.en&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Parque_E%C3%B3lico_Molinos_Corti_(05).jpg\"><img width=\"512\" alt=\"Parque Eólico Molinos Corti (05)\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg/512px-Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg\"></a>",
+              "description": "Questa raccolta comprende dati relativi agli impianti termoelettrici presenti sul territorio nazionale.\n\n <a href=\"https://creativecommons.org/licenses/by/2.5/ar/deed.en\" rel=\"license\">CC BY 2.5 AR</a>\n\n <a title=\"Juan Corral (Fotógrafo, Subdirección de Prensa y Contenidos Públicos del Municipio de Bahía Blanca), CC BY 2.5 AR &lt;https://creativecommons.org/licenses/by/2.5/ar/deed.en&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Parque_E%C3%B3lico_Molinos_Corti_(05).jpg\"><img width=\"512\" alt=\"Parque Eólico Molinos Corti (05)\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg/512px-Parque_E%C3%B3lico_Molinos_Corti_%2805%29.jpg\"></a>",
               "isOpen": false,
               "members": [
                 {
                   "type": "wms",
-                  "name": "Potenza complessiva regionale (MW)",
-                  "description": "Impianti Termoelettrici - DA VERIFICARE\n\n Mappa della distribuzione regionale della potenza totale termoelettrica installata con concessione attiva al 2020.<br></p>",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ],
-                  "url": "http://gis2.rse-web.it/geoserver/wms",
-                  "dataCustodian": "text",
-                  "layers": "new_atlante_integrato:v_impianti_termoel_regione",
-                  "metadataUrls":[{
-                    "title":"link metadato DA FARE",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=89&anno=2019"
-                  }],
-                  "styles":"new_atlante_integrato:pot_termo_reg",
-                  "id": "reg_te_imp"             
-                },
-                {
-                  "type": "wms",
-                  "name": "Potenza complessiva provinciale (MW)",
-                  "description": "Impianti Termoelettrici - DA VERIFICARE\n\n Mappa della distribuzione provinciale della potenza totale termoelettrica installata con concessione attiva al 2020.<br></p>",
-                  "info": [
-                    {
-                      "name": "Licence",
-                      "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-                    }
-                  ],
-                  "url": "http://gis2.rse-web.it/geoserver/wms",
-                  "dataCustodian": "text",
-                  "layers": "new_atlante_integrato:v_impianti_termoel_provincia",
-                  "metadataUrls":[{
-                    "title":"link metadato DA FARE",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=89&anno=2019"
-                  }],
-                  "styles":"new_atlante_integrato:pot_termo_prov",
-                  "id": "prov_te_imp"             
-                },
-                {
-                  "type": "wms",
-                  "name": "Potenza comunale (MW) - anno 2020",
-                  "description": "Impianti Termoelettrici - DA VERIFICARE\n\n Mappa della distribuzione comunale della potenza totale termoelettrica installata con concessione attiva al 2020.<br></p>",
+                  "name": "Impianti - anno 2020",
+                  "description": "Impianti Termoelettrici \n\n Mappa della distribuzione degli impianti termoelettrici con concessione attiva al 2020.<br></p>",
                   "info": [
                     {
                       "name": "Licence",
@@ -1215,8 +1162,8 @@
                   "dataCustodian": "text",
                   "layers": "new_atlante_integrato:v_impianti_termoel_comune",
                   "metadataUrls":[{
-                    "title":"link metadato DA FARE",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=89&anno=2019"
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=207&anno=2020"
                   }],
                   "styles":"new_atlante_integrato:pot_termo_comun",
                   "id": "comun_te_imp"             

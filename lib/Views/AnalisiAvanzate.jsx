@@ -14,7 +14,7 @@ function AnalisiAvanzate(props) {
 
   // to select language config.json depending on the browser language
   var userLang = navigator.language || navigator.userLanguage;
-  var totem_link = "/#en_totemweb";
+  var totem_link = "/#en_totem";
   var analisi = "Advanced Analysis";
   if (userLang === "it-IT" || userLang === "it") {
     totem_link = "/#it_totemweb";
@@ -36,18 +36,18 @@ function AnalisiAvanzate(props) {
         </label>
       </div>
 
-      {/* totem web */}
+      {/* totem */}
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             {/*<div class="row">
             <div class="col-sm-6">*/}
-            <h2> TOTEM web </h2>
-            <a target="_blank" href="localhost:3001">
+            <h2> TOTEM </h2>
+            <a target="_blank" href="http://rakino.ricerca.lan">
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/logo_totem_BW_new.png")}
-                alt="totem_web"
+                src={require("../../wwwroot/images/logo_totem_TrW_new.png")}
+                alt="totem"
               />
             </a>
             {/*</div>
@@ -55,7 +55,7 @@ function AnalisiAvanzate(props) {
             <p>
               {" "}
               Attiva il tool di analisi territoriale TOTEM: Territory Overview
-              Tool for Energy Models{" "}
+              Tool for Energy Modeling{" "}
             </p>
             <p>
               {" "}
@@ -67,7 +67,7 @@ function AnalisiAvanzate(props) {
             </p>
             <a className={Styles.link} href={totem_link}>
               <p>
-                <b> TOTEMweb in TerriaMap </b>
+                <b> TOTEM in TerriaMap </b>
               </p>
             </a>
           </li>
@@ -78,7 +78,10 @@ function AnalisiAvanzate(props) {
         <ul>
           <li class="list-group-item">
             <h2> Sulcis - Iglesiente </h2>
-            <a target="_blank" href="http://atlanteintegrato.rse-web.it/">
+            <a
+              target="_blank"
+              href="http://gis2.rse-web.it:8080/mapstore/#/geostory/131"
+            >
               <img
                 className={Styles.image}
                 src={require("../../wwwroot/images/location_Wtr.png")}
@@ -97,7 +100,7 @@ function AnalisiAvanzate(props) {
               <a
                 target="_blank"
                 className={Styles.link}
-                href="http://atlanteintegrato.rse-web.it/"
+                href="http://gis2.rse-web.it:8080/mapstore/#/geostory/131"
               >
                 {" "}
                 Sulcis Iglesiente
@@ -114,7 +117,8 @@ function AnalisiAvanzate(props) {
             <h2>Water-Energy Nexus</h2>
             <a
               target="_blank"
-              href="http://atlanteintegrato.rse-web.it/sankey.php"
+              // href="http://atlanteintegrato.rse-web.it/sankey.php"
+              href="http://atlanteintegrato.rse-web.it/sankey_it.php"
             >
               <img
                 className={Styles.image}
@@ -128,7 +132,8 @@ function AnalisiAvanzate(props) {
             </p>
             <a
               target="_blank"
-              href="http://atlanteintegrato.rse-web.it/sankey.php"
+              //href="http://atlanteintegrato.rse-web.it/sankey.php"
+              href="http://atlanteintegrato.rse-web.it/sankey_it.php"
               className={Styles.link}
             >
               WEN - Water Energy Nexus
@@ -145,7 +150,7 @@ function AnalisiAvanzate(props) {
             <a target="_blank" href="http://gis2.rse-web.it/mapstore">
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/geo_ET_GG1_new.png")}
+                src={require("../../wwwroot/images/geo_ET_TrGG.png")}
                 alt="geoportale"
               />
             </a>

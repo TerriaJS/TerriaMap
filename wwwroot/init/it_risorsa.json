@@ -83,7 +83,7 @@
               }],
               "id": "pot_bac"
             },
-            {
+            /* {
               "id": "Bbang",
               "type": "group",
               "name": "dati BIG BANG",
@@ -117,7 +117,7 @@
                   "id": "BBang2"
                 }
               ]
-            },
+            }, */
             {
               "id": "dati",
               "type": "group",
@@ -208,7 +208,7 @@
               "id": "pot_moto",
               "type": "group",
               "name": "Potenziale offshore del moto ondoso",
-              "description": "Questa raccolta comprende le misure effettuate in punti di monitoraggio",
+              "description": "Questa raccolta comprende le analisi effettuate in punti notevoli della costa.",
               "isOpen": false,
               "members": [
                 {
@@ -223,14 +223,14 @@
                 {  
                   "id": "disp",
                   "type": "group",
-                  "name": "dispositivi",
-                  "description": "Questa raccolta comprende ...",
+                  "name": "Potenziale dei dispositivi",
+                  "description": "Questa raccolta comprende informazioni riguardanti simulazioni effettuate sul potenziale offshore del moto ondoso di alcuni dispositivi",
                   "isOpen": false,
                   "members": [
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: AquaBuOY",
-                    "description": "CF dispositivo AquaBuOY. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ...  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo AquaBuOY",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi:AquaBuOY \n\n CF dispositivo AquaBuOY. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ...  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -242,8 +242,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: CycWEC",
-                    "description": "CF dispositivo CycWEC. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo CycWEC",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: CycWEC \n\n CF dispositivo CycWEC. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -255,8 +255,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Drakoo",
-                    "description": "CF dispositivo Drakoo. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo Drakoo",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: Drakoo\n\n Capacity Factor dispositivo Drakoo. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... incrementata  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -268,8 +268,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Pelamis",
-                    "description": "CF dispositivo Pelamis. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo Pelamis",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: Pelamis \n\n CF dispositivo Pelamis. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://map.rse-web.it/mares\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -281,8 +281,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Seabased",
-                    "description": "CF dispositivo Seabased. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo Seabased",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: Seabased \n\n CF dispositivo Seabased. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ... rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -294,8 +294,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Symphony",
-                    "description": "CF dispositivo Symphony. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ...  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo Symphony",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: Symphony \n\n CF dispositivo Symphony. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ...  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -307,8 +307,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Wavebob",
-                    "description": "CF dispositivo Wavebob. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ..  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo Wavebob",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: Wavebob \n\n CF dispositivo Wavebob. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ..  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -320,8 +320,8 @@
                   },
                   {
                     "type": "wms",
-                    "name": "Potenziale offshore del moto ondoso di alcuni dispositivi: Wavedragon",
-                    "description": "CF dispositivo Wavedragon. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ...  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
+                    "name": "Dispositivo Wavedragon",
+                    "description": "Potenziale offshore del moto ondoso di alcuni dispositivi: Wavedragon \n\n CF dispositivo Wavedragon. \n\n Questa mappa descrive le caratteristioche di alcun punti di interesse delle coste italiane sotto il profilo del potenziale energetico legato al moto ondoso al largo, ..... (DAVIDE) ...  rispetto ai lavori precedentemente pubblicati in materia (Rapporto RSE n. 11000809 del 30/03/2011)</p>. \n\n Informazioni sul layer RISORSA MARINO <a href=\"http://marenergy.rse-web.it/map.phtml\" target=\"_blank\">MARENERGY</a></br></br><a href=\"http://doc.rse-web.it/?tipo=documento&id=316268\" target=\"_blank\">Misure e valutazioni ondametriche presso la costa laziale: campagna 2015</a>.",
                     "url": "http://gis2.rse-web.it/geoserver/wms",
                     "dataCustodian": "text",
                     "layers": "new_atlante_integrato:v_dispositivi",
@@ -338,7 +338,7 @@
             {  
               "id": "pot_shoreline",
               "type": "group",
-              "name": "Potenziale shoreline moto ondoso",
+              "name": "Potenziale shoreline del moto ondoso",
               "description": "Questa raccolta comprende i moli utilizzabili",
               "isOpen": false,
               "members": [

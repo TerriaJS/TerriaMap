@@ -9,12 +9,37 @@
       "members": [
         {
           "type": "wms",
-          "name": "Comuni con Cabine Primarie con inversione di flusso",
+          "name": "Comuni con Cabine Primarie con inversione di flusso - 2016",
+          "description": "Comuni con Cabine Primarie con inversione di flusso \n\n Distribuzione a scala comunale degli eventi di inversione del flusso di energia rilevati nel 2016 nelle Cabine primarie, categorizzati in base alla durata",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "dataCustodian": "text",
+          "metadataUrls":[{
+            "title":"link metadato anno 2016",
+            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=1&anno=2015"
+          }],
+          "layers": "atlante_integrato:v_comuni_cabine_primarie",
+          "parameters": {
+            "cql_filter": "data='2015-01-01 00:00:00'"
+          },
+          "id": "cb_com_16"
+        },
+        {
+          "type": "wms",
+          "name": "Comuni con Cabine Primarie con inversione di flusso - 2020",
           "description": "Comuni con Cabine Primarie con inversione di flusso \n\n Distribuzione a scala comunale degli eventi di inversione del flusso di energia rilevati nel 2016 nelle Cabine primarie, categorizzati in base alla durata",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "dataCustodian": "text",
           "layers": "atlante_integrato:v_comuni_cabine_primarie",
-          "id": "cb_com"
+          "id": "cb_com_20"
+        },
+        {
+          "type": "wms",
+          "name": "Rete AT - OSM",
+          "description": "OSM linee elettriche aeree \n\n Fonte dei dati Open Street Map https://www.openstreetmap.org/",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "dataCustodian": "text",
+          "layers": "new_atlante_integrato:OSM_power_line",
+          "id": "OSM_l"
         }
         /*         {
           "type": "wms",
