@@ -1580,120 +1580,120 @@
     "mapIsZooming": "Loading ideal zoom..."
   },
   "gettingstarted": {
-    "title": "Getting started with the map",
-    "markdownText": "## Getting started with the map\n\nIf you're new to the map or using spatial data, our Getting Started video quickly covers the basic functionality you'll need to use to add and interrogate data sets.\n\nIf you don't have time to watch the video, we suggest exploring the following areas:\n\n1. Search for a location to quickly find an area of interest\n2. Use 'Explore map data' to view the catalogue of available data sets and add them to the map\n3. Interact with the data layer, including opacity and toggling on and off on the left in your workbench\n4. Click on the data on the map to view more detailed data, including the raw data\n5. Change your basemap using options in 'Map Settings' to help make some data sets more visible\n6. Zoom and change your view, including tilting the view angle using the controls on the right-hand side of the screen",
+    "title": "Cómo empezar con el mapa",
+    "markdownText": "## Cómo empezar con el mapa\n\nSi no tiene experiencia con el mapa o con el uso de datos espaciales, nuestro vídeo de introducción cubre rápidamente la funcionalidad básica que necesitará para añadir e interrogar conjuntos de datos.\n\nSi no tiene tiempo para ver el vídeo, le sugerimos que explore las siguientes áreas::\n\n1. Buscar una ubicación para encontrar rápidamente un área de interés\n2. Utilizar 'Explorar datos del mapa' para ver el catálogo de conjuntos de datos disponibles y añadirlos al mapa\n3. Interactúe con la capa de datos, incluyendo la opacidad y la activación y desactivación a la izquierda en su banco de trabajo\n4. Haga clic en los datos del mapa para ver datos más detallados, incluidos los datos brutos\n5. Cambie su mapa base utilizando las opciones de 'Configuración del mapa' para ayudar a que algunos conjuntos de datos sean más visibles\n6. Haz zoom y cambia la vista, incluyendo la inclinación del ángulo de visión utilizando los controles de la parte derecha de la pantalla",
     "videoUrl": "https://www.youtube-nocookie.com/embed/FjSxaviSLhc",
     "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
   },
   "stepbystepguide": {
-    "title": "Step by step guide",
-    "markdownText": "## Step by step guide\n\nLaunch a step by step guide for various popular workflows below:",
+    "title": "Guía paso por paso",
+    "markdownText": "## Guía paso por paso\n\nInicie una guía paso a paso para varios flujos de trabajo populares a continuación:",
     "gettingstarted": {
-      "title": "Getting started with the map",
+      "title": "Primeros pasos con el mapa",
       "step1": {
-        "markdownDescription": "The search is at the top of the workbench on the left.",
-        "title": "Search for a location to find an area of interest"
+        "markdownDescription": "La búsqueda está en la parte superior del banco de trabajo a la izquierda.",
+        "title": "Buscar una ubicación para encontrar un área de interés"
       },
       "step2": {
-        "markdownDescription": "You can view the catalogue at any time",
-        "title": "Use \"Explore map data\" to view data catalogue"
+        "markdownDescription": "Puedes consultar el catálogo en cualquier momento",
+        "title": "Utilizar \"Explorar datos de mapas\" para ver el catálogo de datos"
       },
       "step3": {
-        "markdownDescription": "Find a dataset of interest",
-        "title": "Search for data or browse catalogue"
+        "markdownDescription": "Encuentre un conjunto de datos de interés",
+        "title": "Buscar datos o navegar por el catálogo"
       },
       "step4": {
-        "title": "Add data to map by clicking on + sign or \"Add to map\" button in preview window",
+        "title": "Agregue datos al mapa haciendo clic en el signo + o \"Añadir al mapa\" botón en la ventana de vista previa",
         "markdownDescription": ""
       },
       "step5": {
-        "title": "Interact with data, including opacity and toggling on & off on the left in your workbench"
+        "title": "Interactúe con los datos, incluida la opacidad y la activación y desactivación a la izquierda en su banco de trabajo"
       },
       "step6": {
-        "title": "Click on data on the map to view more details by triggering Feature Information panel"
+        "title": "Haga clic en los datos del mapa para ver más detalles activando el panel de información de características"
       },
       "step7": {
-        "title": "Change your basemap using options in \"Map Settings\" to improve contrast"
+        "title": "Cambie su mapa base usando opciones en\"Configuración del mapa\" para mejorar el contraste"
       },
       "step8": {
-        "title": "Zoom and change view using the controls on the right-hand side of the screen"
+        "title": "Haga zoom y cambie la vista usando los controles en el lado derecho de la pantalla"
       }
     },
     "satelliteimagery": {
-      "title": "Adding satellite imagery",
-      "footnote": "Important: Satellite imagery can take a little while to load so please be patient. If images don’t seem to be loading, zoom out a little bit",
+      "title": "Adición de imágenes de satélite",
+      "footnote": "Importante: las imágenes de satélite pueden tardar un poco en cargarse, así que tenga paciencia. Si las imágenes no parecen cargarse, aléjese un poco",
       "step1": {
-        "title": "Find the location to view satellite imagery",
-        "markdownDescription": "- Use the location search or zoom and pan around the map using your mouse or the zoom controls"
+        "title": "Encuentra la ubicación para ver las imágenes de satélite",
+        "markdownDescription": "Utilizar la búsqueda de ubicación o el zoom y desplazarse por el mapa utilizando el ratón o los controles de zoom"
       },
       "step2": {
-        "title": "Add the satellite imagery to the map",
-        "markdownDescription": "- Open the data catalogue using \"Explore map data\" button\n- Navigate through datasets to select your satellite option: Landsat or Sentinel, and daily or composite images. This can depend on resolution of the image you need (10m or 25m) and whether you want daily, 16 day composite, or annual average images\n - Select \"Add to the map\" to view the satellite imagery"
+        "title": "Añadir las imágenes de satélite al mapa",
+        "markdownDescription": "- Abrir el catálogo de datos mediante el botón \"Explorar datos del mapa\" \n- Landsat o Sentinel, e imágenes diarias o compuestas. Esto puede depender de la resolución de la imagen que necesite (10m o 25m) y de si quiere imágenes diarias, compuestas de 16 días o de media anual\n - Seleccione \"Añadir al mapa\" para ver las imágenes de satélite"
       },
       "step3": {
-        "title": "Filter images to find satellite imagery",
-        "markdownDescription": "- Filter images by location to quickly find satellite images for that location\n - Satellites circle the globe many times a day. You can expect satellite imagery to be available for one location every two weeks\n - If you haven't already selected your point of interest on the map, zoom in to select one. You will see the filter applied in blue in the Workbench on the left"
+        "title": "Filtrar imágenes para encontrar imágenes de satélite",
+        "markdownDescription": "- Filtra las imágenes por ubicación para encontrar rápidamente imágenes de satélite para esa ubicación\n - Los satélites dan la vuelta al mundo muchas veces al día. Puedes esperar que las imágenes de satélite estén disponibles para una ubicación cada dos semanas\n - Si aún no has seleccionado tu punto de interés en el mapa, acércate para seleccionar uno. Verá el filtro aplicado en azul en el Workbench de la izquierda"
       },
       "step4": {
-        "title": "Select a time and date",
-        "markdownDescription": "- Use the date picker to select a time and date. Cycle backwards through previous years using the back arrow\n - Choose another date if your imagery is obscured by clouds. You can quickly cycle back and forward using the arrows next to the date picker"
+        "title": "Seleccionar una hora y una fecha",
+        "markdownDescription": "- Utilice el selector de fecha para seleccionar una hora y una fecha. Recorra los años anteriores hacia atrás con la flecha de retroceso\n - Elija otra fecha si sus imágenes están oscurecidas por las nubes. Puede retroceder y avanzar rápidamente utilizando las flechas situadas junto al selector de fecha"
       }
     },
     "comparetimeseries": {
-      "title": "View and compare different points in time",
-      "footnote": "Important: Any time series data can be compared using the Split Screen Mode, not just satellite imagery",
+      "title": "Ver y comparar diferentes puntos en el tiempo",
+      "footnote": "Importante: Se puede comparar cualquier dato de la serie temporal utilizando el modo de pantalla dividida, no sólo las imágenes de satélite",
       "step1": {
-        "title": "Add a time series dataset to the map",
-        "markdownDescription": "- Satellite imagery is a good example of time series data, with many satellites going back decades\n- Find your location of interest and filter available imagery by this location\n-See our Adding Satellite Imagery to the Map guide for more"
+        "title": "Añadir un conjunto de datos de series temporales al mapa",
+        "markdownDescription": "- Las imágenes satelitales son un buen ejemplo de datos de series temporales, con muchos satélites que se remontan a décadas atrás\n- Encuentra tu ubicación de interés y filtra las imágenes disponibles por esta ubicación\n-Ve nuestra guía de Añadir imágenes satelitales al mapa para más"
       },
       "step2": {
-        "title": "Select the time and date",
-        "markdownDescription": "- In the workbench on the left, select the time and date which will open the date picker\n- Select a year, month and date, or navigate back to other years and even centuries using the back arrow\n- Available dates appear in blue"
+        "title": "Selecciona la hora y la fecha",
+        "markdownDescription": "- En el banco de trabajo de la izquierda, seleccione la hora y la fecha que abrirá el selector de fechas\n- Seleccione un año, un mes y una fecha, o navegue hacia atrás a otros años e incluso siglos utilizando la flecha hacia atrás\n- Las fechas disponibles aparecen en azul"
       },
       "step3": {
-        "title": "Compare different dates at one location",
-        "markdownDescription": "- From the 3 dots drop-down menu in the workbench, press 'Compare' to activate Split Screen Mode\n- A duplicate copy of your dataset will appear in the workbench\n- Choose the dates you want to compare on the left and right of the screen\n- Drag the slider using the white button to swipe and compare the two image dates"
+        "title": "Comparar diferentes fechas en un mismo lugar",
+        "markdownDescription": "- En el menú desplegable de los 3 puntos de la mesa de trabajo, pulse 'Comparar' para activar el modo de pantalla dividida\n- Aparecerá una copia duplicada de su conjunto de datos en la mesa de trabajo\n- Elija las fechas que desea comparar a la izquierda y a la derecha de la pantalla\n- Arrastre el control deslizante utilizando el botón blanco para deslizar y comparar las dos fechas de la imagen"
       },
       "step4": {
-        "title": "Close Split Screen Mode",
-        "markdownDescription": "- Escape the Split Screen Mode by pressing the 'x' of Split Screen Mode title in the workbench\n- Remove the duplicate copy of your dataset in the workbench using the 3 dots drop-down menu"
+        "title": "Cerrar el modo de pantalla dividida",
+        "markdownDescription": "- Escapar del modo de pantalla dividida pulsando la 'x' del título del modo de pantalla dividida en el banco de trabajo\n- Eliminar la copia duplicada de su conjunto de datos en el banco de trabajo utilizando el menú desplegable de 3 puntos"
       }
     }
   },
   "helpContentTerm1": {
-    "term": "dataset",
+    "term": "Conjunto de datos",
     "aliases": ["data set", "data sets", "datasets"],
-    "content": "A collection of related information, organised as one using a common data structure, e.g. \"average house prices in Sydney for 2019\" or \"minimum and maximum daily temperature\""
+    "content": "Una colección de información relacionada, organizada como una utilizando una estructura de datos común \"Precios medios de la vivienda en Sídney en 2019\" o \"temperatura mínima y máxima diaria\""
   },
   "helpContentTerm2": {
-    "term": "time series",
+    "term": "series de tiempo",
     "aliases": ["timeseries"],
-    "content": "A sequence of data collected over different points in time, e.g. temperature sensor data or a gallery of images of the same location"
+    "content": "Una secuencia de datos recopilados en diferentes puntos en el tiempo, p. datos del sensor de temperatura o una galería de imágenes de la misma ubicación"
   },
   "helpContentTerm3": {
-    "term": "workbench",
-    "content": "The panel on the left side of the screen that shows what datasets you have added to the map"
+    "term": "Banco de trabajo",
+    "content": "El panel en el lado izquierdo de la pantalla que muestra qué conjuntos de datos ha agregado al mapa"
   },
   "helpContentTerm4": {
     "term": "4D",
-    "content": "3D data that also has a time-series component"
+    "content": "Datos 3D que también tienen un componente de serie temporal"
   },
   "helpContentTerm5": {
-    "term": "catalog",
+    "term": "catalogo",
     "aliases": ["catalogue"],
-    "content": "the inventory of all datasets available to be added to the map"
+    "content": "el inventario de todos los conjuntos de datos disponibles para agregar al mapa"
   },
   "helpContentTerm6": {
-    "term": "base maps",
+    "term": "mapa base",
     "aliases": ["basemap", "base map", "basemaps"],
-    "content": "Different map options for the blank base map, such as Bing imagery, roads, dark or light maps"
+    "content": "Diferentes opciones de mapa para el mapa base en blanco, como imágenes de Bing, carreteras, mapas oscuros o claros"
   },
   "helpContentTerm7": {
-    "term": "source dataset",
-    "content": "The dataset you added to your workbench that allows for difference calculations"
+    "term": "conjunto de datos de origen",
+    "content": "El conjunto de datos que agregó a su banco de trabajo que permite los cálculos de diferencia"
   },
   "helpContentTerm8": {
-    "term": "preview style",
-    "content": "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
+    "term": "estilo de vista previa",
+    "content": "La forma en que aparece el conjunto de datos en la ventana de vista previa. Recomendamos color verdadero para buscar imágenes libres de nubes"
   }
 }

@@ -156,19 +156,6 @@
                   }
                 },
                 {
-                  "name": "Prueba 2",
-                  "description": "Dashboard humedad mensual por estación. \n\n Enlace http://localhost:8800/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
-                  "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Humedad_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-                  "defaultStyle": {
-                    "time": {
-                      "timeColumn": "timestamp_mes",
-                      "idColumns": ["est_id"]
-                    }
-
-                  }
-                },
-                {
                   "name": "Radiación Mensual",
                   "description": "Dashboard radiación horaria por estación.\n\n Enlace http://localhost:8800/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
                   "type": "csv",
