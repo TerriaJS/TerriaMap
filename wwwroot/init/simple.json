@@ -133,7 +133,7 @@
                   "name": "Temperatura Mensual",
                   "description": "Dashboard temperatura mensual por estación.\n\n Enlace  $GRAFANA_URL/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
                   "type": "csv",
-                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Temperatura_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_solar_temperatura_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -146,7 +146,7 @@
                   "name": "Humedad Relativa Mensual",
                   "description": "Dashboard humedad relatica por estación.\n\n Enlace  $GRAFANA_URL/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
                   "type": "csv",
-                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_Solar_Humedad_Relativa_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Solar-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
