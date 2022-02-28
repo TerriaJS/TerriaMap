@@ -127,6 +127,29 @@
           "members": [
             {
               "type": "group",
+              "name": "Capas",
+              "members": [
+                {
+                  "type": "wfs",
+                  "name": "Rios Dobles",
+                  "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_a&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
+                },
+                {
+                  "type": "wfs",
+                  "name": "Rios Simples",
+                  "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_l&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
+                },
+                {
+                  "type": "wms-group",
+                  "name": "Paute",
+                  "url": "http://gis.uazuay.edu.ec:8080/geoserver/crp_25k/wms",
+                  "description": "Servicio para sistematizar y organizar la información institucional de la zona 6 del Ecuador, como instrumento de planificación territorial que responda a una visión regional",
+                  "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+                }
+              ]
+            },
+            {
+              "type": "group",
               "name": "Solar",
               "members": [
                 {
@@ -692,16 +715,6 @@
               "members": [
                 {
                   "type": "wfs",
-                  "name": "Rios Dobles",
-                  "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_a&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
-                },
-                {
-                  "type": "wfs",
-                  "name": "Rios Simples",
-                  "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_l&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
-                },
-                {
-                  "type": "wfs",
                   "name": "Vías",
                   "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:via_l&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
                 },
@@ -756,6 +769,11 @@
               "url": "http://gis.uazuay.edu.ec:8080/geoserver/areas_verdes_cuenca/wms",
               "description": "Información de proyecto Áreas verdes de riberas de ríos, Áreas verdes de parques e Inventario forestal de Cuenca",
               "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
+            },
+            {
+              "type": "wms-group",
+              "name": "Areas Verdes Cuenca 2",
+              "url": "http://gis.uazuay.edu.ec/geoserver/areas_verdes_cuenca/wms\""
             },
             {
               "type": "wms-group",
