@@ -1202,147 +1202,147 @@
       "issuesLoadingTitle": "Issues loading {{name}}"
     },
     "feedback": {
-      "thanksTitle": "Thank you for your feedback!",
-      "thanksMessage": "Your feedback helps make {{appName}} better",
-      "unableToSendTitle": "Unable to send feedback",
-      "unableToSendMessage": "This is really embarrassing, but an error occurred while attempting to send your feedback.  Please email it to {{email}} instead."
+      "thanksTitle": "¡Gracias por tus comentarios!",
+      "thanksMessage": "Tus comentarios ayudan a mejorar {{appName}}",
+      "unableToSendTitle": "No se pueden enviar comentarios",
+      "unableToSendMessage": "Esto es realmente vergonzoso, pero ocurrió un error al intentar enviar sus comentarios. Por favor envíelo por correo electrónico a {{email}} en su lugar."
     },
     "socrataServer": {
       "tags": "Etiquetas",
       "attributes": "Atributos",
       "licence": "Licencia",
       "description": "Descripción",
-      "name": "Socrata Server",
-      "retrieveErrorMessage": "Couldn't retrieve packages from this Socrata server."
+      "name": "Servidor Sócrata",
+      "retrieveErrorMessage": "No se pudieron recuperar paquetes de este servidor de Socrata."
     },
     "resultPending": {
-      "name": "Result Pending"
+      "name": "Resultado pendiente"
     },
     "sensorObservationService": {
-      "procedure": "Procedure",
-      "property": "Property",
+      "procedure": "Procedimiento",
+      "property": "Propiedad",
       "sos": "SOS",
-      "alreadyLoadingTitle": "Data already loading",
-      "alreadyLoadingMessage": "Your data is still loading. You will be able to change the display once it has loaded",
-      "unknownError": "The server reported an unknown error.",
-      "exceptionMessage": "The server reported an error: \n\n {{exceptionText}}",
-      "missingBody": "The server responded with missing body.",
-      "noFeatures": "There are no features matching your query.",
-      "unknownFormat": "The server responded with an unknown feature format.",
-      "noMatchingFeatures": "The Sensor Observation Service did not return any features matching your query."
+      "alreadyLoadingTitle": "Los datos ya están cargando",
+      "alreadyLoadingMessage": "Tus datos aún se están cargando. Podrá cambiar la pantalla una vez que se haya cargado",
+      "unknownError": "El servidor reportó un error desconocido.",
+      "exceptionMessage": "El servidor reportó un error: \n\n {{exceptionText}}",
+      "missingBody": "El servidor respondió con cuerpo perdido.",
+      "noFeatures": "No hay características que coincidan con su consulta.",
+      "unknownFormat": "El servidor respondió con un formato de función desconocido.",
+      "noMatchingFeatures": "El Servicio de observación de sensores no devolvió ninguna característica que coincida con su consulta."
     },
     "openDataSoft": {
-      "viewDatasetPage": "View dataset page"
+      "viewDatasetPage": "Ver página del conjunto de datos"
     },
     "sdmxServerStratum": {
-      "sdmxStructureLoadErrorTitle": "SDMX structure request failed",
-      "loadDataErrorTitle": "Failed to load SDMX group",
-      "loadDataErrorMessage": "The server has no dataflows"
+      "sdmxStructureLoadErrorTitle": "Solicitud de estructura SDMX fallida",
+      "loadDataErrorTitle": "Error al cargar el grupo SDMX",
+      "loadDataErrorMessage": "El servidor no tiene flujos de datos."
     },
     "sdmxJsonDataflowStratum": {
-      "loadDataErrorTitle": "Could not load SDMX dataflow",
+      "loadDataErrorTitle": "No se pudo cargar el flujo de datos SDMX",
       "loadDataErrorMessage": {
-        "invalidResponse": "Invalid JSON object",
-        "noDatastructure": "No data structures could be found for dataflow {{catalogItem.dataflowId}}",
-        "noDataflow": "Dataflow {{catalogItem.dataflowId}} is invalid"
+        "invalidResponse": "Objeto JSON no válido",
+        "noDatastructure": "No se pudieron encontrar estructuras de datos para el flujo de datos {{catalogItem.dataflowId}}",
+        "noDataflow": "El flujo de datos {{catalogItem.dataflowId}} no es válido"
       },
       "defaultUnitMeasure": "Units"
     },
     "sdmxCatalogItem": {
       "viewBy": {
-        "title": "View by",
+        "title": "Vista por",
         "time": "Time-series",
-        "region": "Region"
+        "region": "Región"
       },
-      "loadDataErrorTitle": "Failed to load SDMX data for {{name}}",
-      "loadDataErrorMessage": "Invalid response from {{csvUrl}}",
-      "noResultsWithDimensions": "No results have been found. Please select different dimension values in the workbench than the following:  \n\n{{dimensions}}"
+      "loadDataErrorTitle": "Error al cargar datos SDMX para {{name}}",
+      "loadDataErrorMessage": "Respuesta no válida de {{csvUrl}}",
+      "noResultsWithDimensions": "No se han encontrado resultados. Seleccione valores de dimensión diferentes en el banco de trabajo que los siguientes:  \n\n{{dimensions}}"
     },
     "time": {
-      "invalidDate": "Invalid Date",
-      "invalidInitialTimeSource": "Invalid initialTimeSource specified in config file: {{initialTimeSource}}"
+      "invalidDate": "Fecha invalida",
+      "invalidInitialTimeSource": "Fuente de tiempo inicial no válida especificada en el archivo de configuración:{{initialTimeSource}}"
     },
     "shareData": {
-      "generateErrorTitle": "Couldn't generate short URL.",
-      "generateErrorMessage": "Something went wrong when trying to use the share data service to generate a short URL.",
-      "expandErrorTitle": "Couldn't expand URL",
-      "expandErrorMessage": "The share data service used to launch {{appName}} was not located. This may indicate an error in the link or that the service is unavailable at this time."
+      "generateErrorTitle": "No se pudo generar una URL corta.",
+      "generateErrorMessage": "Algo salió mal al intentar usar el servicio de compartir datos para generar una URL corta.",
+      "expandErrorTitle": "No se pudo expandir la URL",
+      "expandErrorMessage": "No se encontró el servicio de datos compartidos utilizado para iniciar {{appName}}. Esto puede indicar un error en el enlace o que el servicio no está disponible en este momento."
     },
     "spatialDetailing": {
-      "name": "Spatial Detailing",
-      "description": "Predicts the characteristics of fine-grained regions by learning and exploiting correlations of coarse-grained data with Census characteristics.",
-      "regionTypeToPredictName": "Region Type to Predict",
-      "regionTypeToPredictDescription": "The type of region for which to predict characteristics.",
-      "coarseDataRegionTypeName": "Coarse Data Region Type",
-      "coarseDataRegionTypeDescription": "The type of region with which the coarse-grained input characteristics are associated.",
-      "aggregationName": "Aggregation",
-      "aggregationDescription": "Specifies how coarse region values were aggregated.  True if the value is the mean of the values across the region, or False if the value is the sum of the values across the region.",
-      "aggregationTrueName": "Mean Aggregation",
-      "aggregationTrueDescription": "Coarse region values are the mean of samples in the region.  For example, average household income.",
-      "aggregationFalseName": "Sum Aggregation",
-      "aggregationFalseDescription": "Coarse region values are the sum of samples in the region.  For example, total population.",
-      "characteristicToPredictName": "Characteristic to Predict",
-      "characteristicToPredictDescription": "The characteristic to predict for each region.",
-      "spatialDetailingOf": "Spatial detailing of {{of}} at {{at}}",
-      "wrongNumberOfElements": "The list of values and the list of region codes do not contain the same number of elements"
+      "name": "Detallado espacial",
+      "description": "Predice las características de las regiones detalladas aprendiendo y explotando las correlaciones de los datos detallados con las características del censo.",
+      "regionTypeToPredictName": "Tipo de región para predecir",
+      "regionTypeToPredictDescription": "El tipo de región para la que se van a predecir las características.",
+      "coarseDataRegionTypeName": "Tipo de región de datos gruesos",
+      "coarseDataRegionTypeDescription": "El tipo de región con la que se asocian las características de entrada de grano grueso.",
+      "aggregationName": "Agregación",
+      "aggregationDescription": "Especifica cómo se agregaron los valores de región gruesa. True si el valor es la media de los valores de la región o False si el valor es la suma de los valores de la región.",
+      "aggregationTrueName": "Agregación media",
+      "aggregationTrueDescription": "Los valores de la región gruesa son la media de las muestras en la región. Por ejemplo, el ingreso familiar promedio.",
+      "aggregationFalseName": "Agregación de suma",
+      "aggregationFalseDescription": "Los valores de la región gruesa son la suma de las muestras en la región. Por ejemplo, la población total.",
+      "characteristicToPredictName": "Característica para predecir",
+      "characteristicToPredictDescription": "La característica a predecir para cada región",
+      "spatialDetailingOf": "Detalle espacial de {{of}} en {{at}}",
+      "wrongNumberOfElements": "La lista de valores y la lista de códigos de región no contienen el mismo número de elementos"
     },
     "tableData": {
-      "noData": "No data to show",
-      "unsupportedCharactersTitle": "Invalid characters in latitude and longitude columns",
-      "unsupportedCharactersMessage": "Could not interpret latitude and longitude pair {{longitude}}, {{latitude}}",
-      "bulkGeocoderInfoTitle": "Bulk Geocoder Information",
-      "bulkGeocoderInfoMessage": "The CSV contains addresses, but {{number}} can't be located on the map: ",
-      "bulkGeocoderInfo2Message": "{{nullAddresses}} addresses are missing from the CSV.",
-      "bulkGeocoderErrorTitle": "Bulk Geocoder Error",
-      "bulkGeocoderErrorMessage": "Unable to map addresses to lat-long coordinates, as an error occurred while retrieving address coordinates. Please check your internet connection or try again later.",
-      "legendZFilterLabel": "Extreme values",
-      "legendNullLabel": "(No value)",
-      "zFilterEnabled": "Extreme values hidden (click to show)",
-      "zFilterDisabled": "Extreme values detected (click to hide)"
+      "noData": "No hay datos para mostrar",
+      "unsupportedCharactersTitle": "Caracteres no válidos en las columnas de latitud y longitud",
+      "unsupportedCharactersMessage": "No se pudo interpretar el par de latitud y longitud {{longitude}}, {{latitude}}",
+      "bulkGeocoderInfoTitle": "Información masiva del geocodificador",
+      "bulkGeocoderInfoMessage": "El CSV contiene direcciones, pero {{number}} no se puede ubicar en el mapa: ",
+      "bulkGeocoderInfo2Message": "{{nullAddresses}} faltan direcciones en el CSV.",
+      "bulkGeocoderErrorTitle": "Error de geocodificador masivo",
+      "bulkGeocoderErrorMessage": "No se pueden asignar direcciones a coordenadas de latitud y longitud, ya que se produjo un error al recuperar las coordenadas de la dirección. Comprueba tu conexión a Internet o vuelve a intentarlo más tarde.",
+      "legendZFilterLabel": "Valores extremos",
+      "legendNullLabel": "(Sin valor)",
+      "zFilterEnabled": "Valores extremos ocultos (click para mostrar)",
+      "zFilterDisabled": "Valores extremos detectados (haga clic para ocultar)"
     },
     "terrainCatalog": {
-      "notSupportedErrorTitle": "Not supported in 2D",
-      "notSupportedErrorMessage": "{{name}} cannot be shown in the 2D view. Switch to 3D and try again"
+      "notSupportedErrorTitle": "No compatible en 2D",
+      "notSupportedErrorMessage": "{{name}} no se puede mostrar en la vista 2D. Cambia a 3D e inténtalo de nuevo"
     },
     "terria": {
-      "loadConfigErrorTitle": "Failed to load Terria Map config",
-      "proxyableDomainsDeprecation": "`proxyableDomainsUrl` is no longer supported in v8",
-      "initErrorTitle": "Failed to initialize services",
-      "initErrorMessage": "A problem occurred with the Terria server. This may cause some layers or the conversion service to be unavailable.",
-      "urlLoadErrorTitle": "Problem loading URL",
-      "urlLoadErrorMessage": "A problem occurred while initialising Terria with URL parameters.",
-      "loadModelErrorMessage": "An error occurred while loading model `{{model}}`.",
-      "loadingMagdaInitSourceErrorTitle": "Error loading Magda initialization source",
-      "loadingMagdaInitSourceErrorMessage": "An error occurred while loading initialization information from Magda record `{{url}}`.",
-      "loadingInitSourcesErrorTitle": "Error loading map configuration",
-      "loadingInitSourcesErrorMessage": "An error occurred while loading {{appName}} map configuration &mdash; it may not display correctly. Please try reloading the map, and if the problem persists, please report it by sending an email to {{email}}, or you can press the button below.",
-      "loadingInitSourceErrorTitle": "Error loading initialization source",
-      "loadingInitSourceErrorMessage": "Could not load initialization information from `{{fragment}}` because no initFragmentPaths are defined.",
-      "loadingInitSourceError2Message": "An error occurred while loading initialization information from:  \n*`{{loadSource}}`*.",
-      "loadingInitJsonMessage": "An error occurred while loading JSON file {{url}}.",
-      "loadingBaseMapsErrorTitle": "Error loading basemaps",
-      "loadingBaseMapErrorTitle": "Error loading basemap: `{{name}}`",
-      "loadingShareDataErrorTitle": "Error loading share data",
-      "parsingStartDataErrorMessage": "An error occurred while parsing start data JSON.",
-      "loadingWorkbenchItemErrorTitle": "Error loading item in workbench: `{{name}}`",
-      "disclaimer": "Disclaimer",
-      "buttonTitleConfirm": "I Agree"
+      "loadConfigErrorTitle": "Error al cargar la configuración del mapa de Terria",
+      "proxyableDomainsDeprecation": "`proxyableDomainsUrl` no es compatible con v8",
+      "initErrorTitle": "Error al inicializar los servicios",
+      "initErrorMessage": "Ocurrió un problema con el servidor de Terria. Esto puede provocar que algunas capas o el servicio de conversión no estén disponibles.",
+      "urlLoadErrorTitle": "Problema al cargar URL",
+      "urlLoadErrorMessage": "Ocurrió un problema al inicializar Terria con parámetros de URL.",
+      "loadModelErrorMessage": "Ocurrió un error al cargar el modelo `{{model}}`.",
+      "loadingMagdaInitSourceErrorTitle": "Error al cargar la fuente de inicialización de Magda",
+      "loadingMagdaInitSourceErrorMessage": "Ocurrió un error al cargar la información de inicialización del registro de Magda `{{url}}`.",
+      "loadingInitSourcesErrorTitle": "Error al cargar la configuración del mapa",
+      "loadingInitSourcesErrorMessage": "Se produjo un error al cargar la configuración del mapa {{appName}} &mdash; es posible que no se muestre correctamente. Intente volver a cargar el mapa y, si el problema persiste, infórmenos enviando un correo electrónico a {{email}}, o puede presionar el botón a continuación.",
+      "loadingInitSourceErrorTitle": "Error al cargar la fuente de inicialización",
+      "loadingInitSourceErrorMessage": "No se pudo cargar la información de inicialización de `{{fragment}}` porque no se definió initFragmentPaths.",
+      "loadingInitSourceError2Message": "Ocurrió un error al cargar la información de inicialización de:  \n*`{{loadSource}}`*.",
+      "loadingInitJsonMessage": "Se produjo un error al cargar el archivo JSON {{url}}.",
+      "loadingBaseMapsErrorTitle": "Error al cargar mapas base",
+      "loadingBaseMapErrorTitle": "Error al cargar el mapa base: `{{nombre}}`",
+      "loadingShareDataErrorTitle": "Error al cargar datos compartidos",
+      "parsingStartDataErrorMessage": "Se produjo un error al analizar JSON de datos de inicio.",
+      "loadingWorkbenchItemErrorTitle": "Error al cargar el elemento en el banco de trabajo: `{{nombre}}`",
+      "disclaimer": "Descargo de responsabilidad",
+      "buttonTitleConfirm": "Estoy de acuerdo"
     },
     "terriaJSONcatalog": {
-      "name": "Terria JSON Catalog Function",
-      "misconfiguredErrorTitle": "Misconfigured init file",
-      "misconfiguredErrorMessage": "Service not configured for TerriaJsonCatalogFunction HTTP 202.",
-      "misconfiguredError2Message": "HTTP 202 configuration {{url}} not present in response {{xhr}}",
-      "serviceResponseErrorTitle": "Service response not JSON string",
-      "serviceResponseErrorMessage": "TerriaJsonCatalogFunction was supposed to receive a JSON string, received {{xhr}}",
-      "requestFailedTitle": "Request Failed",
-      "requestFailedMessage": "Request failed with status code {{status}}.",
-      "asyncResultDescription": "This is the result of invoking the {{name}} process or service at {{timestamp}} with the input parameters below.",
-      "loadingInitSourceErrorTitle": "Error loading initialization source",
-      "loadingInitSourceErrorMessage": "Error loading initialization source {{fragment}} because no initFragmentPaths are defined.",
-      "loadingInitSourceError2Message": "An error occurred while loading initialization information from:  \n*`{{loadSource}}`*.",
-      "disclaimer": "Disclaimer",
-      "buttonTitleConfirm": "I Agree"
+      "name": "Función de catálogo JSON de Terria",
+      "misconfiguredErrorTitle": "Archivo de inicio mal configurado",
+      "misconfiguredErrorMessage": "Servicio no configurado para TerriaJsonCatalogFunction HTTP 202.",
+      "misconfiguredError2Message": "La configuración HTTP 202 {{url}} no está presente en la respuesta {{xhr}}",
+      "serviceResponseErrorTitle": "Respuesta de servicio no cadena JSON",
+      "serviceResponseErrorMessage": "Se suponía que TerriaJsonCatalogFunction recibiría una cadena JSON, recibió {{xhr}}",
+      "requestFailedTitle": "Solicitud fallida",
+      "requestFailedMessage": "La solicitud falló con el código de estado {{status}}.",
+      "asyncResultDescription": "Este es el resultado de invocar el proceso o servicio {{name}} a las {{timestamp}} con los parámetros de entrada a continuación.",
+      "loadingInitSourceErrorTitle": "Error al cargar la fuente de inicialización",
+      "loadingInitSourceErrorMessage": "Error al cargar la fuente de inicialización {{fragment}} porque no se definieron initFragmentPaths.",
+      "loadingInitSourceError2Message": "Ocurrió un error al cargar la información de inicialización desde:  \n*`{{loadSource}}`*.",
+      "disclaimer": "Descargo de responsabilidad",
+      "buttonTitleConfirm": "Estoy de acuerdo"
     },
     "thredds": {
       "nameGroup": "THREDDS Catalog Group"
@@ -1351,7 +1351,7 @@
       "name": "THREDDS Item Reference"
     },
     "urlTemplateMapServer": {
-      "name": "URL Template Map Server"
+      "name": "Servidor de mapa de plantilla de URL"
     },
     "userDrawing": {
       "devError": "Terria requiere una instancia.",
@@ -1368,31 +1368,31 @@
       "userPolygon": "Polígono de usuario"
     },
     "webFeatureServiceCatalogGroup": {
-      "wfsServer": "Web Feature Service (WFS) Server",
-      "invalidWFSServerTitle": "Invalid WFS server",
-      "invalidWFSServerMessage": "An error occurred while invoking GetCapabilities on the WFS server.  The server's response does not appear to be a valid GetCapabilities document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking GetCapabilities on the WFS server.",
-      "abstract": "Web Feature Service Description",
-      "accessConstraints": "Web Feature Service Access Constraints",
-      "fees": "Web Feature Service Fees"
+      "wfsServer": "Servidor de servicio de funciones web (WFS)",
+      "invalidWFSServerTitle": "Servidor WFS no válido",
+      "invalidWFSServerMessage": "Ocurrió un error al invocar GetCapabilities en el servidor WFS. La respuesta del servidor no parece ser un documento GetCapabilities válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Ocurrió un error al invocar GetCapabilities en el servidor WFS.",
+      "abstract": "Descripción del servicio de funciones web",
+      "accessConstraints": "Restricciones de acceso al servicio de funciones web",
+      "fees": "Tarifas del servicio de funciones web"
     },
     "webFeatureServiceCatalogItem": {
-      "wfs": "Web Feature Service (WFS)",
-      "dataDescription": "Data Description",
-      "abstract": "Web Feature Service Description",
-      "serviceDescription": "Service Description",
-      "metadataUrls": "Metadata Links",
-      "accessConstraints": "Access Constraints",
-      "serviceContact": "Service Contact",
+      "wfs": "Servicio de funciones web (WFS)",
+      "dataDescription": "Descripción de datos",
+      "abstract": "Descripción del servicio de funciones web",
+      "serviceDescription": "Descripción del servicio",
+      "metadataUrls": "Enlaces de metadatos",
+      "accessConstraints": "Restricciones de acceso",
+      "serviceContact": "Contacto de servicio",
       "getCapabilitiesUrl": "GetCapabilities URL",
-      "noLayerFoundTitle": "No layer found",
-      "noLayerFoundMessage": "The WFS dataset '{{name}}' has no layers matching '{{typeNames}}'. {{suggested}} {{line}}{{line}}Either the catalog file has been set up incorrectly, or the WFS server has changed.",
-      "missingDataTitle": "Missing data",
-      "missingDataMessage": "The WFS dataset '{{name}}' did not return any data.{{line}}{{line}}Either the catalog file has been set up incorrectly, or the server address has changed.",
-      "missingUrlTitle": "Unable to load GetCapabilities",
-      "missingUrlMessage": "Could not load the Web Feature Service (WFS) GetCapabilities document because the catalog item does not have a `url`.",
-      "reachedMaxFeatureLimit": "Warning: This layer has reached the WFS feature limit ({{maxFeatures}})"
+      "noLayerFoundTitle": "No se encontró ninguna capa",
+      "noLayerFoundMessage": "El conjunto de datos WFS '{{name}}' no tiene capas que coincidan con '{{typeNames}}'. {{suggested}} {{line}}{{line}}O el archivo de catálogo se ha configurado incorrectamente o el servidor WFS ha cambiado.",
+      "missingDataTitle": "Datos perdidos",
+      "missingDataMessage": "El conjunto de datos WFS '{{name}}' no devolvió ningún dato.{{line}}{{line}}El archivo de catálogo se configuró incorrectamente o la dirección del servidor cambió.",
+      "missingUrlTitle": "No se puede cargar GetCapabilities",
+      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del Web Feature Service (WFS) porque el elemento del catálogo no tiene una `url`.",
+      "reachedMaxFeatureLimit": "Advertencia: esta capa ha alcanzado el límite de características de WFS ({{maxFeatures}})"
     },
     "webMapServiceCatalogGroup": {
       "wmsServer": "Servidor de Servicio de Mapas Web (WMS) ",
@@ -1407,22 +1407,22 @@
       "fees": "Tarifas del servicio de mapas web"
     },
     "webMapServiceCatalogItem": {
-      "wms": "Web Map Service (WMS)",
-      "dataDescription": "Data Description",
-      "serviceDescription": "Service Description",
-      "metadataUrls": "Metadata Links",
-      "accessConstraints": "Access Constraints",
-      "serviceContact": "Service Contact",
+      "wms": "Servicio de mapas web (WMS)",
+      "dataDescription": "Descripción de datos",
+      "serviceDescription": "Descripción del servicio",
+      "metadataUrls": "Enlaces de metadatos",
+      "accessConstraints": "Restricciones de acceso",
+      "serviceContact": "Contacto de servicio",
       "getCapabilitiesUrl": "GetCapabilities URL",
-      "defaultStyleLabel": "Default style",
-      "noLayerFoundTitle": "No layer found",
-      "noLayerFoundMessage": "The WMS dataset '{{name}}' has no layers matching '{{layers}}'. {{suggested}} {{line}}{{line}}Either the catalog file has been set up incorrectly, or the WMS server has changed.",
-      "badlyFormatedTitle": "Badly formatted periodicity",
-      "badlyFormatedMessage": "The '{{name}}' dataset has a badly formed periodicity, '{{isoSegments}}'. Click the dataset's Info button for more information about the dataset and the data custodian.",
-      "missingDataTitle": "Missing data",
-      "missingDataMessage": "The WMS dataset '{{name}}' did not return any data.{{line}}{{line}}Either the catalog file has been set up incorrectly, or the server address has changed.",
-      "missingUrlTitle": "Unable to load GetCapabilities",
-      "missingUrlMessage": "Could not load the Web Map Service (WMS) GetCapabilities document because the catalog item does not have a `url`."
+      "defaultStyleLabel": "Estilo por defecto",
+      "noLayerFoundTitle": "No se encontró ninguna capa",
+      "noLayerFoundMessage": "El conjunto de datos WMS '{{name}}' no tiene capas coincidentes'{{layers}}'. {{suggested}} {{line}}{{line}}El archivo de catálogo se ha configurado incorrectamente o el servidor WMS ha cambiado.",
+      "badlyFormatedTitle": "Periodicidad mal formateada",
+      "badlyFormatedMessage": "El conjunto de datos '{{name}}' tiene una periodicidad mal formada, '{{isoSegments}}'. Haga clic en el botón Información del conjunto de datos para obtener más información sobre el conjunto de datos y el custodio de datos.",
+      "missingDataTitle": "Datos perdidos",
+      "missingDataMessage": "El conjunto de datos WMS '{{name}}' no devolvió ningún dato.{{line}}{{line}}El archivo de catálogo se configuró incorrectamente o la dirección del servidor cambió.",
+      "missingUrlTitle": "No se puede cargar GetCapabilities",
+      "missingUrlMessage": "No se pudo cargar el documento GetCapabilities del servicio de mapas web (WMS) porque el elemento del catálogo no tiene una `url`."
     },
     "webMapTileServiceCatalogGroup": {
       "wmtsServer": "Servidor de servicio de mosaicos de mapas web (WMTS)",
@@ -1495,89 +1495,89 @@
       "groupNotAvailableMessage": "Se produjo un error al invocar GetFeature en el servidor WFS."
     },
     "shadow": {
-      "name": "Shadows",
+      "name": "Oscuridad",
       "options": {
-        "none": "None",
-        "cast": "Cast Only",
-        "receive": "Receive Only",
-        "both": "Cast and Receive"
+        "none": "Ninguno",
+        "cast": "Solo reparto",
+        "receive": "Recibir solo",
+        "both": "Emitir y recibir"
       }
     },
     "commonModelErrors": {
-      "3dTypeIn2dMode": "**Note:** This dataset can not be displayed in the 2D viewer. Switch to one of the 3D map modes."
+      "3dTypeIn2dMode": "**Nota:** Este conjunto de datos no se puede mostrar en el visor 2D. Cambie a uno de los modos de mapa 3D."
     },
     "scaleDatasetNotVisible": {
-      "scaleZoomIn": "Dataset is not available at this scale, zoom in to see it",
-      "scaleZoomOut": "Dataset is not available at this scale, zoom out to see it"
+      "scaleZoomIn": "El conjunto de datos no está disponible a esta escala, haga zoom para verlo",
+      "scaleZoomOut": "El conjunto de datos no está disponible a esta escala, aléjese para verlo"
     }
   },
   "deltaTool": {
-    "titlePrefix": "Change Detection",
-    "description": "This tool visualizes the difference between imagery captured at two discrete points in time.",
-    "pickLocation": "To view available imagery, please select your location of interest on the map opposite.",
-    "cancelBtn": "Cancel",
-    "generateDeltaBtn": "Generate Difference Map",
-    "selectedLocation": "Selected Location",
-    "primaryImage": "Primary Image",
-    "secondaryImage": "Secondary Image",
+    "titlePrefix": "Detección de cambios",
+    "description": "Esta herramienta visualiza la diferencia entre las imágenes capturadas en dos puntos discretos en el tiempo.",
+    "pickLocation": "Para ver las imágenes disponibles, seleccione su ubicación de interés en el mapa de enfrente.",
+    "cancelBtn": "Cancelar",
+    "generateDeltaBtn": "Generar mapa de diferencias",
+    "selectedLocation": "Ubicación seleccionada",
+    "primaryImage": "Imagen principal",
+    "secondaryImage": "Imagen secundaria",
     "pickerMessage": {
-      "pickFirst": "Select a point by clicking on the map",
-      "pickAnother": "Click another point to change the selection",
-      "pickError": "Error when trying to resolve imagery at location! Please select a point again by clicking on the map."
+      "pickFirst": "Seleccione un punto haciendo clic en el mapa",
+      "pickAnother": "Haga clic en otro punto para cambiar la selección",
+      "pickError": "¡Error al intentar resolver las imágenes en la ubicación! Seleccione un punto nuevamente haciendo clic en el mapa."
     },
     "catalogItem": {
-      "description": "This layer visualizes the difference between imagery captured at two discrete points in time"
+      "description": "Esta capa visualiza la diferencia entre las imágenes capturadas en dos puntos discretos en el tiempo"
     },
     "loadingError": {
-      "title": "Error loading Delta Tool",
-      "message": "An error occurred while trying to load the delta tool from the server. Please try again."
+      "title": "Error al cargar la herramienta Delta",
+      "message": "Ocurrió un error al intentar cargar la herramienta delta desde el servidor. Inténtalo de nuevo."
     }
   },
   "term": {
-    "missingContent": "missing content"
+    "missingContent": "falta contenido"
   },
   "mapNavigation": {
-    "additionalTools": "Additional tools",
-    "additionalToolsTitle": "Open additional tools"
+    "additionalTools": "Herramientas adicionales",
+    "additionalToolsTitle": "Abrir herramientas adicionales"
   },
   "itemSearchTool": {
-    "toolLoadError": "Error loading search tool.",
-    "title": "Search {{itemName}}",
-    "loading": "Loading search parameters",
-    "loadError": "Error loading search parameters. Check console for detailed errors.",
-    "noParameters": "No searchable parameters found",
-    "searching": "Searching",
-    "searchError": "Search failed. Check console for detailed errors.",
+    "toolLoadError": "Error al cargar la herramienta de búsqueda.",
+    "title": "Búsqueda {{itemName}}",
+    "loading": "Cargando parámetros de búsqueda",
+    "loadError": "Error al cargar los parámetros de búsqueda. Verifique la consola para errores detallados.",
+    "noParameters": "No se encontraron parámetros de búsqueda",
+    "searching": "Buscando",
+    "searchError": "Búsqueda fallida. Verifique la consola para errores detallados.",
     "numericParameter": {
-      "minimum": "Minimum",
-      "maximum": "Maximum"
+      "minimum": "Mínimo",
+      "maximum": "Máximo"
     },
-    "searchBtnText": "Search",
-    "resetBtnText": "Clear input",
-    "backBtnText": "Search again",
-    "resultsCount": "{{count}} match found",
-    "resultsCount_plural": "{{count}} matches found",
+    "searchBtnText": "Búsqueda",
+    "resetBtnText": "Borrar entrada",
+    "backBtnText": "Busca de nuevo",
+    "resultsCount": "{{count}} coincidencia encontrada",
+    "resultsCount_plural": "{{count}} coincidencias encontradas",
     "actions": {
-      "highlightAll": "Highlight all",
-      "showMatchingOnly": "Show matching only"
+      "highlightAll": "Resaltar todo",
+      "showMatchingOnly": "Mostrar solo coincidencias"
     }
   },
   "indexedItemSearchProvider": {
-    "missingOptionIndexRootUrl": "Option `indexRootUrl` is missing in the item's search configuration.",
-    "errorParsingIndexRoot": "Error parsing indexRoot file: {{indexRootUrl}}."
+    "missingOptionIndexRootUrl": "Opción `indexRootUrl` falta en la configuración de búsqueda del artículo.",
+    "errorParsingIndexRoot": "Error al analizar el archivo raíz del índice: {{indexRootUrl}}."
   },
   "pedestrianMode": {
-    "toolButtonTitle": "Pedestrian Mode",
-    "dropPedestrianTooltipMessage": "<b>Left click</b> to select drop location<br /><b>Right click / Esc</b> to cancel",
+    "toolButtonTitle": "Modo Peatón",
+    "dropPedestrianTooltipMessage": "<b>Click izquierdo</b> para seleccionar la ubicación de entrega<br /><b>Botón derecho del ratón / Esc</b> para cancelar",
     "controls": {
       "title": "Controls"
     }
   },
   "notification": {
-    "title": "Message"
+    "title": "Mensaje"
   },
   "toast": {
-    "mapIsZooming": "Loading ideal zoom..."
+    "mapIsZooming": "Cargando zoom ideal..."
   },
   "gettingstarted": {
     "title": "Cómo empezar con el mapa",
