@@ -8,3 +8,8 @@
 !lib/**/*.ts
 !lib/**/*.tsx
 !lib/**/*.scss
+
+!install-husky.js
+!wwwroot/
+!wwwroot/init/
+!wwwroot/init/*.json
