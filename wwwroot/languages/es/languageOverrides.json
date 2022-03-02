@@ -752,63 +752,63 @@
     "cesium": {
       "devError": "cesium is required.",
       "failedToObtain": "Failed to obtain image tile X: {{x}} Y: {{y}} Level: {{level}}.",
-      "notWebMercatorTilingScheme": "This dataset cannot be displayed on the 2D map because it does not support the Web Mercator (EPSG:3857) projection.",
-      "unusalTilingScheme": "This dataset cannot be displayed on the 2D map because it uses an unusual tiling scheme that is not supported."
+      "notWebMercatorTilingScheme": "Este conjunto de datos no se puede mostrar en el mapa 2D porque no es compatible con la proyección Web Mercator (EPSG:3857).",
+      "unusalTilingScheme": "Este conjunto de datos no se puede mostrar en el mapa 2D porque utiliza un esquema de ordenamiento en teselas inusual que no es compatible."
     },
     "computeRingWindingOrder": {
-      "devError": "Expected points of type {x:number, y:number}"
+      "devError": "Puntos esperados de tipo{x:number, y:number}"
     },
     "displayVariablesConcept": {
-      "defaultName": "Display Variable"
+      "defaultName": "Visualización de variables"
     },
     "drawExtentHelper": {
-      "drawExtent": "Draw Extent",
-      "extent": "Extent"
+      "drawExtent": "Dibujar extensión",
+      "extent": "Extensión"
     },
     "gmlToGeoJson": {
-      "missingPos": "GML point element is missing a pos element.",
-      "missingExteriorRing": "GML polygon is missing its exterior ring.",
-      "missingPosList": "GML polygon's exterior ring is missing a posList.",
-      "containsUnsupportedFeatureType": "GML contains unsupported feature type: {{type}}"
+      "missingPos": "Al elemento de punto GML le falta un elemento pos.",
+      "missingExteriorRing": "Al polígono GML le falta su anillo exterior.",
+      "missingPosList": "Al anillo exterior del polígono GML le falta una posList.",
+      "containsUnsupportedFeatureType": "GML contiene un tipo de característica no compatible: {{type}}"
     },
     "geoRssToGeoJson": {
-      "containsUnsupportedFeatureType": "GeoRSS contains unsupported feature type: {{type}}"
+      "containsUnsupportedFeatureType": "GeoRSS contiene un tipo de función no compatible: {{type}}"
     },
     "w3cToGeoJson": {
-      "containsUnsupportedFeatureType": "GeoRSS with W3C geometry contains unsupported feature type: {{type}}"
+      "containsUnsupportedFeatureType": "GeoRSS con geometría W3C contiene un tipo de entidad no compatible: {{type}}"
     },
     "gnafAddressGeocoder": {
-      "noAddresses": "This tableStructure has no addresses!",
-      "noAddresses2": "Even though the tableStructure reports it has an address column, it has no addresses",
+      "noAddresses": "Esta estructura de tabla no tiene direcciones!",
+      "noAddresses2": "Aunque la estructura de la tabla informa que tiene una columna de dirección, no tiene direcciones",
       "suburb": "Suburb",
-      "state": "State",
-      "postcode": "Postcode",
-      "matchedAddresses": "Matched Address",
+      "state": "Estado",
+      "postcode": "Código postal",
+      "matchedAddresses": "Dirección coincidente",
       "lon": "Lon",
       "lat": "Lat",
       "score": "Score",
       "poBox": "po box",
-      "postOfficeBox": "post office box"
+      "postOfficeBox": "apartado de correos"
     },
     "imageryProviderHooks": {
-      "devError": "No context for image recoloring."
+      "devError": "Sin contexto para cambiar el color de la imagen."
     },
     "mapboxVectorTileImageryProvider": {
-      "requireLayerName": "MapboxVectorTileImageryProvider requires a layer name passed as options.layerName",
-      "requireStyles": "MapboxVectorTileImageryProvider requires a styling function passed as options.styleFunc",
-      "moreThanFourTiles": "The imagery provider's rectangle and minimumLevel indicate that there are {{tileCount}} tiles at the minimum level. Imagery providers with more than four tiles at the minimum level are not supported.",
-      "maxLevelError": "Maximum level too high for data set"
+      "requireLayerName": "MapboxVectorTileImageryProvider requiere una función de estilo pasada como options.layerName",
+      "requireStyles": "MapboxVectorTileImageryProvider requiere una función de estilo pasada como options.styleFunc",
+      "moreThanFourTiles": "El rectángulo y el nivel mínimo del proveedor de imágenes indican que hay {{tileCount}} mosaicos en el nivel mínimo. No se admiten proveedores de imágenes con más de cuatro teselas en el nivel mínimo.",
+      "maxLevelError": "Nivel máximo demasiado alto para el conjunto de datos"
     },
     "regionProvider": {
-      "csvRegionMappingTitle": "CSV region mapping",
-      "csvRegionMappingMessageZeroFound": "Zero region names found for region type {{regionType}}",
-      "csvRegionMappingMessageZeroBoundariesFound": "Zero region boundaries found for region {{regionName}}",
-      "csvRegionMappingMessageLoadError": "Couldn't load region boundaries for region {{regionName}} {{exception}}"
+      "csvRegionMappingTitle": "Mapeo de regiones CSV",
+      "csvRegionMappingMessageZeroFound": "No se encontraron nombres de región para el tipo de región {{regionType}}",
+      "csvRegionMappingMessageZeroBoundariesFound": "Límites de región cero encontrados para la región {{regionName}}",
+      "csvRegionMappingMessageLoadError": "No se pudieron cargar los límites de la región para la región {{regionName}} {{exception}}"
     },
     "extraCreditLinks": {
-      "dataAttribution": "Data attribution",
-      "disclaimer": "Disclaimer",
-      "basemap": "Basemap"
+      "dataAttribution": "Atribución de datos",
+      "disclaimer": "Descargo de responsabilidad",
+      "basemap": "Mapa base"
     }
   },
   "models": {
@@ -816,36 +816,36 @@
       "firefox": "Mozilla Firefox",
       "chrome": "Google Chrome",
       "internetExplorer": "Internet Explorer 11",
-      "addingDataErrorTitle": "Data could not be added",
-      "addingDataErrorMessage": "The specified data could not be added because it is invalid or does not have the expected format.",
-      "fileApiNotSupportedTitle": "File API not supported",
-      "fileApiNotSupportedMessage": "Sorry, your web browser does not support the File API, which {{appName}} requires in order to add data from a file on your system.  Please upgrade your web browser.  For the best experience, we recommend the latest version of {{chrome}}, {{firefox}} or {{edge}}.",
+      "addingDataErrorTitle": "No se pudieron agregar datos",
+      "addingDataErrorMessage": "No se pudieron agregar los datos especificados porque no son válidos o no tienen el formato esperado.",
+      "fileApiNotSupportedTitle": "API de archivo no compatible",
+      "fileApiNotSupportedMessage": "Lo sentimos, su navegador web no es compatible con el arcihvo API, que {{appName}} requiere para agregar datos de un archivo en su sistema. Por favor, actualiza tu navegador web. Para obtener la mejor experiencia, recomendamos la última versión de {{chrome}}, {{firefox}} o {{edge}}.",
       "edge": "Microsoft Edge"
     },
     "arcGisService": {
-      "name": "ArcGIS Service Group",
-      "invalidServerTitle": "Invalid ArcGIS Server",
-      "invalidServerMessage": "An error occurred while invoking the ArcGIS REST service.  The server's response does not appear to be a valid ArcGIS REST document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking the ArcGIS REST service."
+      "name": "Grupo de servicios de ArcGIS",
+      "invalidServerTitle": "Servidor ArcGIS no válido",
+      "invalidServerMessage": "Ocurrió un error al invocar el servicio REST de ArcGIS. La respuesta del servidor no parece ser un documento ArcGIS REST válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Ocurrió un error al invocar el servicio ArcGIS REST."
     },
     "arcGisFeatureServer": {
       "name": "ArcGIS Feature Server",
       "nameGroup": "ArcGIS Feature Server Group",
-      "invalidServiceTitle": "Invalid ArcGIS Feature Service",
-      "invalidServiceMessage": "An error occurred while invoking the ArcGIS Feature Service.  The server's response does not appear to be a valid Feature Service document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking the ArcGIS Feature Service."
+      "invalidServiceTitle": "Invalido ArcGIS Feature Service",
+      "invalidServiceMessage": "Se produjo un error al invocar el Servicio de entidades de ArcGIS. La respuesta del servidor no parece ser un documento válido de Feature Service.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar el Servicio de entidades de ArcGIS."
     },
     "arcGisFeatureServerCatalogGroup": {
       "name": "ArcGIS Feature Server Group",
-      "dataDescription": "Data Description",
-      "serviceDescription": "Service Description",
-      "copyrightText": "Copyright Text",
-      "invalidServiceTitle": "Invalid ArcGIS Feature Service",
-      "invalidServiceMessage": "An error occurred while invoking the ArcGIS Feature Service.  The server's response does not appear to be a valid Feature Service document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking the ArcGIS Feature Service."
+      "dataDescription": "Descripción de datos",
+      "serviceDescription": "Descripción del servicio",
+      "copyrightText": "Texto de derechos de autor",
+      "invalidServiceTitle": "Invalido ArcGIS Feature Service",
+      "invalidServiceMessage": "Se produjo un error al invocar el Servicio de entidades de ArcGIS. La respuesta del servidor no parece ser un documento válido de Feature Service.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar el servicio de entidades de ArcGIS."
     },
     "arcGisFeatureServerCatalogItem": {
       "name": "Esri ArcGIS FeatureServer",
@@ -859,47 +859,47 @@
       "reachedMaxFeatureLimit": "Warning: This layer has reached the FeatureService feature limit."
     },
     "arcGisMapServerCatalogGroup": {
-      "name": "ArcGIS Map Server Group",
-      "dataDescription": "Data Description",
-      "serviceDescription": "Service Description",
-      "copyrightText": "Copyright Text",
-      "invalidServiceTitle": "Invalid ArcGIS Map Service",
-      "invalidServiceMessage": "An error occurred while invoking the ArcGIS Map Service.  The server's response does not appear to be a valid Map Service document.",
-      "groupNotAvailableTitle": "Group is not available",
-      "groupNotAvailableMessage": "An error occurred while invoking the ArcGIS Map Service."
+      "name": "Grupo de servidores de mapas de ArcGIS",
+      "dataDescription": "Descripción de datos",
+      "serviceDescription": "Descripción del servicio",
+      "copyrightText": "Texto de derechos de autor",
+      "invalidServiceTitle": "Servicio de mapas de ArcGIS no válido",
+      "invalidServiceMessage": "Se produjo un error al invocar ArcGIS Map Service. La respuesta del servidor no parece ser un documento de Map Service válido.",
+      "groupNotAvailableTitle": "El grupo no está disponible",
+      "groupNotAvailableMessage": "Se produjo un error al invocar ArcGIS Map Service."
     },
     "arcGisMapServerCatalogItem": {
       "name": "Esri ArcGIS MapServer",
-      "dataDescription": "Data Description",
-      "serviceDescription": "Service Description",
-      "copyrightText": "Copyright Text",
-      "invalidUrlTitle": "Unable to load MapServer",
-      "invalidUrlMessage": "Could not load the ArcGis MapServer endpoint because the catalog item does not have a `url`.",
-      "noLayersFoundTitle": "Could not load ArcGIS MapServer.",
-      "noLayersFoundMessage": "The Esri ArcGIS MapServer '{{name}}' has no layers to show."
+      "dataDescription": "Descripción de datos",
+      "serviceDescription": "Descripción del servicio",
+      "copyrightText": "Texto de derechos de autor",
+      "invalidUrlTitle": "No se puede cargar MapServer",
+      "invalidUrlMessage": "No se pudo cargar el punto final de ArcGis MapServer porque el elemento del catálogo no tiene una `url`.",
+      "noLayersFoundTitle": "No se pudo cargar ArcGIS MapServer.",
+      "noLayersFoundMessage": "El Esri ArcGIS MapServer '{{name}}'no tiene capas para mostrar"
     },
     "bing": {
       "name": "Bing Maps"
     },
     "wcs": {
-      "asyncResultDescription": "This is the result of exporting data from {{name}} service at {{timestamp}} with the input parameters below.",
-      "asyncPendingDescription": "WCS loading:<br/>{{name}} service at {{timestamp}}.",
-      "exportFailedTitle": "Data export failed",
-      "exportFailedMessage": "The Web Coverage Service failed",
-      "exportFailedMessageII": "The Web Coverage Service failed: {{error}}"
+      "asyncResultDescription": "Este es el resultado de exportar datos del {{name}} servicio en {{timestamp}} con los parámetros de entrada a continuación.",
+      "asyncPendingDescription": "Carga de WCS:<br/>{{name}} servicio en  {{timestamp}}.",
+      "exportFailedTitle": "Exportación de datos fallida",
+      "exportFailedMessage": "El servicio de cobertura web falló",
+      "exportFailedMessageII": "El servicio de cobertura web falló: {{error}}"
     },
     "cartoMap": {
       "name": "Carto Map",
       "noUrlTitle": "No URL",
-      "noUrlMessage": "Unable to find a usable URL for the Carto Map layer."
+      "noUrlMessage": "No se puede encontrar una URL utilizable para la capa Carto Map."
     },
     "cesiumTerrain": {
       "name": "Cesium Terrain",
-      "name3D": "Cesium 3D Tiles",
-      "notSupportedErrorTitle": "Not supported in 2D",
-      "notSupportedErrorMessage": "\"{{name}}\" cannot be show in the 2D view. Switch to 3D and try again.",
-      "errorRenderingTitle": "Error rendering in 3D",
-      "errorRenderingMessage": "An error occurred while rendering in 3D.  This probably indicates a bug in {{appName}} or an incompatibility with your system or web browser.  We'll now switch you to 2D so that you can continue your work."
+      "name3D": "Cesium 3D Mosaicos",
+      "notSupportedErrorTitle": "No compatible en 2D",
+      "notSupportedErrorMessage": "\"{{name}}\" no se puede mostrar en la vista 2D. Cambie a 3D y vuelva a intentarlo.",
+      "errorRenderingTitle": "Error al renderizar en 3D",
+      "errorRenderingMessage": "Ocurrió un error al renderizar en 3D. Esto probablemente indica un error en {{appName}} o una incompatibilidad con su sistema o navegador web. Ahora lo cambiaremos a 2D para que pueda continuar con su trabajo."
     },
     "ckan": {
       "update_freq": "Frecuencia de actualización",
@@ -908,130 +908,130 @@
       "contact_point": "Contacto",
       "author": "Autor",
       "licence": "Licencia",
-      "nameServer": "CKAN Server",
-      "errorLoadingTitle": "Error loading CKAN catalogue",
-      "errorLoadingMessage": "The definition for this CKAN catalogue does not have a valid filter query.",
-      "corsErrorMessage": "Couldn't retrieve packages from this CKAN server.",
-      "name": "CKAN Resource",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "datasetDescription": "Dataset Description",
-      "dataDescription": "Data Description",
-      "resourceDescription": "Resource Description",
-      "datasetCustodian": "Dataset Custodian",
-      "idsNotSpecifiedTitle": "resourceId or datasetId must be specified",
-      "idsNotSpecifiedMessage": "CkanCatalogItem requires that either resourceId or datasetId be specified.",
-      "errorRetrievingUrlTitle": "Error retrieving CKAN URL",
-      "errorRetrievingUrlMessage": "Could not retrieve URL as JSON: {{url}}.",
-      "invalidCkanTitle": "Invalid CKAN resource JSON",
-      "invalidCkanMessage": "The resource returned from the CKAN server does not appear to have a package_id.",
-      "notCompatibleTitle": "No compatible resources found",
-      "notCompatibleMessageI": "The CKAN dataset does not have a resource with the ID {{resourceId}} or it does not have a supported format.",
-      "notCompatibleMessageII": "The CKAN dataset does not have any resources with a supported format."
+      "nameServer": "Servidor CKAN",
+      "errorLoadingTitle": "Error al cargar el catálogo de CKAN",
+      "errorLoadingMessage": "La definición de este catálogo CKAN no tiene una consulta de filtro válida",
+      "corsErrorMessage": "No se pudieron recuperar paquetes de este servidor CKAN.",
+      "name": "Recurso CKAN",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "datasetDescription": "Descripción del conjunto de datos",
+      "dataDescription": "Descripción del conjunto de datos",
+      "resourceDescription": "Descripción del recurso",
+      "datasetCustodian": "Custodio del conjunto de datos",
+      "idsNotSpecifiedTitle": "Se debe especificar resourceId o datasetId",
+      "idsNotSpecifiedMessage": "CkanCatalogItem requiere que se especifique resourceId o datasetId.",
+      "errorRetrievingUrlTitle": "Error al recuperar la URL de CKAN",
+      "errorRetrievingUrlMessage": "No se pudo recuperar la URL como JSON: {{url}}.",
+      "invalidCkanTitle": "JSON de recurso de CKAN no válido",
+      "invalidCkanMessage": "El recurso devuelto por el servidor CKAN no parece tener un ID de paquete.",
+      "notCompatibleTitle": "No se encontraron recursos compatibles",
+      "notCompatibleMessageI": "El conjunto de datos CKAN no tiene un recurso con la ID {{resourceId}} o no tiene un formato compatible.",
+      "notCompatibleMessageII": "El conjunto de datos de CKAN no tiene ningún recurso con un formato compatible."
     },
     "arcgisPortal": {
       "nameGroup": "ArcGIS Portal Group",
-      "errorLoadingTitle": "Error loading ArcGIS Portal catalogue",
-      "errorLoadingMessage": "The definition for this ArcGIS Portal catalogue does not have a valid filter query.",
-      "corsErrorMessage": "Couldn't retrieve packages from this ArcGIS Portal server. ",
-      "name": "ArcGIS Portal Item",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "datasetDescription": "Dataset Description",
-      "licence": "Licence",
-      "openInPortal": "Open in ArcGIS Portal",
-      "idsNotSpecifiedTitle": "resourceId or datasetId must be specified",
-      "idsNotSpecifiedMessage": "ArcGIS Portal Item requires an itemId to be specified.",
-      "errorRetrievingUrlTitle": "Error retrieving ArcGIS Portal URL",
-      "errorRetrievingUrlMessage": "Could not retrieve URL as JSON: {{url}}."
+      "errorLoadingTitle": "Error al cargar el catálogo de ArcGIS Portal",
+      "errorLoadingMessage": "La definición de este catálogo de ArcGIS Portal no tiene una consulta de filtro válida.",
+      "corsErrorMessage": "No se pudieron recuperar paquetes de este servidor de ArcGIS Portal. ",
+      "name": "Elemento del portal de ArcGIS",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "datasetDescription": "Descripción del conjunto de datos",
+      "licence": "Licencia",
+      "openInPortal": "Abrir en ArcGIS Portal",
+      "idsNotSpecifiedTitle": "Se debe especificar resourceId o datasetId",
+      "idsNotSpecifiedMessage": "ArcGIS Portal Item requiere que se especifique un itemId.",
+      "errorRetrievingUrlTitle": "Error al recuperar la URL del portal de ArcGIS",
+      "errorRetrievingUrlMessage": "No se pudo recuperar la URL como JSON: {{url}}."
     },
     "catalog": {
       "cancel": "Cancelar",
       "upload": "Subir",
       "unsupportedFileTypeTitle": "Tipo de archivo no soportado",
       "group": "Grupo",
-      "name": "Unnamed Item",
-      "idForMatchingErrorTitle": "Missing property",
-      "idForMatchingErrorMessage": "Model objects must have an `id`, `localId`, or `name` property.",
-      "catalogMemberMustHaveName": "A newly created catalog member must have a name.",
-      "catalogMemberMustHaveType": "A catalog member must have a type.",
-      "userAddedDataGroup": "The group for data that was added by the user via the Add Data panel.",
-      "chartDataGroup": "A group for chart data.",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "stubCreationFailure": "Could not stub out catalog item {{item}}",
-      "unsupportedTypeTitle": "Unknown type",
-      "unsupportedTypeMessage": "Could not create unknown model type {{type}}.",
-      "unsupportedFileTypeMessage": "This file format is not supported by {{appName}}. Supported file formats include: <ul><li>.geojson</li><li>.kml, .kmz</li><li>.csv (in {{link}})</li></ul>",
-      "unsupportedFileTypeMessageII": "This file format is not supported by {{appName}}. Directly supported file formats include: <ul><li>.geojson</li><li>.kml, .kmz</li><li>.csv (in {{link}})</li></ul>  File formats supported through the online conversion service include: <ul><li>Shapefile (.zip)</li><li>MapInfo TAB (.zip)</li><li>Possibly other {{linkII}}</li></ul>",
-      "getConfirmationMessage": "This file is not directly supported by {{appName}}.\n\nDo you want to try uploading it to the {{appName}} conversion service? This may work for small, zipped Esri Shapefiles or MapInfo TAB files.",
-      "readyToUpload": "Ready to upload your file to the {{appName}} conversion service?",
-      "useConversion": "Use conversion service?",
-      "mustHaveType": "Each item must have a type.",
-      "compositesError": "Composites cannot include composite items.",
-      "convertErrorTitle": "Could not upgrade catalog to V8",
-      "convertErrorMessage": "This catalog file is based on an older version of TerriaJS - the software powering this web map. An error has occurred trying to upgrade the catalog data for {{url}}."
+      "name": "Elemento sin nombre",
+      "idForMatchingErrorTitle": "propiedad faltante",
+      "idForMatchingErrorMessage": "Los objetos del modelo deben tener un `id`, `localId`, o `name` propiedad.",
+      "catalogMemberMustHaveName": "Un miembro del catálogo recién creado debe tener un nombre.",
+      "catalogMemberMustHaveType": "Un miembro del catálogo debe tener un tipo",
+      "userAddedDataGroup": "El grupo de datos que agregó el usuario a través del panel Agregar datos.",
+      "chartDataGroup": "Un grupo para datos de gráfico.",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "stubCreationFailure": "No se pudo desconectar el artículo del catálogo {{item}}",
+      "unsupportedTypeTitle": "Tipo desconocido",
+      "unsupportedTypeMessage": "No se pudo crear un tipo de modelo desconocido{{type}}.",
+      "unsupportedFileTypeMessage": "Este formato de archivo no es compatible con {{appName}}. Los formatos de archivo admitidos incluyen: <ul><li>.geojson</li><li>.kml, .kmz</li><li>.csv (in {{link}})</li></ul>",
+      "unsupportedFileTypeMessageII": "Este formato de archivo no es compatible con {{appName}}. Los formatos de archivo admitidos directamente incluyen: <ul><li>.geojson</li><li>.kml, .kmz</li><li>.csv (in {{link}})</li></ul>  Los formatos de archivo admitidos a través del servicio de conversión en línea incluyen:<ul><li>Shapefile (.zip)</li><li>MapInfo TAB (.zip)</li><li>Possibly other {{linkII}}</li></ul>",
+      "getConfirmationMessage": "Este archivo no es compatible directamente con{{appName}}.\n\n¿Quieres intentar subirlo a la {{appName}} servicio de conversión? Esto puede funcionar para archivos Esri Shapefiles o MapInfo TAB pequeños y comprimidos",
+      "readyToUpload": "¿Está listo para subir su archivo al servicio de conversión {{appName}}?",
+      "useConversion": "¿Usar el servicio de conversión?",
+      "mustHaveType": "Cada elemento debe tener un tipo.",
+      "compositesError": "Los compuestos no pueden incluir artículos compuestos.",
+      "convertErrorTitle": "No se pudo actualizar el catálogo a V8",
+      "convertErrorMessage": "Este archivo de catálogo se basa en una versión anterior de TerriaJS, el software que impulsa este mapa web. Se ha producido un error al intentar actualizar los datos del catálogo para {{url}}."
     },
     "createParameter": {
-      "unsupportedErrorTitle": "Unsupported function parameter type",
-      "unsupportedErrorMessage": "Unknown function parameter type: {{type}}."
+      "unsupportedErrorTitle": "Tipo de parámetro de función no admitido",
+      "unsupportedErrorMessage": "Tipo de parámetro de función desconocido: {{type}}."
     },
     "csv": {
-      "name": "Comma-Separated Values (CSV)",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "unexpectedTypeTitle": "Unexpected type of CSV data",
-      "unexpectedTypeMessage": "CsvCatalogItem data is expected to be a Blob, File, or String, but it was not any of these.",
-      "unableToLoadTitle": "Unable to load CSV file",
-      "unableToLoadMessage": "See the <a href=\"https://github.com/TerriaJS/nationalmap/wiki/csv-geo-au\">csv-geo-au</a> specification for supported CSV formats.\n\n {{message}}",
-      "unableToLoadItemTitle": "No CSV available",
-      "unableToLoadItemMessage": "The CSV catalog item cannot be loaded because it was not configured with a `url` or `csvString` property."
+      "name": "Valores Separados por Comas (CSV)",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "unexpectedTypeTitle": "Tipo inesperado de datos CSV",
+      "unexpectedTypeMessage": "Se espera que los datos de CsvCatalogItem sean Blob, File o String, pero no fue ninguno de estos.",
+      "unableToLoadTitle": "No se puede cargar el archivo CSV",
+      "unableToLoadMessage": "Ver el  <a href=\"https://github.com/TerriaJS/nationalmap/wiki/csv-geo-au\">csv-geo-au</a> especificación para formatos CSV admitidos.\n\n {{message}}",
+      "unableToLoadItemTitle": "Ningún CSV disponible",
+      "unableToLoadItemMessage": "El elemento del catálogo CSV no se puede cargar porque no se configuró con una`url` o `csvString` propiedad."
     },
     "csw": {
       "links": "Enlaces",
-      "name": "Catalogue Service (CSW)",
-      "unknownError": "The CSW server reported an unknown error.",
-      "exceptionMessage": "The CSW server reported an error:\n\n {{exceptionText}}",
-      "errorLoadingTitle": "Could not load CSW",
-      "notUseableTitle": "Catalogue service is not usable.  \n\n {{message}}",
-      "notUseableMessage": "Invalid response obtained when invoking GetDomain on the CSW server.",
-      "errorLoadingRecordsTitle": "Failed to load CSW records.",
-      "errorLoadingRecordsMessage": "Invalid response obtained when invoking GetRecords on the CSW",
-      "checkCORSDomain": "Couldn't execute GetDomain on this CSW server.",
-      "checkCORSRecords": "Couldn't execute GetRecords on this CSW server.",
-      "dataResponsibility": "Data Responsibility",
-      "metadataURL": "Metadata Record URL",
-      "checkCORS": "Couldn't execute GetRecords on this CSW server.",
+      "name": "Servicio de catálogo (CSW)",
+      "unknownError": "El servidor CSW informó un error desconocido.",
+      "exceptionMessage": "El servidor CSW informó un error:\n\n {{exceptionText}}",
+      "errorLoadingTitle": "No se pudo cargar CSW",
+      "notUseableTitle": "El servicio de catálogo no se puede utilizar.  \n\n {{message}}",
+      "notUseableMessage": "Se obtuvo una respuesta no válida al invocar GetDomain en el servidor CSW.",
+      "errorLoadingRecordsTitle": "Error al cargar registros CSW.",
+      "errorLoadingRecordsMessage": "Respuesta no válida obtenida al invocar GetRecords en el CSW",
+      "checkCORSDomain": "No se pudo ejecutar GetDomain en este servidor CSW.",
+      "checkCORSRecords": "No se pudo ejecutar GetRecords en este servidor CSW.",
+      "dataResponsibility": "Responsabilidad de datos",
+      "metadataURL": "URL de registro de metadatos",
+      "checkCORS": "No se pudo ejecutar GetRecords en este servidor CSW.",
       "cors": "CORS",
-      "missingUrlTitle": "Unable to load Catalogue Service (CSW)",
-      "missingUrlMessage": "Could not load the Catalogue Service (CSW) because the catalog group does not have a `url`."
+      "missingUrlTitle": "No se puede cargar el servicio de catálogo (CSW)",
+      "missingUrlMessage": "No se pudo cargar el servicio de catálogo (CSW) porque el grupo de catálogo no tiene una `url`."
     },
     "czml": {
-      "name": "Cesium Language (CZML)",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "errorLoadingTitle": "Could not load CZML",
-      "errorLoadingMessage": "An error occurred while loading a CZML file.",
-      "unableToLoadItemTitle": "No CZML available",
-      "unableToLoadItemMessage": "The CZML catalog item cannot be loaded because it was not configured with a `url`, `czmlData`, or `czmlString` property."
+      "name": "Lenguaje de cesio(CZML)",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "errorLoadingTitle": "No se pudo cargar CZML",
+      "errorLoadingMessage": "Ocurrió un error al cargar un archivo CZML.",
+      "unableToLoadItemTitle": "No hay CZML disponible",
+      "unableToLoadItemMessage": "El elemento del catálogo CZML no se puede cargar porque no se configuró con una`url`, `czmlData`, or `czmlString` propiedad."
     },
     "function": {
-      "unknownFormaterTitle": "Unknown formatter",
-      "unknownFormaterMessage": "The function parameter formatter {{formatter}} is unknown.\n\nValid formatters are:\n\n"
+      "unknownFormaterTitle": "Formateador desconocido",
+      "unknownFormaterMessage": "El formateador de parámetros de función {{formatter}} es desconocido.\n\nLos formateadores válidos son:\n\n"
     },
     "geoJson": {
       "name": "GeoJSON",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "errorLoadingTitle": "Error loading GeoJSON",
-      "errorParsingMessage": "An error occurred parsing the provided data as JSON.  This may indicate that the file is invalid or that it is not supported.",
-      "errorLoadingMessage": "An error occurred while loading a GeoJSON file.  This may indicate that the file is invalid or that it is not supported.",
-      "couldNotLoadTitle": "Could not load JSON",
-      "couldNotLoadMessage": "An error occurred while retrieving JSON data from the provided link.CORS",
-      "unableToLoadItemTitle": "No GeoJSON available",
-      "unableToLoadItemMessage": "The GeoJSON catalog item cannot be loaded because it was not configured with a `url`, `geoJsonData`, or `geoJsonString` property.",
-      "unsupportedBrowserTitle": "Unsupported web browser",
-      "unsupportedBrowserMessage": "Sorry, your web browser does not support the File API, which {{appName}} requires in order to load this dataset.  Please upgrade your web browser.  For the best experience, we recommend the latest versions of {{chrome}} or {{firefox}} or {{internetExplorer}}.",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "errorLoadingTitle": "Error al cargar GeoJSON",
+      "errorParsingMessage": "Se produjo un error al analizar los datos proporcionados como JSON.  Esto puede indicar que el archivo no es válido o que no es compatible.",
+      "errorLoadingMessage": "Ocurrió un error al cargar un archivo GeoJSON.  Esto puede indicar que el archivo no es válido o que no es compatible.",
+      "couldNotLoadTitle": "No se pudo cargar JSON",
+      "couldNotLoadMessage": "Se produjo un error al recuperar los datos JSON del enlace proporcionado.CORS",
+      "unableToLoadItemTitle": "No hay GeoJSON disponible",
+      "unableToLoadItemMessage": "El elemento del catálogo GeoJSON no se puede cargar porque no se configuró con una `url`, `geoJsonData`, o `geoJsonString` propiedad.",
+      "unsupportedBrowserTitle": "Navegador web no compatible",
+      "unsupportedBrowserMessage": "Lo sentimos, su navegador web no es compatible con File API, que {{appName}} requiere para cargar este conjunto de datos. Por favor, actualiza tu navegador web. Para la mejor experiencia, Recomendamos las últimas versiones de {{chrome}} o {{firefox}} o {{internetExplorer}}.",
       "internetExplorer": "Internet Explorer 11",
       "chrome": "Google Chrome",
       "firefox": "Mozilla Firefox"
@@ -1041,144 +1041,144 @@
     },
     "getToken": {
       "errorTitle": "Token Error",
-      "invalidToken": "<p>The token server responded with an invalid token.</p><p>Please report it by sending an email to {{email}}</p>",
-      "unableToRequest": "<p>Unable to request a token from the token server.</p><p>Please report it by sending an email to {{email}}</p>"
+      "invalidToken": "<p>El servidor de tokens respondió con un token no válido.</p><p>Por favor repórtelo enviando un correo electrónico a {{email}}</p>",
+      "unableToRequest": "<p>No se puede solicitar un token del servidor de tokens.</p><p>Por favor repórtelo enviando un correo electrónico a {{email}}</p>"
     },
     "gltf": {
-      "name": "GL Transmission Format (glTF)",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "notSupportedErrorTitle": "Not supported in 2D",
-      "notSupportedErrorMessage": "\"{{name}}\" cannot be show in the 2D view.  Switch to 3D and try again.",
+      "name": "Formato de transmisión GL (glTF)",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "notSupportedErrorTitle": "No compatible en 2D",
+      "notSupportedErrorMessage": "\"{{name}}\" no se puede mostrar en la vista 2D. Cambia a 3D e inténtalo de nuevo.",
       "error": "Error",
-      "unableToRetrieve": "Unable to retrieve feature details from:\n\n{{url}}"
+      "unableToRetrieve": "No se pueden recuperar los detalles de la característica de:\n\n{{url}}"
     },
     "gpx": {
       "name": "GPX",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "errorLoadingTitle": "Error loading GPX",
-      "errorLoadingMessage": "An error occurred while loading a GPX file.  This may indicate that the file is invalid or that it is not supported by {{appName}}."
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "errorLoadingTitle": "Error al cargar GPX",
+      "errorLoadingMessage": "Ocurrió un error al cargar un archivo GPX. Esto puede indicar que el archivo no es válido o que no es compatible con {{appName}}."
     },
     "georss": {
       "name": "GeoRSS",
-      "subtitle": "Subtitle",
-      "updated": "Updated",
-      "category": "Category",
-      "description": "Description",
-      "copyrightText": "Copyright Text",
-      "link": "Link",
-      "author": "Author",
-      "errorLoadingTitle": "Could not load GeoRSS",
-      "errorLoadingMessage": "An error occurred while loading a GeoRSS file.",
-      "unableToLoadItemTitle": "No GeoRSS available",
-      "unableToLoadItemMessage": "The GeoRSS catalog item cannot be loaded because it was not configured with a `url`, or `geoRss` property."
+      "subtitle": "Subtítulo",
+      "updated": "Actualizado",
+      "category": "Categoría",
+      "description": "Descripción",
+      "copyrightText": "Texto de derechos de autor",
+      "link": "Enlace",
+      "author": "Autor",
+      "errorLoadingTitle": "No se pudo cargar GeoRSS",
+      "errorLoadingMessage": "Ocurrió un error al cargar un archivo GeoRSS.",
+      "unableToLoadItemTitle": "No hay GeoRSS disponible",
+      "unableToLoadItemMessage": "No se puede cargar el elemento del catálogo GeoRSS porque no se configuró con una `url`, o `geoRss` propiedad."
     },
     "imageryLayer": {
-      "intervalSupportErrorTitle": "Intervals not supported",
-      "intervalSupportErrorMessage": "Sorry, {{typeName}} ({{type}}) catalog items cannot currently be made time-varying by specifying the \"intervals\" property.",
-      "resolvingAvailability": "Resolving availability at a location...",
-      "accessingBaseMapErrorTitle": "Error accessing base map",
-      "accessingBaseMapErrorMessage": "An error occurred while attempting to download tiles for base map:<p><center>{{name}} </center></p> Please select a different base map using the Map button in the top-right corner.",
-      "accessingCatalogItemErrorTitle": "Error accessing catalogue item",
-      "accessingCatalogItemErrorMessage": "An error occurred while attempting to download tiles for catalogue item:<p><center>{{name}}</center></p> The catalogue item has been hidden from the map.  You may re-show it in the Now Viewing panel to try again.",
-      "tileErrorTitle": "Tile Error",
-      "tileErrorMessage": "The tile with the URL:\n{{url}}\n succeeded when loaded with XMLHttpRequest but failed multiple times when loaded directly by Cesium or Leaflet.\n This may indicate that the server is very sensitive to the request headers provided or is simply unreliable.",
-      "tileErrorMessageII": "Got a 200 (OK) response from URL:\n{{url}}\nbut it could not be loaded as an image.",
-      "unknownTileErrorTitle": "Unknown Tile Error",
-      "unknownTileErrorMessage": "While accessing URL:\n{{url}}\nThis probably indicates one of the following:\n* The server hostname could not be resolved,\n* The server did not respond to the request, or\n* The server denied Cross-Origin Resource Sharing (CORS) access to this URL (See https://docs.terria.io/guide/connecting-to-data/cross-origin-resource-sharing/).",
-      "unableToDisplayTitle": "Unable to display dataset",
-      "unableToDisplayMessage": "{{name}} cannot be shown in 2D because it does not support the standard Web Mercator (EPSG:3857) projection. Please switch to 3D if it is supported on your system, update the dataset to support the projection, or use a different dataset.",
-      "unableToShowLocTitle": "Unable to show at this location",
-      "unableToShowLocMessage": "{{name}} cannot be shown at this location because the available capture times are unknown. The {{featureTimesProperty}} property was not found."
+      "intervalSupportErrorTitle": "Intervalos no admitidos",
+      "intervalSupportErrorMessage": "Lo siento,{{typeName}} ({{type}}) los elementos del catálogo actualmente no pueden variar en el tiempo especificando la propiedad de \"intervalos\" .",
+      "resolvingAvailability": "Resolver la disponibilidad en una ubicación...",
+      "accessingBaseMapErrorTitle": "Error al acceder al mapa base",
+      "accessingBaseMapErrorMessage": "Ocurrió un error al intentar descargar mosaicos para el mapa base:<p><center>{{name}} </center></p> Seleccione un mapa base diferente usando el botón Mapa en la esquina superior derecha.",
+      "accessingCatalogItemErrorTitle": "Error al acceder al elemento del catálogo",
+      "accessingCatalogItemErrorMessage": "Ocurrió un error al intentar descargar mosaicos para el artículo del catálogo:<p><center>{{name}}</center></p> El elemento del catálogo se ha ocultado del mapa. Puede volver a mostrarlo en el panel Now Viewing para volver a intentarlo.",
+      "tileErrorTitle": "Error de mosaico",
+      "tileErrorMessage": "El mosaico con la URL:\n{{url}}\n tuvo éxito cuando se cargó con XMLHttpRequest, pero falló varias veces cuando se cargó directamente con Cesium o Leaflet.\n Esto puede indicar que el servidor es muy sensible a los encabezados de solicitud proporcionados o simplemente no es confiable.",
+      "tileErrorMessageII": "Obtuve una respuesta 200 (OK) de URL:\n{{url}}\npero no se pudo cargar como imagen",
+      "unknownTileErrorTitle": "Error de mosaico desconocido",
+      "unknownTileErrorMessage": "Al acceder a la URL:\n{{url}}\nEsto probablemente indica uno de los siguientes:\n* El nombre de host del servidor no se pudo resolver,\n* El servidor no respondió a la solicitud, o\n* El servidor negó el acceso de intercambio de recursos de origen cruzado (CORS) a esta URL (Ver https://docs.terria.io/guide/connecting-to-data/cross-origin-resource-sharing/).",
+      "unableToDisplayTitle": "No se puede mostrar el conjunto de datos",
+      "unableToDisplayMessage": "{{name}}no se puede mostrar en 2D porque no es compatible con el estándar Web Mercator proyección (EPSG:3857) . Cambie a 3D si es compatible con su sistema, actualice el conjunto de datos para admitir la proyección o use un conjunto de datos diferente.",
+      "unableToShowLocTitle": "No se puede mostrar en esta ubicación",
+      "unableToShowLocMessage": "{{name}} no se puede mostrar en esta ubicación porque se desconocen los tiempos de captura disponibles. La propiedad  {{featureTimesProperty}} no fue encontrada."
     },
     "invokeAnalyticsService": {
-      "invocationFailedTitle": "Service invocation failed",
-      "invocationFailedMessage": "An error occurred on the server while computing {{invocationName}}."
+      "invocationFailedTitle": "La invocación del servicio falló",
+      "invocationFailedMessage": "Ocurrió un error en el servidor mientras se computaba{{invocationName}}."
     },
     "ionImagery": {
-      "name": "Cesium Ion Imagery"
+      "name": "Imágenes de iones de cesio"
     },
     "kml": {
-      "name": "KML or KMZ",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "unexpectedTypeTitle": "Unexpected type of KML data",
-      "unexpectedTypeMessage": "KmlCatalogItem.data is expected to be an XML Document, Blob, or File, but it was none of these. This may indicate a bug in {{appName}} or incorrect use of the {{appName}} API.",
-      "errorLoadingTitle": "Error loading KML or KMZ",
-      "errorLoadingMessage": "An error occurred while loading a KML or KMZ file.  This may indicate that the file is invalid or that it is not supported by {{appName}}.",
-      "unableToLoadItemTitle": "No KML available",
-      "unableToLoadItemMessage": "The KML/KMZ catalog item cannot be loaded because it was not configured with a `url`, `kmlData` or `kmlString` property."
+      "name": "KML o KMZ",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "unexpectedTypeTitle": "Tipo inesperado de datos KML",
+      "unexpectedTypeMessage": "Se esperaba que KmlCatalogItem.data fuera un documento XML, un blob o un archivo, pero no era ninguno de estos. Esto puede indicar un error en {{appName}} o un uso incorrecto de la API de {{appName}}.",
+      "errorLoadingTitle": "Error al cargar KML o KMZ",
+      "errorLoadingMessage": "Ocurrió un error al cargar un archivo KML o KMZ. Esto puede indicar que el archivo no es válido o que {{appName}} no lo admite.",
+      "unableToLoadItemTitle": "No hay archivos KML disponibles",
+      "unableToLoadItemMessage": "El elemento del catálogo KML/KMZ no se puede cargar porque no se configuró con un `url`, `kmlData` o `kmlString` propiedad."
     },
     "magda": {
-      "name": "MAGDA Distribution",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "distributionDesc": "Distribution Description",
-      "idsNotSpecifiedTitle": "recordId must be specified",
-      "idsNotSpecifiedMessage": "MagdaReference requires that recordId be specified.",
-      "retrieveErrorTitle": "Error retrieving MAGDA record",
-      "retrieveErrorMessage": "No distribution or dataset ID provided",
-      "notCompatibleTitle": "No compatible distributions found",
-      "notCompatibleMessageI": "The MAGDA dataset does not have a distribution with the ID {{distributionId}} or it does not have a supported format.",
-      "notCompatibleMessageII": "The MAGDA dataset does not have any distributions with a supported format."
+      "name": "Distribución MAGDA",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "distributionDesc": "Descripción de distribución",
+      "idsNotSpecifiedTitle": "se debe especificar recordId",
+      "idsNotSpecifiedMessage": "MagdaReference requiere que se especifique recordId.",
+      "retrieveErrorTitle": "Error al recuperar el registro MAGDA",
+      "retrieveErrorMessage": "No se proporcionó ningún ID de distribución o conjunto de datos",
+      "notCompatibleTitle": "No se encontraron distribuciones compatibles",
+      "notCompatibleMessageI": "El conjunto de datos de MAGDA no tiene una distribución con el ID {{distributionId}} o no tiene un formato compatible.",
+      "notCompatibleMessageII": "El conjunto de datos MAGDA no tiene ninguna distribución con un formato compatible."
     },
     "terria-reference": {
-      "failedToLoadTarget": "Failed to load member from external catalog"
+      "failedToLoadTarget": "No se pudo cargar el miembro del catálogo externo"
     },
     "mapboxMap": {
-      "name": "Mapbox Map"
+      "name": "Mapa del cuadro de mapa"
     },
     "mapboxVectorTile": {
-      "name": "Mapbox Vector Tile"
+      "name": "Mosaico vectorial Mapbox"
     },
     "mapboxStyle": {
-      "name": "Mapbox Style"
+      "name": "Estilo de cuadro de mapa"
     },
     "senaps": {
-      "name": "Senaps Locations",
-      "retrieveErrorTitle": "Error processing Senaps Catalog Item",
-      "generalErrorMessage": "Encountered an error processing Senaps data",
-      "missingKeyErrorMessage": "A Senaps API Key should be added to the terriajs-server config using the appendParamToQueryString option",
-      "locationHeadingFeatureInfo": "Location",
-      "availableStreamsHeadingFeatureInfo": "Available Streams",
-      "noStreamsMessageFeatureInfo": "No streams at this location.",
-      "missingSenapsBaseUrl": "Senaps base url not provided. Have you logged in?"
+      "name": "Ubicaciones de Senaps",
+      "retrieveErrorTitle": "Error al procesar el artículo del catálogo de Senaps",
+      "generalErrorMessage": "Encontró un error al procesar los datos de Senaps",
+      "missingKeyErrorMessage": "Se debe agregar una clave API de Senaps a la configuración del servidor terriajs mediante la opción appendParamToQueryString",
+      "locationHeadingFeatureInfo": "Ubicación",
+      "availableStreamsHeadingFeatureInfo": "Transmisiones disponibles",
+      "noStreamsMessageFeatureInfo": "No hay transmisiones en esta ubicación.",
+      "missingSenapsBaseUrl": "URL base de Senaps no proporcionada. ¿Has iniciado sesión?"
     },
     "ogr": {
       "safari": "Apple Safari",
       "unsupportedFileTzpe": "Tipo de archivo no soportado",
-      "name": "Unknown / Converted to GeoJSON",
-      "dataSourceErrorMessage": "This data source does not have any details available.",
-      "serviceErrorMessage": "This service does not have any details available.",
-      "legacyBrowserTitle": "Legacy browser not supported",
-      "legacyBrowserMessage": "Sorry, your web browser does not support the \"FormData\" type, which is required by the '{{appName}}' conversion service.  We recommend you upgrade to the latest version of {{chrome}}, {{firefox}}, {{safari}} or {{internetExplorer}}.",
+      "name": "Desconocida / convertida a GeoJSON",
+      "dataSourceErrorMessage": "Esta fuente de datos no tiene ningún detalle disponible.",
+      "serviceErrorMessage": "Este servicio no tiene ningún detalle disponible.",
+      "legacyBrowserTitle": "Navegador heredado no compatible",
+      "legacyBrowserMessage": "Lo sentimos, su navegador web no es compatible con la \"FormData\" el tipo, que es requerido por el '{{appName}}' servicio de conversión. Le recomendamos que actualice a la última versión de {{chrome}}, {{firefox}}, {{safari}} o {{internetExplorer}}.",
       "internetExplorer": "Internet Explorer 11",
       "chrome": "Google Chrome",
       "firefox": "Mozilla Firefox",
-      "loadError": "The file size is greater than the {{maxConversionSizeMB}} MB limit of the {{appName}} conversion service",
-      "invalidFile": "This may indicate that the file is invalid or that it is not supported by the {{appName}} conversion service.",
-      "errorConvertingToGeoJsonTitle": "Error converting file to GeoJson",
-      "errorConvertingToGeoJsonMessage": "An error occurred while attempting to convert this file to GeoJson. ",
-      "emailUs": "If you would like assistance or further information, please email us at {{email}}"
+      "loadError": "El tamaño del archivo es mayor que el límite de {{maxConversionSizeMB}} MB del servicio de conversión {{appName}} ",
+      "invalidFile": "Esto puede indicar que el archivo no es válido o que no es compatible con el servicio de conversión {{appName}} ",
+      "errorConvertingToGeoJsonTitle": "Error al convertir el archivo a GeoJson",
+      "errorConvertingToGeoJsonMessage": "Se produjo un error al intentar convertir este archivo a GeoJson. ",
+      "emailUs": "Si desea asistencia o más información, envíenos un correo electrónico a {{email}}"
     },
     "openStreetMap": {
       "name": "Open Street Map"
     },
     "placesLikeMe": {
-      "regionsLikeThisName": "Regions like this",
-      "regionsLikeThisDescription": "Identifies regions that are _most like_ a given region according to a given set of characteristics.",
-      "regionTypeName": "Region Type",
-      "regionTypeDescription": "The type of region to analyze.",
-      "regionName": "Region",
-      "regionDescription": "The region to analyze.  The analysis will determine which regions are most similar to this one.",
-      "characteristics": "Characteristics",
-      "characteristicsDescription": "The region characteristics to include in the analysis.",
-      "name": "Places Like Me",
-      "regioNotSelectedName": "Region not selected",
-      "regioNotSelectedDescription": "You must select a Region.",
-      "placesLike": "Places like {{regionName}}",
-      "likenessesError": "The list of likenesses and the list of region codes do not contain the same number of elements."
+      "regionsLikeThisName": "Regiones como esta",
+      "regionsLikeThisDescription": "Identifica las regiones que _most like_ a una determinada región de acuerdo con un determinado conjunto de características.",
+      "regionTypeName": "Tipo de región",
+      "regionTypeDescription": "El tipo de región a analizar.",
+      "regionName": "Región",
+      "regionDescription": "La región a analizar. El análisis determinará qué regiones son más parecidas a ésta.",
+      "characteristics": "Características",
+      "characteristicsDescription": "Las características de la región a incluir en el análisis.",
+      "name": "lugares como yo",
+      "regioNotSelectedName": "Región no seleccionada",
+      "regioNotSelectedDescription": "Debes seleccionar una Región.",
+      "placesLike": "Lugares como{{regionName}}",
+      "likenessesError": "La lista de similitudes y la lista de códigos de región no contienen el mismo número de elementos."
     },
     "raiseError": {
       "errorTitle": "Ocurrió un error",
@@ -1187,19 +1187,19 @@
       "developerDetails": "Detalles del desarrollador"
     },
     "regionMapping": {
-      "noDataForDate": "No data for the selected date.",
-      "noDataForRegion": "No data for the selected region.",
-      "outdatedBrowserTitle": "Outdated Web Browser",
-      "outdatedBrowserMessage": "You are using a very old web browser that cannot display \"region mapped\" datasets such as this one.  Please upgrade to the latest version of Google Chrome, Mozilla Firefox, Microsoft Edge, Microsoft Internet Explorer 11, or Apple Safari as soon as possible.",
-      "invalidServerTypeTitle": "Invalid serverType {{serverType}} in regionMapping.json",
-      "invalidServerTypeMessage": "Expected serverType to be \"WMS\" or \"vector\" but got \"{{serverType}}\"",
-      "notRecognised": "These region names were {{notRecognisedText}} ",
-      "notRecognisedText": "not recognised",
-      "moreThanOneValue": "These regions had {{moreThanOneValueText}}",
-      "moreThanOneValueText": "more than one value",
-      "msg": "Consult the {{link}} to see how to format the file.",
+      "noDataForDate": "No hay datos para la fecha seleccionada.",
+      "noDataForRegion": "No hay datos para la región seleccionada.",
+      "outdatedBrowserTitle": "Navegador web obsoleto",
+      "outdatedBrowserMessage": "Está utilizando un navegador web muy antiguo que no puede mostrar \"región mapeada\" conjuntos de datos como este. Actualice a la última versión de Google Chrome, Mozilla Firefox, Microsoft Edge, Microsoft Internet Explorer 11 o Apple Safari lo antes posible.",
+      "invalidServerTypeTitle": "Tipo de servidor {{serverType}} no válido en regionMapping.json",
+      "invalidServerTypeMessage": "Se esperaba que el tipo de servidor fuera \"WMS\" o \"vector\" bpero tengo  \"{{serverType}}\"",
+      "notRecognised": "Estos nombres de regiones eran{{notRecognisedText}} ",
+      "notRecognisedText": "No reconocida",
+      "moreThanOneValue": "Estas regiones tenían {{moreThanOneValueText}}",
+      "moreThanOneValueText": "más de un valor",
+      "msg": "Consulte el {{link}} para ver cómo formatear el archivo.",
       "csvSpecification": "CSV-geo-au specification",
-      "issuesLoadingTitle": "Issues loading {{name}}"
+      "issuesLoadingTitle": "Problemas al cargar {{name}}"
     },
     "feedback": {
       "thanksTitle": "¡Gracias por tus comentarios!",
