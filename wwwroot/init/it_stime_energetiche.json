@@ -23,23 +23,6 @@
           "layers": "atlante_integrato:v_comuni_consumi",
           "styles":"autosuff",
           "id": "autosuff"
-        },
-        {
-          "type": "wms",
-          "name": "Comuni con potenziali di pompaggio: potenza - analisi 2015",
-          "description": "Comuni con potenziali di pompaggio: potenza - analisi 2015",
-          "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
-          "featureInfoTemplate": {
-            "template": "<p>Pompaggio marino potenza (MW) <b>{{pot_po_38}}</b> ; <br> <p>Pompaggio sotterraneo potenza (MW) <b>{{pot_po_40}}</b> ; <br>  <p>Pompaggio nuovi bacini potenza (MW) <b>{{pot_po_42}}</b> ; <br>  <p>Pompaggio tra bacini esistenti e nuovi potenza (MW) <b>{{pot_po_44}}</b> ; <br>  <p>Pompaggio potenziale totale potenza (MW) <b>{{pot_po_sum}}</b> ; <br><br><a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
-          },
-          "metadataUrls":[{
-            "title":"link metadato anno 2015",
-            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=86"
-          }],
-          "layers": "new_atlante_integrato:po_pot_2015",
-          "styles":"comuni_pomp_pot_tot",
-          "id": "po_pot_2015"
         }
       ]
     },
@@ -48,6 +31,32 @@
       "type": "group",
       "name": "prove rasters",
       "members": [
+        {
+          "type": "wms",
+          "name": "BigBang_prec_TP_2011-2019",
+          "description": "new_atlante_integrato: prova di visualizzazione big bang new_atlante_integrato:BB_prec_TP_2011-2019",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "dataCustodian": "text",
+          "layers": "new_atlante_integrato:BB_prec_TP_2011-2019",
+          "id": "bbTP_2011",
+          "styles":"stile_TP",
+          "shareKeys": [
+            "Root Group/stime energetiche/bbTP_2011"
+          ]
+        },
+        {
+          "type": "wms",
+          "name": "BigBang_prec_RF_2011-2019",
+          "description": "new_atlante_integrato: prova di visualizzazione big bang new_atlante_integrato:RF_2011-2019",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "dataCustodian": "text",
+          "layers": "new_atlante_integrato:RF_2011-2019",
+          "id": "bbRF_2011",
+          "styles":"stile_RF",
+          "shareKeys": [
+            "Root Group/stime energetiche/bbRF_2011"
+          ]
+        },
         {
           "type": "wms",
           "name": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon",

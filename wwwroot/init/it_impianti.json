@@ -209,7 +209,7 @@
                     }
                   ],
                   "featureInfoTemplate": {
-                    "template": "<p>Potenza comunale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                    "template": "<p>Potenza comunale (MW) <b>{{pot_tot_mw}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "metadataUrls":[{
@@ -217,7 +217,7 @@
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=204&anno=2019"
                   }],
                   "dataCustodian": "text",
-                  "layers": "new_atlante_integrato:v_impianti_eolici_raggruppamento_comune",
+                  "layers": "new_atlante_integrato:imp_eo_ragg_com_2019",
                   "id": "eo_Pcom",
                   "styles":"eo_imp_com_potenza"
                 },
@@ -234,15 +234,15 @@
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "dataCustodian": "text",
                   "featureInfoTemplate": {
-                    "template": "<p>Numero comunale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                    "template": "<p>Numero comunale di impianti <b>{{num_imp_to}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
                     "title":"link metadato anno 2019",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=204&anno=2019"
                   }],
-                  "layers": "new_atlante_integrato:v_impianti_eolici_raggruppamento_comune",
+                  "layers": "new_atlante_integrato:imp_eo_ragg_com_2019",
                   "id": "eo_Ncom",
-                  "styles":"eo_num_impianti_com"
+                  "styles":"new_atlante_integrato:eo_num_comun"
                 }
               ]
             },
@@ -695,15 +695,14 @@
                 },
                 {
                   "type": "wms",
-                  "name": "raggruppamento comunale impianti.",
-                  "description": "Fotovoltaico - raggruppamento comunale impianti. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati.<br>\n\n",
+                  "name": "Raggruppamento comunale impianti.",
+                  "description": "Fotovoltaico - raggruppamento comunale impianti - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati.<br>\n\n",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "dataCustodian": "text",
                   "featureInfoTemplate": {
                     "template": "<p>raggruppamento comunale impianti.</p>"
                   },
-                  "layers": "new_atlante_integrato:v_fv_raggruppamento_comunale",
-                  "styles":"new_atlante_integrato:pot_termo_comun",
+                  "layers": "new_atlante_integrato:fv_impianti_comune_2019",
                   "id": "555"
                 }
               ]
@@ -768,7 +767,7 @@
                     "title":"link metadato anno 2020",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020"
                   }],
-                  "layers": "new_atlante_integrato:v_impianti_geotermici_comune",
+                  "layers": "new_atlante_integrato:geotermoel_comun_2020",
                   "styles":"ge_pot_imp_com",
                   "id": "ge_Pcom"
                 },
@@ -859,13 +858,13 @@
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "dataCustodian": "text",
                   "featureInfoTemplate": {
-                    "template": "<p>Numero comunale impianti <b>{{num_impianti}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020\">link al metadato </a> </p>"
+                    "template": "<p>Numero comunale impianti <b>{{num_impian}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
                     "title":"link metadato anno 2020",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020"
                   }],
-                  "layers": "new_atlante_integrato:v_impianti_geotermici_comune",
+                  "layers": "new_atlante_integrato:geotermoel_comun_2020",
                   "styles":"ge_num_impianti_com",
                   "id": "ge_Ncom"
                 },
@@ -1064,7 +1063,7 @@
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=197&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
-                  "styles":"bi_biogas_energia_prov",
+                  "styles":"bi_prod_prov",
                   "parameters": {
                     "cql_filter": "var_id=197"
                   },
@@ -1150,8 +1149,8 @@
               "members": [
                 {
                   "type": "wms",
-                  "name": "Impianti - anno 2020",
-                  "description": "Impianti Termoelettrici \n\n Mappa della distribuzione degli impianti termoelettrici con concessione attiva al 2020.<br></p>",
+                  "name": "Impianti - anno 2021",
+                  "description": "Impianti termoelettrici - Potenza installata (MW), Combustibile, Tecnologia di conversione. \n\n Mappa della distribuzione degli impianti termoelettrici in funzione al 2020, della potenza installata, principale combustibile e tecnologia di conversione.\n\n Elaborazioni RSE a partire dal Global Power Plant Database",
                   "info": [
                     {
                       "name": "Licence",
@@ -1160,13 +1159,12 @@
                   ],
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "dataCustodian": "text",
-                  "layers": "new_atlante_integrato:v_impianti_termoel_comune",
+                  "layers": "new_atlante_integrato:v_imp_termoel",
                   "metadataUrls":[{
                     "title":"link metadato",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=207&anno=2020"
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=207"
                   }],
-                  "styles":"new_atlante_integrato:pot_termo_comun",
-                  "id": "comun_te_imp"             
+                  "id": "imp_termoel"             
                 }                
               ]
             }
@@ -1207,29 +1205,52 @@
               {
                 "type": "wms",
                 "name": "Potenza installabile (MW)",
-                "description": "Stima della potenza installabile fattibile (MW) con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi. Valutazioni anno 2015.",
+                "description": "Stima della potenza installabile (MW) con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico di tipo tradizionale o marino. Valutazioni anno 2015.",
                 "url": "http://gis2.rse-web.it/geoserver/wms",
                 "dataCustodian": "text",
                 "featureInfoTemplate": {
-                  "template": "<p>Potenziale comunale (MW) <b>{{somma}}</b></p>//<p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                  "template": "<p>Potenziale comunale (MW) ... da finire ... </b></p>//<p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                 },
                 "metadataUrls":[{
                   "title":"link metadato anno 2015",
                   "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=44&anno=2015"
                   }],
-                "layers": "new_atlante_integrato:pot_pomp",
-                "styles":"comuni_pomp_trad_pot",
+                "layers": "new_atlante_integrato:v_imp_po_com_poten",
                 "id": "po_Pcom"
               },
               {
                 "type": "wms",
-                "name": "c",
-                "description": "Pompaggio marino - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
+                "name": "Comuni con potenziali di pompaggio: potenza - analisi 2015",
+                "description": "Comuni con potenziali di pompaggio: potenza - analisi 2015",
                 "url": "http://gis2.rse-web.it/geoserver/wms",
                 "dataCustodian": "text",
-                "layers": "atlante_integrato:v_comuni_pompaggio_marino",
-                "styles":"comuni_pomp_marino_acc",
-                "id": "po_CapMar"
+                "featureInfoTemplate": {
+                  "template": "<p>Pompaggio marino potenza (MW) <b>{{pot_po_38}}</b> ; <br> <p>Pompaggio sotterraneo potenza (MW) <b>{{pot_po_40}}</b> ; <br>  <p>Pompaggio nuovi bacini potenza (MW) <b>{{pot_po_42}}</b> ; <br>  <p>Pompaggio tra bacini esistenti e nuovi potenza (MW) <b>{{pot_po_44}}</b> ; <br>  <p>Pompaggio potenziale totale potenza (MW) <b>{{pot_po_sum}}</b> ; <br><br><a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
+                },
+                "metadataUrls":[{
+                  "title":"link metadato anno 2015",
+                  "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=86"
+                }],
+                "layers": "new_atlante_integrato:po_pot_2015",
+                "styles":"comuni_pomp_pot_tot",
+                "id": "po_pot_2015"
+              },
+              {
+                "type": "wms",
+                "name": "Comuni con potenziali di pompaggio: capacità - analisi 2015",
+                "description": "Impianti pompaggio potenzialmente realizzabili, aggregazione comunale, informazioni relative a capacità di accumulo (MWh), capacità di accumulo di pompaggio comunale (MW), capacità di accumulo di turbinaggio comunale (MW) \n\n Tra le informazioni alla base della determinazione dei potenziali si può discriminare tra differenti capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni. \n\n  var_39) Pompaggio marino - capacità di accumulo fattibile ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.(MWh) \n   var_41) Pompaggio sotterraneo - capacità di accumulo fattibile ottenibile mediante impianti di pompaggio sotterraneo, ossia dove viene realizzato un serbatoio in caverna.(MWh) \n  var_43) Pompaggio tra bacini esistenti - capacità di accumulo fattibile ottenibile mediante impianti di pompaggio tra serbatoi esistenti.(MWh) \n  var_45) Pompaggio bacini esistenti e nuovi - capacità di accumulo fattibile ottenibile mediante impianti di pompaggio tra un serbatoio esistente ed uno da realizzare.(MWh) \n ",
+                "url": "http://gis2.rse-web.it/geoserver/wms",
+                "featureInfoTemplate": {
+                  "template": "<p>Pompaggio marino capacità di accumulo (MWh) <b>{{acc_var_39}}</b> ; <br> <p>Pompaggio sotterraneo capacità di accumulo (MWh) <b>{{acc_var_41}}</b> ; <br>  <p>Pompaggio nuovi bacini capacità di accumulo (MWh) <b>{{acc_var_43}}</b> ; <br>  <p>Pompaggio tra bacini esistenti e nuovi capacità di accumulo (MWh) <b>{{acc_var_45}}</b> ; <br>  <p>Pompaggio potenziale totale capacità di accumulo (MW) <b>{{acc_var_sum}}</b> ; <br><br><a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
+                },
+                "dataCustodian": "text",
+                "metadataUrls":[{
+                  "title":"link metadato anno 2015",
+                  "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=86"
+                }],
+                "layers": "new_atlante_integrato:po_acc_2015",
+                "styles":"new_atlante_integrato:comuni_po_acc_tot",
+                "id": "po_captot"
               },
               {
                 "type": "wms",

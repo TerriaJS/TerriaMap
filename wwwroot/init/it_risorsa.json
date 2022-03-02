@@ -149,7 +149,7 @@
                   "dataCustodian": "text",
                   "layers": "atlante_integrato:v_pluviometri",
                   "featureInfoTemplate": {
-                    "template": "<br><p>L'idrometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_pluvioNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
+                    "template": "<br><p>Il pluviometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_pluvioNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
                   },
                   "metadataUrls":[{
                     "title":"link metadato",
