@@ -12,7 +12,6 @@
           "name": "Indice di autosufficienza",
           "description": "Indice di autosufficienza. Rapporto tra produzione FER comunale e consumi elettrici comunali. Anno 2015, MT e BT. Riferimento rapporto atlante integrato.\n\n <a href=\"http://www.rse-web.it/documenti/documento/318553\" target=\"_blank\">Rapporto RSE 18007806 - Atlante Integrato per il Sistema Energetico Nazionale e le fonti rinnovabili (ai:SEN)</a></p>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Indice di autosufficienza <b>{{consumi_autosufficienza}}</b> del comune {{comune}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
           },
@@ -36,7 +35,6 @@
           "name": "BigBang_prec_TP_2011-2019",
           "description": "new_atlante_integrato: prova di visualizzazione big bang new_atlante_integrato:BB_prec_TP_2011-2019",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:BB_prec_TP_2011-2019",
           "id": "bbTP_2011",
           "styles":"stile_TP",
@@ -49,7 +47,6 @@
           "name": "BigBang_prec_RF_2011-2019",
           "description": "new_atlante_integrato: prova di visualizzazione big bang new_atlante_integrato:RF_2011-2019",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:RF_2011-2019",
           "id": "bbRF_2011",
           "styles":"stile_RF",
@@ -62,7 +59,6 @@
           "name": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon",
           "description": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon prova di visualizzazione di un geotiff",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:eucordhi_mod2_pr_2005_mon",
           "id": "eucordhi",
           "shareKeys": [
@@ -74,7 +70,6 @@
           "name": "netcdf",
           "description": "wind sulcis prova di visualizzazione di un netcdf",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:WSPD10",
           "id": "WSPD10",
           "shareKeys": [
@@ -86,7 +81,6 @@
           "name": "batimetria",
           "description": " batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:bati_2018",
           "styles":"new_atlante_integrato:bati_2018",
           "id": "bati",
@@ -99,7 +93,6 @@
           "name": "tiff2",
           "description": "PercentDamage_0_T200 prova di visualizzazione di un geotiff a 2 livelli",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:PercentDamage_0_T200",
           "id": "tiff2l",
           "shareKeys": [

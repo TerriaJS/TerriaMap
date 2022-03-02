@@ -9,7 +9,6 @@
           "type": "wms",
           "name": "TOTEM",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:v_province_terria",
           "styles": "polygon",
           "opacity": 0.5,

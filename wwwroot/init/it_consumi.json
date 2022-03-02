@@ -11,7 +11,6 @@
           "name": "Consumi elettrici totali a livello regionale (GWh)",
           "description": "Consumi elettrici totali a livello regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici.\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -34,7 +33,6 @@
           "name": "Consumi elettrici del comparto industriale regionale (GWh)",
           "description": "Consumi elettrici del comparto industriale regionale (GWh) \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto industriale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -54,7 +52,6 @@
           "name": "Consumi elettrici del comparto agricolo regionale (GWh)",
           "description": "Consumi elettrici del comparto agricolo regionale (GWh) \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto agricolo (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -74,7 +71,6 @@
           "name": "Consumi elettrici del comparto terziario regionale (GWh)",
           "description": "Consumi elettrici del comparto terziario regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto terziario (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "layers": "new_atlante_integrato:v_regioni_t",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
@@ -94,7 +90,6 @@
           "name": "Consumi elettrici del comparto domestico regionale (GWh)",
           "description": "Consumi elettrici del comparto domestico regionale (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici del comparto domestico (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -114,7 +109,6 @@
           "name": "Consumi elettrici FS regionali (GWh)",
           "description": "Consumi elettrici FS regionali (GWh). \n\n Mappa della distribuzione regionale dei consumi elettrici FS regionali (GWh). \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -134,7 +128,6 @@
           "name": "Consumi elettrici del comparto agricolo provinciale (GWh)",
           "description": "Consumi elettrici del comparto agricolo provinciale (GWh). \n\n Mappa della distribuzione dei consumi elettrici del comparto agricolo provinciale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -160,7 +153,6 @@
             }
           ],
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -180,7 +172,6 @@
           "name": "Consumi elettrici del comparto terziario provinciale (GWh)",
           "description": "Consumi elettrici del comparto terziario provinciale (GWh). \n\n Mappa della distribuzione Consumi elettrici del comparto terziario provinciale (GWh).\n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -200,7 +191,6 @@
           "name": "Consumi elettrici del comparto domestico provinciale (GWh)",
           "description": "Consumi elettrici del comparto domestico provinciale (GWh). \n\n Mappa della distribuzione dei consumi elettrici del comparto domestico provinciale (GWh).<br> \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
@@ -220,7 +210,6 @@
           "name": "Consumi elettrici totali a livello provinciale esclusi consumi FS (GWh)",
           "description": "Consumi elettrici totali a livello provinciale esclusi consumi FS (GWh). \n\n Mappa della distribuzione dei consumi elettrici totali a livello provinciale esclusi consumi FS (GWh).<br> \n\n <a href=\"https://www.terna.it/it/sistema-elettrico/statistiche/pubblicazioni-statistiche\" target=\"_blank\">TERNA S.p.A.</a>",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "dataCustodian": "text",
           "featureInfoTemplate": {
             "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
           },
