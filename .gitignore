@@ -25,3 +25,11 @@ pancake/
 yarn-error.log
 
 package-lock.json
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
