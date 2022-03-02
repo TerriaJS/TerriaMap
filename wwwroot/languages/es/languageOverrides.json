@@ -549,33 +549,33 @@
     "searchItemTitle": "Buscar"
   },
   "dateTime": {
-    "back": "Go back",
-    "previous": "Previous time",
-    "selectTime": "Select a time",
-    "outOfRange": "Currently out of range.",
-    "next": "Next time",
-    "useTimeline": "Use timeline",
-    "availableTimeChart": "Show available times on chart",
+    "back": "Regresar",
+    "previous": "Momento anterior",
+    "selectTime": "Selecciona una hora",
+    "outOfRange": "Actualmente fuera de rango.",
+    "next": "El próximo momento",
+    "useTimeline": "Usar línea de tiempo",
+    "availableTimeChart": "Mostrar tiempos disponibles en el gráfico",
     "timeline": {
       "togglePlay": "Iniciar",
       "gotoStart": "Ir al principio",
-      "textCell": "Name of the dataset whose time range is shown",
-      "playSlower": "Play Slower",
-      "playFaster": "Play Faster"
+      "textCell": "Nombre del conjunto de datos cuyo intervalo de tiempo se muestra",
+      "playSlower": "Play más lento",
+      "playFaster": "Play más rápido"
     }
   },
   "satellite": {
     "filterByLocation": "Filtrar por localización",
     "newLocation": "Nueva localización",
     "removeFilter": "Quitar filtro",
-    "pickPoint": "Select a point by clicking on the map.",
-    "querying": "Querying position...",
-    "infoGroup": "Only showing available capture times for:",
-    "zoomTo": "Zoom to"
+    "pickPoint": "Seleccione un punto haciendo clic en el mapa.",
+    "querying": "Consultando posición...",
+    "infoGroup": "Solo se muestran los tiempos de captura disponibles para:",
+    "zoomTo": "Zoom a"
   },
   "timer": {
-    "nextScheduledUpdateTime": "Next data update at {{scheduledUpdateTime}}",
-    "nextScheduledUpdateCountdown": "Next data update in {{timeCountdown}}"
+    "nextScheduledUpdateTime": "Próxima actualización de datos en {{scheduledUpdateTime}}",
+    "nextScheduledUpdateCountdown": "Próxima actualización de datos en{{timeCountdown}}"
   },
   "concept": {
     "summary": {
@@ -599,7 +599,7 @@
     "shareExplanation": "Cualquiera con esta URL podrá acceder a este mapa."
   },
   "dragDrop": {
-    "text": "<0>Drag & Drop</0><1>Your data anywhere to view on the map<1>",
+    "text": "<0>Drag & Drop</0><1>Tus datos en cualquier lugar para verlos en el mapa<1>",
     "not": "<0>bbbb</0>"
   },
   "loader": {
@@ -623,56 +623,56 @@
     "add": "Añadir",
     "remove": "Quitar",
     "loading": "Cargando…",
-    "privateIndicatorTitle": "Private Dataset"
+    "privateIndicatorTitle": "Conjunto de datos privado"
   },
   "chart": {
     "download": "Descargar",
     "expand": "Expandir",
     "closePanel": "Cerrar panel",
     "sectionLabel": "Gráficos",
-    "loading": "Loading chart data...",
-    "noData": "No chartable data found."
+    "loading": "Cargando datos del gráfico...",
+    "noData": "No se encontraron datos gráficos."
   },
   "viewModels": {
     "searchCatalogueItem": "Elementos del catálogo",
     "searchLocations": "Localizaciones",
     "searchAddresses": "Direcciones",
-    "searchNoLocations": "Sorry, no locations match your search query.",
-    "searchErrorOccurred": "An error occurred while searching.  Please check your internet connection or try again later.",
-    "searchPlaceNames": "Official Place Names",
-    "searchNoPlaceNames": "Sorry, no official place names match your search query.",
-    "searchNoCatalogueItem": "Sorry, no catalogue items match your search query.",
-    "inMultipleLocations": "In multiple locations including: ",
-    "inDataCatalogue": "In Data Catalogue"
+    "searchNoLocations": "Lo sentimos, ninguna ubicación coincide con su consulta de búsqueda.",
+    "searchErrorOccurred": "Ocurrió un error durante la búsqueda. Comprueba tu conexión a Internet o vuelve a intentarlo más tarde.",
+    "searchPlaceNames": "Nombres oficiales de lugares",
+    "searchNoPlaceNames": "Lo sentimos, no hay nombres de lugares oficiales que coincidan con su consulta de búsqueda.",
+    "searchNoCatalogueItem": "Lo sentimos, ningún artículo del catálogo coincide con su consulta de búsqueda.",
+    "inMultipleLocations": "En múltiples ubicaciones, incluyendo: ",
+    "inDataCatalogue": "En catálogo de datos"
   },
   "terriaViewer": {
-    "slowWebGLAvailableTitle": "Poor WebGL performance",
-    "slowWebGLAvailableMessage": "Your web browser reports that it has performance issues displaying {{appName}} in 3D, so you will see a limited, 2D-only experience. For the full 3D experience, please try using a different web browser, upgrading your video drivers, or upgrading your operating system.",
-    "slowWebGLAvailableMessageII": "{{appName}}  works best with a web browser that supports {{webGL}} including the latest versions of {{chrome}}, {{firefox}}, {{safari}} , and {{internetExplorer}}. Your web browser does not appear to support WebGL, so you will see a limited, 2D-only experience.",
+    "slowWebGLAvailableTitle": "Bajo rendimiento de WebGL",
+    "slowWebGLAvailableMessage": "Tu navegador web informa que tiene problemas de rendimiento al mostrar {{appName}} en 3D, por lo que verás una experiencia limitada de solo 2D. Para una experiencia 3D completa, intente usar un navegador web diferente, actualice sus controladores de video o actualice su sistema operativo.",
+    "slowWebGLAvailableMessageII": "{{appName}} funciona mejor con un navegador web compatible con {{webGL}}, incluidas las últimas versiones de {{chrome}}, {{firefox}}, {{safari}} , and {{internetExplorer}}. Your web browser does not appear to support WebGL, so you will see a limited, 2D-only experience.",
     "internetExplorer": "Internet Explorer 11",
     "chrome": "Google Chrome",
     "firefox": "Mozilla Firefox",
     "safari": "Apple Safari",
-    "webGLNotSupportedTitle": "WebGL not supported",
-    "webGLNotSupportedOrSlowTitle": "WebGL not supported or too slow",
-    "webGLNotSupportedOrSlowMessage": "Your web browser cannot display the map in 3D, either because it does not support WebGL or because your web browser has reported that WebGL will be extremely slow. Please try a different web browser, such as the latest version of {{chrome}}, {{firefox}}, {{safari}}, {{internetExplorer}}.In some cases, you may need to upgrade your computer's video driver or operating system in order to get the 3D view in {{appName}}."
+    "webGLNotSupportedTitle": "WebGL no soportada",
+    "webGLNotSupportedOrSlowTitle": "WebGL no es compatible o demasiado lento",
+    "webGLNotSupportedOrSlowMessage": "Su navegador web no puede mostrar el mapa en 3D, ya sea porque no es compatible con WebGL o porque su navegador web ha informado que WebGL será extremadamente lento. Pruebe con un navegador web diferente, como la última versión de {{chrome}}, {{firefox}}, {{safari}}, {{internetExplorer}}.In some cases, you may need to upgrade your computer's video driver or operating system in order to get the 3D view in {{appName}}."
   },
   "analytics": {
     "selectLocation": "Seleccionar Localización",
-    "point": "Point (lat/lon)",
-    "polygon": "Polygon",
-    "existingPolygon": "Existing Polygon",
-    "nothingSelected": "Nothing has been selected, please use the buttons above to make a selection.",
-    "runAnalysis": "Run Analysis",
-    "clickToDrawLine": "Click to draw line",
-    "enterValidCoords": "Please enter valid coordinates (e.g. 131.0361, -25.3450).",
-    "selectPoint": "Select a point by clicking on the map.",
-    "clickToDrawPolygon": "Click to draw polygon",
-    "shiftToDrawRectangle": "Press the SHIFT key and hold down the left mouse button to draw a rectangle",
-    "clickToDrawRectangle": "Click to draw rectangle",
-    "selectedPolygon": "Selected Polygon",
-    "regionName": "Region name",
-    "selectExistingPolygon": "Select existing polygon"
+    "point": "Punto (lat/lon)",
+    "polygon": "Polígono",
+    "existingPolygon": "Polígono existente",
+    "nothingSelected": "No se ha seleccionado nada, utilice los botones de arriba para hacer una selección.",
+    "runAnalysis": "Ejecutar análisis",
+    "clickToDrawLine": "Haga clic para dibujar la línea",
+    "enterValidCoords": "Por favor, introduzca coordenadas válidas(e.g. 131.0361, -25.3450).",
+    "selectPoint": "Seleccione un punto haciendo clic en el mapa.",
+    "clickToDrawPolygon": "Haga clic para dibujar polígono",
+    "shiftToDrawRectangle": "Presione la tecla SHIFT y mantenga presionado el botón izquierdo del mouse para dibujar un rectángulo",
+    "clickToDrawRectangle": "Haga clic para dibujar un rectángulo",
+    "selectedPolygon": "Polígono seleccionado",
+    "regionName": "Nombre de la región",
+    "selectExistingPolygon": "Seleccionar polígono existente"
   },
   "core": {
     "errors": {
@@ -747,11 +747,11 @@
   },
   "map": {
     "addressGeocoder": {
-      "devError": "bulkConvertAddresses must be implemented in the derived class."
+      "devError": "bulkConvertAddresses debe implementarse en la clase derivada"
     },
     "cesium": {
-      "devError": "cesium is required.",
-      "failedToObtain": "Failed to obtain image tile X: {{x}} Y: {{y}} Level: {{level}}.",
+      "devError": "Se requiere cesio.",
+      "failedToObtain": "Error al obtener mosaico de imagen X: {{x}} Y: {{y}} Nivel: {{level}}.",
       "notWebMercatorTilingScheme": "Este conjunto de datos no se puede mostrar en el mapa 2D porque no es compatible con la proyección Web Mercator (EPSG:3857).",
       "unusalTilingScheme": "Este conjunto de datos no se puede mostrar en el mapa 2D porque utiliza un esquema de ordenamiento en teselas inusual que no es compatible."
     },
