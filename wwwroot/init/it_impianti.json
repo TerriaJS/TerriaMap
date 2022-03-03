@@ -35,7 +35,7 @@
                     "cql_filter": "var_id=89"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=89&anno=2019"
                   }]             
                 },
@@ -50,7 +50,7 @@
                     "template": "<p>Potenza totale effettiva regionale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=103&anno=2019"
                   }],
                   "parameters": {
@@ -69,7 +69,7 @@
                     "template": "<br><p>Numero impianti regionali <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=179&anno=2019"
                   }],
                   "styles":"eo_num_impianti_reg",
@@ -86,7 +86,7 @@
                   "layers": "new_atlante_integrato:v_regioni_t",
                   "styles":"eo_imp_reg_produzione",
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=90&anno=2019"
                   }],
                   "dimensions": {"cql_filter":"var_id=90"},
@@ -105,7 +105,7 @@
                     "cql_filter": "var_id=69"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=69&anno=2019"
                   }],
                   "id": "69",
@@ -122,7 +122,7 @@
                   "layers": "new_atlante_integrato:v_province_t",
                   "styles":"eo_mini_potenza_mw",
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=85&anno=2019"
                   }],
                   "parameters": {
@@ -195,7 +195,7 @@
                   "name": "Dighe",
                   "description": "Dighe (anno di riferimento 2020)\n\n Database HESCI - Dighe (anno di riferimento 2020). Il Database HESCHI comprende impianti idroelettrici alimentanti da serbatoio. \n\n Per alcune analisi effettuate e per predisporre dei dati utili ad approfondimenti di maggior dettaglio nel prosieguo dell’attività (LA1.09), sono stati reperiti e riorganizzati i dati dei serbatoi italiani raccolti nel database dei serbatoi italiani presentato in <i>A. Frigerio, M. Meghella, G. Bruno, G. Stella, «Valutazione del potenziale di accumulo di energia mediante centrali di pompaggio idroelettrico per il sistema elettrico italiano,» RSE - Rapporto RdS, Milano, 2011.</i>\n Le informazioni inserite nel database sono state reperite dalle seguenti fonti:\n • Il database del Registro Italiano Dighe (<a href=\"www.registroitalianodighe.it\">www.registroitalianodighe.it</a>) che raccoglie le informazioni relative alle grandi dighe italiane quali posizione, tipo, altezza e volume d’invaso secondo la L.584/94, volume d’invaso autorizzato, quota di massima regolazione e autorizzata, concessionario; • I database “Risentimenti Sismici” e “Costi/Benefici” che sono stati sviluppati nell’ambito della Ricerca di Sistema negli anni passati. Il primo individua, per un dato evento sismico, le dighe da sottoporre a controllo secondo le indicazioni del Registro Italiano Dighe; il secondo fornisce una valutazione a posteriori dei costi/benefici delle dighe italiane al fine di migliorare l’accettazione sociale della presenza dell’impianto sul territorio; • I volumi “Le dighe di ritenuta degli impianti idroelettrici italiani”, redatti a cura della commissione ANIDEL (Associazione Nazionale Imprese Produttrici e Distributrici di Energia Elettrica) nel 1961 e, successivamente, da ENEL nel 1974; • Il sito internet di Progetto Dighe (<a href=\"www.progettodighe.it\">www.progettodighe.it</a>) curato e aggiornato da un gruppo di appassionati di dighe, centrali idroelettriche e opere idrauliche, che si segnala per la completezza dei dati. Il database nella sezione “SKYdam” contiene, infatti, ben 577 dighe non solo italiane, ma anche francesi, statunitensi e svizzere. Una scheda riporta sia le loro caratteristiche principali sia una mappa di Google Maps con la posizione geografica.",
                   "metadataUrls":[{
-                    "title":"link metadato anno 2020",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=172&anno=2019"
                   }],
                   "url": "http://gis2.rse-web.it/geoserver/wms",
@@ -208,7 +208,7 @@
                   "description": "Invasi (anno di riferimento 2020)\n\n Database HESCI - Invasi (anno di riferimento 2020). Il Database HESCHI comprende impianti idroelettrici alimentanti da serbatoio.\n\n Per alcune analisi effettuate e per predisporre dei dati utili ad approfondimenti di maggior dettaglio nel prosieguo dell’attività (LA1.09), sono stati reperiti e riorganizzati i dati dei serbatoi italiani raccolti nel database dei serbatoi italiani presentato in <i>A. Frigerio, M. Meghella, G. Bruno, G. Stella, «Valutazione del potenziale di accumulo di energia mediante centrali di pompaggio idroelettrico per il sistema elettrico italiano,» RSE - Rapporto RdS, Milano, 2011.</i>\n Le informazioni inserite nel database sono state reperite dalle seguenti fonti:\n • Il database del Registro Italiano Dighe (<a href=\"www.registroitalianodighe.it\">www.registroitalianodighe.it</a>) che raccoglie le informazioni relative alle grandi dighe italiane quali posizione, tipo, altezza e volume d’invaso secondo la L.584/94, volume d’invaso autorizzato, quota di massima regolazione e autorizzata, concessionario; • I database “Risentimenti Sismici” e “Costi/Benefici” che sono stati sviluppati nell’ambito della Ricerca di Sistema negli anni passati. Il primo individua, per un dato evento sismico, le dighe da sottoporre a controllo secondo le indicazioni del Registro Italiano Dighe; il secondo fornisce una valutazione a posteriori dei costi/benefici delle dighe italiane al fine di migliorare l’accettazione sociale della presenza dell’impianto sul territorio; • I volumi “Le dighe di ritenuta degli impianti idroelettrici italiani”, redatti a cura della commissione ANIDEL (Associazione Nazionale Imprese Produttrici e Distributrici di Energia Elettrica) nel 1961 e, successivamente, da ENEL nel 1974; • Il sito internet di Progetto Dighe (<a href=\"www.progettodighe.it\">www.progettodighe.it</a>) curato e aggiornato da un gruppo di appassionati di dighe, centrali idroelettriche e opere idrauliche, che si segnala per la completezza dei dati. Il database nella sezione “SKYdam” contiene, infatti, ben 577 dighe non solo italiane, ma anche francesi, statunitensi e svizzere. Una scheda riporta sia le loro caratteristiche principali sia una mappa di Google Maps con la posizione geografica.",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "metadataUrls":[{
-                    "title":"link metadato anno 2020",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=173&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:hesci_laghi2020",
@@ -220,7 +220,7 @@
                   "description": "Impianti (anno di riferimento 2020)\n\n Database HESCI - Impianti idroelettrici (anno di aggiornamento 2020)\n\n\n Il Database HESCHI comprende impianti idroelettrici alimentanti da serbatoio. \n\n Per alcune analisi effettuate e per predisporre dei dati utili ad approfondimenti di maggior dettaglio nel prosieguo dell’attività (LA1.09), sono stati reperiti e riorganizzati i dati dei serbatoi italiani raccolti nel database dei serbatoi italiani presentato in <i>A. Frigerio, M. Meghella, G. Bruno, G. Stella, «Valutazione del potenziale di accumulo di energia mediante centrali di pompaggio idroelettrico per il sistema elettrico italiano,» RSE - Rapporto RdS, Milano, 2011.</i>\n Le informazioni inserite nel database sono state reperite dalle seguenti fonti:\n • Il database del Registro Italiano Dighe (<a href=\"www.registroitalianodighe.it\">www.registroitalianodighe.it</a>) che raccoglie le informazioni relative alle grandi dighe italiane quali posizione, tipo, altezza e volume d’invaso secondo la L.584/94, volume d’invaso autorizzato, quota di massima regolazione e autorizzata, concessionario; • I database “Risentimenti Sismici” e “Costi/Benefici” che sono stati sviluppati nell’ambito della Ricerca di Sistema negli anni passati. Il primo individua, per un dato evento sismico, le dighe da sottoporre a controllo secondo le indicazioni del Registro Italiano Dighe; il secondo fornisce una valutazione a posteriori dei costi/benefici delle dighe italiane al fine di migliorare l’accettazione sociale della presenza dell’impianto sul territorio; • I volumi “Le dighe di ritenuta degli impianti idroelettrici italiani”, redatti a cura della commissione ANIDEL (Associazione Nazionale Imprese Produttrici e Distributrici di Energia Elettrica) nel 1961 e, successivamente, da ENEL nel 1974; • Il sito internet di Progetto Dighe (<a href=\"www.progettodighe.it\">www.progettodighe.it</a>) curato e aggiornato da un gruppo di appassionati di dighe, centrali idroelettriche e opere idrauliche, che si segnala per la completezza dei dati. Il database nella sezione “SKYdam” contiene, infatti, ben 577 dighe non solo italiane, ma anche francesi, statunitensi e svizzere. Una scheda riporta sia le loro caratteristiche principali sia una mappa di Google Maps con la posizione geografica.",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "metadataUrls":[{
-                    "title":"link metadato anno 2020",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=173&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:hesci_centrali2020",
@@ -867,7 +867,7 @@
                     "template": "<p>Produzione regionale da bioliquidi (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=189&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_regioni_t",
@@ -886,7 +886,7 @@
                     "template": "<p>Produzione regionale da biomasse solide (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=198&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_regioni_t",
@@ -905,7 +905,7 @@
                     "template": "<p>Produzione regionale da RU biodegradabili (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=192&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_regioni_t",
@@ -924,7 +924,7 @@
                     "template": "<p>Produzione provinciale (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=79&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
@@ -943,7 +943,7 @@
                     "template": "<p>Produzione provinciale da biogas (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=197&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
@@ -962,7 +962,7 @@
                     "template": "<p>Produzione provinciale da RU biodegradabili (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=194&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
@@ -981,7 +981,7 @@
                     "template": "<p>Produzione provinciale da bioliquidi (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=191&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
@@ -1000,7 +1000,7 @@
                     "template": "<p>Produzione provinciale da biomasse (GWh)<b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=200&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_province_t",
@@ -1084,7 +1084,7 @@
                   "template": "<p>Potenziale comunale (MW) ... da finire ... </b></p>//<p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                 },
                 "metadataUrls":[{
-                  "title":"link metadato anno 2015",
+                  "title":"link metadato",
                   "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=44&anno=2015"
                   }],
                 "layers": "new_atlante_integrato:v_imp_po_com_poten",
@@ -1099,7 +1099,7 @@
                   "template": "<p>Pompaggio marino potenza (MW) <b>{{pot_po_38}}</b> ; <br> <p>Pompaggio sotterraneo potenza (MW) <b>{{pot_po_40}}</b> ; <br>  <p>Pompaggio nuovi bacini potenza (MW) <b>{{pot_po_42}}</b> ; <br>  <p>Pompaggio tra bacini esistenti e nuovi potenza (MW) <b>{{pot_po_44}}</b> ; <br>  <p>Pompaggio potenziale totale potenza (MW) <b>{{pot_po_sum}}</b> ; <br><br><a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
                 },
                 "metadataUrls":[{
-                  "title":"link metadato anno 2015",
+                  "title":"link metadato",
                   "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=86"
                 }],
                 "layers": "new_atlante_integrato:po_pot_2015",
@@ -1115,7 +1115,7 @@
                   "template": "<p>Pompaggio marino capacità di accumulo (MWh) <b>{{acc_var_39}}</b> ; <br> <p>Pompaggio sotterraneo capacità di accumulo (MWh) <b>{{acc_var_41}}</b> ; <br>  <p>Pompaggio nuovi bacini capacità di accumulo (MWh) <b>{{acc_var_43}}</b> ; <br>  <p>Pompaggio tra bacini esistenti e nuovi capacità di accumulo (MWh) <b>{{acc_var_45}}</b> ; <br>  <p>Pompaggio potenziale totale capacità di accumulo (MW) <b>{{acc_var_sum}}</b> ; <br><br><a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=8\">link al metadato </a> </p>"
                 },
                 "metadataUrls":[{
-                  "title":"link metadato anno 2015",
+                  "title":"link metadato",
                   "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=86"
                 }],
                 "layers": "new_atlante_integrato:po_acc_2015",
