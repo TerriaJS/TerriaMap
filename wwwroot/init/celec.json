@@ -22,9 +22,10 @@
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
-                  "idColumns": ["est_id"]
+                  "idColumns": [
+                    "est_id"
+                  ]
                 }
-
               }
             },
             {
@@ -35,9 +36,10 @@
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
-                  "idColumns": ["est_id"]
+                  "idColumns": [
+                    "est_id"
+                  ]
                 }
-
               }
             },
             {
@@ -48,9 +50,10 @@
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
-                  "idColumns": ["est_id"]
+                  "idColumns": [
+                    "est_id"
+                  ]
                 }
-
               }
             },
             {
@@ -61,9 +64,10 @@
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
-                  "idColumns": ["est_id"]
+                  "idColumns": [
+                    "est_id"
+                  ]
                 }
-
               }
             },
             {
@@ -74,12 +78,13 @@
               "defaultStyle": {
                 "time": {
                   "timeColumn": "timestamp_mes",
-                  "idColumns": ["est_id"]
+                  "idColumns": [
+                    "est_id"
+                  ]
                 }
-
               }
             }
-            ]
+          ]
         },
         {
           "type": "group",
@@ -160,9 +165,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["est_id"]
+                      "idColumns": [
+                        "est_id"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -173,9 +179,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["est_id"]
+                      "idColumns": [
+                        "est_id"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -186,9 +193,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["est_id"]
+                      "idColumns": [
+                        "est_id"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -246,9 +254,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["cod_localidad"]
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -259,9 +268,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["cod_localidad"]
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -272,9 +282,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["cod_localidad"]
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -285,9 +296,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["cod_localidad"]
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -298,9 +310,10 @@
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
-                      "idColumns": ["cod_localidad"]
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
                     }
-
                   }
                 },
                 {
@@ -587,7 +600,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -599,7 +612,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -611,7 +624,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -623,7 +636,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -635,7 +648,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -647,7 +660,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -659,7 +672,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         },
@@ -671,7 +684,7 @@
               "type": "wms-group",
               "name": "prueba",
               "getCapabilitiesUrl": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "url":"http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
+              "url": "http://localhost:8600/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=celec-geoserver%3Aja100_torre"
             }
           ]
         }
@@ -757,7 +770,9 @@
             }
           ],
           "isOpen": true,
-          "shareKeys": ["Root Group/WMS"]
+          "shareKeys": [
+            "Root Group/WMS"
+          ]
         },
         {
           "type": "group",
@@ -798,48 +813,105 @@
             }
           ],
           "isOpen": true,
-          "shareKeys": ["Root Group/WMS"]
+          "shareKeys": [
+            "Root Group/WMS"
+          ]
         }
       ]
     },
     {
-    "type": "group",
-    "name": "Servicios externos",
-    "members": [
-      {
-        "type": "group",
-        "name": "ArcGis",
-        "members": [
-          {
-            "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
-            "type": "esri-mapServer",
-            "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
-            "name": "Imágenes del mundo"
-          },
-          {
-            "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer",
-            "type": "esri-mapServer",
-            "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
-            "name": "Mapa físico del mundo"
-          },
-          {
-            "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer",
-            "type": "esri-mapServer",
-            "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
-            "name": "Mapa de topografía del mundo"
-          }
-        ],
-        "isOpen": true,
-        "shareKeys": ["Root Group/WMS"]
-      },
-      {
-        "name": "Energy Data",
-        "url": "https:/energydata.info/",
-        "type": "ckan-group"
-      }
+      "type": "group",
+      "name": "Servicios externos",
+      "members": [
+        {
+          "type": "group",
+          "name": "ArcGis",
+          "members": [
+            {
+              "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
+              "type": "esri-mapServer",
+              "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+              "name": "Imágenes del mundo"
+            },
+            {
+              "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer",
+              "type": "esri-mapServer",
+              "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+              "name": "Mapa físico del mundo"
+            },
+            {
+              "url": "https://server.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer",
+              "type": "esri-mapServer",
+              "dataCustodian": "[ArcGis Services](https://server.arcgisonline.com/arcgis/rest/services)",
+              "name": "Mapa de topografía del mundo"
+            }
+          ],
+          "isOpen": true,
+          "shareKeys": [
+            "Root Group/WMS"
+          ]
+        },
+        {
+          "name": "Energy Data",
+          "url": "https:/energydata.info/",
+          "type": "ckan-group"
+        }
       ]
     }
   ],
+  "baseMaps": {
+    "items": [
+      {
+        "item": {
+          "id": "basemap-bing-aerial",
+          "name": "Bing Maps Aerial"
+        },
+        "image": "images/basemaps/bing-aerial.png"
+      },
+      {
+        "item": {
+          "id": "basemap-bing-aerial-with-labels",
+          "name": "Bing Maps Aerial with Labels"
+        },
+        "image": "images/basemaps/ecuador.png"
+      },
+      {
+        "item": {
+          "id": "basemap-bing-roads",
+          "name": "Bing Maps Roads"
+        },
+        "image": "images/basemaps/ecuador-topo.png"
+      },
+      {
+        "item": {
+          "id": "basemap-natural-earth-II",
+          "name": "Natural Earth II"
+        },
+        "image": "images/basemaps/natural-earth.png"
+      },
+      {
+        "item": {
+          "id": "basemap-black-marble",
+          "name": "NASA Black Marble"
+        },
+        "image": "images/basemaps/black-marble.png"
+      },
+      {
+        "item": {
+          "id": "basemap-positron",
+          "name": "Positron (Light)"
+        },
+        "image": "images/basemaps/positron.png"
+      },
+      {
+        "item": {
+          "id": "basemap-darkmatter",
+          "name": "Dark Matter"
+        },
+        "image": "images/basemaps/dark-matter.png"
+      }
+    ]
+  },
   "baseMapId": "basemap-bing-aerial-with-labels",
   "previewBaseMapId": "basemap-positron"
 }
