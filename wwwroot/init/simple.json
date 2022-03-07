@@ -866,49 +866,49 @@
           "id": "basemap-bing-aerial",
           "name": "Bing Maps Aerial"
         },
-        "image": "images/basemaps/bing-aerial.png"
+        "image": "images/basemaps/ecuador-aerial.png"
       },
       {
         "item": {
           "id": "basemap-bing-aerial-with-labels",
           "name": "Bing Maps Aerial with Labels"
         },
-        "image": "images/basemaps/ecuador.png"
+        "image": "images/basemaps/ecuador-aerial-labels.png"
       },
       {
         "item": {
           "id": "basemap-bing-roads",
           "name": "Bing Maps Roads"
         },
-        "image": "images/basemaps/ecuador-topo.png"
+        "image": "images/basemaps/ecuador-maps-roads.png"
       },
       {
         "item": {
           "id": "basemap-natural-earth-II",
           "name": "Natural Earth II"
         },
-        "image": "images/basemaps/natural-earth.png"
+        "image": "images/basemaps/ecuador-natural-earth.png"
       },
       {
         "item": {
           "id": "basemap-black-marble",
           "name": "NASA Black Marble"
         },
-        "image": "images/basemaps/black-marble.png"
+        "image": "images/basemaps/ecuador-black-marble.png"
       },
       {
         "item": {
           "id": "basemap-positron",
           "name": "Positron (Light)"
         },
-        "image": "images/basemaps/positron.png"
+        "image": "images/basemaps/ecuador-positron.png"
       },
       {
         "item": {
           "id": "basemap-darkmatter",
           "name": "Dark Matter"
         },
-        "image": "images/basemaps/dark-matter.png"
+        "image": "images/basemaps/ecuador-dark-matter.png"
       }
     ]
   },
