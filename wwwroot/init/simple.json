@@ -855,6 +855,11 @@
           "name": "Energy Data",
           "url": "https:/energydata.info/",
           "type": "ckan-group"
+        },
+        {
+          "type": "wfs-group",
+          "name": "IRENA",
+          "url": "https://irena-ga.azurewebsites.net/geoserver/ows/"
         }
       ]
     }
