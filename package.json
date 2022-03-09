@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "github:TerriaJS/terriajs-server#1757-ts-new-routing"
+    "terriajs-server": "^3.3.4"
   },
   "config": {
     "awsProfile": "terria",
