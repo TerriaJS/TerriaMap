@@ -91,9 +91,21 @@
           "name": "G2 Geologia",
           "members": [
             {
-              "name": "db110_fallas_cardenillo_200k",
+              "name": "db110_fallas_cardenillo_200k Doable geometria",
               "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g2_geologia:db110_fallas_cardenillo_200k",
+              "type": "wms"
+            },
+            {
+              "name": "db110_fallas_cardenillo_200k 4326",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:db110_v_fallas_cardenillo_200k",
+              "type": "wms"
+            },
+            {
+              "name": "db110_fallas_cardenillo_200k 32717",
+              "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:g2_geologia:db110_fallas_cardenillo_200k_v2",
               "type": "wms"
             },
             {
@@ -186,8 +198,22 @@
                   }
                 },
                 {
+                  "name": "Humedad Relativa Mensual 2",
+                  "description": "Dashboard humedad relatica por estación.\n\n Enlace  http://localhost:8800/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
+                  "type": "csv",
+                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_solar_Humedad_Mensual_2&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  }
+                },
+                {
                   "name": "Radiación Mensual",
-                  "description": "Dashboard radiación horaria por estación.\n\n Enlace http://localhost:8800/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1",
+                  "description": "Dashboard radiación horaria por estación.\n\n Enlace http://localhost:8800/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1&var-estacion=est_solar",
                   "type": "csv",
                   "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
