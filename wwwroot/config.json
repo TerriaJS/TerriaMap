@@ -9,7 +9,7 @@
     // Log ConsoleAnalytics events to console
     // logToConsole: true,
     // create this on cesium site and add here to make the map show in the app
-    "cesiumIonAccessToken": "",
+    "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkMzA5YzNmYy0wYjViLTRkNGYtYTk2MC1hNzFmOTBmYTEzYmUiLCJpZCI6NzU2NzgsImlhdCI6MTYzODgwODIzNH0.TngUYPd5hc1s-ekE9g4yiRuTcp76CnCm16NFmewjWBI",
 
 
     /* Text that appears at the bottom of the map */

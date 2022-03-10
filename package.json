@@ -21,9 +21,13 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
+    "mobx": "^6.0.0",
+    "mobx-react": "^7.0.0",
+    "mobx-react-lite": "^3.0.0",
+    "mobx-utils": "^6.0.0",
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.3.3",
-    "react-datepicker": "^4.3.0"
+    "react-datepicker": "^4.3.0",
+    "terriajs-server": "^3.3.3"
   },
   "config": {
     "awsProfile": "terria",
