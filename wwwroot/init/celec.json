@@ -181,7 +181,23 @@
                         "est_id"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "name": "Humedad Relativa Mensual",
@@ -195,7 +211,23 @@
                         "est_id"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "name": "Radiación Mensual",
@@ -209,7 +241,23 @@
                         "est_id"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "type": "group",
