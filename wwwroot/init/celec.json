@@ -318,7 +318,23 @@
                         "cod_localidad"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "name": "Temperatura Mensual",
@@ -332,7 +348,23 @@
                         "cod_localidad"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "name": "Presión Atmosférica Mensual",
@@ -346,7 +378,23 @@
                         "cod_localidad"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "name": "Dirección del Viento Mensual",
@@ -360,7 +408,23 @@
                         "cod_localidad"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "name": "Velocidad del Viento Mensual",
@@ -374,7 +438,23 @@
                         "cod_localidad"
                       ]
                     }
-                  }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 },
                 {
                   "type": "group",
