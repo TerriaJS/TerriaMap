@@ -151,35 +151,60 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Eolico - Potenza comunale (MW) - anno 2019",
-                  "description": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2019)",
+                  "name": "Eolico - Numero di impianti comunali",
+                  "description": "Numero di impianti comunali - raggruppamento comunale (anno di riferimento 2019)",
                   "featureInfoTemplate": {
-                    "template": "<p>Potenza comunale (MW) <b>{{pot_tot_mw}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                    "template": "<p>Numero impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "metadataUrls":[{
                     "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=204&anno=2019"
                   }],
-                  "layers": "new_atlante_integrato:imp_eo_ragg_com_2019",
-                  "id": "eo_Pcom",
-                  "styles":"eo_imp_com_potenza"
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "parameters": {
+                    "cql_filter": "var_id=204"
+                  },
+                  "id": "eo_204",
+                  "styles":"new_atlante_integrato:eo_num_comun"
                 },
                 {
                   "type": "wms",
-                  "name": "Eolico - Numero comunale - anno 2019",
-                  "description": "Numero impianti eolici - raggruppamento comunale (anno di riferimento 2019)",
+                  "name": "Eolico - Numero di aerogeneratori comunali",
+                  "description": "Numero di aerogeneratori comunali - raggruppamento comunale (anno di riferimento 2019)",
+                  "featureInfoTemplate": {
+                    "template": "<p>Numero di aerogeneratori <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                  },
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=217&anno=2019"
+                  }],
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "parameters": {
+                    "cql_filter": "var_id=217"
+                  },
+                  "id": "eo_217",
+                  "styles":"new_atlante_integrato:eo_num_comun"
+                },
+                {
+                  "type": "wms",
+                  "name": "Eolico - Potenza comunale - anno 2019",
+                  "description": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2019)",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
-                    "template": "<p>Numero comunale di impianti <b>{{num_imp_to}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                    "template": "<p>Potenza comunale di impianti (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
                     "title":"link metadato",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=204&anno=2019"
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=218&anno=2019"
                   }],
-                  "layers": "new_atlante_integrato:imp_eo_ragg_com_2019",
-                  "id": "eo_Ncom",
-                  "styles":"new_atlante_integrato:eo_num_comun"
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "parameters": {
+                    "cql_filter": "var_id=218"
+                  },
+                  "id": "eo_218",
+                  "styles":"comuni_eo_imp_potenza_installata"
                 }
               ]
             },
@@ -598,14 +623,41 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Fotovoltaico - Raggruppamento comunale impianti.",
-                  "description": "Fotovoltaico - raggruppamento comunale impianti - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati.<br>\n\n",
+                  "name": "Fotovoltaico - Numero impianti comunale",
+                  "description": "Numero di impianti fotovoltaici raggruppamento comunale - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale della numerosità degli impianti fotovoltaici installati.",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
-                    "template": "<p>raggruppamento comunale impianti.</p>"
+                    "template": "<p>Numero comunale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
-                  "layers": "new_atlante_integrato:fv_impianti_comune_2019",
-                  "id": "555"
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=215&anno=2019"
+                  }],
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "styles":"so_n_imp_com",
+                  "parameters": {
+                    "cql_filter": "var_id=215"
+                  },
+                  "id": "215"
+                },
+                {
+                  "type": "wms",
+                  "name": "Fotovoltaico - Potenza comunale impianti.",
+                  "description": "Potenza fotovoltaica installata comunale - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati.<br>\n\n",
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "featureInfoTemplate": {
+                    "template": "<p>Potenza comunale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                  },
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=219&anno=2019"
+                  }],
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "styles":"so_n_imp_com",
+                  "parameters": {
+                    "cql_filter": "var_id=219"
+                  },
+                  "id": "219"
                 }
               ]
             },
@@ -660,15 +712,18 @@
                   "description": "Impianti geotermoelettrici - Potenza comunale impianti\n\n Potenza impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2020)",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
-                    "template": "<p>Potenza comunale impianti (MW) <b>{{pot_tot_mw}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020\">link al metadato </a> </p>"
+                    "template": "<p>Potenza comunale impianti (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=220&anno=2020\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2020",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020"
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=220&anno=2020"
                   }],
-                  "layers": "new_atlante_integrato:geotermoel_comun_2020",
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "parameters": {
+                    "cql_filter": "var_id=220"
+                  },
                   "styles":"ge_pot_imp_com",
-                  "id": "ge_Pcom"
+                  "id": "ge_220"
                 },
                 {
                   "type": "wms",
@@ -749,18 +804,21 @@
                 {
                   "type": "wms",
                   "name": "Geotermoelettrico - Numero impianti comunale",
-                  "description": "Impianti geotermoelettrici - Numero impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2018)\n\n Numero impianti geotermici - raggruppamento comunale (anno di riferimento 2018) ",
+                  "description": "Impianti geotermoelettrici - Numero impianti geotermici - raggruppamento comunale (anno di riferimento 2020)\n\n Numero impianti geotermici - raggruppamento comunale (anno di riferimento 2020) ",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
-                    "template": "<p>Numero comunale impianti <b>{{num_impian}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020\">link al metadato </a> </p>"
+                    "template": "<p>Numero comunale impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2020",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=203&anno=2020"
                   }],
-                  "layers": "new_atlante_integrato:geotermoel_comun_2020",
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "parameters": {
+                    "cql_filter": "var_id=203"
+                  },
                   "styles":"ge_num_impianti_com",
-                  "id": "ge_Ncom"
+                  "id": "ge_203"
                 },
                 {
                   "type": "wms",
