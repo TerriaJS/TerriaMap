@@ -89,7 +89,7 @@
                     "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=90&anno=2019"
                   }],
-                  "dimensions": {"cql_filter":"var_id=90"},
+                  "parameters": {"cql_filter":"var_id=90"},
                   "id": "90"
                 },
                 {
