@@ -69,7 +69,7 @@ gulp.task('build-app', gulp.parallel('render-index', gulp.series('check-terriajs
     runWebpack(webpack, webpackConfig, done);
 })));
 
-gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
+gulp.task('release-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(false);
@@ -79,7 +79,7 @@ gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-versi
     runWebpack(webpack, Object.assign({}, webpackConfig, {
         plugins: webpackConfig.plugins || []
     }), done);
-}));
+})));
 
 gulp.task('watch-render-index', gulp.series('render-index', function watchRenderIndex() {
   return gulp.watch(['wwwroot/index.ejs'], gulp.series('render-index'));
