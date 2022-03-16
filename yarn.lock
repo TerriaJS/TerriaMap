@@ -11502,7 +11502,7 @@ terriajs-schema@latest:
     when "^3.7.7"
     yargs "^3.32.0"
 
-terriajs-server@^3.3.3:
+terriajs-server@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/terriajs-server/-/terriajs-server-3.3.4.tgz#60522821bdd9c31f8857fd258530552bd29b2417"
   integrity sha512-SgCcR1yPOhwUayoA7RgkumlVY6Q56cwXtKTM49LxEf+cbq4x7Ab5O0sRhnY72GE2oAByT6yFYlcECGWAQqKp+A==

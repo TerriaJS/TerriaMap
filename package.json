@@ -3,7 +3,8 @@
   "workspaces": {
     "packages": [
       "packages/terriajs",
-      "packages/cesium"
+      "packages/cesium",
+      "packages/terriajs-server"
     ],
     "nohoist": [
       "**/husky"
@@ -22,7 +23,7 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.3.3"
+    "terriajs-server": "^3.3.4"
   },
   "config": {
     "awsProfile": "terria",
@@ -58,6 +59,7 @@
     "gulp": "^4.0.0",
     "husky": "^2.7.0",
     "json5": "^2.1.0",
+    "minimist": "^1.2.5",
     "node-notifier": "^5.1.2",
     "node-sass": "^6.0.1",
     "plugin-error": "^1.0.1",

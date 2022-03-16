@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+### 2022-03-14
+
+**Breaking changes:**
+
+* Removed `wwwroot/index.html`. 
+* Added gulp task `gulp render-index`. This builds `wwwroot/index.html` from the template `wwwroot/index.ejs` with a `<base href="${baseHref}">` tag set via commnd line parameter. The following tasks all call `render-index`: 
+  * `default` (i.e. calling `gulp` without a task)
+  * `build`
+  * `release`
+  * `watch`
+* Example usage: `gulp build --baseHref="/map/"` if your TerriaMap is deployed at http://example.com/map/
+
+
 ### 2021-09-27
 
 * Disabled sourcemaps for production builds. To re-enable for your specific application, set "devtool" to 'source-map' in buildprocess/webpack.config.js
