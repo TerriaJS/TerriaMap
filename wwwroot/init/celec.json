@@ -29,6 +29,14 @@
                   "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_l&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
                 },
                 {
+                  "name": "db110_fallas_cardenillo_200k Doable geometria",
+                  "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers": "g2_geologia:db110_fallas_cardenillo_200k",
+                  "type": "wms",
+                  "hideLegendInWorkbench": true,
+                  "show": true
+                },
+                {
                   "type": "wms-group",
                   "name": "Paute",
                   "url": "http://gis.uazuay.edu.ec:8080/geoserver/crp_25k/wms",
@@ -43,9 +51,9 @@
               "members": [
                 {
                   "name": "Temperatura Mensual",
-                  "description": "Dashboard temperatura mensual por estación.\n\n Enlace  http://localhost:8800/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
+                  "description": "Dashboard temperatura mensual por estación.\n\n Enlace  http://172.16.60.46:8800/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_solar_temperatura_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_solar_temperatura_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -54,6 +62,7 @@
                       ]
                     }
                   },
+                  "disableExport": true,
                   "info": [
                     {
                       "name": "Fuente de datos",
@@ -73,9 +82,9 @@
                 },
                 {
                   "name": "Humedad Relativa Mensual",
-                  "description": "Dashboard humedad relatica por estación.\n\n Enlace  http://localhost:8800/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
+                  "description": "Dashboard humedad relatica por estación.\n\n Enlace  http://172.16.60.46:8800/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Humedad_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Humedad_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -103,9 +112,9 @@
                 },
                 {
                   "name": "Radiación Mensual",
-                  "description": "Dashboard radiación horaria por estación.\n\n Enlace http://localhost:8800/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria http://localhost:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1&var-estacion=est_solar",
+                  "description": "Dashboard radiación horaria por estación.\n\n Enlace http://172.16.60.46:8800/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria http://172.16.60.46:8800/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1&var-estacion=est_solar",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -138,35 +147,35 @@
                     {
                       "name": "Mapa Irradiacion Global Inclinacion Optima",
                       "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Global-Inclinacion-Optima-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Difusa",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-horizontal-Difusa-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Global",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Horizontal-Global-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Irradiacion Normal Directa",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Normal-Directa-Ecuador",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Temperatura",
                       "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Temperatura-Ecuador",
                       "type": "wms"
                     }
@@ -180,9 +189,9 @@
               "members": [
                 {
                   "name": "Humedad Relativa Mensual",
-                  "description": "Dashboard humedad mensual por estación. \n\n Enlace http://localhost:8800/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
+                  "description": "Dashboard humedad mensual por estación. \n\n Enlace http://172.16.60.46:8800/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -210,9 +219,9 @@
                 },
                 {
                   "name": "Temperatura Mensual",
-                  "description": "Dashboard temperatura mensual por estación.  \n\n Enlace http://localhost:8800/d/EUlUJxAnz/g4_eolico_temperatura_mensual",
+                  "description": "Dashboard temperatura mensual por estación.  \n\n Enlace http://172.16.60.46:8800/d/EUlUJxAnz/g4_eolico_temperatura_mensual",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -240,9 +249,9 @@
                 },
                 {
                   "name": "Presión Atmosférica Mensual",
-                  "description": "Dashboard presión atmosferica mensual por estación.  \n\n Enlace http://localhost:8800/d/Rim4vwJ7z/g4_eolico_presion_mensual",
+                  "description": "Dashboard presión atmosferica mensual por estación.  \n\n Enlace http://172.16.60.46:8800/d/Rim4vwJ7z/g4_eolico_presion_mensual",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -270,9 +279,9 @@
                 },
                 {
                   "name": "Dirección del Viento Mensual",
-                  "description": "Dashboard dirección del viento mensual por estación. \n\n Enlace http://localhost:8800/d/iCZxwgb7k/g4_eolico_direccion_viento_mensual",
+                  "description": "Dashboard dirección del viento mensual por estación. \n\n Enlace http://172.16.60.46:8800/d/iCZxwgb7k/g4_eolico_direccion_viento_mensual",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -300,9 +309,9 @@
                 },
                 {
                   "name": "Velocidad del Viento Mensual",
-                  "description": "Dashboard velocidad del viento mensual por estación.\n\n Enlace http://localhost:8800/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual",
+                  "description": "Dashboard velocidad del viento mensual por estación.\n\n Enlace http://172.16.60.46:8800/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual",
                   "type": "csv",
-                  "url": "http://localhost:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
                     "time": {
                       "timeColumn": "timestamp_mes",
@@ -335,14 +344,14 @@
                     {
                       "name": "Mapa Veolocidad Viento 100m",
                       "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Velocidad-Viento-100m",
                       "type": "wms"
                     },
                     {
                       "name": "Mapa Densidad Viento",
                       "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
-                      "url": "http://localhost:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Densidad-Viento-Ecuador-100m",
                       "type": "wms"
                     }
