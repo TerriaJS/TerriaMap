@@ -50,8 +50,8 @@
               "name": "Solar",
               "members": [
                 {
-                  "name": "Temperatura Mensual",
-                  "description": "Dashboard temperatura mensual por estación.\n\n Enlace  $GRAFANA_URL/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
+                  "name": "Solar Temperatura Mensual (°C)",
+                  "description": "Resumen de los valores de temperatura del aire a escala anual, mensual y horaria en las estaciones de radiación solar.\n\n Enlace  $GRAFANA_URL/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_solar_temperatura_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -62,7 +62,9 @@
                       ]
                     }
                   },
-                  "disableExport": true,
+                  "chartColor": "red",
+                  "chartType": "momentPoints",
+                  "chartGlyphStyle": "wye",
                   "info": [
                     {
                       "name": "Fuente de datos",
@@ -81,8 +83,8 @@
                   ]
                 },
                 {
-                  "name": "Humedad Relativa Mensual",
-                  "description": "Dashboard humedad relatica por estación.\n\n Enlace  $GRAFANA_URL/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
+                  "name": "Solar Humedad Relativa Mensual (%)",
+                  "description": "Resumen de los valores de humedad relativa del aire a escala anual, mensual y horaria en las estaciones de radiación solar.\n\n Enlace  $GRAFANA_URL/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Humedad_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -111,8 +113,8 @@
                   ]
                 },
                 {
-                  "name": "Radiación Mensual",
-                  "description": "Dashboard radiación horaria por estación.\n\n Enlace $GRAFANA_URL/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria $GRAFANA_URL/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1&var-estacion=est_solar",
+                  "name": "Solar Radiación Mensual (W/m2)",
+                  "description": "Resumen de los valores de radiación solar del aire a escala anual, mensual y horaria en las estaciones de radiación solar.\n\n Enlace $GRAFANA_URL/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria $GRAFANA_URL/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1&var-estacion=est_solar",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -142,42 +144,67 @@
                 },
                 {
                   "type": "group",
-                  "name": "Atlas-Solar",
+                  "name": "Atlas Solar",
                   "members": [
                     {
                       "name": "Mapa Irradiacion Global Inclinacion Optima",
-                      "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Global-Inclinacion-Optima-Ecuador",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Difusa",
-                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-horizontal-Difusa-Ecuador",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     },
                     {
                       "name": "Mapa Irradiacion Horizontal Global",
-                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Horizontal-Global-Ecuador",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     },
                     {
                       "name": "Mapa Irradiacion Normal Directa",
-                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Irradiacion-Normal-Directa-Ecuador",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     },
                     {
                       "name": "Mapa Temperatura",
-                      "description": "Fuente: Global Solar Atlas. \n\n Enlace: https://globalsolaratlas.info/",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Temperatura-Ecuador",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -188,38 +215,8 @@
               "name": "Eólico",
               "members": [
                 {
-                  "name": "Humedad Relativa Mensual",
-                  "description": "Dashboard humedad mensual por estación. \n\n Enlace $GRAFANA_URL/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
-                  "type": "csv",
-                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-                  "defaultStyle": {
-                    "time": {
-                      "timeColumn": "timestamp_mes",
-                      "idColumns": [
-                        "cod_localidad"
-                      ]
-                    }
-                  },
-                  "info": [
-                    {
-                      "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                    }
-                  ],
-                  "columns":[
-                    {
-                      "name": "geom_32717",
-                      "type": "hidden"
-                    },
-                    {
-                      "name": "dashboard",
-                      "type": "hidden"
-                    }
-                  ]
-                },
-                {
-                  "name": "Temperatura Mensual",
-                  "description": "Dashboard temperatura mensual por estación.  \n\n Enlace $GRAFANA_URL/d/EUlUJxAnz/g4_eolico_temperatura_mensual",
+                  "name": "Eólico Temperatura Mensual (°C)",
+                  "description": "Resumen de los valores de temperatura del aire a escala anual, mensual y horaria en las torres eólicas.  \n\n Enlace $GRAFANA_URL/d/EUlUJxAnz/g4_eolico_temperatura_mensual",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -233,7 +230,7 @@
                   "info": [
                     {
                       "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
                     }
                   ],
                   "columns":[
@@ -248,8 +245,38 @@
                   ]
                 },
                 {
-                  "name": "Presión Atmosférica Mensual",
-                  "description": "Dashboard presión atmosferica mensual por estación.  \n\n Enlace $GRAFANA_URL/d/Rim4vwJ7z/g4_eolico_presion_mensual",
+                  "name": "Eólico Humedad Relativa Mensual (%)",
+                  "description": "Resumen de los valores de humedad relativa del aire a escala anual, mensual y horaria en las torres eólicas. \n\n Enlace $GRAFANA_URL/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Eólico Presión Atmosférica Mensual (mbar)",
+                  "description": "Resumen de los valores de presión atmosférica a escala anual, mensual y horaria en las torres eólicas. \n\n Enlace $GRAFANA_URL/d/Rim4vwJ7z/g4_eolico_presion_mensual",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -263,7 +290,7 @@
                   "info": [
                     {
                       "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
                     }
                   ],
                   "columns":[
@@ -278,8 +305,8 @@
                   ]
                 },
                 {
-                  "name": "Dirección del Viento Mensual",
-                  "description": "Dashboard dirección del viento mensual por estación. \n\n Enlace $GRAFANA_URL/d/iCZxwgb7k/g4_eolico_direccion_viento_mensual",
+                  "name": "Eólico Dirección del Viento Mensual (grados)",
+                  "description": "Resumen de los valores de dirección del viento a escala anual, mensual y horaria en las torres eólicas. \n\n Enlace $GRAFANA_URL/d/iCZxwgb7k/g4_eolico_direccion_viento_mensual",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -293,7 +320,7 @@
                   "info": [
                     {
                       "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
                     }
                   ],
                   "columns":[
@@ -308,8 +335,8 @@
                   ]
                 },
                 {
-                  "name": "Velocidad del Viento Mensual",
-                  "description": "Dashboard velocidad del viento mensual por estación.\n\n Enlace $GRAFANA_URL/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual",
+                  "name": "Eólico Velocidad del Viento Mensual (m/s)",
+                  "description": "Resumen de los valores de velocidad del viento a escala anual, mensual y horaria en las torres eólicas.\n\n Enlace $GRAFANA_URL/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual",
                   "type": "csv",
                   "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
@@ -323,7 +350,7 @@
                   "info": [
                     {
                       "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
                     }
                   ],
                   "columns":[
@@ -339,21 +366,31 @@
                 },
                 {
                   "type": "group",
-                  "name": "Atlas-Viento",
+                  "name": "Atlas Viento",
                   "members": [
                     {
                       "name": "Mapa Veolocidad Viento 100m",
-                      "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Velocidad-Viento-100m",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Global Wind Atlas  [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     },
                     {
                       "name": "Mapa Densidad Viento",
-                      "description": "Fuente: Global Wind Atlas. \n\n Enlace: https://globalwindatlas.info/.",
                       "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
                       "layers": "g4_energias_renovables:Mapa-Densidad-Viento-Ecuador-100m",
-                      "type": "wms"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Global Wind Atlas  [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
                     }
                   ]
                 }
