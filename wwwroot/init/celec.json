@@ -16,37 +16,6 @@
           "members": [
             {
               "type": "group",
-              "name": "Capas",
-              "members": [
-                {
-                  "type": "wfs",
-                  "name": "Rios Dobles",
-                  "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_a&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
-                },
-                {
-                  "type": "wfs",
-                  "name": "Rios Simples",
-                  "url": "http://www.geoportaligm.gob.ec/regional/wfs?&request=GetFeature&service=WFS&typename=igm:rio_l&outputFormat=text/xml;%20subtype=gml/3.1.1&version=1.1.0"
-                },
-                {
-                  "name": "db110_fallas_cardenillo_200k Doable geometria",
-                  "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-                  "layers": "g2_geologia:db110_fallas_cardenillo_200k",
-                  "type": "wms",
-                  "hideLegendInWorkbench": true,
-                  "show": true
-                },
-                {
-                  "type": "wms-group",
-                  "name": "Paute",
-                  "url": "http://gis.uazuay.edu.ec:8080/geoserver/crp_25k/wms",
-                  "description": "Servicio para sistematizar y organizar la información institucional de la zona 6 del Ecuador, como instrumento de planificación territorial que responda a una visión regional",
-                  "dataCustodian": "[IERSE](http://ierse.uazuay.edu.ec/)"
-                }
-              ]
-            },
-            {
-              "type": "group",
               "name": "Solar",
               "members": [
                 {
@@ -62,10 +31,16 @@
                       ]
                     }
                   },
-                  "chartColor": "red",
-                  "chartType": "momentPoints",
-                  "chartGlyphStyle": "wye",
-                  "info": [
+                  "featureInfoTemplate": {
+                    "template": "Date: {{Date}}",
+                    "formats": {
+                      "Date": {
+                        "type": "dateTime",
+                        "format": "dd-mm-yyyy HH:MM:ss"
+                      }
+                    }
+                  },
+                    "info": [
                     {
                       "name": "Fuente de datos",
                       "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
@@ -395,6 +370,100 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G6 Infraestructura",
+          "members": [
+            {
+              "name": "bh130_area_embalse_2153",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:bh130_area_embalse_2153",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G8 Infraestructura transporte",
+          "members": [
+            {
+              "name": "ap030_red_vial_detallada_150000",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g8_infraestructura_transporte:ap030_red_vial_detallada_150000",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G9 Hidrografía",
+          "members": [
+            {
+              "name": "bh140_quebradas_crp_50k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g9_hidrografia:bh140_quebradas_crp_50k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "bh140_rios_ecuador_50k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g9_hidrografia:bh140_rios_ecuador_50k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G12 Demarcación",
+          "members": [
+            {
+              "name": "ha000_perfil_ecuador",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha000_perfil_ecuador",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "ha002_provincias",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha002_provincias",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "ha003_cantones_crp_250k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha003_cantones_crp_250k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "ha101_parroquias_cardenillo_250k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha101_parroquias_cardenillo_250k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "hd001_microcuenca_25k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:hd001_microcuenca_25k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "hd001_microcuenca_50k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:hd001_microcuenca_50k",
+              "type": "wms",
+              "isOpenInWorkbench": false
             }
           ]
         }

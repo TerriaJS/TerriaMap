@@ -80,11 +80,11 @@
 
     // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
-      "enabled": false,
+      "enabled": true,
       "debug": false,
       "languages": {
-        "en": "English",
-        "es": "Español"
+        "es": "Español",
+        "en": "English"
       },
       "fallbackLanguage": "es"
     },
