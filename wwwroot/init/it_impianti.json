@@ -23,7 +23,7 @@
               "members": [
                 {
                   "type": "wms",
-                  "name": "Eolico - Potenza complessiva regionale (MW)",
+                  "name": "Eolico - Potenza regionale (MW)",
                   "description": "Impianti eolici - Potenza totale effettiva installata regionale (MW) \n\n Mappa della distribuzione regionale della potenza totale eolica installata nel tempo.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "styles":"eo_imp_reg_potenza",
@@ -94,7 +94,7 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Eolico - Potenza complessiva provinciale (MW)",
+                  "name": "Eolico - Potenza provinciale (MW)",
                   "description": "Impianti eolici - Potenza totale effettiva installata provinciale (MW)\n\n Mappa della distribuzione regionale della potenza eolica installata nel tempo, dati dall'anno 2016.<br>Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
                   "featureInfoTemplate": {
                     "template": "<p>Potenza totale provinciale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
@@ -151,6 +151,25 @@
                 },
                 {
                   "type": "wms",
+                  "name": "Eolico - Numero impianti provinciale",
+                  "description": "Numero di impianti eolici -  Numero totale annuale provinciale\n\n Mappa della distribuzione provinciale della produzione totale eolica riferita all'anno 2019 <br> Elaborazione di Ricerca sul Sistema Energetico - RSE S.p.A. a partire da dati puntuali di potenza forniti da GSE.",
+                  "featureInfoTemplate": {
+                    "template": "<p>Numero impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                  },
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "layers": "new_atlante_integrato:v_province_t",
+                  "styles":"eo_num_impianti_prov",
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=221&anno=2019"
+                  }],
+                  "parameters": {
+                    "cql_filter": "var_id=221"
+                  },
+                  "id": "eo_221"
+                },
+                {
+                  "type": "wms",
                   "name": "Eolico - Numero di impianti comunali",
                   "description": "Numero di impianti comunali - raggruppamento comunale (anno di riferimento 2019)",
                   "featureInfoTemplate": {
@@ -185,11 +204,11 @@
                     "cql_filter": "var_id=217"
                   },
                   "id": "eo_217",
-                  "styles":"new_atlante_integrato:eo_num_comun"
+                  "styles":"new_atlante_integrato:eo_num_ae_comun"
                 },
                 {
                   "type": "wms",
-                  "name": "Eolico - Potenza comunale - anno 2019",
+                  "name": "Eolico - Potenza comunale",
                   "description": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2019)",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
@@ -204,7 +223,7 @@
                     "cql_filter": "var_id=218"
                   },
                   "id": "eo_218",
-                  "styles":"comuni_eo_imp_potenza_installata"
+                  "styles":"eo_imp_com_potenza"
                 }
               ]
             },
@@ -528,7 +547,7 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Fotovoltaico - Potenza complessiva provinciale (MW)",
+                  "name": "Fotovoltaico - Potenza provinciale (MW)",
                   "description": "Impianti fotovoltaici - Potenza effettiva installata provinciale (MW)\n\n Mappa della distribuzione provinciale della potenza fotovoltaica installata.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
@@ -623,8 +642,27 @@
                 },
                 {
                   "type": "wms",
+                  "name": "Fotovoltaico - Potenza comunale impianti.",
+                  "description": "Potenza fotovoltaica installata comunale - dati aggiornati all'anno 2019. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati a terra con potenza dell'impianto superiore ad 1 MW.<br>\n\n",
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "featureInfoTemplate": {
+                    "template": "<p>Potenza comunale a terra (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                  },
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=219&anno=2019"
+                  }],
+                  "layers": "new_atlante_integrato:v_comuni_t",
+                  "styles":"so_imp_com_potenza_intallata",
+                  "parameters": {
+                    "cql_filter": "var_id=219"
+                  },
+                  "id": "219"
+                },
+                {
+                  "type": "wms",
                   "name": "Fotovoltaico - Numero impianti comunale",
-                  "description": "Numero di impianti fotovoltaici raggruppamento comunale - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale della numerosità degli impianti fotovoltaici installati.",
+                  "description": "Numero di impianti fotovoltaici raggruppamento comunale - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati a terra con potenza dell'impianto superiore ad 1 MW.",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
                     "template": "<p>Numero comunale di impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
@@ -639,25 +677,6 @@
                     "cql_filter": "var_id=215"
                   },
                   "id": "215"
-                },
-                {
-                  "type": "wms",
-                  "name": "Fotovoltaico - Potenza comunale impianti.",
-                  "description": "Potenza fotovoltaica installata comunale - dati aggiornati al 2019. \n\n Mappa della distribuzione comunale degli impianti fotovoltaici installati.<br>\n\n",
-                  "url": "http://gis2.rse-web.it/geoserver/wms",
-                  "featureInfoTemplate": {
-                    "template": "<p>Potenza comunale (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
-                  },
-                  "metadataUrls":[{
-                    "title":"link metadato",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=219&anno=2019"
-                  }],
-                  "layers": "new_atlante_integrato:v_comuni_t",
-                  "styles":"so_n_imp_com",
-                  "parameters": {
-                    "cql_filter": "var_id=219"
-                  },
-                  "id": "219"
                 }
               ]
             },
@@ -708,8 +727,8 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Geotermoelettrico - Potenza comunale (MW) - anno 2020",
-                  "description": "Impianti geotermoelettrici - Potenza comunale impianti\n\n Potenza impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2020)",
+                  "name": "Geotermoelettrico - Potenza comunale (MW) ",
+                  "description": "Impianti geotermoelettrici - Potenza comunale impianti - dati disponibili per l'anno 2020\n\n Potenza impianti geotermici (MW) - raggruppamento comunale (anno di riferimento 2020)",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
                     "template": "<p>Potenza comunale impianti (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=220&anno=2020\">link al metadato </a> </p>"

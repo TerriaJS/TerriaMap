@@ -54,22 +54,27 @@ function AnalisiAvanzate(props) {
             <div class="col-sm-6">*/}
             <p>
               {" "}
-              Attiva il tool di analisi territoriale TOTEM: Territory Overview
-              Tool for Energy Modeling{" "}
+              TOTEM (<i>Territory Overview Tool for Energy Modelling</i>){" "}
             </p>
             <p>
               {" "}
-              Permette la definizione ed il salvataggio di dati territoriali
+              Lo strumento fornisce una caratterizzazione energetica del
+              territorio e permette di stimare, visualizzare e salvare dati a
+              scala provinciale riguardanti la domanda energetica di elettricità
+              e calore, la risorsa rinnovabile (fotovoltaica ed eolica), i
+              vincoli territoriali per l’installazione di impianti fotovoltaici,
+              e il potenziale di accumulo idrico da impianti di pompaggio. Per
+              accedere{" "}
+              <a className={Styles.link} href={totem_link}>
+                seleziona la provincia
+              </a>{" "}
+              da analizzare
+              {/* Permette la definizione ed il salvataggio di dati territoriali
               necessari a software di analisi multienergetiche. Prima di
               attivare il tool è necessario selezionare, a partire dal link qui
               di seguito, il <i>territorio provinciale e l'anno </i> in cui se
-              vuole effettuare l'analisi.{" "}
+              vuole effettuare l'analisi. */}{" "}
             </p>
-            <a className={Styles.link} href={totem_link}>
-              <p>
-                <b> TOTEM in TerriaMap </b>
-              </p>
-            </a>
           </li>
         </ul>
       </div>

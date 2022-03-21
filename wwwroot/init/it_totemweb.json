@@ -18,7 +18,7 @@
           "id": "totem",
           "initialMessage": {
             "title": "Per accedere:",
-            "content": "Selezionare sulla mappa il territorio provinciale in cui se vuole effettuare l'analisi. Quindi avviare TOTEM.",
+            "content": "Seleziona la provincia da analizzare direttamente dalla mappa.",
             "key": "totem_warning",
             "confirmation": true,
             "confirmText": "Avvia"
