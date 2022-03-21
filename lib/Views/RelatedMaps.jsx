@@ -22,7 +22,7 @@ function RelatedMaps(props) {
       showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Related Maps</label>
+        <label className={PanelStyles.heading}>Visores</label>
       </div>
 
       <p>
@@ -34,7 +34,7 @@ function RelatedMaps(props) {
         <a target="_blank" href="http://172.16.60.46:3002/">
           <img
             className={Styles.image}
-            src={require("../../wwwroot/images/aremi.jpg")}
+            src={require("../../wwwroot/images/g4_energias.png")}
             alt="AREMI"
           />
         </a>
