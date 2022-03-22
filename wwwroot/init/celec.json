@@ -311,7 +311,7 @@
                 },
                 {
                   "name": "Eólico Velocidad del Viento Mensual (m/s)",
-                  "description": "Resumen de los valores de velocidad del viento a escala anual, mensual y horaria en las torres eólicas.\n\n Enlace http://172.16.60.46:8800/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual",
+                  "description": "Resumen de los valores de velocidad del viento a escala anual, mensual y horaria en las torres eólicas.\n\n Enlace http://172.16.60.46:8800/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual \n\n Enlace velocidad del viento horaria http://172.16.60.46:8800/d/ptAaJuPnk/g4_eolico_velocidad_viento_horario?orgId=1",
                   "type": "csv",
                   "url": "http://172.16.60.46:8600/geoserver/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
                   "defaultStyle": {
