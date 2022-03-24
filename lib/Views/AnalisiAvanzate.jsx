@@ -47,6 +47,7 @@ function AnalisiAvanzate(props) {
               <img
                 className={Styles.image}
                 src={require("../../wwwroot/images/logo_totem_TrW_new.png")}
+                /*src={require("../../wwwroot/images/totem3_v3.png")}*/
                 alt="totem"
               />
             </a>
@@ -54,21 +55,16 @@ function AnalisiAvanzate(props) {
             <div class="col-sm-6">*/}
             <p>
               {" "}
-              TOTEM (<i>Territory Overview Tool for Energy Modelling</i>){" "}
-            </p>
-            <p>
-              {" "}
-              Lo strumento fornisce una caratterizzazione energetica del
-              territorio e permette di stimare, visualizzare e salvare dati a
-              scala provinciale riguardanti la domanda energetica di elettricità
-              e calore, la risorsa rinnovabile (fotovoltaica ed eolica), i
-              vincoli territoriali per l’installazione di impianti fotovoltaici,
-              e il potenziale di accumulo idrico da impianti di pompaggio. Per
-              accedere{" "}
+              TOTEM (<i>Territory Overview Tool for Energy Modelling</i>):{" "}
+              fornisce una caratterizzazione energetica del territorio e
+              permette di stimare, visualizzare e salvare dati a scala
+              provinciale riguardanti: domanda energetica, risorsa rinnovabile,
+              vincoli territoriali e potenziale di accumulo idrico da pompaggi.{" "}
+              Per accedere{" "}
               <a className={Styles.link} href={totem_link}>
-                seleziona la provincia
-              </a>{" "}
-              da analizzare
+                seleziona una provincia
+              </a>
+              .
               {/* Permette la definizione ed il salvataggio di dati territoriali
               necessari a software di analisi multienergetiche. Prima di
               attivare il tool è necessario selezionare, a partire dal link qui
