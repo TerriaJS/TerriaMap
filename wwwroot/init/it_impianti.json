@@ -152,7 +152,7 @@
                 {
                   "type": "wms",
                   "name": "Eolico - Numero impianti provinciale",
-                  "description": "Numero di impianti eolici -  Numero totale annuale provinciale\n\n Mappa della distribuzione provinciale della produzione totale eolica riferita all'anno 2019 <br> Elaborazione di Ricerca sul Sistema Energetico - RSE S.p.A. a partire da dati puntuali di potenza forniti da GSE.",
+                  "description": "Numero di impianti eolici -  Numero totale provinciale\n\n Mappa della distribuzione provinciale del numero di pale eoliche riferito all'anno 2019 <br> Elaborazione di Ricerca sul Sistema Energetico - RSE S.p.A. a partire da dati puntuali di potenza forniti da GSE.",
                   "featureInfoTemplate": {
                     "template": "<p>Numero impianti <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
@@ -212,7 +212,7 @@
                   "description": "Potenza impianti eolici (MW) - raggruppamento comunale (anno di riferimento 2019)",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
-                    "template": "<p>Potenza comunale di impianti (MW) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+                    "template": "<p>Potenza comunale (MW): <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
                     "title":"link metadato",
@@ -236,7 +236,7 @@
               "members": [
                 {
                   "type": "wms",
-                  "name": "Dighe",
+                  "name": "Idroelettrico - Dighe",
                   "description": "Dighe (anno di riferimento 2020)\n\n Database HESCI - Dighe (anno di riferimento 2020). Il Database HESCHI comprende impianti idroelettrici alimentanti da serbatoio. \n\n Per alcune analisi effettuate e per predisporre dei dati utili ad approfondimenti di maggior dettaglio nel prosieguo dell’attività (LA1.09), sono stati reperiti e riorganizzati i dati dei serbatoi italiani raccolti nel database dei serbatoi italiani presentato in <i>A. Frigerio, M. Meghella, G. Bruno, G. Stella, «Valutazione del potenziale di accumulo di energia mediante centrali di pompaggio idroelettrico per il sistema elettrico italiano,» RSE - Rapporto RdS, Milano, 2011.</i>\n Le informazioni inserite nel database sono state reperite dalle seguenti fonti:\n • Il database del Registro Italiano Dighe (<a href=\"www.registroitalianodighe.it\">www.registroitalianodighe.it</a>) che raccoglie le informazioni relative alle grandi dighe italiane quali posizione, tipo, altezza e volume d’invaso secondo la L.584/94, volume d’invaso autorizzato, quota di massima regolazione e autorizzata, concessionario; • I database “Risentimenti Sismici” e “Costi/Benefici” che sono stati sviluppati nell’ambito della Ricerca di Sistema negli anni passati. Il primo individua, per un dato evento sismico, le dighe da sottoporre a controllo secondo le indicazioni del Registro Italiano Dighe; il secondo fornisce una valutazione a posteriori dei costi/benefici delle dighe italiane al fine di migliorare l’accettazione sociale della presenza dell’impianto sul territorio; • I volumi “Le dighe di ritenuta degli impianti idroelettrici italiani”, redatti a cura della commissione ANIDEL (Associazione Nazionale Imprese Produttrici e Distributrici di Energia Elettrica) nel 1961 e, successivamente, da ENEL nel 1974; • Il sito internet di Progetto Dighe (<a href=\"www.progettodighe.it\">www.progettodighe.it</a>) curato e aggiornato da un gruppo di appassionati di dighe, centrali idroelettriche e opere idrauliche, che si segnala per la completezza dei dati. Il database nella sezione “SKYdam” contiene, infatti, ben 577 dighe non solo italiane, ma anche francesi, statunitensi e svizzere. Una scheda riporta sia le loro caratteristiche principali sia una mappa di Google Maps con la posizione geografica.",
                   "metadataUrls":[{
                     "title":"link metadato",
@@ -367,33 +367,14 @@
                 },
                 {
                   "type": "wms",
-                  "name": "Produzione regionale (GWh) - anno 2015",
-                  "description": "Impianti idroelettrici - Produzione totale annuale regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzione totale idroelettrica normalizzata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
-                  "url": "http://gis2.rse-web.it/geoserver/wms",
-                  "featureInfoTemplate": {
-                    "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
-                  },
-                  "metadataUrls":[{
-                    "title":"link metadato anno 2019",
-                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=96&anno=2019"
-                  }],
-                  "layers": "new_atlante_integrato:v_regioni_t",
-                  "styles":"new_atlante_integrato:id_imp_reg_produzione",
-                  "parameters": {
-                    "cql_filter": "var_id=96"
-                  },
-                  "id": "96"
-                },
-                {
-                  "type": "wms",
                   "name": "Idroelettrico - Produzione complessiva regionale (GWh)",
-                  "description": "Impianti idroelettrici - Produzione totale annuale regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzione totale idroelettrica normalizzata nel tempo, dati aggiornati al 2015.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
+                  "description": "Impianti idroelettrici - Produzione totale annuale regionale (GWh)\n\n <p align=\"justify\">Mappa della distribuzione regionale della produzion totale idroelettrica installata nel tempo.<br> Rapporto Statistico - Energia da fonti rinnovabili - GSE</p> \n\n  <a href=\"https://www.gse.it/dati-e-scenari/statistiche\" target=\"_blank\">GSE S.p.A., Rapporto Statistico</a>",
                   "url": "http://gis2.rse-web.it/geoserver/wms",
                   "featureInfoTemplate": {
                     "template": "<p>Produzione regionale (GWh) <b>{{valore}}</b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
                   },
                   "metadataUrls":[{
-                    "title":"link metadato anno 2019",
+                    "title":"link metadato",
                     "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=210&anno=2019"
                   }],
                   "layers": "new_atlante_integrato:v_regioni_t",

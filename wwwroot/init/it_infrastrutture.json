@@ -12,9 +12,12 @@
           "name": "Comuni con Cabine Primarie con inversione di flusso",
           "description": "Comuni con Cabine Primarie con inversione di flusso \n\n Distribuzione a scala comunale degli eventi di inversione del flusso di energia rilevati nel 2015 nelle Cabine primarie, categorizzati in base alla durata. \n\n I dati riguardano le cabine di flusso di proprietà e-distribuzione e sono visibili i dati degli anni 2015 e/o 2020.",
           "url": "http://gis2.rse-web.it/geoserver/wms",
+          "featureInfoTemplate": {
+            "template": "<p>Comune:<b> {{comune}}</b></p><p>Anno: {{data}}</p><p>Inversione di flusso: {{valore}} %</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=1&anno={{data}}\">link al metadato </a> </p>"
+           },
           "metadataUrls":[{
-            "title":"link metadato anno 2016",
-            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=1&anno=2015"
+            "title":"link metadato",
+            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=1&anno=2020"
           }],
           "layers": "new_atlante_integrato:v_comuni_t",
           "parameters": {
