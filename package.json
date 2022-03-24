@@ -93,13 +93,14 @@
     "start": "pm2 start ecosystem.config.js --update-env -- --config-file devserverconfig.json",
     "stop": "pm2 stop ecosystem.config.js",
     "pm2": "pm2",
-    "gulp": "npm run pre_gulp && gulp release && npm run post_gulp",
+    "gulp": "gulp",
+    "gulp_RSE": "yarn pre_gulp && gulp release && yarn post_gulp",
     "gulp:watch": "gulp watch",
-    "postinstall": "echo 'Installation successful. What to do next:\\n  npm start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
+    "postinstall": "echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
-    "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && npm ci && npm run deploy-without-reinstall",
-    "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
-    "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
+    "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && yarn ci && yarn deploy-without-reinstall",
+    "deploy-without-reinstall": "gulp clean && gulp release && yarn deploy-current",
+    "deploy-current": "yarn get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
@@ -108,8 +109,8 @@
     "replace_cql": "copy .\\_dasostituire\\WebMapServiceCatalogItem.ts .\\node_modules\\terriajs\\lib\\Models\\Catalog\\Ows\\",
     "replace_prev": "copy wwwroot\\images\\basemaps\\black-marble.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\dark-matter.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\natural-earth.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\positron.png .\\wwwroot\\build\\TerriaJS\\images\\",
     "replace_language": "copy node_modules\\terriajs\\lib\\Language\\it\\translation.json wwwroot\\languages\\it",
-    "pre_gulp": "npm run replace_brand && npm run replace_cql",
-    "post_gulp": "npm run replace_prev"
+    "pre_gulp": "yarn replace_brand && yarn replace_cql",
+    "post_gulp": "yarn replace_prev"
   },
   "husky": {
     "hooks": {
