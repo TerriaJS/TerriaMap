@@ -11,6 +11,14 @@ var fs = require('fs');
 var gulp = require('gulp');
 var path = require('path');
 var PluginError = require('plugin-error');
+var minimist = require('minimist');
+
+var knownOptions = {
+  string: ['baseHref'],
+  default: {baseHref: '/'}
+};
+
+var options = minimist(process.argv.slice(2), knownOptions);
 
 var watchOptions = {
     interval: 1000
@@ -41,7 +49,17 @@ gulp.task('write-version', function(done) {
     done();
 });
 
-gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
+gulp.task('render-index', function renderIndex(done) {
+  var ejs = require('ejs');
+
+  var index = fs.readFileSync('wwwroot/index.ejs', 'utf8');
+  var indexResult = ejs.render(index, { baseHref: options.baseHref });
+
+  fs.writeFileSync(path.join('wwwroot', 'index.html'), indexResult);
+  done();
+});
+
+gulp.task('build-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true);
@@ -49,9 +67,9 @@ gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version
     checkForDuplicateCesium();
 
     runWebpack(webpack, webpackConfig, done);
-}));
+})));
 
-gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
+gulp.task('release-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(false);
@@ -61,10 +79,13 @@ gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-versi
     runWebpack(webpack, Object.assign({}, webpackConfig, {
         plugins: webpackConfig.plugins || []
     }), done);
+})));
+
+gulp.task('watch-render-index', gulp.series('render-index', function watchRenderIndex() {
+  return gulp.watch(['wwwroot/index.ejs'], gulp.series('render-index'));
 }));
 
-gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watchApp(done) {
-    var fs = require('fs');
+gulp.task('watch-app', gulp.parallel('watch-render-index', gulp.series('check-terriajs-dependencies', function watchApp(done) {    var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
@@ -73,7 +94,7 @@ gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watch
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);
-}));
+})));
 
 gulp.task('copy-terriajs-assets', function() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
@@ -335,7 +356,7 @@ function checkForDuplicateCesium() {
                     'Please verify that node_modules/terriajs-cesium is the correct version and\n' +
                     '  rm -rf node_modules/terriajs/node_modules/terriajs-cesium\n' +
                     'Also consider running:\n' +
-                    '  npm run gulp sync-terriajs-dependencies\n' +
+                    '  yarn gulp sync-terriajs-dependencies\n' +
                     'to prevent this problem from recurring the next time you `npm install`.');
         throw new PluginError('checkForDuplicateCesium', 'You have two copies of Cesium.', { showStack: false });
     }

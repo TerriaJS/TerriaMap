@@ -1,5 +1,5 @@
 # Docker image for the primary terria map application server
-FROM node:8
+FROM node:14
 
 RUN apt-get update && apt-get install -y gdal-bin
 

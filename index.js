@@ -128,6 +128,15 @@ module.exports = terria.start({
             }
         }
 
+        // Add font-imports
+        const fontImports = terria.configParameters.theme?.fontImports;
+        if (fontImports) {
+          const styleSheet = document.createElement("style");
+          styleSheet.type = "text/css";
+          styleSheet.innerText = fontImports;
+          document.head.appendChild(styleSheet);
+        }
+
         render(terria, [], viewState);
     } catch (e) {
         console.error(e);
