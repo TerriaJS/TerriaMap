@@ -357,6 +357,72 @@
                 }
               },
               "id": "3Wtr3E"
+            },
+            {
+              "type": "csv",
+              "name": "SA1_2021",
+              "id": "ccbHOTMZnM",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA1_2021_SA1_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "SA2_2021",
+              "id": "K3VrITMGe4",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA2_2021_SA2_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "SA2_NAME_2021",
+              "id": "rWE8gKC7Pb",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA2_2021_SA2_NAME_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "SA3_2021",
+              "id": "PUvcYBKZRD",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA3_2021_SA3_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "SA3_NAME_2021",
+              "id": "zy1XT2Tozd",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA3_2021_SA3_NAME_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "SA4_2021",
+              "id": "XgfiF4hqub",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA4_2021_SA4_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "SA4_NAME_2021",
+              "id": "Ep0MRHLxMm",
+              "url": "https://tile-test.terria.io/region-test-csvs/SA4_2021_SA4_NAME_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "GCCSA_2021",
+              "id": "JjiFvunrMF",
+              "url": "https://tile-test.terria.io/region-test-csvs/GCCSA_2021_GCCSA_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "GCCSA_NAME_2021",
+              "id": "7wfxltvumA",
+              "url": "https://tile-test.terria.io/region-test-csvs/GCCSA_2021_GCCSA_NAME_2021.csv"
+            },
+            {
+              "type": "csv",
+              "name": "LGA_2019",
+              "id": "YSK6at0rVn",
+              "url": "https://tile-test.terria.io/region-test-csvs/LGA_2019_LGA_2019.csv"
+            },
+            {
+              "type": "csv",
+              "name": "LGA_2021",
+              "id": "VlepKgBjtp",
+              "url": "https://tile-test.terria.io/region-test-csvs/LGA_2021_LGA_2021.csv"
             }
           ]
         }
