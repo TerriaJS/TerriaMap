@@ -26,8 +26,7 @@
   "dependencies": {
     "pm2": "^3.2.2",
     "terriajs-server": "^3.3.4",
-    "terriajs-plugin-api": "0.0.1",
-    "terriajs-plugin-sample": "https://github.com/terriajs/plugin-sample#0.0.1"
+    "terriajs-plugin-api": "https://github.com/terriajs/plugin-api#0.0.1-alpha.1"
   },
   "config": {
     "awsProfile": "terria",
