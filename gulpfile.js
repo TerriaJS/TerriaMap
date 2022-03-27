@@ -82,7 +82,7 @@ gulp.task('release-app', gulp.parallel('render-index', gulp.series('check-terria
 })));
 
 gulp.task('watch-render-index', gulp.series('render-index', function watchRenderIndex() {
-  return gulp.watch(['wwwroot/index.ejs'], gulp.series('render-index'));
+    gulp.watch(['wwwroot/index.ejs'], gulp.series('render-index'));
 }));
 
 gulp.task('watch-app', gulp.parallel('watch-render-index', gulp.series('check-terriajs-dependencies', function watchApp(done) {    var fs = require('fs');
@@ -116,7 +116,7 @@ gulp.task('watch-terriajs-assets', gulp.series('copy-terriajs-assets', function 
         sourceGlob = sourceGlob.replace(/\\/g, '/');
     }
 
-    return gulp.watch(sourceGlob, watchOptions, gulp.series('copy-terriajs-assets'));
+    gulp.watch(sourceGlob, watchOptions, gulp.series('copy-terriajs-assets'));
 }));
 
 gulp.task('copy-editor', function() {
@@ -315,7 +315,7 @@ gulp.task('render-datasource-templates', function(done) {
 });
 
 gulp.task('watch-datasource-templates', gulp.series('render-datasource-templates', function watchDatasourceTemplates() {
-    return gulp.watch(['lib/Language/**/*.json', 'datasources/**/*.ejs','datasources/*.json'], watchOptions, gulp.series('render-datasource-templates'));
+    gulp.watch(['lib/Language/**/*.json', 'datasources/**/*.ejs','datasources/*.json'], watchOptions, gulp.series('render-datasource-templates'));
 }));
 
 gulp.task('sync-terriajs-dependencies', function(done) {
