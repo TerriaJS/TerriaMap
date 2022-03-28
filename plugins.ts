@@ -1,5 +1,6 @@
 const plugins: any[] = [
-  import("terriajs-plugin-sample")
+  // Add plugin imports. Example:
+  // import("terriajs-plugin-sample")
 ];
 
 export default plugins;
