@@ -27,11 +27,11 @@
                     "time": {
                       "timeColumn": "timestamp_mes",
                       "idColumns": [
-                        "est_id"
+                        "cod_comunidad"
                       ]
                     }
                   },
-                  "featureInfoTemplate": {
+                  /*"featureInfoTemplate": {
                     "template": "Date: {{Date}}",
                     "formats": {
                       "Date": {
@@ -39,7 +39,7 @@
                         "format": "dd-mm-yyyy HH:MM:ss"
                       }
                     }
-                  },
+                  },*/
                     "info": [
                     {
                       "name": "Fuente de datos",
@@ -66,7 +66,7 @@
                     "time": {
                       "timeColumn": "timestamp_mes",
                       "idColumns": [
-                        "est_id"
+                        "cod_comunidad"
                       ]
                     }
                   },
@@ -96,7 +96,7 @@
                     "time": {
                       "timeColumn": "timestamp_mes",
                       "idColumns": [
-                        "est_id"
+                        "cod_comunidad"
                       ]
                     }
                   },
@@ -550,11 +550,11 @@
               "name": "Instituto Nacional de Estadísticas y Censos",
               "url": "https://geoinec.inec.gob.ec/geoinec/ows"
             },
-            {
-              "type": "wms-group",
-              "name": "Ministerio del Ambiente",
-              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
-            },
+            //{
+            //  "type": "wms-group",
+            //  "name": "Ministerio del Ambiente",
+            //  "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms"
+            //},
             {
               "type": "wms-group",
               "name": "SIGTIERRAS",
