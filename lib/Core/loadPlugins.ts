@@ -3,6 +3,7 @@ import {
   createPluginContext,
   ViewState
 } from "terriajs-plugin-api";
+import TerriaError from "terriajs/lib/Core/TerriaError";
 
 type PluginModule = { default: TerriaPlugin };
 
@@ -21,12 +22,19 @@ async function loadPlugins(
       .then(({ default: plugin }) => {
         try {
           plugin.register(pluginContext);
-        } catch (error) {
-          console.error(`Error when registering plugin "${plugin.name}"`);
+        } catch (ex) {
+          const error = TerriaError.from(ex, {
+            title: `Error when registering plugin "${plugin.name}"`
+          });
           console.error(error);
         }
       })
-      .catch(error => console.error(`Error when loading a plugin`, error));
+      .catch(ex => {
+        const error = TerriaError.from(ex, {
+          title: `Error when loading a plugin`
+        });
+        console.error(error);
+      });
   });
   await Promise.all(loadPromises);
 }
