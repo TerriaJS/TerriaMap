@@ -750,7 +750,6 @@
       ]
     }
   ],
-  "previewBaseMapId": "basemap-positron",
   "viewerMode": "3dSmooth",
   "baseMaps": {
     "defaultBaseMapId": "basemap-positron"
