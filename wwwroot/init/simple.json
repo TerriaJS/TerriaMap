@@ -752,6 +752,7 @@
   ],
   "viewerMode": "3dSmooth",
   "baseMaps": {
-    "defaultBaseMapId": "basemap-positron"
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
   }
 }
