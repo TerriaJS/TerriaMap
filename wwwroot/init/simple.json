@@ -751,5 +751,9 @@
     }
   ],
   "baseMapId": "basemap-bing-aerial-with-labels",
-  "previewBaseMapId": "basemap-positron"
+  "previewBaseMapId": "basemap-positron",
+  "viewerMode": "3dSmooth",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron"
+  }
 }
