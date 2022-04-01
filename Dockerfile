@@ -18,7 +18,7 @@ WORKDIR /usr/src/app
 RUN chmod 755 -R /usr/src/app
 
 # create a new non-root user
-RUN useradd -M -u 1001 nru
+RUN useradd -M -u 1000 nru
 
 # change to that user
 USER nru
