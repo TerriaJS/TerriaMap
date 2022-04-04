@@ -23,17 +23,15 @@ async function loadPlugins(
         try {
           plugin.register(pluginContext);
         } catch (ex) {
-          const error = TerriaError.from(ex, {
+          TerriaError.from(ex, {
             title: `Error when registering plugin "${plugin.name}"`
-          });
-          console.error(error);
+          }).log();
         }
       })
       .catch(ex => {
-        const error = TerriaError.from(ex, {
+        TerriaError.from(ex, {
           title: `Error when loading a plugin`
-        });
-        console.error(error);
+        }).log();
       });
   });
   await Promise.all(loadPromises);
