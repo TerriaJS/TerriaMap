@@ -1,40 +1,44 @@
 import {
-  TerriaPlugin,
   createPluginContext,
+  TerriaPluginModule,
   ViewState
 } from "terriajs-plugin-api";
 import TerriaError from "terriajs/lib/Core/TerriaError";
 
-type PluginModule = { default: TerriaPlugin };
-
 /**
  * Load plugin modules.
  *
- * @param pluginPromises Array of promise returning plugin modules.
+ * @param viewState - The {@link ViewState} instance
+ * @param getPluginsList - A function returning an array of promises for plugin modules (i.e the value exported from plugins.ts)
  */
 async function loadPlugins(
   viewState: ViewState,
-  pluginPromises: Promise<PluginModule>[]
+  getPluginsList: () => Promise<TerriaPluginModule>[]
 ): Promise<void> {
-  const loadPromises = pluginPromises.map(promise => {
-    const pluginContext = createPluginContext(viewState);
-    promise
-      .then(({ default: plugin }) => {
-        try {
-          plugin.register(pluginContext);
-        } catch (ex) {
+  try {
+    const pluginsList = getPluginsList();
+    const loadPromises = pluginsList.map(promise => {
+      const pluginContext = createPluginContext(viewState);
+      return promise
+        .then(({ default: plugin }) => {
+          try {
+            plugin.register(pluginContext);
+          } catch (ex) {
+            TerriaError.from(ex, {
+              title: `Error when registering plugin "${plugin.name}"`
+            }).log();
+          }
+        })
+        .catch(ex => {
           TerriaError.from(ex, {
-            title: `Error when registering plugin "${plugin.name}"`
+            title: `Error when loading a plugin`
           }).log();
-        }
-      })
-      .catch(ex => {
-        TerriaError.from(ex, {
-          title: `Error when loading a plugin`
-        }).log();
-      });
-  });
-  await Promise.all(loadPromises);
+        });
+    });
+    await Promise.all(loadPromises);
+  } catch (err) {
+    return Promise.reject(err);
+  }
 }
 
 export default loadPlugins;
