@@ -7,24 +7,24 @@ LABEL maintainer="RENCI"
 # install os updates and GDAL
 RUN apt-get update && apt-get install -y gdal-bin
 
+# create the non-root user
+RUN useradd -m -d /home/nru -u 1001 nru
+
 # create some needed dirs for the content
 # this was in the original dockerfile so i kept it.
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /home/nru/usr/src/app
 
 # change to the base directory
-WORKDIR /usr/src/app
+WORKDIR /home/nru/usr/src/app
 
 # make sure everything is readable
-RUN chmod 755 -R /usr/src/app
-
-# create a new non-root user
-RUN useradd -M -u 1000 nru
+RUN chmod 777 -R /home/nru/usr/src/app
 
 # change to that user
 USER nru
 
 # copy in all app files
-COPY . /usr/src/app
+COPY . /home/nru/usr/src/app
 
 # need this for large web sites
 RUN export NODE_OPTIONS=--max_old_space_size=4096
