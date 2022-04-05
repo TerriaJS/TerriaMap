@@ -424,7 +424,7 @@
           "name": "G10 Fisiografía",
           "members": [
             {
-              "name": "bh140_quebradas_crp_50k",
+              "name": "ca010_curvas_ecuador_250000",
               "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
               "layers": "g10_fisiografia:ca010_curvas_ecuador_250000",
               "type": "wms",
