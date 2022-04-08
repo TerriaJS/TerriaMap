@@ -1,0 +1,105 @@
+"members": [
+    {
+      "type": "wms",
+      "name": "Pompaggio tradizionale - potenza installabile fattibile (MW)",
+      "description": "Pompaggio tradizionale - stima della potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi. Valutazioni anno 2015.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "featureInfoTemplate": {
+        "template": "<p>Potenza comunale fattibile (MW) <b>{{id_pomp_esistenti_nuovi_potenza_mw}}</b></p>", //<p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+      },
+      //"metadataUrls":[{
+      //  "title":"link metadato anno 2015",
+      //  "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=44&anno=2015"
+      //}],
+      "layers": "atlante_integrato:v_comuni_pompaggio_trad",
+      // "layers": "new_atlante_integrato:v_comuni_t",
+      "styles":"comuni_pomp_trad_pot",
+      "id": "po_Pcom"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio tradizionale - capacità di accumulo fattibile (MWh)",
+      "description": "Pompaggio tradizionale - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile  con tempo di ritorno dell’investimento minore di 15 anni ottenibile mediante impianti di pompaggio idroelettrico tradizionali, tra laghi esistenti e laghi nuovi",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_trad",
+      "styles":"comuni_pomp_trad_acc",
+      "id": "po_CapCom"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio marino - potenza installabile fattibile (MW)",
+      "description": "Pompaggio marino - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_marino",
+      "styles":"comuni_pomp_marino_pot",
+      "id": "po_Pmar"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio marino - capacità di accumulo fattibile (MWh)",
+      "description": "Pompaggio marino - capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio marino, ossia dove viene sfruttato il mare come serbatoio inferiore.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_marino",
+      "styles":"comuni_pomp_marino_acc",
+      "id": "po_CapMar"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio tra laghi esistenti - schema dei siti potenziali",
+      "description": "Pompaggio tra laghi esistenti - schema dei siti potenziali \n\n Mappa con i dati caratteristici di 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti</p>. ",
+      "info": [
+        {
+          "name": "Licence",
+          "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+        }
+      ],
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:pompaggio_laghi_esistenti_group_IT",
+      "id": "BGe5H2"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio tra laghi esistenti - potenza di pompaggio (MW)",
+      "description": "Pompaggio tra laghi esistenti - potenza di pompaggio (MW) \n\n Potenza di pompaggio (la massima tra pompa e turbina) derivata dagli 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
+      "styles":"comuni_pomp_esistenti_pot",
+      "id": "IP4JhQ"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio tra laghi esistenti - capacità di accumulo (MWh)",
+      "description": "Pompaggio tra laghi esistenti - capacità di accumulo (MWh)\n\n Capacità di accumulo, derivata dagli 8 siti potenzialmente idonei identificati per un eventuale collegamento mediante impianto di pompaggio idroelettrico tra laghi esistenti.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_tra_laghi",
+      "styles":"comuni_pomp_esistenti_acc",
+      "id": "BWejlZ"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio sotterraneo - potenza installabile fattibile (MW)",
+      "description": "Pompaggio sotterraneo - potenza installabile fattibile (MW) \n\n Potenza installabile fattibile  con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico sotterraneo, ossia con uno degli invasi costruito in caverna.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_sott",
+      "styles":"comuni_pomp_sott_pot",
+      "id": "po_sotCom"
+    },
+    {
+      "type": "wms",
+      "name": "Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh)",
+      "description": "Pompaggio sotterraneo - Capacità di accumulo fattibile (MWh) \n\n Capacità di accumulo fattibile con tempo di ritorno dell’investimento minore di 15 anni, ottenibile mediante impianti di pompaggio idroelettrico sotterraneo, ossia con uno degli invasi costruito in caverna.",
+      "url": "http://gis2.rse-web.it/geoserver/wms",
+      "dataCustodian": "text",
+      "layers": "atlante_integrato:v_comuni_pompaggio_sott",
+      "styles":"comuni_pomp_sott_acc",
+      "id": "RBwPpK"
+    }
+  ]

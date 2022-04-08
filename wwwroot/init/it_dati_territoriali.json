@@ -1,0 +1,197 @@
+{
+  "catalog": [
+    {
+      "id": "territory",
+      "type": "group",
+      "name": "dati territoriali",
+      "description":"Questa raccolta comprende informazioni di interesse territoriale quali le aree protette, le zone a rischio sismico e dati residenziali del territorio italiano.\n\n\n <a title=\"Tesla Delacroix, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Isel_near_Clarah%C3%BCtte.jpg\"><img width=\"512\" alt=\"Isel near Clarahütte\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Isel_near_Clarah%C3%BCtte.jpg/512px-Isel_near_Clarah%C3%BCtte.jpg\"></a>",
+      "isOpen": false,
+      "members": [
+        {
+          "id": "vincoli",
+          "type": "group",
+          "name": "vincoli e aspetti ambientali",
+          "description": "Questa raccolta comprende le aree di protezione ambientali del territorio.",
+          "isOpen": false,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Elenco ufficiale aree protette (EUAP)",
+              "description": "VI Elenco Ufficiale Aree Naturali Protette (EUAP). \n\n\n http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/wfs/EUAP.map \n\n Istituito in base alla legge 394/91 Legge quadro sulle aree protette, l\\'elenco ufficiale attualmente in vigore è quello relativo al 6° Aggiornamento approvato con D.M. 27/04/2010 e pubblicato nel Supplemento Ordinario n. 115 alla Gazzetta Ufficiale n. 125 del 31/05/2010. In base alla legge 394/91, le aree protette sono distinte in Parchi Nazionali (PNZ), Aree Naturali Marine Protette (MAR), Parchi Naturali Statali marini (PNZ_m), Riserve Naturali Statali (RNS), Parchi e Riserve Naturali Regionali (PNR - RNR), Parchi Naturali sommersi (GAPN), Altre Aree Naturali Protette (AAPN). L\\'Elenco è stilato, e periodicamente aggiornato, dal Ministero dell\\'Ambiente e della Tutela del Territorio e del Mare - Direzione Protezione della Natura. \n\n Metadati a: http://www.pcn.minambiente.it/mattm/visualizzazione-metadati/ </p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=117"
+              }],
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Licenza Creative Commons Attribuzione - Condividi allo stesso modo 3.0 Italia]"
+                }
+              ],
+              "layers": "euap",
+              "id": "euap"
+            },
+            {
+              "type": "wms",
+              "name": "Siti di Importanza Comunitaria (SIC)",
+              "description": "Sono i siti di Importanza Comunitaria e Zone Speciali di Conservazione (ZSC) presenti sul territorio italiano aggiornati a gennaio 2017. Il Sito di Importanza Comunitaria (SIC) e la Zona Speciale di Conservazionee (ZSC), sono concetti definiti dalla Direttiva comunitaria n. 43 del 21 maggio 1992, (92/43/CEE), nota anche come Direttiva \\\"Habitat\\\", e recepita in Italia nel 1997. La Direttiva è relativa alla conservazione degli habitat naturali e seminaturali e della flora e della fauna selvatiche.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Direzione generale per la protezione della natura e del mare. \n\n Metadati a: http://www.pcn.minambiente.it/mattm/visualizzazione-metadati/</p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=118"
+              }],
+              "layers": "sic",
+              "id": "sic"
+            },
+            {
+              "type": "wms",
+              "name": "Zone di protezione speciale",
+              "description": "Zone di Protezione Speciale presenti sul territorio italiano aggiornate a gennaio 2017. Le zone di protezione speciale (ZPS), in Italia, ai sensi dell'art. 1 comma 5 della Legge n° 157/1992 sono zone di protezione scelte lungo le rotte di migrazione dell'avifauna, finalizzate al mantenimento ed alla sistemazione di idonei habitat per la conservazione e gestione delle popolazioni di uccelli selvatici migratori. La tabella associata contiene una serie di informazioni tra cui codice, denominazione, superficie, perimetro e Regione di appartenenza di ciascuna zona.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Direzione generale per la protezione della natura e del mare. \n Metadati a: http://www.pcn.minambiente.it/mattm/visualizzazione-metadati/</p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>Consumi registrati nell'anno {{anno}} in {{den_reg}} sono stati: <b>{{valore}} GWh </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=117"
+              }],
+              "info": [
+                {
+                  "name": "Licence",
+                  "content": "[Licenza Creative Commons Attribuzione - Condividi allo stesso modo 3.0 Italia]"
+                }
+              ],
+              "layers": "zps",
+              "id": "zps"
+            },
+            {
+              "type": "wms",
+              "name": "Aree umide (Ramsar)",
+              "description": "Le aree Ramsar sono aree del territorio italiano rispondenti ai requisiti della convenzione internazionale relativa alle zone umide di importanza internazionale, soprattutto come habitat degli uccelli acquatici, nota come Convenzione di Ramsar. La Convenzione di Ramsar è un atto firmato a Ramsar, in Iran, il 2 febbraio 1971. La Convenzione di Ramsar è stata ratificata e resa esecutiva dall'Italia col DPR n. 448 del 13 marzo 1976 e con il successivo DPR n. 184 dell'11 febbraio 1987. Ai sensi della Convenzione si intendono per zone umide le paludi e gli acquitrini, le torbe oppure i bacini, naturali o artificiali, permanenti o temporanei, con acqua stagnante o corrente, dolce, salmastra, o salata, ivi comprese le distese di acqua marina la cui profondità, durante la bassa marea, non supera i sei metri. Ai sensi della convenzione si intendono per uccelli acquatici gli uccelli ecologicamente dipendenti dalle zone umide. Aggiornamento aree Ramsar settembre 2011.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Direzione generale per la protezione della natura \n Metadati a: http://www.pcn.minambiente.it/mattm/visualizzazione-metadati/ </p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=120"
+              }],
+              "layers": "ramsar",
+              "id": "ramsar"
+            },
+            {
+              "type": "wms",
+              "name": "Specchi d'acqua interni",
+              "description": "Elementi poligonali appartenenti al DBPrior10K rappresentanti gli specchi d’acqua interni come laghi, lagune, stagni, bacini artificiali, ecc.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale - Centro interregionale per i sistemi informatici, geografici, statistici - Comitato permanente per i sistemi geografici</p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=121"
+              }],
+              "layers": "specchi_acqua_interni",
+              "id": "acqua"
+            },
+            {
+              "type": "wms",
+              "name": "Important Bird Areas (IBA)",
+              "description": "Le Important Bird Areas o IBA, http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/wfs/IBA.map\n\n sono delle aree che rivestono un ruolo chiave per la salvaguardia degli uccelli e della biodiversità, la cui identificazione è parte di un progetto a carattere mondiale, curato da BirdLife International. Il progetto IBA nasce dalla necessità di individuare dei criteri omogenei e standardizzati per la designazione delle ZPS. Le IBA sono state utilizzate per valutare l’adeguatezza delle reti nazionali di ZPS designate negli Stati membri, il 71% della superficie delle IBA è anche ZPS. Per essere riconosciuto come IBA, un sito deve possedere almeno una delle seguenti caratteristiche: ospitare un numero significativo di individui di una o più specie minacciate a livello globale; fare parte di una tipologia di aree importante per la conservazione di particolari specie (es. zone umide); essere una zona in cui si concentra un numero particolarmente alto di uccelli in migrazione.<br><br>Ministero dell'Ambiente e della Tutela del Territorio e del Mare - Geoportale nazionale - Lega Italiana Protezione Uccelli (LIPU) \n Metadati a: http://www.pcn.minambiente.it/mattm/visualizzazione-metadati/ </p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=122"
+              }],
+              "layers": "iba",
+              "id": "iba"
+            }
+          ]
+        },
+        {
+          "id": "rischi",
+          "type": "group",
+          "name": "aspetti di valutazione dei rischi",
+          "description": "Questa raccolta comprende informazioni sulla sismicità del territorio.",
+          "isOpen": true,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Classificazione sismica dei comuni italiani al 2021",
+              "description": "Classificazione sismica dei comuni italiani aggiornata ad aprile 2021 fonte: https://rischi.protezionecivile.gov.it/it/sismico/attivita/classificazione-sismica<br>Protezione civile</p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=214"
+              }],
+              "styles":"new_atlante_integrato:sism_21",
+              "layers": "new_atlante_integrato:class_sismica_2021",
+              "id": "sisma21"
+            }
+          ]
+        },
+        {
+          "id": "popol",
+          "type": "group",
+          "name": "popolazione residente",
+          "description": "Questa raccolta riporta informazioni e dati relativi alla popolazione del territorio italiano.",
+          "isOpen": true,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Popolazione residente a livello regionale",
+              "description": "Distribuzione regionale della popolazione residente che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT</p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>Popolazione anno {{anno}} in {{den_reg}}: <b>{{valore}} unità </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=88&anno=2019"
+              }],
+              "layers": "new_atlante_integrato:v_regioni_t",
+              "parameters": {
+                "cql_filter": "var_id=88"
+              },
+              "id": "88",
+			        "styles":"popolazione_regionale"
+            },
+            {
+              "type": "wms",
+              "name": "Popolazione residente a livello provinciale",
+              "description": "Distribuzione provinciale della popolazione residente (aggregazione del dato comunale) che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT </p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>Popolazione anno {{anno}} in {{den_uts}}: <b>{{valore}} unità </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=87&anno=2019"
+              }],
+              "layers": "new_atlante_integrato:v_province_t",
+              "parameters": {
+                "cql_filter": "var_id=87"
+              },
+              "id": "87",
+              "styles":"popolazione_provinciale"
+            },
+            {
+              "type": "wms",
+              "name": "Popolazione residente a livello comunale",
+              "description": "Popolazione residente a livello comunale \n\n Distribuzione comunale della popolazione residente che viene calcolata al 31 dicembre di ogni anno e diffusa al 1° gennaio dell'anno successivo.<br><br>Istituto Nazionale di Statistica - ISTAT (a partire dall'anno 2015/anni dal 2015 al 2019)</p>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>Popolazione anno {{data}} in {{comune}}: <b>{{valore}} unità </b></p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id={{var_id}}&anno={{anno}}\">link al metadato </a> </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2019",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=65&anno=2019"
+              }],
+              "layers": "new_atlante_integrato:v_comuni_t",
+              "parameters": {
+                "cql_filter": "var_id=65"
+              },
+              "id": "65",
+              "styles":"popolazione_comunale"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
+  "initializationUrls": [
+    "it_cartografia",
+    "it_dati_territoriali",
+    "it_infrastrutture",
+    "it_risorsa",
+    "it_impianti",
+    "it_consumi",
+    "it_stime_energetiche",
+    "it_story_eff",
+    "it"
+  ],
+  "parameters": {
+    "tabbedCatalog": true,
+    "useCesiumIonTerrain": false,
+    "cesiumTerrainAssetId": false,
+
+    "googleUrlShortenerKey": null,
+    "googleAnalyticsKey": null,
+    "googleAnalyticsOptions": null,
+
+    // Log ConsoleAnalytics events to console
+    // logToConsole: true,
+
+    /* Text that appears at the bottom of the map */
+    "disclaimer": {
+      "text": "Disclaimer: questa mappa non deve essere usata per la navigazione o per un'analisi spaziale precisa",
+      "url": ""
+    },
+    /*
+        // Text that will be added to any pages printed from your site.
+        printDisclaimer:{
+            text:"Put your print disclaimer here.",
+            url: "#"
+        },
+        */
+
+    // Pop-up disclaimer that will be shown at the start
+    // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
+    // globalDisclaimer: {
+    //     confirmationRequired: false,
+    //     buttonTitle: "I agree",
+    //     title: "Disclaimer",
+    //     // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
+    //     // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
+    //     //prodHostRegex: "gov.\\.au$",
+    //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
+    //     enableOnLocalhost: true // If false, don't show this when running on localhost
+    // },
+
+    /*
+        developerAttribution: {
+            text: "Your organisation",
+            link: "http://www.example.com"
+        },*/
+    // This is used in various text messages. You should also set <title> in index.html
+    "appName": "Terria Map",
+
+    // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
+    "brandBarElements": [
+      "<a target=\"_blank\" href=\"http://www.rse-web.it\"><img src=\"images/logo_rse.png\" style=\"display: block; margin-left: auto; margin-right: auto;  margin-top: 10px; width: 50%;\" /></a>",
+      "<p style=\"display: block; text-align: center; color: white; font-size: 20px; margin-top: 10px; margin-left: auto; margin-right: auto;\"><b>Atlante Integrato per il Sistema Energetico Nazionale e le Fonti Rinnovabili</b></p>",
+      ""
+    ],
+    // Shown when things go wrong.
+    "supportEmail": "rse@legalmail.it",
+    // You probably shouldn't change this.
+    "proj4ServiceBaseUrl": "proj4def/",
+    // Or this
+    "feedbackUrl": "feedback",
+
+    // Default mobile viewer mode when loading the map for the first time on mobile platforms.
+    // Options are: "3DTerrain", "3DSmooth", "2D"
+    "mobileDefaultViewerMode": "2d",
+    // Enable experimental features, since its nice to have the bleeding edge.
+    // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
+    "experimentalFeatures": true,
+    // To enable welcome message when map first loads
+    // "showWelcomeMessage": true,
+    // To override the welcome message video displayed on the welcome message
+    // By default, the Getting Started to Terria video is displayed
+    // "welcomeMessageVideo": {
+    //     "videoTitle": "Getting started with the map",
+    //     "videoUrl": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI", // use an embedded video link
+    //     "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+    // },
+
+    // True to display in-app guides.
+    // "showInAppGuides": false,
+
+    // see `languageOverrides.json` in languages/en
+    "languageConfiguration": {
+      "enabled": false,
+      "debug": false,
+      "languages": {
+        "it": "Italiano"
+      },
+      "fallbackLanguage": "it"
+    },
+    "helpContent": [
+      {
+        "title": "translate#gettingstarted.title",
+        "itemName": "gettingstarted",
+        "paneMode": "videoAndContent",
+        "markdownText": "translate#gettingstarted.markdownText",
+        "icon": "video",
+        "videoUrl": "translate#gettingstarted.videoUrl",
+        "placeholderImage": "translate#gettingstarted.placeholderImage"
+      },
+      {
+        "title": "translate#stepbystepguide.title",
+        "itemName": "translate#stepbystepguide",
+        "paneMode": "trainer",
+        "markdownText": "translate#stepbystepguide.markdownText",
+        "icon": "oneTwoThree",
+        "trainerItems": [
+          {
+            "title": "translate#stepbystepguide.gettingstarted.title",
+            "footnote": "translate#stepbystepguide.gettingstarted.footnote",
+            "steps": [
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step1.title",
+                "markdownDescription": "translate#stepbystepguide.gettingstarted.step1.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step2.title",
+                "markdownDescription": "translate#stepbystepguide.gettingstarted.step2.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step3.title",
+                "markdownDescription": "translate#stepbystepguide.gettingstarted.step3.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step4.title"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step5.title"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step6.title"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step7.title"
+              },
+              {
+                "title": "translate#stepbystepguide.gettingstarted.step8.title"
+              }
+            ]
+          },
+          {
+            "title": "translate#stepbystepguide.satelliteimagery.title",
+            "footnote": "translate#stepbystepguide.satelliteimagery.footnote",
+            "steps": [
+              {
+                "title": "translate#stepbystepguide.satelliteimagery.step1.title",
+                "markdownDescription": "translate#stepbystepguide.satelliteimagery.step1.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.satelliteimagery.step2.title",
+                "markdownDescription": "translate#stepbystepguide.satelliteimagery.step2.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.satelliteimagery.step3.title",
+              "markdownDescription": "translate#stepbystepguide.satelliteimagery.step3.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.satelliteimagery.step4.title",
+                "markdownDescription": "translate#stepbystepguide.satelliteimagery.step4.markdownDescription"
+              }
+            ]
+          },
+          {
+            "title": "translate#stepbystepguide.comparetimeseries.title",
+            "footnote": "translate#stepbystepguide.comparetimeseries.footnote",
+            "steps": [
+              {
+                "title": "translate#stepbystepguide.comparetimeseries.step1.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step1.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.comparetimeseries.step2.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step2.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.comparetimeseries.step3.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step3.markdownDescription"
+              },
+              {
+                "title": "translate#stepbystepguide.comparetimeseries.step4.title",
+                "markdownDescription": "translate#stepbystepguide.comparetimeseries.step4.markdownDescription"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "icon": "story",
+        "itemName": "storymigration",
+        "markdownText": "## Condivisione & Migrazione delle Storie\n\n### Guida all'aggiornamento dei link di condivisione, incluse le storie. Se hai ricevuto un avviso che ti dice che un link di condivisione era basato su una vecchia versione di TerriaJS, dovrai fare alcune cose per ricrearlo nell'ultima versione di Terria!\n\n#### Creatore\n\n1. Identifica l'URL di condivisione che causa una notifica di sforzo di conservazione della condivisione quando li carichi in Terria. ad esempio potresti sapere dove sono incorporati, o incontrarli accidentalmente\n2. Aprili nell'applicazione più recente (v8) \n3. Controlla che tutto stia condividendo come ti aspetti, modifica i livelli per adattarli se alcuni mancano o non si comportano correttamente.\n4. Aggiorna il link di condivisione cliccando sul pulsante Condividi/Stampa e copia il nuovo link \n5. Se la distribuzione del link di condivisione è nota, aggiorna l'url nella tua pagina web (se incorporato), o invia il nuovo link agli utenti \n#### Utente\n1. Caricare l'URL di condivisione\n2. Se non è del tutto corretto, informa il fornitore in modo che possa seguire i passaggi precedenti per ricrearlo nell'ultima versione di Terria",
+        "title": "Condivisione & Migrazione delle Storie"
+      },
+      {
+          "itemName": "satelliteimagery",
+          "title": "Immagini Satellitari",
+          "paneMode": "slider",
+          "icon": "satellite"
+      }
+    ],
+    "helpContentTerms": [
+      {
+        "term": "translate#helpContentTerm1.term",
+        "aliases": "translate#helpContentTerm1.aliases",
+        "content": "translate#helpContentTerm1.content"
+      },
+      {
+        "term": "translate#helpContentTerm2.term",
+        "aliases": "translate#helpContentTerm2.aliases",
+        "content": "translate#helpContentTerm1.content"
+      },
+      {
+        "term": "translate#helpContentTerm3.term",
+        "content": "translate#helpContentTerm3.content"
+      },
+      {
+        "term": "translate#helpContentTerm4.term",
+        "content": "translate#helpContentTerm4.content"
+      },
+      {
+        "term": "translate#helpContentTerm5.term",
+        "aliases": ["catalogue"],
+        "content": "translate#helpContentTerm5.content"
+      },
+      {
+        "term": "translate#helpContentTerm6.term",
+        "aliases": "translate#helpContentTerm6.aliases",
+        "content": "translate#helpContentTerm6.content"
+      },
+      {
+        "term": "translate#helpContentTerm7.term",
+        "content": "translate#helpContentTerm7.content"
+      },
+      {
+        "term": "translate#helpContentTerm8.term",
+        "content": "translate#helpContentTerm8.content"
+      }
+    ]
+  }
+}

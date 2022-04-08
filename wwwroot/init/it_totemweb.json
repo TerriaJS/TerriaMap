@@ -1,0 +1,44 @@
+{
+  "catalog": [
+    {
+      "type": "group",
+      "name": "TOTEM",
+      "isOpen": true,
+      "members": [
+        {
+          "type": "wms",
+          "name": "TOTEM",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "layers": "new_atlante_integrato:v_province_terria",
+          "styles": "polygon",
+          "opacity": 0.5,
+          "featureInfoTemplate": {
+            "template": "<br><p>Esegui l'analisi per la provincia di <b>{{den_uts}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://rakino.ricerca.lan/?prov={{den_uts}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+          },
+          "id": "totem",
+          "initialMessage": {
+            "title": "Per accedere:",
+            "content": "Seleziona la provincia da analizzare direttamente dalla mappa.",
+            "key": "totem_warning",
+            "confirmation": true,
+            "confirmText": "Avvia"
+          }
+        }
+      ]
+    }
+  ],
+  "homeCamera": {
+    "north": 48,
+    "east": 19,
+    "south": 35,
+    "west": 6
+  },
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
+  "viewerMode": "2d",
+  "workbench": [
+    "totem"
+  ]
+}

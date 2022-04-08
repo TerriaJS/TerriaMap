@@ -1,0 +1,50 @@
+{
+  "catalog": [
+    {
+      "type": "group",
+      "name": "pluviometri",
+      "isOpen": true,
+      "members": [
+        {
+          "type": "wms",
+          "name": "Dati pluviometrici",
+          "description": "Dati pluviometrici: attraverso questo strato informativo è possibile accedere ai dati e ad effettuare lo <i>scarico dati storici</i>.\n\n Misure pluviometriche della banca dati IDROSTAZ derivanti dai dati storici pubblicati negli annali del Servizio Idrografico. </p> \n Nota: il servizio ha cessato di raccogliere dati dal 1998 quando il servizio è stato trasferito alle regioni. <br> Per maggiori approfondimenti: \n\n <a href=\"https://www.isprambiente.gov.it/it/progetti/cartella-progetti-in-corso/acque-interne-e-marino-costiere-1/progetti-conclusi/progetto-annali/inquadramento-storico-del-monitoraggio-idro-meteografico-e-delle-relative-competenze\">  - Ispra ambiente </a>\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\"> - Software SMART Mini-Idro</a></br></br>\n <a href=\"http://www.seehydropower.eu/\" target=\"_blank\"> - SEEHydroPower</a>",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "dataCustodian": "text",
+          "layers": "atlante_integrato:v_pluviometri",
+          "featureInfoTemplate": {
+            "template": "<br><p>Il pluviometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_pluvioNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
+          },
+          "metadataUrls":[
+            {
+            "title":"link metadato",
+            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=146&anno=2019"
+            }
+          ],
+          "id": "it_pluvio",
+          "initialMessage": {
+            "title": "Per accedere:",
+            "content": "Selezionare sulla mappa un pluviometro quindi effettuare il download",
+            "key": "pluvio_warning",
+            "confirmation": true,
+            "confirmText": "Avvia"
+            }
+        }
+      ]
+    }
+  ],
+  "homeCamera": {
+    "north": 48,
+    "east": 19,
+    "south": 35,
+    "west": 6
+  },
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
+  "viewerMode": "2d",
+  "workbench": [
+    "it_pluvio"
+  ]
+}

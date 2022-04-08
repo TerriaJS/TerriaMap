@@ -1,0 +1,40 @@
+{
+  "catalog": [
+    {
+      "id": "rete",
+      "type": "group",
+      "name": "infrastrutture di rete",
+      "description": "Questa raccolta comprende informazioni su flussi e qualità della tensione.\n\n  <a title=\"Dominicus Johannes Bergsma, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Hoogspanningsmasten_in_het_Ketelmeer_30-06-2019._(d.j.b)._07.jpg\"><img width=\"512\" alt=\"Hoogspanningsmasten in het Ketelmeer 30-06-2019. (d.j.b). 07\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hoogspanningsmasten_in_het_Ketelmeer_30-06-2019._%28d.j.b%29._07.jpg/512px-Hoogspanningsmasten_in_het_Ketelmeer_30-06-2019._%28d.j.b%29._07.jpg\"></a>",
+      "isOpen": true,
+      "members": [
+        {
+          "type": "wms",
+          "name": "Comuni con Cabine Primarie con inversione di flusso",
+          "description": "Comuni con Cabine Primarie con inversione di flusso \n\n Distribuzione a scala comunale degli eventi di inversione del flusso di energia rilevati nel 2015 nelle Cabine primarie, categorizzati in base alla durata. \n\n I dati riguardano le cabine di flusso di proprietà e-distribuzione e sono visibili i dati degli anni 2015 e/o 2020.",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "featureInfoTemplate": {
+            "template": "<p>Comune:<b> {{comune}}</b></p><p>Anno: {{data}}</p><p>Inversione di flusso: {{valore}} %</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=1&anno={{data}}\">link al metadato </a> </p>"
+           },
+          "metadataUrls":[{
+            "title":"link metadato",
+            "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=1&anno=2020"
+          }],
+          "layers": "new_atlante_integrato:v_comuni_t",
+          "parameters": {
+            "cql_filter": "var_id=1"
+          },
+          "styles":"new_atlante_integrato:cab_prim",
+          "id": "cb_com"
+        },
+        {
+          "type": "wms",
+          "name": "Rete AT - OSM",
+          "description": "OSM linee elettriche aeree \n\n Fonte dei dati Open Street Map https://www.openstreetmap.org/",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "layers": "new_atlante_integrato:OSM_power_line",
+          "id": "OSM_l"
+        }
+      ]
+    }
+  ]
+}
