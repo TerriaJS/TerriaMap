@@ -39,6 +39,9 @@
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
     }
   },
+  "resolutions": {
+    "@types/react": "^17.0.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.12.16",
