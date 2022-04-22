@@ -29,13 +29,19 @@
           "info": [
             {
               "name": "Event Date",
-              "content": "02-10-2021",
+              "content": "02-10-2022",
               "show": false
             },
 
             {
               "name": "Event Type",
               "content": "Namforecast",
+              "show": false
+            },
+
+            {
+              "name": "Grid Type",
+              "content": "hsofs",
               "show": false
             }
           ]
@@ -79,6 +85,12 @@
               "name": "Event Type",
               "content": "Namforecast",
               "show": false
+            },
+
+            {
+              "name": "Grid Type",
+              "content": "hsofs",
+              "show": false
             }
           ]
         },
@@ -99,6 +111,25 @@
           "id": "KMuVI6",
           "shareKeys": [
             "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
+          ],
+          "info": [
+            {
+              "name": "Event Date",
+              "content": "02-10-2022",
+              "show": false
+            },
+
+            {
+              "name": "Event Type",
+              "content": "event",
+              "show": false
+            },
+
+            {
+              "name": "Grid Type",
+              "content": "grid",
+              "show": false
+            }
           ]
         },
         {
@@ -118,6 +149,25 @@
           "id": "cuSwLL",
           "shareKeys": [
             "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (maxwvel.63.0.10)"
+          ],
+          "info": [
+            {
+              "name": "Event Date",
+              "content": "02-10-2022",
+              "show": false
+            },
+
+            {
+              "name": "Event Type",
+              "content": "Namforecast",
+              "show": false
+            },
+
+            {
+              "name": "Grid Type",
+              "content": "hsofs",
+              "show": false
+            }
           ]
         },
         {
@@ -137,6 +187,25 @@
           "id": "bUPeTw",
           "shareKeys": [
             "Root Group/ADCIRC Data - Recent/Date: 02-10-2022 Cycle: 00 Storm Name: namforecast ADCIRC Grid: hsofs (swan)"
+          ],
+          "info": [
+            {
+              "name": "Event Date",
+              "content": "02-10-2022",
+              "show": false
+            },
+
+            {
+              "name": "Event Type",
+              "content": "Namforecast",
+              "show": false
+            },
+
+            {
+              "name": "Grid Type",
+              "content": "hsofs",
+              "show": false
+            }
           ]
         },
         {
@@ -156,6 +225,25 @@
           "id": "chSX6B",
           "shareKeys": [
             "Root Group/ADCIRC Data - Recent/Date: 02-09-2021 Cycle: 18 Storm Name: namforecast ADCIRC Grid: hsofs (maxele.63.0.10)"
+          ],
+          "info": [
+            {
+              "name": "Event Date",
+              "content": "02-09-2021",
+              "show": false
+            },
+
+            {
+              "name": "Event Type",
+              "content": "Namforecast",
+              "show": false
+            },
+
+            {
+              "name": "Grid Type",
+              "content": "hsofs",
+              "show": false
+            }
           ]
         }
       ],
