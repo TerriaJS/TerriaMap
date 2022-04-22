@@ -605,7 +605,6 @@
         "scale": 0.3048,
         "maximumDistance": 500.0
       }
-      }
     },
     {
       "type": "esri-mapServer-group",
