@@ -1,0 +1,541 @@
+{
+  "homeCamera": {
+    "north":-2.04,
+    "east": -77.63,
+    "south": -3.85,
+    "west": -80.47
+  },
+  "catalog": [
+    {
+      "type": "group",
+      "name": "CELEC-EP",
+      "members": [
+        {
+          "type": "group",
+          "name": "G4 Energías Renovables",
+          "members": [
+            {
+              "type": "group",
+              "name": "Solar",
+              "members": [
+                {
+                  "name": "Solar Temperatura Mensual (°C)",
+                  "description": "Resumen de los valores de temperatura del aire a escala anual, mensual y horaria en las estaciones de radiación solar.\n\n Enlace  $GRAFANA_URL/d/KCuRi_17k/g4_solar_temperatura_mensual?orgId=1",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_solar_temperatura_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_comunidad"
+                      ]
+                    }
+                  },
+                  /*"featureInfoTemplate": {
+                    "template": "Date: {{Date}}",
+                    "formats": {
+                      "Date": {
+                        "type": "dateTime",
+                        "format": "dd-mm-yyyy HH:MM:ss"
+                      }
+                    }
+                  },*/
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Solar Humedad Relativa Mensual (%)",
+                  "description": "Resumen de los valores de humedad relativa del aire a escala anual, mensual y horaria en las estaciones de radiación solar.\n\n Enlace  $GRAFANA_URL/d/iZeZ7ax7z/g4_solar_humedad_relativa_mensual",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Humedad_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_comunidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Solar Radiación Mensual (W/m2)",
+                  "description": "Resumen de los valores de radiación solar del aire a escala anual, mensual y horaria en las estaciones de radiación solar.\n\n Enlace $GRAFANA_URL/d/jVAmSga7z/g4_solar_radiacion_mensual \n\n Enlace dashboard radiación solar horaria $GRAFANA_URL/d/rnFJvga7z/g4_solar_radiacion_horaria?orgId=1&var-estacion=est_solar",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4_Solar_Radiacion_Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_comunidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "name": "Atlas Solar",
+                  "members": [
+                    {
+                      "name": "Mapa Irradiacion Global Inclinacion Optima",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-Global-Inclinacion-Optima-Ecuador",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Mapa Irradiacion Horizontal Difusa",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-horizontal-Difusa-Ecuador",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Mapa Irradiacion Horizontal Global",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-Horizontal-Global-Ecuador",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Mapa Irradiacion Normal Directa",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Irradiacion-Normal-Directa-Ecuador",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Mapa Temperatura",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Temperatura-Ecuador",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Fuente: Global Wind Atlas [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "name": "Eólico",
+              "members": [
+                {
+                  "name": "Eólico Temperatura Mensual (°C)",
+                  "description": "Resumen de los valores de temperatura del aire a escala anual, mensual y horaria en las torres eólicas.  \n\n Enlace $GRAFANA_URL/d/EUlUJxAnz/g4_eolico_temperatura_mensual",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Temperatura-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Eólico Humedad Relativa Mensual (%)",
+                  "description": "Resumen de los valores de humedad relativa del aire a escala anual, mensual y horaria en las torres eólicas. \n\n Enlace $GRAFANA_URL/d/tzmX7wJnz/g4_eolico_humedad_mensual ",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Humedad-RelativaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Eólico Presión Atmosférica Mensual (mbar)",
+                  "description": "Resumen de los valores de presión atmosférica a escala anual, mensual y horaria en las torres eólicas. \n\n Enlace $GRAFANA_URL/d/Rim4vwJ7z/g4_eolico_presion_mensual",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Eolico-Presion-AtmosfericaMensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Eólico Dirección del Viento Mensual (grados)",
+                  "description": "Resumen de los valores de dirección del viento a escala anual, mensual y horaria en las torres eólicas. \n\n Enlace $GRAFANA_URL/d/iCZxwgb7k/g4_eolico_direccion_viento_mensual",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3AG4-Eolico-Direcion-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Eólico Velocidad del Viento Mensual (m/s)",
+                  "description": "Resumen de los valores de velocidad del viento a escala anual, mensual y horaria en las torres eólicas.\n\n Enlace $GRAFANA_URL/d/jIhNcw1nk/g4_eolico_velocidad_viento_mensual \n\n Enlace velocidad del viento horaria $GRAFANA_URL/d/ptAaJuPnk/g4_eolico_velocidad_viento_horario?orgId=1",
+                  "type": "csv",
+                  "url": "$GEOSERVER_URL/g4_energias_renovables/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g4_energias_renovables%3Ag4_energias_renovables-Velocidad-Viento-Mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "cod_localidad"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "name": "Atlas Viento",
+                  "members": [
+                    {
+                      "name": "Mapa Veolocidad Viento 100m",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Velocidad-Viento-100m",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Global Wind Atlas  [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Mapa Densidad Viento",
+                      "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers": "g4_energias_renovables:Mapa-Densidad-Viento-Ecuador-100m",
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Fuente de datos",
+                          "content": "Global Wind Atlas  [https://globalwindatlas.info/](https://globalwindatlas.info/)"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G6 Infraestructura",
+          "members": [
+            {
+              "name": "bh130_area_embalse_2153",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g6_infraestructura:bh130_area_embalse_2153",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G8 Infraestructura transporte",
+          "members": [
+            {
+              "name": "ap030_red_vial_detallada_150000",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g8_infraestructura_transporte:ap030_red_vial_detallada_150000",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G9 Hidrografía",
+          "members": [
+            {
+              "name": "bh140_quebradas_crp_50k",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g9_hidrografia:bh140_quebradas_crp_50k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "bh140_rios_ecuador_50k",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g9_hidrografia:bh140_rios_ecuador_50k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G10 Fisiografía",
+          "members": [
+            {
+              "name": "ca010_curvas_ecuador_250000",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g10_fisiografia:ca010_curvas_ecuador_250000",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "name": "G12 Demarcación",
+          "members": [
+            {
+              "name": "ha000_perfil_ecuador",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha000_perfil_ecuador",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "ha002_provincias",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha002_provincias",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "ha003_cantones_crp_250k",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha003_cantones_crp_250k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "ha101_parroquias_cardenillo_250k",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:ha101_parroquias_cardenillo_250k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "hd001_microcuenca_25k",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:hd001_microcuenca_25k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "hd001_microcuenca_50k",
+              "url": "$GEOSERVER_URL/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g12_demarcacion:hd001_microcuenca_50k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "baseMaps": {
+    "items": [
+      {
+        "item": {
+          "id": "basemap-bing-aerial",
+          "name": "Bing Maps Aerial"
+        },
+        "image": "images/basemaps/ecuador-aerial.png"
+      },
+      {
+        "item": {
+          "id": "basemap-bing-aerial-with-labels",
+          "name": "Bing Maps Aerial with Labels"
+        },
+        "image": "images/basemaps/ecuador-aerial-labels.png"
+      },
+      {
+        "item": {
+          "id": "basemap-bing-roads",
+          "name": "Bing Maps Roads"
+        },
+        "image": "images/basemaps/ecuador-maps-roads.png"
+      },
+      {
+        "item": {
+          "id": "basemap-natural-earth-II",
+          "name": "Natural Earth II"
+        },
+        "image": "images/basemaps/ecuador-natural-earth.png"
+      },
+      {
+        "item": {
+          "id": "basemap-black-marble",
+          "name": "NASA Black Marble"
+        },
+        "image": "images/basemaps/ecuador-black-marble.png"
+      },
+      {
+        "item": {
+          "id": "basemap-positron",
+          "name": "Positron (Light)"
+        },
+        "image": "images/basemaps/ecuador-positron.png"
+      },
+      {
+        "item": {
+          "id": "basemap-darkmatter",
+          "name": "Dark Matter"
+        },
+        "image": "images/basemaps/ecuador-dark-matter.png"
+      }
+    ]
+  },
+  "baseMapId": "basemap-bing-aerial-with-labels",
+  "previewBaseMapId": "basemap-positron"
+}

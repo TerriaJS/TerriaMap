@@ -1,0 +1,142 @@
+{
+  "homeCamera": {
+    "north":-2.04,
+    "east": -77.63,
+    "south": -3.85,
+    "west": -80.47
+  },
+  "catalog": [
+    {
+      "type": "group",
+      "name": "CELEC-EP",
+      "members": [
+        {
+          "type": "group",
+          "name": "G2 Geología",
+          "members": [
+            {
+              "name": "db110_fallas_cardenillo_200k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:g2_geologia:db110_fallas_cardenillo_200k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "eb000_geologia",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:g2_geologia.eb000_geologia",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "eb000_geologia_cardenillo_200k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:eb000_geologia_cardenillo_200k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "eb000_geologia_cardenillo_250k",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:eb000_geologia_cardenillo_250k",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "puntos_monitoreo",
+              "url": "http://172.16.60.46:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers": "g2_geologia:g2_geologia_puntos_monitoreo",
+              "type": "wms",
+              "isOpenInWorkbench": false
+            },
+            {
+              "name": "Referencias fijas (mm)",
+              "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  http://172.16.60.46:8800/d/QdiQaawnk/g2_refencias_fijas",
+              "type": "csv",
+              "url": "http://172.16.60.46:8600/geoserver/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia_referencias_fijas_desplzamiento&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": [
+                    "est_id"
+                  ]
+                }
+              },
+              "info": [
+                {
+                  "name": "Fuente de datos",
+                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                }
+              ],
+              "columns":[
+                {
+                  "name": "geom_32717",
+                  "type": "hidden"
+                },
+                {
+                  "name": "dashboard",
+                  "type": "hidden"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "baseMaps": {
+    "items": [
+      {
+        "item": {
+          "id": "basemap-bing-aerial",
+          "name": "Bing Maps Aerial"
+        },
+        "image": "images/basemaps/ecuador-aerial.png"
+      },
+      {
+        "item": {
+          "id": "basemap-bing-aerial-with-labels",
+          "name": "Bing Maps Aerial with Labels"
+        },
+        "image": "images/basemaps/ecuador-aerial-labels.png"
+      },
+      {
+        "item": {
+          "id": "basemap-bing-roads",
+          "name": "Bing Maps Roads"
+        },
+        "image": "images/basemaps/ecuador-maps-roads.png"
+      },
+      {
+        "item": {
+          "id": "basemap-natural-earth-II",
+          "name": "Natural Earth II"
+        },
+        "image": "images/basemaps/ecuador-natural-earth.png"
+      },
+      {
+        "item": {
+          "id": "basemap-black-marble",
+          "name": "NASA Black Marble"
+        },
+        "image": "images/basemaps/ecuador-black-marble.png"
+      },
+      {
+        "item": {
+          "id": "basemap-positron",
+          "name": "Positron (Light)"
+        },
+        "image": "images/basemaps/ecuador-positron.png"
+      },
+      {
+        "item": {
+          "id": "basemap-darkmatter",
+          "name": "Dark Matter"
+        },
+        "image": "images/basemaps/ecuador-dark-matter.png"
+      }
+    ]
+  },
+  "baseMapId": "basemap-bing-aerial-with-labels",
+  "previewBaseMapId": "basemap-positron"
+}

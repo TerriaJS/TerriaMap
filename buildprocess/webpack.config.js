@@ -77,7 +77,7 @@ module.exports = function(devMode, hot) {
                         //     loader: require.resolve('ts-loader'),
                         //     options: {
                         //          transpileOnly: true
-                        //         // configFile: path.resolve(__dirname, '..', 'node_modules', 'terriajs', 'tsconfig.json')
+                        //         // configFile: path.resolve(__dirname, '..', 'node_modules', 'terriajs', 'simple_geologia.json')
                         //     }
                         // }
                     ]
