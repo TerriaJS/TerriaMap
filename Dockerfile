@@ -17,17 +17,21 @@ RUN mkdir -p /home/nru/usr/src/app
 # change to the base directory
 WORKDIR /home/nru/usr/src/app
 
+# copy in all app files
+COPY . /home/nru/usr/src/app
+
 # make sure everything is readable
-RUN chmod 777 -R /home/nru/usr/src/app
+RUN chmod 777 -R /home/nru
 
 # change to that user
 USER nru
 
-# copy in all app files
-COPY . /home/nru/usr/src/app
-
 # need this for large web sites
 RUN export NODE_OPTIONS=--max_old_space_size=4096
+
+# set a couple directives so the package update works
+RUN yarn config set user 0
+RUN yarn config set unsafe-perm true
 
 # install yarn and build up the node_modules dir
 RUN yarn install
