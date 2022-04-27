@@ -6,8 +6,8 @@ import Styles from "./related-maps.scss";
 import classNames from "classnames";
 import DatePicker from "react-datepicker";
 
-import { runInAction } from "mobx";
-import DataSourceCollection from "terriajs-cesium/Source/DataSources/DataSourceCollection";
+// import { runInAction } from "mobx";
+// import DataSourceCollection from "terriajs-cesium/Source/DataSources/DataSourceCollection";
 
 function SearchByDay(props) {
   const [startDate, setStartDate] = useState(new Date());
