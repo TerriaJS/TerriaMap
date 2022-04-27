@@ -34,6 +34,7 @@ function SearchByGrid(props) {
     // );
 
     searchByGrid();
+    setSearchGrid("");
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };

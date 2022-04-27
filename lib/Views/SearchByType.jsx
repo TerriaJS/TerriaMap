@@ -34,6 +34,7 @@ function SearchByType(props) {
     // );
 
     searchByType();
+    setSearchType("");
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };
