@@ -587,9 +587,14 @@
     {
       "type": "gtfs",
       "url": "https://api.transport.nsw.gov.au/v1/gtfs/vehiclepos/buses",
-      "image": "images/icons/sydney_bus_icon_smaller.png",
+      "image": "build/TerriaJS/images/icons/sydney_bus_icon_smaller.png",
       "name": "NSW Live Transport - Buses",
-      "apiKey": "l4VnvZi4uQLSvD7lwN2ac7vIDJUJ3epYva4l",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "apikey l4VnvZi4uQLSvD7lwN2ac7vIDJUJ3epYva4l"
+        }
+      ],
       "refreshInterval": 5,
       "featureInfoTemplate": {
         "name": "{{vehicle_trip_bus_number}}",
@@ -598,9 +603,7 @@
       "model": {
         "url": "lowpoly_bus/scene.gltf",
         "scale": 0.3048,
-        "maximumDistance": 500.0,
-        "bearingDirectionProperty": "vehicle.position.bearing",
-        "compassDirectionProperty": "vehicle.position.compass"
+        "maximumDistance": 500.0
       }
     },
     {
@@ -750,6 +753,9 @@
       ]
     }
   ],
-  "baseMapId": "basemap-bing-aerial-with-labels",
-  "previewBaseMapId": "basemap-positron"
+  "viewerMode": "3dSmooth",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  }
 }
