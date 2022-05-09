@@ -1,3 +1,19 @@
+diff --git a/node_modules/terriajs/dist/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.js b/node_modules/terriajs/dist/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.js
+index d05d7aa..5629418 100644
+--- a/node_modules/terriajs/dist/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.js
++++ b/node_modules/terriajs/dist/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.js
+@@ -20,6 +20,7 @@ import Box from "../../../Styled/Box";
+ let DataCatalogTab = class DataCatalogTab extends React.Component {
+     get searchPlaceholder() {
+         const { t } = this.props;
++        console.log("t", t)
+         return this.props.searchPlaceholder || t("addData.searchPlaceholder");
+     }
+     changeSearchText(newText) {
+diff --git a/node_modules/terriajs/lib/.DS_Store b/node_modules/terriajs/lib/.DS_Store
+new file mode 100644
+index 0000000..d6ff8ab
+Binary files /dev/null and b/node_modules/terriajs/lib/.DS_Store differ
 diff --git a/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts b/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
 index da2317f..2125827 100644
 --- a/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
@@ -203,3 +219,33 @@ index 909e486..d921534 100644
          );
        }
      }
+diff --git a/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs.jsx b/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs.jsx
+index 77453ae..ad00084 100644
+--- a/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs.jsx
++++ b/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs.jsx
+@@ -81,7 +81,9 @@ const Tabs = observer(
+       } else {
+         return [
+           {
+-            name: t("addData.dataCatalogue"),
++            // Changed line below to set button name to "Data Catalog" vs "Data Catalogue"
++            // name: t("addData.dataCatalogue"),
++            name: this.props.viewState.dataCatalogButtonTitle,
+             title: "data-catalog",
+             category: "data-catalog",
+             panel: (
+diff --git a/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.jsx b/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.jsx
+index 0428fb4..9207b4f 100644
+--- a/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.jsx
++++ b/node_modules/terriajs/lib/ReactViews/ExplorerWindow/Tabs/DataCatalogTab.jsx
+@@ -28,7 +28,9 @@ class DataCatalogTab extends React.Component {
+   @computed
+   get searchPlaceholder() {
+     const { t } = this.props;
+-    return this.props.searchPlaceholder || t("addData.searchPlaceholder");
++    // Changed line below to change "Search the catalogue" to "Search the catalog"
++    // return this.props.searchPlaceholder || t("addData.searchPlaceholder");
++    return this.props.viewState.searchPlaceholder
+   }
+ 
+   changeSearchText(newText) {

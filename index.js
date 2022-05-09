@@ -47,8 +47,12 @@ registerCustomComponentTypes(terria);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
-    terria: terria
+    terria: terria 
 });
+
+// Set overrides for data catalog button text and search placeholder text in explorer window 
+viewState.searchPlaceholder = "Search this catalog"
+viewState.dataCatalogButtonTitle = "Data Catalog"
 
 registerCatalogMembers();
 

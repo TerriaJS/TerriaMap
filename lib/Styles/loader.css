@@ -2,15 +2,44 @@
   display: block;
   margin: calc(50vh - 150px) auto;
 }
-.react-datepicker__input-container {
-  color: #404854
-}
+
+/* BEGIN REACT DATE PICKER CUSTOM CSS */
 .tm-related-maps__dropdown-inner {
-  width: 261px !important;
+  width: 261px !important; 
 }
-.react-datepicker__year-read-view, .react-datepicker__month-read-view {
-color: white;
+.react-datepicker {
+  margin: -10px 0px 0px -11px !important;
+  width: 261px !important; 
 }
+.react-datepicker__triangle {
+  visibility: hidden !important;
+}
+.react-datepicker-wrapper,
+.react-datepicker__input-container input,
+.react-datepicker__month {
+  width: 100%;
+}
+.react-datepicker__input-container {
+  color: #404854;
+  width: inherit;
+}
+.react-datepicker__month-container {
+  width: 100%;
+  padding: 0.65rem;
+  background-color: #3F4854;
+}
+.react-datepicker__week {
+  margin-left: -11px;
+}
+.react-datepicker__day-names {
+  margin: 0px;
+}
+.react-datepicker__year-read-view, .react-datepicker__month-read-view,
+.react-datepicker__month-dropdown-container .react-datepicker__month-dropdown-container--scroll {
+  color: white !important;
+}
+/* END REACT DATE PICKER CUSTOM CSS */
+
 @media (min-width: 768px){
   .loader-ui{
     display: flex;

@@ -42,14 +42,14 @@ function SearchByType(props) {
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="Search By Type"
+      btnText="Forecast Type"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
-      btnTitle="Search By Type"
+      btnTitle="Search related maps by Forecast Type"
       showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Search by Type</label>
+        <label className={PanelStyles.heading}>Forecast Type</label>
       </div>
 
       <select

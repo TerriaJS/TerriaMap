@@ -1,7 +1,7 @@
 {
   "gettingstarted": {
     "title": "Getting started with the map",
-    "markdownText": "## Getting started with the map\n\nIf you're new to the map or using spatial data, our Getting Started video quickly covers the basic functionality you'll need to use to add and interrogate data sets.\n\nIf you don't have time to watch the video, we suggest exploring the following areas:\n\n1. Search for a location to quickly find an area of interest\n2. Use 'Explore map data' to view the catalogue of available data sets and add them to the map\n3. Interact with the data layer, including opacity and toggling on and off on the left in your workbench\n4. Click on the data on the map to view more detailed data, including the raw data\n5. Change your basemap using options in 'Map Settings' to help make some data sets more visible\n6. Zoom and change your view, including tilting the view angle using the controls on the right-hand side of the screen",
+    "markdownText": "## Getting started with the map\n\nIf you're new to the map or using spatial data, our Getting Started video quickly covers the basic functionality you'll need to use to add and interrogate data sets.\n\nIf you don't have time to watch the video, we suggest exploring the following areas:\n\n1. Search for a location to quickly find an area of interest\n2. Use 'Explore map data' to view the catalog of available data sets and add them to the map\n3. Interact with the data layer, including opacity and toggling on and off on the left in your workbench\n4. Click on the data on the map to view more detailed data, including the raw data\n5. Change your basemap using options in 'Map Settings' to help make some data sets more visible\n6. Zoom and change your view, including tilting the view angle using the controls on the right-hand side of the screen",
     "videoUrl": "https://www.youtube-nocookie.com/embed/FjSxaviSLhc",
     "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
   },
@@ -15,12 +15,12 @@
         "title": "Search for a location to find an area of interest"
       },
       "step2": {
-        "markdownDescription": "You can view the catalogue at any time",
-        "title": "Use \"Explore map data\" to view data catalogue"
+        "markdownDescription": "You can view the catalog at any time",
+        "title": "Use \"Explore map data\" to view data catalog"
       },
       "step3": {
         "markdownDescription": "Find a dataset of interest",
-        "title": "Search for data or browse catalogue"
+        "title": "Search for data or browse catalog"
       },
       "step4": {
         "title": "Add data to map by clicking on + sign or \"Add to map\" button in preview window",
@@ -48,7 +48,7 @@
       },
       "step2": {
         "title": "Add the satellite imagery to the map",
-        "markdownDescription": "- Open the data catalogue using \"Explore map data\" button\n- Navigate through datasets to select your satellite option: Landsat or Sentinel, and daily or composite images. This can depend on resolution of the image you need (10m or 25m) and whether you want daily, 16 day composite, or annual average images\n - Select \"Add to the map\" to view the satellite imagery"
+        "markdownDescription": "- Open the data catalog using \"Explore map data\" button\n- Navigate through datasets to select your satellite option: Landsat or Sentinel, and daily or composite images. This can depend on resolution of the image you need (10m or 25m) and whether you want daily, 16 day composite, or annual average images\n - Select \"Add to the map\" to view the satellite imagery"
       },
       "step3": {
         "title": "Filter images to find satellite imagery",

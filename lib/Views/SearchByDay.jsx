@@ -24,7 +24,6 @@ function SearchByDay(props) {
     let yyyy = date.getFullYear();
 
     return mm + "-" + dd + "-" + yyyy;
-    // return mm + '/' + dd + '/' + yyyy;
   };
 
   const isValidDate = d => {
@@ -40,15 +39,11 @@ function SearchByDay(props) {
 
   const onDateChanged = date => {
     setStartDate(date);
-    // console.log("date", convertDateToString(date));
 
     viewState.changeSearchState(convertDateToString(date));
-    // console.log(
-    //   "onDateChanged catalogSearchText: ",
-    //   viewState.searchState.catalogSearchText
-    // );
 
     searchByDate();
+
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };
@@ -90,28 +85,33 @@ function SearchByDay(props) {
   }
   */
 
+  // const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+  //   <input style={{ width: "100%" }} onClick={onClick} ref={ref} value={value}/>
+  // ));
+
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="Search By Day"
+      btnText="Calendar Date"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
-      btnTitle="See related maps"
+      btnTitle="Search related maps by Calendar Date"
       showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Search by Day</label>
+        <label className={PanelStyles.heading}>Calendar Date</label>
       </div>
-      <DatePicker
-        showMonthDropdown
-        showYearDropdown
-        scrollableYearDropdown
-        selected={startDate}
-        // onChange={date => setStartDate(date)}
-        onChange={date => onDateChanged(date)}
-        style={{ color: "grey", width: "100%" }}
-        // onKeyDown={onKeyDown}
-      />
+      <div className="customDatePickerWidth">
+        <DatePicker
+          showMonthDropdown
+          showYearDropdown
+          scrollableYearDropdown
+          selected={startDate}
+          onChange={date => onDateChanged(date)}
+          style={{ color: "grey" }}
+          // customInput={<CustomInput />}
+        />
+      </div>
     </MenuPanel>
   );
 }

@@ -2,6 +2,7 @@
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
   "initializationUrls": ["apsviz"],
   "parameters": {
+    "bingMapsKey": "AonD5sr-4zO6vqCNY-RMerq7qOLMOFDd1BsYZbGdZLE9zP3lbGLsX-BVwH8dTqxh",
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
@@ -10,7 +11,7 @@
     // logToConsole: true,
     // create this on cesium site and add here to make the map show in the app
     "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkMzA5YzNmYy0wYjViLTRkNGYtYTk2MC1hNzFmOTBmYTEzYmUiLCJpZCI6NzU2NzgsImlhdCI6MTYzODgwODIzNH0.TngUYPd5hc1s-ekE9g4yiRuTcp76CnCm16NFmewjWBI",
-
+    "useCesiumIonBingImagery": false,
 
     /* Text that appears at the bottom of the map */
     "disclaimer": {

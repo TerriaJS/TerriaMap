@@ -85,6 +85,15 @@ gulp.task('copy-terriajs-assets', function() {
         .pipe(gulp.dest(destPath));
 });
 
+const copyBasemapImages = () => {
+    var sourcePath = path.resolve(__dirname, 'wwwroot', 'images', 'basemaps', 'us');
+    var destPath = path.resolve(__dirname, 'wwwroot', 'build', 'TerriaJS', 'images');
+
+    return gulp
+        .src(sourcePath + '/*.png')
+        .pipe(gulp.dest(destPath));
+};
+
 gulp.task('watch-terriajs-assets', gulp.series('copy-terriajs-assets', function waitForTerriaJsAssetChanges() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
     var sourceGlob = path.join(terriaWebRoot, '**');
@@ -94,6 +103,8 @@ gulp.task('watch-terriajs-assets', gulp.series('copy-terriajs-assets', function 
     if (path.sep === '\\') {
         sourceGlob = sourceGlob.replace(/\\/g, '/');
     }
+
+    copyBasemapImages()
 
     return gulp.watch(sourceGlob, watchOptions, gulp.series('copy-terriajs-assets'));
 }));

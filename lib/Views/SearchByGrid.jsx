@@ -42,14 +42,14 @@ function SearchByGrid(props) {
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="Search By Grid"
+      btnText="ADCIRC Grid"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
-      btnTitle="Search By Grid"
+      btnTitle="Search related maps by ADCIRC Grid"
       showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Search by Grid</label>
+        <label className={PanelStyles.heading}>ADCIRC Grid</label>
       </div>
 
       <select
