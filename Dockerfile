@@ -7,6 +7,9 @@ LABEL maintainer="RENCI"
 # install os updates and GDAL
 RUN apt-get update && apt-get install -y gdal-bin
 
+# install an editor
+RUN apt-get install -yq vim
+
 # create the non-root user
 RUN useradd -m -d /home/nru -u 1001 nru
 
