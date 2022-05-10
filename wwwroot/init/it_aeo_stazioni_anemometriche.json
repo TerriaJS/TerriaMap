@@ -1,0 +1,139 @@
+{
+  "catalog": [
+    {
+      "id": "stazionianemometriche",
+      "type": "group",
+      "name": "Stazioni Anemometriche",
+      "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio. \n\n <div><img src=\"/images/1920-piccolo-lago-di-alta-montagna-con-trasparente.jpg\" style=\"width:640px;height:427px;\"</div> <a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
+      "isOpen": false,
+      "members": [
+        {
+          "id": "rserds",
+          "type": "group",
+          "name": "RSE-RdS",
+          "description": "Questa raccolta comprende dati della risorsa eolica media nazionale",
+          "isOpen": false,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Velocita' media annua del vento a 75 m s.l.t./s.l.m.",
+              "description": "Velocita' media annua del vento a 75 m s.l.t./s.l.m. \n\n Velocità media annua del vento alla quota di 75 metri s.l.t./s.l.m. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2018",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=128&anno=2018"
+              }],
+              "layers": "atlante_integrato:vento_75",
+              "id": "eol_75"
+            },
+            {
+              "type": "wms",
+              "name": "Producibilita' specifica a 75 m s.l.t./s.l.m.",
+              "description": "Producibilita' specifica a 75 m s.l.t./s.l.m. (MWh/MW) \n\n Producibilità specifica media annua alla quota di 75 metri s.l.t./s.l.m. espressa in MWh/MW.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"link metadato anno 2018",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=129&anno=2018"
+              }],
+              "layers": "atlante_integrato:prod_75",
+              "id": "prod_75"
+            }
+          ]
+        },
+        {
+          "id": "altre",
+          "type": "group",
+          "name": "Altre",
+          "description": "Questa raccolta comprende dati della risorsa idroelettrica storici e derivati da collaborazione con ...... ",
+          "isOpen": false,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Potenziale idroelettrico massimo",
+              "description": "Idroelettrico tradizionale - potenziale massimo (GWh/anno) \n\n Le mappe del massimo potenziale idroelettrico illustrano la <b> massima energia lorda ricavabile da sfruttamento idroenergetico (GWh/anno) </b> in ogni sottobacino considerato nel territorio italiano. \n\n Il calcolo tiene conto della distribuzione spaziale della precipitazione media annua, dei coefficienti di deflusso, del rilievo topografico (DEM) e del deflusso minimo vitale (DMV) pari al 10% della portata naturale.</br><b>È importante sottolineare che il calcolo non tiene conto degli attuali usi dell’acqua (idroelettrico, irriguo, potabili, ecc.)</b> e quindi il valore complessivo della producibilità idroelettrica massima italiana risulta di circa 190 000 GWh/anno. \n\n Questo valore puramente teorico implicherebbe di poter convertire in energia elettrica tutto il potenziale idrico disponibile, ipotesi non realistica dal punto di vista sia tecnico che ambientale. Un valore plausibile del reale sfruttamento può essere considerato all’incirca il 25% della producibilità idroelettrica massima, percentuale che potrebbe essere raggiunta ed eventualmente superata con la realizzazione di impianti di generazione distribuita (mini-idroelettrico).</br></br>\n\n Per il calcolo del potenziale massimo vengono considerate due componenti:</br></br><ul><li> -la producibilità propria di bacino;</li><li> -la producibilità derivante dalle portate che proviene da monte, con salto Hmonte-Hvalle.</li></ul></br><img src=\"images/idro_pot_.png\"></br><b>Le due componenti di calcolo del potenziale idroelettrico massimo</b></br></p> \n\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</br><a href=\"http://www.seehydropower.eu/\" target=\"_blank\">SEEHydroPower</a> ",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "layers": "atlante_integrato:bacini_view",
+              "styles":"bacini",
+              "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=170"
+                  }],
+              "id": "bac"
+            },
+            {
+              "type": "wms",
+              "name": "Potenziale idroelettrico specifico",
+              "description": "Idroelettrico tradizionale - potenziale specifico (GWh/anno/m) \n\n Le mappe del massimo potenziale idroelettrico illustrano la <b> massima energia specifica per unità di lunghezza </b> ricavabile da sfruttamento idroenergetico (GWh/anno/m) in ogni sottobacino considerato nel territorio italiano. Il calcolo tiene conto della distribuzione spaziale della precipitazione media annua, dei coefficienti di deflusso, del rilievo topografico (DEM) e del deflusso minimo vitale (DMV) pari al 10% della portata naturale.</br></br>Il potenziale specifico considera due differenti contributi di energia:</br></br><ul><li> - la producibilità propria di bacino;</li><li> - la producibilità derivante dalle portate che proviene da monte, con salto Hmonte-Hvalle.</li></ul></br><img src=\"images/idro_pot_.png\"></br><b>Le due componenti di calcolo del potenziale idroelettrico massimo</b></br></br></p><p align=\"justify\">L’energia proveniente dallo sfruttamento delle portate di monte viene rapportata alla distanza L, corrispondente allo sviluppo strutturale di un ipotetico impianto che preleva acqua nel punto di immissione dei bacini che confluiscono a monte e la restituisce nella sezione di chiusura del bacino in analisi; l’energia propria è invece rapportata ad una distanza equivalente, definita come la radice quadrata della superficie del bacino.</p> \n\n\n <a href= http://atlanteintegrato.rse-web.it/documenti/Metodologia_Mappe_Producibilita_Massima_e_Residua.pdf\" target=\"_blank\">Metodologia per la redazione di mappe della producibilità idroelettrica a scala di bacino</a> \n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</br><a href=\"http://www.seehydropower.eu/\" target=\"_blank\">SEEHydroPower</a>",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "layers": "atlante_integrato:bacini_view",
+              "styles":"potenziale_specifico",
+              "metadataUrls":[{
+                "title":"link metadato",
+                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=170"
+              }],
+              "id": "pot_bac"
+            },
+            {
+              "id": "dati",
+              "type": "group",
+              "name": "dati storici",
+              "description": "Questa raccolta comprende dati storici di pluviometri ed idrometri nonchè delle curve di durata di alcuni bacini idrografici. ",
+              "isOpen": false,
+              "members": [
+                {
+                  "type": "wms",
+                  "name": "Dati idrometrici",
+                  "description": "Dati idrometrici attraverso questo strato informativo è possibile accedere ai dati e ad effettuare lo <i>scarico dati storici</i>.\n\n Misure idromentriche della banca dati IDROSTAZ derivanti dai dati storici pubblicati negli annali del Servizio Idrografico. \n Nota: il servizio ha cessato di raccogliere dati dal 1998 quando il servizio è stato trasferito alle regioni. <br> Per maggiori approfondimenti: \n\n <a href=\"https://www.isprambiente.gov.it/it/progetti/cartella-progetti-in-corso/acque-interne-e-marino-costiere-1/progetti-conclusi/progetto-annali/inquadramento-storico-del-monitoraggio-idro-meteografico-e-delle-relative-competenze\">  - Ispra ambiente </a>\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\"> - Software SMART Mini-Idro</a></br></br>\n<a href=\"http://www.seehydropower.eu/\" target=\"_blank\"> - SEEHydroPower</a> ",
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "layers": "atlante_integrato:v_idrometri",
+                  "featureInfoTemplate": {
+                    "template": "<br><p>L'idrometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_idroNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
+                  },
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=146&anno=2019"
+                  }],
+                  "id": "idrom"
+                },
+                {
+                  "type": "wms",
+                  "name": "Dati pluviometrici",
+                  "description": "Dati pluviometrici: attraverso questo strato informativo è possibile accedere ai dati e ad effettuare lo <i>scarico dati storici</i>.\n\n Misure pluviometriche della banca dati IDROSTAZ derivanti dai dati storici pubblicati negli annali del Servizio Idrografico. </p> \n Nota: il servizio ha cessato di raccogliere dati dal 1998 quando il servizio è stato trasferito alle regioni. <br> Per maggiori approfondimenti: \n\n <a href=\"https://www.isprambiente.gov.it/it/progetti/cartella-progetti-in-corso/acque-interne-e-marino-costiere-1/progetti-conclusi/progetto-annali/inquadramento-storico-del-monitoraggio-idro-meteografico-e-delle-relative-competenze\">  - Ispra ambiente </a>\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\"> - Software SMART Mini-Idro</a></br></br>\n <a href=\"http://www.seehydropower.eu/\" target=\"_blank\"> - SEEHydroPower</a>",
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "layers": "atlante_integrato:v_pluviometri",
+                  "featureInfoTemplate": {
+                    "template": "<br><p>Il pluviometro che hai selezionato è:  <b>{{nome_stazione}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://atlanteintegrato.rse-web.it/export_pluvioNAI.php?input_codstaz={{codice_stazione}}\">scarica i dati della stazione (formato .xlsx) </a></button></p>"
+                  },
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=147&anno=2019"
+                  }],
+                  "id": "pluvi"
+                },
+                {
+                  "type": "wms",
+                  "name": "Curva di durata portate",
+                  "description": "Punti di calcolo delle curve di durata portate medie giornaliere \n\n Punti di calcolo di curve di durata delle portate</font>\n\n Curve di durata per la valutazione della disponibilità idrica prevedibile alla sezione di chiusura di un prefissato bacino idrografico. Sono disponibili le elaborazioni nelle seguenti zone: Abruzzo-Marche, Adamello e Orobie e Alpi Graie e Pennine</p>\n\n <a href=\"http://www.rse-web.it/prodotti/prodotto/129\" target=\"_blank\">Software SMART Mini-Idro</a>",
+                  "url": "http://gis2.rse-web.it/geoserver/wms",
+                  "layers": "atlante_integrato:v_stazioni",
+                  "styles":"Stazioni_Mini_Idro_IT",
+                  "metadataUrls":[{
+                    "title":"link metadato",
+                    "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=132"
+                  }],
+                  "id": "mHydStaz"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

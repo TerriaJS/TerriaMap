@@ -1,15 +1,15 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
   "initializationUrls": [
-    "it_cartografia",
-    "it_dati_territoriali",
-    "it_infrastrutture",
-    "it_risorsa",
-    "it_impianti",
-    "it_consumi",
-    "it_stime_energetiche",
+    "it_aeo_cartografia",
+    "it_aeo_limiti_amministrativi",
+    "it_aeo_dati_territoriali",
+    "it_aeo_velocita",
+    "it_aeo_producibilita",
+    "it_aeo_Impianti_eo_esistenti",
+    "it_aeo_stazioni_anemometriche",
     "it"
-  ],
+  ], 
   "parameters": {
     "tabbedCatalog": true,
     "useCesiumIonTerrain": false,
