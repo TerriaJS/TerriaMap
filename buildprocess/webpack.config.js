@@ -2,6 +2,7 @@
 
 /*global require*/
 var configureWebpackForTerriaJS = require('terriajs/buildprocess/configureWebpack');
+var configureWebpackForPlugins = require("./configureWebpackForPlugins");
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var path = require('path');
 
@@ -158,5 +159,7 @@ module.exports = function(devMode, hot) {
         }
     };
     config.resolve.alias['terriajs-variables'] = require.resolve('../lib/Styles/variables.scss');
-    return configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin);
+    return configureWebpackForPlugins(
+      configureWebpackForTerriaJS(path.dirname(require.resolve('terriajs/package.json')), config, devMode, hot, MiniCssExtractPlugin)
+    );
 };
