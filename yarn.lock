@@ -9237,9 +9237,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-"pell@git://github.com/TerriaJS/pell#master":
+"pell@github:TerriaJS/pell#master":
   version "1.0.6"
-  resolved "git://github.com/TerriaJS/pell#7cd23a55cdfd130fedf3679433991bb7d958fc42"
+  resolved "https://codeload.github.com/TerriaJS/pell/tar.gz/7cd23a55cdfd130fedf3679433991bb7d958fc42"
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -9973,17 +9973,6 @@ react-anything-sortable@^1.5.2:
   dependencies:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
-
-react-datepicker@0.53.0:
-  version "0.53.0"
-  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-0.53.0.tgz#1a621cb8b76ad1a85ee72052f80b578db5e64301"
-  integrity sha1-GmIcuLdq0ahe5yBS+AtXjbXmQwE=
-  dependencies:
-    classnames "^2.2.5"
-    moment "^2.17.1"
-    prop-types "^15.5.8"
-    react-onclickoutside "^6.1.1"
-    react-popper "^0.7.0"
 
 react-datepicker@^4.3.0:
   version "4.6.0"
@@ -11948,7 +11937,7 @@ terriajs@8.1.4:
     mutationobserver-shim "^0.3.1"
     papaparse "^5.2.0"
     pbf "^3.0.1"
-    pell "git://github.com/TerriaJS/pell#master"
+    pell "github:TerriaJS/pell#master"
     point-in-polygon "^1.0.1"
     proj4 "^2.4.4"
     prop-types "^15.6.0"
@@ -11957,7 +11946,7 @@ terriajs@8.1.4:
     react "^16.3.2"
     react-addons-pure-render-mixin "^15.6.0"
     react-anything-sortable "^1.5.2"
-    react-datepicker "0.53.0"
+    react-datepicker "^4.3.0"
     react-dom "^16.3.2"
     react-i18next "^11.2.1"
     react-responsive "^5.0.0"
