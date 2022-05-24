@@ -125,6 +125,9 @@ module.exports = terria.start({
             }
         }
 
+        // add useCesiumIonBingImagery
+        terria.configParameters.useCesiumIonBingImagery = true;
+
         render(terria, [], viewState);
     } catch (e) {
         console.error(e);
