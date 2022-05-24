@@ -47,6 +47,7 @@ gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version
     var webpackConfig = require('./buildprocess/webpack.config.js')(true);
 
     checkForDuplicateCesium();
+    copyBasemapImages();
 
     runWebpack(webpack, webpackConfig, done);
 }));
@@ -75,6 +76,17 @@ gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watch
     watchWebpack(webpack, webpackConfig, done);
 }));
 
+const copyBasemapImages = () => {
+    var sourcePath = path.resolve(__dirname, 'wwwroot', 'images', 'basemaps', 'us');
+    var destPath = path.resolve(__dirname, 'wwwroot', 'build', 'TerriaJS', 'images');
+
+    console.log('Basemap Image Copied!')
+
+    return gulp
+        .src(sourcePath + '/*.png')
+        .pipe(gulp.dest(destPath));
+};
+
 gulp.task('copy-terriajs-assets', function() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
     var sourceGlob = path.join(terriaWebRoot, '**');
@@ -84,15 +96,6 @@ gulp.task('copy-terriajs-assets', function() {
         .src([ sourceGlob ], { base: terriaWebRoot })
         .pipe(gulp.dest(destPath));
 });
-
-const copyBasemapImages = () => {
-    var sourcePath = path.resolve(__dirname, 'wwwroot', 'images', 'basemaps', 'us');
-    var destPath = path.resolve(__dirname, 'wwwroot', 'build', 'TerriaJS', 'images');
-
-    return gulp
-        .src(sourcePath + '/*.png')
-        .pipe(gulp.dest(destPath));
-};
 
 gulp.task('watch-terriajs-assets', gulp.series('copy-terriajs-assets', function waitForTerriaJsAssetChanges() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
