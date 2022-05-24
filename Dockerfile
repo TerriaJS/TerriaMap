@@ -10,9 +10,6 @@ RUN apt-get update && apt-get install -y gdal-bin
 # install an editor
 RUN apt-get install -yq vim
 
-# create the non-root user
-RUN useradd -m -d /home/nru -u 1001 nru
-
 # create some needed dirs for the content
 # this was in the original dockerfile so i kept it.
 RUN mkdir -p /home/nru/usr/src/app
@@ -20,14 +17,27 @@ RUN mkdir -p /home/nru/usr/src/app
 # change to the base directory
 WORKDIR /home/nru/usr/src/app
 
-# copy in all app files
-COPY . /home/nru/usr/src/app
+# copy in all neccesary app dirs
+COPY buildprocess ./buildprocess
+COPY lib ./lib
+COPY patches ./patches
+COPY wwwroot ./wwwroot
+
+# and files
+COPY code .
+COPY ecosystem-production.config.js .
+COPY ecosystem.config.js .
+COPY entry.js .
+COPY gulpfile.js .
+COPY index.js .
+COPY package.json .
+COPY terria-logo.png .
+COPY tsconfig.json .
+COPY version.js .
+COPY yarn.lock .
 
 # make sure everything is readable
 RUN chmod 777 -R /home/nru
-
-# change to that user
-USER nru
 
 # need this for large web sites
 RUN export NODE_OPTIONS=--max_old_space_size=4096
@@ -36,8 +46,30 @@ RUN export NODE_OPTIONS=--max_old_space_size=4096
 RUN yarn config set user 0
 RUN yarn config set unsafe-perm true
 
+# get a specific version of yarn
+RUN yarn policies set-version 1.22.17
+
+# change to the non-root user
+USER 1000
+
 # install yarn and build up the node_modules dir
 RUN yarn install
+
+## sync terria dependancies
+## although this fixes mobx version conflicts it causes other errors
+#RUN npm run gulp sync-terriajs-dependencies
+#
+## install yarn and build up the node_modules dir
+#RUN yarn install
+
+# create the "build" dir/files
+RUN npm run gulp build
+
+# remove the file we will turn into a symbolic link
+RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
+
+# make a symbolic link to the apsviz.json file
+RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/apsviz.json
 
 # expose the web server port
 EXPOSE 3001

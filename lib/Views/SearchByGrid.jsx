@@ -5,26 +5,26 @@ import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
 import Styles from "./related-maps.scss";
 import classNames from "classnames";
 
-import { getDistinctEventTypes } from "../helper";
+import { getDistinctGridTypes } from "../helper";
 
-function SearchByType(props) {
-  const [searchType, setSearchType] = useState("");
+function SearchByGrid(props) {
+  const [searchGrid, setSearchGrid] = useState("");
 
   const dropdownTheme = {
     inner: Styles.dropdownInner,
     icon: "search"
   };
 
-  const { eventTypes } = getDistinctEventTypes();
+  const { gridTypes } = getDistinctGridTypes();
 
-  const searchByType = () => {
-    const searchBy = "event";
-    console.log("searchByType - search state", viewState);
+  const searchByGrid = () => {
+    const searchBy = "grid";
+    console.log("searchByGrid - search state", viewState);
     viewState.searchState.searchCatalog(searchBy);
   };
 
   const handleChange = selection => {
-    setSearchType(selection);
+    setSearchGrid(selection);
     // console.log("date", convertDateToString(date));
 
     viewState.changeSearchState(selection);
@@ -33,8 +33,8 @@ function SearchByType(props) {
     //   viewState.searchState.catalogSearchText
     // );
 
-    searchByType();
-    setSearchType("");
+    searchByGrid();
+    setSearchGrid("");
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };
@@ -42,51 +42,51 @@ function SearchByType(props) {
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="Forecast Type"
+      btnText="ADCIRC Grid"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
-      btnTitle="Search related maps by Forecast Type"
+      btnTitle="Search related maps by ADCIRC Grid"
       showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Forecast Type</label>
+        <label className={PanelStyles.heading}>ADCIRC Grid</label>
       </div>
 
       <select
-        id="searchByType"
+        id="searchByGrid"
         type="text"
-        name="searchByType"
+        name="searchByGrid"
         autoComplete="off"
-        value={searchType}
+        value={searchGrid}
+        // onChange={e => setSearchGrid(e.target.value)}
         onChange={e => handleChange(e.target.value)}
         style={{ color: "grey", width: "100%" }}
       >
         <option value="">Select an option</option>
-        {eventTypes &&
-          eventTypes.map((eventType, idx) => (
-            <option value={eventType} key={idx}>
-              {eventType}
+        {gridTypes &&
+          gridTypes.map((gridType, idx) => (
+            <option value={gridType} key={idx}>
+              {gridType}
             </option>
           ))}
       </select>
-
       {/* <input
         id="searchByType"
         type="text"
         name="searchByType"
         placeholder="Enter search type."
         autocomplete="off"
-        value={searchType}
-        onChange={e => setSearchType(e.target.value)}
+        value={searchGrid}
+        onChange={e => setSearchGrid(e.target.value)}
         style={{ color: "grey" }}
       ></input> */}
     </MenuPanel>
   );
 }
 
-SearchByType.propTypes = {
+SearchByGrid.propTypes = {
   viewState: PropTypes.object.isRequired,
   smallScreen: PropTypes.bool
 };
 
-export default SearchByType;
+export default SearchByGrid;
