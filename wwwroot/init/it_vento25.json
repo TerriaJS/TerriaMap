@@ -2,24 +2,24 @@
   "catalog": [
     {
       "type": "group",
-      "name": "TOTEM",
+      "name": "toolvento25",
       "isOpen": true,
       "members": [
         {
           "type": "wms",
-          "name": "TOTEM",
+          "name": "toolvento25",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "layers": "new_atlante_integrato:v_province_terria",
           "styles": "polygon",
           "opacity": 0.5,
           "featureInfoTemplate": {
-            "template": "<br><p>Esegui l'analisi per la provincia di <b>{{den_uts}}</b></p><p style='display: block; text-align: center;'><button><a href=\"http://rakino.ricerca.lan/?prov={{den_uts}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+            "template": "<br><p>cper far funzionare occorre inserire la variabile e sostituirla a den_uts<p style='display: block; text-align: center;'><button><a href=\"http://rakino.ricerca.lan/?prov={{den_uts}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
           },
-          "id": "totem",
+          "id": "it_vento25",
           "initialMessage": {
             "title": "Per accedere:",
-            "content": "Seleziona la provincia da analizzare direttamente dalla mappa.",
-            "key": "totem_warning",
+            "content": "Seleziona il punto direttamente sulla mappa.",
+            "key": "it_vento25",
             "confirmation": true,
             "confirmText": "Avvia"
           }
@@ -39,6 +39,6 @@
   },
   "viewerMode": "2d",
   "workbench": [
-    "totem"
+    "it_vento25"
   ]
 }

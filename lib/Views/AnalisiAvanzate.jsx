@@ -14,10 +14,10 @@ function AnalisiAvanzate(props) {
 
   // to select language config.json depending on the browser language
   var userLang = navigator.language || navigator.userLanguage;
-  var totem_link = "/#en_totemweb";
+  var totem_link = "/#en_totemweb"; //puntare al json che carica il tool con il codice di calcolo
   var analisi = "Advanced Analysis";
   if (userLang === "it-IT" || userLang === "it") {
-    totem_link = "/#it_totemweb";
+    totem_link = "/#it_vento25"; //inserire il path che punta al tool codice di calcolo
     analisi = "Analisi Avanzate";
   }
 
@@ -42,7 +42,7 @@ function AnalisiAvanzate(props) {
           <li class="list-group-item">
             {/*<div class="row">
             <div class="col-sm-6">*/}
-            <h2> TOTEM </h2>
+            <h2> vento altezza 25 </h2>
             <a target="_blank" href="http://rakino.ricerca.lan">
               <img
                 className={Styles.image}
@@ -53,16 +53,12 @@ function AnalisiAvanzate(props) {
             </a>
             {/*</div>
             <div class="col-sm-6">*/}
+            pippo = "new_atlante_integrato:v_province_terria"
             <p>
               {" "}
-              TOTEM (<i>Territory Overview Tool for Energy Modelling</i>):{" "}
-              fornisce una caratterizzazione energetica del territorio e
-              permette di stimare, visualizzare e salvare dati a scala
-              provinciale riguardanti: domanda energetica, risorsa rinnovabile,
-              vincoli territoriali e potenziale di accumulo idrico da pompaggi.{" "}
-              Per accedere{" "}
+              altezza 25 (<i>cambiare testo</i>): prova .... Per accedere{" "}
               <a className={Styles.link} href={totem_link}>
-                seleziona una provincia
+                clicca sulla mappa nella zona di interesse
               </a>
               .
               {/* Permette la definizione ed il salvataggio di dati territoriali
