@@ -31,18 +31,18 @@ function RelatedMaps(props) {
       </p>
 
       <div className={classNames(PanelStyles.section, Styles.section)}>
-        <a target="_blank" href="http://172.16.60.46:3002/">
+        <a target="_blank" href="http://localhost:3001/#celec_energia">
           <img
             className={Styles.image}
             src={require("../../wwwroot/images/g4_energias.png")}
-            alt="AREMI"
+            alt="Energias"
           />
         </a>
 
         <a
           target="_blank"
           className={Styles.link}
-          href="http://172.16.60.46:3002/"
+          href="http://localhost:3001/#celec_energia"
         >
           Energías Renovables
         </a>
@@ -50,6 +50,29 @@ function RelatedMaps(props) {
         <p>
           Visor de las variables meteorológicas a escala mensual en las torres
           de energía renovables
+        </p>
+      </div>
+
+      <div className={classNames(PanelStyles.section, Styles.section)}>
+        <a target="_blank" href="http://localhost:3001/#celec_geo">
+          <img
+            className={Styles.image}
+            src={require("../../wwwroot/images/g2_geologia.png")}
+            alt="Geología"
+          />
+        </a>
+
+        <a
+          target="_blank"
+          className={Styles.link}
+          href="http://localhost:3001/#celec_geo"
+        >
+          Geología
+        </a>
+
+        <p>
+          Visor de las variables geologicas a escala mensual en las torres de
+          geología
         </p>
       </div>
     </MenuPanel>

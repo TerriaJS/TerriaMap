@@ -51,42 +51,6 @@
             },
             {
               "type": "group",
-              "name": "Referencias fijas",
-              "members": [
-                {
-                  "name": "Desplazamiento (mm)",
-                  "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  $GRAFANA_URL/d/QdiQaawnk/g2_refencias_fijas_desplazamiento?orgId=1",
-                  "type": "csv",
-                  "url": "$GEOSERVER_URL/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia_referencias_fijas_desplzamiento&maxFeatures=5000000&outputFormat=text%2Fcsv",
-                  "defaultStyle": {
-                    "time": {
-                      "timeColumn": "timestamp_mes",
-                      "idColumns": [
-                        "est_id"
-                      ]
-                    }
-                  },
-                  "info": [
-                    {
-                      "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                    }
-                  ],
-                  "columns":[
-                    {
-                      "name": "geom_32717",
-                      "type": "hidden"
-                    },
-                    {
-                      "name": "dashboard",
-                      "type": "hidden"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "group",
               "name": "Control de desplazamiento",
               "members": [
                 {
@@ -152,74 +116,92 @@
               ]
             },
             {
-              "type": "group",
-              "name": "Inclinómetro",
-              "members": [
-                {
-                  "name": "Desplazamiento (mm)",
-                  "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  $GRAFANA_URL/d/z7eE8v_7z/g2_inclinometro?orgId=1",
-                  "type": "csv",
-                  "url": "$GEOSERVER_URL/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia.inclinometro&maxFeatures=5000000&outputFormat=text%2Fcsv",
-                  "defaultStyle": {
-                    "time": {
-                      "timeColumn": "timestamp_mes",
-                      "idColumns": [
-                        "est_id"
-                      ]
-                    }
-                  },
-                  "info": [
-                    {
-                      "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                    }
-                  ],
-                  "columns":[
-                    {
-                      "name": "geom_32717",
-                      "type": "hidden"
-                    },
-                    {
-                      "name": "dashboard",
-                      "type": "hidden"
-                    }
+              "name": "Extensómetro Desplazamiento (mm)",
+              "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  $GRAFANA_URL/d/vR387Du7k/g2_extensometro?orgId=1",
+              "type": "csv",
+              "url": "$GEOSERVER_URL/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia_extensometro&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": [
+                    "est_id"
                   ]
+                }
+              },
+              "info": [
+                {
+                  "name": "Fuente de datos",
+                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                }
+              ],
+              "columns":[
+                {
+                  "name": "geom_32717",
+                  "type": "hidden"
+                },
+                {
+                  "name": "dashboard",
+                  "type": "hidden"
                 }
               ]
             },
             {
-              "type": "group",
-              "name": "Extensómetro",
-              "members": [
-                {
-                  "name": "Desplazamiento (mm)",
-                  "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  $GRAFANA_URL/d/vR387Du7k/g2_extensometro?orgId=1",
-                  "type": "csv",
-                  "url": "$GEOSERVER_URL/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia_extensometro&maxFeatures=5000000&outputFormat=text%2Fcsv",
-                  "defaultStyle": {
-                    "time": {
-                      "timeColumn": "timestamp_mes",
-                      "idColumns": [
-                        "est_id"
-                      ]
-                    }
-                  },
-                  "info": [
-                    {
-                      "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                    }
-                  ],
-                  "columns":[
-                    {
-                      "name": "geom_32717",
-                      "type": "hidden"
-                    },
-                    {
-                      "name": "dashboard",
-                      "type": "hidden"
-                    }
+              "name": "Inclinómetro Desplazamiento (mm)",
+              "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  $GRAFANA_URL/d/z7eE8v_7z/g2_inclinometro?orgId=1",
+              "type": "csv",
+              "url": "$GEOSERVER_URL/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia.inclinometro&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": [
+                    "est_id"
                   ]
+                }
+              },
+              "info": [
+                {
+                  "name": "Fuente de datos",
+                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                }
+              ],
+              "columns":[
+                {
+                  "name": "geom_32717",
+                  "type": "hidden"
+                },
+                {
+                  "name": "dashboard",
+                  "type": "hidden"
+                }
+              ]
+            },
+            {
+              "name": "Referencias fijas Desplazamiento (mm)",
+              "description": "Resumen de los valores de a escala anual, mensual y horaria en las estaciones .\n\n Enlace  $GRAFANA_URL/d/QdiQaawnk/g2_refencias_fijas_desplazamiento?orgId=1",
+              "type": "csv",
+              "url": "$GEOSERVER_URL/g2_geologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g2_geologia%3Ag2_geologia_referencias_fijas_desplzamiento&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": [
+                    "est_id"
+                  ]
+                }
+              },
+              "info": [
+                {
+                  "name": "Fuente de datos",
+                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR  )  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                }
+              ],
+              "columns":[
+                {
+                  "name": "geom_32717",
+                  "type": "hidden"
+                },
+                {
+                  "name": "dashboard",
+                  "type": "hidden"
                 }
               ]
             }

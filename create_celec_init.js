@@ -56,3 +56,16 @@ fs.readFile("./wwwroot/init/simple_geo.json", 'utf8', function (err,data) {
     console.log("CELEC configuration file ./wwwroot/init/celec_geo.json created successful 🚀🚀🚀")
   });
 });
+fs.readFile("./wwwroot/init/simple_hidrometeorologia.json", 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  var result = data.replace(/\$GEOSERVER_URL/g, process.env.GEOSERVER_URL);
+
+  result = result.replace(/\$GRAFANA_URL/g, process.env.GRAFANA_URL);
+
+  fs.writeFile('./wwwroot/init/celec_hidrometeorologia.json', result, 'utf8', function (err) {
+    if (err) return console.log(err);
+    console.log("CELEC configuration file ./wwwroot/init/celec_hidrometeorologia.json created successful 🚀🚀🚀")
+  });
+});
