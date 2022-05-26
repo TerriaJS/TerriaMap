@@ -17,7 +17,7 @@
             {
               "type": "wms",
               "name": "Velocita' media annua del vento onshore a 50 m s.l.t. ",
-              "description": "Velocita' media annua del vento onshore a 50 m s.l.t. \n\n Velocità media annua del vento alla quota di 50 metri s.l.t. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "description": "Velocita' media annua del vento onshore a 50 m s.l.t. \n\n Velocità media annua del vento alla quota di 50 metri s.l.t. espressa in m/s.",
               "url": "https://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -31,8 +31,8 @@
             },
             {
               "type": "wms",
-              "name": "Velocita' media annua del vento a 75 m s.l.t. ",
-              "description": "Velocita' media annua del vento onshore a 75 m s.l.t. \n\n Velocità media annua del vento alla quota di 75 metri s.l.t. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "name": "Velocita' media annua del vento onshore a 75 m s.l.t. ",
+              "description": "Velocita' media annua del vento onshore a 75 m s.l.t. \n\n Velocità media annua del vento alla quota di 75 metri s.l.t. espressa in m/s.",
               "url": "https://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -46,8 +46,8 @@
             },
             {
               "type": "wms",
-              "name": "Velocita' media annua del vento a 100 m s.l.t. ",
-              "description": "Velocita' media annua del vento onshore a 100 m s.l.t. \n\n Velocità media annua del vento alla quota di 100 metri s.l.t. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "name": "Velocita' media annua del vento onshore a 100 m s.l.t. ",
+              "description": "Velocita' media annua del vento onshore a 100 m s.l.t. \n\n Velocità media annua del vento alla quota di 100 metri s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -61,8 +61,8 @@
             },
             {
               "type": "wms",
-              "name": "Velocita' media annua del vento a 125 m s.l.t. ",
-              "description": "Velocita' media annua del vento onshore a 125 m s.l.t. \n\n Velocità media annua del vento alla quota di 125 metri s.l.t. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "name": "Velocita' media annua del vento onshore a 125 m s.l.t. ",
+              "description": "Velocita' media annua del vento onshore a 125 m s.l.t. \n\n Velocità media annua del vento alla quota di 125 metri s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -76,8 +76,8 @@
             },
             {
               "type": "wms",
-              "name": "Velocita' media annua del vento a 150 m s.l.t. ",
-              "description": "Velocita' media annua del vento onshore a 150 m s.l.t. \n\n Velocità media annua del vento alla quota di 150 metri s.l.t. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "name": "Velocita' media annua del vento onshore a 150 m s.l.t. ",
+              "description": "Velocita' media annua del vento onshore a 150 m s.l.t. \n\n Velocità media annua del vento alla quota di 150 metri s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -100,8 +100,8 @@
           "members": [
             {
               "type": "wms",
-              "name": "Velocita' media annua del vento offshore a 50 m s.l.t. ",
-              "description": "Velocita' media annua del vento offshore a 50 m s.l.t. \n\n Velocità media annua del vento alla quota di 50 metri s.l.t. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "name": "Velocita' media annua del vento offshore a 50 m s.l.m. ",
+              "description": "Velocita' media annua del vento offshore a 50 m s.l.t. \n\n Velocità media annua del vento alla quota di 50 metri s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -116,7 +116,7 @@
             {
               "type": "wms",
               "name": "Velocita' media annua del vento offshore a 75 m s.l.m. ",
-              "description": "Velocita' media annua del vento offshore a 75 m s.l.m. \n\n Velocità media annua del vento alla quota di 75 metri s.l.m. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "description": "Velocita' media annua del vento offshore a 75 m s.l.m. \n\n Velocità media annua del vento alla quota di 75 metri s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -131,7 +131,7 @@
             {
               "type": "wms",
               "name": "Velocita' media annua del vento offshore a 100 m s.l.m. ",
-              "description": "Velocita' media annua del vento offshore a 100 m s.l.m. \n\n Velocità media annua del vento alla quota di 100 metri s.l.m. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "description": "Velocita' media annua del vento offshore a 100 m s.l.m. \n\n Velocità media annua del vento alla quota di 100 metri s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -146,7 +146,7 @@
             {
               "type": "wms",
               "name": "Velocita' media annua del vento offshore a 125 m s.l.m. ",
-              "description": "Velocita' media annua del vento onshore a 125 m s.l.m. \n\n Velocità media annua del vento alla quota di 125 metri s.l.m. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "description": "Velocita' media annua del vento onshore a 125 m s.l.m. \n\n Velocità media annua del vento alla quota di 125 metri s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
@@ -161,7 +161,7 @@
             {
               "type": "wms",
               "name": "Velocita' media annua del vento offshore a 150 m s.l.m. ",
-              "description": "Velocita' media annua del vento onshore a 150 m s.l.m. \n\n Velocità media annua del vento alla quota di 150 metri s.l.m. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+              "description": "Velocita' media annua del vento onshore a 150 m s.l.m. \n\n Velocità media annua del vento alla quota di 150 metri s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"

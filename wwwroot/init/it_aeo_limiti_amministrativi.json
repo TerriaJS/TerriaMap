@@ -49,37 +49,37 @@
             }],
             "layers": "new_atlante_integrato:v_comuni_terria"
           },
-          {
-            "type": "wms",
-            "name": "Centri abitati",
-            "description": "Centri abitati. \n\n Località italiane definite dal censimento ISTAT 2011",
-            "url": "http://gis2.rse-web.it/geoserver/wms",
-            "metadataUrls":[{
-              "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=151"
-            }],
-            "layers": "dati_condivisi:localita_11_3857"
-          },
-          {
-            "type": "wms",
-            "name": "Corine 2018 (Copenicus)",
-            "description": "Uso del suolo (CORINE 2018)\n\nCLC2018 è uno dei set di dati Corine Land Cover (CLC) prodotti nell'ambito del Copernicus Land Monitoring Service che fa riferimento allo stato della copertura del suolo / uso del suolo dell'anno 2018. Il servizio CLC ha un patrimonio di lunga data (precedentemente noto come \"CORINE Land Cover Program \"), coordinato dall'Agenzia europea dell'ambiente (EEA). Fornisce informazioni coerenti e tematicamente dettagliate sulla copertura del suolo e sui cambiamenti della copertura del suolo in tutta Europa. I set di dati CLC si basano sulla classificazione delle immagini satellitari prodotte dalle squadre nazionali dei paesi partecipanti - i membri dell'EEA e i paesi cooperanti (EEA39). Gli inventari nazionali CLC vengono quindi ulteriormente integrati in una mappa della copertura continua del suolo dell'Europa. \n<br>Il database europeo risultante si basa su una metodologia e una nomenclatura standard con i seguenti parametri di base: 44 classi nella nomenclatura gerarchica CLC a 3 livelli; l'unità di mappatura minima (MMU) per i livelli di stato è di 25 ettari; la larghezza minima degli elementi lineari è di 100 metri. I livelli di modifica hanno una risoluzione più elevata, ovvero l'unità di mappatura minima (MMU) è di 5 ettari per i cambiamenti di copertura del suolo (LCC - Land Cover Changes) e la larghezza minima degli elementi lineari è di 100 metri. Il servizio CLC fornisce importanti set di dati a supporto dell'attuazione di aree prioritarie chiave dei programmi di azione per l'ambiente dell'Unione europea, come ad es. proteggere gli ecosistemi, arrestare la perdita di biodiversità, monitorare gli impatti dei cambiamenti climatici, monitorare l'occupazione del suolo urbano, valutare gli sviluppi in agricoltura o trattare le direttive sulle risorse idriche.\n<br>CLC appartiene alla componente paneuropea del Copernicus Land Monitoring Service (<a href=\"https://land.copernicus.eu/\" target=\"_blank\"> https://land.copernicus.eu/ </a>), parte del programma europeo Copernicus coordinato dall'Agenzia Europea dell'Ambiente (EEA), che fornisce informazioni ambientali da una combinazione di sistemi di osservazione spaziale e di aria, nonchè attraverso monitoraggi in situ. Ulteriori informazioni sulla descrizione del prodotto CLC comprese le guide alla mappatura, sono disponibili all'indirizzo <a href=\"https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf. </a> Le descrizioni delle classi CLC possono essere trovate su <a href=\"https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/ </a>.",
-            "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
-            "metadataUrls":[{
-              "title":"link metadato",
-              "url":"https://land.copernicus.eu/about"
-            }],
-            "layers": "12"
-          },
-          {
-            "type": "wms",
-            "name": "Batimetria",
-            "description": " batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
-            "url": "http://gis2.rse-web.it/geoserver/wms",
-            "layers": "new_atlante_integrato:bati_2018",
-            "styles":"new_atlante_integrato:bati_2018",
-            "id": "bati2018"
-          }
+//          {
+//            "type": "wms",
+//            "name": "Centri abitati",
+//            "description": "Centri abitati. \n\n Località italiane definite dal censimento ISTAT 2011",
+//            "url": "http://gis2.rse-web.it/geoserver/wms",
+//            "metadataUrls":[{
+//              "title":"link metadato",
+//              "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=151"
+//            }],
+//            "layers": "dati_condivisi:localita_11_3857"
+//          },
+//          {
+//            "type": "wms",
+//            "name": "Corine 2018 (Copenicus)",
+//            "description": "Uso del suolo (CORINE 2018)\n\nCLC2018 è uno dei set di dati Corine Land Cover (CLC) prodotti nell'ambito del Copernicus Land Monitoring Service che fa riferimento allo stato della copertura del suolo / uso del suolo dell'anno 2018. Il servizio CLC ha un patrimonio di lunga data (precedentemente noto come \"CORINE Land Cover Program \"), coordinato dall'Agenzia europea dell'ambiente (EEA). Fornisce informazioni coerenti e tematicamente dettagliate sulla copertura del suolo e sui cambiamenti della copertura del suolo in tutta Europa. I set di dati CLC si basano sulla classificazione delle immagini satellitari prodotte dalle squadre nazionali dei paesi partecipanti - i membri dell'EEA e i paesi cooperanti (EEA39). Gli inventari nazionali CLC vengono quindi ulteriormente integrati in una mappa della copertura continua del suolo dell'Europa. \n<br>Il database europeo risultante si basa su una metodologia e una nomenclatura standard con i seguenti parametri di base: 44 classi nella nomenclatura gerarchica CLC a 3 livelli; l'unità di mappatura minima (MMU) per i livelli di stato è di 25 ettari; la larghezza minima degli elementi lineari è di 100 metri. I livelli di modifica hanno una risoluzione più elevata, ovvero l'unità di mappatura minima (MMU) è di 5 ettari per i cambiamenti di copertura del suolo (LCC - Land Cover Changes) e la larghezza minima degli elementi lineari è di 100 metri. Il servizio CLC fornisce importanti set di dati a supporto dell'attuazione di aree prioritarie chiave dei programmi di azione per l'ambiente dell'Unione europea, come ad es. proteggere gli ecosistemi, arrestare la perdita di biodiversità, monitorare gli impatti dei cambiamenti climatici, monitorare l'occupazione del suolo urbano, valutare gli sviluppi in agricoltura o trattare le direttive sulle risorse idriche.\n<br>CLC appartiene alla componente paneuropea del Copernicus Land Monitoring Service (<a href=\"https://land.copernicus.eu/\" target=\"_blank\"> https://land.copernicus.eu/ </a>), parte del programma europeo Copernicus coordinato dall'Agenzia Europea dell'Ambiente (EEA), che fornisce informazioni ambientali da una combinazione di sistemi di osservazione spaziale e di aria, nonchè attraverso monitoraggi in situ. Ulteriori informazioni sulla descrizione del prodotto CLC comprese le guide alla mappatura, sono disponibili all'indirizzo <a href=\"https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf. </a> Le descrizioni delle classi CLC possono essere trovate su <a href=\"https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/ </a>.",
+//            "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
+//            "metadataUrls":[{
+//              "title":"link metadato",
+//              "url":"https://land.copernicus.eu/about"
+//            }],
+//            "layers": "12"
+//          },
+//          {
+//            "type": "wms",
+//            "name": "Batimetria",
+//            "description": " batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
+//            "url": "http://gis2.rse-web.it/geoserver/wms",
+//            "layers": "new_atlante_integrato:bati_2018",
+//            "styles":"new_atlante_integrato:bati_2018",
+//            "id": "bati2018"
+//          }
       ]
     }
   ]
