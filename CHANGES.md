@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+### 2022-05-31
+
+**Breaking changes:**
+
+* TerriaMap no longer merges `lib/Language/en/translation.json` with terriajs' translation file. You should now use `wwwroot/languages/{{lng}}/languageOverrides.json` to override strings in terriajs' translation file(s) or to add additional strings for your map.
+
 ### 2022-03-14
 
 **Breaking changes:**

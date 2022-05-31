@@ -273,15 +273,6 @@ gulp.task('render-datasource-templates', function(done) {
     var JSON5 = require('json5');
     var templateDir = 'datasources';
 
-    // until https://github.com/TerriaJS/terriajs/pull/4227 is ready,
-    // merge in translation overrides via this task
-    var json5 = require('json5');
-    var translationFromLibPath = path.join(getPackageRoot('terriajs'), 'lib', 'Language', 'en', 'translation.json');
-    var translationFromLib = json5.parse(fs.readFileSync(translationFromLibPath, 'utf8')) || {};
-    var translationFromMap = json5.parse(fs.readFileSync(path.resolve(__dirname, 'lib', 'Language', 'en', 'translation.json'), 'utf8')) || {};
-    var translation = {...translationFromLib, ...translationFromMap};
-    fs.writeFileSync(translationFromLibPath, JSON.stringify(translation, null, 2));
-
     try {
         fs.accessSync(templateDir);
     } catch (e) {
