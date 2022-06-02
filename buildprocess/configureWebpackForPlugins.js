@@ -53,7 +53,7 @@ function readPackageName(packageFile) {
   } else {
     try {
       const packageJson = JSON.parse(fs.readFileSync(packageFile));
-      packageJsonNames[packageFile] = packageJson?.name;
+      packageJsonNames[packageFile] = packageJson ? packageJson.name : undefined;
       return packageJsonNames[packageFile];
     } catch {}
   }
