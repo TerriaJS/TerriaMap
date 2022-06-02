@@ -28,7 +28,7 @@ function createPluginIconsRule() {
       const packageName = readPackageName(
         path.resolve(dirName, "..", "..", "package.json")
       );
-      const isTerriaJsPlugin = packageName?.startsWith("terriajs-plugin-");
+      const isTerriaJsPlugin = packageName ? packageName.startsWith("terriajs-plugin-") : false
       packageNames[svgPath] = packageName;
       return isTerriaJsPlugin;
     },
