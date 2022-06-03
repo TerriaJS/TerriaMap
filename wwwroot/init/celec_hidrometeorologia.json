@@ -193,6 +193,36 @@
                   "type": "hidden"
                 }
               ]
+            },
+            {
+              "name": "Precipitación Mensual (mm)",
+              "description": "Resumen de los valores de precipitación escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/n8loYmrnz/g1_precipitacion?orgId=1",
+              "type": "csv",
+              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_precipitacion&maxFeatures=5000000&outputFormat=text%2Fcsv",
+              "defaultStyle": {
+                "time": {
+                  "timeColumn": "timestamp_mes",
+                  "idColumns": [
+                    "est_id"
+                  ]
+                }
+              },
+              "info": [
+                {
+                  "name": "Fuente de datos",
+                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                }
+              ],
+              "columns":[
+                {
+                  "name": "geom_32717",
+                  "type": "hidden"
+                },
+                {
+                  "name": "dashboard",
+                  "type": "hidden"
+                }
+              ]
             }
           ]
         }
