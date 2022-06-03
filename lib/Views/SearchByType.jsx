@@ -41,16 +41,19 @@ function SearchByType(props) {
 
   return (
     <MenuPanel
+      useDropdownInMenu
       theme={dropdownTheme}
       btnText="Forecast Type"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
       btnTitle="Search related maps by Forecast Type"
-      showDropdownInCenter
+      // showDropdownInCenter
     >
-      <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>Forecast Type</label>
-      </div>
+      <If condition={props.smallScreen}>
+        <div className={classNames(PanelStyles.header)}>
+          <label className={PanelStyles.heading}>Forecast Type</label>
+        </div>
+      </If>
 
       <select
         id="searchByType"
@@ -59,9 +62,17 @@ function SearchByType(props) {
         autoComplete="off"
         value={searchType}
         onChange={e => handleChange(e.target.value)}
-        style={{ color: "grey", width: "100%" }}
+        style={{
+          color: props.smallScreen ? "grey" : "white",
+          minWidth: "125px",
+          width: "100%",
+          background: props.smallScreen ? "white" : "#3f4854",
+          border: props.smallScreen ? "initial" : "none"
+        }}
       >
-        <option value="">Select an option</option>
+        <option value="">
+          {props.smallScreen ? "Select an option" : "Forecast Type"}
+        </option>
         {eventTypes &&
           eventTypes.map((eventType, idx) => (
             <option value={eventType} key={idx}>
