@@ -15,212 +15,284 @@
           "name": "G1 Hidrometeorología",
           "members": [
             {
-              "name": "Temperatura Mensual (°C)",
-              "description": "Resumen de los valores de temperatura del aire a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/N2p9Sphnk/g1-temperatura?orgId=1.",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_hidro_temperatura_promedio_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
+              "type": "group",
+              "name": "Etapa",
+              "members": [
+                {
+                  "name": "Temperatura Mensual (°C)",
+                  "description": "Resumen de los valores de temperatura del aire a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/N2p9Sphnk/g1-temperatura?orgId=1.",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_hidro_temperatura_promedio_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
                   ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
                 },
                 {
-                  "name": "dashboard",
-                  "type": "hidden"
+                  "name": "Humedad Relativa Mensual (%)",
+                  "description": "Resumen de los valores de humedad relativa del aire a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/7eoAcgr7z/g1_humedad_relativa?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_humedad_relativa_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Radiación Solar Mensual (W/m2)",
+                  "description": "Resumen de los valores de radiación solar a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/KPlitR97k/g1_radiacion_solar?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_radiacion_solar_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Caudal media mensual (m3/s)",
+                  "description": "Resumen de los valores de caudal a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/-nyFwju7k/g1_caudal_mensual?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Velocidad del Viento Mensual (m/s)",
+                  "description": "Resumen de los valores de velocidad del viento a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/xaVTsg9nz/g1_velocidad_viento?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_velocidad_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Dirección del Viento Mensual (grados)",
+                  "description": "Resumen de los valores de dirección del viento a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/BKu6Fgr7z/g1_direccion_viento?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_direccion_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
+                },
+                {
+                  "name": "Precipitación Mensual (mm)",
+                  "description": "Resumen de los valores de precipitación escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/n8loYmrnz/g1_precipitacion?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_precipitacion&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
+                  ]
                 }
               ]
             },
             {
-              "name": "Humedad Relativa Mensual (%)",
-              "description": "Resumen de los valores de humedad relativa del aire a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/7eoAcgr7z/g1_humedad_relativa?orgId=1",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_humedad_relativa_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
+              "type": "group",
+              "name": "Agua",
+              "members":[
+                {
+                  "name": "Caudal media mensual (m3/s)",
+                  "description": "Resumen de los valores de caudal a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/-nyFwju7k/g1_caudal_mensual?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
                   ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
                 },
                 {
-                  "name": "dashboard",
-                  "type": "hidden"
-                }
-              ]
-            },
-            {
-              "name": "Radiación Solar Mensual (W/m2)",
-              "description": "Resumen de los valores de radiación solar a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/KPlitR97k/g1_radiacion_solar?orgId=1",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_radiacion_solar_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
+                  "name": "Nivel mensual (cm/m)",
+                  "description": "Resumen de los valores de nivel a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/pBabNy97z/g1_nivel_mensual?orgId=1",
+                  "type": "csv",
+                  "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_nivel_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
+                  "defaultStyle": {
+                    "time": {
+                      "timeColumn": "timestamp_mes",
+                      "idColumns": [
+                        "est_id"
+                      ]
+                    }
+                  },
+                  "info": [
+                    {
+                      "name": "Fuente de datos",
+                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
+                    }
+                  ],
+                  "columns":[
+                    {
+                      "name": "geom_32717",
+                      "type": "hidden"
+                    },
+                    {
+                      "name": "dashboard",
+                      "type": "hidden"
+                    }
                   ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
-                },
-                {
-                  "name": "dashboard",
-                  "type": "hidden"
-                }
-              ]
-            },
-            {
-              "name": "Caudal media mensual (m3/s)",
-              "description": "Resumen de los valores de caudal a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/-nyFwju7k/g1_caudal_mensual?orgId=1",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
-                  ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
-                },
-                {
-                  "name": "dashboard",
-                  "type": "hidden"
-                }
-              ]
-            },
-            {
-              "name": "Velocidad del Viento Mensual (m/s)",
-              "description": "Resumen de los valores de velocidad del viento a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/xaVTsg9nz/g1_velocidad_viento?orgId=1",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_velocidad_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
-                  ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
-                },
-                {
-                  "name": "dashboard",
-                  "type": "hidden"
-                }
-              ]
-            },
-            {
-              "name": "Dirección del Viento Mensual (grados)",
-              "description": "Resumen de los valores de dirección del viento a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/BKu6Fgr7z/g1_direccion_viento?orgId=1",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_direccion_viento_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
-                  ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
-                },
-                {
-                  "name": "dashboard",
-                  "type": "hidden"
-                }
-              ]
-            },
-            {
-              "name": "Precipitación Mensual (mm)",
-              "description": "Resumen de los valores de precipitación escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  http://172.16.60.46:8800/d/n8loYmrnz/g1_precipitacion?orgId=1",
-              "type": "csv",
-              "url": "http://172.16.60.46:8600/geoserver/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_precipitacion&maxFeatures=5000000&outputFormat=text%2Fcsv",
-              "defaultStyle": {
-                "time": {
-                  "timeColumn": "timestamp_mes",
-                  "idColumns": [
-                    "est_id"
-                  ]
-                }
-              },
-              "info": [
-                {
-                  "name": "Fuente de datos",
-                  "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                }
-              ],
-              "columns":[
-                {
-                  "name": "geom_32717",
-                  "type": "hidden"
-                },
-                {
-                  "name": "dashboard",
-                  "type": "hidden"
                 }
               ]
             }
