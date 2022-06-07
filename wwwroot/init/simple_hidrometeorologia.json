@@ -109,36 +109,6 @@
                   ]
                 },
                 {
-                  "name": "Caudal media mensual (m3/s)",
-                  "description": "Resumen de los valores de caudal a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  $GRAFANA_URL/d/-nyFwju7k/g1_caudal_mensual?orgId=1",
-                  "type": "csv",
-                  "url": "$GEOSERVER_URL/g1_hidrometeorologia/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g1_hidrometeorologia%3Ag1_caudal_mensual&maxFeatures=5000000&outputFormat=text%2Fcsv",
-                  "defaultStyle": {
-                    "time": {
-                      "timeColumn": "timestamp_mes",
-                      "idColumns": [
-                        "est_id"
-                      ]
-                    }
-                  },
-                  "info": [
-                    {
-                      "name": "Fuente de datos",
-                      "content": "La Corporación Eléctrica del Ecuador (CELEC SUR)  [https://www.celec.gob.ec/celecsur/](https://www.celec.gob.ec/celecsur/)"
-                    }
-                  ],
-                  "columns":[
-                    {
-                      "name": "geom_32717",
-                      "type": "hidden"
-                    },
-                    {
-                      "name": "dashboard",
-                      "type": "hidden"
-                    }
-                  ]
-                },
-                {
                   "name": "Velocidad del Viento Mensual (m/s)",
                   "description": "Resumen de los valores de velocidad del viento a escala anual y mensual en las estaciones de hidrometeorología.\n\n Enlace  $GRAFANA_URL/d/xaVTsg9nz/g1_velocidad_viento?orgId=1",
                   "type": "csv",
