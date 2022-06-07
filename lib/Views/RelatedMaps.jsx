@@ -31,7 +31,7 @@ function RelatedMaps(props) {
       </p>
 
       <div className={classNames(PanelStyles.section, Styles.section)}>
-        <a target="_blank" href="http://localhost:3001/#celec_energia">
+        <a target="_blank" href="http://172.16.60.46:3002/#celec_energia">
           <img
             className={Styles.image}
             src={require("../../wwwroot/images/g4_energias.png")}
@@ -42,7 +42,7 @@ function RelatedMaps(props) {
         <a
           target="_blank"
           className={Styles.link}
-          href="http://localhost:3001/#celec_energia"
+          href="http://172.16.60.46:3002/#celec_energia"
         >
           Energías Renovables
         </a>
@@ -54,7 +54,7 @@ function RelatedMaps(props) {
       </div>
 
       <div className={classNames(PanelStyles.section, Styles.section)}>
-        <a target="_blank" href="http://localhost:3001/#celec_geo">
+        <a target="_blank" href="http://172.16.60.46:3002/#celec_geo">
           <img
             className={Styles.image}
             src={require("../../wwwroot/images/g2_geologia.png")}
@@ -65,7 +65,7 @@ function RelatedMaps(props) {
         <a
           target="_blank"
           className={Styles.link}
-          href="http://localhost:3001/#celec_geo"
+          href="http://172.16.60.46:3002/#celec_geo"
         >
           Geología
         </a>
