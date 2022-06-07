@@ -12,8 +12,63 @@ index d05d7aa..5629418 100644
      changeSearchText(newText) {
 diff --git a/node_modules/terriajs/lib/.DS_Store b/node_modules/terriajs/lib/.DS_Store
 new file mode 100644
-index 0000000..d6ff8ab
+index 0000000..a2bb7be
 Binary files /dev/null and b/node_modules/terriajs/lib/.DS_Store differ
+diff --git a/node_modules/terriajs/lib/Models/BaseMaps/defaultBaseMaps.ts b/node_modules/terriajs/lib/Models/BaseMaps/defaultBaseMaps.ts
+index eff35fc..dbb8855 100644
+--- a/node_modules/terriajs/lib/Models/BaseMaps/defaultBaseMaps.ts
++++ b/node_modules/terriajs/lib/Models/BaseMaps/defaultBaseMaps.ts
+@@ -39,27 +39,30 @@ export function defaultBaseMaps(terria: Terria): any[] {
+       image: "build/TerriaJS/images/bing-maps-roads.png"
+     });
+   } else if (terria.configParameters.useCesiumIonBingImagery === true) {
+-    baseMaps.push({
+-      item: {
+-        id: "basemap-bing-aerial-with-labels",
+-        name: "Bing Maps Aerial with Labels",
+-        type: "ion-imagery",
+-        ionAssetId: 3,
+-        opacity: 1.0
+-      },
+-      image: "build/TerriaJS/images/bing-aerial-labels.png"
+-    });
++    // TODO: (AM) Hiding this option since we do not currently have a US map for this
++    // baseMaps.push({
++    //   item: {
++    //     id: "basemap-bing-aerial-with-labels",
++    //     name: "Bing Maps Aerial with Labels",
++    //     type: "ion-imagery",
++    //     ionAssetId: 3,
++    //     opacity: 1.0
++    //   },
++    //   image: "build/TerriaJS/images/bing-aerial-labels.png"
++    // });
++
++    // TODO: (AM) Hiding this option since we do not currently have a US map for this
++    // baseMaps.push({
++    //   item: {
++    //     id: "basemap-bing-aerial",
++    //     name: "Bing Maps Aerial",
++    //     type: "ion-imagery",
++    //     ionAssetId: 2,
++    //     opacity: 1.0
++    //   },
++    //   image: "build/TerriaJS/images/bing-aerial.png"
++    // });
+ 
+-    baseMaps.push({
+-      item: {
+-        id: "basemap-bing-aerial",
+-        name: "Bing Maps Aerial",
+-        type: "ion-imagery",
+-        ionAssetId: 2,
+-        opacity: 1.0
+-      },
+-      image: "build/TerriaJS/images/bing-aerial.png"
+-    });
+     baseMaps.push({
+       item: {
+         id: "basemap-bing-roads",
 diff --git a/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts b/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
 index da2317f..2125827 100644
 --- a/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
@@ -249,3 +304,182 @@ index 0428fb4..9207b4f 100644
    }
  
    changeSearchText(newText) {
+diff --git a/node_modules/terriajs/lib/ReactViews/FeatureInfo/feature-info-section.scss b/node_modules/terriajs/lib/ReactViews/FeatureInfo/feature-info-section.scss
+index 51321a1..2050a9e 100644
+--- a/node_modules/terriajs/lib/ReactViews/FeatureInfo/feature-info-section.scss
++++ b/node_modules/terriajs/lib/ReactViews/FeatureInfo/feature-info-section.scss
+@@ -58,6 +58,16 @@
+     padding: 5px;
+   }
+ 
++  a {
++    text-decoration: underline !important;
++    font-weight: bold;
++    color: rgba($color: #a2b8c8, $alpha: 1.0) !important;
++  }
++
++  a:hover {
++    color: white !important;
++  }
++
+   tr:nth-child(odd) {
+     @if variable-exists(feature-info-table-odd-row-bg) {
+       background-color: $feature-info-table-odd-row-bg;
+diff --git a/node_modules/terriajs/lib/ReactViews/Map/Panels/APSViz.jsx b/node_modules/terriajs/lib/ReactViews/Map/Panels/APSViz.jsx
+new file mode 100644
+index 0000000..f5a76d7
+--- /dev/null
++++ b/node_modules/terriajs/lib/ReactViews/Map/Panels/APSViz.jsx
+@@ -0,0 +1,112 @@
++"use strict";
++
++// proptypes are in mixin
++/* eslint react/prop-types:0*/
++
++import React from "react";
++import createReactClass from "create-react-class";
++import classNames from "classnames";
++import Icon from "../../../Styled/Icon";
++import InnerPanel from "./InnerPanel";
++import BaseOuterPanel from "./BaseOuterPanel";
++
++import Styles from "./panel.scss";
++
++import defined from "terriajs-cesium/Source/Core/defined";
++
++const DropdownPanel = createReactClass({
++  displayName: "DropdownPanel",
++  mixins: [BaseOuterPanel],
++
++  getInitialState() {
++    return {
++      localIsOpen: false,
++      caretOffset: undefined,
++      dropdownOffset: undefined
++    };
++  },
++
++  onInnerMounted(innerElement) {
++    const centerInnerDropdown = this.props.showDropdownInCenter;
++    if (centerInnerDropdown) {
++      this.setState({
++        caretOffset: "50%",
++        dropdownOffset: "50%"
++      });
++    } else if (innerElement) {
++      const btnRef = this.props.btnRef;
++      const buttonElementOffsetLeft =
++        btnRef?.current?.offsetLeft || this.buttonElement?.offsetLeft || 0;
++      const buttonElementClientWidth =
++        btnRef?.current?.clientWidth || this.buttonElement?.clientWidth || 0;
++      // how much further right the panel is from the button
++      const offset = buttonElementOffsetLeft - innerElement.offsetLeft;
++      // if the panel is left of the button leave its offset as is, otherwise move it right so it's level with the button.
++      const dropdownOffset =
++        offset < innerElement.offsetLeft ? offset : innerElement.offsetLeft;
++      // offset the caret to line up with the middle of the button - note that the caret offset is relative to the panel, whereas
++      // the offsets for the button/panel are relative to their container.
++      const caretOffset = Math.max(
++        buttonElementClientWidth / 2 -
++          10 -
++          (dropdownOffset - buttonElementOffsetLeft),
++        0
++      );
++
++      this.setState({
++        caretOffset: caretOffset >= 0 && caretOffset + "px",
++        dropdownOffset: dropdownOffset + "px"
++      });
++    } else {
++      this.setState({
++        caretOffset: undefined,
++        dropdownOffset: undefined
++      });
++    }
++  },
++
++  /* eslint-disable-next-line camelcase */
++  UNSAFE_componentWillReceiveProps(nextProps) {
++    if (nextProps.forceClosed) {
++      this.onDismissed();
++    }
++  },
++
++  openWithUserClick(e) {
++    if (this.props.userOnClick) {
++      this.props.userOnClick();
++    }
++    this.openPanel(e);
++  },
++
++  render() {
++    let iconGlyph;
++    if (defined(Icon.GLYPHS[this.props.theme.icon])) {
++      iconGlyph = Icon.GLYPHS[this.props.theme.icon];
++    } else {
++      iconGlyph = this.props.theme.icon;
++    }
++
++    return (
++      <div className={classNames(Styles.panel, this.props.theme.outer)}>
++        <button
++          onClick={this.openWithUserClick}
++          type="button"
++          className={classNames(Styles.button, this.props.theme.btn, {
++            [Styles.buttonForModalDropdown]: this.props.showDropdownAsModal
++          })}
++          title={this.props.btnTitle}
++          ref={this.props.btnRef || (element => (this.buttonElement = element))}
++          isOpen={this.isOpen()}
++        >
++          <If condition={this.props.theme.icon}>
++            <Icon glyph={iconGlyph} />
++          </If>
++            {this.props.children}
++        </button>
++      </div>
++    );
++  }
++});
++
++export default DropdownPanel;
+diff --git a/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel.jsx b/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel.jsx
+index 178c812..448bbb2 100644
+--- a/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel.jsx
++++ b/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel.jsx
+@@ -1,10 +1,11 @@
+ import DropdownPanel from "../../Map/Panels/DropdownPanel";
+ import MobilePanel from "../../Map/Panels/MobilePanel";
++import APZVizPanel from "../../Map/Panels/APSViz"
+ import withControlledVisibility from "../../HOCs/withControlledVisibility";
+ import responsiveSwitch from "./ResponsiveSwitch";
+ 
+ const MenuPanel = withControlledVisibility(
+-  responsiveSwitch(DropdownPanel, MobilePanel)
++  responsiveSwitch(DropdownPanel, MobilePanel, APZVizPanel)
+ );
+ 
+ export default MenuPanel;
+diff --git a/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/ResponsiveSwitch.jsx b/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/ResponsiveSwitch.jsx
+index 0952345..a4f38a0 100644
+--- a/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/ResponsiveSwitch.jsx
++++ b/node_modules/terriajs/lib/ReactViews/StandardUserInterface/customizable/ResponsiveSwitch.jsx
+@@ -6,11 +6,17 @@ import PropTypes from "prop-types";
+  * Higher-order component that either shows a one element or the other, depending on whether the "smallScreen" prop
+  * passed to it is true or false.
+  */
+-export default (LargeScreenComponent, SmallScreenComponent) => {
++// export default (LargeScreenComponent, SmallScreenComponent) => {
++export default (LargeScreenComponent, SmallScreenComponent, APSVizScreenComponent) => {
+   // eslint-disable-next-line require-jsdoc
+   function ResponsiveSwitch(props) {
++    const { smallScreen, useDropdownInMenu } = props
+     return (
+       <Choose>
++        {/* ALM - Added APSVizScreenComponent to allow drop down directly in button instead of separate drop down panel */}
++        <When condition={!smallScreen && useDropdownInMenu}>
++          <APSVizScreenComponent {...props} />
++        </When>        
+         <When condition={props.smallScreen}>
+           <SmallScreenComponent {...props} />
+         </When>

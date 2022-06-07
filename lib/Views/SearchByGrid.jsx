@@ -46,11 +46,14 @@ function SearchByGrid(props) {
       smallScreen={props.smallScreen}
       viewState={props.viewState}
       btnTitle="Search related maps by ADCIRC Grid"
-      showDropdownInCenter
+      useDropdownInMenu
+      // showDropdownInCenter
     >
-      <div className={classNames(PanelStyles.header)}>
-        <label className={PanelStyles.heading}>ADCIRC Grid</label>
-      </div>
+      <If condition={props.smallScreen}>
+        <div className={classNames(PanelStyles.header)}>
+          <label className={PanelStyles.heading}>ADCIRC Grid</label>
+        </div>
+      </If>
 
       <select
         id="searchByGrid"
@@ -60,9 +63,17 @@ function SearchByGrid(props) {
         value={searchGrid}
         // onChange={e => setSearchGrid(e.target.value)}
         onChange={e => handleChange(e.target.value)}
-        style={{ color: "grey", width: "100%" }}
+        style={{
+          color: props.smallScreen ? "grey" : "white",
+          minWidth: "125px",
+          width: "100%",
+          background: props.smallScreen ? "white" : "#3f4854",
+          border: props.smallScreen ? "initial" : "none"
+        }}
       >
-        <option value="">Select an option</option>
+        <option value="">
+          {props.smallScreen ? "Select an option" : "ADCIRC Grid"}
+        </option>
         {gridTypes &&
           gridTypes.map((gridType, idx) => (
             <option value={gridType} key={idx}>
