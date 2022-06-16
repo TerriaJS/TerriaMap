@@ -2,12 +2,12 @@
   "catalog": [
     {
       "type": "group",
-      "name": "toolvento25",
+      "name": "datistorici",
       "isOpen": true,
       "members": [
         {
           "type": "wms",
-          "name": "toolvento25",
+          "name": "datistorici",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "layers": "atlante_integrato:reticolo_tiles_3857",
           "styles": "polygon",
@@ -15,11 +15,11 @@
           "featureInfoTemplate": {
             "template": "<br><p>cper far funzionare occorre inserire la variabile e sostituirla a den_uts<p style='display: block; text-align: center;'><button><a href=\"http://rakino.ricerca.lan/?prov={{den_uts}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
           },
-          "id": "it_vento25",
+          "id": "it_griglia",
           "initialMessage": {
             "title": "Per accedere:",
             "content": "Seleziona il punto direttamente sulla mappa.",
-            "key": "it_vento25",
+            "key": "it_griglia",
             "confirmation": true,
             "confirmText": "Avvia"
           }
@@ -39,6 +39,6 @@
   },
   "viewerMode": "2d",
   "workbench": [
-    "it_vento25"
+    "it_griglia"
   ]
 }

@@ -15,9 +15,11 @@ function AnalisiAvanzate(props) {
   // to select language config.json depending on the browser language
   var userLang = navigator.language || navigator.userLanguage;
   var totem_link = "/#en_totemweb"; //puntare al json che carica il tool con il codice di calcolo
+  var modCalc_link = "/#en_modcalc";
   var analisi = "Advanced Analysis";
   if (userLang === "it-IT" || userLang === "it") {
-    totem_link = "/#it_vento25"; //inserire il path che punta al tool codice di calcolo
+    totem_link = "/#it_dati_storici"; //inserire il path che punta al tool codice di calcolo
+    modCalc_link = "/#it_modcalc";
     analisi = "Analisi Avanzate";
   }
 
@@ -42,7 +44,7 @@ function AnalisiAvanzate(props) {
           <li class="list-group-item">
             {/*<div class="row">
             <div class="col-sm-6">*/}
-            <h2> vento altezza 25 </h2>
+            <h2> vento 25 </h2>
             <a target="_blank" href="http://rakino.ricerca.lan">
               <img
                 className={Styles.image}
@@ -53,11 +55,40 @@ function AnalisiAvanzate(props) {
             </a>
             {/*</div>
             <div class="col-sm-6">*/}
-            pippo = "new_atlante_integrato:v_province_terria"
+            pippo = "atlante_integrato:reticolo_tiles_3857"
             <p>
               {" "}
               altezza 25 (<i>cambiare testo</i>): prova .... Per accedere{" "}
               <a className={Styles.link} href={totem_link}>
+                clicca sulla mappa nella zona di interesse
+              </a>
+              .
+              {/* Permette la definizione ed il salvataggio di dati territoriali
+              necessari a software di analisi multienergetiche. Prima di
+              attivare il tool è necessario selezionare, a partire dal link qui
+              di seguito, il <i>territorio provinciale e l'anno </i> in cui se
+              vuole effettuare l'analisi. */}{" "}
+            </p>
+          </li>
+        </ul>
+      </div>
+      {/* modulo calcolo */}
+      <div className={classNames(PanelStyles.section, Styles.section)}>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> Modulo Calcolo </h2>
+            <a target="_blank" href="http://rakino.ricerca.lan">
+              <img
+                className={Styles.image}
+                src={require("../../wwwroot/images/logo_totem_TrW_new.png")}
+                /*src={require("../../wwwroot/images/totem3_v3.png")}*/
+                alt="totem"
+              />
+            </a>
+            <p>
+              {" "}
+              modulo calcolo (<i>cambiare testo</i>): prova .... Per accedere{" "}
+              <a className={Styles.link} href={modCalc_link}>
                 clicca sulla mappa nella zona di interesse
               </a>
               .
