@@ -9,7 +9,7 @@
           "type": "wms",
           "name": "modulo_calcolo",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "layers": "aeolian:griglia_dati3857", 
+          "layers": "gruppo_modello_calcolo", 
           "styles": "polygon",
           "opacity": 0.5,
           "featureInfoTemplate": {
