@@ -44,21 +44,18 @@ function AnalisiAvanzate(props) {
           <li class="list-group-item">
             {/*<div class="row">
             <div class="col-sm-6">*/}
-            <h2> vento 25 </h2>
+            <h2> DOWLOAD DATI STORICI </h2>
             <a target="_blank" href="http://rakino.ricerca.lan">
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/logo_totem_TrW_new.png")}
-                /*src={require("../../wwwroot/images/totem3_v3.png")}*/
+                src={require("../../wwwroot/images/wind.png")}
+                /*src={require("../../wwwroot/images/shutterstock_107017613.png")}*/
                 alt="totem"
               />
             </a>
-            {/*</div>
-            <div class="col-sm-6">*/}
-            pippo = "atlante_integrato:reticolo_tiles_3857"
             <p>
               {" "}
-              altezza 25 (<i>cambiare testo</i>): prova .... Per accedere{" "}
+              <i>Download dati storici .... altro testo</i> Per accedere{" "}
               <a className={Styles.link} href={totem_link}>
                 clicca sulla mappa nella zona di interesse
               </a>
@@ -76,18 +73,19 @@ function AnalisiAvanzate(props) {
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <h2> Modulo Calcolo </h2>
+            <h2> CALCOLO PRESTAZIONI </h2>
             <a target="_blank" href="http://rakino.ricerca.lan">
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/logo_totem_TrW_new.png")}
+                src={require("../../wwwroot/images/wind.png")}
                 /*src={require("../../wwwroot/images/totem3_v3.png")}*/
                 alt="totem"
               />
             </a>
             <p>
               {" "}
-              modulo calcolo (<i>cambiare testo</i>): prova .... Per accedere{" "}
+              <i>Valutazione tecnico economica di un parco eolico</i>: Per
+              accedere{" "}
               <a className={Styles.link} href={modCalc_link}>
                 clicca sulla mappa nella zona di interesse
               </a>
@@ -102,97 +100,35 @@ function AnalisiAvanzate(props) {
         </ul>
       </div>
       {/* caso multi energy*/}
-      <div className={classNames(PanelStyles.section, Styles.section)}>
-        <ul>
-          <li class="list-group-item">
-            <h2> Sulcis - Iglesiente </h2>
-            <a
-              target="_blank"
-              href="http://gis2.rse-web.it:8080/mapstore/#/geostory/131"
-            >
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/location_Wtr.png")}
-                alt="multienergy"
-              />
-            </a>
-            <p>
-              {" "}
-              Grazie alla collaborazione con l'Università di Cagliari è stato
-              realizzato un caso studio di integrazione multienergetica nella
-              provincia del Sulcis Iglesiente.
-            </p>
-            <p>
-              {" "}
-              Scopri il caso studio:
-              <a
-                target="_blank"
-                className={Styles.link}
-                href="http://gis2.rse-web.it:8080/mapstore/#/geostory/131"
-              >
-                {" "}
-                Sulcis Iglesiente
-              </a>
-            </p>
-          </li>
-        </ul>
-      </div>
 
-      {/* collegamento a WEN*/}
+      {/* collegamento a DOWNLOAD MAPPE DI VENTO*/}
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul>
           <li class="list-group-item">
-            <h2>Water-Energy Nexus</h2>
+            <h2>DOWNLOAD MAPPE DI VENTO</h2>
             <a
               target="_blank"
               // href="http://atlanteintegrato.rse-web.it/sankey.php"
-              href="http://atlanteintegrato.rse-web.it/sankey_it.php"
+              href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
             >
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/water-Energy.png")}
+                src={require("../../wwwroot/images/wind.png")}
                 alt="WEN"
               />
             </a>
             <p>
-              L'acqua per l'energia, l'energia per l'acqua. Flussi energetici e
-              idrici nazionali scala nazionale.
+              Il file contiene la copertura in formato ESRI Shapefile che
+              rappresenta la griglia con passo 1.4x1.4 km relativa ai parametri
+              dell'Atlante Eolico dell'Italia. Altro testo ....
             </p>
             <a
               target="_blank"
               //href="http://atlanteintegrato.rse-web.it/sankey.php"
-              href="http://atlanteintegrato.rse-web.it/sankey_it.php"
+              href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
               className={Styles.link}
             >
-              WEN - Water Energy Nexus
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* collegamento a mapstore */}
-      <div className={classNames(PanelStyles.section, Styles.section)}>
-        <ul>
-          <li class="list-group-item">
-            <h2>Nuovo Geoportale Energia e Territorio</h2>
-            <a target="_blank" href="http://gis2.rse-web.it/mapstore">
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/geo_ET_TrGG.png")}
-                alt="geoportale"
-              />
-            </a>
-            <p>
-              Nel portale sono presenti tutti i siti di approfondimento
-              geografico del gruppo AmbienteRisorseTerritorio. Vi sono anche
-              mappe dedicate a tematismi di interesse e storymaps.
-            </p>
-            <a
-              target="_blank"
-              href="http://gis2.rse-web.it/mapstore"
-              className={Styles.link}
-            >
-              Geoportale Energia e Territorio
+              Download Mappe di vento
             </a>
           </li>
         </ul>
