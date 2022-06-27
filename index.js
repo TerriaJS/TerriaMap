@@ -24,6 +24,8 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/SearchProviders
 import render from './lib/Views/render';
 import registerCatalogMembers from 'terriajs/lib/Models/Catalog/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
+import loadPlugins from "./lib/Core/loadPlugins";
+import plugins from "./plugins";
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -52,6 +54,7 @@ const viewState = new ViewState({
 
 registerCatalogMembers();
 
+
 if (process.env.NODE_ENV === "development") {
     window.viewState = viewState;
 }
@@ -63,9 +66,6 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
 }
 
 module.exports = terria.start({
-    // If you don't want the user to be able to control catalog loading via the URL, remove the applicationUrl property below
-    // as well as the call to "updateApplicationOnHashChange" further down.
-    applicationUrl: window.location,
     configUrl: 'config.json',
     shareDataService: new ShareDataService({
         terria: terria
@@ -73,7 +73,20 @@ module.exports = terria.start({
 }).catch(function(e) {
   terria.raiseErrorToUser(e);
 }).finally(function() {
-    terria.loadInitSources().then(result => result.raiseError(terria));
+  // Load plugins before reading the application URL and loading init sources
+  // as plugins can register new catalog member types.
+  loadPlugins(viewState, plugins)
+    .catch(error => {
+      console.error(`Error loading plugins`);
+      console.error(error);
+    })
+    .finally(() => {
+      terria.updateApplicationUrl(window.location.href);
+      terria
+        .loadInitSources()
+        .then(result => result.raiseError(terria));
+    });
+
     try {
         viewState.searchState.locationSearchProviders = [
             new BingMapsSearchProviderViewModel({
@@ -119,6 +132,15 @@ module.exports = terria.start({
                     viewState.disclaimerVisible = true;
                 });
             }
+        }
+
+        // Add font-imports
+        const fontImports = terria.configParameters.theme?.fontImports;
+        if (fontImports) {
+          const styleSheet = document.createElement("style");
+          styleSheet.type = "text/css";
+          styleSheet.innerText = fontImports;
+          document.head.appendChild(styleSheet);
         }
 
         render(terria, [], viewState);

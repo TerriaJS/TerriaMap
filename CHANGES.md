@@ -1,6 +1,25 @@
 Change Log
 ==========
 
+### 2022-05-31
+
+**Breaking changes:**
+
+* TerriaMap no longer merges `lib/Language/en/translation.json` with terriajs' translation file. You should now use `wwwroot/languages/{{lng}}/languageOverrides.json` to override strings in terriajs' translation file(s) or to add additional strings for your map.
+
+### 2022-03-14
+
+**Breaking changes:**
+
+* Removed `wwwroot/index.html`. 
+* Added gulp task `gulp render-index`. This builds `wwwroot/index.html` from the template `wwwroot/index.ejs` with a `<base href="${baseHref}">` tag set via commnd line parameter. The following tasks all call `render-index`: 
+  * `default` (i.e. calling `gulp` without a task)
+  * `build`
+  * `release`
+  * `watch`
+* Example usage: `gulp build --baseHref="/map/"` if your TerriaMap is deployed at http://example.com/map/
+
+
 ### 2021-09-27
 
 * Disabled sourcemaps for production builds. To re-enable for your specific application, set "devtool" to 'source-map' in buildprocess/webpack.config.js

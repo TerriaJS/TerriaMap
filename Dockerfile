@@ -1,22 +1,34 @@
-FROM node:10
+# develop container
+FROM node:14 as develop
+
+# build container
+FROM node:14 as build
+USER node
+
+COPY --chown=node:node . /app
+
+WORKDIR /app
+
+RUN yarn install
+RUN yarn celec-init
+RUN yarn gulp release
+
+# deploy container
+FROM node:14-slim as deploy
+
 RUN apt-get update && apt-get install -y gdal-bin
-WORKDIR /usr/src/app
 
-RUN yarn global add gulp
+USER node
 
-COPY . /usr/src/app
+WORKDIR /app
 
-RUN rm wwwroot/build -fr 
-RUN rm node_modules -fr 
- 
-RUN git config --global url."https://".insteadOf git://
-
-RUN yarn install 
-
-RUN npm run celec-init
-
-RUN npm run gulp release
+COPY --from=build /app/wwwroot wwwroot
+COPY --from=build /app/node_modules node_modules
+COPY --from=build /app/devserverconfig.json serverconfig.json
+COPY --from=build /app/index.js index.js
+COPY --from=build /app/package.json package.json
+COPY --from=build /app/version.js version.js
 
 EXPOSE 3001
-
-CMD [ "node", "node_modules/terriajs-server/lib/app.js", "--config-file", "devserverconfig.json" ]
+ENV NODE_ENV=production
+CMD [ "node", "./node_modules/terriajs-server/lib/app.js", "--config-file", "serverconfig.json" ]

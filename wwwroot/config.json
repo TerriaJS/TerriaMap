@@ -141,46 +141,46 @@
           }
           // -- Uncomment to enable the following trainer guides --
           // {
-          //   "title": "stepbystepguide.satelliteimagery.title",
-          //   "footnote": "stepbystepguide.satelliteimagery.footnote",
+          //   "title": "translate#stepbystepguide.satelliteimagery.title",
+          //   "footnote": "translate#stepbystepguide.satelliteimagery.footnote",
           //   "steps": [
           //     {
-          //       "title": "stepbystepguide.satelliteimagery.step1.title",
-          //       "markdownDescription": "stepbystepguide.satelliteimagery.step1.markdownDescription"
+          //       "title": "translate#stepbystepguide.satelliteimagery.step1.title",
+          //       "markdownDescription": "translate#stepbystepguide.satelliteimagery.step1.markdownDescription"
           //     },
           //     {
-          //       "title": "stepbystepguide.satelliteimagery.step2.title",
-          //       "markdownDescription": "stepbystepguide.satelliteimagery.step2.markdownDescription"
+          //       "title": "translate#stepbystepguide.satelliteimagery.step2.title",
+          //       "markdownDescription": "translate#stepbystepguide.satelliteimagery.step2.markdownDescription"
           //     },
           //     {
-          //       "title": "stepbystepguide.satelliteimagery.step3.title",
-          //     "markdownDescription": "stepbystepguide.satelliteimagery.step3.markdownDescription"
+          //       "title": "translate#stepbystepguide.satelliteimagery.step3.title",
+          //     "markdownDescription": "translate#stepbystepguide.satelliteimagery.step3.markdownDescription"
           //     },
           //     {
-          //       "title": "stepbystepguide.satelliteimagery.step4.title",
-          //       "markdownDescription": "stepbystepguide.satelliteimagery.step4.markdownDescription"
+          //       "title": "translate#stepbystepguide.satelliteimagery.step4.title",
+          //       "markdownDescription": "translate#stepbystepguide.satelliteimagery.step4.markdownDescription"
           //     }
           //   ]
           // },
           // {
-          //   "title": "stepbystepguide.comparetimeseries.title",
-          //   "footnote": "stepbystepguide.comparetimeseries.footnote",
+          //   "title": "translate#stepbystepguide.comparetimeseries.title",
+          //   "footnote": "translate#stepbystepguide.comparetimeseries.footnote",
           //   "steps": [
           //     {
-          //       "title": "stepbystepguide.comparetimeseries.step1.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step1.markdownDescription"
+          //       "title": "translate#stepbystepguide.comparetimeseries.step1.title",
+          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step1.markdownDescription"
           //     },
           //     {
-          //       "title": "stepbystepguide.comparetimeseries.step2.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step2.markdownDescription"
+          //       "title": "translate#stepbystepguide.comparetimeseries.step2.title",
+          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step2.markdownDescription"
           //     },
           //     {
-          //       "title": "stepbystepguide.comparetimeseries.step3.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step3.markdownDescription"
+          //       "title": "translate#stepbystepguide.comparetimeseries.step3.title",
+          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step3.markdownDescription"
           //     },
           //     {
-          //       "title": "stepbystepguide.comparetimeseries.step4.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step4.markdownDescription"
+          //       "title": "translate#stepbystepguide.comparetimeseries.step4.title",
+          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step4.markdownDescription"
           //     }
           //   ]
           // }

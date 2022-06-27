@@ -11,6 +11,14 @@ var fs = require('fs');
 var gulp = require('gulp');
 var path = require('path');
 var PluginError = require('plugin-error');
+var minimist = require('minimist');
+
+var knownOptions = {
+  string: ['baseHref'],
+  default: {baseHref: '/'}
+};
+
+var options = minimist(process.argv.slice(2), knownOptions);
 
 var watchOptions = {
     interval: 1000
@@ -42,7 +50,17 @@ gulp.task('write-version', function(done) {
     done();
 });
 
-gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
+gulp.task('render-index', function renderIndex(done) {
+  var ejs = require('ejs');
+
+  var index = fs.readFileSync('wwwroot/index.ejs', 'utf8');
+  var indexResult = ejs.render(index, { baseHref: options.baseHref });
+
+  fs.writeFileSync(path.join('wwwroot', 'index.html'), indexResult);
+  done();
+});
+
+gulp.task('build-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function buildApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true);
@@ -50,9 +68,9 @@ gulp.task('build-app', gulp.series('check-terriajs-dependencies', 'write-version
     checkForDuplicateCesium();
 
     runWebpack(webpack, webpackConfig, done);
-}));
+})));
 
-gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
+gulp.task('release-app', gulp.parallel('render-index', gulp.series('check-terriajs-dependencies', 'write-version', function releaseApp(done) {
     var runWebpack = require('terriajs/buildprocess/runWebpack.js');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(false);
@@ -62,10 +80,13 @@ gulp.task('release-app', gulp.series('check-terriajs-dependencies', 'write-versi
     runWebpack(webpack, Object.assign({}, webpackConfig, {
         plugins: webpackConfig.plugins || []
     }), done);
+})));
+
+gulp.task('watch-render-index', gulp.series('render-index', function watchRenderIndex() {
+    gulp.watch(['wwwroot/index.ejs'], gulp.series('render-index'));
 }));
 
-gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watchApp(done) {
-    var fs = require('fs');
+gulp.task('watch-app', gulp.parallel('watch-render-index', gulp.series('check-terriajs-dependencies', function watchApp(done) {    var fs = require('fs');
     var watchWebpack = require('terriajs/buildprocess/watchWebpack');
     var webpack = require('webpack');
     var webpackConfig = require('./buildprocess/webpack.config.js')(true, false);
@@ -74,7 +95,7 @@ gulp.task('watch-app', gulp.series('check-terriajs-dependencies', function watch
 
     fs.writeFileSync('version.js', 'module.exports = \'Development Build\';');
     watchWebpack(webpack, webpackConfig, done);
-}));
+})));
 
 gulp.task('copy-terriajs-assets', function() {
     var terriaWebRoot = path.join(getPackageRoot('terriajs'), 'wwwroot');
@@ -96,7 +117,7 @@ gulp.task('watch-terriajs-assets', gulp.series('copy-terriajs-assets', function 
         sourceGlob = sourceGlob.replace(/\\/g, '/');
     }
 
-    return gulp.watch(sourceGlob, watchOptions, gulp.series('copy-terriajs-assets'));
+    gulp.watch(sourceGlob, watchOptions, gulp.series('copy-terriajs-assets'));
 }));
 
 gulp.task('copy-editor', function() {
@@ -253,15 +274,6 @@ gulp.task('render-datasource-templates', function(done) {
     var JSON5 = require('json5');
     var templateDir = 'datasources';
 
-    // until https://github.com/TerriaJS/terriajs/pull/4227 is ready,
-    // merge in translation overrides via this task
-    var json5 = require('json5');
-    var translationFromLibPath = path.join(getPackageRoot('terriajs'), 'lib', 'Language', 'en', 'translation.json');
-    var translationFromLib = json5.parse(fs.readFileSync(translationFromLibPath, 'utf8')) || {};
-    var translationFromMap = json5.parse(fs.readFileSync(path.resolve(__dirname, 'lib', 'Language', 'en', 'translation.json'), 'utf8')) || {};
-    var translation = {...translationFromLib, ...translationFromMap};
-    fs.writeFileSync(translationFromLibPath, JSON.stringify(translation, null, 2));
-
     try {
         fs.accessSync(templateDir);
     } catch (e) {
@@ -295,7 +307,7 @@ gulp.task('render-datasource-templates', function(done) {
 });
 
 gulp.task('watch-datasource-templates', gulp.series('render-datasource-templates', function watchDatasourceTemplates() {
-    return gulp.watch(['lib/Language/**/*.json', 'datasources/**/*.ejs','datasources/*.json'], watchOptions, gulp.series('render-datasource-templates'));
+    gulp.watch(['lib/Language/**/*.json', 'datasources/**/*.ejs','datasources/*.json'], watchOptions, gulp.series('render-datasource-templates'));
 }));
 
 gulp.task('sync-terriajs-dependencies', function(done) {
