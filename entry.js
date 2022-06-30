@@ -9,7 +9,7 @@ function loadMainScript() {
       require.ensure(['terriajs/lib/Core/prerequisites'], function(require) {
         require('terriajs/lib/Core/prerequisites');
         require.ensure(['./index'], function(require) {
-          resolve(require('./index'));
+          resolve(require('./index')());
         }, reject, 'index');
       }, reject, 'index');
     });
@@ -35,7 +35,8 @@ function createLoader() {
     document.body.appendChild(loaderDiv);
 
     polyfill(function() {
-        loadMainScript().catch(() => {
+        loadMainScript().catch((e) => {
+          console.error(e);
             // Ignore errors and try to show the map anyway
         }).then(() => {
             loaderDiv.classList.add('loader-ui-hide');
