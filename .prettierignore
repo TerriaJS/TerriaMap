@@ -8,3 +8,4 @@
 !lib/**/*.ts
 !lib/**/*.tsx
 !lib/**/*.scss
+!index.js
