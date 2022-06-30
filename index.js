@@ -66,7 +66,7 @@ module.exports = async function() {
       shareDataService: new ShareDataService({
         terria: terria
       }),
-      applicationUrl: window.location.href
+      applicationUrl: window.location
     });
   } catch (e) {
     terria.raiseErrorToUser(e);
