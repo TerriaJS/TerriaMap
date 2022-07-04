@@ -12,11 +12,11 @@
             "description": "Limiti amministrativi regionali selezionabili in differenti anni. Fonte dati ISTAT.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
-              "template": "<p>Regione <b>{{den_reg}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=108&anno={{anno}}\">link al metadato </a> </p>"
+              "template": "<p>Regione <b>{{den_reg}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=108&anno={{anno}}\">link al metadato </a> </p>"
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=108&anno=2021"
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=108&anno=2021"
             }],
             "layers": "new_atlante_integrato:v_regioni_terria",
             "id": "confreg"
@@ -27,11 +27,11 @@
             "description": "Limiti amministrativi provinciali selezionabili in differenti anni. Fonte dati ISTAT.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
-              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=109&anno=2021"
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno=2021"
             }],
             "layers": "new_atlante_integrato:v_province_terria"
           },
@@ -45,7 +45,7 @@
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=110&anno=2021"
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=110&anno=2021"
             }],
             "layers": "new_atlante_integrato:v_comuni_terria"
           },

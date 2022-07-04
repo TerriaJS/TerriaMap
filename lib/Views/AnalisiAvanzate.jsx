@@ -55,6 +55,14 @@ function AnalisiAvanzate(props) {
               tecnico-economica preliminare di un ipotetico parco eolico situato
               in un punto prescelto sulle mappe, simulando le prestazioni
               energetiche e il costo medio dell'energia prodotta dall'impianto.{" "}
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
+                className={Styles.link}
+              >
+                Approfondisci.
+              </a>{" "}
               <br></br>
               <br></br>Per accedere{" "}
               <a className={Styles.link} href={modCalc_link}>
@@ -81,7 +89,7 @@ function AnalisiAvanzate(props) {
             {/* <a target="_blank" href="http://rakino.ricerca.lan"> */}
             <img
               width="50%"
-              height="60%"
+              height="80%"
               className={Styles.image}
               src={require("../../wwwroot/images/download_serie_storica.png")}
               /*src={require("../../wwwroot/images/shutterstock_107017613.png")}*/
@@ -144,6 +152,77 @@ function AnalisiAvanzate(props) {
             >
               Download ...
             </a>
+          </li>
+        </ul>
+      </div>
+      <div className={classNames(PanelStyles.section, Styles.section)}>
+        <ul>
+          <li class="list-group-item">
+            <h2>LINK</h2>
+            <a
+              target="_blank"
+              // href="http://atlanteintegrato.rse-web.it/sankey.php"
+              href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+            >
+              <img
+                className={Styles.image}
+                src={require("../../wwwroot/images/link_ai_dbeta.png")}
+                alt="WEN"
+              />
+            </a>
+            <p>
+              Per ulteriori approfondimenti è possibile consultare l'{" "}
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://atlanteintegrato.rse-web.it/"
+                className={Styles.link}
+              >
+                Atlante Integrato.
+              </a>
+              <br></br>
+              <br></br>E' inoltre possibile consultare e scaricare i dati
+              presenti nel{" "}
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://dbeta.rse-web.it"
+                className={Styles.link}
+              >
+                GeoDB ETA.
+              </a>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div className={classNames(PanelStyles.section, Styles.section)}>
+        <ul>
+          <li class="list-group-item">
+            <h2>DOWNLOAD DATI STORICI DELLE STAZIONI ANEMOMETRICHE</h2>
+            <a
+              target="_blank"
+              // href="http://atlanteintegrato.rse-web.it/sankey.php"
+              //href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+            >
+              <img
+                className={Styles.image}
+                src={require("../../wwwroot/images/link_ai_dbeta.png")}
+                alt="WEN"
+              />
+            </a>
+            <p>
+              Dati misurati scaricabili dopo registrazione al portale:{" "}
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://atlanteeolico.rse-web.it/download_dati-IT.php"
+                className={Styles.link}
+              >
+                Stazioni anemometriche.
+              </a>
+              <br></br>
+              <br></br>
+            </p>
           </li>
         </ul>
       </div>

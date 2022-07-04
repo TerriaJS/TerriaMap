@@ -7,7 +7,7 @@
     "it_aeo_velocita",
     "it_aeo_producibilita",
     "it_aeo_Impianti_eo_esistenti",
-    "it_aeo_stazioni_anemometriche",
+    //"it_aeo_stazioni_anemometriche",
     "it"
   ], 
   "parameters": {

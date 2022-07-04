@@ -37,7 +37,7 @@
               },
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=240"
+                "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=240"
               }],
               "layers": "aeolian:eo_prod50_onshore",
               "id": "eo_prod50_onshore"
@@ -52,7 +52,7 @@
               },
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=241"
+                "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=241"
               }],
               "layers": "aeolian:eo_prod75_onshore",
               "id": "eo_prod75_onshore"
@@ -67,7 +67,7 @@
               },
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=242"
+                "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=242"
               }],
               "layers": "aeolian:eo_prod100_onshore",
               "id": "eo_prod100_onshore"
@@ -92,7 +92,7 @@
               },
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=243"
+                "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=243"
               }],
               "layers": "aeolian:eo_prod100_offshore",
               "id": "eo_prod100_offshore"
@@ -107,7 +107,7 @@
               },
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=244"
+                "url":"http://dbeta.rse-web.it/aaeolian_metadati.php?var_id=244"
               }],
               "layers": "aeolian:eo_prod125_offshore",
               "id": "eo_prod125_offshore"
@@ -122,7 +122,7 @@
               },
               "metadataUrls":[{
                 "title":"link metadato",
-                "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=245"
+                "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=245"
               }],
               "layers": "aeolian:eo_prod150_offshore",
               "id": "eo_prod150_offshore"
