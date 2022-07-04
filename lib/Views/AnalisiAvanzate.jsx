@@ -20,7 +20,7 @@ function AnalisiAvanzate(props) {
   if (userLang === "it-IT" || userLang === "it") {
     totem_link = "/#it_dati_storici"; //inserire il path che punta al tool codice di calcolo
     modCalc_link = "/#it_modcalc";
-    analisi = "Analisi Avanzate";
+    analisi = "Strumenti Aggiuntivi";
   }
 
   return (
@@ -34,58 +34,29 @@ function AnalisiAvanzate(props) {
       {/* titolo della pagina */}
       <div className={classNames(PanelStyles.header)}>
         <label className={PanelStyles.heading}>
-          <h1> Naviga tra i tools di approfondimento </h1>
+          <h1> Naviga tra i tool di approfondimento </h1>
         </label>
       </div>
 
-      {/* totem */}
-      <div className={classNames(PanelStyles.section, Styles.section)}>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            {/*<div class="row">
-            <div class="col-sm-6">*/}
-            <h2> DOWLOAD DATI STORICI </h2>
-            <a target="_blank" href="http://rakino.ricerca.lan">
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/wind.png")}
-                /*src={require("../../wwwroot/images/shutterstock_107017613.png")}*/
-                alt="totem"
-              />
-            </a>
-            <p>
-              {" "}
-              <i>Download dati storici .... altro testo</i> Per accedere{" "}
-              <a className={Styles.link} href={totem_link}>
-                clicca sulla mappa nella zona di interesse
-              </a>
-              .
-              {/* Permette la definizione ed il salvataggio di dati territoriali
-              necessari a software di analisi multienergetiche. Prima di
-              attivare il tool è necessario selezionare, a partire dal link qui
-              di seguito, il <i>territorio provinciale e l'anno </i> in cui se
-              vuole effettuare l'analisi. */}{" "}
-            </p>
-          </li>
-        </ul>
-      </div>
       {/* modulo calcolo */}
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <h2> CALCOLO PRESTAZIONI </h2>
-            <a target="_blank" href="http://rakino.ricerca.lan">
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/wind.png")}
-                /*src={require("../../wwwroot/images/totem3_v3.png")}*/
-                alt="totem"
-              />
-            </a>
+            <h2> MODULO DI CALCOLO </h2>
+            <img
+              className={Styles.image}
+              src={require("../../wwwroot/images/modulo_calcolo.png")}
+              /*src={require("../../wwwroot/images/totem3_v3.png")}*/
+              alt="totem"
+            />
             <p>
               {" "}
-              <i>Valutazione tecnico economica di un parco eolico</i>: Per
-              accedere{" "}
+              Questo strumento permette di effettuare una valutazione
+              tecnico-economica preliminare di un ipotetico parco eolico situato
+              in un punto prescelto sulle mappe, simulando le prestazioni
+              energetiche e il costo medio dell'energia prodotta dall'impianto.{" "}
+              <br></br>
+              <br></br>Per accedere{" "}
               <a className={Styles.link} href={modCalc_link}>
                 clicca sulla mappa nella zona di interesse
               </a>
@@ -99,13 +70,53 @@ function AnalisiAvanzate(props) {
           </li>
         </ul>
       </div>
+
+      {/* totem */}
+      <div className={classNames(PanelStyles.section, Styles.section)}>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            {/*<div class="row">
+            <div class="col-sm-6">*/}
+            <h2> DOWNLOAD DELLA SERIE STORICA DI VELOCITA' DEL VENTO </h2>
+            {/* <a target="_blank" href="http://rakino.ricerca.lan"> */}
+            <img
+              width="50%"
+              height="60%"
+              className={Styles.image}
+              src={require("../../wwwroot/images/download_serie_storica.png")}
+              /*src={require("../../wwwroot/images/shutterstock_107017613.png")}*/
+              alt="totem"
+            />
+            {/* </a> */}
+            <p>
+              {" "}
+              Questo strumento permette di scaricare la serie storica oraria
+              trentennale (1990- 2019) di velocità del vento (m/s), attraverso
+              la selezione dell’area di interesse sui domini onshore e offshore
+              del territorio nazionale e la compilazione di un modulo di
+              richiesta dei dati. <br></br>
+              <br></br>Per accedere{" "}
+              <a className={Styles.link} href={totem_link}>
+                clicca sulla mappa nella zona di interesse
+              </a>
+              .
+              {/* Permette la definizione ed il salvataggio di dati territoriali
+              necessari a software di analisi multienergetiche. Prima di
+              attivare il tool è necessario selezionare, a partire dal link qui
+              di seguito, il <i>territorio provinciale e l'anno </i> in cui se
+              vuole effettuare l'analisi. */}{" "}
+            </p>
+          </li>
+        </ul>
+      </div>
+
       {/* caso multi energy*/}
 
       {/* collegamento a DOWNLOAD MAPPE DI VENTO*/}
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul>
           <li class="list-group-item">
-            <h2>DOWNLOAD MAPPE DI VENTO</h2>
+            <h2>DOWNLOAD DELLA MAPPA DI VENTO</h2>
             <a
               target="_blank"
               // href="http://atlanteintegrato.rse-web.it/sankey.php"
@@ -113,14 +124,17 @@ function AnalisiAvanzate(props) {
             >
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/wind.png")}
+                src={require("../../wwwroot/images/download_mappa_vento.png")}
                 alt="WEN"
               />
             </a>
             <p>
-              Il file contiene la copertura in formato ESRI Shapefile che
-              rappresenta la griglia con passo 1.4x1.4 km relativa ai parametri
-              dell'Atlante Eolico dell'Italia. Altro testo ....
+              Questo strumento permette di scaricare in formato shapefile (.shp)
+              la griglia contenente i valori di velocità media annua del vento
+              (m/s), producibilità specifica annua ( MWh/MW), parametro di forma
+              della distribuzione di Weibull e distanza dalle cabine primarie
+              (km), per ciascuna cella (1,4 x 1,4 km) sui domini onshore e
+              offshore del territorio nazionale.
             </p>
             <a
               target="_blank"
@@ -128,7 +142,7 @@ function AnalisiAvanzate(props) {
               href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
               className={Styles.link}
             >
-              Download Mappe di vento
+              Download ...
             </a>
           </li>
         </ul>
