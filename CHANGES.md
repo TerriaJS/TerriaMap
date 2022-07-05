@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+### 2022-06-30
+
+* Add support Plugins support using `terriajs-plugin-api`. See [`plugins.ts`](./plugins.ts)
+
 ### 2022-05-31
 
 **Breaking changes:**
