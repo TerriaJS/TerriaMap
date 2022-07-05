@@ -206,7 +206,7 @@ function AnalisiAvanzate(props) {
             >
               <img
                 className={Styles.image}
-                src={require("../../wwwroot/images/link_ai_dbeta.png")}
+                src={require("../../wwwroot/images/download_staz_anemometriche.png")}
                 alt="WEN"
               />
             </a>
