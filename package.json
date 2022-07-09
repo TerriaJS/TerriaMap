@@ -70,7 +70,7 @@
     "node-notifier": "^5.1.2",
     "node-sass": "^6.0.1",
     "plugin-error": "^1.0.1",
-    "prettier": "^1.19.1",
+    "prettier": "2.7.1",
     "pretty-quick": "^1.10.0",
     "prop-types": "^15.6.0",
     "raw-loader": "^1.0.0",
@@ -111,7 +111,7 @@
     "deploy-without-reinstall": "gulp clean && gulp release && yarn deploy-current",
     "deploy-current": "yarn get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
-    "prettier": "prettier --write \"**/*\"",
-    "prettier-check": "prettier --check \"**/*\""
+    "prettier": "prettier --write .",
+    "prettier-check": "prettier --check ."
   }
 }
