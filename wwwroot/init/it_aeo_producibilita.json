@@ -33,7 +33,7 @@
               "description": "Producibilita' specifica onshore a 50 m s.l.t. espressa in MWh/MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -48,7 +48,7 @@
               "description": "Producibilita' specifica onshore a 75 m s.l.t. espressa in MWh/MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -63,7 +63,7 @@
               "description": "Producibilita' specifica onshore a 100 m s.l.t. espressa in MWh/MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -88,7 +88,7 @@
               "description": "Producibilita' specifica offshore a 100 m s.l.m. espressa in MWh/MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -103,7 +103,7 @@
               "description": "Producibilita' specifica offshore a 125 m s.l.m. espressa in MWh/MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -118,7 +118,7 @@
               "description": "Producibilita' specifica offshore a 150 m s.l.m. espressa in MWh/MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> MWh/MW </p>"
+                "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",

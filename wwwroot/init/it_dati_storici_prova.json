@@ -1,0 +1,45 @@
+{
+  "catalog": [
+    {
+      "type": "group",
+      "name": "it_dati_storici_prova",
+      "isOpen": true,
+      "members": [
+        {
+          "type": "wms",
+          "name": "it_dati_storici_prova",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "layers": "atlante_integrato:reticolo_tiles_3857",
+          "opacity": 0.5,
+          "featureInfoTemplate": {
+            "template":
+            
+            "<br><p><button><a href=\"https://atlanteeolico.rse-web.it/AEOLIAN_richiesta_dati_direct.phtml?id={{id_tile}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+          },
+          "id": "it_dati_storici_prova",
+          "initialMessage": {
+            "title": "Per accedere:",
+            "content": "Seleziona il punto direttamente sulla mappa.",
+            "key": "it_dati_storici_prova",
+            "confirmation": true,
+            "confirmText": "Avvia"
+          }
+        }
+      ]
+    }
+  ],
+  "homeCamera": {
+    "north": 48,
+    "east": 19,
+    "south": 35,
+    "west": 6
+  },
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
+  "viewerMode": "2d",
+  "workbench": [
+    "it_dati_storici_prova"
+  ]
+}

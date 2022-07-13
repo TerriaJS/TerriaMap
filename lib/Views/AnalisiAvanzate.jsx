@@ -16,11 +16,13 @@ function AnalisiAvanzate(props) {
   var userLang = navigator.language || navigator.userLanguage;
   var totem_link = "/#en_totemweb"; //puntare al json che carica il tool con il codice di calcolo
   var modCalc_link = "/#en_modcalc";
+  var dati_storici_prova = "/#it_dati_storici_prova";
   var analisi = "Advanced Analysis";
   if (userLang === "it-IT" || userLang === "it") {
     totem_link = "/#it_dati_storici"; //inserire il path che punta al tool codice di calcolo
     modCalc_link = "/#it_modcalc";
     analisi = "Strumenti Aggiuntivi";
+    dati_storici_prova = "/#it_dati_storici_prova";
   }
 
   return (
@@ -222,6 +224,43 @@ function AnalisiAvanzate(props) {
               </a>
               <br></br>
               <br></br>
+            </p>
+          </li>
+        </ul>
+      </div>
+      {/* modulo PROVA */}
+      <div className={classNames(PanelStyles.section, Styles.section)}>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> MODULO DI PROVA </h2>
+            <img
+              className={Styles.image}
+              src={require("../../wwwroot/images/modulo_calcolo.png")}
+              /*src={require("../../wwwroot/images/totem3_v3.png")}*/
+              alt="totem"
+            />
+            <p>
+              {" "}
+              PROVA PROVAQ.{" "}
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://atlanteeolico.rse-web.it/AEOLIAN_richiesta_dati_direct.phtml"
+                className={Styles.link}
+              >
+                Approfondisci.
+              </a>{" "}
+              <br></br>
+              <br></br>Per accedere{" "}
+              <a className={Styles.link} href={dati_storici_prova}>
+                clicca sulla mappa nella zona di interesse
+              </a>
+              .
+              {/* Permette la definizione ed il salvataggio di dati territoriali
+              necessari a software di analisi multienergetiche. Prima di
+              attivare il tool è necessario selezionare, a partire dal link qui
+              di seguito, il <i>territorio provinciale e l'anno </i> in cui se
+              vuole effettuare l'analisi. */}{" "}
             </p>
           </li>
         </ul>
