@@ -69,7 +69,7 @@
     // Or this
     "feedbackUrl": "feedback",
 
-    // Default mobile viewer mode when loading the map for the first time on mobile platforms.
+    // Defauldddt mobile viewer mode when loading the map for the first time on mobile platforms.
     // Options are: "3DTerrain", "3DSmooth", "2D"
     "mobileDefaultViewerMode": "2d",
     // Enable experimental features, since its nice to have the bleeding edge.
