@@ -235,20 +235,20 @@ function AnalisiAvanzate(props) {
             <h2> MODULO DI PROVA </h2>
             <img
               className={Styles.image}
-              src={require("../../wwwroot/images/modulo_calcolo.png")}
+              src={require("../../wwwroot/images/download_serie_storica.png")}
               /*src={require("../../wwwroot/images/totem3_v3.png")}*/
               alt="totem"
             />
             <p>
               {" "}
-              PROVA PROVAQ.{" "}
+              TESTO{" "}
               <a
                 target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/AEOLIAN_richiesta_dati_direct.phtml"
+                //href="https://atlanteeolico.rse-web.it/AEOLIAN_richiesta_dati_direct.phtml"
                 className={Styles.link}
               >
-                Approfondisci.
+                DESCRIZIONE
               </a>{" "}
               <br></br>
               <br></br>Per accedere{" "}

@@ -13,8 +13,9 @@
           "opacity": 0.5,
           "featureInfoTemplate": {
             "template":
-            
+                        
             "<br><p><button><a href=\"https://atlanteeolico.rse-web.it/AEOLIAN_richiesta_dati_direct.phtml?id={{id_tile}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+ 
           },
           "id": "it_dati_storici_prova",
           "initialMessage": {
