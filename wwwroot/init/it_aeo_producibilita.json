@@ -30,7 +30,7 @@
             {
               "type": "wms",
               "name": "Producibilita' specifica onshore a 50 m s.l.t.",
-              "description": "Producibilita' specifica onshore a 50 m s.l.t. espressa in MWh/MW.",
+              "description": "Producibilita' specifica onshore a 50 m s.l.t. espressa in MWh/MW. <br> Per il calcolo della producibilità è stato utilizzato un aerogeneratore Riva Calzoni ATB 500.54 con altezza di mozzo pari a 54 m e potenza nominale pari a 500 kW. ",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> </p>"
@@ -45,7 +45,7 @@
             {
               "type": "wms",
               "name": "Producibilita' specifica onshore a 75 m s.l.t.",
-              "description": "Producibilita' specifica onshore a 75 m s.l.t. espressa in MWh/MW.",
+              "description": "Producibilita' specifica onshore a 75 m s.l.t. espressa in MWh/MW. <br> Per il calcolo della producibilità è stato utilizzato un aerogeneratore Leitwind LTW90-950 con altezza di mozzo pari a 90 m e potenza nominale pari a 950 kW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
@@ -60,7 +60,7 @@
             {
               "type": "wms",
               "name": "Producibilita' specifica onshore a 100 m s.l.t.",
-              "description": "Producibilita' specifica onshore a 100 m s.l.t. espressa in MWh/MW.",
+              "description": "Producibilita' specifica onshore a 100 m s.l.t. espressa in MWh/MW. <br> Per il calcolo della producibilità è stato utilizzato un aerogeneratore Vestas V117 3450 con altezza di mozzo pari a 117 m e potenza nominale pari a 3450 kW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b> </p>"
@@ -85,7 +85,7 @@
             {
               "type": "wms",
               "name": "Producibilita' specifica offshore a 100 m s.l.m.",
-              "description": "Producibilita' specifica offshore a 100 m s.l.m. espressa in MWh/MW.",
+              "description": "Producibilita' specifica offshore a 100 m s.l.m. espressa in MWh/MW. <br> Per il calcolo della producibilità è stato utilizzato un aerogeneratore NREL_Reference con altezza di mozzo pari a 155 m e potenza nominale pari a 6 MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
@@ -100,7 +100,7 @@
             {
               "type": "wms",
               "name": "Producibilita' specifica offshore a 125 m s.l.m.",
-              "description": "Producibilita' specifica offshore a 125 m s.l.m. espressa in MWh/MW.",
+              "description": "Producibilita' specifica offshore a 125 m s.l.m. espressa in MWh/MW. <br> Per il calcolo della producibilità è stato utilizzato un aerogeneratore IEA_10MW_RTW con altezza di mozzo pari a 198 m e potenza nominale pari a 10 MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
@@ -115,7 +115,7 @@
             {
               "type": "wms",
               "name": "Producibilita' specifica offshore a 150 m s.l.m.",
-              "description": "Producibilita' specifica offshore a 150 m s.l.m. espressa in MWh/MW.",
+              "description": "Producibilita' specifica offshore a 150 m s.l.m. espressa in MWh/MW. <br> Per il calcolo della producibilità è stato utilizzato un aerogeneratore IEA_15MW_RTW con altezza di mozzo pari a 240 m e potenza nominale pari a 15 MW.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La producibilità' del vento rientra nella classe <b>{{classe}}</b>  </p>"
