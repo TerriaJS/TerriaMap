@@ -75,8 +75,15 @@
            {
             "type": "wms",
             "name": "Batimetria",
-            "description": " batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
+            "description": " Batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
             "url": "http://gis2.rse-web.it/geoserver/wms",
+            //"featureInfoTemplate": {
+            //  "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+            //},
+            "metadataUrls":[{
+              "title":"link metadato",
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=205"
+            }],
             "layers": "new_atlante_integrato:bati_2018",
             "styles":"new_atlante_integrato:bati_2018",
             "id": "bati2018"
@@ -86,6 +93,13 @@
             "name": "Zona Economica Esclusiva",
             "description": " Zona economica esclusiva dell'Italia. Dato distribuito dal Flanders Marine Institute https://www.marineregions.org/.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
+            "featureInfoTemplate": {
+              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+            },
+            "metadataUrls":[{
+              "title":"link metadato",
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=171"
+            }],
             "layers": "new_atlante_integrato:eez",
             "styles":"aeolian:linea_blu_2",
             //"id": "bati2018"
