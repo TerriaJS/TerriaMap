@@ -17,7 +17,7 @@
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 12.0.0"
+    "node": ">= 14.0.0"
   },
   "repository": {
     "type": "git",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.3.4",
     "terriajs-plugin-api": "0.0.1-alpha.5",
-    "terriajs-plugin-sample": "0.0.1-alpha.5"
+    "terriajs-plugin-sample": "0.0.1-alpha.5",
+    "terriajs-server": "^3.3.4"
   },
   "config": {
     "awsProfile": "terria",
@@ -64,7 +64,7 @@
     "fs-extra": "^7.0.1",
     "generate-terriajs-schema": "^1.5.0",
     "gulp": "^4.0.0",
-    "husky": "^2.7.0",
+    "husky": "^8.0.1",
     "json5": "^2.1.0",
     "minimist": "^1.2.5",
     "node-notifier": "^5.1.2",
@@ -96,6 +96,7 @@
     "yargs": "^11.0.0"
   },
   "scripts": {
+    "prepare": "husky install",
     "docker-build-local": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto --local",
     "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
     "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
@@ -111,12 +112,6 @@
     "deploy-current": "yarn get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write \"**/*\"",
-    "pretty-quick": "pretty-quick",
     "prettier-check": "prettier --check \"**/*\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
