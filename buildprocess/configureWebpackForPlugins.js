@@ -1,6 +1,16 @@
 const path = require("path");
 const fs = require("fs");
 
+/**
+ * RegExp pattern used for matching plugin package names for applying various rules.
+ *
+ * The pattern is a bit permissive, matching any names that begin with
+ * "terriajs-" and has the word "plugin" anywhere in it.  It will match
+ * "terriajs-plugin-sample", "terriajs-sample-plugin" as well as
+ * "terriajs-some-plugin-for-something".
+ */
+const PluginPackagePattern = /^terriajs-.*plugin/;
+
 function configureWebpackForPlugins(config) {
   config.module.rules.push(createPluginIconsRule());
   return config;
@@ -28,7 +38,11 @@ function createPluginIconsRule() {
       const packageName = readPackageName(
         path.resolve(dirName, "..", "..", "package.json")
       );
-      const isTerriaJsPlugin = packageName ? packageName.startsWith("terriajs-plugin-") : false
+
+      const isTerriaJsPlugin = packageName
+        ? PluginPackagePattern.test(packageName)
+        : false;
+
       packageNames[svgPath] = packageName;
       return isTerriaJsPlugin;
     },
@@ -53,7 +67,9 @@ function readPackageName(packageFile) {
   } else {
     try {
       const packageJson = JSON.parse(fs.readFileSync(packageFile));
-      packageJsonNames[packageFile] = packageJson ? packageJson.name : undefined;
+      packageJsonNames[packageFile] = packageJson
+        ? packageJson.name
+        : undefined;
       return packageJsonNames[packageFile];
     } catch {}
   }
