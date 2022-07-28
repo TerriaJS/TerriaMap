@@ -12,7 +12,7 @@ index d05d7aa..5629418 100644
      changeSearchText(newText) {
 diff --git a/node_modules/terriajs/lib/.DS_Store b/node_modules/terriajs/lib/.DS_Store
 new file mode 100644
-index 0000000..a2bb7be
+index 0000000..c6bb39f
 Binary files /dev/null and b/node_modules/terriajs/lib/.DS_Store differ
 diff --git a/node_modules/terriajs/lib/Models/BaseMaps/defaultBaseMaps.ts b/node_modules/terriajs/lib/Models/BaseMaps/defaultBaseMaps.ts
 index eff35fc..dbb8855 100644
@@ -70,10 +70,10 @@ index eff35fc..dbb8855 100644
        item: {
          id: "basemap-bing-roads",
 diff --git a/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts b/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
-index da2317f..2125827 100644
+index da2317f..ae3e798 100644
 --- a/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
 +++ b/node_modules/terriajs/lib/Models/SearchProviders/CatalogSearchProvider.ts
-@@ -16,6 +16,8 @@ interface CatalogSearchProviderOptions {
+@@ -16,14 +16,20 @@ interface CatalogSearchProviderOptions {
    terria: Terria;
  }
  
@@ -82,8 +82,11 @@ index da2317f..2125827 100644
  type UniqueIdString = string;
  type ResultMap = Map<UniqueIdString, boolean>;
  export function loadAndSearchCatalogRecursively(
-@@ -23,7 +25,9 @@ export function loadAndSearchCatalogRecursively(
-   searchTextLowercase: string,
+   models: BaseModel[],
+-  searchTextLowercase: string,
++  // ALM - 6/10/22 COMMENTED OUT TO REMOVE CASE SENSITIVE SEARCH
++  // searchTextLowercase: string,
++  searchText: string,
    searchResults: SearchProviderResults,
    resultMap: ResultMap,
 -  iteration: number = 0
@@ -93,7 +96,7 @@ index da2317f..2125827 100644
  ): Promise<void> {
    // checkTerriaAgainstResults(terria, searchResults)
    // don't go further than 10 deep, but also if we have references that never
-@@ -31,32 +35,57 @@ export function loadAndSearchCatalogRecursively(
+@@ -31,32 +37,64 @@ export function loadAndSearchCatalogRecursively(
    if (iteration > 10) {
      return Promise.resolve();
    }
@@ -146,14 +149,21 @@ index da2317f..2125827 100644
 +              searchString = `${modelToSave.info[2]?.content}`;
 +              break;
 +            }
++            case "instance": {
++              searchString = `${modelToSave.info[3]?.content}`;
++              break;
++            }
 +            default: {
 +              searchString = `${modelToSave.name} ${modelToSave.uniqueId} ${modelToSave.description}`;
 +              break;
 +            }
 +          }
 +
++          // ALM - 6/10/22 COMMENTED OUT TO REMOVE CASE SENSITIVE SEARCH
++          // const matchesString =
++          //   searchString.toLowerCase().indexOf(searchTextLowercase) !== -1;
 +          const matchesString =
-+            searchString.toLowerCase().indexOf(searchTextLowercase) !== -1;
++            searchString.indexOf(searchText) !== -1;
 +          resultMap.set(model.uniqueId, matchesString);
 +          if (matchesString) {
 +            runInAction(() => {
@@ -170,8 +180,14 @@ index da2317f..2125827 100644
      }
  
      if (ReferenceMixin.isMixedInto(model) || GroupMixin.isMixedInto(model)) {
-@@ -93,7 +122,8 @@ export function loadAndSearchCatalogRecursively(
-             searchTextLowercase,
+@@ -90,10 +128,13 @@ export function loadAndSearchCatalogRecursively(
+         resolve(
+           loadAndSearchCatalogRecursively(
+             models,
+-            searchTextLowercase,
++            // ALM - 6/10/22 COMMENTED OUT TO REMOVE CASE SENSITIVE SEARCH
++            // searchTextLowercase,
++            searchText,
              searchResults,
              resultMap,
 -            iteration + 1
@@ -180,7 +196,7 @@ index da2317f..2125827 100644
            )
          );
        });
-@@ -120,7 +150,8 @@ export default class CatalogSearchProvider extends SearchProvider {
+@@ -120,12 +161,14 @@ export default class CatalogSearchProvider extends SearchProvider {
  
    protected async doSearch(
      searchText: string,
@@ -190,14 +206,22 @@ index da2317f..2125827 100644
    ): Promise<void> {
      this.isSearching = true;
      searchResults.results.length = 0;
-@@ -143,11 +174,14 @@ export default class CatalogSearchProvider extends SearchProvider {
+     searchResults.message = undefined;
+ 
++    // Cancel if no search criteria provided
+     if (searchText === undefined || /^\s*$/.test(searchText)) {
+       this.isSearching = false;
+       return Promise.resolve();
+@@ -143,11 +186,15 @@ export default class CatalogSearchProvider extends SearchProvider {
          const results = await this.terria.catalogIndex?.search(searchText);
          runInAction(() => (searchResults.results = results));
        } else {
 +        let defaultIteration = 0;
          await loadAndSearchCatalogRecursively(
            this.terria.modelValues,
-           searchText.toLowerCase(),
+-          searchText.toLowerCase(),
++          // searchText.toLower Case(),
++          searchText,
            searchResults,
 -          resultMap
 +          resultMap,
