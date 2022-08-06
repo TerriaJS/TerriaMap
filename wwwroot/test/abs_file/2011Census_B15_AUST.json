@@ -1,12 +1,5 @@
 {
-  "concepts": [
-    "FREQUENCY",
-    "STATE",
-    "REGIONTYPE",
-    "TYPP",
-    "MEASURE",
-    "REGION"
-  ],
+  "concepts": ["FREQUENCY", "STATE", "REGIONTYPE", "TYPP", "MEASURE", "REGION"],
   "codeGroups": {
     "REGIONTYPE": {
       "codes": [
@@ -234,86 +227,311 @@
     }
   },
   "filterColumnMap": [
-    {"filter":"TYPP.10,MEASURE.1,REGIONTYPE.SA3", "colName":"Pre_school_M"},
-    {"filter":"TYPP.10,MEASURE.2,REGIONTYPE.SA3", "colName":"Pre_school_F"},
-    {"filter":"TYPP.10,MEASURE.3,REGIONTYPE.SA3", "colName":"Pre_school_P"},
-    {"filter":"TYPP.21,MEASURE.1,REGIONTYPE.SA3", "colName":"Infants_Primary_Government_M"},
-    {"filter":"TYPP.21,MEASURE.2,REGIONTYPE.SA3", "colName":"Infants_Primary_Government_F"},
-    {"filter":"TYPP.21,MEASURE.3,REGIONTYPE.SA3", "colName":"Infants_Primary_Government_P"},
-    {"filter":"TYPP.22,MEASURE.1,REGIONTYPE.SA3", "colName":"Infants_Primary_Catholic_M"},
-    {"filter":"TYPP.22,MEASURE.2,REGIONTYPE.SA3", "colName":"Infants_Primary_Catholic_F"},
-    {"filter":"TYPP.22,MEASURE.3,REGIONTYPE.SA3", "colName":"Infants_Primary_Catholic_P"},
-    {"filter":"TYPP.23,MEASURE.1,REGIONTYPE.SA3", "colName":"Infnts_Primry_Othr_Non_Govt_M"},
-    {"filter":"TYPP.23,MEASURE.2,REGIONTYPE.SA3", "colName":"Infnts_Primry_Othr_Non_Govt_F"},
-    {"filter":"TYPP.23,MEASURE.3,REGIONTYPE.SA3", "colName":"Infnts_Primry_Othr_Non_Govt_P"},
-    {"filter":"TYPP.2,MEASURE.1,REGIONTYPE.SA3", "colName":"Infants_Primary_Tot_M"},
-    {"filter":"TYPP.2,MEASURE.2,REGIONTYPE.SA3", "colName":"Infants_Primary_Tot_F"},
-    {"filter":"TYPP.2,MEASURE.3,REGIONTYPE.SA3", "colName":"Infants_Primary_Tot_P"},
-    {"filter":"TYPP.31,MEASURE.1,REGIONTYPE.SA3", "colName":"Secondary_Government_M"},
-    {"filter":"TYPP.31,MEASURE.2,REGIONTYPE.SA3", "colName":"Secondary_Government_F"},
-    {"filter":"TYPP.31,MEASURE.3,REGIONTYPE.SA3", "colName":"Secondary_Government_P"},
-    {"filter":"TYPP.32,MEASURE.1,REGIONTYPE.SA3", "colName":"Secondary_Catholic_M"},
-    {"filter":"TYPP.32,MEASURE.2,REGIONTYPE.SA3", "colName":"Secondary_Catholic_F"},
-    {"filter":"TYPP.32,MEASURE.3,REGIONTYPE.SA3", "colName":"Secondary_Catholic_P"},
-    {"filter":"TYPP.33,MEASURE.1,REGIONTYPE.SA3", "colName":"Secondary_Other_Non_Govt_M"},
-    {"filter":"TYPP.33,MEASURE.2,REGIONTYPE.SA3", "colName":"Secondary_Other_Non_Govt_F"},
-    {"filter":"TYPP.33,MEASURE.3,REGIONTYPE.SA3", "colName":"Secondary_Other_Non_Govt_P"},
-    {"filter":"TYPP.3,MEASURE.1,REGIONTYPE.SA3", "colName":"Secondary_Tot_M"},
-    {"filter":"TYPP.3,MEASURE.2,REGIONTYPE.SA3", "colName":"Secondary_Tot_F"},
-    {"filter":"TYPP.3,MEASURE.3,REGIONTYPE.SA3", "colName":"Secondary_Tot_P"},
-    {"filter":"TYPP.40_2_T15,MEASURE.1,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Ft_15_24_M"},
-    {"filter":"TYPP.40_2_T15,MEASURE.2,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Ft_15_24_F"},
-    {"filter":"TYPP.40_2_T15,MEASURE.3,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Ft_15_24_P"},
-    {"filter":"TYPP.40_2_25OV,MEASURE.1,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Ft_25_ov_M"},
-    {"filter":"TYPP.40_2_25OV,MEASURE.2,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Ft_25_ov_F"},
-    {"filter":"TYPP.40_2_25OV,MEASURE.3,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Ft_25_ov_P"},
-    {"filter":"TYPP.40_3_T15,MEASURE.1,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Pt_15_24_M"},
-    {"filter":"TYPP.40_3_T15,MEASURE.2,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Pt_15_24_F"},
-    {"filter":"TYPP.40_3_T15,MEASURE.3,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Pt_15_24_P"},
-    {"filter":"TYPP.40_3_25OV,MEASURE.1,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Pt_25_ov_M"},
-    {"filter":"TYPP.40_3_25OV,MEASURE.2,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Pt_25_ov_F"},
-    {"filter":"TYPP.40_3_25OV,MEASURE.3,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Pt_25_ov_P"},
-    {"filter":"TYPP.40Z,MEASURE.1,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_F_Pt_ns_M"},
-    {"filter":"TYPP.40Z,MEASURE.2,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_F_Pt_ns_F"},
-    {"filter":"TYPP.40Z,MEASURE.3,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_F_Pt_ns_P"},
-    {"filter":"TYPP.40,MEASURE.1,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Tot_M"},
-    {"filter":"TYPP.40,MEASURE.2,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Tot_F"},
-    {"filter":"TYPP.40,MEASURE.3,REGIONTYPE.SA3", "colName":"Tec_Furt_Educ_inst_Tot_P"},
-    {"filter":"TYPP.50_2_T15,MEASURE.1,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Ft_15_24_M"},
-    {"filter":"TYPP.50_2_T15,MEASURE.2,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Ft_15_24_F"},
-    {"filter":"TYPP.50_2_T15,MEASURE.3,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Ft_15_24_P"},
-    {"filter":"TYPP.50_2_25OV,MEASURE.1,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Ft_25_ov_M"},
-    {"filter":"TYPP.50_2_25OV,MEASURE.2,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Ft_25_ov_F"},
-    {"filter":"TYPP.50_2_25OV,MEASURE.3,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Ft_25_ov_P"},
-    {"filter":"TYPP.50_3_T15,MEASURE.1,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Pt_15_24_M"},
-    {"filter":"TYPP.50_3_T15,MEASURE.2,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Pt_15_24_F"},
-    {"filter":"TYPP.50_3_T15,MEASURE.3,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Pt_15_24_P"},
-    {"filter":"TYPP.50_3_25OV,MEASURE.1,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Pt_25_ov_M"},
-    {"filter":"TYPP.50_3_25OV,MEASURE.2,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Pt_25_ov_F"},
-    {"filter":"TYPP.50_3_25OV,MEASURE.3,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_Pt_25_ov_P"},
-    {"filter":"TYPP.50Z,MEASURE.1,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_F_Pt_ns_M"},
-    {"filter":"TYPP.50Z,MEASURE.2,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_F_Pt_ns_F"},
-    {"filter":"TYPP.50Z,MEASURE.3,REGIONTYPE.SA3", "colName":"Uni_othr_Tert_Inst_F_Pt_ns_P"},
-    {"filter":"TYPP.50,MEASURE.1,REGIONTYPE.SA3", "colName":"Uni_other_Tert_Instit_Tot_M"},
-    {"filter":"TYPP.50,MEASURE.2,REGIONTYPE.SA3", "colName":"Uni_other_Tert_Instit_Tot_F"},
-    {"filter":"TYPP.50,MEASURE.3,REGIONTYPE.SA3", "colName":"Uni_other_Tert_Instit_Tot_P"},
-    {"filter":"TYPP.60_2,MEASURE.1,REGIONTYPE.SA3", "colName":"Othr_typ_educ_inst_Ft_stud_M"},
-    {"filter":"TYPP.60_2,MEASURE.2,REGIONTYPE.SA3", "colName":"Othr_typ_educ_inst_Ft_stud_F"},
-    {"filter":"TYPP.60_2,MEASURE.3,REGIONTYPE.SA3", "colName":"Othr_typ_educ_inst_Ft_stud_P"},
-    {"filter":"TYPP.60_3,MEASURE.1,REGIONTYPE.SA3", "colName":"Othr_typ_educ_inst_Pt_stud_M"},
-    {"filter":"TYPP.60_3,MEASURE.2,REGIONTYPE.SA3", "colName":"Othr_typ_educ_inst_Pt_stud_F"},
-    {"filter":"TYPP.60_3,MEASURE.3,REGIONTYPE.SA3", "colName":"Othr_typ_educ_inst_Pt_stud_P"},
-    {"filter":"TYPP.60Z,MEASURE.1,REGIONTYPE.SA3", "colName":"Oth_typ_ed_instit_F_Pt_ns_M"},
-    {"filter":"TYPP.60Z,MEASURE.2,REGIONTYPE.SA3", "colName":"Oth_typ_ed_instit_F_Pt_ns_F"},
-    {"filter":"TYPP.60Z,MEASURE.3,REGIONTYPE.SA3", "colName":"Oth_typ_ed_instit_F_Pt_ns_P"},
-    {"filter":"TYPP.60,MEASURE.1,REGIONTYPE.SA3", "colName":"Other_type_educ_instit_Tot_M"},
-    {"filter":"TYPP.60,MEASURE.2,REGIONTYPE.SA3", "colName":"Other_type_educ_instit_Tot_F"},
-    {"filter":"TYPP.60,MEASURE.3,REGIONTYPE.SA3", "colName":"Other_type_educ_instit_Tot_P"},
-    {"filter":"TYPP.Z,MEASURE.1,REGIONTYPE.SA3", "colName":"Type_educanl_institution_ns_M"},
-    {"filter":"TYPP.Z,MEASURE.2,REGIONTYPE.SA3", "colName":"Type_educanl_institution_ns_F"},
-    {"filter":"TYPP.Z,MEASURE.3,REGIONTYPE.SA3", "colName":"Type_educanl_institution_ns_P"},
-    {"filter":"TYPP.TOT,MEASURE.1,REGIONTYPE.SA3", "colName":"Tot_M"},
-    {"filter":"TYPP.TOT,MEASURE.2,REGIONTYPE.SA3", "colName":"Tot_F"},
-    {"filter":"TYPP.TOT,MEASURE.3,REGIONTYPE.SA3", "colName":"Tot_P"}
+    { "filter": "TYPP.10,MEASURE.1,REGIONTYPE.SA3", "colName": "Pre_school_M" },
+    { "filter": "TYPP.10,MEASURE.2,REGIONTYPE.SA3", "colName": "Pre_school_F" },
+    { "filter": "TYPP.10,MEASURE.3,REGIONTYPE.SA3", "colName": "Pre_school_P" },
+    {
+      "filter": "TYPP.21,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Government_M"
+    },
+    {
+      "filter": "TYPP.21,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Government_F"
+    },
+    {
+      "filter": "TYPP.21,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Government_P"
+    },
+    {
+      "filter": "TYPP.22,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Catholic_M"
+    },
+    {
+      "filter": "TYPP.22,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Catholic_F"
+    },
+    {
+      "filter": "TYPP.22,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Catholic_P"
+    },
+    {
+      "filter": "TYPP.23,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Infnts_Primry_Othr_Non_Govt_M"
+    },
+    {
+      "filter": "TYPP.23,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Infnts_Primry_Othr_Non_Govt_F"
+    },
+    {
+      "filter": "TYPP.23,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Infnts_Primry_Othr_Non_Govt_P"
+    },
+    {
+      "filter": "TYPP.2,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Tot_M"
+    },
+    {
+      "filter": "TYPP.2,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Tot_F"
+    },
+    {
+      "filter": "TYPP.2,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Infants_Primary_Tot_P"
+    },
+    {
+      "filter": "TYPP.31,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Secondary_Government_M"
+    },
+    {
+      "filter": "TYPP.31,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Secondary_Government_F"
+    },
+    {
+      "filter": "TYPP.31,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Secondary_Government_P"
+    },
+    {
+      "filter": "TYPP.32,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Secondary_Catholic_M"
+    },
+    {
+      "filter": "TYPP.32,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Secondary_Catholic_F"
+    },
+    {
+      "filter": "TYPP.32,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Secondary_Catholic_P"
+    },
+    {
+      "filter": "TYPP.33,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Secondary_Other_Non_Govt_M"
+    },
+    {
+      "filter": "TYPP.33,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Secondary_Other_Non_Govt_F"
+    },
+    {
+      "filter": "TYPP.33,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Secondary_Other_Non_Govt_P"
+    },
+    {
+      "filter": "TYPP.3,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Secondary_Tot_M"
+    },
+    {
+      "filter": "TYPP.3,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Secondary_Tot_F"
+    },
+    {
+      "filter": "TYPP.3,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Secondary_Tot_P"
+    },
+    {
+      "filter": "TYPP.40_2_T15,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Ft_15_24_M"
+    },
+    {
+      "filter": "TYPP.40_2_T15,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Ft_15_24_F"
+    },
+    {
+      "filter": "TYPP.40_2_T15,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Ft_15_24_P"
+    },
+    {
+      "filter": "TYPP.40_2_25OV,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Ft_25_ov_M"
+    },
+    {
+      "filter": "TYPP.40_2_25OV,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Ft_25_ov_F"
+    },
+    {
+      "filter": "TYPP.40_2_25OV,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Ft_25_ov_P"
+    },
+    {
+      "filter": "TYPP.40_3_T15,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Pt_15_24_M"
+    },
+    {
+      "filter": "TYPP.40_3_T15,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Pt_15_24_F"
+    },
+    {
+      "filter": "TYPP.40_3_T15,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Pt_15_24_P"
+    },
+    {
+      "filter": "TYPP.40_3_25OV,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Pt_25_ov_M"
+    },
+    {
+      "filter": "TYPP.40_3_25OV,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Pt_25_ov_F"
+    },
+    {
+      "filter": "TYPP.40_3_25OV,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Pt_25_ov_P"
+    },
+    {
+      "filter": "TYPP.40Z,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_F_Pt_ns_M"
+    },
+    {
+      "filter": "TYPP.40Z,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_F_Pt_ns_F"
+    },
+    {
+      "filter": "TYPP.40Z,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_F_Pt_ns_P"
+    },
+    {
+      "filter": "TYPP.40,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Tot_M"
+    },
+    {
+      "filter": "TYPP.40,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Tot_F"
+    },
+    {
+      "filter": "TYPP.40,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Tec_Furt_Educ_inst_Tot_P"
+    },
+    {
+      "filter": "TYPP.50_2_T15,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Ft_15_24_M"
+    },
+    {
+      "filter": "TYPP.50_2_T15,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Ft_15_24_F"
+    },
+    {
+      "filter": "TYPP.50_2_T15,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Ft_15_24_P"
+    },
+    {
+      "filter": "TYPP.50_2_25OV,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Ft_25_ov_M"
+    },
+    {
+      "filter": "TYPP.50_2_25OV,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Ft_25_ov_F"
+    },
+    {
+      "filter": "TYPP.50_2_25OV,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Ft_25_ov_P"
+    },
+    {
+      "filter": "TYPP.50_3_T15,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Pt_15_24_M"
+    },
+    {
+      "filter": "TYPP.50_3_T15,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Pt_15_24_F"
+    },
+    {
+      "filter": "TYPP.50_3_T15,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Pt_15_24_P"
+    },
+    {
+      "filter": "TYPP.50_3_25OV,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Pt_25_ov_M"
+    },
+    {
+      "filter": "TYPP.50_3_25OV,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Pt_25_ov_F"
+    },
+    {
+      "filter": "TYPP.50_3_25OV,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_Pt_25_ov_P"
+    },
+    {
+      "filter": "TYPP.50Z,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_F_Pt_ns_M"
+    },
+    {
+      "filter": "TYPP.50Z,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_F_Pt_ns_F"
+    },
+    {
+      "filter": "TYPP.50Z,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Uni_othr_Tert_Inst_F_Pt_ns_P"
+    },
+    {
+      "filter": "TYPP.50,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Uni_other_Tert_Instit_Tot_M"
+    },
+    {
+      "filter": "TYPP.50,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Uni_other_Tert_Instit_Tot_F"
+    },
+    {
+      "filter": "TYPP.50,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Uni_other_Tert_Instit_Tot_P"
+    },
+    {
+      "filter": "TYPP.60_2,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Othr_typ_educ_inst_Ft_stud_M"
+    },
+    {
+      "filter": "TYPP.60_2,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Othr_typ_educ_inst_Ft_stud_F"
+    },
+    {
+      "filter": "TYPP.60_2,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Othr_typ_educ_inst_Ft_stud_P"
+    },
+    {
+      "filter": "TYPP.60_3,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Othr_typ_educ_inst_Pt_stud_M"
+    },
+    {
+      "filter": "TYPP.60_3,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Othr_typ_educ_inst_Pt_stud_F"
+    },
+    {
+      "filter": "TYPP.60_3,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Othr_typ_educ_inst_Pt_stud_P"
+    },
+    {
+      "filter": "TYPP.60Z,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Oth_typ_ed_instit_F_Pt_ns_M"
+    },
+    {
+      "filter": "TYPP.60Z,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Oth_typ_ed_instit_F_Pt_ns_F"
+    },
+    {
+      "filter": "TYPP.60Z,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Oth_typ_ed_instit_F_Pt_ns_P"
+    },
+    {
+      "filter": "TYPP.60,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Other_type_educ_instit_Tot_M"
+    },
+    {
+      "filter": "TYPP.60,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Other_type_educ_instit_Tot_F"
+    },
+    {
+      "filter": "TYPP.60,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Other_type_educ_instit_Tot_P"
+    },
+    {
+      "filter": "TYPP.Z,MEASURE.1,REGIONTYPE.SA3",
+      "colName": "Type_educanl_institution_ns_M"
+    },
+    {
+      "filter": "TYPP.Z,MEASURE.2,REGIONTYPE.SA3",
+      "colName": "Type_educanl_institution_ns_F"
+    },
+    {
+      "filter": "TYPP.Z,MEASURE.3,REGIONTYPE.SA3",
+      "colName": "Type_educanl_institution_ns_P"
+    },
+    { "filter": "TYPP.TOT,MEASURE.1,REGIONTYPE.SA3", "colName": "Tot_M" },
+    { "filter": "TYPP.TOT,MEASURE.2,REGIONTYPE.SA3", "colName": "Tot_F" },
+    { "filter": "TYPP.TOT,MEASURE.3,REGIONTYPE.SA3", "colName": "Tot_P" }
   ]
 }

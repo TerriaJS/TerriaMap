@@ -17,7 +17,7 @@ async function loadPlugins(
 ): Promise<void> {
   try {
     const pluginsList = getPluginsList();
-    const loadPromises = pluginsList.map(promise => {
+    const loadPromises = pluginsList.map((promise) => {
       const pluginContext = createPluginContext(viewState);
       return promise
         .then(({ default: plugin }) => {
@@ -29,7 +29,7 @@ async function loadPlugins(
             }).log();
           }
         })
-        .catch(ex => {
+        .catch((ex) => {
           TerriaError.from(ex, {
             title: `Error when loading a plugin`
           }).log();

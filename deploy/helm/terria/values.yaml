@@ -6,5 +6,4 @@ global:
     repository: "data61"
     pullPolicy: Always
 tags:
-  all: 
-  
+  all:
