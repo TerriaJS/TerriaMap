@@ -16,6 +16,11 @@ var watchOptions = {
     interval: 1000
 };
 
+// Watches for any changes to the apsviz.json file and rebuilds the app if a change is found
+gulp.task('watch-apsviz-json-file-for-changes', function(done) {
+    gulp.watch('wwwroot/init/*.json', gulp.series('build'));
+});
+
 gulp.task('check-terriajs-dependencies', function(done) {
     var appPackageJson = require('./package.json');
     var terriaPackageJson = require('terriajs/package.json');
@@ -357,5 +362,5 @@ function checkForDuplicateCesium() {
 
 gulp.task('build', gulp.series('render-datasource-templates', 'copy-terriajs-assets', 'build-app'));
 gulp.task('release', gulp.series('render-datasource-templates', 'copy-terriajs-assets', 'release-app', 'make-editor-schema'));
-gulp.task('watch', gulp.parallel('watch-datasource-templates', 'watch-terriajs-assets', 'watch-app'));
+gulp.task('watch', gulp.parallel('watch-datasource-templates', 'watch-terriajs-assets', 'watch-app', 'watch-apsviz-json-file-for-changes'));
 gulp.task('default', gulp.series('lint', 'build'));

@@ -19,7 +19,7 @@ function SearchByType(props) {
 
   const searchByType = () => {
     const searchBy = "event";
-    console.log("searchByType - search state", viewState);
+    // console.log("searchByType - search state", viewState);
     viewState.searchState.searchCatalog(searchBy);
   };
 

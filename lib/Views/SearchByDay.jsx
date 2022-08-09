@@ -27,13 +27,13 @@ function SearchByDay(props) {
   };
 
   const isValidDate = d => {
-    console.log("valid date", d instanceof Date, !isNaN(d));
+    // console.log("valid date", d instanceof Date, !isNaN(d));
     return d instanceof Date && !isNaN(d);
   };
 
   const searchByDate = () => {
     const searchBy = "date";
-    console.log("searchByDate - search state", viewState);
+    // console.log("searchByDate - search state", viewState);
     viewState.searchState.searchCatalog(searchBy);
   };
 

@@ -5,26 +5,26 @@ import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
 import Styles from "./related-maps.scss";
 import classNames from "classnames";
 
-import { getDistinctGridTypes } from "../helper";
+import { getDistinctInstanceNames } from "../helper";
 
-function SearchByGrid(props) {
-  const [searchGrid, setSearchGrid] = useState("");
+function SearchByInstance(props) {
+  const [searchInstance, setSearchInstance] = useState("");
 
   const dropdownTheme = {
     inner: Styles.dropdownInner,
     icon: "search"
   };
 
-  const { gridTypes } = getDistinctGridTypes();
+  const { instanceNames } = getDistinctInstanceNames();
 
-  const searchByGrid = () => {
-    const searchBy = "grid";
-    // console.log("searchByGrid - search state", viewState);
+  const searchByInstance = () => {
+    const searchBy = "instance";
+    // console.log("SearchByInstance - search state", viewState);
     viewState.searchState.searchCatalog(searchBy);
   };
 
   const handleChange = selection => {
-    setSearchGrid(selection);
+    setSearchInstance(selection);
     // console.log("date", convertDateToString(date));
 
     viewState.changeSearchState(selection);
@@ -33,8 +33,8 @@ function SearchByGrid(props) {
     //   viewState.searchState.catalogSearchText
     // );
 
-    searchByGrid();
-    setSearchGrid("");
+    searchByInstance();
+    setSearchInstance("");
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };
@@ -42,26 +42,25 @@ function SearchByGrid(props) {
   return (
     <MenuPanel
       theme={dropdownTheme}
-      btnText="ADCIRC Grid"
+      btnText="Instance Name"
       smallScreen={props.smallScreen}
       viewState={props.viewState}
-      btnTitle="Search related maps by ADCIRC Grid"
+      btnTitle="Search related maps by Instance Name"
       useDropdownInMenu
       // showDropdownInCenter
     >
       <If condition={props.smallScreen}>
         <div className={classNames(PanelStyles.header)}>
-          <label className={PanelStyles.heading}>ADCIRC Grid</label>
+          <label className={PanelStyles.heading}>Instance Name</label>
         </div>
       </If>
 
       <select
-        id="searchByGrid"
+        id="searchByInstance"
         type="text"
-        name="searchByGrid"
+        name="searchByInstance"
         autoComplete="off"
-        value={searchGrid}
-        // onChange={e => setSearchGrid(e.target.value)}
+        value={searchInstance}
         onChange={e => handleChange(e.target.value)}
         style={{
           color: props.smallScreen ? "grey" : "white",
@@ -72,32 +71,22 @@ function SearchByGrid(props) {
         }}
       >
         <option value="">
-          {props.smallScreen ? "Select an option" : "ADCIRC Grid"}
+          {props.smallScreen ? "Select an option" : "Instance Name"}
         </option>
-        {gridTypes &&
-          gridTypes.map((gridType, idx) => (
-            <option value={gridType} key={idx}>
-              {gridType}
+        {instanceNames &&
+          instanceNames.map((instanceName, idx) => (
+            <option value={instanceName} key={idx}>
+              {instanceName}
             </option>
           ))}
       </select>
-      {/* <input
-        id="searchByType"
-        type="text"
-        name="searchByType"
-        placeholder="Enter search type."
-        autocomplete="off"
-        value={searchGrid}
-        onChange={e => setSearchGrid(e.target.value)}
-        style={{ color: "grey" }}
-      ></input> */}
     </MenuPanel>
   );
 }
 
-SearchByGrid.propTypes = {
+SearchByInstance.propTypes = {
   viewState: PropTypes.object.isRequired,
   smallScreen: PropTypes.bool
 };
 
-export default SearchByGrid;
+export default SearchByInstance;
