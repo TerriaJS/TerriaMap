@@ -18,7 +18,7 @@ var watchOptions = {
 
 // Watches for any changes to the apsviz.json file and rebuilds the app if a change is found
 gulp.task('watch-apsviz-json-file-for-changes', function(done) {
-    gulp.watch('wwwroot/init/*.json', gulp.series('build'));
+    gulp.watch('wwwroot/init/*.json',{interval: 1000, usePolling: true}, gulp.series('build'));
 });
 
 gulp.task('check-terriajs-dependencies', function(done) {
