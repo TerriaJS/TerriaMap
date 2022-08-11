@@ -33,7 +33,7 @@ COPY index.js .
 COPY package.json .
 COPY terria-logo.png .
 COPY tsconfig.json .
-COPY version.js .
+#COPY version.js .
 COPY yarn.lock .
 
 # make sure everything is readable
@@ -49,21 +49,24 @@ RUN yarn config set unsafe-perm true
 # get a specific version of yarn
 RUN yarn policies set-version 1.22.17
 
+# install gulp
+RUN npm install gulp -g
+
 # change to the non-root user
 USER 1000
 
-# install yarn and build up the node_modules dir
+RUN git config --global url."https://".insteadOf git://
+
+## install yarn and build up the node_modules dir
 RUN yarn install
 
-## sync terria dependancies
-## although this fixes mobx version conflicts it causes other errors
-#RUN npm run gulp sync-terriajs-dependencies
-#
-## install yarn and build up the node_modules dir
-#RUN yarn install
+# sync terria dependancies
+# although this fixes mobx version conflicts it causes other errors
+RUN npm run gulp-sync
+
 
 # create the "build" dir/files
-RUN npm run gulp build
+#RUN npm run gulp build
 
 # remove the file we will turn into a symbolic link
 RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
@@ -75,4 +78,6 @@ RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/
 EXPOSE 3001
 
 # start the app
-CMD [ "node", "./node_modules/terriajs-server/lib/app.js"]
+# nohup npm run gulp:watch & node ./node_modules/terriajs-server/lib/app.js
+# "/bin/sh", "-c", "yarn start; while true; do date; sleep 3600; done"
+CMD ["/bin/sh", "-c", "yarn start; npm run gulp:watch"]
