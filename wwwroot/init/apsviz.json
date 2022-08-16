@@ -11,7 +11,7 @@
             {
                 "id": "55555-13-obs",
                 "show": true,
-                "name": "NOAA Observations - Date: 06-05-2022 Cycle: 18 Storm Name: 01:nhcOfcl Advisory:13 Location: PSC Instance: ec95d-al01-bob-psc ADCIRC Grid: ec95d",
+                "name": "NOAA Observations - Date: 06-05-2022 Cycle: 18 Storm Name: 01:nhcOfcl Advisory:13 Location: PSC Instance: ticcec95d-al01-bob-psc ADCIRC Grid: ec95d",
                 "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
                 "dataCustodian": "RENCI",
                 "type": "wfs",
@@ -33,12 +33,12 @@
                     },
                     {
                         "name": "Grid Type",
-                        "content": "ec95d",
+                        "content": "ticec95d",
                         "show": false
                     },
                     {
                         "name": "Instance Name",
-                        "content": "ec95d-al01-bob-psc",
+                        "content": "ticcec95d-al01-bob-psc",
                         "show": false
                     }
                 ]

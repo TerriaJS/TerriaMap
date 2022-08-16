@@ -21,12 +21,12 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "mobx": "^6.0.0",
-    "mobx-react": "^7.0.0",
+    "mobx": "^4.15.4",
+    "mobx-react": "^6.3.1",
     "mobx-react-lite": "^3.0.0",
-    "mobx-utils": "^6.0.0",
+    "mobx-utils": "^5.4.1",
     "pm2": "^3.2.2",
-    "react-datepicker": "^4.3.0",
+    "react-datepicker": "0.53.0",
     "terriajs-server": "^3.3.3"
   },
   "config": {
@@ -100,7 +100,7 @@
     "start": "pm2 start ecosystem.config.js --update-env -- --config-file devserverconfig.json",
     "restart": "pm2 restart ecosystem.config.js --update-env -- --config-file devserverconfig.json",
     "stop": "pm2 stop ecosystem.config.js",
-    "pm2": "pm2",
+    "pm2": "pm2 logs",
     "gulp": "gulp",
     "gulp:watch": "gulp watch",
     "postinstall": "patch-package && echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
@@ -111,7 +111,8 @@
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write \"**/*\"",
     "pretty-quick": "pretty-quick",
-    "prettier-check": "prettier --check \"**/*\""
+    "prettier-check": "prettier --check \"**/*\"",
+    "gulp-sync": "gulp sync-terriajs-dependencies"
   },
   "husky": {
     "hooks": {
