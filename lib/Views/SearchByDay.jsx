@@ -10,7 +10,7 @@ import DatePicker from "react-datepicker";
 // import DataSourceCollection from "terriajs-cesium/Source/DataSources/DataSourceCollection";
 
 function SearchByDay(props) {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState();
   const dropdownTheme = {
     inner: Styles.dropdownInner,
     icon: "calendar"
@@ -38,9 +38,10 @@ function SearchByDay(props) {
   };
 
   const onDateChanged = date => {
-    setStartDate(date);
+    // console.log(new Date())
+    setStartDate(date._d);
 
-    viewState.changeSearchState(convertDateToString(date));
+    viewState.changeSearchState(convertDateToString(date._d));
 
     searchByDate();
 
@@ -106,7 +107,7 @@ function SearchByDay(props) {
           showMonthDropdown
           showYearDropdown
           scrollableYearDropdown
-          selected={startDate}
+          // selected={startDate}
           onChange={date => onDateChanged(date)}
           style={{ color: "grey" }}
           // customInput={<CustomInput />}

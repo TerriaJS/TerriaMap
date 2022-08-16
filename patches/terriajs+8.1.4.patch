@@ -209,7 +209,7 @@ index da2317f..ae3e798 100644
      searchResults.message = undefined;
  
 +    // Cancel if no search criteria provided
-     if (searchText === undefined || /^\s*$/.test(searchText)) {
+     if (searchText === undefined || /^\s*$/.test(searchText)) {    
        this.isSearching = false;
        return Promise.resolve();
 @@ -143,11 +186,15 @@ export default class CatalogSearchProvider extends SearchProvider {
@@ -288,7 +288,7 @@ index 909e486..d921534 100644
        if (this.catalogSearchResults) {
          this.catalogSearchResults.isCanceled = true;
        }
-+      console.log("SearchState.searchCatalog", this.catalogSearchProvider);
++     // console.log("SearchState.searchCatalog", this.catalogSearchProvider);
        if (this.catalogSearchProvider) {
 +        // this is causing the error right now. search can't be called directly from catalogSearchProvider
          this.catalogSearchResults = this.catalogSearchProvider.search(
