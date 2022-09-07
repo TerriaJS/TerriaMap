@@ -42,7 +42,7 @@ export default observer(
           box-sizing: border-box;
 
           width: 100%;
-          height: 195px;
+          height: 82px;
 
           overflow: hidden;
 

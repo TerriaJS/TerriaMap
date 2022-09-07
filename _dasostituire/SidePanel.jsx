@@ -19,7 +19,7 @@ import Button from "../../Styled/Button";
 const BoxHelpfulHints = styled(Box)``;
 
 var reduced_Style = {
-  "margin-bottom": "45px"
+  "margin-bottom": "1px"
 }
 
 const ResponsiveSpacing = styled(Box)`
@@ -56,7 +56,7 @@ function EmptyWorkbench(props) {
         column
         fullWidth
         justifySpaceBetween
-        styledHeight={"calc(100vh - 245px)"}
+        styledHeight={"calc(100vh - 198px)"}
       >
         <Box centered column>
           <ResponsiveSpacing />
