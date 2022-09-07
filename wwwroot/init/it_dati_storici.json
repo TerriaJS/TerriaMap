@@ -19,7 +19,7 @@
           "id": "it_dati_storici",
           "initialMessage": {
             "title": "Per accedere:",
-            "content": "Seleziona il punto direttamente sulla mappa.",
+            "content": "Attendi il caricamento della griglia, visualizzala a scala comunale e seleziona la cella desiderata.",
             "key": "it_dati_storici",
             "confirmation": true,
             "confirmText": "Avvia"

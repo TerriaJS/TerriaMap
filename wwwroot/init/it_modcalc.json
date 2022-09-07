@@ -18,14 +18,14 @@
 
 
           },
-          "id": "it_modcalc"
-          /* "initialMessage": {
+          "id": "it_modcalc",
+          "initialMessage": {
             "title": "Per accedere:",
-            "content": "Seleziona il punto direttamente sulla mappa.",
+            "content": "Attendi il caricamento della griglia, visualizzala a scala comunale e seleziona la cella desiderata.",
             "key": "it_modcalc",
             "confirmation": true,
             "confirmText": "Avvia"
-          } */
+          }
         }
       ]
     }

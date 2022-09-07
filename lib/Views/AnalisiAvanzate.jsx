@@ -57,6 +57,7 @@ function AnalisiAvanzate(props) {
               tecnico-economica preliminare di un ipotetico parco eolico situato
               in un punto prescelto sulle mappe, simulando le prestazioni
               energetiche e il costo medio dell'energia prodotta dall'impianto.{" "}
+              <br></br>
               <a
                 target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
@@ -68,7 +69,7 @@ function AnalisiAvanzate(props) {
               <br></br>
               <br></br>Per accedere{" "}
               <a className={Styles.link} href={modCalc_link}>
-                clicca sulla mappa nella zona di interesse
+                clicca qui
               </a>
               .
               {/* Permette la definizione ed il salvataggio di dati territoriali
@@ -105,9 +106,18 @@ function AnalisiAvanzate(props) {
               la selezione dell’area di interesse sui domini onshore e offshore
               del territorio nazionale e la compilazione di un modulo di
               richiesta dei dati. <br></br>
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
+                className={Styles.link}
+              >
+                Approfondisci.
+              </a>{" "}
+              <br></br>
               <br></br>Per accedere{" "}
               <a className={Styles.link} href={totem_link}>
-                clicca sulla mappa nella zona di interesse
+                clicca qui
               </a>
               .
               {/* Permette la definizione ed il salvataggio di dati territoriali
@@ -144,7 +154,16 @@ function AnalisiAvanzate(props) {
               (m/s), producibilità specifica annua ( MWh/MW), parametro di forma
               della distribuzione di Weibull e distanza dalle cabine primarie
               (km), per ciascuna cella (1,4 x 1,4 km) sui domini onshore e
-              offshore del territorio nazionale.
+              offshore del territorio nazionale. <br></br>
+              <a
+                target="_blank"
+                //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
+                className={Styles.link}
+              >
+                Approfondisci.
+              </a>{" "}
+              <br></br>
             </p>
             <a
               target="_blank"
@@ -152,7 +171,7 @@ function AnalisiAvanzate(props) {
               href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
               className={Styles.link}
             >
-              Download ...
+              Download
             </a>
           </li>
         </ul>
@@ -173,7 +192,8 @@ function AnalisiAvanzate(props) {
               />
             </a>
             <p>
-              Per ulteriori approfondimenti è possibile consultare l'{" "}
+              Per ulteriori approfondimenti in materia di supporto alla
+              pianificazione energetica è possibile consultare l'{" "}
               <a
                 target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
@@ -184,7 +204,7 @@ function AnalisiAvanzate(props) {
               </a>
               <br></br>
               <br></br>E' inoltre possibile consultare e scaricare i dati
-              presenti nel{" "}
+              relativi al sistema energetico nazionale presenti nel{" "}
               <a
                 target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
