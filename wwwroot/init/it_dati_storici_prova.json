@@ -20,7 +20,7 @@
           "id": "it_dati_storici_prova",
           "initialMessage": {
             "title": "Per accedere:",
-            "content": "Seleziona il punto direttamente sulla mappa.",
+            "content": "Seleziona il punto direttamente sulla mappa",
             "key": "it_dati_storici_prova",
             "confirmation": true,
             "confirmText": "Avvia"
