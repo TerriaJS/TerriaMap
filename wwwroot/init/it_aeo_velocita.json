@@ -26,10 +26,11 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=230"
               }],
-              //"layers": "aeolian:eo_speed50_onshore",
+              
               "layers":"aeolian:Grid_nazionale21062022_limiti_amministrativi",
               "id": "eo_speed50_onshore",
               "styles":"aeolian:speed50_onshore_prova"
+                          
             },
             {
               "type": "wms",

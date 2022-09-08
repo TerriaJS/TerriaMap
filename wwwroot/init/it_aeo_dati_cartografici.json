@@ -33,7 +33,8 @@
               "title":"link metadato",
               "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno=2021"
             }],
-            "layers": "new_atlante_integrato:v_province_terria"
+            "layers": "new_atlante_integrato:v_province_terria",
+            "id": "confprov"
           },
           {
             "type": "wms",
@@ -47,7 +48,8 @@
               "title":"link metadato",
               "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=110&anno=2021"
             }],
-            "layers": "new_atlante_integrato:v_comuni_terria"
+            "layers": "new_atlante_integrato:v_comuni_terria",
+            "id": "confcom"
           },
           
 //          {
@@ -102,8 +104,8 @@
             }],
             "layers": "new_atlante_integrato:eez",
             "styles":"aeolian:linea_blu_2",
-            //"id": "bati2018"
-          },
+            "id": "eez"
+          }
       ]
     }
   ]
