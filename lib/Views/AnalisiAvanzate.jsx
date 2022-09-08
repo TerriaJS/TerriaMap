@@ -217,74 +217,8 @@ function AnalisiAvanzate(props) {
           </li>
         </ul>
       </div>
-      <div className={classNames(PanelStyles.section, Styles.section)}>
-        <ul>
-          <li class="list-group-item">
-            <h2>DOWNLOAD DATI STORICI DELLE STAZIONI ANEMOMETRICHE</h2>
-            <a
-              target="_blank"
-              // href="http://atlanteintegrato.rse-web.it/sankey.php"
-              //href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
-            >
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/download_staz_anemometriche.png")}
-                alt="WEN"
-              />
-            </a>
-            <p>
-              Dati misurati scaricabili dopo registrazione al portale:{" "}
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/download_dati-IT.php"
-                className={Styles.link}
-              >
-                Stazioni anemometriche.
-              </a>
-              <br></br>
-              <br></br>
-            </p>
-          </li>
-        </ul>
-      </div>
+
       {/* modulo PROVA */}
-      <div className={classNames(PanelStyles.section, Styles.section)}>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <h2> MODULO DI PROVA </h2>
-            <img
-              className={Styles.image}
-              src={require("../../wwwroot/images/download_serie_storica.png")}
-              /*src={require("../../wwwroot/images/totem3_v3.png")}*/
-              alt="totem"
-            />
-            <p>
-              {" "}
-              TESTO{" "}
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                //href="https://atlanteeolico.rse-web.it/AEOLIAN_richiesta_dati_direct.phtml"
-                className={Styles.link}
-              >
-                DESCRIZIONE
-              </a>{" "}
-              <br></br>
-              <br></br>Per accedere{" "}
-              <a className={Styles.link} href={dati_storici_prova}>
-                clicca sulla mappa nella zona di interesse
-              </a>
-              .
-              {/* Permette la definizione ed il salvataggio di dati territoriali
-              necessari a software di analisi multienergetiche. Prima di
-              attivare il tool è necessario selezionare, a partire dal link qui
-              di seguito, il <i>territorio provinciale e l'anno </i> in cui se
-              vuole effettuare l'analisi. */}{" "}
-            </p>
-          </li>
-        </ul>
-      </div>
     </MenuPanel>
   );
 }
