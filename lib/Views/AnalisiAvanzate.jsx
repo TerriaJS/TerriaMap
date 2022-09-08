@@ -6,6 +6,8 @@ import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
 import Styles from "./related-maps.scss";
 import classNames from "classnames";
 
+import withTerriaRef from "terriajs/lib/ReactViews/HOCs/withTerriaRef"; //GOF HOC x Ref di aggancio dei punti del Tour
+
 function AnalisiAvanzate(props) {
   const dropdownTheme = {
     inner: Styles.dropdownInner,
@@ -27,6 +29,7 @@ function AnalisiAvanzate(props) {
 
   return (
     <MenuPanel
+      btnRef={props.refFromHOC} //GOF   Ref sul bottone per il Tour
       theme={dropdownTheme}
       btnText={analisi}
       smallScreen={props.smallScreen}
@@ -228,4 +231,6 @@ AnalisiAvanzate.propTypes = {
   smallScreen: PropTypes.bool
 };
 
-export default AnalisiAvanzate;
+// export default AnalisiAvanzate;
+export const TOOLS_PANEL_NAME = "MenuBarToolsButton"; //GOF
+export default withTerriaRef(AnalisiAvanzate, TOOLS_PANEL_NAME); //GOF esporto AnalisiAvanzate con il Ref x il Tour
