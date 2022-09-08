@@ -114,7 +114,8 @@
     "replace_cql": "copy .\\_dasostituire\\WebMapServiceCatalogItem.ts .\\node_modules\\terriajs\\lib\\Models\\Catalog\\Ows\\",
     "replace_prev": "copy wwwroot\\images\\basemaps\\black-marble.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\dark-matter.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\natural-earth.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\positron.png .\\wwwroot\\build\\TerriaJS\\images\\",
     "replace_language": "copy node_modules\\terriajs\\lib\\Language\\it\\translation.json wwwroot\\languages\\it",
-    "pre_gulp": "yarn replace_brand",
+    "replace_tour": "copy .\\_dasostituire\\languageOverrides.json .\\wwwroot\\languages\\it\\languageOverrides.json && copy .\\_dasostituire\\defaultTourPoints.ts .\\node_modules\\terriajs\\lib\\ReactViewModels\\",
+    "pre_gulp": "yarn replace_brand && yarn replace_tour",
     "post_gulp": "yarn replace_prev"
   },
   "husky": {
