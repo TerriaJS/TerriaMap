@@ -62,7 +62,7 @@ function AnalisiAvanzate(props) {
               energetiche e il costo medio dell'energia prodotta dall'impianto.{" "}
               <br></br>
               <a
-                target="_blank"
+                //target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
                 href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
                 className={Styles.link}
@@ -171,7 +171,8 @@ function AnalisiAvanzate(props) {
             <a
               target="_blank"
               //href="http://atlanteintegrato.rse-web.it/sankey.php"
-              href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+              //href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+              href="https://atlanteeolico.rse-web.it/download/Grid_Nazionale21062022.zip"
               className={Styles.link}
             >
               Download
