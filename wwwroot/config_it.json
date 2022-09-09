@@ -40,8 +40,8 @@
     // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
     "globalDisclaimer": {
       "confirmationRequired": false,
-      "buttonTitle": "I agree",
-      "title": "Disclaimer",
+      "buttonTitle": "OK",
+      "title": "  ",
     // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
     // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
     //prodHostRegex: "gov.\\.au$",
