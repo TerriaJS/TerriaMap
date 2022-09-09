@@ -144,7 +144,7 @@
       "content": "## Carica i dati\n\nPuoi caricare i tuoi dati sulla mappa per visualizzarli con altri set di dati. Carica un file o un link a un set di dati online esistente o a un servizio dati. I formati di dati supportati includono CSV, GeoJSON, KML, GPX e CZML."
     },
     "menuBarToolsButton": {
-      "content": "## Strumenti aggiuntivi\n\nStrumenti per l'analisi di dati territoriali."
+      "content": "## Naviga tra gli strumenti aggiuntivi\n\nEsplora gli strumenti per il download dei dati e per la pianificazione energetica-territoriale."
     },
     "exploreMapDataButton": {
       "content": "## Esplora i dati della mappa\n\nSfoglia il catalogo dei dati disponibili e aggiungili alla mappa qui. Puoi aggiungere più set di dati alla volta, e li vedrai elencati in basso nel Workbench."
