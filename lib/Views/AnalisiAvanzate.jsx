@@ -64,7 +64,7 @@ function AnalisiAvanzate(props) {
               <a
                 //target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
+                href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
                 className={Styles.link}
               >
                 Approfondisci.
@@ -112,7 +112,7 @@ function AnalisiAvanzate(props) {
               <a
                 target="_blank"
                 //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
+                href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
                 className={Styles.link}
               >
                 Approfondisci.
