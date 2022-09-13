@@ -9,7 +9,7 @@
           "type": "wms",
           "name": "datistorici",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "layers": "atlante_integrato:reticolo_tiles_3857",
+          "layers": "atlante_integrato:reticolo_tiles_3857_dominio_modello",
           "opacity": 0.5,
           "featureInfoTemplate": {
             "template":
