@@ -47,6 +47,46 @@ function AnalisiAvanzate(props) {
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
+            <table>
+              <tr>
+                <td>
+                  <h2> MODULO DI CALCOLO </h2>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    className={Styles.image}
+                    src={require("../../wwwroot/images/modulo_calcolo.png")}
+                    /*src={require("../../wwwroot/images/totem3_v3.png")}*/
+                    alt="totem"
+                  />
+                </td>
+                <td>
+                  {" "}
+                  Questo strumento permette di effettuare una valutazione
+                  tecnico-economica preliminare di un ipotetico parco eolico
+                  situato in un punto prescelto sulle mappe, simulando le
+                  prestazioni energetiche e il costo medio dell'energia prodotta
+                  dall'impianto. <br></br>
+                  <a
+                    target="_blank"
+                    //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                    href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
+                    className={Styles.link}
+                  >
+                    Approfondisci.
+                  </a>{" "}
+                  <br></br>
+                  <br></br>Per accedere{" "}
+                  <a className={Styles.link} href={modCalc_link}>
+                    clicca qui
+                  </a>
+                  .
+                </td>
+              </tr>
+            </table>
             <h2> MODULO DI CALCOLO </h2>
             <img
               className={Styles.image}
@@ -153,10 +193,9 @@ function AnalisiAvanzate(props) {
             </a>
             <p>
               Questo strumento permette di scaricare in formato shapefile (.shp)
-              la griglia contenente i valori di velocità media annua del vento
-              (m/s), producibilità specifica annua ( MWh/MW), parametro di forma
-              della distribuzione di Weibull e distanza dalle cabine primarie
-              (km), per ciascuna cella (1,4 x 1,4 km) sui domini onshore e
+              la griglia contenente i parametri dell'Atlante Eolico dell'Italia
+              (velocità, producibilità, parametro di forma della distribuzione
+              di Weibull e distanza dalle cabine primarie) sui domini onshore e
               offshore del territorio nazionale. <br></br>
               <a
                 target="_blank"
@@ -164,7 +203,7 @@ function AnalisiAvanzate(props) {
                 href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
                 className={Styles.link}
               >
-                Approfondisci.
+                Approfondisci e dowload.
               </a>{" "}
               <br></br>
             </p>
