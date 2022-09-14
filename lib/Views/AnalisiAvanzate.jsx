@@ -46,47 +46,49 @@ function AnalisiAvanzate(props) {
       {/* modulo calcolo */}
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <table>
-              <tr>
-                <td>
-                  <h2> MODULO DI CALCOLO </h2>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    className={Styles.image}
-                    src={require("../../wwwroot/images/modulo_calcolo.png")}
-                    /*src={require("../../wwwroot/images/totem3_v3.png")}*/
-                    alt="totem"
-                  />
-                </td>
-                <td>
-                  {" "}
+          <table>
+            <tr>
+              <td colspan="2">
+                <h2> MODULO DI CALCOLO </h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  className={Styles.image}
+                  src={require("../../wwwroot/images/modulo_calcolo.png")}
+                  /*src={require("../../wwwroot/images/totem3_v3.png")}*/
+                  alt="totem"
+                />
+              </td>
+              <td>
+                {" "}
+                <p align="justify">
                   Questo strumento permette di effettuare una valutazione
                   tecnico-economica preliminare di un ipotetico parco eolico
                   situato in un punto prescelto sulle mappe, simulando le
                   prestazioni energetiche e il costo medio dell'energia prodotta
-                  dall'impianto. <br></br>
-                  <a
-                    target="_blank"
-                    //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                    href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
-                    className={Styles.link}
-                  >
-                    Approfondisci.
-                  </a>{" "}
-                  <br></br>
-                  <br></br>Per accedere{" "}
-                  <a className={Styles.link} href={modCalc_link}>
-                    clicca qui
-                  </a>
-                  .
-                </td>
-              </tr>
-            </table>
+                  dall'impianto.
+                </p>
+                <br></br>
+                <a
+                  target="_blank"
+                  //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                  href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
+                  className={Styles.link}
+                >
+                  Approfondisci.
+                </a>{" "}
+                <br></br>
+                <br></br>Per accedere{" "}
+                <a className={Styles.link} href={modCalc_link}>
+                  clicca qui
+                </a>
+                .
+              </td>
+            </tr>
+          </table>
+          <li class="list-group-item">
             <h2> MODULO DI CALCOLO </h2>
             <img
               className={Styles.image}
