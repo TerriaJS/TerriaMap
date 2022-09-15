@@ -38,16 +38,16 @@
 
     // Pop-up disclaimer that will be shown at the start
     // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
-    "globalDisclaimer": {
-      "confirmationRequired": false,
-      "buttonTitle": "OK",
-      "title": "  ",
-    // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
-    // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
-    //prodHostRegex: "gov.\\.au$",
-    //devHostRegex: "\\b(staging|preview|test|dev)\\.",
-    "enableOnLocalhost": true // If false, don't show this when running on localhost
-    },
+    // "globalDisclaimer": {
+    //   "confirmationRequired": false,
+    //   "buttonTitle": "OK",
+    //   "title": "  ",
+    // // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
+    // // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
+    // //prodHostRegex: "gov.\\.au$",
+    // //devHostRegex: "\\b(staging|preview|test|dev)\\.",
+    // "enableOnLocalhost": true // If false, don't show this when running on localhost
+    // },
 
     /*
         developerAttribution: {
@@ -77,7 +77,7 @@
     // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
     "experimentalFeatures": true,
     // To enable welcome message when map first loads
-    "showWelcomeMessage": true,
+    "showWelcomeMessage": false,
     // To override the welcome message video displayed on the welcome message
     // By default, the Getting Started to Terria video is displayed
     "welcomeMessageVideo": {
