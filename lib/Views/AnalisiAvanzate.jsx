@@ -70,7 +70,6 @@ function AnalisiAvanzate(props) {
                   prestazioni energetiche e il costo medio dell'energia prodotta
                   dall'impianto.
                 </p>
-                <br></br>
                 <a
                   target="_blank"
                   //href="http://atlanteintegrato.rse-web.it/sankey.php"
@@ -88,178 +87,138 @@ function AnalisiAvanzate(props) {
               </td>
             </tr>
           </table>
-          <li class="list-group-item">
-            <h2> MODULO DI CALCOLO </h2>
-            <img
-              className={Styles.image}
-              src={require("../../wwwroot/images/modulo_calcolo.png")}
-              /*src={require("../../wwwroot/images/totem3_v3.png")}*/
-              alt="totem"
-            />
-            <p>
-              {" "}
-              Questo strumento permette di effettuare una valutazione
-              tecnico-economica preliminare di un ipotetico parco eolico situato
-              in un punto prescelto sulle mappe, simulando le prestazioni
-              energetiche e il costo medio dell'energia prodotta dall'impianto.{" "}
-              <br></br>
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
-                className={Styles.link}
-              >
-                Approfondisci.
-              </a>{" "}
-              <br></br>
-              <br></br>Per accedere{" "}
-              <a className={Styles.link} href={modCalc_link}>
-                clicca qui
-              </a>
-              .
-              {/* Permette la definizione ed il salvataggio di dati territoriali
-              necessari a software di analisi multienergetiche. Prima di
-              attivare il tool è necessario selezionare, a partire dal link qui
-              di seguito, il <i>territorio provinciale e l'anno </i> in cui se
-              vuole effettuare l'analisi. */}{" "}
-            </p>
-          </li>
         </ul>
       </div>
 
-      {/* totem */}
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            {/*<div class="row">
-            <div class="col-sm-6">*/}
-            <h2> DOWNLOAD DELLA SERIE STORICA DI VELOCITA' DEL VENTO </h2>
-            {/* <a target="_blank" href="http://rakino.ricerca.lan"> */}
-            <img
-              width="50%"
-              height="80%"
-              className={Styles.image}
-              src={require("../../wwwroot/images/download_serie_storica.png")}
-              /*src={require("../../wwwroot/images/shutterstock_107017613.png")}*/
-              alt="totem"
-            />
-            {/* </a> */}
-            <p>
-              {" "}
-              Questo strumento permette di scaricare la serie storica oraria
-              trentennale (1990- 2019) di velocità del vento (m/s), attraverso
-              la selezione dell’area di interesse sui domini onshore e offshore
-              del territorio nazionale e la compilazione di un modulo di
-              richiesta dei dati. <br></br>
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
-                className={Styles.link}
-              >
-                Approfondisci.
-              </a>{" "}
-              <br></br>
-              <br></br>Per accedere{" "}
-              <a className={Styles.link} href={totem_link}>
-                clicca qui
-              </a>
-              .
-              {/* Permette la definizione ed il salvataggio di dati territoriali
+          <table>
+            <tr>
+              <td colspan="2">
+                <h2> DOWNLOAD DELLA SERIE STORICA DI VELOCITA' DEL VENTO </h2>
+              </td>
+            </tr>
+            <tr>
+              <td tyle="vertical-align:top">
+                <img
+                  width="50%"
+                  height="80%"
+                  className={Styles.image}
+                  src={require("../../wwwroot/images/download_serie_storica.png")}
+                  /*src={require("../../wwwroot/images/shutterstock_107017613.png")}*/
+                  alt="totem"
+                />
+              </td>
+              <td>
+                {" "}
+                <p align="justify">
+                  Questo strumento permette di scaricare la serie storica oraria
+                  trentennale (1990- 2019) di velocità del vento (m/s), sui
+                  domini onshore e offshore del territorio nazionale.
+                </p>
+                <br></br>Per accedere{" "}
+                <a className={Styles.link} href={totem_link}>
+                  clicca qui
+                </a>
+                .
+                {/* Permette la definizione ed il salvataggio di dati territoriali
               necessari a software di analisi multienergetiche. Prima di
               attivare il tool è necessario selezionare, a partire dal link qui
               di seguito, il <i>territorio provinciale e l'anno </i> in cui se
               vuole effettuare l'analisi. */}{" "}
-            </p>
-          </li>
+              </td>
+            </tr>
+          </table>
         </ul>
       </div>
-
-      {/* caso multi energy*/}
 
       {/* collegamento a DOWNLOAD MAPPE DI VENTO*/}
       <div className={classNames(PanelStyles.section, Styles.section)}>
-        <ul>
-          <li class="list-group-item">
-            <h2>DOWNLOAD DELLA MAPPA DI VENTO</h2>
-            <a
-              target="_blank"
-              // href="http://atlanteintegrato.rse-web.it/sankey.php"
-              href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
-            >
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/download_mappa_vento.png")}
-                alt="WEN"
-              />
-            </a>
-            <p>
-              Questo strumento permette di scaricare in formato shapefile (.shp)
-              la griglia contenente i parametri dell'Atlante Eolico dell'Italia
-              (velocità, producibilità, parametro di forma della distribuzione
-              di Weibull e distanza dalle cabine primarie) sui domini onshore e
-              offshore del territorio nazionale. <br></br>
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
-                className={Styles.link}
-              >
-                Approfondisci e dowload.
-              </a>{" "}
-              <br></br>
-            </p>
-            <a
-              target="_blank"
-              //href="http://atlanteintegrato.rse-web.it/sankey.php"
-              //href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
-              href="https://atlanteeolico.rse-web.it/download/Grid_Nazionale21062022.zip"
-              className={Styles.link}
-            >
-              Download
-            </a>
-          </li>
+        <ul class="list-group list-group-flush">
+          <table>
+            <tr>
+              <td colspan="2">
+                <h2> DOWNLOAD DELLA MAPPA DI VENTO </h2>
+              </td>
+            </tr>
+            <tr>
+              <td tyle="vertical-align:top">
+                <img
+                  className={Styles.image}
+                  src={require("../../wwwroot/images/download_mappa_vento.png")}
+                  alt="WEN"
+                />
+              </td>
+              <td>
+                <p align="justify">
+                  {" "}
+                  Questo strumento permette di scaricare in formato shapefile
+                  (.shp) la griglia contenente i parametri dell'Atlante Eolico
+                  dell'Italia (velocità, producibilità, parametro di forma della
+                  distribuzione di Weibull e distanza dalle cabine primarie) sui
+                  domini onshore e 0ffshore del territorio nazionale.
+                </p>{" "}
+                <br></br>
+                <a
+                  target="_blank"
+                  //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                  href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
+                  className={Styles.link}
+                >
+                  Approfondisci e dowload.
+                </a>{" "}
+                <br></br>
+                <a
+                  target="_blank"
+                  //href="http://atlanteintegrato.rse-web.it/sankey.php"
+                  //href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+                  href="https://atlanteeolico.rse-web.it/download/Grid_Nazionale21062022.zip"
+                  className={Styles.link}
+                >
+                  Download
+                </a>
+              </td>
+            </tr>
+          </table>
         </ul>
       </div>
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul>
-          <li class="list-group-item">
-            <h2>LINK</h2>
+          <h2>LINK</h2>
+          <a
+            target="_blank"
+            // href="http://atlanteintegrato.rse-web.it/sankey.php"
+            href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+          >
+            <img
+              className={Styles.image}
+              src={require("../../wwwroot/images/link_ai_dbeta.png")}
+              alt="WEN"
+            />
+          </a>
+          <p>
+            Per ulteriori approfondimenti in materia di supporto alla
+            pianificazione energetica è possibile consultare l'{" "}
             <a
               target="_blank"
-              // href="http://atlanteintegrato.rse-web.it/sankey.php"
-              href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
+              //href="http://atlanteintegrato.rse-web.it/sankey.php"
+              href="https://atlanteintegrato.rse-web.it/"
+              className={Styles.link}
             >
-              <img
-                className={Styles.image}
-                src={require("../../wwwroot/images/link_ai_dbeta.png")}
-                alt="WEN"
-              />
+              Atlante Integrato.
             </a>
-            <p>
-              Per ulteriori approfondimenti in materia di supporto alla
-              pianificazione energetica è possibile consultare l'{" "}
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://atlanteintegrato.rse-web.it/"
-                className={Styles.link}
-              >
-                Atlante Integrato.
-              </a>
-              <br></br>
-              <br></br>E' inoltre possibile consultare e scaricare i dati
-              relativi al sistema energetico nazionale presenti nel{" "}
-              <a
-                target="_blank"
-                //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                href="https://dbeta.rse-web.it"
-                className={Styles.link}
-              >
-                GeoDB ETA.
-              </a>
-            </p>
-          </li>
+            <br></br>
+            <br></br>E' inoltre possibile consultare e scaricare i dati relativi
+            al sistema energetico nazionale presenti nel{" "}
+            <a
+              target="_blank"
+              //href="http://atlanteintegrato.rse-web.it/sankey.php"
+              href="https://dbeta.rse-web.it"
+              className={Styles.link}
+            >
+              GeoDB ETA.
+            </a>
+          </p>
         </ul>
       </div>
 
