@@ -15,8 +15,8 @@
     "noInfoAvailable": "Nessuna informazione disponibile",
     "panelHeading": "Informazioni dell'elemento",
     "userSelection": "Seleziona utente",
-    "showCuratedData": "Mostra i dati curati",
-    "showRawData": "Mostra i dati grezzi",
+    "showCuratedData": "Mostra i dati dettagliati",
+    "showRawData": "Mostra i dati sintetici",
     "satelliteSuggestionBtn": "Mostra {{catalogItemName}} in questa posizione",
     "clickToAddData": "Clicca su '$t(addData.addDataBtnText)' per aggiungere dati alla mappa.",
     "clickMap": "Clicca sulla mappa per saperne di più su una posizione"
