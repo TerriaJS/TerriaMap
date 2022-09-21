@@ -34,7 +34,8 @@
               "title":"link metadato",
               "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno=2022"
             }],
-            "layers": "new_atlante_integrato:v_province_terria",
+            //fatto nuova vista e nuovo servizio identici a v_province_terria. Nel nuovo servizio è stato associato un solo stile, perchè le province in atlante integrato ne hanno associati due visto che vengono usate anche per totem.
+            "layers": "new_atlante_integrato:v_province_terria_aeolian",
             "id": "confprov"
           },
           {
