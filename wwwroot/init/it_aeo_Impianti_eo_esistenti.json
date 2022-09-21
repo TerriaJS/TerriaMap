@@ -4,13 +4,13 @@
       "id": "impiantieoesistenti",
       "type": "group",
       "name": "Impianti Eolici esistenti",
-      "description": "Questa raccolta comprende i dati regionali e provinciali relativi alle risorse naturali del territorio. \n\n <div><img src=\"/images/wind.png\" style=\"width:640px;height:427px;\"</div> <a href=\"https://it.vecteezy.com/foto-gratuito\">Foto d’archivio di Vecteezy</a>",
+      "description": "Questa raccolta comprende informazioni relative alla posizione e alla classe di potenza degli aerogeneratori di potenza superiore a 200 kW installati sul territorio nazionale.",
       "isOpen": false,
       "members": [
         {
           "type": "wms",
           "name": "Database degli aerogeneratori",
-          "description": "Database degli aerogeneratori \n\n Velocità media annua del vento alla quota di 75 metri s.l.t./s.l.m. espressa in m/s.<br>Atlante Eolico Interattivo RSE</p> \n Informazioni sul layer RISORSA EOLICA </br><a href=\"http://atlanteeolico.rse-web.it\" target=\"_blank\">Atlante Eolico (ATLAEOLICO)</a>",
+          "description": "Mappa degli aerogeneratori presenti sul territorio nazionale (anno di riferimento 2019), derivante da un' elaborazione di Ricerca sul Sistema Energetico - RSE S.p.A. a partire da dati GSE , The Wind Power e da immagini satellitari Sentinel-2. A ciascun aerogeneratore è associata una classe di potenza.",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "featureInfoTemplate": {
             "template": "<p>Database degli aerogeneratori <b>{{classe}}</b> m/s </p>"

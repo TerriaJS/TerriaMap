@@ -3,7 +3,8 @@
     {
       "type": "group",
       "name": "Dati cartografici",
-      "description": "Questa raccolta comprende delle mappe cartografiche a diverso livello di aggregazione territoriale e tematismi generali. \n\n <a title=\"Waterloo1883, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"><img width=\"512\" alt=\"Mapa físico de localización Huánuco\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png/512px-Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"></a> ",
+      //"description": "Questa raccolta comprende delle mappe cartografiche a diverso livello di aggregazione territoriale e tematismi generali. \n\n <a title=\"Waterloo1883, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"><img width=\"512\" alt=\"Mapa físico de localización Huánuco\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png/512px-Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"></a> ",
+      "description": "Questa raccolta comprende delle mappe cartografiche a diverso livello di aggregazione territoriale e tematismi generali.",
       "isOpen": true,
       "members": [
           {
@@ -16,7 +17,7 @@
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=108&anno=2021"
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=108&anno=2022"
             }],
             "layers": "new_atlante_integrato:v_regioni_terria",
             "id": "confreg"
@@ -31,7 +32,7 @@
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno=2021"
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno=2022"
             }],
             "layers": "new_atlante_integrato:v_province_terria",
             "id": "confprov"
@@ -46,7 +47,7 @@
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=110&anno=2021"
+              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=110&anno=2022"
             }],
             "layers": "new_atlante_integrato:v_comuni_terria",
             "id": "confcom"
@@ -77,7 +78,7 @@
            {
             "type": "wms",
             "name": "Batimetria",
-            "description": " Batimetria 2018, Dati relativi alla profondità media del fondale marino, elaborazioni RSE con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
+            "description": " Dati relativi alla profondità media del fondale marino. \n<br>Elaborazioni RSE del 2018 con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             //"featureInfoTemplate": {
             //  "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
@@ -93,7 +94,7 @@
           {
             "type": "wms",
             "name": "Zona Economica Esclusiva",
-            "description": " Zona economica esclusiva dell'Italia. Dato distribuito dal Flanders Marine Institute https://www.marineregions.org/.",
+            "description": " Zona economica esclusiva dell'Italia. \n<br>Dato distribuito dal Flanders Marine Institute https://www.marineregions.org/.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
               "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
