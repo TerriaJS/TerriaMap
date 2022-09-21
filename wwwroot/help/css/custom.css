@@ -201,7 +201,7 @@ h2 > a {
 @media (min-width: 1200px) { 
 
 .navbar {
-  min-height: 80px;
+  min-height: 100px;
 }
 
 .navbar-nav>li>a {
