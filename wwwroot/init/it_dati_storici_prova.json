@@ -23,7 +23,7 @@
             "content": "Seleziona il punto direttamente sulla mappa",
             "key": "it_dati_storici_prova",
             "confirmation": true,
-            "confirmText": "Avvia"
+            "confirmText": "Download"
           }
         }
       ]

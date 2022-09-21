@@ -158,15 +158,10 @@ function AnalisiAvanzate(props) {
                   distribuzione di Weibull e distanza dalle cabine primarie) sui
                   domini onshore e 0ffshore del territorio nazionale.
                 </p>{" "}
-                <br></br>
-                <a
-                  target="_blank"
-                  //href="http://atlanteintegrato.rse-web.it/sankey.php"
-                  href="https://atlanteeolico.rse-web.it/help/help-calcolo-IT.html"
-                  className={Styles.link}
-                >
-                  Approfondisci e dowload.
-                </a>{" "}
+                <br></br>{" "}
+                <a className={Styles.link} href={dati_storici_prova}>
+                  Approfondisci e download.
+                </a>
                 <br></br>
                 <a
                   target="_blank"
