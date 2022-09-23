@@ -1,5 +1,12 @@
 # Change Log
 
+### `0.0.4`
+
+**2022-09-23**
+
+- Removed `RelatedMaps.jsx` - this is now generated from configuration in `terriajs`. See https://github.com/TerriaJS/terriajs/blob/main/doc/customizing/client-side-config.md#parameters for example configuration.
+  - **Note** `RelatedMaps` can remain unchanged if HTML/JSX file is preferred.
+
 ### 2022-06-30
 
 - Add support Plugins support using `terriajs-plugin-api`. See [`plugins.ts`](./plugins.ts)
@@ -103,7 +110,7 @@
   "confirmationRequired": true, // Whether user must click the correct button to dismiss it (otherwise click anywhere)
   "buttonTitle": "I agree", // Text for that button (defaults to "Ok").
   "title": "Disclaimer", // Title for the window
-  "prodHostRegex": "gov.\\.au$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
+  "prodHostRegex": "gov.\\.au\$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
   "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.", // If this regular expression IS matched, add that preamble
   "enableOnLocalhost": true // By default, Disclaimers are not shown when testing locally. Add this to test your disclaimer.
   },
