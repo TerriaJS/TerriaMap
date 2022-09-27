@@ -77,7 +77,7 @@
     // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
     "experimentalFeatures": true,
     // To enable welcome message when map first loads
-    "showWelcomeMessage": false,
+    "showWelcomeMessage": true,
     // To override the welcome message video displayed on the welcome message
     // By default, the Getting Started to Terria video is displayed
     "welcomeMessageVideo": {
