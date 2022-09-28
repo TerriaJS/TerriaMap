@@ -105,15 +105,18 @@
 
 ### 2016-06-15
 
-- Support "globalDisclaimer" configuration option, defined as follows:
+- Support "globalDisclaimer" configuration option, defined as follows
+
+```json
   "globalDisclaimer": {
   "confirmationRequired": true, // Whether user must click the correct button to dismiss it (otherwise click anywhere)
   "buttonTitle": "I agree", // Text for that button (defaults to "Ok").
   "title": "Disclaimer", // Title for the window
-  "prodHostRegex": "gov.\\.au\$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
+  "prodHostRegex": "gov.\\.au$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
   "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.", // If this regular expression IS matched, add that preamble
   "enableOnLocalhost": true // By default, Disclaimers are not shown when testing locally. Add this to test your disclaimer.
-  },
+  }
+```
 
 ### 2016-05-13b
 
