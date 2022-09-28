@@ -33,9 +33,7 @@ export default function UserInterface(props) {
       <MenuLeft>
         <MenuItem caption="About" href="about.html" key="about-link" />
         {relatedMaps && relatedMaps.length > 0 ? (
-          <RelatedMaps
-            relatedMaps={props.viewState.terria.configParameters.relatedMaps}
-          />
+          <RelatedMaps relatedMaps={relatedMaps} />
         ) : null}
       </MenuLeft>
       <ExperimentalMenu>
