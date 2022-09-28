@@ -201,7 +201,7 @@ h2 > a {
 @media (min-width: 1200px) { 
 
 .navbar {
-  min-height: 100px;
+  min-height: 80px;
 }
 
 .navbar-nav>li>a {
@@ -211,7 +211,7 @@ h2 > a {
 }
 
 .navbar-brand {
-  margin-right: 80px;
+  margin-right: 60px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -221,7 +221,7 @@ h2 > a {
 }
 
 .navbar-brand img {
-  width: 170px;
+  width: 260px;
 }
 
 .content {
