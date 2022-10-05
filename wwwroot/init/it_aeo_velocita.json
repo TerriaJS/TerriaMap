@@ -167,7 +167,7 @@
               }],
               "layers": "aeolian:griglia_dati_05102022",
               "id": "eo_speed125_offshore",
-              "styles":"aeolian:spee120_offshore"
+              "styles":"aeolian:speed125_offshore"
             },
             {
               "type": "wms",
@@ -183,7 +183,7 @@
               }],
               "layers": "aeolian:griglia_dati_05102022",
               "id": "eo_speed150_offshore",
-              "styles":"aeolian:speed150_onshore"
+              "styles":"aeolian:speed150_offshore"
             }
          ]
         }
