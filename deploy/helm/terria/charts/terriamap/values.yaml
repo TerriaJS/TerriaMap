@@ -10,6 +10,8 @@ clientConfig:
   - terria
   parameters:
     # bingMapsKey: AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_
+    # key lorenzo
+    bingMapsKey: AtJNDPncJSb07uV7QSx4hplU_lkmoiXtVVOu9s4SdWaTDv3-4BcHODWexl3K1Vrf
     disclaimer:
       text: "Disclaimer: This map must not be used for navigation or precise spatial analysis"
       url: "http://google.com"

@@ -27,9 +27,9 @@
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=230"
               }],
               
-              "layers":"aeolian:Grid_nazionale21062022_limiti_amministrativi",
+              "layers":"aeolian:griglia_dati_05102022",
               "id": "eo_speed50_onshore",
-              "styles":"aeolian:speed50_onshore_prova"
+              "styles":"aeolian:speed50_onshore"
                           
             },
             {
@@ -44,8 +44,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=231"
               }],
-              "layers": "aeolian:eo_speed75_onshore",
-              "id": "eo_speed75_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed75_onshore",
+              "styles":"aeolian:speed75_onshore"
             },
             {
               "type": "wms",
@@ -59,8 +60,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=232"
               }],
-              "layers": "aeolian:eo_speed100_onshore",
-              "id": "eo_speed100_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed100_onshore",
+              "styles":"aeolian:speed100_onshore"
             },
             {
               "type": "wms",
@@ -74,8 +76,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=233"
               }],
-              "layers": "aeolian:eo_speed125_onshore",
-              "id": "eo_speed125_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed125_onshore",
+              "styles":"aeolian:speed125_onshore"
             },
             {
               "type": "wms",
@@ -89,8 +92,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=234"
               }],
-              "layers": "aeolian:eo_speed150_onshore",
-              "id": "eo_speed150_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed150_onshore",
+              "styles":"aeolian:speed150_onshore"
             }
          ]
         },
@@ -113,8 +117,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=235"
               }],
-              "layers": "aeolian:eo_speed50_offshore",
-              "id": "eo_speed50_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed50_offshore",
+              "styles":"aeolian:speed50_offshore"
             },
             {
               "type": "wms",
@@ -128,8 +133,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=236"
               }],
-              "layers": "aeolian:eo_speed75_offshore",
-              "id": "eo_speed75_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed75_offshore",
+              "styles":"aeolian:speed75_offshore"
             },
             {
               "type": "wms",
@@ -143,8 +149,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=237"
               }],
-              "layers": "aeolian:eo_speed100_offshore",
-              "id": "eo_speed100_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed100_offshore",
+              "styles":"aeolian:speed100_offshore"
             },
             {
               "type": "wms",
@@ -158,8 +165,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=238"
               }],
-              "layers": "aeolian:eo_speed125_offshore",
-              "id": "eo_speed125_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed125_offshore",
+              "styles":"aeolian:spee120_offshore"
             },
             {
               "type": "wms",
@@ -173,8 +181,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=239"
               }],
-              "layers": "aeolian:eo_speed150_offshore",
-              "id": "eo_speed150_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_speed150_offshore",
+              "styles":"aeolian:speed150_onshore"
             }
          ]
         }

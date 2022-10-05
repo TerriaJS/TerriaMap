@@ -14,19 +14,7 @@
           "description": "Questa raccolta comprende le mappe di producibilità del vento onshore (MWh/MW) alle altezze di 50, 75 e 100 m s.l.t.",
           "isOpen": false,
           "members": [
-            {
-              "type": "wms",
-              "name": "Griglia",
-              "url": "http://gis2.rse-web.it/geoserver/wms",
-              "layers": "atlaeolico:griglia_dati3857",
-              "hideLegendInWorkbench": true,
-              "disableOpacityControl": true,
-              "hideSource": true,
-              "disableZoomTo": true,
-              "zoomOnAddToWorkbench": false,
-              "show": false,
-              "id": "griglia"
-            },
+            
             {
               "type": "wms",
               "name": "Producibilita' specifica onshore a 50 m s.l.t.",
@@ -39,8 +27,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=240"
               }],
-              "layers": "aeolian:eo_prod50_onshore",
-              "id": "eo_prod50_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_prod50_onshore",
+              "styles":"aeolian:prod50_onshore"
             },
             {
               "type": "wms",
@@ -54,8 +43,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=241"
               }],
-              "layers": "aeolian:eo_prod75_onshore",
-              "id": "eo_prod75_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_prod75_onshore",
+              "styles":"aeolian:prod75_onshore"
             } ,
             {
               "type": "wms",
@@ -69,8 +59,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=242"
               }],
-              "layers": "aeolian:eo_prod100_onshore",
-              "id": "eo_prod100_onshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_prod100_onshore",
+              "styles":"aeolian:prod100_onshore"
             }  
   
           ]
@@ -94,8 +85,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=243"
               }],
-              "layers": "aeolian:eo_prod100_offshore",
-              "id": "eo_prod100_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_prod100_offshore",
+              "styles":"aeolian:prod100_offshore"
             },
             {
               "type": "wms",
@@ -109,8 +101,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aaeolian_metadati.php?var_id=244"
               }],
-              "layers": "aeolian:eo_prod125_offshore",
-              "id": "eo_prod125_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_prod125_offshore",
+              "styles":"aeolian:prod125_offshore"
             },
             {
               "type": "wms",
@@ -124,8 +117,9 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=245"
               }],
-              "layers": "aeolian:eo_prod150_offshore",
-              "id": "eo_prod150_offshore"
+              "layers": "aeolian:griglia_dati_05102022",
+              "id": "eo_prod150_offshore",
+              "styles":"aeolian:prod150_offshore"
             }    
           ]
         }
