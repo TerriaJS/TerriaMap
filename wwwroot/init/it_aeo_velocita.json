@@ -20,7 +20,7 @@
               "description": "Velocità media annua del vento offshore alla quota di 50 m s.l.t. espressa in m/s.",
               "url": "https://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_50}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -38,7 +38,7 @@
               "description": "Velocità media annua del vento onshore alla quota di 75 m s.l.t. espressa in m/s.",
               "url": "https://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_75}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -54,7 +54,7 @@
               "description": "Velocità media annua del vento onshore alla quota di 100 m s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_100}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -70,7 +70,7 @@
               "description": "Velocità media annua del vento onshore alla quota di 125 m s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_125}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -86,7 +86,7 @@
               "description": "Velocità media annua del vento onshore alla quota di 150 m s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_150}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -111,7 +111,7 @@
               "description": "Velocità media annua del vento offshore alla quota di 50 m s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_50}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -127,7 +127,7 @@
               "description": "Velocità media annua del vento offshore alla quota di 75 m s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_75}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -143,7 +143,7 @@
               "description": "Velocità media annua del vento offshore alla quota di 100 m s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_100}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -159,7 +159,7 @@
               "description": "Velocità media annua del vento offshore alla quota di 125 m s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_125}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
@@ -175,7 +175,7 @@
               "description": "Velocità media annua del vento offshore alla quota di 150 m s.l.m. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>La velocita' del vento rientra nella classe <b>{{classe}}</b> m/s </p>"
+                "template": "<p>La velocita' del vento è pari a <b>{{vento_150}}</b> m/s </p>"
               },
               "metadataUrls":[{
                 "title":"link metadato",
