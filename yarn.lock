@@ -14343,11 +14343,6 @@ temp-path@^1.0.0:
   resolved "https://registry.yarnpkg.com/temp-path/-/temp-path-1.0.0.tgz#24b1543973ab442896d9ad367dd9cbdbfafe918b"
   integrity sha1-JLFUOXOrRCiW2a02fdnL2/r+kYs=
 
-terriajs-catalog-editor@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/terriajs-catalog-editor/-/terriajs-catalog-editor-0.2.0.tgz#d9c6679e53c4d92e87a531af896c6148888ed8e4"
-  integrity sha1-2cZnnlPE2S6HpTGviWxhSIiO2OQ=
-
 terriajs-cesium@1.92.0-tile-error-provider-fix-2:
   version "1.92.0-tile-error-provider-fix-2"
   resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-1.92.0-tile-error-provider-fix-2.tgz#f9cce39dd3bd18622ac8a44a20873fb0e9ebb103"
