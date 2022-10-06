@@ -156,21 +156,16 @@ function AnalisiAvanzate(props) {
                   (.shp) la griglia contenente i parametri dell'Atlante Eolico
                   dell'Italia (velocità, producibilità, parametro di forma della
                   distribuzione di Weibull e distanza dalle cabine primarie) sui
-                  domini onshore e 0ffshore del territorio nazionale.
+                  domini onshore e offshore del territorio nazionale.
                 </p>{" "}
-                <br></br>{" "}
-                <a className={Styles.link} href={dati_storici_prova}>
-                  Approfondisci e download.
-                </a>
-                <br></br>
                 <a
                   target="_blank"
                   //href="http://atlanteintegrato.rse-web.it/sankey.php"
                   //href="https://atlanteeolico.rse-web.it/download_griglia-IT.php"
-                  href="https://atlanteeolico.rse-web.it/download/Grid_Nazionale21062022.zip"
+                  href="https://atlanteeolico.rse-web.it/download_terria_griglia-IT.php"
                   className={Styles.link}
                 >
-                  Download
+                  Approfondisci e download
                 </a>
               </td>
             </tr>
