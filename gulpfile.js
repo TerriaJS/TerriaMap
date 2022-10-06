@@ -160,29 +160,6 @@ gulp.task(
   })
 );
 
-gulp.task("copy-editor", function () {
-  var glob = path.join(getPackageRoot("terriajs-catalog-editor"), "**");
-
-  return gulp.src(glob).pipe(gulp.dest("./wwwroot/editor"));
-});
-
-// Generate new schema for editor, and copy it over whatever version came with editor.
-gulp.task(
-  "make-editor-schema",
-  gulp.series("copy-editor", function makeEditorSchema() {
-    var generateSchema = require("generate-terriajs-schema");
-    var schemaSourceGlob = require("terriajs/buildprocess/schemaSourceGlob");
-
-    return generateSchema({
-      sourceGlob: schemaSourceGlob,
-      dest: "wwwroot/editor",
-      noversionsubdir: true,
-      editor: true,
-      quiet: true
-    });
-  })
-);
-
 gulp.task("lint", function (done) {
   var runExternalModule = require("terriajs/buildprocess/runExternalModule");
 
@@ -497,8 +474,7 @@ gulp.task(
   gulp.series(
     "render-datasource-templates",
     "copy-terriajs-assets",
-    "release-app",
-    "make-editor-schema"
+    "release-app"
   )
 );
 gulp.task(
