@@ -189,103 +189,30 @@ gulp.task("clean", function (done) {
   done();
 });
 
-function mergeConfigs(original, override) {
-  var result = Object.assign({}, original);
+// TODO: remove? Appears to be no longer used.
+// function mergeConfigs(original, override) {
+//   var result = Object.assign({}, original);
 
-  if (typeof original === "undefined") {
-    original = {};
-  }
+//   if (typeof original === "undefined") {
+//     original = {};
+//   }
 
-  for (var name in override) {
-    if (!override.hasOwnProperty(name)) {
-      continue;
-    }
+//   for (var name in override) {
+//     if (!override.hasOwnProperty(name)) {
+//       continue;
+//     }
 
-    if (Array.isArray(override[name])) {
-      result[name] = override[name];
-    } else if (typeof override[name] === "object") {
-      result[name] = mergeConfigs(original[name], override[name]);
-    } else {
-      result[name] = override[name];
-    }
-  }
+//     if (Array.isArray(override[name])) {
+//       result[name] = override[name];
+//     } else if (typeof override[name] === "object") {
+//       result[name] = mergeConfigs(original[name], override[name]);
+//     } else {
+//       result[name] = override[name];
+//     }
+//   }
 
-  return result;
-}
-
-/*
-    Use EJS to render "datasources/foo.ejs" to "wwwroot/init/foo.json". Include files should be
-    stored in "datasources/includes/blah.ejs". You can refer to an include file as:
-
-    <%- include includes/foo %>
-
-    If you want to pass parameters to the included file, do this instead:
-
-    <%- include('includes/foo', { name: 'Cool layer' } %>
-
-    and in includes/foo:
-
-    "name": "<%= name %>"
- */
-gulp.task("render-datasource-templates", function (done) {
-  var ejs = require("ejs");
-  var JSON5 = require("json5");
-  var templateDir = "datasources";
-
-  try {
-    fs.accessSync(templateDir);
-  } catch (e) {
-    // Datasources directory doesn't exist? No problem.
-    done();
-    return;
-  }
-  fs.readdirSync(templateDir).forEach(function (filename) {
-    if (filename.match(/\.ejs$/)) {
-      var templateFilename = path.join(templateDir, filename);
-      var template = fs.readFileSync(templateFilename, "utf8");
-      var result = ejs.render(template, null, { filename: templateFilename });
-
-      // Remove all new lines. This means you can add newlines to help keep source files manageable, without breaking your JSON.
-      // If you want actual new lines displayed somewhere, you should probably use <br/> if it's HTML, or \n\n if it's Markdown.
-      //result = result.replace(/(?:\r\n|\r|\n)/g, '');
-
-      var outFilename = filename.replace(".ejs", ".json");
-      try {
-        // Replace "2" here with "0" to minify.
-        result = JSON.stringify(JSON5.parse(result), null, 2);
-        console.log("Rendered template " + outFilename);
-      } catch (e) {
-        console.warn(
-          "Warning: Rendered template " + outFilename + " is not valid JSON"
-        );
-      }
-      fs.writeFileSync(
-        path.join("wwwroot/init", outFilename),
-        new Buffer(result)
-      );
-    }
-  });
-
-  done();
-});
-
-gulp.task(
-  "watch-datasource-templates",
-  gulp.series(
-    "render-datasource-templates",
-    function watchDatasourceTemplates() {
-      gulp.watch(
-        [
-          "lib/Language/**/*.json",
-          "datasources/**/*.ejs",
-          "datasources/*.json"
-        ],
-        watchOptions,
-        gulp.series("render-datasource-templates")
-      );
-    }
-  )
-);
+//   return result;
+// }
 
 gulp.task("sync-terriajs-dependencies", function (done) {
   var appPackageJson = require("./package.json");
@@ -359,28 +286,7 @@ function checkForDuplicateCesium() {
   }
 }
 
-gulp.task(
-  "build",
-  gulp.series(
-    "render-datasource-templates",
-    "copy-terriajs-assets",
-    "build-app"
-  )
-);
-gulp.task(
-  "release",
-  gulp.series(
-    "render-datasource-templates",
-    "copy-terriajs-assets",
-    "release-app"
-  )
-);
-gulp.task(
-  "watch",
-  gulp.parallel(
-    "watch-datasource-templates",
-    "watch-terriajs-assets",
-    "watch-app"
-  )
-);
+gulp.task("build", gulp.series("copy-terriajs-assets", "build-app"));
+gulp.task("release", gulp.series("copy-terriajs-assets", "release-app"));
+gulp.task("watch", gulp.parallel("watch-terriajs-assets", "watch-app"));
 gulp.task("default", gulp.series("lint", "build"));
