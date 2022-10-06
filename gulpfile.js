@@ -189,31 +189,6 @@ gulp.task("clean", function (done) {
   done();
 });
 
-// TODO: remove? Appears to be no longer used.
-// function mergeConfigs(original, override) {
-//   var result = Object.assign({}, original);
-
-//   if (typeof original === "undefined") {
-//     original = {};
-//   }
-
-//   for (var name in override) {
-//     if (!override.hasOwnProperty(name)) {
-//       continue;
-//     }
-
-//     if (Array.isArray(override[name])) {
-//       result[name] = override[name];
-//     } else if (typeof override[name] === "object") {
-//       result[name] = mergeConfigs(original[name], override[name]);
-//     } else {
-//       result[name] = override[name];
-//     }
-//   }
-
-//   return result;
-// }
-
 gulp.task("sync-terriajs-dependencies", function (done) {
   var appPackageJson = require("./package.json");
   var terriaPackageJson = require("terriajs/package.json");
