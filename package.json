@@ -62,7 +62,6 @@
     "fork-ts-checker-notifier-webpack-plugin": "^3.0.0",
     "fork-ts-checker-webpack-plugin": "^5.0.7",
     "fs-extra": "^7.0.1",
-    "generate-terriajs-schema": "^1.5.0",
     "gulp": "^4.0.0",
     "husky": "^8.0.1",
     "json5": "^2.1.0",
