@@ -1,5 +1,11 @@
 # Change Log
 
+### The Next Release
+
+**Breaking changes:**
+
+- TerriaMap no longer supports ejs templating for data sources. We suggest to use terria reference to manage a catalog in multiple files.
+
 ### `0.0.4`
 
 **2022-09-23**
