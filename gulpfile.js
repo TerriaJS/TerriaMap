@@ -232,7 +232,6 @@ gulp.task("make-package", function (done) {
   if (fs.existsSync("proxyauth.json")) {
     fs.copySync("proxyauth.json", path.join(workingDir, "proxyauth.json"));
   }
-  fs.copySync("deploy/varnish", path.join(workingDir, "varnish"));
   fs.copySync(
     "ecosystem.config.js",
     path.join(workingDir, "ecosystem.config.js")
