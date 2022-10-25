@@ -97,7 +97,6 @@ function SearchByDay(props) {
       smallScreen={props.smallScreen}
       viewState={props.viewState}
       btnTitle="Search related maps by Calendar Date"
-      showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
         <label className={PanelStyles.heading}>Calendar Date</label>

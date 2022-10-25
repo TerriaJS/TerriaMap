@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RENCI/TerriaMap data injection test</title>
+
+		<!-- JQuery components -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Bootstrap components -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+		<!-- D3 components -->
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+</head>
+<body id="theBody" style="background:#3f4854;margin:0px;padding:0px;overflow:hidden">
+    <table>
+      <tr>
+        <td><iframe id="embeddedAPSVIZMap" src="http://localhost:3001/" style="position: absolute; height: 100%; width: 100%; border: none"></iframe></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+        // assign the demo data
+        let demoData = {
+                    initSources: [
+                        {
+                            initialCamera: {
+                                "north": -33.827,
+                                "east": 151.249,
+                                "south": -33.907,
+                                "west": 151.165
+                            },
+                            workbench: ["foo"],
+                            catalog: [
+                                {
+                                    type: "group",
+                                    name: "Foo",
+                                    members: [
+                                        {
+                                            type: "csv",
+                                            name: "My Data",
+                                            id: "my-data",
+                                            csvString: "POA,Some Value\n2000,1\n2205,2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                };
+
+        // define the location of the terria-map site
+        const UI_URL = "https://apsviz-terria-map-dev.apps.renci.org";
+
+        // set the DB data web service url
+        const WS_URL = "http://apsviz-settings-dev.apps.renci.org/get_terria_map_data"
+
+        /**
+         * gets the data from the DB.
+         *
+         * @param get_db_data
+         */
+        function getCatalogData(get_db_data)
+        {
+          $('#statusMsg').text("Loading...");
+
+          // get a reference to the frame
+          let iframeWindow = document.getElementById('embeddedAPSVIZMap').contentWindow;
+
+          // do nothing on the startup case
+          if(get_db_data == undefined) {
+            $('#statusMsg').text("Ready.");
+            return;
+          }
+          // if DB data is requested
+          else if(get_db_data) {
+            // get the DB apsviz catalog
+            d3.json(WS_URL, function(error, msgData)
+            {
+              if (error == null && msgData.length != 0 && msgData != 'None') {
+                // add the home camera so the map pans
+                msgData.initialCamera = {east: -61, north: 46, south: 20, west: -96};
+
+                // save the final data
+                let data_catalog = {initSources: [msgData]};
+                console.log(data_catalog)
+                
+  
+
+                // post the data catalog to the map
+                iframeWindow.postMessage(data_catalog, UI_URL);
+
+                $('#statusMsg').text("Done, ready.");
+              }
+              else
+              {
+                $('#statusMsg').text("Error getting data.");
+              }
+            })
+          }
+          // just the dummy data
+          else
+          {
+            let data_catalog = demoData;
+
+            // post the catalog data to the map
+            iframeWindow.postMessage(data_catalog, UI_URL);
+
+            $('#statusMsg').text("Done, ready.");
+          }
+        }
+        
+
+        /**
+         * app ready event handler
+          */
+        window.addEventListener('load', function(e) {
+            let iframeWindow = document.getElementById('embeddedAPSVIZMap').contentWindow;
+            getCatalogData(true);
+            // if the frame and data are ready
+            if (e.source === iframeWindow && e.data === 'ready') {
+                // get the catalog data
+                getCatalogData();
+            }
+        });
+    </script>
+</body>
+</html>

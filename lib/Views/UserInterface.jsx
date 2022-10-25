@@ -28,25 +28,47 @@ import "./global.scss";
 // function isBrowserSupportedAV() {
 //   return /Android|iPhone|iPad/i.test(navigator.userAgent);
 // }
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
 export default function UserInterface(props) {
+  const [windowDimensions, setWindowDimensions] = React.useState(
+    getWindowDimensions()
+  );
+
+  React.useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <StandardUserInterface {...props} version={version}>
-      <MenuLeft>
-        {/* <MenuItem caption="About" href="about.html" key="about-link" /> */}
-        <SearchByType viewState={props.viewState} />
-        <SearchByGrid viewState={props.viewState} />
-        <SearchByInstance viewState={props.viewState} />
-        <SearchByDay viewState={props.viewState} />
-      </MenuLeft>
+      {windowDimensions.width < 768 && (
+        <MenuLeft>
+          <SearchByType viewState={props.viewState} />
+          <SearchByGrid viewState={props.viewState} />
+          <SearchByInstance viewState={props.viewState} />
+          <SearchByDay viewState={props.viewState} />
+        </MenuLeft>
+      )}
+
       <ExperimentalMenu>
-        {/* <If condition={isBrowserSupportedAV()}>
-          <SplitPoint
-            loadComponent={loadAugmentedVirtuality}
-            viewState={props.viewState}
-            terria={props.viewState.terria}
-            experimentalWarning={true}
-          />
-        </If> */}
+        <div className="hide-on-mobile">
+          <SearchByDay viewState={props.viewState} />
+          <SearchByInstance viewState={props.viewState} />
+          <SearchByType viewState={props.viewState} />
+          <SearchByGrid viewState={props.viewState} />
+        </div>
       </ExperimentalMenu>
     </StandardUserInterface>
   );

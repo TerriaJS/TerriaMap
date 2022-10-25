@@ -14,6 +14,56 @@ body {
     }
   }
 
+  .tjs-experimental-features__experimental-features {
+    right: 25px !important;
+  }
+
+  .tjs-experimental-features__experimental-features div {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+  }
+
+  .tjs-experimental-features__control div {
+    margin: 5px 0;
+  }
+
+  .tjs-panel__button {
+    border-radius: 16px;
+  }
+
+  .bZFvYp button {
+    background-color: $color-custom;
+  }
+
+  .tjs-map-column__map__inner * {
+    color: white;
+  }
+
+  .grUOaQ svg {
+    fill: white !important;
+  }
+
+  .hucuvM svg {
+    fill: white !important;
+  }
+
+  .hucuvM {
+    background-color: $color-custom !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .hide-on-mobile {
+      display: none !important;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .hide-on-desktop {
+      display: none !important;
+    }
+  }
+
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
   /*

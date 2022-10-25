@@ -1,0 +1,1762 @@
+{
+  "workbench": ["4257-2022102006-obs", "4257-2022102006-maxele63"],
+  "corsDomains": [
+    "corsproxy.com",
+    "programs.communications.gov.au",
+    "www.asris.csiro.au",
+    "mapsengine.google.com"
+  ],
+  "homeCamera": { "east": -61, "west": -96, "north": 46, "south": 20 },
+  "baseMaps": {
+    "items": [
+      {
+        "item": { "id": "basemap-darkmatter", "name": "Dark Matter" },
+        "image": "build/TerriaJS/images/dark-matter.png"
+      },
+      {
+        "item": { "id": "basemap-bing-roads", "name": "Bing Maps Roads" },
+        "image": "build/TerriaJS/images/bing-maps-roads.png"
+      }
+    ],
+    "defaultBaseMapId": "basemap-bing-roads"
+  },
+  "viewerMode": "2D",
+  "catalog": [
+    {
+      "id": "2022-10-25",
+      "name": "ADCIRC Data - Run Date: 10-25-2022",
+      "type": "group",
+      "members": [
+        {
+          "id": "4288-2022102506-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "tncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-25-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102506-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102506-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102506-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-25-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102506-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102506-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-25-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102506-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102506-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102506-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-25-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102506-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102506-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102500-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-25-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102500-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102500-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102500-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-25-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102500-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102500-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-25-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102500-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102500-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102500-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-25-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-25-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102500-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102500-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2022-10-24",
+      "name": "ADCIRC Data - Run Date: 10-24-2022",
+      "type": "group",
+      "members": [
+        {
+          "id": "4288-2022102418-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102418-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102418-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102418-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-24-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102418-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102418-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102418-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102418-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102418-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102418-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102418-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102412-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102412-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102412-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102412-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-24-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102412-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102412-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102412-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102412-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102412-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102412-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102412-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102406-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102406-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102406-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102406-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-24-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102406-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102406-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102406-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102406-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102406-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102406-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102406-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102400-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102400-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102400-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102400-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-24-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102400-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102400-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102400-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102400-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102400-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-24-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-24-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102400-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102400-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2022-10-23",
+      "name": "ADCIRC Data - Run Date: 10-23-2022",
+      "type": "group",
+      "members": [
+        {
+          "id": "4288-2022102318-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102318-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102318-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102318-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-23-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102318-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102318-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102318-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102318-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102318-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102318-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102318-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102312-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102312-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102312-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102312-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-23-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102312-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102312-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102312-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102312-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102312-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102312-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102312-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102306-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102306-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102306-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102306-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-23-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102306-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102306-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102306-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102306-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102306-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102306-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102306-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102300-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102300-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102300-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102300-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-23-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102300-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102300-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102300-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102300-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102300-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-23-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-23-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102300-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102300-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2022-10-22",
+      "name": "ADCIRC Data - Run Date: 10-22-2022",
+      "type": "group",
+      "members": [
+        {
+          "id": "4288-2022102218-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102218-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102218-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102218-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-22-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102218-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102218-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102218-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102218-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102218-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 18 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102218-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102218-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102212-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102212-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102212-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102212-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-22-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102212-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102212-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102212-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102212-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102212-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 12 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102212-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102212-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102206-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102206-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102206-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102206-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-22-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102206-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102206-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102206-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102206-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102206-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 06 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102206-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102206-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102200-swan",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (swan)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102200-namforecast_swan_HS_max63",
+          "styles": "swan_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102200-namforecast_swan_HS_max63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102200-obs",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wfs/ADCIRC_2022?service=wfs&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "NOAA Observations - Date: 10-22-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102200-namforecast_station_properies_view",
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "template": "<div class=\u2019stations\u2019><figure><img src={{imageurl}}><figcaption>{{stationname}}</figcaption></figure></div>"
+          }
+        },
+        {
+          "id": "4288-2022102200-maxwvel63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxwvel63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102200-namforecast_maxwvel63",
+          "styles": "maxwvel_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102200-namforecast_maxwvel63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        },
+        {
+          "id": "4288-2022102200-maxele63",
+          "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/wms/ADCIRC_2022?service=wms&version=1.3.0&request=GetCapabilities",
+          "info": [
+            { "name": "Event Date", "show": false, "content": "10-22-2022" },
+            { "name": "Event Type", "show": false, "content": "namforecast" },
+            { "name": "Grid Type", "show": false, "content": "NCSC_SAB_v1.23" },
+            {
+              "name": "Instance Name",
+              "show": false,
+              "content": "ncsc123-nam-sb55.01"
+            }
+          ],
+          "name": "Date: 10-22-2022 Cycle: 00 Forecast Type: namforecast Location: RENCI Instance: ncsc123-nam-sb55.01 ADCIRC Grid: NCSC_SAB_v1.23 (maxele63)",
+          "show": true,
+          "type": "wms",
+          "layers": "ADCIRC_2022:4288-2022102200-namforecast_maxele63",
+          "styles": "maxele_style",
+          "legends": [
+            {
+              "url": "https://apsviz-geoserver-dev.apps.renci.org/geoserver/ADCIRC_2022/ows?service=WMS&request=GetLegendGraphic&TRANSPARENT=TRUE&LEGEND_OPTIONS=layout:horizontal&format=image%2Fpng&width=20&height=20&layer=4288-2022102200-namforecast_maxele63",
+              "urlMimeType": "image/png"
+            }
+          ],
+          "description": "This data is produced by the ADCIRC model and presented through the ADCIRC Prediction System Visualizer",
+          "dataCustodian": "RENCI",
+          "featureInfoTemplate": {
+            "formats": {
+              "GRAY_INDEX": { "type": "number", "maximumFractionDigits": 3 }
+            },
+            "template": "<div><b>Value:</b>  {{GRAY_INDEX}}</div>"
+          }
+        }
+      ]
+    }
+  ]
+}

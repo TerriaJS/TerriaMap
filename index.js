@@ -51,8 +51,8 @@ const viewState = new ViewState({
 });
 
 // Set overrides for data catalog button text and search placeholder text in explorer window 
-viewState.searchPlaceholder = "Search this catalog"
-viewState.dataCatalogButtonTitle = "Data Catalog"
+viewState.searchPlaceholder = "Search this catalog";
+viewState.dataCatalogButtonTitle = "Data Catalog";
 
 registerCatalogMembers();
 

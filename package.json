@@ -101,6 +101,7 @@
     "restart": "pm2 restart ecosystem.config.js --update-env -- --config-file devserverconfig.json",
     "stop": "pm2 stop ecosystem.config.js",
     "pm2": "pm2 logs",
+    "pm2-kill": "pm2 kill",
     "gulp": "gulp",
     "gulp:watch": "gulp watch",
     "postinstall": "patch-package && echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",

@@ -1,6 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["apsviz"],
+  "initializationUrls": ["apsvizold"],
   "parameters": {
     "bingMapsKey": "AonD5sr-4zO6vqCNY-RMerq7qOLMOFDd1BsYZbGdZLE9zP3lbGLsX-BVwH8dTqxh",
     "googleUrlShortenerKey": null,
