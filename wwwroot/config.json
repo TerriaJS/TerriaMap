@@ -1,5 +1,5 @@
 {
-  "initializationUrls": ["apsvizold", "https://apsviz-ui-data.apps.renci.org/get_ui_data_file?file_name=apsviz.json"],
+  "initializationUrls": ["apsviz", "https://apsviz-ui-data.apps.renci.org/get_ui_data_file?file_name=apsviz.json"],
   "parameters": {
     "bingMapsKey": "AonD5sr-4zO6vqCNY-RMerq7qOLMOFDd1BsYZbGdZLE9zP3lbGLsX-BVwH8dTqxh",
     "googleUrlShortenerKey": null,
