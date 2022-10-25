@@ -67,7 +67,7 @@ function SearchByGrid(props) {
           color: props.smallScreen ? "grey" : "white",
           minWidth: "125px",
           width: "100%",
-          background: props.smallScreen ? "white" : "#3f4854",
+          background: "none",
           border: props.smallScreen ? "initial" : "none"
         }}
       >

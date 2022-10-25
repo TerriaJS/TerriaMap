@@ -11,14 +11,14 @@
 
 // These variables are for buttons and text.
 // "color-secondary" should be a lighter color than "color-primary" but still readable contrasted with white.
-$color-primary: #2670a4;
+$color-primary: #008da9;
 
 $color-secondary: hsl(60, 80%, 60%); // or: lighten($color-primary, 20%);
 
 $color-custom: #404855;
 
 // These variables set background panel colors
-// $dark: rgba(2, 0, 19, 0.418);
+$dark: rgba(2, 0, 19, 0.418);
 // $dark-with-overlay: hsl(0,30%,30%);
 // $dark-lighter: hsl(0,30%,50%);
 
