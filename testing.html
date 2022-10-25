@@ -3,18 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>RENCI/TerriaMap data injection test</title>
-
+​
 		<!-- JQuery components -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+​
 		<!-- Bootstrap components -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-
+​
 		<!-- D3 components -->
 		<script src="https://d3js.org/d3.v3.min.js"></script>
 		<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
@@ -22,10 +17,20 @@
 <body id="theBody" style="background:#3f4854;margin:0px;padding:0px;overflow:hidden">
     <table>
       <tr>
+        <td style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-info" style="background-color: #2670a4; padding-left: 10px;padding-right: 10px" value="Submit" onclick="getCatalogData(true);">Load APSViz DB data</button></td>
+        <td style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-info" style="background-color: #2670a4; padding-left: 10px;padding-right: 10px" value="Submit" onclick="getCatalogData(false);">Load Demo data</button></td>
+        <td style="padding-left: 10px;padding-right: 10px"><div id="statusMsg" style="color:white;text-align: left;padding-left: 10px;padding-right: 10px">Loading...</div></td>
+        <td style="padding-left: 10px;padding-right: 10px"><div style="color:white;text-align: left;padding-left: 10px;padding-right: 10px">Filtering:</div></td> <option></option>
+        <td style="padding-left: 10px;padding-right: 10px"><select id="forcastType" style="background-color: #2670a4; color:white;text-align: left;padding-left: 10px;padding-right: 10px"><option> --- Forcast Type --- </option><option>namforecast</option><option>nhcConsensus</option></select></td>
+        <td style="padding-left: 10px;padding-right: 10px"><select id="adcircGrid" style="background-color: #2670a4; color:white;text-align: left;padding-left: 10px;padding-right: 10px"><option> --- ADCIRC Grid --- </option><option>ec95d</option><option>EGOMv20b</option><option>hsofs</option><option>nc_inundation_v9.99_w_rivers</option><option>NCSC_SAB_v1.23</option></select></td>
+        <td style="padding-left: 10px;padding-right: 10px"><select id="instanceName" style="background-color: #2670a4; color:white;text-align: left;padding-left: 10px;padding-right: 10px"><option> --- Instance Name --- </option><option>ec95d-nam-bob3</option><option>ec95d-nam-bob-psc</option><option>EGOMv20b_nam_jgf</option><option>hsofs-nam-bob-2022-psc</option><option>ncsc123-nam-sb55.01</option><option>ncsc123-nam-sbDNTK</option><option>ncsc123-nam-sbDNTKa</option></select></td>
+        <td style="padding-left: 10px;padding-right: 10px"><select id="calendarDate" style="background-color: #2670a4; color:white;text-align: left;padding-left: 10px;padding-right: 10px"><option> --- Calendar Date --- </option><option>2022-08-22</option><option>2022-08-23</option><option>2022-08-24</option></select></td>
+      </tr>
+      <tr>
         <td><iframe id="embeddedAPSVIZMap" src="http://localhost:3001/" style="position: absolute; height: 100%; width: 100%; border: none"></iframe></td>
       </tr>
     </table>
-
+​
     <script type="text/javascript">
         // assign the demo data
         let demoData = {
@@ -55,13 +60,13 @@
                         }
                     ]
                 };
-
+​
         // define the location of the terria-map site
         const UI_URL = "https://apsviz-terria-map-dev.apps.renci.org";
-
+​
         // set the DB data web service url
         const WS_URL = "http://apsviz-settings-dev.apps.renci.org/get_terria_map_data"
-
+​
         /**
          * gets the data from the DB.
          *
@@ -70,10 +75,10 @@
         function getCatalogData(get_db_data)
         {
           $('#statusMsg').text("Loading...");
-
+​
           // get a reference to the frame
           let iframeWindow = document.getElementById('embeddedAPSVIZMap').contentWindow;
-
+​
           // do nothing on the startup case
           if(get_db_data == undefined) {
             $('#statusMsg').text("Ready.");
@@ -81,22 +86,21 @@
           }
           // if DB data is requested
           else if(get_db_data) {
+            let url = get_data_url();
+​
             // get the DB apsviz catalog
-            d3.json(WS_URL, function(error, msgData)
+            d3.json(url, function(error, msgData)
             {
               if (error == null && msgData.length != 0 && msgData != 'None') {
                 // add the home camera so the map pans
                 msgData.initialCamera = {east: -61, north: 46, south: 20, west: -96};
-
+​
                 // save the final data
                 let data_catalog = {initSources: [msgData]};
-                console.log(data_catalog)
-                
-  
-
+​
                 // post the data catalog to the map
                 iframeWindow.postMessage(data_catalog, UI_URL);
-
+​
                 $('#statusMsg').text("Done, ready.");
               }
               else
@@ -109,21 +113,53 @@
           else
           {
             let data_catalog = demoData;
-
+​
             // post the catalog data to the map
             iframeWindow.postMessage(data_catalog, UI_URL);
-
+​
             $('#statusMsg').text("Done, ready.");
           }
         }
-        
-
+​
+        /**
+         * builds the URL for the WS data url call
+         */
+        function get_data_url()
+        {
+          // init local variables
+          let url_params = '';
+          let final_url = WS_URL;
+​
+          // get the forcast type if selected
+          if ($('#forcastType').val().substring(0,3) != '---')
+            url_params += '&event_type=' + $('#forcastType').val();
+​
+          // get the grid type if selected
+          if ($('#adcircGrid').val().substring(0,3) != '---')
+            url_params += '&grid_type=' + $('#adcircGrid').val();
+​
+          // get the instance name if selected
+          if ($('#instanceName').val().substring(0,3) != '---')
+            url_params += '&instance_name=' + $('#instanceName').val();
+​
+          // get the calendar date if selected
+          if ($('#calendarDate').val().substring(0,3) != '---')
+            url_params += '&run_date=' + $('#calendarDate').val();
+​
+          // if there were any selections build up the final url
+          if (url_params != null)
+            final_url += '/?limit=2' + url_params;
+​
+          // return the url to the caller
+          return final_url;
+        }
+​
         /**
          * app ready event handler
-          */
-        window.addEventListener('load', function(e) {
+         */
+        window.addEventListener('message', function(e) {
             let iframeWindow = document.getElementById('embeddedAPSVIZMap').contentWindow;
-            getCatalogData(true);
+​
             // if the frame and data are ready
             if (e.source === iframeWindow && e.data === 'ready') {
                 // get the catalog data

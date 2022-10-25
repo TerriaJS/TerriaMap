@@ -61,15 +61,14 @@ export default function UserInterface(props) {
           <SearchByDay viewState={props.viewState} />
         </MenuLeft>
       )}
-
-      <ExperimentalMenu>
-        <div className="hide-on-mobile">
+      {windowDimensions.width >= 768 && (
+        <ExperimentalMenu>
           <SearchByDay viewState={props.viewState} />
           <SearchByInstance viewState={props.viewState} />
           <SearchByType viewState={props.viewState} />
           <SearchByGrid viewState={props.viewState} />
-        </div>
-      </ExperimentalMenu>
+        </ExperimentalMenu>
+      )}
     </StandardUserInterface>
   );
 }
