@@ -82,8 +82,8 @@
     // By default, the Getting Started to Terria video is displayed
     "welcomeMessageVideo": {
         "videoTitle": "Getting started with the map",
-        "videoUrl": "https://www.youtube-nocookie.com/embed/QkbT6nbPr-Y", // use an embedded video link  video RSE
-        "placeholderImage": "https://img.youtube.com/vi/QkbT6nbPr-Y/maxresdefault.jpg"
+        "videoUrl": "https://www.youtube-nocookie.com/embed/2r41Yg9wme4", // use an embedded video link  video RSE
+        "placeholderImage": "https://img.youtube.com/vi/2r41Yg9wme4/maxresdefault.jpg"
     },
 
     // True to display in-app guides.
