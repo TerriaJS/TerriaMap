@@ -240,15 +240,15 @@ function checkForDuplicateCesium() {
   var fse = require("fs-extra");
 
   if (
-    fse.existsSync("node_modules/terriajs-cesium") &&
-    fse.existsSync("node_modules/terriajs/node_modules/terriajs-cesium")
+    fse.existsSync("node_modules/cesium") &&
+    fse.existsSync("node_modules/terriajs/node_modules/cesium")
   ) {
     console.log(
-      "You have two copies of terriajs-cesium, one in this application's node_modules\n" +
-        "directory and the other in node_modules/terriajs/node_modules/terriajs-cesium.\n" +
+      "You have two copies of cesium, one in this application's node_modules\n" +
+        "directory and the other in node_modules/terriajs/node_modules/cesium.\n" +
         "This leads to strange problems, such as knockout observables not working.\n" +
-        "Please verify that node_modules/terriajs-cesium is the correct version and\n" +
-        "  rm -rf node_modules/terriajs/node_modules/terriajs-cesium\n" +
+        "Please verify that node_modules/cesium is the correct version and\n" +
+        "  rm -rf node_modules/terriajs/node_modules/cesium\n" +
         "Also consider running:\n" +
         "  yarn gulp sync-terriajs-dependencies\n" +
         "to prevent this problem from recurring the next time you `npm install`."
