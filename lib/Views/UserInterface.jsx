@@ -27,11 +27,19 @@ import "./global.scss";
 
 export default function UserInterface(props) {
   const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
+  const aboutButtonHrefUrl =
+    props.viewState.terria.configParameters.aboutButtonHrefUrl;
 
   return (
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
-        <MenuItem caption="About" href="about.html" key="about-link" />
+        {aboutButtonHrefUrl ? (
+          <MenuItem
+            caption="About"
+            href={aboutButtonHrefUrl}
+            key="about-link"
+          />
+        ) : null}
         {relatedMaps && relatedMaps.length > 0 ? (
           <RelatedMaps relatedMaps={relatedMaps} />
         ) : null}
