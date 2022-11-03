@@ -21,7 +21,7 @@ export default function renderUi(terria, allBaseMaps, viewState) {
     // Support hot reloading of components
     // and display an overlay for runtime errors
     const renderApp = render;
-    const renderError = error => {
+    const renderError = (error) => {
       console.error(error);
       console.error(error.stack);
       ReactDOM.render(<RedBox error={error} />, document.getElementById("ui"));

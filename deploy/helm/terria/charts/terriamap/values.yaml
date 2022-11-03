@@ -6,8 +6,8 @@ image:
   pullPolicy: Always
 clientConfig:
   initializationUrls:
-  - helm
-  - terria
+    - helm
+    - terria
   parameters:
     bingMapsKey: AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_
     disclaimer:
@@ -24,7 +24,12 @@ clientConfig:
       text: "Your organisation"
       link: "http://www.example.com"
     appName: "Terria Map"
-    brandBarElements: ["", "<a target=\"_blank\" href=\"http://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>", ""]
+    brandBarElements:
+      [
+        "",
+        '<a target="_blank" href="http://terria.io"><img src="images/terria_logo.png" height="52" title="Version: {{version}}" /></a>',
+        ""
+      ]
     supportEmail: "help@example.com"
     mobileDefaultViewerMode: "2d"
     experimentalFeatures: true
@@ -39,8 +44,9 @@ serverConfig:
   port: 3001
   allowProxyFor: []
   initPaths:
-  - "/etc/config/client"
-resources: {}
+    - "/etc/config/client"
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following

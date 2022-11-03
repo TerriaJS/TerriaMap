@@ -1,17 +1,22 @@
+import PropTypes from "prop-types";
+import React from "react";
+import RelatedMaps from "terriajs/lib/ReactViews/RelatedMaps/RelatedMaps";
 import {
-  MenuLeft,
-  Nav,
-  ExperimentalMenu
+  ExperimentalMenu,
+  MenuLeft
 } from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
 import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
+<<<<<<< HEAD
 import PropTypes from "prop-types";
 import React from "react";
 import SearchByDay from "./SearchByDay";
 import SearchByType from "./SearchByType";
 import SplitPoint from "terriajs/lib/ReactViews/SplitPoint";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx";
+=======
+import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface";
+>>>>>>> upstream/main
 import version from "../../version";
-
 import "./global.scss";
 
 // function loadAugmentedVirtuality(callback) {
@@ -30,6 +35,8 @@ import "./global.scss";
 // }
 
 export default function UserInterface(props) {
+  const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
+
   return (
     <StandardUserInterface {...props} version={version}>
       <MenuLeft>
