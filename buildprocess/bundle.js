@@ -10,6 +10,7 @@ esbuild
     plugins: [
       sassPlugin({
         customSassOptions: {
+          verbose: false,
           // Support resolving paths like "terriajs/..."
           loadPaths: [
             path.resolve(
@@ -22,9 +23,14 @@ esbuild
     ],
     loader: {
       ".gif": "file",
-      ".html": "text"
-    },
-    logLimit: 10
+      ".png": "file",
+      ".svg": "file",
+      ".html": "text",
+      ".glb": "file",
+      ".xml": "file",
+      ".DAC": "file"
+    }
+    //logLimit: 10,
     //logLevel: "verbose"
   })
-  .catch((e) => console.error(e.message));
+  .catch((e) => console.error("ERRORS!"));
