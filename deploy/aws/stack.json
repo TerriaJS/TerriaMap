@@ -65,7 +65,7 @@
       "Type": "Number"
     },
     "UserDataBase64": {
-        "Type": "String"
+      "Type": "String"
     },
     "WebServerPort": {
       "Default": "80",
@@ -114,11 +114,7 @@
         "AutoScalingRollingUpdate": {
           "MaxBatchSize": "1",
           "MinInstancesInService": {
-            "Fn::If": [
-              "UseSpotInstances",
-              0,
-              1
-            ]
+            "Fn::If": ["UseSpotInstances", 0, 1]
           },
           "PauseTime": "PT0M5S"
         }
@@ -229,7 +225,7 @@
           ]
         },
         "UserData": {
-            "Ref": "UserDataBase64"
+          "Ref": "UserDataBase64"
         }
       },
       "Type": "AWS::AutoScaling::LaunchConfiguration"
@@ -243,10 +239,7 @@
           {
             "AliasTarget": {
               "DNSName": {
-                "Fn::GetAtt": [
-                  "ElasticLoadBalancer",
-                  "CanonicalHostedZoneName"
-                ]
+                "Fn::GetAtt": ["ElasticLoadBalancer", "CanonicalHostedZoneName"]
               },
               "HostedZoneId": {
                 "Fn::GetAtt": [
@@ -290,14 +283,10 @@
         "AssumeRolePolicyDocument": {
           "Statement": [
             {
-              "Action": [
-                "sts:AssumeRole"
-              ],
+              "Action": ["sts:AssumeRole"],
               "Effect": "Allow",
               "Principal": {
-                "Service": [
-                  "ec2.amazonaws.com"
-                ]
+                "Service": ["ec2.amazonaws.com"]
               }
             }
           ]
@@ -311,18 +300,12 @@
             "PolicyDocument": {
               "Statement": [
                 {
-                  "Action": [
-                    "s3:Get*",
-                    "s3:List*"
-                  ],
+                  "Action": ["s3:Get*", "s3:List*"],
                   "Effect": "Allow",
                   "Resource": "*"
                 },
                 {
-                  "Action": [
-                    "s3:GetObject",
-                    "s3:PutObject"
-                  ],
+                  "Action": ["s3:GetObject", "s3:PutObject"],
                   "Effect": "Allow",
                   "Resource": [
                     "arn:aws:s3:::terriamap-sharing",
@@ -341,12 +324,6 @@
       "Properties": {
         "GroupDescription": "SecurityGroup",
         "SecurityGroupIngress": [
-          {
-            "CidrIp": "0.0.0.0/0",
-            "FromPort": "22",
-            "IpProtocol": "tcp",
-            "ToPort": "22"
-          },
           {
             "FromPort": {
               "Ref": "WebServerPort"
