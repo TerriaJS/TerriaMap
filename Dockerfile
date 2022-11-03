@@ -35,6 +35,7 @@ COPY terria-logo.png .
 COPY tsconfig.json .
 #COPY version.js .
 COPY yarn.lock .
+COPY devserverconfig.json .
 
 # make sure everything is readable
 RUN chmod 777 -R /home/nru
@@ -62,8 +63,9 @@ RUN yarn install
 
 # sync terria dependancies
 # although this fixes mobx version conflicts it causes other errors
-RUN npm run gulp-sync
+# RUN npm run gulp-sync
 
+RUN npx browserslist@latest --update-db
 
 # create the "build" dir/files
 #RUN npm run gulp build
