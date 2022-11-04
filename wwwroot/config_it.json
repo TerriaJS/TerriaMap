@@ -19,6 +19,7 @@
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
+    "bingMapsKey": "Aj52TTgDSEY_aVi6YsjNDChjXC4HX540a9IW3pXlLgK5N5QeVLtu4QRRU2dZBOV1",
 
     // Log ConsoleAnalytics events to console
     // logToConsole: true,

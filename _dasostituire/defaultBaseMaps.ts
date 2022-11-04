@@ -15,29 +15,29 @@ export function defaultBaseMaps(terria: Terria): any[] {
         mapStyle: "AerialWithLabelsOnDemand",
         opacity: 1.0
       },
-      image: "build/TerriaJS/images/bing-aerial-labels.png"
+      image: "images/basemaps/bing-aerial-label.png"
     });
 
-    baseMaps.push({
-      item: {
-        id: "basemap-bing-aerial",
-        name: "Bing Maps Aerial",
-        type: "bing-maps",
-        mapStyle: "Aerial",
-        opacity: 1.0
-      },
-      image: "build/TerriaJS/images/bing-aerial.png"
-    });
-    baseMaps.push({
-      item: {
-        id: "basemap-bing-roads",
-        name: "Bing Maps Roads",
-        type: "bing-maps",
-        mapStyle: "RoadOnDemand",
-        opacity: 1.0
-      },
-      image: "build/TerriaJS/images/bing-maps-roads.png"
-    });
+    //baseMaps.push({
+    //  item: {
+     //   id: "basemap-bing-aerial",
+    //    name: "Bing Maps Aerial",
+     //   type: "bing-maps",
+    //    mapStyle: "Aerial",
+    //    opacity: 1.0
+    //  },
+    //  image: "build/TerriaJS/images/bing-aerial.png"
+    //});
+    //baseMaps.push({
+    //  item: {
+    //    id: "basemap-bing-roads",
+    //    name: "Bing Maps Roads",
+    //    type: "bing-maps",
+    //    mapStyle: "RoadOnDemand",
+   //     opacity: 1.0
+   //   },
+   //   image: "build/TerriaJS/images/bing-maps-roads.png"
+   // });
   } else if (terria.configParameters.useCesiumIonBingImagery === true) {
     baseMaps.push({
       item: {
@@ -47,29 +47,29 @@ export function defaultBaseMaps(terria: Terria): any[] {
         ionAssetId: 3,
         opacity: 1.0
       },
-      image: "build/TerriaJS/images/bing-aerial-labels.png"
+      image: "images/basemaps/bing-aerial-label.png"
     });
 
-    baseMaps.push({
-      item: {
-        id: "basemap-bing-aerial",
-        name: "Bing Maps Aerial",
-        type: "ion-imagery",
-        ionAssetId: 2,
-        opacity: 1.0
-      },
-      image: "build/TerriaJS/images/bing-aerial.png"
-    });
-    baseMaps.push({
-      item: {
-        id: "basemap-bing-roads",
-        name: "Bing Maps Roads",
-        type: "ion-imagery",
-        ionAssetId: 4,
-        opacity: 1.0
-      },
-      image: "build/TerriaJS/images/bing-maps-roads.png"
-    });
+   // baseMaps.push({
+   //   item: {
+   //     id: "basemap-bing-aerial",
+   //     name: "Bing Maps Aerial",
+   //     type: "ion-imagery",
+   //     ionAssetId: 2,
+   //     opacity: 1.0
+   //   },
+   //   image: "build/TerriaJS/images/bing-aerial.png"
+   // });
+   // baseMaps.push({
+   //   item: {
+   //     id: "basemap-bing-roads",
+   //     name: "Bing Maps Roads",
+   //     type: "ion-imagery",
+   //     ionAssetId: 4,
+   //     opacity: 1.0
+   //   },
+   //   image: "build/TerriaJS/images/bing-maps-roads.png"
+   // });
   }
 
   // baseMaps.push({
@@ -109,7 +109,7 @@ export function defaultBaseMaps(terria: Terria): any[] {
       subdomains: ["a", "b", "c", "d"],
       opacity: 1.0
     },
-    image: "build/TerriaJS/images/positron.png"
+    image: "images/basemaps/positron.png"
   });
 
   baseMaps.push({
@@ -123,7 +123,7 @@ export function defaultBaseMaps(terria: Terria): any[] {
       subdomains: ["a", "b", "c", "d"],
       opacity: 1.0
     },
-    image: "build/TerriaJS/images/dark-matter.png"
+    image: "images/basemaps/dark-matter.png"
   });
 
   return baseMaps;

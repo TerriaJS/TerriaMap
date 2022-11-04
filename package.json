@@ -99,7 +99,7 @@
     "stop": "pm2 stop ecosystem.config.js",
     "pm2": "pm2",
     "gulp": "gulp",
-    "gulp_RSE": "yarn pre_gulp && gulp release && yarn post_gulp",
+    "gulp_RSE": "yarn pre_gulp && gulp release",
     "gulp:watch": "gulp watch",
     "postinstall": "echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
@@ -115,7 +115,8 @@
     "replace_prev": "copy wwwroot\\images\\basemaps\\black-marble.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\dark-matter.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\natural-earth.png .\\wwwroot\\build\\TerriaJS\\images\\ && copy wwwroot\\images\\basemaps\\positron.png .\\wwwroot\\build\\TerriaJS\\images\\",
     "replace_language": "copy node_modules\\terriajs\\lib\\Language\\it\\translation.json wwwroot\\languages\\it",
     "replace_tour": "copy .\\_dasostituire\\languageOverrides.json .\\wwwroot\\languages\\it\\languageOverrides.json && copy .\\_dasostituire\\defaultTourPoints.ts .\\node_modules\\terriajs\\lib\\ReactViewModels\\",
-    "pre_gulp": "yarn replace_brand && yarn replace_tour",
+    "fix_images" : "copy .\\_dasostituire\\defaultBaseMaps.ts .\\node_modules\\terriajs\\lib\\Models\\BaseMaps\\",
+    "pre_gulp": "yarn replace_brand && yarn replace_tour && yarn fix_images",
     "post_gulp": "yarn replace_prev"
   },
   "husky": {
