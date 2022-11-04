@@ -59,7 +59,7 @@ USER 1000
 RUN git config --global url."https://".insteadOf git://
 
 ## install yarn and build up the node_modules dir
-RUN yarn install
+RUN npm install
 
 # sync terria dependancies
 # although this fixes mobx version conflicts it causes other errors
@@ -71,10 +71,10 @@ RUN npx browserslist@latest --update-db
 #RUN npm run gulp build
 
 # remove the file we will turn into a symbolic link
-RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
+# RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
 
 # make a symbolic link to the apsviz.json file
-RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/apsviz.json
+# RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/apsviz.json
 
 # expose the web server port
 EXPOSE 3001
@@ -82,4 +82,4 @@ EXPOSE 3001
 # start the app
 # nohup npm run gulp:watch & node ./node_modules/terriajs-server/lib/app.js
 # "/bin/sh", "-c", "yarn start; while true; do date; sleep 3600; done"
-CMD ["/bin/sh", "-c", "yarn start; npm run gulp:watch"]
+CMD ["/bin/sh", "-c", "npm run start; npm run gulp:watch"]
