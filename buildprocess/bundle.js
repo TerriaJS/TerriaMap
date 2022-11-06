@@ -11,10 +11,20 @@ esbuild
       sassPlugin({
         customSassOptions: {
           verbose: false,
-          // Support resolving paths like "terriajs/..."
           loadPaths: [
+            // Support resolving paths like "terriajs/..."
             path.resolve(
               path.dirname(require.resolve("terriajs/package.json")),
+              ".."
+            ),
+            path.resolve(
+              path.dirname(require.resolve("rc-slider/package.json")),
+              ".."
+            ),
+            path.resolve(
+              path.dirname(
+                require.resolve("react-anything-sortable/package.json")
+              ),
               ".."
             )
           ]
@@ -24,12 +34,22 @@ esbuild
     loader: {
       ".gif": "file",
       ".png": "file",
+      ".jpg": "file",
       ".svg": "file",
       ".html": "text",
       ".glb": "file",
       ".xml": "file",
       ".DAC": "file"
-    }
+    },
+    external: [
+      // Don't try to load node-only modules and other unnecessary stuff
+      "fs",
+      "path",
+      "http",
+      "https",
+      "zlib",
+      "geojson-stream"
+    ]
     //logLimit: 10,
     //logLevel: "verbose"
   })
