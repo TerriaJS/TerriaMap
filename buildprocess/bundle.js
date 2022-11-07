@@ -6,7 +6,8 @@ esbuild
   .build({
     entryPoints: ["index.js"],
     bundle: true,
-    outfile: "esbuild/foo.js",
+    outfile: "wwwroot/esbuild/TerriaMap.js",
+    jsx: "transform",
     plugins: [
       sassPlugin({
         customSassOptions: {
@@ -50,7 +51,11 @@ esbuild
       "zlib",
       "geojson-stream"
     ]
+    // metafile: true,
     //logLimit: 10,
     //logLevel: "verbose"
+  })
+  .then((result) => {
+    console.log(result.metafile);
   })
   .catch((e) => console.error("ERRORS!"));
