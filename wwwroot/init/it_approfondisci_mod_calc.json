@@ -9,7 +9,7 @@
           "type": "wms",
           "name": "modulo_calcolo",
           "url": "http://gis2.rse-web.it/geoserver/wms",
-          "layers": "aeolian:Grid_nazionale21062022_limiti_amministrativi", 
+          "layers": "aeolian:Grid_nazionale_07112022_limiti_amministrativi", 
           "styles": "polygon",
           "opacity": 0.5,
           "featureInfoTemplate": {

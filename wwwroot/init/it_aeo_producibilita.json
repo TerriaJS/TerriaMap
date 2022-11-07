@@ -27,7 +27,7 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=240"
               }],
-              "layers": "aeolian:griglia_dati_05102022",
+              "layers": "aeolian:griglia_dati_07112022",
               "id": "eo_prod50_onshore",
               "styles":"aeolian:prod50_onshore"
             },
@@ -43,7 +43,7 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=241"
               }],
-              "layers": "aeolian:griglia_dati_05102022",
+              "layers": "aeolian:griglia_dati_07112022",
               "id": "eo_prod75_onshore",
               "styles":"aeolian:prod75_onshore"
             } ,
@@ -59,7 +59,7 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=242"
               }],
-              "layers": "aeolian:griglia_dati_05102022",
+              "layers": "aeolian:griglia_dati_07112022",
               "id": "eo_prod100_onshore",
               "styles":"aeolian:prod100_onshore"
             }  
@@ -85,7 +85,7 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=243"
               }],
-              "layers": "aeolian:griglia_dati_05102022",
+              "layers": "aeolian:griglia_dati_07112022",
               "id": "eo_prod100_offshore",
               "styles":"aeolian:prod100_offshore"
             },
@@ -101,7 +101,7 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aaeolian_metadati.php?var_id=244"
               }],
-              "layers": "aeolian:griglia_dati_05102022",
+              "layers": "aeolian:griglia_dati_07112022",
               "id": "eo_prod125_offshore",
               "styles":"aeolian:prod125_offshore"
             },
@@ -117,7 +117,7 @@
                 "title":"link metadato",
                 "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=245"
               }],
-              "layers": "aeolian:griglia_dati_05102022",
+              "layers": "aeolian:griglia_dati_07112022",
               "id": "eo_prod150_offshore",
               "styles":"aeolian:prod150_offshore"
             }    
