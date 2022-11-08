@@ -13,7 +13,7 @@
           "styles": "polygon",
           "opacity": 0.5,
           "featureInfoTemplate": {
-            "template": "<br><p>Valutazione tecnico economica di un parco eolico<p style='display: block; text-align: center;'><button><a href=\"https://atlanteeolico.rse-web.it/bootstrap/modcalc.html?Lon=11.9837&Lat=44.1737&Com={{comune}}&ons={{onshore}}&Prov={{provincia}}&Reg={{regione}}&Alti={{quota}}&KWe50={{weib_50}}&KWe75={{weib_75}}&KWe100={{weib_100}}&Distimp={{dist_cp}}&Vel50={{vento_50}}&Vel75={{vento_75}}&Vel100={{vento_100}}&Vel125={{vento_125}}&Vel150={{vento_150}}&Pro50={{prod_50}}&Pro75={{prod_75}}&Pro100={{prod_100}}&Pro125={{prod_125}}&Pro150={{prod_150}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
+            "template": "<br><p>Valutazione tecnico economica di un parco eolico<p style='display: block; text-align: center;'><button><a href=\"https://atlanteeolico.rse-web.it/bootstrap/modcalc.html?Lon={{long}}&Lat={{lat}}&Com={{comune}}&ons={{onshore}}&Prov={{provincia}}&Reg={{regione}}&Alti={{quota}}&KWe50={{weib_50}}&KWe75={{weib_75}}&KWe100={{weib_100}}&Distimp={{dist_cp}}&Vel50={{vento_50}}&Vel75={{vento_75}}&Vel100={{vento_100}}&Vel125={{vento_125}}&Vel150={{vento_150}}&Pro50={{prod_50}}&Pro75={{prod_75}}&Pro100={{prod_100}}&Pro125={{prod_125}}&Pro150={{prod_150}}\" style='color: black; padding: 0px 10px 0px 10px'>Avvia</a></button></p>"
 
 
 
