@@ -4,7 +4,7 @@
       "id": "producibilita",
       "type": "group",
       "name": "Producibilità",
-      "description": "Questa raccolta contiene le mappe di producibilità del vento espresse in m/s calcolate come media annua su 30 anni di dati a diverse altezze. \n<br> In particolare, queste elaborazioni derivano dalla nuova banca dati anemologica italiana costituita da 30 anni di dati a passo temporale orario e spaziale di 1.4 km, utilizzando il modello meteorologico Weather Research and Forecasting (WRF) combinato con un post-processing statistico basato su Analog Ensemble (AnEn).",
+      "description": "Questa raccolta contiene le mappe di producibilità del vento espresse in MWh/MW calcolate come media annua su 30 anni di dati a diverse altezze. \n<br> In particolare, queste elaborazioni derivano dalla nuova banca dati anemologica italiana costituita da 30 anni di dati a passo temporale orario e spaziale di 1.4 km, utilizzando il modello meteorologico Weather Research and Forecasting (WRF) combinato con un post-processing statistico basato su Analog Ensemble (AnEn).",
       "isOpen": false,
       "members": [
         {

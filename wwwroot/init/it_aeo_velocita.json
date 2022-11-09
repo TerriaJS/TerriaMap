@@ -17,7 +17,7 @@
             {
               "type": "wms",
               "name": "Velocita' media annua del vento onshore a 50 m s.l.t. ",
-              "description": "Velocità media annua del vento offshore alla quota di 50 m s.l.t. espressa in m/s.",
+              "description": "Velocità media annua del vento onshore alla quota di 50 m s.l.t. espressa in m/s.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
                 "template": "<p>La velocita' del vento è pari a <b>{{vento_50}}</b> m/s </p>"

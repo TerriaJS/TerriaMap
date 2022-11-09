@@ -13,7 +13,7 @@
           "description": "Mappa degli aerogeneratori presenti sul territorio nazionale (anno di riferimento 2019), derivante da un' elaborazione di Ricerca sul Sistema Energetico - RSE S.p.A. a partire da dati GSE , The Wind Power e da immagini satellitari Sentinel-2. A ciascun aerogeneratore è associata una classe di potenza.",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "featureInfoTemplate": {
-            "template": "<p>Database degli aerogeneratori <b>{{classe}}</b> m/s </p>"
+            "template": "<p>Classe di potenza <b>{{classe_pot}}</b></p>"
           },
           "metadataUrls":[{
             "title":"link metadato",
