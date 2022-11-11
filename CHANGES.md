@@ -2,6 +2,15 @@
 
 ### The Next Release
 
+- [The next improvement]
+
+### `0.0.6`
+
+**2022-11-11**
+
+- About button href is now pulled from TerriaJS `configParameters.aboutButtonHrefUrl`
+- Update TerriaJS to `8.2.21`
+
 ### `0.0.5`
 
 **2022-11-02**
