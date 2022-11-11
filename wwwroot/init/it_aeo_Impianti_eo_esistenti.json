@@ -17,7 +17,7 @@
           },
           "metadataUrls":[{
             "title":"link metadato",
-            "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=229"
+            "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=229"
           }],
           "layers": "new_atlante_integrato:aerogeneratori",
           "id": "aerogeneratori_2019"

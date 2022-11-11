@@ -13,11 +13,11 @@
             "description": "Limiti amministrativi regionali selezionabili in differenti anni. Fonte dati ISTAT.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
-              "template": "<p>Regione <b>{{den_reg}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=108&anno={{anno}}\">link al metadato </a> </p>"
+              "template": "<p>Regione <b>{{den_reg}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=108&anno={{anno}}\">link al metadato </a> </p>"
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=108&anno=2022"
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=108&anno=2022"
             }],
             "layers": "new_atlante_integrato:v_regioni_terria",
             "id": "confreg"
@@ -28,11 +28,11 @@
             "description": "Limiti amministrativi provinciali selezionabili in differenti anni. Fonte dati ISTAT.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
-              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno=2022"
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno=2022"
             }],
             //fatto nuova vista e nuovo servizio identici a v_province_terria. Nel nuovo servizio è stato associato un solo stile, perchè le province in atlante integrato ne hanno associati due visto che vengono usate anche per totem.
             "layers": "new_atlante_integrato:v_province_terria_aeolian",
@@ -48,7 +48,7 @@
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=110&anno=2022"
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=110&anno=2022"
             }],
             "layers": "new_atlante_integrato:v_comuni_terria",
             "id": "confcom"
@@ -82,11 +82,11 @@
             "description": " Dati relativi alla profondità media del fondale marino. \n<br>Elaborazioni RSE del 2018 con riclassificazione in 5 classi a profondità crescente, a partire dai dati dell' European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             //"featureInfoTemplate": {
-            //  "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+            //  "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
             //},
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=205"
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=205"
             }],
             "layers": "new_atlante_integrato:bati_2018",
             "styles":"new_atlante_integrato:bati_2018",
@@ -98,11 +98,11 @@
             "description": " Zona economica esclusiva dell'Italia. \n<br>Dato distribuito dal Flanders Marine Institute https://www.marineregions.org/.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
-              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+              "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
             },
             "metadataUrls":[{
               "title":"link metadato",
-              "url":"http://dbeta.rse-web.it/aeolian_metadati.php?var_id=171"
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=171"
             }],
             "layers": "new_atlante_integrato:eez",
             "styles":"aeolian:linea_blu_2",
