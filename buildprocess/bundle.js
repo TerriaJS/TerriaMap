@@ -1,5 +1,7 @@
 const esbuild = require("esbuild");
-const sassPlugin = require("esbuild-plugin-sass");
+const terriaSassModulesPlugin = require("./terriaSassModulesPlugin");
+const babelPlugin = require("./babelPlugin");
+const transformJsxControlStatements = require("./babelPluginTransformJsxControlStatements");
 const path = require("path");
 
 esbuild
@@ -8,26 +10,42 @@ esbuild
     bundle: true,
     outfile: "wwwroot/esbuild/TerriaMap.js",
     jsx: "transform",
+    define: {
+      "process.env.NODE_ENV": process.env.NODE_ENV,
+      "module.hot": false
+    },
     plugins: [
-      sassPlugin({
-        customSassOptions: {
-          verbose: false,
-          loadPaths: [
-            // Support resolving paths like "terriajs/..."
-            path.resolve(
-              path.dirname(require.resolve("terriajs/package.json")),
-              ".."
+      terriaSassModulesPlugin({
+        includePaths: [
+          // Support resolving paths like "terriajs/..."
+          path.resolve(
+            path.dirname(require.resolve("terriajs/package.json")),
+            ".."
+          ),
+          path.resolve(
+            path.dirname(require.resolve("rc-slider/package.json")),
+            ".."
+          ),
+          path.resolve(
+            path.dirname(
+              require.resolve("react-anything-sortable/package.json")
             ),
-            path.resolve(
-              path.dirname(require.resolve("rc-slider/package.json")),
-              ".."
-            ),
-            path.resolve(
-              path.dirname(
-                require.resolve("react-anything-sortable/package.json")
-              ),
-              ".."
-            )
+            ".."
+          )
+        ]
+      }),
+      babelPlugin({
+        filter: /\.[jt]sx$/,
+        config: {
+          plugins: [
+            //"babel-plugin-jsx-control-statements",
+            transformJsxControlStatements,
+            "@babel/plugin-syntax-typescript",
+            ["@babel/plugin-proposal-decorators", { legacy: true }],
+            "@babel/proposal-class-properties",
+            "babel-plugin-syntax-jsx",
+            "babel-plugin-macros",
+            "babel-plugin-styled-components"
           ]
         }
       })
@@ -48,14 +66,13 @@ esbuild
       "path",
       "http",
       "https",
-      "zlib",
-      "geojson-stream"
+      "zlib"
+      //"geojson-stream"
     ]
-    // metafile: true,
-    //logLimit: 10,
-    //logLevel: "verbose"
   })
   .then((result) => {
-    console.log(result.metafile);
+    console.log(result);
   })
-  .catch((e) => console.error("ERRORS!"));
+  .catch((e) => {
+    console.error("ERRORS!", e);
+  });
