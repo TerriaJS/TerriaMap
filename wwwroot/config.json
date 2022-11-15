@@ -1,19 +1,35 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["simple"],
+  "initializationUrls": [
+    //"it_aeo_cartografia",
+    "en_aeo_dati_cartografici",
+    //"it_aeo_limiti_amministrativi",
+    //"it_aeo_dati_territoriali",
+    "en_aeo_velocita",
+    "en_aeo_producibilita",
+    "en_aeo_Impianti_eo_esistenti",
+    //"it_aeo_stazioni_anemometriche",
+    "it"
+  ], 
   "parameters": {
+    "tabbedCatalog": true,
+    "useCesiumIonTerrain": false,
+    "cesiumTerrainAssetId": false,
+
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
+    "bingMapsKey": "Aj52TTgDSEY_aVi6YsjNDChjXC4HX540a9IW3pXlLgK5N5QeVLtu4QRRU2dZBOV1",
 
     // Log ConsoleAnalytics events to console
     // logToConsole: true,
 
     /* Text that appears at the bottom of the map */
     "disclaimer": {
-      "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
+      "text": "Disclaimer: questa mappa non deve essere usata per la navigazione o per un'analisi spaziale precisa",
       "url": ""
     },
+    /*
     /*
         // Text that will be added to any pages printed from your site.
         printDisclaimer:{
@@ -45,16 +61,17 @@
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
-      "",
-      "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"http://www.rse-web.it\"><img src=\"images/aeolian_logo_9_bis.png\" style=\"display: block; margin-left: auto; margin-right: auto;  margin-top: 0px; width: 100%;\" /></a>",
+      "<p style=\"display: block; text-align: center; color: white; font-size: 20px; margin-top: 10px; margin-left: auto; margin-right: auto;\"><b></b></p>",
       ""
     ],
     // Shown when things go wrong.
-    "supportEmail": "help@example.com",
+    "supportEmail": "rse@legalmail.it",
     // You probably shouldn't change this.
     "proj4ServiceBaseUrl": "proj4def/",
     // Or this
     "feedbackUrl": "feedback",
+
 
     // Default mobile viewer mode when loading the map for the first time on mobile platforms.
     // Options are: "3DTerrain", "3DSmooth", "2D"

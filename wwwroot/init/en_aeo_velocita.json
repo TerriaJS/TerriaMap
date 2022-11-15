@@ -1,0 +1,193 @@
+{
+  "catalog": [
+    {
+      "id": "velocita",
+      "type": "group",
+      "name": "Average annual wind speed",
+      "description": "This collection contains wind speed maps expressed in m/s calculated as an annual average over 30 years of data at different heights. \n<br> In particular, these elaborations derive from the new Italian anemological database consisting of 30 years of data with an hourly and spatial time step of 1.4 km, using the Weather Research and Forecasting (WRF) meteorological model combined with a statistical post-processing based on Analog Ensemble (AnEn).",
+      "isOpen": false,
+      "members": [
+        {
+          "id": "speed_onshore",
+          "type": "group",
+          "name": "Speed ​​Onshore",
+          "description": "This collection includes maps of average onshore wind speed (m/s) at heights of 50, 75, 100, 125 and 150 m a.s.l.",
+          "isOpen": false,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Average annual onshore wind speed at 50 m a.s.l. ",
+              "description": "Average annual onshore wind speed at an altitude of 50 m a.s.l. expressed in m/s",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_50}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=230"
+              }],
+              
+              "layers":"aeolian:griglia_dati_07112022",
+              "id": "eo_speed50_onshore",
+              "styles":"aeolian:speed50_onshore"
+                          
+            },
+            {
+              "type": "wms",
+              "name": "Average annual onshore wind speed at 75 m a.s.l. ",
+              "description": "Average annual onshore wind speed at an altitude of 75 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_75}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=231"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed75_onshore",
+              "styles":"aeolian:speed75_onshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual onshore wind speed at 100 m a.s.l. ",
+              "description": "Average annual onshore wind speed at an altitude of 100 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_100}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=232"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed100_onshore",
+              "styles":"aeolian:speed100_onshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual onshore wind speed at 125 m a.s.l. ",
+              "description": "Average annual onshore wind speed at an altitude of 125 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_125}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=233"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed125_onshore",
+              "styles":"aeolian:speed125_onshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual onshore wind speed at 150 m a.s.l. ",
+              "description": "Average annual onshore wind speed at an altitude of 150 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_150}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=234"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed150_onshore",
+              "styles":"aeolian:speed150_onshore"
+            }
+         ]
+        },
+        {
+          "id": "speed_offshore",
+          "type": "group",
+          "name": "Offshore Speed",
+          "description": "This collection includes maps of mean offshore wind speeds (m/s) at heights of 50, 75, 100, 125 and 150 m a.s.l.",
+          "isOpen": false,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Average annual offshore wind speed at 50 m a.s.l. ",
+              "description": "Average annual offshore wind speed at an altitude of 50 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_50}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=235"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed50_offshore",
+              "styles":"aeolian:speed50_offshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual offshore wind speed at 75 m a.s.l. ",
+              "description": "Average annual offshore wind speed at an altitude of 75 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_75}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=236"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed75_offshore",
+              "styles":"aeolian:speed75_offshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual offshore wind speed at 100 m a.s.l. ",
+              "description": "Average annual offshore wind speed at an altitude of 100 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_100}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=237"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed100_offshore",
+              "styles":"aeolian:speed100_offshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual offshore wind speed at 125 m a.s.l. ",
+              "description": "Average annual offshore wind speed at an altitude of 125 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_125}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=238"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed125_offshore",
+              "styles":"aeolian:speed125_offshore"
+            },
+            {
+              "type": "wms",
+              "name": "Average annual offshore wind speed at 150 m a.s.l. ",
+              "description": "Average annual offshore wind speed at an altitude of 150 m a.s.l. expressed in m/s.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The wind speed is equal to <b>{{vento_150}}</b> m/s </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=239"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_speed150_offshore",
+              "styles":"aeolian:speed150_offshore"
+            }
+         ]
+        }
+      ]
+    }
+  ]
+}

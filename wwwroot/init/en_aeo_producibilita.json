@@ -1,0 +1,129 @@
+{
+  "catalog": [
+    {
+      "id": "producibilita",
+      "type": "group",
+      "name": "Energy Production",
+      "description": "This collection contains the wind energy production maps expressed in MWh/MW calculated as an annual average over 30 years of data at different heights. \n<br> In particular, these elaborations derive from the new Italian anemological database consisting of 30 years of data with an hourly and spatial time step of 1.4 km, using the Weather Research and Forecasting (WRF) meteorological model combined with a post-processing statistic based on Analog Ensemble (AnEn).",
+      "isOpen": false,
+      "members": [
+        {
+          "id": "prod_onshore",
+          "type": "group",
+          "name": "Onshore Energy Production",
+          "description": "This collection includes onshore wind energy production maps (MWh/MW) at heights of 50, 75 and 100 m above sea level.",
+          "isOpen": false,
+          "members": [
+            
+            {
+              "type": "wms",
+              "name": "Specific onshore energy production at 50 m above sea level",
+              "description": "Specific onshore producibility at 50 m above sea level expressed in MWh/MW. <br> A Riva Calzoni ATB 500.54 wind turbine with a hub height of 54 m and a nominal power of 500 kW was used to calculate the producibility. ",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The specific wind energy production is equal to <b>{{prod_50}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=240"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_prod50_onshore",
+              "styles":"aeolian:prod50_onshore"
+            },
+            {
+              "type": "wms",
+              "name": "Specific onshore energy production at 75 m above sea level",
+              "description": "Specific onshore energy production at 75 m above sea level expressed in MWh/MW. <br> A Leitwind LTW90-950 wind turbine with a hub height of 90 m and a nominal power of 950 kW was used to calculate the producibility.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The specific wind energy production is equal to <b>{{prod_75}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=241"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_prod75_onshore",
+              "styles":"aeolian:prod75_onshore"
+            } ,
+            {
+              "type": "wms",
+              "name": "Specific onshore energy production at 100 m above sea level",
+              "description": "Specific onshore energy production at 100 m above sea level expressed in MWh/MW. <br> A Vestas V117 3450 wind turbine with a hub height of 117 m and a nominal power of 3450 kW was used to calculate the energy production.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The specific wind energy production is equal to <b>{{prod_100}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=242"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_prod100_onshore",
+              "styles":"aeolian:prod100_onshore"
+            }  
+  
+          ]
+        },
+        {
+          "id": "prod_offshore",
+          "type": "group",
+          "name": "Offshore Energy Production",
+          "description": "This collection includes offshore wind energy production maps (MWh/MW) at heights of 100, 125 and 150 m a.s.l.",
+          "isOpen": false,
+          "members": [
+            {
+              "type": "wms",
+              "name": "Specific offshore energy production at 100 m a.s.l.",
+              "description": "Specific offshore energy production at 100 m a.s.l. expressed in MWh/MW. <br> An NREL_Reference wind turbine with hub height equal to 155 m and nominal power equal to 6 MW was used to calculate the energy production.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The specific wind energy production is equal to <b>{{prod_100}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=243"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_prod100_offshore",
+              "styles":"aeolian:prod100_offshore"
+            },
+            {
+              "type": "wms",
+              "name": "Specific offshore energy production at 125 m a.s.l.",
+              "description": "Specific offshore energy production at 125 m a.s.l. expressed in MWh/MW. <br> An IEA_10MW_RTW wind turbine with hub height equal to 198 m and nominal power equal to 10 MW was used to calculate the energy production.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The specific wind energy production is equal to <b>{{prod_125}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aaeolian_metadati.php?var_id=244"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_prod125_offshore",
+              "styles":"aeolian:prod125_offshore"
+            },
+            {
+              "type": "wms",
+              "name": "Specific offshore energy production at 150 m a.s.l.",
+              "description": "Specific offshore energy production at 150 m a.s.l. expressed in MWh/MW. <br> An IEA_15MW_RTW wind turbine with hub height equal to 240 m and nominal power equal to 15 MW was used to calculate the energy production.",
+              "url": "http://gis2.rse-web.it/geoserver/wms",
+              "featureInfoTemplate": {
+                "template": "<p>The specific wind energy production is equal to <b>{{prod_150}}</b> MWh/MW </p>"
+              },
+              "metadataUrls":[{
+                "title":"metadata link",
+                "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=245"
+              }],
+              "layers": "aeolian:griglia_dati_07112022",
+              "id": "eo_prod150_offshore",
+              "styles":"aeolian:prod150_offshore"
+            }    
+          ]
+        }
+      ]
+    }
+  ]
+}

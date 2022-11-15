@@ -1,0 +1,28 @@
+{
+  "catalog": [
+    {
+      "id": "impiantieoesistenti",
+      "type": "group",
+      "name": "Existing Wind Plants",
+      "description": "This collection includes information relating to the location and power class of wind turbines of more than 200 kW installed on the national territory.",
+      "isOpen": false,
+      "members": [
+        {
+          "type": "wms",
+          "name": "Database of Wind Plants",
+          "description": "Map of the wind plants present on the national territory (reference year 2019), deriving from an elaboration by Research on the Energy System - RSE S.p.A. starting from GSE data, The Wind Power and Sentinel-2 satellite images. A power class is associated with each wind plant.",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "featureInfoTemplate": {
+            "template": "<p>Power class <b>{{classe_pot}}</b></p>"
+          },
+          "metadataUrls":[{
+            "title":"metadata links",
+            "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=229"
+          }],
+          "layers": "new_atlante_integrato:aerogeneratori",
+          "id": "aerogeneratori_2019"
+        }
+       ]
+    }
+  ]
+}

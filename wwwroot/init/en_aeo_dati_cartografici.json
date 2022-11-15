@@ -1,0 +1,114 @@
+{
+  "catalog": [
+    {
+      "type": "group",
+      "name": "Cartographic data",
+      //"description": "Questa raccolta comprende delle mappe cartografiche a diverso livello di aggregazione territoriale e tematismi generali. \n\n <a title=\"Waterloo1883, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons\" href=\"https://commons.wikimedia.org/wiki/File:Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"><img width=\"512\" alt=\"Mapa físico de localización Huánuco\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png/512px-Mapa_f%C3%ADsico_de_localizaci%C3%B3n_Hu%C3%A1nuco.png\"></a> ",
+      "description": "This collection includes cartographic maps at different levels of territorial aggregation and general themes.",
+      "isOpen": true,
+      "members": [
+          {
+            "type": "wms",
+            "name": "Regional bouderies",
+            "description": "Regional administrative limits selectable in different years. ISTAT data source.",
+            "url": "http://gis2.rse-web.it/geoserver/wms",
+            "featureInfoTemplate": {
+              "template": "<p>Region <b>{{den_reg}}</b> , view year {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=108&anno={{anno}}\">metadata link </a> </p>"
+            },
+            "metadataUrls":[{
+              "title":"metadata link",
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=108&anno=2022"
+            }],
+            "layers": "new_atlante_integrato:v_regioni_terria",
+            "id": "confreg"
+          },
+          {
+            "type": "wms",
+            "name": "Provincial bounderies",
+            "description": "Provincial administrative limits selectable in different years. ISTAT data source.",
+            "url": "http://gis2.rse-web.it/geoserver/wms",
+            "featureInfoTemplate": {
+              "template": "<p>Province <b>{{den_uts}}</b> , view year {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno={{anno}}\">metadata link </a> </p>"
+            },
+            "metadataUrls":[{
+              "title":"metadata link",
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno=2022"
+            }],
+            //fatto nuova vista e nuovo servizio identici a v_province_terria. Nel nuovo servizio è stato associato un solo stile, perchè le province in atlante integrato ne hanno associati due visto che vengono usate anche per totem.
+            "layers": "new_atlante_integrato:v_province_terria_aeolian",
+            "id": "confprov"
+          },
+          {
+            "type": "wms",
+            "name": "Municipal bounderies",
+            "description": "Municipal administrative limits selectable in different years. ISTAT data source.",
+            "url": "http://gis2.rse-web.it/geoserver/wms",
+            "featureInfoTemplate": {
+             "template": "<p>Municipal <b>{{comune}}</b> , view year {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=110&anno={{anno}}\">metadata link </a> </p>"
+            },
+            "metadataUrls":[{
+              "title":"metadata link",
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=110&anno=2022"
+            }],
+            "layers": "new_atlante_integrato:v_comuni_terria",
+            "id": "confcom"
+          },
+          
+//          {
+//            "type": "wms",
+//            "name": "Centri abitati",
+//            "description": "Centri abitati. \n\n Località italiane definite dal censimento ISTAT 2011",
+//            "url": "http://gis2.rse-web.it/geoserver/wms",
+//            "metadataUrls":[{
+//              "title":"metadata link",
+//              "url":"http://dbeta.rse-web.it/atlante_integrato_metadati.php?var_id=151"
+//            }],
+//            "layers": "dati_condivisi:localita_11_3857"
+//          },
+//          {
+//            "type": "wms",
+//            "name": "Corine 2018 (Copenicus)",
+//            "description": "Uso del suolo (CORINE 2018)\n\nCLC2018 è uno dei set di dati Corine Land Cover (CLC) prodotti nell'ambito del Copernicus Land Monitoring Service che fa riferimento allo stato della copertura del suolo / uso del suolo dell'anno 2018. Il servizio CLC ha un patrimonio di lunga data (precedentemente noto come \"CORINE Land Cover Program \"), coordinato dall'Agenzia europea dell'ambiente (EEA). Fornisce informazioni coerenti e tematicamente dettagliate sulla copertura del suolo e sui cambiamenti della copertura del suolo in tutta Europa. I set di dati CLC si basano sulla classificazione delle immagini satellitari prodotte dalle squadre nazionali dei paesi partecipanti - i membri dell'EEA e i paesi cooperanti (EEA39). Gli inventari nazionali CLC vengono quindi ulteriormente integrati in una mappa della copertura continua del suolo dell'Europa. \n<br>Il database europeo risultante si basa su una metodologia e una nomenclatura standard con i seguenti parametri di base: 44 classi nella nomenclatura gerarchica CLC a 3 livelli; l'unità di mappatura minima (MMU) per i livelli di stato è di 25 ettari; la larghezza minima degli elementi lineari è di 100 metri. I livelli di modifica hanno una risoluzione più elevata, ovvero l'unità di mappatura minima (MMU) è di 5 ettari per i cambiamenti di copertura del suolo (LCC - Land Cover Changes) e la larghezza minima degli elementi lineari è di 100 metri. Il servizio CLC fornisce importanti set di dati a supporto dell'attuazione di aree prioritarie chiave dei programmi di azione per l'ambiente dell'Unione europea, come ad es. proteggere gli ecosistemi, arrestare la perdita di biodiversità, monitorare gli impatti dei cambiamenti climatici, monitorare l'occupazione del suolo urbano, valutare gli sviluppi in agricoltura o trattare le direttive sulle risorse idriche.\n<br>CLC appartiene alla componente paneuropea del Copernicus Land Monitoring Service (<a href=\"https://land.copernicus.eu/\" target=\"_blank\"> https://land.copernicus.eu/ </a>), parte del programma europeo Copernicus coordinato dall'Agenzia Europea dell'Ambiente (EEA), che fornisce informazioni ambientali da una combinazione di sistemi di osservazione spaziale e di aria, nonchè attraverso monitoraggi in situ. Ulteriori informazioni sulla descrizione del prodotto CLC comprese le guide alla mappatura, sono disponibili all'indirizzo <a href=\"https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/clc2018technicalguidelines_final.pdf. </a> Le descrizioni delle classi CLC possono essere trovate su <a href=\"https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/\" target=\"_blank\"> https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/ </a>.",
+//            "url": "https://image.discomap.eea.europa.eu/arcgis/services/Corine/CLC2018_WM/MapServer/WMSServer",
+//            "metadataUrls":[{
+//              "title":"metadata link",
+//              "url":"https://land.copernicus.eu/about"
+//            }],
+//            "layers": "12"
+//          },
+           {
+            "type": "wms",
+            "name": "Bathymetry",
+            "description": " Data relating to the average depth of the seabed. \n<br>RSE elaborations of 2018 with reclassification in 5 classes with increasing depth, starting from the data of the European Marine Observation and Data Network (EMODnet):\n https://www.emodnet-bathymetry.eu/metadata-data ",
+            "url": "http://gis2.rse-web.it/geoserver/wms",
+            //"featureInfoTemplate": {
+            //  "template": "<p>Provincia <b>{{den_uts}}</b> , visualizzazione anno {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno={{anno}}\">link al metadato </a> </p>"
+            //},
+            "metadataUrls":[{
+              "title":"metadata link",
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=205"
+            }],
+            "layers": "new_atlante_integrato:bati_2018",
+            "styles":"new_atlante_integrato:bati_2018",
+            "id": "bati2018"
+          },
+          {
+            "type": "wms",
+            "name": "Exclusive Economic Zone",
+            "description": " Exclusive economic zone of Italy. \n<br>Data distributed by Flanders Marine Institute https://www.marineregions.org/.",
+            "url": "http://gis2.rse-web.it/geoserver/wms",
+            "featureInfoTemplate": {
+              "template": "<p>Province <b>{{den_uts}}</b> , view year {{anno}}</p><p style='display: block; text-align: center;'> <a href=\"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=109&anno={{anno}}\">metadata link </a> </p>"
+            },
+            "metadataUrls":[{
+              "title":"metadata link",
+              "url":"http://dbeta.rse-web.it/aeolian/aeolian_metadati.php?var_id=171"
+            }],
+            "layers": "new_atlante_integrato:eez",
+            "styles":"aeolian:linea_blu_2",
+            "id": "eez"
+          }
+      ]
+    }
+  ]
+}
