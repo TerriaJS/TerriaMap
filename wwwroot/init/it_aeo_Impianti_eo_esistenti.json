@@ -3,7 +3,7 @@
     {
       "id": "impiantieoesistenti",
       "type": "group",
-      "name": "Impianti Eolici esistenti",
+      "name": "Aerogeneratori esistenti",
       "description": "Questa raccolta comprende informazioni relative alla posizione e alla classe di potenza degli aerogeneratori di potenza superiore a 200 kW installati sul territorio nazionale.",
       "isOpen": false,
       "members": [

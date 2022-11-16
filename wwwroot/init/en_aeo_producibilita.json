@@ -18,10 +18,10 @@
             {
               "type": "wms",
               "name": "Specific onshore energy production at 50 m above sea level",
-              "description": "Specific onshore producibility at 50 m above sea level expressed in MWh/MW. <br> A Riva Calzoni ATB 500.54 wind turbine with a hub height of 54 m and a nominal power of 500 kW was used to calculate the producibility. ",
+              "description": "Specific onshore producibility at 50 m above sea level expressed in MWh/MW. <br> A Riva Calzoni ATB 500.54 wind turbine with a hub height of 54 m and a nominal power of 500 kW has been used to calculate the producibility. ",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>The specific wind energy production is equal to <b>{{prod_50}}</b> MWh/MW </p>"
+                "template": "<p>The specific wind energy production is <b>{{prod_50}}</b> MWh/MW </p>"
               },
               "metadataUrls":[{
                 "title":"metadata link",
@@ -34,10 +34,10 @@
             {
               "type": "wms",
               "name": "Specific onshore energy production at 75 m above sea level",
-              "description": "Specific onshore energy production at 75 m above sea level expressed in MWh/MW. <br> A Leitwind LTW90-950 wind turbine with a hub height of 90 m and a nominal power of 950 kW was used to calculate the producibility.",
+              "description": "Specific onshore energy production at 75 m above sea level expressed in MWh/MW. <br> A Leitwind LTW90-950 wind turbine with a hub height of 90 m and a nominal power of 950 kW has been used to calculate the producibility.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>The specific wind energy production is equal to <b>{{prod_75}}</b> MWh/MW </p>"
+                "template": "<p>The specific wind energy production is <b>{{prod_75}}</b> MWh/MW </p>"
               },
               "metadataUrls":[{
                 "title":"metadata link",
@@ -50,10 +50,10 @@
             {
               "type": "wms",
               "name": "Specific onshore energy production at 100 m above sea level",
-              "description": "Specific onshore energy production at 100 m above sea level expressed in MWh/MW. <br> A Vestas V117 3450 wind turbine with a hub height of 117 m and a nominal power of 3450 kW was used to calculate the energy production.",
+              "description": "Specific onshore energy production at 100 m above sea level expressed in MWh/MW. <br> A Vestas V117 3450 wind turbine with a hub height of 117 m and a nominal power of 3450 kW has been used to calculate the energy production.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>The specific wind energy production is equal to <b>{{prod_100}}</b> MWh/MW </p>"
+                "template": "<p>The specific wind energy production is <b>{{prod_100}}</b> MWh/MW </p>"
               },
               "metadataUrls":[{
                 "title":"metadata link",
@@ -76,10 +76,10 @@
             {
               "type": "wms",
               "name": "Specific offshore energy production at 100 m a.s.l.",
-              "description": "Specific offshore energy production at 100 m a.s.l. expressed in MWh/MW. <br> An NREL_Reference wind turbine with hub height equal to 155 m and nominal power equal to 6 MW was used to calculate the energy production.",
+              "description": "Specific offshore energy production at 100 m a.s.l. expressed in MWh/MW. <br> An NREL_Reference wind turbine with hub height of 155 m and nominal power of 6 MW has been used to calculate the energy production.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>The specific wind energy production is equal to <b>{{prod_100}}</b> MWh/MW </p>"
+                "template": "<p>The specific wind energy production is <b>{{prod_100}}</b> MWh/MW </p>"
               },
               "metadataUrls":[{
                 "title":"metadata link",
@@ -92,10 +92,10 @@
             {
               "type": "wms",
               "name": "Specific offshore energy production at 125 m a.s.l.",
-              "description": "Specific offshore energy production at 125 m a.s.l. expressed in MWh/MW. <br> An IEA_10MW_RTW wind turbine with hub height equal to 198 m and nominal power equal to 10 MW was used to calculate the energy production.",
+              "description": "Specific offshore energy production at 125 m a.s.l. expressed in MWh/MW. <br> An IEA_10MW_RTW wind turbine with hub height of 198 m and nominal power of 10 MW has been used to calculate the energy production.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>The specific wind energy production is equal to <b>{{prod_125}}</b> MWh/MW </p>"
+                "template": "<p>The specific wind energy production is <b>{{prod_125}}</b> MWh/MW </p>"
               },
               "metadataUrls":[{
                 "title":"metadata link",
@@ -108,10 +108,10 @@
             {
               "type": "wms",
               "name": "Specific offshore energy production at 150 m a.s.l.",
-              "description": "Specific offshore energy production at 150 m a.s.l. expressed in MWh/MW. <br> An IEA_15MW_RTW wind turbine with hub height equal to 240 m and nominal power equal to 15 MW was used to calculate the energy production.",
+              "description": "Specific offshore energy production at 150 m a.s.l. expressed in MWh/MW. <br> An IEA_15MW_RTW wind turbine with hub height of 240 m and nominal power of 15 MW has been used to calculate the energy production.",
               "url": "http://gis2.rse-web.it/geoserver/wms",
               "featureInfoTemplate": {
-                "template": "<p>The specific wind energy production is equal to <b>{{prod_150}}</b> MWh/MW </p>"
+                "template": "<p>The specific wind energy production is <b>{{prod_150}}</b> MWh/MW </p>"
               },
               "metadataUrls":[{
                 "title":"metadata link",

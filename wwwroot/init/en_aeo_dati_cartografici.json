@@ -9,7 +9,7 @@
       "members": [
           {
             "type": "wms",
-            "name": "Regional bouderies",
+            "name": "Regional boundaries",
             "description": "Regional administrative limits selectable in different years. ISTAT data source.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
@@ -24,7 +24,7 @@
           },
           {
             "type": "wms",
-            "name": "Provincial bounderies",
+            "name": "Provincial boundaries",
             "description": "Provincial administrative limits selectable in different years. ISTAT data source.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
@@ -40,7 +40,7 @@
           },
           {
             "type": "wms",
-            "name": "Municipal bounderies",
+            "name": "Municipal boundaries",
             "description": "Municipal administrative limits selectable in different years. ISTAT data source.",
             "url": "http://gis2.rse-web.it/geoserver/wms",
             "featureInfoTemplate": {
