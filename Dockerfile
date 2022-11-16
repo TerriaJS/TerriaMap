@@ -41,7 +41,7 @@ COPY devserverconfig.json .
 RUN chmod 777 -R /home/nru
 
 # need this for large web sites
-RUN export NODE_OPTIONS=--max_old_space_size=4096
+RUN export NODE_OPTIONS=--max_old_space_size=8192
 
 # set a couple directives so the package update works
 RUN yarn config set user 0
@@ -60,6 +60,8 @@ RUN git config --global url."https://".insteadOf git://
 
 ## install yarn and build up the node_modules dir
 RUN npm install
+RUN npm run gulp-sync
+RUN yarn install
 
 # sync terria dependancies
 # although this fixes mobx version conflicts it causes other errors
@@ -71,10 +73,10 @@ RUN npx browserslist@latest --update-db
 #RUN npm run gulp build
 
 # remove the file we will turn into a symbolic link
-# RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
+RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
 
 # make a symbolic link to the apsviz.json file
-# RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/apsviz.json
+RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/apsviz.json
 
 # expose the web server port
 EXPOSE 3001
