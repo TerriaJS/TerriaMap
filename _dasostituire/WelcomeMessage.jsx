@@ -335,11 +335,11 @@ export const WelcomeMessagePure = props => {
                 <Spacing bottom={13} />
               </If>
               <Box fullWidth centered>
-                <p style={styleCookiesMsgObj}>Questo sito utilizza cookies per il corretto funzionamento e per il miglioramento dei servizi inclusi.<br />
-                Se acconsenti all'uso dei cookie continua la navigazione del sito.<br />
-                Se non vuoi ricevere cookie dal sito, chiudi la presente pagina.<br />
+              <p style={styleCookiesMsgObj}>{t("welcomeMessage.msgCookies1")}<br />
+                {t("welcomeMessage.msgCookies2")}<br />
+                {t("welcomeMessage.msgCookies3")}<br />
                 <a href='https://www.rse-web.it/cookie/' target='_blank' style={{color: "#519AC2", fontSize: 16, fontWeight: "bold", fontFamily: "Nunito"}}>
-                Se vuoi saperne di più clicca quì </a></p>
+                {t("welcomeMessage.msgCookies4")}</a></p>
               </Box>
               <Box fullWidth centered>
                 <RawButton onClick={handleClose.bind(null, true)}>
