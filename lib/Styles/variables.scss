@@ -19,8 +19,8 @@ $color-custom: #404855;
 
 // These variables set background panel colors
 $dark: rgba(2, 0, 19, 0.418);
-// $dark-with-overlay: hsl(0,30%,30%);
-// $dark-lighter: hsl(0,30%,50%);
+$dark-with-overlay: #008da9;
+$dark-lighter: #008da9;
 
 // You might find it helpful to define these and use them.
 $color-primary-light: lighten($color-primary, 10%);
