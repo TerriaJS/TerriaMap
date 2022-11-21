@@ -15,6 +15,9 @@ RUN yarn gulp release
 # deploy container
 FROM node:14-slim as deploy
 
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y gdal-bin
+
 USER node
 
 WORKDIR /app
