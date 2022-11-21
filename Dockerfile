@@ -1,87 +1,31 @@
-# Docker image for the primary terria map application server
-FROM node:14.18.2
+# develop container
+FROM node:14 as develop
 
-# declare ownership
-LABEL maintainer="RENCI"
+# build container
+FROM node:14 as build
+USER node
 
-# install os updates and GDAL
-RUN apt-get update && apt-get install -y gdal-bin
+COPY --chown=node:node . /app
 
-# install an editor
-RUN apt-get install -yq vim
+WORKDIR /app
 
-# create some needed dirs for the content
-# this was in the original dockerfile so i kept it.
-RUN mkdir -p /home/nru/usr/src/app
-
-# change to the base directory
-WORKDIR /home/nru/usr/src/app
-
-# copy in all neccesary app dirs
-COPY buildprocess ./buildprocess
-COPY lib ./lib
-COPY patches ./patches
-COPY wwwroot ./wwwroot
-
-# and files
-COPY code .
-COPY ecosystem-production.config.js .
-COPY ecosystem.config.js .
-COPY entry.js .
-COPY gulpfile.js .
-COPY index.js .
-COPY package.json .
-COPY terria-logo.png .
-COPY tsconfig.json .
-#COPY version.js .
-COPY yarn.lock .
-COPY devserverconfig.json .
-
-# make sure everything is readable
-RUN chmod 777 -R /home/nru
-
-# need this for large web sites
-RUN export NODE_OPTIONS=--max_old_space_size=8192
-
-# set a couple directives so the package update works
-RUN yarn config set user 0
-RUN yarn config set unsafe-perm true
-
-# get a specific version of yarn
-RUN yarn policies set-version 1.22.17
-
-# install gulp
-RUN npm install gulp -g
-
-# change to the non-root user
-USER 1000
-
-RUN git config --global url."https://".insteadOf git://
-
-## install yarn and build up the node_modules dir
-RUN npm install
-RUN npm run gulp-sync
 RUN yarn install
+RUN yarn gulp release
 
-# sync terria dependancies
-# although this fixes mobx version conflicts it causes other errors
-# RUN npm run gulp-sync
+# deploy container
+FROM node:14-slim as deploy
 
-RUN npx browserslist@latest --update-db
+USER node
 
-# create the "build" dir/files
-#RUN npm run gulp build
+WORKDIR /app
 
-# remove the file we will turn into a symbolic link
-RUN rm /home/nru/usr/src/app/wwwroot/init/apsviz.json
+COPY --from=build /app/wwwroot wwwroot
+COPY --from=build /app/node_modules node_modules
+COPY --from=build /app/devserverconfig.json serverconfig.json
+COPY --from=build /app/index.js index.js
+COPY --from=build /app/package.json package.json
+COPY --from=build /app/version.js version.js
 
-# make a symbolic link to the apsviz.json file
-RUN ln -s /fileserver/terria-map/apsviz.json /home/nru/usr/src/app/wwwroot/init/apsviz.json
-
-# expose the web server port
 EXPOSE 3001
-
-# start the app
-# nohup npm run gulp:watch & node ./node_modules/terriajs-server/lib/app.js
-# "/bin/sh", "-c", "yarn start; while true; do date; sleep 3600; done"
-CMD ["/bin/sh", "-c", "npm run start; npm run gulp:watch"]
+ENV NODE_ENV=production
+CMD [ "node", "./node_modules/terriajs-server/lib/app.js", "--config-file", "serverconfig.json" ]
