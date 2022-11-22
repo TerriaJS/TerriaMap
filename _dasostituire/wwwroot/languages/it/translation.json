@@ -1605,5 +1605,23 @@
   "indexedItemSearchProvider": {
     "errorParsingIndexRoot": "Errore nell'analizzare il file indexRoot: {{indexRootUrl}}.",
     "missingOptionIndexRootUrl": "L'opzione `indexRootUrl` manca nella configurazione di ricerca dell'elemento."
+  },
+  "analisiAvanzate": {
+    "h1navigaTraITool": " Naviga tra i tool di approfondimento ",
+    "h2ModuloDiCalcolo": " MODULO DI CALCOLO ",
+    "infoValutazioneTecnicoEconomica": "Questo strumento permette di effettuare una valutazione tecnico-economica preliminare di un ipotetico parco eolico situato in un punto prescelto sulle mappe, simulando le prestazioni energetiche e il costo medio dell'energia prodotta dall'impianto.",
+    "approfondisci": "Approfondisci.",
+    "perAccedere": "Per accedere",
+    "cliccaQui": "clicca qui.",
+    "downloadSerieStorica": " DOWNLOAD DELLA SERIE STORICA DI VELOCITA' DEL VENTO ",
+    "infoSerieStorica": "Questo strumento permette di scaricare la serie storica oraria trentennale (1990- 2019) di velocità del vento (m/s), sui domini onshore e offshore del territorio nazionale.",
+    "h2DownloadMappaVento": " DOWNLOAD DELLA MAPPA DI VENTO ",
+    "infoShapefile": "Questo strumento permette di scaricare in formato shapefile (.shp) la griglia contenente i parametri dell'Atlante Eolico dell'Italia (velocità, producibilità, parametro di forma della distribuzione di Weibull e distanza dalle cabine primarie) sui domini onshore e offshore del territorio nazionale.",
+    "approfondisciEdownload": "Approfondisci e download",
+    "link": "LINK",
+    "ulterioriApprofondimenti": "Per ulteriori approfondimenti in materia di supporto alla pianificazione energetica è possibile consultare l'",
+    "atlanteIntegrato": "Atlante Integrato.",
+    "possibileConsultare": "E' inoltre possibile consultare e scaricare i dati relativi al sistema energetico nazionale presenti nel",
+    "geoDbEta": "GeoDB ETA."
   }
 }

@@ -7,8 +7,11 @@ import Styles from "./related-maps.scss";
 import classNames from "classnames";
 
 import withTerriaRef from "terriajs/lib/ReactViews/HOCs/withTerriaRef"; //GOF HOC x Ref di aggancio dei punti del Tour
+import { Trans, useTranslation, withTranslation } from "react-i18next"; //GOF x traduzione didascalie
 
 function AnalisiAvanzate(props) {
+  const { t } = useTranslation(); //GOF x traduzione didascalie
+
   const dropdownTheme = {
     inner: Styles.dropdownInner,
     icon: "gallery"
@@ -39,7 +42,7 @@ function AnalisiAvanzate(props) {
       {/* titolo della pagina */}
       <div className={classNames(PanelStyles.header)}>
         <label className={PanelStyles.heading}>
-          <h1> Naviga tra i tool di approfondimento </h1>
+          <h1> {t("analisiAvanzate.h1navigaTraITool")} </h1>
         </label>
       </div>
 
@@ -49,7 +52,8 @@ function AnalisiAvanzate(props) {
           <table>
             <tr>
               <td colspan="2">
-                <h2> MODULO DI CALCOLO </h2>
+                {/* <h2> MODULO DI CALCOLO </h2> */}
+                <h2>{t("analisiAvanzate.h2ModuloDiCalcolo")}</h2>
               </td>
             </tr>
             <tr>
@@ -64,11 +68,7 @@ function AnalisiAvanzate(props) {
               <td>
                 {" "}
                 <p align="justify">
-                  Questo strumento permette di effettuare una valutazione
-                  tecnico-economica preliminare di un ipotetico parco eolico
-                  situato in un punto prescelto sulle mappe, simulando le
-                  prestazioni energetiche e il costo medio dell'energia prodotta
-                  dall'impianto.
+                  {t("analisiAvanzate.infoValutazioneTecnicoEconomica")}
                 </p>
                 <a
                   target="_blank"
@@ -76,12 +76,13 @@ function AnalisiAvanzate(props) {
                   href="https://atlanteeolico.rse-web.it/help/help-terria-calcolo-IT.html"
                   className={Styles.link}
                 >
-                  Approfondisci.
+                  {t("analisiAvanzate.approfondisci")}
                 </a>{" "}
                 <br></br>
-                <br></br>Per accedere{" "}
+                <br></br>
+                {t("analisiAvanzate.perAccedere")}{" "}
                 <a className={Styles.link} href={modCalc_link}>
-                  clicca qui
+                  {t("analisiAvanzate.cliccaQui")}
                 </a>
                 .
               </td>
@@ -95,7 +96,7 @@ function AnalisiAvanzate(props) {
           <table>
             <tr>
               <td colspan="2">
-                <h2> DOWNLOAD DELLA SERIE STORICA DI VELOCITA' DEL VENTO </h2>
+                <h2>{t("analisiAvanzate.downloadSerieStorica")}</h2>
               </td>
             </tr>
             <tr>
@@ -111,14 +112,11 @@ function AnalisiAvanzate(props) {
               </td>
               <td>
                 {" "}
-                <p align="justify">
-                  Questo strumento permette di scaricare la serie storica oraria
-                  trentennale (1990- 2019) di velocità del vento (m/s), sui
-                  domini onshore e offshore del territorio nazionale.
-                </p>
-                <br></br>Per accedere{" "}
+                <p align="justify">{t("analisiAvanzate.infoSerieStorica")}</p>
+                <br></br>
+                {t("analisiAvanzate.perAccedere")}{" "}
                 <a className={Styles.link} href={totem_link}>
-                  clicca qui
+                  {t("analisiAvanzate.cliccaQui")}
                 </a>
                 .
                 {/* Permette la definizione ed il salvataggio di dati territoriali
@@ -138,7 +136,7 @@ function AnalisiAvanzate(props) {
           <table>
             <tr>
               <td colspan="2">
-                <h2> DOWNLOAD DELLA MAPPA DI VENTO </h2>
+                <h2>{t("analisiAvanzate.h2DownloadMappaVento")}</h2>
               </td>
             </tr>
             <tr>
@@ -150,14 +148,7 @@ function AnalisiAvanzate(props) {
                 />
               </td>
               <td>
-                <p align="justify">
-                  {" "}
-                  Questo strumento permette di scaricare in formato shapefile
-                  (.shp) la griglia contenente i parametri dell'Atlante Eolico
-                  dell'Italia (velocità, producibilità, parametro di forma della
-                  distribuzione di Weibull e distanza dalle cabine primarie) sui
-                  domini onshore e offshore del territorio nazionale.
-                </p>{" "}
+                <p align="justify"> {t("analisiAvanzate.infoShapefile")}</p>{" "}
                 <a
                   target="_blank"
                   //href="http://atlanteintegrato.rse-web.it/sankey.php"
@@ -165,7 +156,7 @@ function AnalisiAvanzate(props) {
                   href="https://atlanteeolico.rse-web.it/download_terria_griglia-IT.php"
                   className={Styles.link}
                 >
-                  Approfondisci e download
+                  {t("analisiAvanzate.approfondisciEdownload")}
                 </a>
               </td>
             </tr>
@@ -174,7 +165,7 @@ function AnalisiAvanzate(props) {
       </div>
       <div className={classNames(PanelStyles.section, Styles.section)}>
         <ul>
-          <h2>LINK</h2>
+          <h2>{t("analisiAvanzate.link")}</h2>
           <a
             target="_blank"
             // href="http://atlanteintegrato.rse-web.it/sankey.php"
@@ -187,26 +178,25 @@ function AnalisiAvanzate(props) {
             />
           </a>
           <p>
-            Per ulteriori approfondimenti in materia di supporto alla
-            pianificazione energetica è possibile consultare l'{" "}
+            {t("analisiAvanzate.ulterioriApprofondimenti")}{" "}
             <a
               target="_blank"
               //href="http://atlanteintegrato.rse-web.it/sankey.php"
               href="https://atlanteintegrato.rse-web.it/"
               className={Styles.link}
             >
-              Atlante Integrato.
+              {t("analisiAvanzate.atlanteIntegrato")}
             </a>
             <br></br>
-            <br></br>E' inoltre possibile consultare e scaricare i dati relativi
-            al sistema energetico nazionale presenti nel{" "}
+            <br></br>
+            {t("analisiAvanzate.possibileConsultare")}{" "}
             <a
               target="_blank"
               //href="http://atlanteintegrato.rse-web.it/sankey.php"
               href="https://dbeta.rse-web.it"
               className={Styles.link}
             >
-              GeoDB ETA.
+              {t("analisiAvanzate.geoDbEta")}
             </a>
           </p>
         </ul>
