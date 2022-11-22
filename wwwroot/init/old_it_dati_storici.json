@@ -1,0 +1,45 @@
+{
+  "catalog": [
+    {
+      "type": "group",
+      "name": "datistorici",
+      "isOpen": true,
+      "members": [
+        {
+          "type": "wms",
+          "name": "datistorici",
+          "url": "http://gis2.rse-web.it/geoserver/wms",
+          "layers": "atlante_integrato:reticolo_tiles_3857_dominio_modello",
+          "opacity": 0.5,
+          "featureInfoTemplate": {
+            "template":
+            
+            "<br><p><form action=\"https://aeolian-api.rse-web.it/reqaeolian\" target=\"_blank\" method=\"get\"><table style=\"width:100%\"><tr><td><label for=\"label_id_cella\">Id cella:  </label></td><td><input type=\"text\" id=\"label_id_cella\" name=\"label_id_cella\" value={{id_tile}} readonly size=\"10\"><br></td></tr><tr><td><label for=\"label_nome\">Nome:  </label></td><td><input type=\"text\" id=\"Nome\" name=\"Nome\" size=\"27\"></td></tr><tr><td><br><label for=\"label_mail\">Mail:  </label></td><td><input type=\"email\" id=\"label_mail\" name=\"label_mail\" size=\"27\"></td></tr><tr><td>Formato file:</td><td style=\"text-align:bottom\"><br><input type=\"radio\" id=\"csv\" name=\"fav_language\" value=\"csv\" checked=true><label for=\"csv\">CSV</label> ....  <input type=\"radio\" id=\"Netcdf\" name=\"fav_language\" value=\"Netcdf\"><label for=\"Netcdf\">Netcdf</label><br><br></td></tr><tr><td><label for=\"anni\">Seleziona uno o più anni <br> (richiesto):</label></td><td><select name=\"anni\" id=\"anni\" multiple style=\"width:150px; text-align:right; margin: 0px;\"><option value=\"1990\" selected=true >1990</option><option value=\"1991\">1991</option><option value=\"1992\">1992</option><option value=\"1993\">1993</option><option value=\"1994\">1994</option><option value=\"1995\">1995</option><option value=\"1996\">1996</option><option value=\"1997\">1997</option><option value=\"1998\">1998</option><option value=\"1999\">1999</option><option value=\"2000\">2000</option><option value=\"2001\">2001</option><option value=\"2002\">2002</option><option value=\"2003\">2003</option><option value=\"2004\">2004</option><option value=\"2005\">2005</option><option value=\"2006\">2006</option><option value=\"2007\">2007</option><option value=\"2008\">2008</option><option value=\"2009\">2009</option><option value=\"2010\">2010</option><option value=\"2011\">2011</option><option value=\"2012\">2012</option><option value=\"2013\">2013</option><option value=\"2014\">2014</option><option value=\"2015\">2015</option><option value=\"2016\">2016</option><option value=\"2017\">2017</option><option value=\"2018\">2018</option><option value=\"2019\">2019</option></select><br><br></td></tr><tr><td></td><td><input type=\"submit\" value=\"Avvia\"></td></tr></table></form><br></p><br> <table style=\"width:50%\"><tr><td>RSE - Ricerca sul Sistema Energetico SpA informa che l'invio facoltativo, esplicito e volontario di dati personali attraverso la compilazione del form di  registrazione o di altri moduli presenti sul sito comporta l'acquisizione dei dati di contatto del mittente, necessari ad avere accesso al materiale da scaricare, nonché di tutti i dati personali volontariamente inclusi nelle comunicazioni. RSE SpA utilizza dei cookie persistenti di Registrazione: i cookie memorizzano informazioni sulla navigazione che vengono utilizzate da RSE SpA per verificare e migliorare la diffusione dei risultati delle proprie attività di ricerca e per tenere traccia del tipo di diffusione avvenuta in conformità all’interesse pubblico alla divulgazione scientifica perseguito. Il cookie di Registrazione è stato creato da RSE SpA per il proprio sito e non può essere letto da altri siti.Per ulteriori informazioni si rinvia al testo integrale dell’informativa privacy.</td></tr></table>"
+          },
+          "id": "it_dati_storici",
+          "initialMessage": {
+            "title": "Per accedere:",
+            "content": "<p align = \"justify\">Questo strumento permette di scaricare la serie storica oraria trentennale (1990- 2019) di velocità del vento (m/s). <br>Occorre attendere il caricamento di una griglia in cui è discretizzato il territorio e, in seguito, selezionare la cella in corrispondenza della quale si vogliono scaricare i dati.<br> Si aprirà, quindi, una finestra in cui è necessario indicare l’indirizzo e-mail al quale verranno inviati i dati, gli anni per i quali richiedere i dati e il formato desiderato. <br> Per finalizzare la richiesta è necessario cliccare sul pulsante “Avvia”. Di seguito, apparirà un messaggio di avvenuta richiesta dei dati. <br></p><p align =\"center\"><img src=\"images/download_form_richiesta_dati.png\" width = \"375\" height=\"291\"></p><p align = \"justify\">Trascorsa qualche ora dalla richiesta, l’utente riceverà i dati via e-mail in una cartella .zip. Si specifca che l'utente riceverà una mail per ciascuna altezza di vento.</p>",
+            "key": "it_dati_storici",
+            "confirmation": true,
+            "confirmText": "Avvia"
+          }
+        }
+      ]
+    }
+  ],
+  "homeCamera": {
+    "north": 48,
+    "east": 19,
+    "south": 35,
+    "west": 6
+  },
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-positron",
+    "previewBaseMapId": "basemap-positron"
+  },
+  "viewerMode": "2d",
+  "workbench": [
+    "it_dati_storici"
+  ]
+}
