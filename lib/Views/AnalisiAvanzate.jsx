@@ -16,7 +16,7 @@ function AnalisiAvanzate(props) {
 
   // to select language config.json depending on the browser language
   var userLang = navigator.language || navigator.userLanguage;
-  var totem_link = "/#en_totemweb"; //puntare al json che carica il tool con il codice di calcolo
+  var totem_link = "/#en_dati_storici"; //puntare al json che carica il tool con il codice di calcolo
   var modCalc_link = "/#en_modcalc";
   var dati_storici_prova = "/#it_dati_storici_prova";
   var analisi = "Advanced Analysis";
