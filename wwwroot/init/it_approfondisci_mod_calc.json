@@ -2,12 +2,12 @@
   "catalog": [
     {
       "type": "group",
-      "name": "modulo_calcolo",
+      "name": "modulo calcolo",
       "isOpen": true,
       "members": [
         {
           "type": "wms",
-          "name": "modulo_calcolo",
+          "name": "modulo calcolo",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "layers": "aeolian:Grid_nazionale_07112022_limiti_amministrativi", 
           "styles": "polygon",

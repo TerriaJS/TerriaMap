@@ -2,12 +2,12 @@
   "catalog": [
     {
       "type": "group",
-      "name": "datistorici",
+      "name": "serie storica",
       "isOpen": true,
       "members": [
         {
           "type": "wms",
-          "name": "datistorici",
+          "name": "serie storica",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "layers": "atlante_integrato:reticolo_tiles_3857_dominio_modello",
           "opacity": 0.5,

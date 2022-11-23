@@ -2,12 +2,12 @@
   "catalog": [
     {
       "type": "group",
-      "name": "modulo_calcolo",
+      "name": "calculation module",
       "isOpen": true,
       "members": [
         {
           "type": "wms",
-          "name": "modulo_calcolo",
+          "name": "calculation module",
           "url": "http://gis2.rse-web.it/geoserver/wms",
           "layers": "aeolian:Grid_nazionale_07112022_limiti_amministrativi", 
           "styles": "polygon",
@@ -24,7 +24,7 @@
             "content": "Wait for the grid to load, view it on a municipal scale and select the desired cell.",
             "key": "it_modcalc",
             "confirmation": true,
-            "confirmText": "Avvia"
+            "confirmText": "Run"
           }
         }
       ]

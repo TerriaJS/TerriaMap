@@ -1615,9 +1615,9 @@
     "loading": "Creating print view..."
   },
   "analisiAvanzate": {
-    "h1navigaTraITool": " Navigate among the in depth tools ",
+    "h1navigaTraITool": " Navigate among the supplementary tools ",
     "h2ModuloDiCalcolo": " CALCULATION MODULE ",
-    "infoValutazioneTecnicoEconomica": "This tool allows you to carry out a preliminary technical-economic assessment of a hypothetical wind farm located in a pre-selected point on the maps, simulating the energy performance and the average cost of the energy produced by the plant.",
+    "infoValutazioneTecnicoEconomica": "This tool allows to perform a preliminary technical-economical evaluation of a hypothetical wind farm located in a pre-selected point on the map, simulating energy performances and average cost of energy produced by the plant.",
     "approfondisci": "Read more",
     "perAccedere": "To access",
     "cliccaQui": "click here",
@@ -1627,9 +1627,9 @@
     "infoShapefile": "This tool allows you to download in shapefile format (.shp) the grid containing the parameters of the Wind Atlas of Italy (speed, producibility, shape parameter of the Weibull distribution and distance from the primary cabins) on the onshore and offshore domains of the national territory.",
     "approfondisciEdownload": "Read more and download",
     "link": "LINK",
-    "ulterioriApprofondimenti": "For further information on energy planning support, you can consult the'",
-    "atlanteIntegrato": "Wind Atlas.",
-    "possibileConsultare": "It is also possible to consult and download the data relating to the national energy system present in the",
+    "ulterioriApprofondimenti": "For further information about energy planning support, you can consult the",
+    "atlanteIntegrato": "Integrated Atlas.",
+    "possibileConsultare": "It is also possible to consult and download a variety of data on the national energy system available in the",
     "geoDbEta": "GeoDB ETA."
   }
 }
