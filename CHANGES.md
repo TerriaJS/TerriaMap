@@ -2,6 +2,8 @@
 
 ### The Next Release
 
+- Make `version.js` more detailed. It now uses format `${date}-${TerriaMap version}-${TerriaJS version}-${TerriaMap commit hash}`
+- Also write out new `wwwroot/version.json` file - for example `{"date":"2022-11-11","terriajs":"8.2.21","terriamap":"0.0.6","terriamapCommitHash":"2d4d8d7d","hasLocalModifications":true}`
 - [The next improvement]
 
 ### `0.0.6`

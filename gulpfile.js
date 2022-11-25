@@ -37,15 +37,40 @@ gulp.task("write-version", function (done) {
   var fs = require("fs");
   var spawnSync = require("child_process").spawnSync;
 
-  // Get a version string from "git describe".
-  var version = spawnSync("git", ["describe"]).stdout.toString().trim();
-  var isClean =
+  const nowDate = new Date();
+  const dateString = `${nowDate.getFullYear()}-${
+    nowDate.getMonth() + 1
+  }-${nowDate.getDate()}`;
+  const packageJson = require("./package.json");
+  const terriajsPackageJson = require("./node_modules/terriajs/package.json");
+
+  const isClean =
     spawnSync("git", ["status", "--porcelain"]).stdout.toString().length === 0;
+
+  const gitHash = spawnSync("git", ["rev-parse", "--short", "HEAD"])
+    .stdout.toString()
+    .replace("\n", "");
+
+  let version = `${dateString}-${packageJson.version}-${terriajsPackageJson.version}-${gitHash}`;
+
   if (!isClean) {
     version += " (plus local modifications)";
   }
 
+  // Write version.js - which will be injected into `{{version}}` in Terria `brandBarElements`
   fs.writeFileSync("version.js", "module.exports = '" + version + "';");
+
+  // Also write out a JSON file with all versions into wwwroot
+  fs.writeFileSync(
+    "wwwroot/version.json",
+    JSON.stringify({
+      date: dateString,
+      terriajs: terriajsPackageJson.version,
+      terriamap: packageJson.version,
+      terriamapCommitHash: gitHash,
+      hasLocalModifications: !isClean
+    })
+  );
 
   done();
 });
