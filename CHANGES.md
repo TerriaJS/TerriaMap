@@ -1,5 +1,31 @@
 # Change Log
 
+### The Next Release
+
+- [The next improvement]
+
+### `0.0.6`
+
+**2022-11-11**
+
+- About button href is now pulled from TerriaJS `configParameters.aboutButtonHrefUrl`
+- Update TerriaJS to `8.2.21`
+
+### `0.0.5`
+
+**2022-11-02**
+
+- TerriaMap no longer supports ejs templating for data sources. We suggest to use terria reference to manage a catalog in multiple files.
+- Update TerriaJS to `8.2.20`
+- Pin `"@types/lodash": "4.14.182"`(See https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/63021)
+
+### `0.0.4`
+
+**2022-09-23**
+
+- Removed `RelatedMaps.jsx` - this is now generated from configuration in `terriajs`. See https://github.com/TerriaJS/terriajs/blob/main/doc/customizing/client-side-config.md#parameters for example configuration.
+  - **Note** `RelatedMaps` can remain unchanged if HTML/JSX file is preferred.
+
 ### 2022-06-30
 
 - Add support Plugins support using `terriajs-plugin-api`. See [`plugins.ts`](./plugins.ts)
@@ -98,7 +124,9 @@
 
 ### 2016-06-15
 
-- Support "globalDisclaimer" configuration option, defined as follows:
+- Support "globalDisclaimer" configuration option, defined as follows
+
+```json
   "globalDisclaimer": {
   "confirmationRequired": true, // Whether user must click the correct button to dismiss it (otherwise click anywhere)
   "buttonTitle": "I agree", // Text for that button (defaults to "Ok").
@@ -106,7 +134,8 @@
   "prodHostRegex": "gov.\\.au$", // If this regular expression is NOT matched, add the DevelopmentDisclaimerPreamble.html
   "devHostRegex-OPTIONAL": "\\b(staging|preview|test|dev)\\.", // If this regular expression IS matched, add that preamble
   "enableOnLocalhost": true // By default, Disclaimers are not shown when testing locally. Add this to test your disclaimer.
-  },
+  }
+```
 
 ### 2016-05-13b
 

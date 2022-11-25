@@ -325,12 +325,6 @@
         "GroupDescription": "SecurityGroup",
         "SecurityGroupIngress": [
           {
-            "CidrIp": "0.0.0.0/0",
-            "FromPort": "22",
-            "IpProtocol": "tcp",
-            "ToPort": "22"
-          },
-          {
             "FromPort": {
               "Ref": "WebServerPort"
             },
