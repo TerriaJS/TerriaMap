@@ -1,8 +1,6 @@
 # Docker image for the primary terria map application server
 FROM node:14
 
-RUN apt-get update && apt-get install -y gdal-bin
-
 RUN mkdir -p /usr/src/app && mkdir -p /etc/config/client
 WORKDIR /usr/src/app/component
 COPY . /usr/src/app

@@ -12,7 +12,6 @@ packages:
  - python-pip
  - nodejs
  - varnish
- - gdal-bin
 
 # any files to create
 write_files:

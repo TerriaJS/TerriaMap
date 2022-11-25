@@ -17,7 +17,7 @@
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 12.0.0"
+    "node": ">= 14.0.0"
   },
   "repository": {
     "type": "git",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "pm2": "^3.2.2",
-    "terriajs-server": "^3.3.4",
-    "terriajs-plugin-api": "0.0.1-alpha.4",
-    "terriajs-plugin-sample": "0.0.1-alpha.5"
+    "terriajs-plugin-api": "0.0.1-alpha.6",
+    "terriajs-plugin-sample": "0.0.1-alpha.7",
+    "terriajs-server": "^3.3.4"
   },
   "config": {
     "awsProfile": "terria",
@@ -64,25 +64,25 @@
     "fs-extra": "^7.0.1",
     "generate-terriajs-schema": "^1.5.0",
     "gulp": "^4.0.0",
-    "husky": "^2.7.0",
+    "husky": "^8.0.1",
     "json5": "^2.1.0",
     "minimist": "^1.2.5",
     "node-notifier": "^5.1.2",
     "node-sass": "^6.0.1",
     "plugin-error": "^1.0.1",
-    "prettier": "^1.19.1",
+    "prettier": "2.7.1",
     "pretty-quick": "^1.10.0",
     "prop-types": "^15.6.0",
     "raw-loader": "^1.0.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "redbox-react": "^1.3.6",
     "resolve-url-loader": "^3.0.1",
     "sass-loader": "^10",
     "semver": "^5.0.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "4.1.3",
-    "terriajs": "terriajs/terriajs#terria-cleanup",
+    "terriajs": "8.2.11",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.92.0-tile-error-provider-fix-2",
     "terriajs-schema": "latest",
@@ -96,6 +96,7 @@
     "yargs": "^11.0.0"
   },
   "scripts": {
+    "prepare": "husky install",
     "docker-build-local": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto --local",
     "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
     "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
@@ -110,13 +111,7 @@
     "deploy-without-reinstall": "gulp clean && gulp release && yarn deploy-current",
     "deploy-current": "yarn get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
-    "prettier": "prettier --write \"**/*\"",
-    "pretty-quick": "pretty-quick",
-    "prettier-check": "prettier --check \"**/*\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "prettier": "prettier --write .",
+    "prettier-check": "prettier --check ."
   }
 }
