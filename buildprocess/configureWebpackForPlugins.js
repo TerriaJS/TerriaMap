@@ -49,7 +49,7 @@ function createPluginIconsRule() {
     loader: require.resolve("svg-sprite-loader"),
     options: {
       esModule: false,
-      symbolId: svgPath => {
+      symbolId: (svgPath) => {
         // Generate a symbolId by concatenating the package name and the icon name
         const packageName = packageNames[svgPath] || "terriajs-plugin-";
         const iconName = path.basename(svgPath, ".svg");

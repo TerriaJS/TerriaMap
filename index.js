@@ -59,7 +59,7 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
  * - load init sources
  * - render
  */
-module.exports = async function() {
+module.exports = async function () {
   try {
     await terria.start({
       configUrl: "config.json",
@@ -82,7 +82,7 @@ module.exports = async function() {
   }
 
   // Asynchronously load InitSources
-  terria.loadInitSources().then(result => result.raiseError(terria));
+  terria.loadInitSources().then((result) => result.raiseError(terria));
 
   try {
     viewState.searchState.locationSearchProviders = [
@@ -121,7 +121,7 @@ module.exports = async function() {
           confirmText: globalDisclaimer.buttonTitle || "Ok",
           denyText: globalDisclaimer.denyText || "Cancel",
           denyAction: globalDisclaimer.afterDenyLocation
-            ? function() {
+            ? function () {
                 window.location = globalDisclaimer.afterDenyLocation;
               }
             : undefined,
