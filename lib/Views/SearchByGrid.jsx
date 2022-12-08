@@ -39,6 +39,8 @@ function SearchByGrid(props) {
     viewState.openAddData();
   };
 
+  let arrayLength = gridTypes.length + 1;
+
   return (
     <MenuPanel
       theme={dropdownTheme}
@@ -73,8 +75,9 @@ function SearchByGrid(props) {
           background: "none",
           border: props.smallScreen ? "initial" : "none"
         }}
+        size={arrayLength}
       >
-        <option value="">
+        <option value="" disabled>
           {props.smallScreen ? "Select an option" : "ADCIRC Grid"}
         </option>
         {gridTypes &&

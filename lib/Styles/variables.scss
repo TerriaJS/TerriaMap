@@ -195,6 +195,24 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     left: unset !important;
   }
 
+  #searchByInstance option:checked,
+  #searchByType option:checked,
+  #searchByGrid option:checked {
+    background: none !important;
+    color: white !important;
+  }
+  #searchByInstance option:hover,
+  #searchByType option:hover,
+  #searchByGrid option:hover {
+    cursor: pointer;
+    background: #008daa;
+  }
+  #searchByInstance option:disabled,
+  #searchByType option:disabled,
+  #searchByGrid option:disabled {
+    cursor: initial;
+  }
+
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
   /*

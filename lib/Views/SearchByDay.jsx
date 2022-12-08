@@ -18,7 +18,7 @@ function SearchByDay(props) {
 
   const { viewState } = props;
 
-  const convertDateToString = date => {
+  const convertDateToString = (date) => {
     let dd = String(date.getDate()).padStart(2, "0");
     let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = date.getFullYear();
@@ -26,7 +26,7 @@ function SearchByDay(props) {
     return mm + "-" + dd + "-" + yyyy;
   };
 
-  const isValidDate = d => {
+  const isValidDate = (d) => {
     // console.log("valid date", d instanceof Date, !isNaN(d));
     return d instanceof Date && !isNaN(d);
   };
@@ -37,7 +37,7 @@ function SearchByDay(props) {
     viewState.searchState.searchCatalog(searchBy);
   };
 
-  const onDateChanged = date => {
+  const onDateChanged = (date) => {
     // console.log(new Date())
     setStartDate(date._d);
 
@@ -107,7 +107,7 @@ function SearchByDay(props) {
           showYearDropdown
           scrollableYearDropdown
           // selected={startDate}
-          onChange={date => onDateChanged(date)}
+          onChange={(date) => onDateChanged(date)}
           style={{ color: "grey" }}
           // customInput={<CustomInput />}
         />
