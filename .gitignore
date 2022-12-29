@@ -26,3 +26,4 @@ pancake/
 yarn-error.log
 
 package-lock.json
+wwwroot/esbuild/

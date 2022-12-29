@@ -66,7 +66,8 @@ esbuild
       "path",
       "http",
       "https",
-      "zlib"
+      "zlib",
+      "through"
       //"geojson-stream"
     ]
   })
