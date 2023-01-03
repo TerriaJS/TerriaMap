@@ -11,7 +11,7 @@
 
 // These variables are for buttons and text.
 // "color-secondary" should be a lighter color than "color-primary" but still readable contrasted with white.
-$color-primary: #008da9;
+$color-primary: #2771a5;
 
 $color-secondary: hsl(60, 80%, 60%); // or: lighten($color-primary, 20%);
 
@@ -19,8 +19,8 @@ $color-custom: #404855;
 
 // These variables set background panel colors
 $dark: rgba(2, 0, 19, 0.418);
-$dark-with-overlay: #008da9;
-$dark-lighter: #008da9;
+$dark-with-overlay: #2771a5;
+$dark-lighter: #2771a5;
 
 // You might find it helpful to define these and use them.
 $color-primary-light: lighten($color-primary, 10%);
@@ -75,10 +75,6 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     fill: white !important;
   }
 
-  .hucuvM svg {
-    fill: white !important;
-  }
-
   .hucuvM {
     background-color: $color-custom !important;
   }
@@ -86,6 +82,7 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
   .tjs-standard-user-interface__sidePanel {
     background: white !important;
   }
+
   .epgPDJ {
     color: black !important;
   }
@@ -106,9 +103,11 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     background: white !important;
     color: black !important;
   }
+
   .tjs-feature-info-panel__header {
     background: $color-primary !important;
   }
+
   .ceRfzL {
     color: black !important;
   }
@@ -117,27 +116,33 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     color: black !important;
     background: white !important;
   }
-  .jVTfbw {
-    background: white !important;
+
+  .djQQY {
+    background: #fff0 !important;
   }
+
   .jVTfbw {
-    background: white !important;
+    background: #fff0 !important;
   }
+
   .bLpOLl {
-    background: white !important;
+    background: #fff0 !important;
   }
 
   .jDRHYh {
-    background: white !important;
+    background: #fff0 !important;
   }
+
   .bXYFrM {
-    background: white !important;
+    background: #fff0 !important;
   }
+
   .hYWDNU {
-    background: white !important;
+    background: #fff0 !important;
   }
+
   .hMJFTf {
-    color: black !important;
+    color: white !important;
   }
 
   .jzZIKv {
@@ -146,7 +151,7 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
   }
 
   .cgxti {
-    color: black !important;
+    color: white !important;
   }
 
   .gHmlHI {
@@ -172,45 +177,6 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
 
   .ExperimentalFeatures__Control-sc-1xcqt5a-1 {
     margin: 5px 0 !important;
-  }
-
-  // classes when deployed to docker (left hand drawer menu)
-  .bIkMvM {
-    background: white !important;
-  }
-  .djQQY {
-    background: white !important;
-  }
-  // -- text on drawer menu
-  .kgoZLn {
-    color: black !important;
-  }
-  // --- svg
-  .fkLWMJ {
-    fill: black !important;
-  }
-
-  // calendar dropdown fix
-  .jHziT {
-    left: unset !important;
-  }
-
-  #searchByInstance option:checked,
-  #searchByType option:checked,
-  #searchByGrid option:checked {
-    background: none !important;
-    color: white !important;
-  }
-  #searchByInstance option:hover,
-  #searchByType option:hover,
-  #searchByGrid option:hover {
-    cursor: pointer;
-    background: #008daa;
-  }
-  #searchByInstance option:disabled,
-  #searchByType option:disabled,
-  #searchByGrid option:disabled {
-    cursor: initial;
   }
 
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
@@ -260,11 +226,11 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
 
     // All kinds of buttons in various screens
     .tjs-_buttons__btn {
-        &-primary { 
-            font-family: $font-base; 
+        &-primary {
+            font-family: $font-base;
         }
-        &:hover { 
-            color: $color-primary;             
+        &:hover {
+            color: $color-primary;
         }
     }
 
@@ -276,11 +242,11 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
 
     // Lat/lon buttons
     .tjs-legend__locationBar, .tjs-legend__distanceLegend {
-        
+
         background:$dark;
         color:white;
         &:hover,&:focus { background: $dark; color: white; }
-    
+
     }
 
     // Progress bar while datasets are loading
@@ -295,7 +261,7 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     }
 
     .tjs-timeline__text-cell {
-        font-family: $font-base; 
+        font-family: $font-base;
     }
 
     .tjs-timeline__timeline {
@@ -339,15 +305,15 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     .tjs-data-catalog-item__btn-catalog-item--is-previewed {
         ,&:focus {color: $color-primary; }
     }
-      // The tabs at the top 
-    .tjs-tabs__btn--tab {    
+      // The tabs at the top
+    .tjs-tabs__btn--tab {
         font-family:$font-base
     }
 
     .tjs-tabs__btn--selected {
         color:$color-primary-dark;
     }
-    .tjs-tabs__btn--tab:hover {    
+    .tjs-tabs__btn--tab:hover {
         color:$color-secondary;
     }
     */

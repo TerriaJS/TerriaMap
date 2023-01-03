@@ -54,7 +54,7 @@ function SearchByDay(props) {
     console.log("key down", event.keyCode)
     if (event.keyCode === 13) {
       const value = event.target.value
-      if (value.length === 10) {      
+      if (value.length === 10) {
         const date = new Date(value)
         console.log("date entered", date, isValidDate(date))
         if (isValidDate(date)) onDateChanged(date);
