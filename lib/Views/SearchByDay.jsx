@@ -19,10 +19,15 @@ function SearchByDay(props) {
   const { viewState } = props;
 
   const convertDateToString = (date) => {
+    // for whatever reason the calendar control returns the date selected minus 1 day.
+    date.setDate(date.getDate() + 1);
+
+    // get the date components properly formatted
     let dd = String(date.getDate()).padStart(2, "0");
     let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = date.getFullYear();
 
+    // return the corrected date string
     return mm + "-" + dd + "-" + yyyy;
   };
 
@@ -38,7 +43,6 @@ function SearchByDay(props) {
   };
 
   const onDateChanged = (date) => {
-    // console.log(new Date())
     setStartDate(date._d);
 
     viewState.changeSearchState(convertDateToString(date._d));
