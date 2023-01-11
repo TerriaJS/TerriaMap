@@ -1,15 +1,15 @@
-.loader-ui-right img{
+.loader-ui-right img {
   display: block;
   margin: calc(50vh - 150px) auto;
 }
 
 /* BEGIN REACT DATE PICKER CUSTOM CSS */
 .tm-related-maps__dropdown-inner {
-  width: 261px !important; 
+  width: 261px !important;
 }
 .react-datepicker {
   margin: -10px 0px 0px -11px !important;
-  width: 261px !important; 
+  width: 261px !important;
 }
 .react-datepicker__triangle {
   visibility: hidden !important;
@@ -26,7 +26,7 @@
 .react-datepicker__month-container {
   width: 100%;
   padding: 0.65rem;
-  background-color: #3F4854;
+  background-color: #3f4854;
 }
 .react-datepicker__week {
   margin-left: -11px;
@@ -34,14 +34,16 @@
 .react-datepicker__day-names {
   margin: 0px;
 }
-.react-datepicker__year-read-view, .react-datepicker__month-read-view,
-.react-datepicker__month-dropdown-container .react-datepicker__month-dropdown-container--scroll {
+.react-datepicker__year-read-view,
+.react-datepicker__month-read-view,
+.react-datepicker__month-dropdown-container
+  .react-datepicker__month-dropdown-container--scroll {
   color: white !important;
 }
 /* END REACT DATE PICKER CUSTOM CSS */
 
-@media (min-width: 768px){
-  .loader-ui{
+@media (min-width: 768px) {
+  .loader-ui {
     display: flex;
     position: fixed;
     left: 0;
@@ -49,17 +51,17 @@
     width: 100vw;
     height: 100vh;
   }
-  .loader-ui-left{
-    background: #3F4854;
+  .loader-ui-left {
+    background: #3f4854;
     height: 100vh;
     width: 350px;
     position: relative;
   }
-  .loader-ui-right{
+  .loader-ui-right {
     height: 100vh;
     width: calc(100% - 350px);
   }
-  .loader-ui-grabber{
+  .loader-ui-grabber {
     left: 350px;
     top: 70px;
     height: 15px;
@@ -70,13 +72,13 @@
     padding: 8px 0px;
     border-width: 0px 1px 0px 0px;
     background: rgb(63, 72, 84);
-    border-right: 1px solid #3F4854;
+    border-right: 1px solid #3f4854;
     border-radius: 0px 2px 2px 0px;
-    background: #3F4854;
+    background: #3f4854;
     z-index: -2;
   }
 }
-.loader-ui{
+.loader-ui {
   transition: opacity, 2s;
   opacity: 1;
   height: 100vh;
@@ -87,6 +89,6 @@
   top: 0;
   pointer-events: none;
 }
-.loader-ui-hide{
+.loader-ui-hide {
   opacity: 0;
 }

@@ -23,7 +23,7 @@ function SearchByType(props) {
     viewState.searchState.searchCatalog(searchBy);
   };
 
-  const handleChange = selection => {
+  const handleChange = (selection) => {
     setSearchType(selection);
     // console.log("date", convertDateToString(date));
 
@@ -38,6 +38,8 @@ function SearchByType(props) {
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };
+
+  let arrayLength = eventTypes.length + 1;
 
   return (
     <MenuPanel
@@ -61,16 +63,17 @@ function SearchByType(props) {
         name="searchByType"
         autoComplete="off"
         value={searchType}
-        onChange={e => handleChange(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         style={{
           color: props.smallScreen ? "grey" : "white",
           minWidth: "125px",
           width: "100%",
-          background: props.smallScreen ? "white" : "#3f4854",
+          background: "none",
           border: props.smallScreen ? "initial" : "none"
         }}
+        size={arrayLength}
       >
-        <option value="">
+        <option value="" disabled>
           {props.smallScreen ? "Select an option" : "Forecast Type"}
         </option>
         {eventTypes &&

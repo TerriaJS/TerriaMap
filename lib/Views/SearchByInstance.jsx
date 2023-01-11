@@ -19,25 +19,25 @@ function SearchByInstance(props) {
 
   const searchByInstance = () => {
     const searchBy = "instance";
-    // console.log("SearchByInstance - search state", viewState);
     viewState.searchState.searchCatalog(searchBy);
   };
 
-  const handleChange = selection => {
+  const handleChange = (selection) => {
     setSearchInstance(selection);
-    // console.log("date", convertDateToString(date));
 
     viewState.changeSearchState(selection);
-    // console.log(
-    //   "onDateChanged catalogSearchText: ",
-    //   viewState.searchState.catalogSearchText
-    // );
 
     searchByInstance();
     setSearchInstance("");
     viewState.setTopElement("AddData");
     viewState.openAddData();
   };
+
+  const testDate = (e) => {
+    console.log(e);
+  };
+
+  let arraySize = instanceNames.length + 1;
 
   return (
     <MenuPanel
@@ -61,18 +61,20 @@ function SearchByInstance(props) {
         name="searchByInstance"
         autoComplete="off"
         value={searchInstance}
-        onChange={e => handleChange(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         style={{
           color: props.smallScreen ? "grey" : "white",
           minWidth: "125px",
           width: "100%",
-          background: props.smallScreen ? "white" : "#3f4854",
+          background: "none",
           border: props.smallScreen ? "initial" : "none"
         }}
+        size={arraySize}
       >
-        <option value="">
+        <option value="" disabled>
           {props.smallScreen ? "Select an option" : "Instance Name"}
         </option>
+
         {instanceNames &&
           instanceNames.map((instanceName, idx) => (
             <option value={instanceName} key={idx}>

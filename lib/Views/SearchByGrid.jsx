@@ -23,7 +23,7 @@ function SearchByGrid(props) {
     viewState.searchState.searchCatalog(searchBy);
   };
 
-  const handleChange = selection => {
+  const handleChange = (selection) => {
     setSearchGrid(selection);
     // console.log("date", convertDateToString(date));
 
@@ -39,6 +39,8 @@ function SearchByGrid(props) {
     viewState.openAddData();
   };
 
+  let arrayLength = gridTypes.length + 1;
+
   return (
     <MenuPanel
       theme={dropdownTheme}
@@ -48,6 +50,9 @@ function SearchByGrid(props) {
       btnTitle="Search related maps by ADCIRC Grid"
       useDropdownInMenu
       // showDropdownInCenter
+      style={{
+        background: "red !important"
+      }}
     >
       <If condition={props.smallScreen}>
         <div className={classNames(PanelStyles.header)}>
@@ -62,16 +67,17 @@ function SearchByGrid(props) {
         autoComplete="off"
         value={searchGrid}
         // onChange={e => setSearchGrid(e.target.value)}
-        onChange={e => handleChange(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         style={{
           color: props.smallScreen ? "grey" : "white",
           minWidth: "125px",
           width: "100%",
-          background: props.smallScreen ? "white" : "#3f4854",
+          background: "none",
           border: props.smallScreen ? "initial" : "none"
         }}
+        size={arrayLength}
       >
-        <option value="">
+        <option value="" disabled>
           {props.smallScreen ? "Select an option" : "ADCIRC Grid"}
         </option>
         {gridTypes &&

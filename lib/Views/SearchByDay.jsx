@@ -18,15 +18,20 @@ function SearchByDay(props) {
 
   const { viewState } = props;
 
-  const convertDateToString = date => {
+  const convertDateToString = (date) => {
+    // for whatever reason the calendar control returns the date selected minus 1 day.
+    date.setDate(date.getDate() + 1);
+
+    // get the date components properly formatted
     let dd = String(date.getDate()).padStart(2, "0");
     let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = date.getFullYear();
 
+    // return the corrected date string
     return mm + "-" + dd + "-" + yyyy;
   };
 
-  const isValidDate = d => {
+  const isValidDate = (d) => {
     // console.log("valid date", d instanceof Date, !isNaN(d));
     return d instanceof Date && !isNaN(d);
   };
@@ -37,8 +42,7 @@ function SearchByDay(props) {
     viewState.searchState.searchCatalog(searchBy);
   };
 
-  const onDateChanged = date => {
-    // console.log(new Date())
+  const onDateChanged = (date) => {
     setStartDate(date._d);
 
     viewState.changeSearchState(convertDateToString(date._d));
@@ -54,7 +58,7 @@ function SearchByDay(props) {
     console.log("key down", event.keyCode)
     if (event.keyCode === 13) {
       const value = event.target.value
-      if (value.length === 10) {      
+      if (value.length === 10) {
         const date = new Date(value)
         console.log("date entered", date, isValidDate(date))
         if (isValidDate(date)) onDateChanged(date);
@@ -97,7 +101,6 @@ function SearchByDay(props) {
       smallScreen={props.smallScreen}
       viewState={props.viewState}
       btnTitle="Search related maps by Calendar Date"
-      showDropdownInCenter
     >
       <div className={classNames(PanelStyles.header)}>
         <label className={PanelStyles.heading}>Calendar Date</label>
@@ -108,7 +111,7 @@ function SearchByDay(props) {
           showYearDropdown
           scrollableYearDropdown
           // selected={startDate}
-          onChange={date => onDateChanged(date)}
+          onChange={(date) => onDateChanged(date)}
           style={{ color: "grey" }}
           // customInput={<CustomInput />}
         />
