@@ -134,6 +134,13 @@ body {
     left: unset !important;
   }
 
+  .tjs-feature-info-panel__btn--close-feature:hover svg,
+  .tjs-feature-info-panel__btn--close-feature:focus svg,
+  .tjs-feature-info-panel__btnToggleFeature:hover svg,
+  .tjs-feature-info-panel__btnToggleFeature:focus svg {
+    fill: white !important;
+  }
+
   // .ExperimentalFeatures__ControlsWrapper-sc-1xcqt5a-0 {
   //   display: flex;
   //   align-items: end;
