@@ -13,11 +13,11 @@ on:
 
 # working parameters that are specific to this script
 env:
-  REGISTRY: containers.renci.org/eds/apsviz-supervisor
+  REGISTRY: containers.renci.org/eds/apsviz-terria-map
 
 # job definition
 jobs:
-  pylint-build-and-push-image:
+  build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -27,12 +27,6 @@ jobs:
       # checkout the codebase
       - name: Checkout
         uses: actions/checkout@v1
-
-      # install pylint and run it on the code
-      - name: Python Pylint GitHub Action
-        uses: fylein/python-pylint-github-action@v1
-        with:
-          args: pip3 install -r requirements.txt && pylint --rcfile=.pylintrc --recursive=y ./
 
       # connect to the renci image registry
       - name: Login to containers.renci.org
