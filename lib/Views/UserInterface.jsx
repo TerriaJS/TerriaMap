@@ -60,8 +60,12 @@ export default function UserInterface(props) {
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
 
   return (
-    <StandardUserInterface {...props} version={version}>
-      {windowDimensions.width < 768 && (
+    <StandardUserInterface
+      {...props}
+      version={version}
+      style={{ maxHeight: "400px !important" }}
+    >
+      {/* {windowDimensions.width < 768 && (
         <MenuLeft>
           <SearchByType viewState={props.viewState} />
           <SearchByGrid viewState={props.viewState} />
@@ -76,7 +80,7 @@ export default function UserInterface(props) {
           <SearchByType viewState={props.viewState} />
           <SearchByGrid viewState={props.viewState} />
         </ExperimentalMenu>
-      )}
+      )} */}
     </StandardUserInterface>
   );
 }
