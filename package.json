@@ -24,6 +24,9 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.10",
     "mobx": "^4.15.4",
     "mobx-react": "^6.3.1",
     "mobx-react-lite": "^3.0.0",

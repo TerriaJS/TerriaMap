@@ -1,14 +1,16 @@
 {
-  "initializationUrls": ["https://apsviz-ui-data-dev.apps.renci.org/get_ui_data_file?file_name=apsviz2.json"],
+  "initializationUrls": [
+    "https://apsviz-ui-data-dev.apps.renci.org/get_ui_data_file?file_name=apsviz2.json",
+    "apsviz"
+  ],
   "parameters": {
     "bingMapsKey": "AonD5sr-4zO6vqCNY-RMerq7qOLMOFDd1BsYZbGdZLE9zP3lbGLsX-BVwH8dTqxh",
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
 
-
     "logToConsole": true,
- 
+
     "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkMzA5YzNmYy0wYjViLTRkNGYtYTk2MC1hNzFmOTBmYTEzYmUiLCJpZCI6NzU2NzgsImlhdCI6MTYzODgwODIzNH0.TngUYPd5hc1s-ekE9g4yiRuTcp76CnCm16NFmewjWBI",
     "useCesiumIonBingImagery": false,
 
@@ -24,16 +26,30 @@
       "<a target=\"_blank\" href=\"\"><img src=\"images/aps-logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
+    "helpEnabled": false,
 
     "supportEmail": "help@example.com",
-
+    "show-workbench": {
+      "disabled": true
+    },
+    "map-navigation": {
+      "disabled": true
+    },
+    "menu-bar": {
+      "disabled": true
+    },
+    "map-data-count": {
+      "disabled": true
+    },
+    "bottom-dock": {
+      "disabled": true
+    },
     "proj4ServiceBaseUrl": "proj4def/",
 
     "feedbackUrl": "feedback",
 
-
     "mobileDefaultViewerMode": "2d",
-"experimentalFeatures": true,
+    "experimentalFeatures": true,
 
     "languageConfiguration": {
       "enabled": false,
