@@ -5,7 +5,6 @@ import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface
 import version from "../../version";
 import "./global.scss";
 import IconSection from "./layerSelection/iconSection";
-import SwipeableEdgeDrawer from "./selectedLayers/swipeableDrawer";
 
 export default function UserInterface(props) {
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
