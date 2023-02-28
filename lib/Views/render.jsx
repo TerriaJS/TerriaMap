@@ -4,8 +4,8 @@ import React from "react";
 import Variables from "../Styles/variables.scss";
 
 export default function renderUi(terria, allBaseMaps, viewState) {
-  console.log(viewState);
-  // console.log(terria)
+  // console.log(viewState);
+  console.log(terria.catalog.group.strata.$mobx);
   let render = () => {
     const UI = require("./UserInterface").default;
     ReactDOM.render(

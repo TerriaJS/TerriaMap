@@ -297,4 +297,27 @@ body {
   .SidePanel___StyledDiv-sc-9updrj-3 {
     margin: 15px;
   }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #00000066;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 18px;
+    left: 100%;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .dqbhbK {
+    display: none;
+  }
 }
