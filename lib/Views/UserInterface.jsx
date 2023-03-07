@@ -5,10 +5,14 @@ import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface
 import version from "../../version";
 import "./global.scss";
 import IconSection from "./layerSelection/iconSection";
+import SwipeableEdgeDrawer from "./selectedLayers/swipeableDrawer";
 
 export default function UserInterface(props) {
+  const [open, setOpen] = React.useState(false);
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
-
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
   return (
     <>
       <IconSection />
@@ -17,8 +21,7 @@ export default function UserInterface(props) {
         version={version}
         style={{ maxHeight: "400px !important" }}
       />
-      {/* <SwipeableEdgeDrawer/> */}
-      {/* <Collapsible name={"Lisa"} /> */}
+      <SwipeableEdgeDrawer open={open} toggleDrawer={toggleDrawer} />
     </>
   );
 }
