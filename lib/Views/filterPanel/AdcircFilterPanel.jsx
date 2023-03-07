@@ -5,6 +5,7 @@ import FormLabel from "@mui/material/FormLabel";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Radio } from "@mui/material";
+import SynopticPanel from "./SynopticPanel";
 /*import PropTypes from "prop-types";
 import MenuPanel from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel.jsx";
 import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
@@ -21,10 +22,11 @@ export default function AdcircFilterForm() {
 */
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">Run Type</FormLabel>
+      <FormLabel id="demo-radio-buttons-group-label">ADCIRC Run Type</FormLabel>
       <RadioGroup
+        row
         aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
+        defaultValue="Synoptic"
         name="radio-buttons-group"
       >
         <FormControlLabel
@@ -38,6 +40,7 @@ export default function AdcircFilterForm() {
           label="Tropical"
         />
       </RadioGroup>
+      <SynopticPanel />
     </FormControl>
   );
 }
