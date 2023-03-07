@@ -14,8 +14,8 @@ import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 
 export default function CommonPanel() {
-  const [grid, setGrid] = React.useState(null);
-  const [instance, setInstance] = React.useState(null);
+  const [grid, setGrid] = React.useState("");
+  const [instance, setInstance] = React.useState("");
   const [checked, setChecked] = React.useState([0]);
 
   const handleGridChange = (event) => {
@@ -40,27 +40,32 @@ export default function CommonPanel() {
   };
 
   return (
-    <FormControl>
-      <InputLabel id="demo-simple-select-label1">Grid</InputLabel>
-      <Select
-        labelId="demo-simple-select-label2"
-        id="demo-simple-select"
-        value={grid}
-        label="Grid"
-        onChange={handleGridChange}
-      >
-        <MenuItem value={0}>00</MenuItem>
-      </Select>
-      <InputLabel id="demo-simple-select-label3">Instance</InputLabel>
-      <Select
-        labelId="demo-simple-select-label4"
-        id="demo-simple-select2"
-        value={instance}
-        label="Instance"
-        onChange={handleInstanceChange}
-      >
-        <MenuItem value={0}>sample instance</MenuItem>
-      </Select>
+    <div>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label1">Grid</InputLabel>
+        <Select
+          labelId="demo-simple-select-label2"
+          id="demo-simple-select"
+          value={grid}
+          label="Grid"
+          onChange={handleGridChange}
+        >
+          <MenuItem value={0}>00</MenuItem>
+        </Select>
+      </FormControl>
+
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label3">Instance</InputLabel>
+        <Select
+          labelId="demo-simple-select-label4"
+          id="demo-simple-select2"
+          value={instance}
+          label="Instance"
+          onChange={handleInstanceChange}
+        >
+          <MenuItem value={0}>sample instance</MenuItem>
+        </Select>
+      </FormControl>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {[0, 1, 2, 3].map((value) => {
           const labelId = `checkbox-list-label-${value}`;
@@ -98,6 +103,6 @@ export default function CommonPanel() {
           );
         })}
       </List>
-    </FormControl>
+    </div>
   );
 }

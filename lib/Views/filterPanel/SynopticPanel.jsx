@@ -12,7 +12,7 @@ import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 
 export default function SynopticPanel() {
-  const [date, setDate] = React.useState(null);
+  const [date, setDate] = React.useState("");
   const [cycle, setCycle] = React.useState("");
 
   const handleDateChange = (event) => {
@@ -35,7 +35,7 @@ export default function SynopticPanel() {
           renderInput={(params) => <TextField {...params} />}
         />
       </LocalizationProvider>
-      <Box sx={{ minWidth: 120 }}>
+      <Box sx={{ minWidth: 200 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Cycle</InputLabel>
           <Select
