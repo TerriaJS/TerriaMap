@@ -24,20 +24,11 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "pm2": "^3.2.2",
     "terriajs-plugin-api": "0.0.1-alpha.6",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
-    "terriajs-server": "^3.3.4"
+    "terriajs-server": "4.0.0"
   },
   "config": {
-    "awsProfile": "terria",
-    "awsS3PackagesPath": "s3://terria-apps/map",
-    "awsRegion": "ap-southeast-2",
-    "awsEc2InstanceType": "t2.small",
-    "awsEc2ImageId": "ami-0065540df76a93885",
-    "awsKeyName": "terria-kring",
-    "awsS3ServerConfigOverridePath": "s3://terria-apps/map/privateserverconfig-2016-08-31.json",
-    "awsS3ClientConfigOverridePath": "s3://terria-apps/map/privateclientconfig-2018-11-19.json",
     "docker": {
       "name": "data61/terria-terriamap",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
@@ -66,7 +57,7 @@
     "gulp": "^4.0.0",
     "husky": "^8.0.1",
     "json5": "^2.1.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.8",
     "node-notifier": "^5.1.2",
     "node-sass": "^6.0.1",
     "plugin-error": "^1.0.1",
@@ -84,7 +75,6 @@
     "svg-sprite-loader": "4.1.3",
     "terriajs": "8.2.21",
     "terriajs-cesium": "1.92.0-tile-error-provider-fix-2",
-    "terriajs-schema": "latest",
     "ts-loader": "^5.3.3",
     "typescript": "^3.9.2",
     "urijs": "^1.18.12",
@@ -99,17 +89,10 @@
     "docker-build-local": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto --local",
     "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
     "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
-    "start": "pm2 start ecosystem.config.js --update-env -- --config-file devserverconfig.json",
-    "stop": "pm2 stop ecosystem.config.js",
-    "pm2": "pm2",
+    "start": "terriajs-server --config-file devserverconfig.json",
     "gulp": "gulp",
-    "gulp:watch": "gulp watch",
-    "postinstall": "echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
+    "postinstall": "echo 'Installation successful. What to do next:\\n  yarn gulp dev   # Starts the server on port 3001, builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
-    "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && rm -rf node_modules && yarn install --frozen-lockfile && yarn deploy-without-reinstall",
-    "deploy-without-reinstall": "gulp clean && gulp release && yarn deploy-current",
-    "deploy-current": "yarn get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
-    "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write .",
     "prettier-check": "prettier --check ."
   }
