@@ -7,21 +7,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { Radio } from "@mui/material";
 import SynopticPanel from "./SynopticPanel";
 import TropicalPanel from "./TropicalPanel";
-/*import PropTypes from "prop-types";
-import MenuPanel from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuPanel.jsx";
-import PanelStyles from "terriajs/lib/ReactViews/Map/Panels/panel.scss";
-import Styles from "./related-maps.scss";
-import classNames from "classnames";
-import DatePicker from "react-datepicker";*/
 
 export default function AdcircFilterForm() {
   // const [textValue, setTextValue] = useState("");
   const [panel, setPanel] = useState("Synoptic");
 
-  /*const onTextChange = (e: any) => setTextValue(e.target.value);
-  const handleSubmit = () => console.log(textValue);
-  const handleReset = () => setTextValue("");
-*/
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">ADCIRC Run Type</FormLabel>

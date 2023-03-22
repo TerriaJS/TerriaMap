@@ -8,7 +8,7 @@ import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 
 export default function TropicalPanel() {
-  const [name, setName] = React.useState(null);
+  const [name, setName] = React.useState("");
   const [advisory, setAdvisory] = React.useState("");
 
   const handleNameChange = (event) => {
