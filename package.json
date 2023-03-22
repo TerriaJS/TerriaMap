@@ -35,6 +35,7 @@
     "mobx-react-lite": "^3.0.0",
     "mobx-utils": "^5.4.1",
     "pm2": "^3.2.2",
+    "react-axios": "^2.0.6",
     "react-datepicker": "0.53.0",
     "terriajs-plugin-api": "0.0.1-alpha.6",
     "terriajs-plugin-sample": "0.0.1-alpha.7",

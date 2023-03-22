@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 
-export default function SynopticPanel() {
+export default function SynopticPanel(props) {
   const [date, setDate] = React.useState("");
   const [cycle, setCycle] = React.useState("");
 
@@ -45,14 +45,17 @@ export default function SynopticPanel() {
             label="Cycle"
             onChange={handleCycleChange}
           >
-            <MenuItem value={0}>00</MenuItem>
-            <MenuItem value={6}>06</MenuItem>
-            <MenuItem value={12}>12</MenuItem>
-            <MenuItem value={18}>18</MenuItem>
+            {props.data.data.pulldown_data.cycles &&
+              props.data.data.pulldown_data.cycles.map((cycle) => {
+                if (cycle == "") {
+                  return <MenuItem value={cycle}>NULL</MenuItem>;
+                }
+                return <MenuItem value={cycle}>{cycle}</MenuItem>;
+              })}
           </Select>
         </FormControl>
       </Box>
-      <CommonPanel />
+      <CommonPanel data={props.data.data.pulldown_data} />
     </FormControl>
   );
 }

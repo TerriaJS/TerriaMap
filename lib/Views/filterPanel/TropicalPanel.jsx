@@ -7,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 
-export default function TropicalPanel() {
+export default function TropicalPanel(props) {
   const [name, setName] = React.useState("");
   const [advisory, setAdvisory] = React.useState("");
 
@@ -18,6 +18,8 @@ export default function TropicalPanel() {
   const handleAdvisoryChange = (event) => {
     setAdvisory(event.target.value);
   };
+
+  console.log(props.data.data.pulldown_data);
 
   return (
     <FormControl>

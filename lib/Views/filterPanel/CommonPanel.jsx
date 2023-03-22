@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+// import { getSynopticCatalog } from "../../utils/webServices";
 
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -13,10 +15,20 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 
-export default function CommonPanel() {
+export default function CommonPanel(props) {
   const [grid, setGrid] = React.useState("");
   const [instance, setInstance] = React.useState("");
   const [checked, setChecked] = React.useState([0]);
+
+  // useEffect(() => {
+  //   // Call for synoptic
+  //   getSynopticCatalog()
+  // });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+  };
 
   const handleGridChange = (event) => {
     setGrid(event.target.value);
@@ -39,34 +51,49 @@ export default function CommonPanel() {
     setChecked(newChecked);
   };
 
+  console.log(props.data);
+
   return (
     <div>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label1">Grid</InputLabel>
-        <Select
-          labelId="demo-simple-select-label2"
-          id="demo-simple-select"
-          value={grid}
-          label="Grid"
-          onChange={handleGridChange}
-        >
-          <MenuItem value={0}>00</MenuItem>
-        </Select>
-      </FormControl>
+      <form onSubmit={handleSubmit}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label1">Grid</InputLabel>
+          <Select
+            labelId="demo-simple-select-label2"
+            id="demo-simple-select"
+            value={grid}
+            label="Grid"
+            onChange={handleGridChange}
+          >
+            {props.data.grid_types &&
+              props.data.grid_types.map((grid) => {
+                if (grid == "") {
+                  return <MenuItem value={grid}>NULL</MenuItem>;
+                }
+                return <MenuItem value={grid}>{grid}</MenuItem>;
+              })}
+          </Select>
+        </FormControl>
 
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label3">Instance</InputLabel>
-        <Select
-          labelId="demo-simple-select-label4"
-          id="demo-simple-select2"
-          value={instance}
-          label="Instance"
-          onChange={handleInstanceChange}
-        >
-          <MenuItem value={0}>sample instance</MenuItem>
-        </Select>
-      </FormControl>
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label3">Instance</InputLabel>
+          <Select
+            labelId="demo-simple-select-label4"
+            id="demo-simple-select2"
+            value={instance}
+            label="Instance"
+            onChange={handleInstanceChange}
+          >
+            {props.data.instance_names &&
+              props.data.instance_names.map((name) => {
+                if (name == "") {
+                  return <MenuItem value={name}>NULL</MenuItem>;
+                }
+                return <MenuItem value={name}>{name}</MenuItem>;
+              })}
+          </Select>
+        </FormControl>
+        {/* <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {[0, 1, 2, 3].map((value) => {
           const labelId = `checkbox-list-label-${value}`;
 
@@ -102,7 +129,9 @@ export default function CommonPanel() {
             </ListItem>
           );
         })}
-      </List>
+      </List> */}
+        <button>submit</button>
+      </form>
     </div>
   );
 }

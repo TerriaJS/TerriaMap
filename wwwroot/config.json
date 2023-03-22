@@ -27,6 +27,7 @@
       ""
     ],
     "helpEnabled": false,
+    "storyEnabled": false,
 
     "supportEmail": "help@example.com",
     "show-workbench": {
