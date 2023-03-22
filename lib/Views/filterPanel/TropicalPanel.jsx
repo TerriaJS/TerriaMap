@@ -56,7 +56,7 @@ export default function TropicalPanel(props) {
           </Select>
         </FormControl>
       </Box>
-      <CommonPanel />
+      <CommonPanel data={props.data.data.pulldown_data} />
     </FormControl>
   );
 }
