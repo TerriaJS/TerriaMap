@@ -27,5 +27,4 @@ yarn-error.log
 
 package-lock.json
 
-.env
-.env.development
+terria-git-crypt-key
