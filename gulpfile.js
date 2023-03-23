@@ -5,20 +5,12 @@
 "use strict";
 
 /*global require*/
-// Every module required-in here must be a `dependency` in package.json, not just a `devDependency`,
-// This matters if ever we have gulp tasks run from npm, especially post-install ones.
+// If gulp tasks are run in a post-install task modules required here must be be a `dependency`
+//  in package.json, not just a `devDependency`. This is not currently needed.
 var fs = require("fs");
 var gulp = require("gulp");
 var path = require("path");
 var PluginError = require("plugin-error");
-var minimist = require("minimist");
-
-var knownOptions = {
-  string: ["baseHref"],
-  default: { baseHref: "/" }
-};
-
-var options = minimist(process.argv.slice(2), knownOptions);
 
 var watchOptions = {
   interval: 1000
@@ -77,6 +69,12 @@ gulp.task("write-version", function (done) {
 
 gulp.task("render-index", function renderIndex(done) {
   var ejs = require("ejs");
+  var minimist = require("minimist");
+  // Arguments written in skewer-case can cause problems (unsure why), so stick to camelCase
+  var options = minimist(process.argv.slice(2), {
+    string: ["baseHref"],
+    default: { baseHref: "/" }
+  });
 
   var index = fs.readFileSync("wwwroot/index.ejs", "utf8");
   var indexResult = ejs.render(index, { baseHref: options.baseHref });
@@ -286,7 +284,65 @@ function checkForDuplicateCesium() {
   }
 }
 
+gulp.task("terriajs-server", function (done) {
+  // E.g. gulp terriajs-server --terriajsServerArg port=4000 --terriajsServerArg verbose=true
+  //  or gulp dev --terriajsServerArg port=3000
+  const { spawn } = require("child_process");
+  const minimist = require("minimist");
+  // Arguments written in skewer-case can cause problems (unsure why), so stick to camelCase
+  const options = minimist(process.argv.slice(2), {
+    string: ["terriajsServerArg"],
+    default: { terriajsServerArg: [] }
+  });
+
+  const logFile = fs.openSync("./terriajs-server.log", "a");
+  const serverArgs = Array.isArray(options.terriajsServerArg)
+    ? options.terriajsServerArg
+    : [options.terriajsServerArg];
+  const child = spawn(
+    "node",
+    [
+      "./node_modules/.bin/terriajs-server",
+      ...serverArgs.map((arg) => `--${arg}`)
+    ],
+    { detached: true, stdio: ["ignore", logFile, logFile] }
+  );
+  child.on("exit", (exitCode, signal) => {
+    done(
+      new Error(
+        "terriajs-server quit" +
+          (exitCode !== null ? ` with exit code: ${exitCode}` : "") +
+          (signal ? ` from signal: ${signal}` : "") +
+          "\nCheck terriajs-server.log for more information."
+      )
+    );
+  });
+  // Intercept SIGINT, SIGTERM and SIGHUP, cleanup terriajs-server and re-send signal
+  // May fail to catch some relevant signals on Windows
+  // SIGINT: ctrl+c
+  // SIGTERM: kill <pid>
+  // SIGHUP: terminal closed
+  process.once("SIGINT", () => {
+    child.kill("SIGTERM");
+    process.kill(process.pid, "SIGINT");
+  });
+  process.once("SIGTERM", () => {
+    child.kill("SIGTERM");
+    process.kill(process.pid, "SIGTERM");
+  });
+  process.once("SIGHUP", () => {
+    child.kill("SIGTERM");
+    process.kill(process.pid, "SIGHUP");
+  });
+});
+
 gulp.task("build", gulp.series("copy-terriajs-assets", "build-app"));
 gulp.task("release", gulp.series("copy-terriajs-assets", "release-app"));
 gulp.task("watch", gulp.parallel("watch-terriajs-assets", "watch-app"));
+// Run render-index before starting terriajs-server because terriajs-server won't
+//  start if index.html isn't present
+gulp.task(
+  "dev",
+  gulp.parallel(gulp.series("render-index", "terriajs-server"), "watch")
+);
 gulp.task("default", gulp.series("lint", "build"));
