@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Get } from "react-axios";
-
+import { useState, useContext } from "react";
+import { Context } from "../../context/context";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -10,8 +11,10 @@ import SynopticPanel from "./SynopticPanel";
 import TropicalPanel from "./TropicalPanel";
 
 export default function AdcircFilterForm() {
-  // const [textValue, setTextValue] = useState("");
+  const { layers, setLayerData } = useContext(Context);
   const [panel, setPanel] = useState("synoptic");
+
+  console.log(layers);
 
   return (
     <>
@@ -47,6 +50,7 @@ export default function AdcircFilterForm() {
           } else if (isLoading) {
             return <div>Loading...</div>;
           } else if (response !== null) {
+            setLayerData(response);
             return (
               <div>
                 {panel === "synoptic" ? (

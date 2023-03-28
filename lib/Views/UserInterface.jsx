@@ -1,27 +1,35 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useMemo, useState } from "react";
 // import RelatedMaps from "terriajs/lib/ReactViews/RelatedMaps/RelatedMaps";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface";
 import version from "../../version";
+import { Context } from "../context/context";
 import "./global.scss";
 import IconSection from "./layerSelection/iconSection";
 import SwipeableEdgeDrawer from "./selectedLayers/swipeableDrawer";
 
 export default function UserInterface(props) {
   const [open, setOpen] = React.useState(false);
+  const [layerData, setLayertData] = useState("default data");
+  // const value = useMemo(() => ({ layerData, setLayertData }), [layerData]);
+
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
   return (
     <>
-      <IconSection />
-      <StandardUserInterface
-        {...props}
-        version={version}
-        style={{ maxHeight: "400px !important" }}
-      />
-      <SwipeableEdgeDrawer open={open} toggleDrawer={toggleDrawer} />
+      <Context.Provider
+        value={{ layers: layerData, setLayerData: setLayertData }}
+      >
+        <IconSection />
+        <StandardUserInterface
+          {...props}
+          version={version}
+          style={{ maxHeight: "400px !important" }}
+        />
+        <SwipeableEdgeDrawer open={open} toggleDrawer={toggleDrawer} />
+      </Context.Provider>
     </>
   );
 }

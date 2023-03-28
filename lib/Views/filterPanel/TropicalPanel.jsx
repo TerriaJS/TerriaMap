@@ -19,7 +19,7 @@ export default function TropicalPanel(props) {
     setAdvisory(event.target.value);
   };
 
-  console.log(props.data.data.pulldown_data);
+  // console.log(props.data.data.pulldown_data);
 
   return (
     <FormControl>

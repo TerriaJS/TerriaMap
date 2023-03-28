@@ -51,7 +51,7 @@ export default function CommonPanel(props) {
     setChecked(newChecked);
   };
 
-  console.log(props.data);
+  // console.log(props.data);
 
   return (
     <div>
