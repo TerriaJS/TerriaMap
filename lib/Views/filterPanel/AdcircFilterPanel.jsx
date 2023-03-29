@@ -14,7 +14,7 @@ export default function AdcircFilterForm() {
   const { layers, setLayerData } = useContext(Context);
   const [panel, setPanel] = useState("synoptic");
 
-  console.log(layers);
+  // console.log(layers);
 
   return (
     <>

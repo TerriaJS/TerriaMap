@@ -19,8 +19,6 @@ export default function TropicalPanel(props) {
     setAdvisory(event.target.value);
   };
 
-  // console.log(props.data.data.pulldown_data);
-
   return (
     <FormControl>
       <Box sx={{ minWidth: 120 }}>
@@ -33,9 +31,13 @@ export default function TropicalPanel(props) {
             label="Storm Name"
             onChange={handleNameChange}
           >
-            <MenuItem value={0}>Alpha</MenuItem>
-            <MenuItem value={1}>Beta</MenuItem>
-            <MenuItem value={3}>Carol</MenuItem>
+            {props.data.data.pulldown_data.storm_names &&
+              props.data.data.pulldown_data.storm_names.map((storm) => {
+                if (storm == "") {
+                  return <MenuItem value={storm}>NULL</MenuItem>;
+                }
+                return <MenuItem value={storm}>{storm}</MenuItem>;
+              })}
           </Select>
         </FormControl>
       </Box>
@@ -49,10 +51,13 @@ export default function TropicalPanel(props) {
             label="Advisory"
             onChange={handleAdvisoryChange}
           >
-            <MenuItem value={0}>1</MenuItem>
-            <MenuItem value={1}>2</MenuItem>
-            <MenuItem value={2}>3</MenuItem>
-            <MenuItem value={3}>4</MenuItem>
+            {props.data.data.pulldown_data.advisory_numbers &&
+              props.data.data.pulldown_data.advisory_numbers.map((advisory) => {
+                if (advisory == "") {
+                  return <MenuItem value={advisory}>NULL</MenuItem>;
+                }
+                return <MenuItem value={advisory}>{advisory}</MenuItem>;
+              })}
           </Select>
         </FormControl>
       </Box>

@@ -16,8 +16,8 @@ import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 
 export default function CommonPanel(props) {
-  const [grid, setGrid] = React.useState("");
-  const [instance, setInstance] = React.useState("");
+  // const [grid, setGrid] = React.useState("");
+  // const [instance, setInstance] = React.useState("");
   const [checked, setChecked] = React.useState([0]);
 
   // useEffect(() => {
@@ -25,17 +25,12 @@ export default function CommonPanel(props) {
   //   getSynopticCatalog()
   // });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(event.target.value);
-  };
-
   const handleGridChange = (event) => {
-    setGrid(event.target.value);
+    props.setGrid(event.target.value);
   };
 
   const handleInstanceChange = (event) => {
-    setInstance(event.target.value);
+    props.setInstance(event.target.value);
   };
 
   const handleToggle = (value) => () => {
@@ -51,17 +46,15 @@ export default function CommonPanel(props) {
     setChecked(newChecked);
   };
 
-  // console.log(props.data);
-
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label1">Grid</InputLabel>
           <Select
             labelId="demo-simple-select-label2"
             id="demo-simple-select"
-            value={grid}
+            value={props.grid}
             label="Grid"
             onChange={handleGridChange}
           >
@@ -80,7 +73,7 @@ export default function CommonPanel(props) {
           <Select
             labelId="demo-simple-select-label4"
             id="demo-simple-select2"
-            value={instance}
+            value={props.instance}
             label="Instance"
             onChange={handleInstanceChange}
           >
@@ -130,7 +123,6 @@ export default function CommonPanel(props) {
           );
         })}
       </List> */}
-        <button>submit</button>
       </form>
     </div>
   );
