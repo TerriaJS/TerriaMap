@@ -50,7 +50,7 @@ export default function AdcircFilterForm() {
           } else if (isLoading) {
             return <div>Loading...</div>;
           } else if (response !== null) {
-            setLayerData(response);
+            // setLayerData(response);
             return (
               <div>
                 {panel === "synoptic" ? (

@@ -6,14 +6,6 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import CommentIcon from "@mui/icons-material/Comment";
 
 export default function CommonPanel(props) {
   // const [grid, setGrid] = React.useState("");
@@ -86,43 +78,6 @@ export default function CommonPanel(props) {
               })}
           </Select>
         </FormControl>
-        {/* <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        {[0, 1, 2, 3].map((value) => {
-          const labelId = `checkbox-list-label-${value}`;
-
-          return (
-            <ListItem
-              key={value}
-              secondaryAction={
-                <IconButton edge="end" aria-label="comments">
-                  <CommentIcon />
-                </IconButton>
-              }
-              disablePadding
-            >
-              <ListItemButton
-                role={undefined}
-                onClick={handleToggle(value)}
-                dense
-              >
-                <ListItemIcon>
-                  <Checkbox
-                    edge="start"
-                    checked={checked.indexOf(value) !== -1}
-                    tabIndex={-1}
-                    disableRipple
-                    inputProps={{ "aria-labelledby": labelId }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  id={labelId}
-                  primary={`Layer item ${value + 1}`}
-                />
-              </ListItemButton>
-            </ListItem>
-          );
-        })}
-      </List> */}
       </form>
     </div>
   );
