@@ -41,7 +41,7 @@ export default function AdcircFilterForm() {
         </RadioGroup>
       </FormControl>
       <Get
-        url="https://apsviz-ui-data-dev.apps.renci.org/get_ui_data"
+        url="https://apsviz-ui-data-dev.apps.renci.org/get_pulldown_data"
         params={{ met_class: panel }}
       >
         {(error, response, isLoading, makeRequest, axios) => {
@@ -51,6 +51,7 @@ export default function AdcircFilterForm() {
             return <div>Loading...</div>;
           } else if (response !== null) {
             // setLayerData(response);
+            console.log(response);
             return (
               <div>
                 {panel === "synoptic" ? (
