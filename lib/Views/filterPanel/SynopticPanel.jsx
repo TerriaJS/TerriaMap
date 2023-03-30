@@ -30,10 +30,10 @@ export default function SynopticPanel(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(
-      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_types=${grid}&cycles=${cycle}&instance_names=${instance}&run_date=${date}`
+      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_type=${grid}&cycle=${cycle}&instance_name=${instance}&run_date=${date}`
     );
     fetch(
-      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_types=${grid}&cycles=${cycle}&instance_names=${instance}&run_date=${date}`
+      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_type=${grid}&cycle=${cycle}&instance_name=${instance}&run_date=${date}`
     )
       .then((response) => response.json())
       .then((data) => setLayerData(data));
@@ -63,8 +63,8 @@ export default function SynopticPanel(props) {
                 label="Cycle"
                 onChange={handleCycleChange}
               >
-                {props.data.data.pulldown_data.cycles &&
-                  props.data.data.pulldown_data.cycles.map((cycle) => {
+                {props.data.data.cycles &&
+                  props.data.data.cycles.map((cycle) => {
                     if (cycle == "") {
                       return <MenuItem value={cycle}>NULL</MenuItem>;
                     }
@@ -78,7 +78,7 @@ export default function SynopticPanel(props) {
             instance={instance}
             setInstance={setInstance}
             setGrid={setGrid}
-            data={props.data.data.pulldown_data}
+            data={props.data.data}
           />
         </FormControl>
         <input type="submit" value="Submit"></input>
