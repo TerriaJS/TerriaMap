@@ -18,7 +18,7 @@ export default function AdcircFilterForm() {
 
   return (
     <>
-      <FormControl>
+      <FormControl sx={{ margin: 2 }}>
         <FormLabel id="demo-radio-buttons-group-label">
           ADCIRC Run Type
         </FormLabel>
@@ -51,7 +51,6 @@ export default function AdcircFilterForm() {
             return <div>Loading...</div>;
           } else if (response !== null) {
             // setLayerData(response);
-            console.log(response);
             return (
               <div>
                 {panel === "synoptic" ? (

@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 
 import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import CheckBox from "@mui/material/Checkbox";
 import CommonPanel from "./CommonPanel";
 import { Context } from "../../context/context";
 
@@ -25,6 +27,9 @@ export default function TropicalPanel(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(
+      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=tropical&grid_type=${grid}&advisory=${advisory}&instance_name=${instance}&storm_name=${name}`
+    );
     fetch(
       `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=tropical&grid_type=${grid}&advisory=${advisory}&instance_name=${instance}&storm_name=${name}`
     )
@@ -32,10 +37,11 @@ export default function TropicalPanel(props) {
       .then((data) => setLayerData(data));
   };
   console.log(layers);
+
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <FormControl>
+        <FormControl sx={{ margin: 2 }}>
           <Box sx={{ minWidth: 200 }}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Storm Name</InputLabel>
@@ -88,9 +94,24 @@ export default function TropicalPanel(props) {
       </form>
       {layers.catalog && (
         <div>
-          {layers.catalog[0].members.map((layer) => {
-            // console.log(layer)
-            return <h3>{layer.name}</h3>;
+          {layers.catalog.map((catalog) => {
+            return (
+              <div key={catalog.id} style={{ margin: 14 }}>
+                <p style={{ fontWeight: "bold", fontSize: 20 }}>{catalog.id}</p>
+                {catalog.members.map((member, index) => {
+                  return (
+                    <div>
+                      <FormControl>
+                        <FormControlLabel
+                          control={<CheckBox size="small" />}
+                          label={member.name}
+                        />
+                      </FormControl>
+                    </div>
+                  );
+                })}
+              </div>
+            );
           })}
         </div>
       )}

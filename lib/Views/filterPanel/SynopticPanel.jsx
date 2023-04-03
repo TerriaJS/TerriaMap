@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 
 import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import TextField from "@mui/material/TextField";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -8,6 +9,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
+import CheckBox from "@mui/material/Checkbox";
 import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 import { Context } from "../../context/context";
@@ -42,7 +44,7 @@ export default function SynopticPanel(props) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <FormControl>
+        <FormControl sx={{ margin: 2 }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
               label="Run Date"
@@ -85,9 +87,24 @@ export default function SynopticPanel(props) {
       </form>
       {layers.catalog && (
         <div>
-          {layers.catalog[0].members.map((layer) => {
-            // console.log(layer)
-            return <h3>{layer.name}</h3>;
+          {layers.catalog.map((catalog) => {
+            return (
+              <div key={catalog.id} style={{ margin: 14 }}>
+                <p style={{ fontWeight: "bold", fontSize: 20 }}>{catalog.id}</p>
+                {catalog.members.map((member, index) => {
+                  return (
+                    <div style={{ l: 20 }}>
+                      <FormControl>
+                        <FormControlLabel
+                          control={<CheckBox size="small" />}
+                          label={member.name}
+                        />
+                      </FormControl>
+                    </div>
+                  );
+                })}
+              </div>
+            );
           })}
         </div>
       )}
