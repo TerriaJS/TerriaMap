@@ -10,11 +10,19 @@ import { Radio } from "@mui/material";
 import SynopticPanel from "./SynopticPanel";
 import TropicalPanel from "./TropicalPanel";
 
-export default function AdcircFilterForm() {
+export default function AdcircFilterForm(props) {
   const { layers, setLayerData } = useContext(Context);
   const [panel, setPanel] = useState("synoptic");
 
-  // console.log(layers);
+  // console.log(props.view);
+
+  if (props.view) {
+    // console.log(props.view.terria.catalog.group.memberModels[1].memberModels[0].name);
+    // props.view.terria.catalog.group.memberModels[1].memberModels[0]
+    console.log(props.view.terria.catalog.group.memberModels[1].memberModels);
+    props.view.terria.catalog.group.memberModels.pop();
+    console.log(props.view.terria.catalog.group.memberModels[1].memberModels);
+  }
 
   return (
     <>

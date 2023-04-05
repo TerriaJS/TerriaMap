@@ -40,7 +40,7 @@ export default function SynopticPanel(props) {
       .then((response) => response.json())
       .then((data) => setLayerData(data));
   };
-  console.log(layers);
+
   return (
     <>
       <form onSubmit={handleSubmit}>

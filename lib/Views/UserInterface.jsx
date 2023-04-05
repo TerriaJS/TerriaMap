@@ -12,7 +12,7 @@ export default function UserInterface(props) {
   const [open, setOpen] = React.useState(false);
   const [layerData, setLayertData] = useState("default data");
   // const value = useMemo(() => ({ layerData, setLayertData }), [layerData]);
-
+  console.log(props.viewState);
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -22,7 +22,7 @@ export default function UserInterface(props) {
       <Context.Provider
         value={{ layers: layerData, setLayerData: setLayertData }}
       >
-        <IconSection />
+        <IconSection view={props.viewState} />
         <StandardUserInterface
           {...props}
           version={version}

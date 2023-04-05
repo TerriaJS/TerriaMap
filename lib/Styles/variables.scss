@@ -51,9 +51,9 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     flex-direction: column !important;
   }
 
-  .ExperimentalFeatures__ControlsWrapper {
-    display: none !important;
-  }
+  // .ExperimentalFeatures__ControlsWrapper {
+  //   display: none !important;
+  // }
 
   .tjs-experimental-features__control {
     margin: 5px 0 !important;

@@ -30,15 +30,15 @@
     "storyEnabled": false,
 
     "supportEmail": "help@example.com",
-    "show-workbench": {
-      "disabled": true
-    },
-    "map-navigation": {
-      "disabled": true
-    },
-    "menu-bar": {
-      "disabled": true
-    },
+    // "show-workbench": {
+    //   "disabled": true
+    // },
+    // "map-navigation": {
+    //   "disabled": true
+    // },
+    // "menu-bar": {
+    //   "disabled": true
+    // },
     "map-data-count": {
       "disabled": true
     },

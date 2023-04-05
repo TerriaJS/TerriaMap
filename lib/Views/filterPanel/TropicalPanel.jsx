@@ -27,9 +27,6 @@ export default function TropicalPanel(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(
-      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=tropical&grid_type=${grid}&advisory=${advisory}&instance_name=${instance}&storm_name=${name}`
-    );
     fetch(
       `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=tropical&grid_type=${grid}&advisory=${advisory}&instance_name=${instance}&storm_name=${name}`
     )
