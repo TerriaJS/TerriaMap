@@ -10,7 +10,8 @@ import SwipeableEdgeDrawer from "./selectedLayers/swipeableDrawer";
 
 export default function UserInterface(props) {
   const [open, setOpen] = React.useState(false);
-  const [layerData, setLayertData] = useState("default data");
+  const [layerData, setLayerData] = useState("default data");
+  const [selectedLayers, setSelectedLayers] = useState([]);
   // const value = useMemo(() => ({ layerData, setLayertData }), [layerData]);
   console.log(props.viewState);
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
@@ -20,7 +21,12 @@ export default function UserInterface(props) {
   return (
     <>
       <Context.Provider
-        value={{ layers: layerData, setLayerData: setLayertData }}
+        value={{
+          layers: layerData,
+          setLayerData: setLayerData,
+          selectedLayers: selectedLayers,
+          setSelectedLayers: setSelectedLayers
+        }}
       >
         <IconSection view={props.viewState} />
         <StandardUserInterface

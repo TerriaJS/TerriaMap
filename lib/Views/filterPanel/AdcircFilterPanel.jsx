@@ -16,13 +16,13 @@ export default function AdcircFilterForm(props) {
 
   // console.log(props.view);
 
-  if (props.view) {
-    // console.log(props.view.terria.catalog.group.memberModels[1].memberModels[0].name);
-    // props.view.terria.catalog.group.memberModels[1].memberModels[0]
-    console.log(props.view.terria.catalog.group.memberModels[1].memberModels);
-    props.view.terria.catalog.group.memberModels.pop();
-    console.log(props.view.terria.catalog.group.memberModels[1].memberModels);
-  }
+  // if (props.view) {
+  //   // console.log(props.view.terria.catalog.group.memberModels[1].memberModels[0].name);
+  //   // props.view.terria.catalog.group.memberModels[1].memberModels[0]
+  //   console.log(props.view.terria.catalog.group);
+  //   props.view.terria.catalog.group.memberModels.pop();
+  //   console.log(props.view.terria.catalog.group.memberModels);
+  // }
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function AdcircFilterForm(props) {
             return (
               <div>
                 {panel === "synoptic" ? (
-                  <SynopticPanel data={response} />
+                  <SynopticPanel view={props.view} data={response} />
                 ) : (
                   <TropicalPanel data={response} />
                 )}

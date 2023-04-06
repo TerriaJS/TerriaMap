@@ -13,6 +13,7 @@ import CheckBox from "@mui/material/Checkbox";
 import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 import { Context } from "../../context/context";
+import CommonStrata from "terriajs/lib/Models/Definition/CommonStrata";
 
 export default function SynopticPanel(props) {
   const [date, setDate] = React.useState("");
@@ -20,6 +21,7 @@ export default function SynopticPanel(props) {
   const [grid, setGrid] = React.useState("");
   const [instance, setInstance] = React.useState("");
   const { layers, setLayerData } = useContext(Context);
+  const { selectedLayers, setSelectedLayers } = useContext(Context);
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -39,6 +41,28 @@ export default function SynopticPanel(props) {
     )
       .then((response) => response.json())
       .then((data) => setLayerData(data));
+  };
+
+  const handleCheckboxChange = (event) => {
+    props.view.terria.catalog.userAddedDataGroup.addMembersFromJson(
+      CommonStrata.definition,
+      layers.catalog
+    );
+
+    if (props.view.terria.catalog.group.memberModels[0].memberModels[0]) {
+      let selectedCatalogItem =
+        props.view.terria.catalog.group.memberModels[0].memberModels[0].memberModels.find(
+          (item) => item.uniqueId == event.target.id
+        );
+      setSelectedLayers([...selectedLayers, selectedCatalogItem]);
+      props.view.terria.workbench.add(selectedCatalogItem);
+    }
+
+    // console.log(layers.catalog);
+    // console.log(
+    //   props.view.terria.catalog.group.memberModels[0].memberModels[0]
+    //     .memberModels
+    // );
   };
 
   return (
@@ -96,7 +120,13 @@ export default function SynopticPanel(props) {
                     <div style={{ l: 20 }}>
                       <FormControl>
                         <FormControlLabel
-                          control={<CheckBox size="small" />}
+                          control={
+                            <CheckBox
+                              size={"small"}
+                              id={member.id}
+                              onChange={handleCheckboxChange}
+                            />
+                          }
                           label={member.name}
                         />
                       </FormControl>
