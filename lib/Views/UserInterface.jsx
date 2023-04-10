@@ -13,7 +13,7 @@ export default function UserInterface(props) {
   const [layerData, setLayerData] = useState("default data");
   const [selectedLayers, setSelectedLayers] = useState([]);
   // const value = useMemo(() => ({ layerData, setLayertData }), [layerData]);
-  console.log(props.viewState);
+  // console.log(props.viewState);
   // const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
