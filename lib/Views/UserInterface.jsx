@@ -18,6 +18,9 @@ export default function UserInterface(props) {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  setSelectedLayers([...selectedLayers, viewState.terria.workbench.items]);
+
   return (
     <>
       <Context.Provider

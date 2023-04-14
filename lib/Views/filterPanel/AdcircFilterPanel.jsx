@@ -64,7 +64,7 @@ export default function AdcircFilterForm(props) {
                 {panel === "synoptic" ? (
                   <SynopticPanel view={props.view} data={response} />
                 ) : (
-                  <TropicalPanel data={response} />
+                  <TropicalPanel view={props.view} data={response} />
                 )}
               </div>
             );
