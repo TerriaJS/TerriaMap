@@ -23,6 +23,8 @@ export default function SynopticPanel(props) {
   const { layers, setLayerData } = useContext(Context);
   const { selectedLayers, setSelectedLayers } = useContext(Context);
 
+  console.log(props.data);
+
   const handleDateChange = (event) => {
     setDate(event.target.value);
   };
@@ -42,6 +44,8 @@ export default function SynopticPanel(props) {
       .then((response) => response.json())
       .then((data) => setLayerData(data));
   };
+
+  // console.log(props.view.terria.catalog.userAddedDataGroup)
 
   const handleCheckboxChange = (event) => {
     props.view.terria.catalog.userAddedDataGroup.addMembersFromJson(
