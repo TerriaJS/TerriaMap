@@ -19,7 +19,7 @@ export default function UserInterface(props) {
     setOpen(newOpen);
   };
 
-  setSelectedLayers([...selectedLayers, viewState.terria.workbench.items]);
+  // setSelectedLayers([...selectedLayers, viewState.terria.workbench.items]);
 
   return (
     <>
