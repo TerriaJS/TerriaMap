@@ -9,6 +9,7 @@ import Select from "@mui/material/Select";
 import CheckBox from "@mui/material/Checkbox";
 import CommonPanel from "./CommonPanel";
 import { Context } from "../../context/context";
+import CommonStrata from "terriajs/lib/Models/Definition/CommonStrata";
 
 export default function TropicalPanel(props) {
   const [name, setName] = React.useState("");
@@ -16,6 +17,7 @@ export default function TropicalPanel(props) {
   const [grid, setGrid] = React.useState("");
   const [instance, setInstance] = React.useState("");
   const { layers, setLayerData } = useContext(Context);
+  const { selectedLayers, setSelectedLayers } = useContext(Context);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -34,6 +36,22 @@ export default function TropicalPanel(props) {
       .then((data) => setLayerData(data));
   };
   console.log(layers);
+
+  const handleCheckboxChange = (event) => {
+    props.view.terria.catalog.userAddedDataGroup.addMembersFromJson(
+      CommonStrata.definition,
+      layers.catalog
+    );
+
+    if (props.view.terria.catalog.group.memberModels[0].memberModels[0]) {
+      let selectedCatalogItem =
+        props.view.terria.catalog.group.memberModels[0].memberModels[0].memberModels.find(
+          (item) => item.uniqueId == event.target.id
+        );
+      setSelectedLayers([...selectedLayers, selectedCatalogItem]);
+      props.view.terria.workbench.add(selectedCatalogItem);
+    }
+  };
 
   return (
     <>
@@ -102,6 +120,7 @@ export default function TropicalPanel(props) {
                         <FormControlLabel
                           control={<CheckBox size="small" />}
                           label={member.name}
+                          onChange={handleCheckboxChange}
                         />
                       </FormControl>
                     </div>
