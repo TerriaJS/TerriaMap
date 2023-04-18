@@ -37,7 +37,11 @@ export default function UserInterface(props) {
           version={version}
           style={{ maxHeight: "400px !important" }}
         />
-        <SwipeableEdgeDrawer open={open} toggleDrawer={toggleDrawer} />
+        <SwipeableEdgeDrawer
+          data={props.viewState}
+          open={open}
+          toggleDrawer={toggleDrawer}
+        />
       </Context.Provider>
     </>
   );
