@@ -24,9 +24,9 @@ body {
     flex-direction: column;
   }
 
-  // .ExperimentalFeatures__ControlsWrapper {
-  //   display: none !important;
-  // }
+  .ExperimentalFeatures__ControlsWrapper {
+    display: none !important;
+  }
 
   .tjs-experimental-features__control {
     margin: 5px 0;
@@ -52,12 +52,21 @@ body {
     fill: white !important;
   }
 
-  // .SidePanelContainer-sc-133gx1j-0 {
-  //   display: none !important;
-  // }
+  .SidePanelContainer-sc-133gx1j-0 {
+    display: none !important;
+  }
+
+  // Disables the terria logo and leaflet navigation menu above the expanded chart
+  .bVQaev {
+    display: none !important;
+  }
 
   .hucuvM {
     background-color: $color-custom !important;
+  }
+  // This disables the amount of selected layers on map notice
+  .dqbhbK {
+    display: none !important;
   }
 
   //.tjs-standard-user-interface__sidePanel {
@@ -84,7 +93,7 @@ body {
     color: black !important;
   }
   .tjs-feature-info-panel__header {
-    background: $color-primary !important;
+    background: #56a0d3 !important;
   }
   .ceRfzL {
     color: black !important;
