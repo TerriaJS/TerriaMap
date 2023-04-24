@@ -23,7 +23,7 @@ export default function SynopticPanel(props) {
   const { layers, setLayerData } = useContext(Context);
   const { selectedLayers, setSelectedLayers } = useContext(Context);
 
-  console.log(props.data);
+  // console.log(props.data);
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -35,9 +35,6 @@ export default function SynopticPanel(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(
-      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_type=${grid}&cycle=${cycle}&instance_name=${instance}&run_date=${date}`
-    );
     fetch(
       `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_type=${grid}&cycle=${cycle}&instance_name=${instance}&run_date=${date}`
     )
@@ -45,28 +42,26 @@ export default function SynopticPanel(props) {
       .then((data) => setLayerData(data));
   };
 
-  // console.log(props.view.terria.catalog.userAddedDataGroup)
-
   const handleCheckboxChange = (event) => {
     props.view.terria.catalog.userAddedDataGroup.addMembersFromJson(
       CommonStrata.definition,
       layers.catalog
     );
 
-    if (props.view.terria.catalog.group.memberModels[0].memberModels[0]) {
-      let selectedCatalogItem =
-        props.view.terria.catalog.group.memberModels[0].memberModels[0].memberModels.find(
-          (item) => item.uniqueId == event.target.id
-        );
-      setSelectedLayers([...selectedLayers, selectedCatalogItem]);
-      props.view.terria.workbench.add(selectedCatalogItem);
-    }
-
-    // console.log(layers.catalog);
-    // console.log(
-    //   props.view.terria.catalog.group.memberModels[0].memberModels[0]
-    //     .memberModels
-    // );
+    props.view.terria.catalog.group.memberModels[0].memberModels.map(
+      (member, index) => {
+        if (
+          props.view.terria.catalog.group.memberModels[0].memberModels[index]
+        ) {
+          let selectedCatalogItem =
+            props.view.terria.catalog.group.memberModels[0].memberModels[
+              index
+            ].memberModels.find((item) => item.uniqueId == event.target.id);
+          setSelectedLayers([...selectedLayers, selectedCatalogItem]);
+          props.view.terria.workbench.add(selectedCatalogItem);
+        }
+      }
+    );
   };
 
   return (
@@ -128,7 +123,7 @@ export default function SynopticPanel(props) {
                             <CheckBox
                               size={"small"}
                               id={member.id}
-                              onChange={handleCheckboxChange}
+                              onChange={(e) => handleCheckboxChange(e)}
                             />
                           }
                           label={member.name}

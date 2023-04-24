@@ -35,7 +35,6 @@ export default function TropicalPanel(props) {
       .then((response) => response.json())
       .then((data) => setLayerData(data));
   };
-  console.log(layers);
 
   const handleCheckboxChange = (event) => {
     props.view.terria.catalog.userAddedDataGroup.addMembersFromJson(
@@ -43,14 +42,24 @@ export default function TropicalPanel(props) {
       layers.catalog
     );
 
-    if (props.view.terria.catalog.group.memberModels[0].memberModels[0]) {
-      let selectedCatalogItem =
-        props.view.terria.catalog.group.memberModels[0].memberModels[0].memberModels.find(
-          (item) => item.uniqueId == event.target.id
-        );
-      setSelectedLayers([...selectedLayers, selectedCatalogItem]);
-      props.view.terria.workbench.add(selectedCatalogItem);
-    }
+    props.view.terria.catalog.group.memberModels[0].memberModels.map(
+      (member, index) => {
+        if (
+          props.view.terria.catalog.group.memberModels[0].memberModels[index]
+        ) {
+          let selectedCatalogItem =
+            props.view.terria.catalog.group.memberModels[0].memberModels[
+              index
+            ].memberModels.find((item) => item.uniqueId == event.target.id);
+          console.log(
+            props.view.terria.catalog.group.memberModels[0].memberModels[index]
+          );
+          console.log(event.target.id);
+          setSelectedLayers([...selectedLayers, selectedCatalogItem]);
+          props.view.terria.workbench.add(selectedCatalogItem);
+        }
+      }
+    );
   };
 
   return (
@@ -118,9 +127,9 @@ export default function TropicalPanel(props) {
                     <div>
                       <FormControl>
                         <FormControlLabel
-                          control={<CheckBox size="small" />}
+                          control={<CheckBox size="small" id={member.id} />}
                           label={member.name}
-                          onChange={handleCheckboxChange}
+                          onChange={(e) => handleCheckboxChange(e)}
                         />
                       </FormControl>
                     </div>
