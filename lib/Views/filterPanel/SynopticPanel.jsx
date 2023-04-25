@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import TextField from "@mui/material/TextField";
@@ -14,6 +13,7 @@ import Select from "@mui/material/Select";
 import CommonPanel from "./CommonPanel";
 import { Context } from "../../context/context";
 import CommonStrata from "terriajs/lib/Models/Definition/CommonStrata";
+import StyledSelect from "./StyledComponents/StyledSelect";
 
 export default function SynopticPanel(props) {
   const [date, setDate] = React.useState("");
@@ -22,8 +22,6 @@ export default function SynopticPanel(props) {
   const [instance, setInstance] = React.useState("");
   const { layers, setLayerData } = useContext(Context);
   const { selectedLayers, setSelectedLayers } = useContext(Context);
-
-  // console.log(props.data);
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -66,27 +64,62 @@ export default function SynopticPanel(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <FormControl sx={{ margin: 2 }}>
+      <form onSubmit={handleSubmit} style={{ margin: "0 2px" }}>
+        <div>
+          <div style={{ marginBottom: "10px" }}></div>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
+              sx={{
+                color: "#fff"
+              }}
+              InputLabelProps={{
+                style: { color: "#fff" }
+              }}
               label="Run Date"
               value={date}
               onChange={(newValue) => {
                 setDate(newValue);
               }}
-              renderInput={(params) => <TextField {...params} />}
+              renderInput={(params) => (
+                <TextField
+                  InputLabelProps={{
+                    style: { color: "#fff" }
+                  }}
+                  // disabled={disabled}
+                  sx={{
+                    input: { color: "#fff" },
+                    "&:hover": {
+                      "&& fieldset": {
+                        border: "3px solid #1a76d2"
+                      }
+                    },
+                    color: "#fff",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "#fff"
+                    },
+                    "& .MuiSvgIcon-root": {
+                      color: "#fff"
+                    },
+                    "& .MuiOutlinedInput-root.Mui-disabled": {
+                      ":hover": {
+                        border: "3px solid #fff !important",
+                        boxShadow: "none"
+                      }
+                    }
+                  }}
+                  {...params}
+                />
+              )}
             />
           </LocalizationProvider>
+          <div style={{ marginBottom: "10px" }}></div>
           <Box sx={{ minWidth: 200 }}>
-            <FormControl fullWidth>
+            <FormControl fullWidth sx={{ margin: "0 0 10px 0" }}>
               <InputLabel id="demo-simple-select-label">Cycle</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={cycle}
-                label="Cycle"
+              <StyledSelect
                 onChange={handleCycleChange}
+                name={"Cycle"}
+                value={cycle}
               >
                 {props.data.data.cycles &&
                   props.data.data.cycles.map((cycle) => {
@@ -95,7 +128,7 @@ export default function SynopticPanel(props) {
                     }
                     return <MenuItem value={cycle}>{cycle}</MenuItem>;
                   })}
-              </Select>
+              </StyledSelect>
             </FormControl>
           </Box>
           <CommonPanel
@@ -105,8 +138,12 @@ export default function SynopticPanel(props) {
             setGrid={setGrid}
             data={props.data.data}
           />
-        </FormControl>
-        <input type="submit" value="Submit"></input>
+        </div>
+        <input
+          style={{ margin: "0 11px 0 auto", display: "block" }}
+          type="submit"
+          value="Submit"
+        ></input>
       </form>
       {layers.catalog && (
         <div>

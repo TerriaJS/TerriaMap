@@ -6,6 +6,13 @@ body {
   overflow: hidden;
 }
 
+body *:focus {
+  outline: 3px solid #c390f900 !important;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
 :global {
   @media print {
     .nationalmap-print-disclaimer {
@@ -136,6 +143,10 @@ body {
   .gHmlHI {
     color: #000 !important;
     background: white !important;
+  }
+
+  .adcirc-panel:focus {
+    outline: 3px solid #c390f900 !important;
   }
 
   .tjs-panel__content {

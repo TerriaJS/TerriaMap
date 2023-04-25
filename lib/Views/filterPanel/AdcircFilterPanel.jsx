@@ -14,20 +14,10 @@ export default function AdcircFilterForm(props) {
   const { layers, setLayerData } = useContext(Context);
   const [panel, setPanel] = useState("synoptic");
 
-  // console.log(props.view);
-
-  // if (props.view) {
-  //   // console.log(props.view.terria.catalog.group.memberModels[1].memberModels[0].name);
-  //   // props.view.terria.catalog.group.memberModels[1].memberModels[0]
-  //   console.log(props.view.terria.catalog.group);
-  //   props.view.terria.catalog.group.memberModels.pop();
-  //   console.log(props.view.terria.catalog.group.memberModels);
-  // }
-
   return (
-    <>
-      <FormControl sx={{ margin: 2 }}>
-        <FormLabel id="demo-radio-buttons-group-label">
+    <div style={{ padding: "16px 23px", color: "#fff" }}>
+      <FormControl>
+        <FormLabel id="demo-radio-buttons-group-label" sx={{ color: "#fff" }}>
           ADCIRC Run Type
         </FormLabel>
         <RadioGroup
@@ -58,7 +48,6 @@ export default function AdcircFilterForm(props) {
           } else if (isLoading) {
             return <div>Loading...</div>;
           } else if (response !== null) {
-            // setLayerData(response);
             return (
               <div>
                 {panel === "synoptic" ? (
@@ -72,6 +61,6 @@ export default function AdcircFilterForm(props) {
           return <div>Default message before request is made.</div>;
         }}
       </Get>
-    </>
+    </div>
   );
 }
