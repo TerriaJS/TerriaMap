@@ -324,12 +324,12 @@ body *:focus {
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #00000066;
+    background-color: rgba(0, 0, 0, 0.313);
     color: #fff;
     text-align: center;
     padding: 5px 0;
-    border-radius: 18px;
-    left: 100%;
+    // border-radius: 18px;
+    left: 95%;
 
     /* Position the tooltip text - see examples below! */
     position: absolute;
