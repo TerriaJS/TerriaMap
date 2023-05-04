@@ -30,7 +30,7 @@
     "@hookform/resolvers": "^3.1.0",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
-    "@mui/x-date-pickers": "^5.0.20",
+    "@mui/x-date-pickers": "^6.3.0",
     "@nivo/core": "^0.82.1",
     "@nivo/line": "^0.82.1",
     "@nivo/pie": "^0.82.1",
