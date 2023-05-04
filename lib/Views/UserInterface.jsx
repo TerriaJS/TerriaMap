@@ -5,8 +5,13 @@ import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface
 import version from "../../version";
 import { Context } from "../context/context";
 import "./global.scss";
-import IconSection from "./layerSelection/iconSection";
-import SwipeableEdgeDrawer from "./selectedLayers/swipeableDrawer";
+// import IconSection from "./layerSelection/iconSection";
+// import SwipeableEdgeDrawer from "./selectedLayers/swipeableDrawer";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LayersProvider } from "../custom-ui/context";
+import { Layout } from "../custom-ui/components/layout";
+import { BaseMap } from "../custom-ui/components/map";
 
 export default function UserInterface(props) {
   const [open, setOpen] = React.useState(false);
@@ -31,17 +36,25 @@ export default function UserInterface(props) {
           setSelectedLayers: setSelectedLayers
         }}
       >
-        <IconSection view={props.viewState} />
-        <StandardUserInterface
-          {...props}
-          version={version}
-          style={{ maxHeight: "400px !important" }}
-        />
-        <SwipeableEdgeDrawer
+        {/* <IconSection view={props.viewState} /> */}
+
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <LayersProvider>
+            <Layout>
+              {/* <BaseMap /> */}
+              <StandardUserInterface
+                {...props}
+                version={version}
+                style={{ maxHeight: "400px !important" }}
+              />
+            </Layout>
+          </LayersProvider>
+        </LocalizationProvider>
+        {/* <SwipeableEdgeDrawer
           data={props.viewState}
           open={open}
           toggleDrawer={toggleDrawer}
-        />
+        /> */}
       </Context.Provider>
     </>
   );

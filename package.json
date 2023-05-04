@@ -26,9 +26,14 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@faker-js/faker": "^7.6.0",
+    "@hookform/resolvers": "^3.1.0",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "@mui/x-date-pickers": "^5.0.20",
+    "@nivo/core": "^0.82.1",
+    "@nivo/line": "^0.82.1",
+    "@nivo/pie": "^0.82.1",
     "dayjs": "^1.11.7",
     "mobx": "^4.15.4",
     "mobx-react": "^6.3.1",
@@ -38,9 +43,12 @@
     "react-axios": "^2.0.6",
     "react-beautiful-dnd": "^13.1.1",
     "react-datepicker": "0.53.0",
+    "react-hook-form": "^7.43.9",
+    "react-hook-form-mui": "^6.0.1",
     "terriajs-plugin-api": "0.0.1-alpha.6",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
-    "terriajs-server": "^3.3.4"
+    "terriajs-server": "^3.3.4",
+    "yup": "^1.1.1"
   },
   "config": {
     "awsProfile": "terria",
