@@ -24,7 +24,6 @@ export default function UserInterface(props) {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-  console.log(props.viewState.terria.workbench.items);
   // useEffect(() => {
   //   setLayers([props.viewState.terria.workbench.items])
   // }, []);
