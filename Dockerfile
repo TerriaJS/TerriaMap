@@ -9,6 +9,7 @@ COPY --chown=node:node . /app
 
 WORKDIR /app
 
+ENV NODE_OPTIONS="--max_old_space_size=8192"
 RUN yarn install
 RUN yarn gulp release
 
