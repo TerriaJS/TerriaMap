@@ -1,5 +1,5 @@
 const esbuild = require("esbuild");
-const terriaSassModulesPlugin = require("./terriaSassModulesPlugin");
+// const terriaSassModulesPlugin = require("./terriaSassModulesPlugin");
 const babelPlugin = require("./babelPlugin");
 const transformJsxControlStatements = require("./babelPluginTransformJsxControlStatements");
 const path = require("path");
@@ -11,29 +11,29 @@ esbuild
     outfile: "wwwroot/esbuild/TerriaMap.js",
     jsx: "transform",
     define: {
-      "process.env.NODE_ENV": process.env.NODE_ENV,
-      "module.hot": false
+      "process.env.NODE_ENV": "process.env.NODE_ENV",
+      "module.hot": "false"
     },
     plugins: [
-      terriaSassModulesPlugin({
-        includePaths: [
-          // Support resolving paths like "terriajs/..."
-          path.resolve(
-            path.dirname(require.resolve("terriajs/package.json")),
-            ".."
-          ),
-          path.resolve(
-            path.dirname(require.resolve("rc-slider/package.json")),
-            ".."
-          ),
-          path.resolve(
-            path.dirname(
-              require.resolve("react-anything-sortable/package.json")
-            ),
-            ".."
-          )
-        ]
-      }),
+      // terriaSassModulesPlugin({
+      //   includePaths: [
+      //     // Support resolving paths like "terriajs/..."
+      //     path.resolve(
+      //       path.dirname(require.resolve("terriajs/package.json")),
+      //       ".."
+      //     ),
+      //     path.resolve(
+      //       path.dirname(require.resolve("rc-slider/package.json")),
+      //       ".."
+      //     ),
+      //     path.resolve(
+      //       path.dirname(
+      //         require.resolve("react-anything-sortable/package.json")
+      //       ),
+      //       ".."
+      //     )
+      //   ]
+      // }),
       babelPlugin({
         filter: /\.[jt]sx$/,
         config: {
@@ -58,7 +58,8 @@ esbuild
       ".html": "text",
       ".glb": "file",
       ".xml": "file",
-      ".DAC": "file"
+      ".DAC": "file",
+      ".scss": "file" // this is wrong, but let's go with it for now
     },
     external: [
       // Don't try to load node-only modules and other unnecessary stuff
@@ -71,8 +72,10 @@ esbuild
     ]
   })
   .then((result) => {
-    console.log(result);
+    console.log("success");
+    //console.log(result);
   })
   .catch((e) => {
-    console.error("ERRORS!", e);
+    console.log("error");
+    //console.error("ERRORS!", e);
   });
