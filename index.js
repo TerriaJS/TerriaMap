@@ -23,7 +23,7 @@ import BingMapsSearchProviderViewModel from "terriajs/lib/Models/SearchProviders
 // import defined from 'terriajs-cesium/Source/Core/defined';
 import render from "./lib/Views/render";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
-import defined from "terriajs-cesium/Source/Core/defined";
+import { defined } from "cesium";
 import loadPlugins from "./lib/Core/loadPlugins";
 import plugins from "./plugins";
 
