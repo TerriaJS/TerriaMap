@@ -15,6 +15,9 @@
     - **Upgraded Mobx to version 6.7.x**
     - **Upgraded Typescript to version 4.9.x**
 
+- Make `version.js` more detailed. It now uses format `${date}-${TerriaMap version}-${TerriaJS version}-${TerriaMap commit hash}`
+- Also write out new `wwwroot/version.json` file - for example `{"date":"2022-11-11","terriajs":"8.2.21","terriamap":"0.0.6","terriamapCommitHash":"2d4d8d7d","hasLocalModifications":true}`
+
 ### `0.0.6`
 
 **2022-11-11**
