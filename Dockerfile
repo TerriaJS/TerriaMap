@@ -19,6 +19,12 @@ FROM node:14-slim as deploy
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y gdal-bin
 
+# get the build argument that has the version
+ARG APP_VERSION=$(APP_VERSION)
+
+# now add the version arg value into a ENV param
+ENV APP_VERSION=$APP_VERSION
+
 USER node
 
 WORKDIR /app
