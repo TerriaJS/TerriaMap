@@ -11,9 +11,12 @@ esbuild
     outfile: "wwwroot/esbuild/TerriaMap.js",
     jsx: "transform",
     define: {
-      "process.env.NODE_ENV": "process.env.NODE_ENV",
-      "module.hot": "false"
+      "process.env.NODE_ENV":
+        '"' + (process.env.NODE_ENV ?? "Development") + '"',
+      "module.hot": "false",
+      global: "globalThis"
     },
+    sourcemap: true,
     plugins: [
       // terriaSassModulesPlugin({
       //   includePaths: [
