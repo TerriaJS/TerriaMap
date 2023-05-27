@@ -8,7 +8,7 @@ import {
 import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface";
 import version from "../../version";
-import "./global.scss";
+import * as _ from "./global.scss";
 
 // function loadAugmentedVirtuality(callback) {
 //   require.ensure(
