@@ -1,66 +1,40 @@
 /**
  * TODOs:
- *  - De-duplicate generated css
+ *  - DONE De-duplicate generated css
  *  - Minify generated css
- *  - Figure out a way to extract css (for prod builds)
+ *  - DONE Figure out a way to extract css (for prod builds)
  *  - Adding sass increases the build time on my machine to ~5 secs. See if we can improve it.
  */
 
+const esbuildSassPlugin = require("esbuild-sass-plugin").default;
+const postcss = require("postcss");
+const postcssSassPlugin = require("@csstools/postcss-sass");
+const postcssScssPlugin = require("postcss-scss");
 const postcssModulesPlugin = require("postcss-modules");
 const FileSystemLoader =
   require("postcss-modules/build/FileSystemLoader").default;
-const CssModuleParser = require("postcss-modules/build/Parser").default;
-const postcss = require("postcss");
-const postcssSass = require("@csstools/postcss-sass");
-const { sassPlugin, makeModule } = require("esbuild-sass-plugin");
-const postcssScss = require("postcss-scss");
+const PostCssModulesParser = require("postcss-modules/build/Parser").default;
 
 class TerriaSassModuleLoader extends FileSystemLoader {
-  static includePaths = [];
-  static sassPlugin = undefined;
-
   constructor(root, plugins) {
     super(root, plugins);
-    const loader = this;
     this.core.load = async function loadSassModule(
       sourceString,
       sourcePath,
       trace,
       pathFetcher
     ) {
-      const parser = new CssModuleParser(pathFetcher, trace);
-      const result = await postcss([...this.plugins, parser.plugin()]).process(
-        sourceString,
-        {
-          from: sourcePath,
-          syntax: postcssScss
-        }
-      );
+      const parser = new PostCssModulesParser(pathFetcher, trace);
+      await postcss([...this.plugins, parser.plugin()]).process(sourceString, {
+        from: sourcePath,
+        syntax: postcssScssPlugin
+      });
       return {
-        injectableSource: "", //result.css,
+        // Don't add the CSS to the injectSource, because that will cause
+        // imports to be duplicated in every file.
+        injectableSource: "",
         exportTokens: parser.exportTokens
       };
-      // const parser = new CssModuleParser(pathFetcher, trace);
-      // const extraPlugins = plugins.concat([
-      //   parser.plugin(),
-      //   postcssSass({ includePaths: TerriaSassModuleLoader.includePaths })
-      // ]);
-      // const pcss = postcss(extraPlugins);
-      // // const result1 = await pcss.process(sourceString, {
-      // //   from: sourcePath,
-      // //   parser: require("postcss-scss"),
-      // //   //syntax: require("postcss-scss")
-      // // });
-      // const result2 = await pcss.process(sourceString /*result1.css*/, {
-      //   from: sourcePath,
-      //   //parser: require("postcss-scss"),
-      //   syntax: require("postcss-scss")
-      // });
-
-      // return {
-      //   injectableSource: result2.css,
-      //   exportTokens: parser.exportTokens
-      // };
     };
   }
 }
@@ -76,21 +50,19 @@ class TerriaSassModuleLoader extends FileSystemLoader {
  *
  * So we have to setup our own Loader
  * to pre-compile sass imports to css that css-modules plugin understands.
+ *
+ * Because we don't actually import the CSS from the target of the `composes`
+ * (if we did, it would be duplicated many times over and also cause style
+ * precedence problems), we need to manually (and really early!) import every
+ * scss file that we compose from. This currently happens at the top of
+ * TerriaMap's index.js.
  */
 const sassModulesPlugin = ({ includePaths }) => {
-  /**
-   * This plugin combination results in one module generated for each .scss file imported from a jsx/tsx file
-   * It also inserts 1 <style> header for each import.
-   * This results in:
-   *   1. duplicate css class definitions
-   *   2. some breakage of styles because of a duplicate style overriding some other style which it shouldn't.
-   *  We have to figure out a way to minimize and remove duplicates and write just 1 <style> header.
-   */
-  return sassPlugin({
+  return esbuildSassPlugin({
     transform: async function (source, dirname, from) {
       let cssModule;
       const { css } = await postcss([
-        postcssSass({
+        postcssSassPlugin({
           includePaths
         }),
         postcssModulesPlugin({
@@ -101,13 +73,10 @@ const sassModulesPlugin = ({ includePaths }) => {
             cssModule = JSON.stringify(json, null, 2);
           }
         })
-      ]).process(source, { from, map: false });
+      ]).process(source, { from, map: false, syntax: postcssScssPlugin });
       return {
-        contents: `${makeModule(
-          css,
-          "style",
-          this.nonce
-        )}export default ${cssModule};`,
+        contents: css,
+        pluginData: { exports: cssModule },
         loader: "js"
       };
     }

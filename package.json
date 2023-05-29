@@ -6,8 +6,7 @@
       "packages/cesium",
       "packages/terriajs-server",
       "packages/plugin-api",
-      "packages/plugin-sample",
-      "packages/esbuild-sass-plugin"
+      "packages/plugin-sample"
     ],
     "nohoist": [
       "**/husky"
