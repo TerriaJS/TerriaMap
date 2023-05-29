@@ -4,6 +4,18 @@ var terriaOptions = {
   baseUrl: "build/TerriaJS"
 };
 
+// Import all of the .scss files that are ever used inside a `composes`.
+// This is necessary because we don't have a better way to ensure these composed
+// scss files are a) converted to CSS, and b) embedded in the build .css file.
+// A better solution would require weaving the necessary information from
+// `TerriaSassModuleLoader` out to postcss-modules so that it can construct
+// a javascript module that imports this automatically.
+import "terriajs/lib/Sass/common/_base.scss";
+import "terriajs/lib/Sass/common/_buttons.scss";
+import "terriajs/lib/Sass/common/_drop_zone.scss";
+import "terriajs/lib/Sass/common/_form.scss";
+import "terriajs/lib/Sass/common/_labels.scss";
+
 import { runInAction } from "mobx";
 
 // checkBrowserCompatibility('ui');

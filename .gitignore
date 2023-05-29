@@ -1,6 +1,7 @@
 node_modules/
 .idea/
 wwwroot/build/
+wwwroot/esbuild/
 wwwroot/doc/
 wwwroot/index.html
 npm-debug.log

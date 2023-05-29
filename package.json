@@ -6,7 +6,8 @@
       "packages/cesium",
       "packages/terriajs-server",
       "packages/plugin-api",
-      "packages/plugin-sample"
+      "packages/plugin-sample",
+      "packages/esbuild-sass-plugin"
     ],
     "nohoist": [
       "**/husky"
@@ -72,6 +73,8 @@
     "node-notifier": "^5.1.2",
     "node-sass": "^6.0.1",
     "plugin-error": "^1.0.1",
+    "postcss": "^8.4.23",
+    "postcss-modules": "^6.0.0",
     "postcss-preset-env": "^7.8.2",
     "postcss-scss": "^4.0.5",
     "postcss-strip-inline-comments": "^0.1.5",

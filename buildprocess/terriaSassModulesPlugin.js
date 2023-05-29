@@ -8,35 +8,59 @@
 
 const postcssModulesPlugin = require("postcss-modules");
 const FileSystemLoader =
-  require("postcss-modules/build/css-loader-core/loader").default;
-const CssModuleParser =
-  require("postcss-modules/build/css-loader-core/parser").default;
+  require("postcss-modules/build/FileSystemLoader").default;
+const CssModuleParser = require("postcss-modules/build/Parser").default;
 const postcss = require("postcss");
 const postcssSass = require("@csstools/postcss-sass");
 const { sassPlugin, makeModule } = require("esbuild-sass-plugin");
+const postcssScss = require("postcss-scss");
 
 class TerriaSassModuleLoader extends FileSystemLoader {
+  static includePaths = [];
+  static sassPlugin = undefined;
+
   constructor(root, plugins) {
     super(root, plugins);
-    this.core = {
-      load: async function loadSassModule(
+    const loader = this;
+    this.core.load = async function loadSassModule(
+      sourceString,
+      sourcePath,
+      trace,
+      pathFetcher
+    ) {
+      const parser = new CssModuleParser(pathFetcher, trace);
+      const result = await postcss([...this.plugins, parser.plugin()]).process(
         sourceString,
-        sourcePath,
-        trace,
-        pathFetcher
-      ) {
-        const parser = new CssModuleParser(pathFetcher, trace);
-        const extraPlugins = plugins.concat([parser.plugin()]);
-        const result = await postcss(extraPlugins).process(sourceString, {
+        {
           from: sourcePath,
-          syntax: require("postcss-scss")
-        });
+          syntax: postcssScss
+        }
+      );
+      return {
+        injectableSource: "", //result.css,
+        exportTokens: parser.exportTokens
+      };
+      // const parser = new CssModuleParser(pathFetcher, trace);
+      // const extraPlugins = plugins.concat([
+      //   parser.plugin(),
+      //   postcssSass({ includePaths: TerriaSassModuleLoader.includePaths })
+      // ]);
+      // const pcss = postcss(extraPlugins);
+      // // const result1 = await pcss.process(sourceString, {
+      // //   from: sourcePath,
+      // //   parser: require("postcss-scss"),
+      // //   //syntax: require("postcss-scss")
+      // // });
+      // const result2 = await pcss.process(sourceString /*result1.css*/, {
+      //   from: sourcePath,
+      //   //parser: require("postcss-scss"),
+      //   syntax: require("postcss-scss")
+      // });
 
-        return {
-          injectableSource: result.css,
-          exportTokens: parser.exportTokens
-        };
-      }
+      // return {
+      //   injectableSource: result2.css,
+      //   exportTokens: parser.exportTokens
+      // };
     };
   }
 }
@@ -89,5 +113,7 @@ const sassModulesPlugin = ({ includePaths }) => {
     }
   });
 };
+
+sassModulesPlugin.TerriaSassModuleLoader = TerriaSassModuleLoader;
 
 module.exports = sassModulesPlugin;

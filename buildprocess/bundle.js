@@ -1,8 +1,51 @@
 const esbuild = require("esbuild");
-// const terriaSassModulesPlugin = require("./terriaSassModulesPlugin");
+const terriaSassModulesPlugin = require("./terriaSassModulesPlugin");
 const babelPlugin = require("./babelPlugin");
 const transformJsxControlStatements = require("./babelPluginTransformJsxControlStatements");
 const path = require("path");
+//const sassPlugin = require("esbuild-sass-plugin").default;
+const { postcssModules, default: sassPlugin } = require("esbuild-sass-plugin");
+const FileSystemLoader =
+  require("postcss-modules/build/FileSystemLoader").default;
+const postcssSass = require("@csstools/postcss-sass");
+
+const includePaths = [
+  // Support resolving paths like "terriajs/..."
+  path.resolve(path.dirname(require.resolve("terriajs/package.json")), ".."),
+  path.resolve(path.dirname(require.resolve("rc-slider/package.json")), ".."),
+  path.resolve(
+    path.dirname(require.resolve("react-anything-sortable/package.json")),
+    ".."
+  )
+];
+
+terriaSassModulesPlugin.TerriaSassModuleLoader.includePaths = includePaths;
+
+const sassPluginInstantiated = sassPlugin({
+  loadPaths: includePaths,
+  // transform: async function(source, dirname, path) {
+  //   postcssModules()
+  // },
+  transform: postcssModules(
+    {
+      Loader: terriaSassModulesPlugin.TerriaSassModuleLoader,
+      localsConvention: "camelCase",
+      generateScopedName: "tjs-[name]__[local]"
+      // getJSON(cssFilename, json) {
+      //   cssModule = JSON.stringify(json, null, 2);
+      // }
+    },
+    [],
+    [
+      postcssSass({
+        includePaths
+      })
+    ]
+  )
+});
+
+terriaSassModulesPlugin.TerriaSassModuleLoader.sassPlugin =
+  sassPluginInstantiated;
 
 esbuild
   .build({
@@ -18,6 +61,7 @@ esbuild
     },
     sourcemap: true,
     plugins: [
+      sassPluginInstantiated,
       // terriaSassModulesPlugin({
       //   includePaths: [
       //     // Support resolving paths like "terriajs/..."
@@ -70,7 +114,9 @@ esbuild
       "path",
       "http",
       "https",
-      "zlib"
+      "zlib",
+      "../../wwwroot/images/drag-drop.svg",
+      "../../../../wwwroot/images/TimelineIcons.png"
       //"geojson-stream"
     ]
   })
