@@ -19,7 +19,7 @@ esbuild
     entryPoints: ["index.js"],
     bundle: true,
     outfile: "wwwroot/esbuild/TerriaMap.js",
-    publicPath: "esbuild",
+    publicPath: "/esbuild",
     jsx: "transform",
     define: {
       "process.env.NODE_ENV":
