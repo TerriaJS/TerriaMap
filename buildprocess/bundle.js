@@ -3,6 +3,7 @@ const terriaSassModulesPlugin = require("./terriaSassModulesPlugin");
 const babelPlugin = require("./babelPlugin");
 const transformJsxControlStatements = require("./babelPluginTransformJsxControlStatements");
 const path = require("path");
+const svgr = require("esbuild-plugin-svgr");
 
 const includePaths = [
   // Support resolving paths like "terriajs/..."
@@ -30,6 +31,10 @@ esbuild
     sourcemap: true,
     plugins: [
       terriaSassModulesPlugin({ includePaths }),
+      svgr({
+        plugins: ["@svgr/plugin-jsx"],
+        dimensions: true
+      }),
       babelPlugin({
         filter: /\.[jt]sx$/,
         config: {
@@ -54,8 +59,7 @@ esbuild
       ".html": "text",
       ".glb": "file",
       ".xml": "file",
-      ".DAC": "file",
-      ".scss": "file" // this is wrong, but let's go with it for now
+      ".DAC": "file"
     },
     external: [
       // Don't try to load node-only modules and other unnecessary stuff
