@@ -34,7 +34,6 @@
     transform: perspective(10px) rotateY(10deg);
     padding: 8px 0px;
     border-width: 0px 1px 0px 0px;
-    background: rgb(63, 72, 84);
     border-right: 1px solid #3f4854;
     border-radius: 0px 2px 2px 0px;
     background: #3f4854;
