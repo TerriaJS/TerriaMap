@@ -1,6 +1,6 @@
 {
   "initializationUrls": [
-    "https://apsviz-ui-data-dev.apps.renci.org/get_ui_data_file?file_name=apsviz2.json"
+    "https://apsviz-ui-data.apps.renci.org/get_ui_data_file?file_name=apsviz2.json"
     //"apsviz"
   ],
   "parameters": {
