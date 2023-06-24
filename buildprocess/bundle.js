@@ -29,6 +29,7 @@ esbuild
       global: "globalThis"
     },
     sourcemap: true,
+    target: "es2019",
     plugins: [
       terriaSassModulesPlugin({ includePaths }),
       svgr({
