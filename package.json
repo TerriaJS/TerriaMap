@@ -49,7 +49,7 @@
     "@svgr/plugin-jsx": "^8.0.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-jsx-control-statements": "^4.0.0",
-    "cesium": "1.105.1",
+    "cesium": "1.106.0",
     "css-loader": "^2.1.0",
     "ejs": "^2.5.2",
     "esbuild": "^0.18.0",
