@@ -33,6 +33,7 @@
     "@mui/material": "^5.11.10",
     "@mui/x-date-pickers": "^6.3.0",
     "dayjs": "^1.11.7",
+    "dotenv": "^16.3.1",
     "mobx": "^4.15.4",
     "mobx-react": "^6.3.1",
     "mobx-react-lite": "^3.0.0",
