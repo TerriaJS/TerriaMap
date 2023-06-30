@@ -6,18 +6,18 @@ var configureWebpackForPlugins = require("./configureWebpackForPlugins");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var path = require("path");
 
-const webpack = require("webpack");
-const dotenv = require("dotenv");
+// const webpack = require("webpack");
+// const dotenv = require("dotenv");
 
 module.exports = function (devMode, hot) {
   // call dotenv and it will return an Object with a parsed key
-  const env = dotenv.config().parsed;
+  // const env = dotenv.config().parsed;
 
   // reduce it to a nice object, the same as before
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
+  // const envKeys = Object.keys(env).reduce((prev, next) => {
+  //   prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  //   return prev;
+  // }, {});
 
   var config = {
     mode: devMode ? "development" : "production",
@@ -172,8 +172,8 @@ module.exports = function (devMode, hot) {
         disable: hot,
         ignoreOrder: true,
         allChunks: true
-      }),
-      new webpack.DefinePlugin(envKeys)
+      })
+      // new webpack.DefinePlugin(envKeys)
     ],
     resolve: {
       alias: {},
