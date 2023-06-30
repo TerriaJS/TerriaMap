@@ -11,6 +11,11 @@ WORKDIR /app
 
 ENV NODE_OPTIONS="--max_old_space_size=8192"
 RUN yarn install
+
+# get the build argument that has the version
+ARG APP_VERSION=$(APP_VERSION)
+RUN echo "APP_VERSION=${APP_VERSION}" >> ".env"
+
 RUN yarn gulp release
 
 # deploy container
@@ -18,12 +23,6 @@ FROM node:14-slim as deploy
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y gdal-bin
-
-# get the build argument that has the version
-ARG APP_VERSION=$(APP_VERSION)
-
-# now add the version arg value into a ENV param
-ENV APP_VERSION=$APP_VERSION
 
 USER node
 
