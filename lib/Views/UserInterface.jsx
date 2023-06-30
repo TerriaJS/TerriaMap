@@ -10,11 +10,12 @@ import { LayersProvider } from "../custom-ui/context";
 import { Layout } from "../custom-ui/components/layout";
 
 export default function UserInterface(props) {
+  console.log(props);
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <LayersProvider>
-          <Layout viewState={props.viewState}>
+          <Layout viewState={props.viewState} terria={props.terria}>
             <StandardUserInterface
               {...props}
               version={version}
