@@ -14,7 +14,7 @@ RUN yarn install
 
 # get the build argument that has the version
 ARG APP_VERSION=$(APP_VERSION)
-RUN echo "APP_VERSION=${APP_VERSION}" >> ".env"
+RUN echo "APP_VERSION=${APP_VERSION}" > ".env"
 
 RUN yarn gulp release
 
