@@ -130,7 +130,7 @@
     "pm2-kill": "pm2 kill",
     "gulp": "gulp",
     "gulp:watch": "gulp watch",
-    "postinstall": "patch-package && echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
+    "postinstall": "patch-package terriajs && echo 'Installation successful. What to do next:\\n  yarn start       # Starts the server on port 3001\\n  gulp watch      # Builds TerriaMap and dependencies, and rebuilds if files change.'",
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && rm -rf node_modules && yarn install --frozen-lockfile && yarn deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && yarn deploy-current",

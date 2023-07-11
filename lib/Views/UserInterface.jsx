@@ -8,20 +8,22 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LayersProvider } from "../custom-ui/context";
 import { Layout } from "../custom-ui/components/layout";
+import { ViewStateProvider } from "terriajs/lib/ReactViews/StandardUserInterface/ViewStateContext";
 
 export default function UserInterface(props) {
-  console.log(props);
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <LayersProvider>
-          <Layout viewState={props.viewState} terria={props.terria}>
-            <StandardUserInterface
-              {...props}
-              version={version}
-              style={{ maxHeight: "400px !important" }}
-            />
-          </Layout>
+          <ViewStateProvider>
+            <Layout viewState={props.viewState} terria={props.terria}>
+              <StandardUserInterface
+                {...props}
+                version={version}
+                style={{ maxHeight: "400px !important" }}
+              />
+            </Layout>
+          </ViewStateProvider>
         </LayersProvider>
       </LocalizationProvider>
     </>
