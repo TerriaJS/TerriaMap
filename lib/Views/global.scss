@@ -168,6 +168,18 @@ body *:focus {
   .eHEqNe {
     display: none;
   }
+  // For the details component in the drawer
+  .tjs-mappable-preview__description {
+    color: white;
+  }
+
+  .tjs-mappable-preview__description a {
+    color: #008daa;
+  }
+
+  .tjs-mappable-preview__description svg {
+    fill: #008daa;
+  }
   // .dqbhbK {
   //   display: none !important;
   // }
