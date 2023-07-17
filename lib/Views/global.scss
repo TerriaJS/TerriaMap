@@ -180,6 +180,19 @@ body *:focus {
   .tjs-mappable-preview__description svg {
     fill: #008daa;
   }
+
+  .tjs-mappable-preview__description tbody {
+    color: black !important;
+  }
+
+  .tjs-mappable-preview__description input {
+    color: rgb(206, 206, 206) !important;
+  }
+
+  .MuiSlider-markLabel {
+    color: white !important;
+  }
+
   // .dqbhbK {
   //   display: none !important;
   // }
