@@ -14,7 +14,7 @@ on:
         description: "this is the name of the input image (image:version)"
         required: true
       version:
-        description: "in addition to latest, this is the image version that will be used in AWS/ECR"
+        description: "this is the image version (only) that will be used in AWS/ECR"
         required: true
 
 # job definition
