@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       in_container:
-        description: "this is the full path to the input <url>/image:version"
+        description: "this is the name of the input image (image:version)"
         required: true
       version:
         description: "in addition to latest, this is the image version that will be used in AWS/ECR"
@@ -26,7 +26,7 @@ jobs:
 
     # job steps
     steps:
-      # pull the docker image
+      # pull the docker image, latest is presumed
       - name: pull the docker image
         id: pull-it
         run: docker pull containers.renci.org/eds/${{ github.event.inputs.in_container }}
