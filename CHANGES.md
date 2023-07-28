@@ -4,6 +4,14 @@
 
 - [The next improvement]
 
+### `0.0.8`
+
+**2023-07-28**
+
+- Updated TerriaJS to `8.3.1`.
+  - Now supports Google Analytics 4 properties.
+  - See [the full list of changes](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md#831---2023-06-29).
+
 ### `0.0.7`
 
 **2023-05-22**
