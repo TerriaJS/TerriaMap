@@ -4,6 +4,7 @@ const babelPlugin = require("./babelPlugin");
 const transformJsxControlStatements = require("./babelPluginTransformJsxControlStatements");
 const path = require("path");
 const svgr = require("esbuild-plugin-svgr");
+const selectLoaderPlugin = require("terriajs/buildprocess/selectLoaderPlugin");
 
 const includePaths = [
   // Support resolving paths like "terriajs/..."
@@ -20,7 +21,7 @@ esbuild
     entryPoints: ["index.js"],
     bundle: true,
     outfile: "wwwroot/esbuild/TerriaMap.js",
-    publicPath: "/build-just-terriajs/esbuild",
+    publicPath: "/esbuild",
     jsx: "transform",
     define: {
       "process.env.NODE_ENV":
@@ -31,6 +32,18 @@ esbuild
     sourcemap: true,
     target: "es2019",
     plugins: [
+      selectLoaderPlugin({
+        loaders: [
+          {
+            filter: /^raw-loader!(.*)$/,
+            loader: "text"
+          },
+          {
+            filter: /^file-loader!(.*)$/,
+            loader: "file"
+          }
+        ]
+      }),
       terriaSassModulesPlugin({ includePaths }),
       svgr({
         plugins: ["@svgr/plugin-jsx"],
