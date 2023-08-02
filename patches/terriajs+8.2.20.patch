@@ -143,7 +143,7 @@ index 4206593..81b18ad 100644
        const catalogItem = this;
        imageryProvider.pickFeatures = async (
 diff --git a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
-index 5c557f5..4992781 100644
+index 5c557f5..f1e8046 100644
 --- a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
 +++ b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
 @@ -405,6 +405,7 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
@@ -154,32 +154,6 @@ index 5c557f5..4992781 100644
        if (pickResult instanceof Entity) {
          return TerriaFeature.fromEntityCollectionOrEntity(pickResult);
        } else if (isDefined(pickResult?.id)) {
-@@ -936,7 +937,6 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
-         colString: string | undefined,
-         defaultColor: Color
-       ) => (colString ? getColor(colString) : defaultColor);
--
-       const options = {
-         describe: describeWithoutUnderscores,
-         markerSize:
-@@ -1051,9 +1051,15 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
-         }
- 
-         // Billboard
--        if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {
-+        // RENCI changes here (08-02-2023): lines 1055 and 1061 replaced
-+        //if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {
-+        if (isDefined(entity.billboard) && 
-+            (!properties ||
-+             !isDefined(properties["marker-url"])) ||
-+             !isDefined(styles.markerUrl)) {
-           entity.billboard = new BillboardGraphics({
--            image: new ConstantProperty(styles.markerUrl),
-+            //image: new ConstantProperty(styles.markerUrl),
-+            image: new ConstantProperty(properties?.["marker-url"]?.getValue() ?? styles.markerUrl),
-             width:
-               properties && properties["marker-width"]
-                 ? new ConstantProperty(properties["marker-width"])
 diff --git a/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts b/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts
 index 8ad0596..2bb96a1 100644
 --- a/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts
@@ -285,7 +259,7 @@ index 1286781..b37e3f8 100644
      const [longitude, latitude, height] = position;
      if (longitude !== undefined && latitude !== undefined) {
 diff --git a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
-index f33bf94..cbbf320 100644
+index f33bf94..9916438 100644
 --- a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
 +++ b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
 @@ -11,6 +11,7 @@ import Terria from "../../../Models/Terria";
@@ -296,14 +270,21 @@ index f33bf94..cbbf320 100644
  
  const Dropdown = require("../../Generic/Dropdown");
  
-@@ -70,6 +71,14 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+@@ -70,6 +71,21 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
          terria.addModel(itemToExpand);
        } catch {}
        (await workbench.add(itemToExpand)).raiseError(terria, undefined, true);
 +      
 +      workbench.items.map((layer) => {
-+        if (layer.chartItems.length > 0) {
-+          layer.chartItems.map((item) => {
++        type Wbench = {
++          [key: string]: any; // 👈️ variable key
++        };
++        
++        const obj: Wbench = {};
++        
++        obj.layer = layer;
++        if (obj.layer.chartItems.length > 0) {
++          obj.layer.chartItems.map((item: {updateIsSelectedInWorkbench: (a: boolean) => void}) => {
 +            item.updateIsSelectedInWorkbench(true);
 +          });
 +        }
@@ -311,7 +292,7 @@ index f33bf94..cbbf320 100644
      });
    }
  
-@@ -109,6 +118,7 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+@@ -109,6 +125,7 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
      const { sourceNames, canDownload, raiseToTitle, t } = this.props;
      if (sourceNames && sourceNames.length > 0) {
        const downloadNames = this.props.downloadNames || sourceNames;
@@ -319,7 +300,7 @@ index f33bf94..cbbf320 100644
        return (
          <ExpandAndDownloadDropdowns
            sourceNames={sourceNames}
-@@ -185,6 +195,12 @@ const ExpandAndDownloadButtons = function (props: {
+@@ -185,6 +202,12 @@ const ExpandAndDownloadButtons = function (props: {
    downloadUrl?: string;
    t: TFunction;
  }) {
