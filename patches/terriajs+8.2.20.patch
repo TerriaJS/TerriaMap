@@ -143,7 +143,7 @@ index 4206593..81b18ad 100644
        const catalogItem = this;
        imageryProvider.pickFeatures = async (
 diff --git a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
-index 5c557f5..f1e8046 100644
+index 5c557f5..4992781 100644
 --- a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
 +++ b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
 @@ -405,6 +405,7 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
@@ -154,6 +154,32 @@ index 5c557f5..f1e8046 100644
        if (pickResult instanceof Entity) {
          return TerriaFeature.fromEntityCollectionOrEntity(pickResult);
        } else if (isDefined(pickResult?.id)) {
+@@ -936,7 +937,6 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
+         colString: string | undefined,
+         defaultColor: Color
+       ) => (colString ? getColor(colString) : defaultColor);
+-
+       const options = {
+         describe: describeWithoutUnderscores,
+         markerSize:
+@@ -1051,9 +1051,15 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
+         }
+ 
+         // Billboard
+-        if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {
++        // RENCI changes here (08-02-2023): lines 1055 and 1061 replaced
++        //if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {
++        if (isDefined(entity.billboard) && 
++            (!properties ||
++             !isDefined(properties["marker-url"])) ||
++             !isDefined(styles.markerUrl)) {
+           entity.billboard = new BillboardGraphics({
+-            image: new ConstantProperty(styles.markerUrl),
++            //image: new ConstantProperty(styles.markerUrl),
++            image: new ConstantProperty(properties?.["marker-url"]?.getValue() ?? styles.markerUrl),
+             width:
+               properties && properties["marker-width"]
+                 ? new ConstantProperty(properties["marker-width"])
 diff --git a/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts b/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts
 index 8ad0596..2bb96a1 100644
 --- a/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts
