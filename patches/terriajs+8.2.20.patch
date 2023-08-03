@@ -143,10 +143,19 @@ index 4206593..81b18ad 100644
        const catalogItem = this;
        imageryProvider.pickFeatures = async (
 diff --git a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
-index 5c557f5..f1e8046 100644
+index 5c557f5..aa6b41e 100644
 --- a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
 +++ b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
-@@ -405,6 +405,7 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
+@@ -218,6 +218,8 @@ interface FeatureCounts {
+ }
+ 
+ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
++  
++  
+   abstract class GeoJsonMixin extends TableMixin(
+     FeatureInfoUrlTemplateMixin(UrlMixin(CatalogMemberMixin(Base)))
+   ) {
+@@ -405,9 +407,11 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
        _screenPosition: Cartesian2 | undefined,
        pickResult: any
      ): TerriaFeature | undefined {
@@ -154,6 +163,26 @@ index 5c557f5..f1e8046 100644
        if (pickResult instanceof Entity) {
          return TerriaFeature.fromEntityCollectionOrEntity(pickResult);
        } else if (isDefined(pickResult?.id)) {
++        
+         return TerriaFeature.fromEntityCollectionOrEntity(pickResult.id);
+       }
+     }
+@@ -1051,9 +1055,13 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
+         }
+ 
+         // Billboard
+-        if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {
++        if (isDefined(entity.billboard) && 
+++            (!properties ||
+++             !isDefined(properties["marker-url"])) ||
+++             !isDefined(styles.markerUrl)) {
+           entity.billboard = new BillboardGraphics({
+-            image: new ConstantProperty(styles.markerUrl),
++            // image: new ConstantProperty(styles.markerUrl),
++            image: new ConstantProperty(properties?.["marker-url"]?.getValue() ?? styles.markerUrl),
+             width:
+               properties && properties["marker-width"]
+                 ? new ConstantProperty(properties["marker-width"])
 diff --git a/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts b/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts
 index 8ad0596..2bb96a1 100644
 --- a/node_modules/terriajs/lib/ModelMixins/MappableMixin.ts
