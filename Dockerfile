@@ -16,6 +16,10 @@ RUN yarn install
 ARG APP_VERSION=$(APP_VERSION)
 RUN echo "APP_VERSION=${APP_VERSION}" > ".env"
 
+# install the package patches
+RUN npm run postinstall
+
+# create the release
 RUN yarn gulp release
 
 # deploy container
