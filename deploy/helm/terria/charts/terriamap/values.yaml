@@ -1,8 +1,8 @@
 nodePort:
 image:
-  #repository: data61/
+  #repository: ghcr.io/terriajs
   #tag: latest
-  #full: terria-terrimap:1.0
+  #full: terrimap:0.0.6
   pullPolicy: Always
 clientConfig:
   initializationUrls:
