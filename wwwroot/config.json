@@ -157,6 +157,9 @@
         "term": "translate#helpContentTerm8.term",
         "content": "translate#helpContentTerm8.content"
       }
-    ]
+    ],
+    "plugins": {
+      "dataFilterURL": "https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?"
+    }
   }
 }
