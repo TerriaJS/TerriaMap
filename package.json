@@ -4,6 +4,7 @@
     "packages": [
       "packages/terriajs",
       "packages/cesium",
+      "packages/cesium/packages/engine",
       "packages/terriajs-server",
       "packages/plugin-api",
       "packages/plugin-sample"
