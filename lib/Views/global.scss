@@ -158,6 +158,10 @@ body *:focus {
     left: unset !important;
   }
 
+  .tjs-feature-info-panel__header {
+    background: #00424f !important;
+  }
+
   .tjs-feature-info-panel__btn--close-feature:hover svg,
   .tjs-feature-info-panel__btn--close-feature:focus svg,
   .tjs-feature-info-panel__btnToggleFeature:hover svg,
@@ -166,6 +170,30 @@ body *:focus {
   }
 
   .tjs-standard-user-interface__featureInfo {
+    // display: none;
+  }
+
+  // will not work on firefox
+  .tjs-standard-user-interface__featureInfo:has(div
+      > div
+      > ul
+      > li
+      > ul
+      > li
+      > section
+      > div
+      > span
+      > div
+      > div) {
+    display: none;
+  }
+
+  // will not work on firefox
+  // .tjs-standard-user-interface__featureInfo:has(  div > div > ul > li > .tjs-feature-info-catalog-item__sections > .tjs-feature-info-section__section > .tjs-feature-info-section__content > div > span > .stations > .tjs-chart-preview__preview-chart-wrapper) {
+  //   display: none;
+  // }
+
+  .tjs-chart-preview__preview-chart-wrapper {
     // display: none;
   }
   .tjs-bottom-dock__bottom-dock {
