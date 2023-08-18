@@ -169,10 +169,6 @@ body *:focus {
     fill: white !important;
   }
 
-  .tjs-standard-user-interface__featureInfo {
-    // display: none;
-  }
-
   // will not work on firefox
   .tjs-standard-user-interface__featureInfo:has(div
       > div
@@ -188,13 +184,8 @@ body *:focus {
     display: none;
   }
 
-  // will not work on firefox
-  // .tjs-standard-user-interface__featureInfo:has(  div > div > ul > li > .tjs-feature-info-catalog-item__sections > .tjs-feature-info-section__section > .tjs-feature-info-section__content > div > span > .stations > .tjs-chart-preview__preview-chart-wrapper) {
-  //   display: none;
-  // }
-
   .tjs-chart-preview__preview-chart-wrapper {
-    // display: none;
+    display: none;
   }
   .tjs-bottom-dock__bottom-dock {
     display: none;
