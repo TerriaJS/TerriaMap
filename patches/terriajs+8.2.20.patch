@@ -288,22 +288,46 @@ index 1286781..b37e3f8 100644
      const [longitude, latitude, height] = position;
      if (longitude !== undefined && latitude !== undefined) {
 diff --git a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
-index f33bf94..9916438 100644
+index f33bf94..9184bbb 100644
 --- a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
 +++ b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
-@@ -11,6 +11,7 @@ import Terria from "../../../Models/Terria";
+@@ -2,7 +2,7 @@ import classNames from "classnames";
+ import { TFunction } from "i18next";
+ import { action, observable, runInAction } from "mobx";
+ import { observer } from "mobx-react";
+-import React from "react";
++import React, { useEffect } from "react";
+ import { WithTranslation, withTranslation } from "react-i18next";
+ import filterOutUndefined from "../../../Core/filterOutUndefined";
+ import ChartableMixin from "../../../ModelMixins/ChartableMixin";
+@@ -11,6 +11,10 @@ import Terria from "../../../Models/Terria";
  import Icon from "../../../Styled/Icon";
  import UrlTraits from "../../../Traits/TraitsClasses/UrlTraits";
  import Styles from "./chart-expand-and-download-buttons.scss";
-+// import {useLayout} from "../../../../../../lib/custom-ui/components/layout"
++import {useLayout} from "../../../../../../lib/custom-ui/components/layout";
++import {useLayers} from "../../../../../../lib/custom-ui/context";
++
++
  
  const Dropdown = require("../../Generic/Dropdown");
  
-@@ -70,6 +71,21 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+@@ -29,6 +33,7 @@ interface PropsType extends WithTranslation {
+ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+   @observable sourceItems: ChartableMixin.Instance[] = [];
+   
++
+   @action.bound
+   private expandButton() {
+     this.expandItem(this.sourceItems.length - 1);
+@@ -66,11 +71,28 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+         });
+       });
+       
++
+       try {
          terria.addModel(itemToExpand);
        } catch {}
        (await workbench.add(itemToExpand)).raiseError(terria, undefined, true);
-+      
 +      workbench.items.map((layer) => {
 +        type Wbench = {
 +          [key: string]: any; // 👈️ variable key
@@ -318,10 +342,13 @@ index f33bf94..9916438 100644
 +          });
 +        }
 +      });
++      
      });
++    
    }
  
-@@ -109,6 +125,7 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+   resolveSourceItems() {
+@@ -109,6 +131,7 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
      const { sourceNames, canDownload, raiseToTitle, t } = this.props;
      if (sourceNames && sourceNames.length > 0) {
        const downloadNames = this.props.downloadNames || sourceNames;
@@ -329,41 +356,23 @@ index f33bf94..9916438 100644
        return (
          <ExpandAndDownloadDropdowns
            sourceNames={sourceNames}
-@@ -185,6 +202,12 @@ const ExpandAndDownloadButtons = function (props: {
+@@ -185,6 +208,16 @@ const ExpandAndDownloadButtons = function (props: {
    downloadUrl?: string;
    t: TFunction;
  }) {
-+  // const { drawerIsOpen, openDrawer } = useLayout();
++  const { drawerIsOpen, openDrawer }: any = useLayout();
++  const { setCurrentTabIndex }: any = useLayers();
++  useEffect(() => {
++    if (drawerIsOpen == false) {
++      openDrawer()
++    }
++    setCurrentTabIndex(1)
++  },[]);
 +  props.onExpand()
-+  
-+  // if (drawerIsOpen) {
-+  //   openDrawer()
-+  // }
++
    return (
      <div className={Styles.chartExpand}>
        <button
-diff --git a/node_modules/terriajs/lib/ReactViews/FeatureInfo/FeatureInfoPanel.tsx b/node_modules/terriajs/lib/ReactViews/FeatureInfo/FeatureInfoPanel.tsx
-index f0e80f3..1263bc6 100644
---- a/node_modules/terriajs/lib/ReactViews/FeatureInfo/FeatureInfoPanel.tsx
-+++ b/node_modules/terriajs/lib/ReactViews/FeatureInfo/FeatureInfoPanel.tsx
-@@ -46,6 +46,7 @@ class FeatureInfoPanel extends React.Component<Props> {
-   componentDidMount() {
-     const { t } = this.props;
-     const terria = this.props.viewState.terria;
-+    console.log("featurein")
- 
-     disposeOnUnmount(
-       this,
-@@ -188,7 +189,9 @@ class FeatureInfoPanel extends React.Component<Props> {
-   }
- 
-   pinClicked(longitude: number, latitude: number) {
-+    console.log("pin clicked")
-     if (!isMarkerVisible(this.props.viewState.terria)) {
-+      console.log("marker")
-       this.addManualMarker(longitude, latitude);
-     } else {
-       removeMarker(this.props.viewState.terria);
 diff --git a/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx b/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx
 index 025fd72..8cd3835 100644
 --- a/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx
