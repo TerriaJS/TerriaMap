@@ -5,6 +5,8 @@ const transformJsxControlStatements = require("./babelPluginTransformJsxControlS
 const path = require("path");
 const svgr = require("esbuild-plugin-svgr");
 const selectLoaderPlugin = require("terriajs/buildprocess/selectLoaderPlugin");
+const nodeModulesPolyfillPlugin =
+  require("esbuild-plugins-node-modules-polyfill").nodeModulesPolyfillPlugin;
 
 const includePaths = [
   // Support resolving paths like "terriajs/..."
@@ -32,6 +34,11 @@ esbuild
     sourcemap: true,
     target: "es2019",
     plugins: [
+      nodeModulesPolyfillPlugin({
+        globals: {
+          Buffer: true
+        }
+      }),
       selectLoaderPlugin({
         loaders: [
           {
@@ -73,7 +80,8 @@ esbuild
       ".html": "text",
       ".glb": "file",
       ".xml": "file",
-      ".DAC": "file"
+      ".DAC": "file",
+      ".wasm": "file"
     },
     external: [
       // Don't try to load node-only modules and other unnecessary stuff

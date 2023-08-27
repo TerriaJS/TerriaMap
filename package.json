@@ -60,6 +60,7 @@
     "esbuild-plugin-replace": "^1.3.0",
     "esbuild-plugin-sass": "^1.0.1",
     "esbuild-plugin-svgr": "^2.0.0",
+    "esbuild-plugins-node-modules-polyfill": "^1.4.0",
     "esbuild-sass-plugin": "^2.9.0",
     "esbuild-style-plugin": "^1.6.2",
     "eslint": "^7.20.0",
