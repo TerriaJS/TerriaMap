@@ -159,7 +159,8 @@
       }
     ],
     "plugins": {
-      "dataFilterURL": "https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?"
+      "dataFilterURL": "https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?",
+      "hurricaneIconsURL": "https://apsviz-fileserver-dev.apps.renci.org/terria-map/icons/"
     }
   }
 }
