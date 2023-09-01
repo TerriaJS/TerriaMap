@@ -302,7 +302,7 @@ gulp.task("terriajs-server", function (done) {
   const child = spawn(
     "node",
     [
-      "./node_modules/.bin/terriajs-server",
+      require.resolve("terriajs-server/terriajs-server.js"),
       ...serverArgs.map((arg) => `--${arg}`)
     ],
     { detached: true, stdio: ["ignore", logFile, logFile] }
