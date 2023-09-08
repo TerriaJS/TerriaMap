@@ -337,6 +337,9 @@ gulp.task("terriajs-server", function (done) {
     child.kill("SIGTERM");
     process.kill(process.pid, "SIGHUP");
   });
+  process.on("exit", () => {
+    child.kill("SIGTERM");
+  });
 });
 
 gulp.task("build", gulp.series("copy-terriajs-assets", "build-app"));
