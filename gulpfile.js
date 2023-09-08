@@ -317,6 +317,9 @@ gulp.task("terriajs-server", function (done) {
       )
     );
   });
+  child.on("spawn", () => {
+    console.log("terriajs-server started - see terriajs-server.log for logs");
+  });
   // Intercept SIGINT, SIGTERM and SIGHUP, cleanup terriajs-server and re-send signal
   // May fail to catch some relevant signals on Windows
   // SIGINT: ctrl+c
