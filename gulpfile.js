@@ -295,7 +295,7 @@ gulp.task("terriajs-server", function (done) {
     default: { terriajsServerArg: [] }
   });
 
-  const logFile = fs.openSync("./terriajs-server.log", "a");
+  const logFile = fs.openSync("./terriajs-server.log", "w");
   const serverArgs = Array.isArray(options.terriajsServerArg)
     ? options.terriajsServerArg
     : [options.terriajsServerArg];
