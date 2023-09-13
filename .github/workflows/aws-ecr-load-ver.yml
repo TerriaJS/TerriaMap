@@ -11,10 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       in_container:
-        description: "The name of the input image name (:latest presumed)"
-        required: true
-      version:
-        description: "The image version that will be the image tag in AWS/ECR"
+        description: "this is the name of the input image (image:version)"
         required: true
 
 # job definition
@@ -44,4 +41,4 @@ jobs:
           secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-east-2
           local-image: containers.renci.org/eds/${{ github.event.inputs.in_container }}
-          image: ${{ github.event.inputs.in_container }}, ${{ github.event.inputs.in_container }}:${{ github.event.inputs.version }}
+          image: ${{ github.event.inputs.in_container }}
