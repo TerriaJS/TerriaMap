@@ -158,12 +158,68 @@ body *:focus {
     left: unset !important;
   }
 
+  .tjs-feature-info-panel__header {
+    background: #00424f !important;
+  }
+
   .tjs-feature-info-panel__btn--close-feature:hover svg,
   .tjs-feature-info-panel__btn--close-feature:focus svg,
   .tjs-feature-info-panel__btnToggleFeature:hover svg,
   .tjs-feature-info-panel__btnToggleFeature:focus svg {
     fill: white !important;
   }
+
+  // will not work on firefox
+  .tjs-standard-user-interface__featureInfo:has(div
+      > div
+      > ul
+      > li
+      > ul
+      > li
+      > section
+      > div
+      > span
+      > div
+      > div) {
+    display: none;
+  }
+
+  .tjs-chart-preview__preview-chart-wrapper {
+    display: none;
+  }
+  .tjs-bottom-dock__bottom-dock {
+    display: none;
+  }
+
+  // For the details component in the drawer
+  .tjs-mappable-preview__description {
+    color: white;
+  }
+
+  .tjs-mappable-preview__description a {
+    color: #008daa;
+  }
+
+  .tjs-mappable-preview__description svg {
+    fill: #008daa;
+  }
+
+  .tjs-mappable-preview__description tbody {
+    color: black !important;
+  }
+
+  .tjs-mappable-preview__description input {
+    color: rgb(206, 206, 206) !important;
+  }
+
+  .MuiSlider-markLabel {
+    color: white !important;
+  }
+
+  .tjs-legend__imageAnchor img {
+    background: white;
+  }
+
   // .dqbhbK {
   //   display: none !important;
   // }

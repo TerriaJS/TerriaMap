@@ -225,6 +225,10 @@ $focus-border-dark: solid $focus-border-width $focus-border-dark-color;
     fill: white !important;
   }
 
+  .tjs-mappable-preview__description {
+    position: absolute;
+  }
+
   // To customise the look of your Terria Map, uncomment this section and make changes to your heart's content
   // You will also want to uncomment and change values in lib/Styles/variables.scss
   /*

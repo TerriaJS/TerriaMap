@@ -9,7 +9,17 @@ COPY --chown=node:node . /app
 
 WORKDIR /app
 
+ENV NODE_OPTIONS="--max_old_space_size=8192"
 RUN yarn install
+
+# get the build argument that has the version
+ARG APP_VERSION=$(APP_VERSION)
+RUN echo "APP_VERSION=${APP_VERSION}" > ".env"
+
+# install the package patches
+RUN npm run postinstall
+
+# create the release
 RUN yarn gulp release
 
 # deploy container

@@ -46,6 +46,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
+          build-args: |
+            APP_VERSION=${{ steps.get_version.outputs.VERSION }}
           tags: |
             ${{ env.REGISTRY }}:latest
             ${{ env.REGISTRY }}:${{ steps.get_version.outputs.VERSION }}
