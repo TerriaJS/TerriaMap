@@ -160,7 +160,13 @@
     ],
     "plugins": {
       "dataFilterURL": "https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?",
-      "hurricaneIconsURL": "https://apsviz-fileserver-dev.apps.renci.org/terria-map/icons/"
+      "hurricaneIconsURL": "https://apsviz-fileserver-dev.apps.renci.org/terria-map/icons/",
+      "bannerImages": ["images/aps-logo.png", "images/nopp-logo.png"],
+      "attributionImages": [
+        "images/renci-logo-dark.png",
+        "images/terria_logo.png",
+        "images/crc-logo.png"
+      ]
     }
   }
 }
