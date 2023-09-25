@@ -63,6 +63,14 @@ body *:focus {
     display: none !important;
   }
 
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+    .MuiOutlinedInput-notchedOutline {
+    border-color: #c4c4c4 !important;
+  }
+  .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-error {
+    color: #c4c4c4 !important;
+  }
+
   // Disables the terria logo and leaflet navigation menu above the expanded chart
   .bVQaev {
     display: none !important;
