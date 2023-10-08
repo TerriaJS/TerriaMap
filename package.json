@@ -4,6 +4,8 @@
     "packages": [
       "packages/terriajs",
       "packages/cesium",
+      "packages/cesium/packages/engine",
+      "packages/cesium/packages/widgets",
       "packages/terriajs-server",
       "packages/plugin-api",
       "packages/plugin-sample"
@@ -74,8 +76,9 @@
     "semver": "^5.0.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "4.1.3",
-    "terriajs": "8.3.2",
-    "terriajs-cesium": "1.92.0-tile-error-provider-fix-2",
+    "terriajs": "8.3.4",
+    "terriajs-cesium": "4.0.0",
+    "terriajs-cesium-widgets": "4.0.0",
     "ts-loader": "^5.3.3",
     "typescript": "^4.9.5",
     "urijs": "^1.18.12",
