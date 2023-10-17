@@ -47,8 +47,6 @@
     },
     "proj4ServiceBaseUrl": "proj4def/",
 
-    "feedbackUrl": "feedback",
-
     "mobileDefaultViewerMode": "2d",
     "experimentalFeatures": true,
 
