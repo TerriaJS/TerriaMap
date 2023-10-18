@@ -33,11 +33,16 @@ export default function SynopticPanel(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(
-      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_type=${grid}&cycle=${cycle}&instance_name=${instance}&run_date=${date}`
-    )
-      .then((response) => response.json())
-      .then((data) => setLayerData(data));
+
+    if (date != "" || cycle != "" || grid != "" || instance != "") {
+      fetch(
+        `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=synoptic&grid_type=${grid}&cycle=${cycle}&instance_name=${instance}&run_date=${date}`
+      )
+        .then((response) => response.json())
+        .then((data) => setLayerData(data));
+    } else {
+      console.log("else");
+    }
   };
 
   const handleCheckboxChange = (event) => {
@@ -131,13 +136,13 @@ export default function SynopticPanel(props) {
               </StyledSelect>
             </FormControl>
           </Box>
-          <CommonPanel
+          {/* <CommonPanel
             grid={grid}
             instance={instance}
             setInstance={setInstance}
             setGrid={setGrid}
             data={props.data.data}
-          />
+          /> */}
         </div>
         <input
           style={{ margin: "0 11px 0 auto", display: "block" }}
