@@ -399,6 +399,12 @@ body *:focus {
     position: absolute;
     z-index: 1;
   }
+  .tjs-menu-bar__menu-item:last-child > div > button,
+  .tjs-menu-bar__menu-item:last-child > div > a,
+  .tjs-menu-bar__menu-item:last-child > button,
+  .tjs-menu-bar__menu-item:last-child > a {
+    border-radius: 16px !important;
+  }
 
   /* Show the tooltip text when you mouse over the tooltip container */
   .tooltip:hover .tooltiptext {
