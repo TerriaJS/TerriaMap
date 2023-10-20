@@ -29,11 +29,13 @@ export default function TropicalPanel(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(
-      `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=tropical&grid_type=${grid}&advisory=${advisory}&instance_name=${instance}&storm_name=${name}`
-    )
-      .then((response) => response.json())
-      .then((data) => setLayerData(data));
+    if (name !== "" || advisory !== "" || grid !== "" || instance !== "") {
+      fetch(
+        `https://apsviz-ui-data-dev.apps.renci.org/get_ui_data?met_class=tropical&grid_type=${grid}&advisory=${advisory}&instance_name=${instance}&storm_name=${name}`
+      )
+        .then((response) => response.json())
+        .then((data) => setLayerData(data));
+    }
   };
 
   const handleCheckboxChange = (event) => {
@@ -106,13 +108,13 @@ export default function TropicalPanel(props) {
               </Select>
             </FormControl>
           </Box>
-          <CommonPanel
+          {/* <CommonPanel
             grid={grid}
             instance={instance}
             setInstance={setInstance}
             setGrid={setGrid}
             data={props.data.data}
-          />
+          /> */}
         </FormControl>
         <input type="submit" value="Submit"></input>
       </form>

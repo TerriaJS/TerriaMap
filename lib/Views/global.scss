@@ -63,6 +63,14 @@ body *:focus {
     display: none !important;
   }
 
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+    .MuiOutlinedInput-notchedOutline {
+    border-color: #c4c4c4 !important;
+  }
+  .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-error {
+    color: #c4c4c4 !important;
+  }
+
   // Disables the terria logo and leaflet navigation menu above the expanded chart
   .bVQaev {
     display: none !important;
@@ -391,6 +399,12 @@ body *:focus {
     position: absolute;
     z-index: 1;
   }
+  .tjs-menu-bar__menu-item:last-child > div > button,
+  .tjs-menu-bar__menu-item:last-child > div > a,
+  .tjs-menu-bar__menu-item:last-child > button,
+  .tjs-menu-bar__menu-item:last-child > a {
+    border-radius: 16px !important;
+  }
 
   /* Show the tooltip text when you mouse over the tooltip container */
   .tooltip:hover .tooltiptext {
@@ -399,4 +413,11 @@ body *:focus {
   .dqbhbK {
     display: none;
   }
+
+  .css-sghohy-MuiButtonBase-root-MuiButton-root {
+    background: #008da9 !important;
+  }
+  // .css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
+  //   background: #022932;
+  // }
 }
