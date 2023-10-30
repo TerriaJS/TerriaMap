@@ -276,6 +276,13 @@
           "name": "Region mapping (CSV)",
           "members": [
             {
+              "id": "hWvbL27nGK",
+              "type": "terria-reference",
+              "name": "Other ASGS 2021 region types",
+              "url": "https://tile-test.terria.io/region-test-csvs/asgs-2021-leftovers-catalog.json",
+              "isGroup": true
+            },
+            {
               "type": "csv",
               "name": "SEIFA 2011 (POA)",
               "url": "test/SEIFA_POA_2011.csv",
