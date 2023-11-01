@@ -17,7 +17,8 @@ import Terria from "terriajs/lib/Models/Terria";
 import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplicationOnHashChange";
 import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
 import ViewState from "terriajs/lib/ReactViewModels/ViewState";
-import BingMapsSearchProviderViewModel from "terriajs/lib/Models/SearchProviders/BingMapsSearchProvider";
+// import BingMapsSearchProviderViewModel from "terriajs/lib/Models/SearchProviders/BingMapsSearchProvider";
+import CesiumIonSearchProviderViewModel from "terriajs/lib/Models/SearchProviders/CesiumIonSearchProvider";
 // import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
 // import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
 // import defined from 'terriajs-cesium/Source/Core/defined';
@@ -88,10 +89,14 @@ module.exports = terria
 
     try {
       viewState.searchState.locationSearchProviders = [
-        new BingMapsSearchProviderViewModel({
-          terria: terria,
-          key: terria.configParameters.bingMapsKey
+        new CesiumIonSearchProviderViewModel({
+          terria,
+          key: terria.configParameters.cesiumIonAccessToken
         })
+        // new BingMapsSearchProviderViewModel({
+        //   terria: terria,
+        //   key: terria.configParameters.bingMapsKey
+        // })
         // new GazetteerSearchProviderViewModel({terria}),
         // new GnafSearchProviderViewModel({terria})
       ];
