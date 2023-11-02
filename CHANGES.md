@@ -2,7 +2,8 @@
 
 ### The Next Release
 
-- [The next improvement]
+- Updated TerriaJS to `8.3.8`.
+  - Default geocoder changed to CesiumIon
 
 ### `0.0.8`
 
