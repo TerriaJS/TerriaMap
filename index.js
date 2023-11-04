@@ -5,7 +5,6 @@ var terriaOptions = {
 };
 
 import { runInAction } from "mobx";
-// checkBrowserCompatibility('ui');
 import ConsoleAnalytics from "terriajs/lib/Core/ConsoleAnalytics";
 import GoogleAnalytics from "terriajs/lib/Core/GoogleAnalytics";
 import ShareDataService from "terriajs/lib/Models/ShareDataService";
@@ -15,10 +14,6 @@ import Terria from "terriajs/lib/Models/Terria";
 import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplicationOnHashChange";
 import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
 import ViewState from "terriajs/lib/ReactViewModels/ViewState";
-import BingMapsSearchProviderViewModel from "terriajs/lib/Models/SearchProviders/BingMapsSearchProvider";
-// import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
-// import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
-// import defined from 'terriajs-cesium/Source/Core/defined';
 import render from "./lib/Views/render";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
 import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registerSearchProviders";
@@ -89,9 +84,6 @@ module.exports = terria
     terria.loadInitSources().then((result) => result.raiseError(terria));
 
     try {
-      viewState.searchState.locationSearchProviders =
-        terria.configParameters.searchBarModel.locationSearchProvidersArray;
-
       // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
       updateApplicationOnHashChange(terria, window);
       updateApplicationOnMessageFromParentWindow(terria, window);
