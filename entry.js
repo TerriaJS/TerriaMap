@@ -13,7 +13,7 @@ function loadMainScript() {
         require.ensure(
           ["./index"],
           function (require) {
-            resolve(require("./index"));
+            resolve(require("./index")());
           },
           reject,
           "index"
@@ -46,7 +46,8 @@ function createLoader() {
 
   polyfill(function () {
     loadMainScript()
-      .catch(() => {
+      .catch((e) => {
+        console.error(e);
         // Ignore errors and try to show the map anyway
       })
       .then(() => {

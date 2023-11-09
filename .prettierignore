@@ -41,6 +41,5 @@ wwwroot/help/
 wwwroot/public/
 wwwroot/*.html
 
-
 ckanext-cesiumpreview
 deploy/helm/terria/charts/terriamap/templates/
