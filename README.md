@@ -30,3 +30,9 @@ What this means:
 3. In a new window run gulp:watch
 4. Run npm run start
 5. Give it a few minutes and the app should be running on http://localhost:3001/
+
+## Creating a new patch file
+
+1. run npm run patch
+2. Check that your new changes were created inside the patch file
+3. Push up latest patch file and alert team that there is a new patch

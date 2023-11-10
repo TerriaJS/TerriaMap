@@ -1,0 +1,202 @@
+diff --git a/node_modules/terriajs/lib/.DS_Store b/node_modules/terriajs/lib/.DS_Store
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/terriajs/lib/Map/PickedFeatures/PickedFeatures.ts b/node_modules/terriajs/lib/Map/PickedFeatures/PickedFeatures.ts
+index ae4ce1e..d3c488d 100644
+--- a/node_modules/terriajs/lib/Map/PickedFeatures/PickedFeatures.ts
++++ b/node_modules/terriajs/lib/Map/PickedFeatures/PickedFeatures.ts
+@@ -61,15 +61,19 @@ export function featureBelongsToCatalogItem(
+   feature: TerriaFeature,
+   catalogItem: BaseModel
+ ) {
++
+   if (feature._catalogItem === catalogItem) return true;
+ 
+-  if (!MappableMixin.isMixedInto(catalogItem)) return;
++  if (!MappableMixin.isMixedInto(catalogItem)) {
++    return;
++  } 
+ 
+   const dataSource = feature.entityCollection?.owner;
+   const imageryProvider = feature.imageryLayer?.imageryProvider;
+ 
+   // Test whether the catalog item has a matching dataSource or an imageryProvider
+   const match = catalogItem.mapItems.some((mapItem) => {
++    
+     if (dataSource && mapItem === dataSource) {
+       return true;
+     }
+@@ -82,6 +86,5 @@ export function featureBelongsToCatalogItem(
+     }
+     return false;
+   });
+-
+   return match;
+ }
+diff --git a/node_modules/terriajs/lib/Map/PickedFeatures/featureDataToGeoJson.ts b/node_modules/terriajs/lib/Map/PickedFeatures/featureDataToGeoJson.ts
+index 9e1c801..c8873b8 100644
+--- a/node_modules/terriajs/lib/Map/PickedFeatures/featureDataToGeoJson.ts
++++ b/node_modules/terriajs/lib/Map/PickedFeatures/featureDataToGeoJson.ts
+@@ -103,7 +103,6 @@ function getEsriFeature(
+   geometryType: esriGeometryType
+ ): GeoJsonFeature | undefined {
+   let geojsonGeom: GeoJsonGeometry | undefined;
+-
+   if (!featureData?.geometry) return undefined;
+ 
+   if (geometryType === "esriGeometryPolygon") {
+@@ -205,7 +204,6 @@ function esriSpatialReferenceToCrs(
+   spatialReference: SpatialReference | undefined
+ ): GeoJsonCrs | undefined {
+   let code: number | string | undefined;
+-
+   if (spatialReference) {
+     if ("wkt" in spatialReference && spatialReference.wkt) {
+       code = spatialReference.wkt;
+diff --git a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
+index 5c557f5..51fbbcb 100644
+--- a/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
++++ b/node_modules/terriajs/lib/ModelMixins/GeojsonMixin.ts
+@@ -218,6 +218,8 @@ interface FeatureCounts {
+ }
+ 
+ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
++  
++  
+   abstract class GeoJsonMixin extends TableMixin(
+     FeatureInfoUrlTemplateMixin(UrlMixin(CatalogMemberMixin(Base)))
+   ) {
+@@ -408,6 +410,7 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
+       if (pickResult instanceof Entity) {
+         return TerriaFeature.fromEntityCollectionOrEntity(pickResult);
+       } else if (isDefined(pickResult?.id)) {
++        
+         return TerriaFeature.fromEntityCollectionOrEntity(pickResult.id);
+       }
+     }
+@@ -1051,9 +1054,13 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
+         }
+ 
+         // Billboard
+-        if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {
++        if (isDefined(entity.billboard) && 
+++            (!properties ||
+++             !isDefined(properties["marker-url"])) ||
+++             !isDefined(styles.markerUrl)) {
+           entity.billboard = new BillboardGraphics({
+-            image: new ConstantProperty(styles.markerUrl),
++            // image: new ConstantProperty(styles.markerUrl),
++            image: new ConstantProperty(properties?.["marker-url"]?.getValue() ?? styles.markerUrl),
+             width:
+               properties && properties["marker-width"]
+                 ? new ConstantProperty(properties["marker-width"])
+diff --git a/node_modules/terriajs/lib/Models/Leaflet.ts b/node_modules/terriajs/lib/Models/Leaflet.ts
+index d8f0f0b..25ebd57 100644
+--- a/node_modules/terriajs/lib/Models/Leaflet.ts
++++ b/node_modules/terriajs/lib/Models/Leaflet.ts
+@@ -289,7 +289,6 @@ export default class Leaflet extends GlobeOrMap {
+    */
+   private pickLocation(e: L.LeafletEvent) {
+     const mouseEvent = <L.LeafletMouseEvent>e;
+-
+     // Handle click events that cross the anti-meridian
+     if (mouseEvent.latlng.lng > 180 || mouseEvent.latlng.lng < -180) {
+       mouseEvent.latlng = mouseEvent.latlng.wrap();
+diff --git a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
+index f33bf94..a1c6866 100644
+--- a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
++++ b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
+@@ -2,7 +2,7 @@ import classNames from "classnames";
+ import { TFunction } from "i18next";
+ import { action, observable, runInAction } from "mobx";
+ import { observer } from "mobx-react";
+-import React from "react";
++import React, { useEffect } from "react";
+ import { WithTranslation, withTranslation } from "react-i18next";
+ import filterOutUndefined from "../../../Core/filterOutUndefined";
+ import ChartableMixin from "../../../ModelMixins/ChartableMixin";
+@@ -11,6 +11,10 @@ import Terria from "../../../Models/Terria";
+ import Icon from "../../../Styled/Icon";
+ import UrlTraits from "../../../Traits/TraitsClasses/UrlTraits";
+ import Styles from "./chart-expand-and-download-buttons.scss";
++import {useLayout} from "../../../../../../lib/custom-ui/components/layout";
++import {useLayers} from "../../../../../../lib/custom-ui/context";
++
++
+ 
+ const Dropdown = require("../../Generic/Dropdown");
+ 
+@@ -29,6 +33,7 @@ interface PropsType extends WithTranslation {
+ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+   @observable sourceItems: ChartableMixin.Instance[] = [];
+ 
++
+   @action.bound
+   private expandButton() {
+     this.expandItem(this.sourceItems.length - 1);
+@@ -66,11 +71,28 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+         });
+       });
+ 
++
+       try {
+         terria.addModel(itemToExpand);
+       } catch {}
+       (await workbench.add(itemToExpand)).raiseError(terria, undefined, true);
++      // workbench.items.map((layer) => {
++      //   type Wbench = {
++      //     [key: string]: any; // 👈️ variable key
++      //   };
++        
++      //   const obj: Wbench = {};
++        
++      //   obj.layer = layer;
++      //   if (obj.layer.chartItems.length > 0) {
++      //     obj.layer.chartItems.map((item: {updateIsSelectedInWorkbench: (a: boolean) => void}) => {
++      //       item.updateIsSelectedInWorkbench(true);
++      //     });
++      //   }
++      // });
++      
+     });
++    
+   }
+ 
+   resolveSourceItems() {
+@@ -109,6 +131,7 @@ class ChartExpandAndDownloadButtons extends React.Component<PropsType> {
+     const { sourceNames, canDownload, raiseToTitle, t } = this.props;
+     if (sourceNames && sourceNames.length > 0) {
+       const downloadNames = this.props.downloadNames || sourceNames;
++
+       return (
+         <ExpandAndDownloadDropdowns
+           sourceNames={sourceNames}
+@@ -185,6 +208,16 @@ const ExpandAndDownloadButtons = function (props: {
+   downloadUrl?: string;
+   t: TFunction;
+ }) {
++  const { drawerIsOpen, openDrawer }: any = useLayout();
++  const { setCurrentTabIndex }: any = useLayers();
++  useEffect(() => {
++    if (drawerIsOpen == false) {
++      openDrawer()
++    }
++    setCurrentTabIndex(1)
++  },[]);
++  props.onExpand()
++
+   return (
+     <div className={Styles.chartExpand}>
+       <button
+diff --git a/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx b/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx
+index 025fd72..8cd3835 100644
+--- a/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx
++++ b/node_modules/terriajs/lib/ReactViews/Workbench/Controls/ChartItemSelector.tsx
+@@ -30,6 +30,7 @@ export const ChartItem: React.FC<IChartItem> = observer(
+ 
+     const toggleActive = () => {
+       const catalogItem = chartItem.item;
++      console.log(chartItem.item)
+       runInAction(() => {
+         const shouldSelect = !chartItem.isSelectedInWorkbench;
+         chartItem.updateIsSelectedInWorkbench(shouldSelect);
