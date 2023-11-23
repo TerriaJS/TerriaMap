@@ -77,8 +77,15 @@
       },
       "fallbackLanguage": "en"
     },
-    "searchBarModel": {},
+    "searchBarConfig": {},
     "searchProviders": [
+      {
+        "id": "search-provider/cesium-ion",
+        "type": "cesium-ion-search-provider",
+        "name": "translate#viewModels.searchLocations",
+        "flightDurationSeconds": 1.5,
+        "minCharacters": 3
+      },
       {
         "id": "search-provider/bing-maps",
         "type": "bing-maps-search-provider",
