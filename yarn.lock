@@ -10635,10 +10635,10 @@ terriajs-server@^4.0.0:
     request-promise "^4.0.1"
     yargs "^13.2.4"
 
-terriajs@8.3.2:
-  version "8.3.2"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.3.2.tgz#c98d734656b6e215917cc4c3cb62aab635ed0f8c"
-  integrity sha512-Hu/tbMOI2y6BcE3f77xFY+f3pnraddGZneqIBeS9JuWXlxjpiZ/dB1lORPM457ldvm39frm/IQff9YmclM8hfg==
+terriajs@8.3.9:
+  version "8.3.9"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.3.9.tgz#e4bee5c367c8ac10a6c8fa8bf35854e1abccc573"
+  integrity sha512-91Xnkp3BKUJFpjQXfdwonOZOri4RzTFGLtap8fNLI7GUzmTRsr3R/WaWlNrtYp5N4M3rJOsAKpoEIbROHHD9HA==
   dependencies:
     "@babel/core" "^7.22.9"
     "@babel/parser" "^7.22.7"
@@ -10707,7 +10707,6 @@ terriajs@8.3.2:
     "@visx/tooltip" "^2.1.0"
     assimpjs "^0.0.7"
     babel-loader "^8.2.3"
-    babel-plugin-jsx-control-statements "^4.0.0"
     babel-plugin-lodash "^3.3.4"
     bottleneck "^2.19.5"
     catalog-converter "^0.0.9"
