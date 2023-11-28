@@ -17,7 +17,7 @@
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 14.0.0"
+    "node": ">= 16.0.0"
   },
   "repository": {
     "type": "git",
