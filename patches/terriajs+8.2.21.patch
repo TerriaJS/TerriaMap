@@ -103,7 +103,7 @@ index d8f0f0b..25ebd57 100644
      if (mouseEvent.latlng.lng > 180 || mouseEvent.latlng.lng < -180) {
        mouseEvent.latlng = mouseEvent.latlng.wrap();
 diff --git a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
-index f33bf94..a1c6866 100644
+index f33bf94..834025a 100644
 --- a/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
 +++ b/node_modules/terriajs/lib/ReactViews/Custom/Chart/ChartExpandAndDownloadButtons.tsx
 @@ -2,7 +2,7 @@ import classNames from "classnames";
@@ -143,20 +143,20 @@ index f33bf94..a1c6866 100644
          terria.addModel(itemToExpand);
        } catch {}
        (await workbench.add(itemToExpand)).raiseError(terria, undefined, true);
-+      // workbench.items.map((layer) => {
-+      //   type Wbench = {
-+      //     [key: string]: any; // 👈️ variable key
-+      //   };
++      workbench.items.map((layer) => {
++        type Wbench = {
++          [key: string]: any; // 👈️ variable key
++        };
 +        
-+      //   const obj: Wbench = {};
++        const obj: Wbench = {};
 +        
-+      //   obj.layer = layer;
-+      //   if (obj.layer.chartItems.length > 0) {
-+      //     obj.layer.chartItems.map((item: {updateIsSelectedInWorkbench: (a: boolean) => void}) => {
-+      //       item.updateIsSelectedInWorkbench(true);
-+      //     });
-+      //   }
-+      // });
++        obj.layer = layer;
++        if (obj.layer.chartItems.length > 0) {
++          obj.layer.chartItems.map((item: {updateIsSelectedInWorkbench: (a: boolean) => void}) => {
++            item.updateIsSelectedInWorkbench(true);
++          });
++        }
++      });
 +      
      });
 +    
