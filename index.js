@@ -5,24 +5,18 @@ var terriaOptions = {
 };
 
 import { runInAction } from "mobx";
-
-// checkBrowserCompatibility('ui');
 import ConsoleAnalytics from "terriajs/lib/Core/ConsoleAnalytics";
 import GoogleAnalytics from "terriajs/lib/Core/GoogleAnalytics";
 import ShareDataService from "terriajs/lib/Models/ShareDataService";
 // import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
-// import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import registerCustomComponentTypes from "terriajs/lib/ReactViews/Custom/registerCustomComponentTypes";
 import Terria from "terriajs/lib/Models/Terria";
 import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplicationOnHashChange";
 import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
 import ViewState from "terriajs/lib/ReactViewModels/ViewState";
-import BingMapsSearchProviderViewModel from "terriajs/lib/Models/SearchProviders/BingMapsSearchProvider";
-// import GazetteerSearchProviderViewModel from 'terriajs/lib/ViewModels/GazetteerSearchProviderViewModel.js';
-// import GnafSearchProviderViewModel from 'terriajs/lib/ViewModels/GnafSearchProviderViewModel.js';
-// import defined from 'terriajs-cesium/Source/Core/defined';
 import render from "./lib/Views/render";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
+import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registerSearchProviders";
 import defined from "terriajs-cesium/Source/Core/defined";
 import loadPlugins from "./lib/Core/loadPlugins";
 import plugins from "./plugins";
@@ -53,6 +47,9 @@ const viewState = new ViewState({
 });
 
 registerCatalogMembers();
+// Register custom search providers in the core TerriaJS. If you only want to register a subset of them, or to add your own,
+// insert your custom version of the code in the registerSearchProviders function here instead.
+registerSearchProviders();
 
 if (process.env.NODE_ENV === "development") {
   window.viewState = viewState;
@@ -87,15 +84,6 @@ module.exports = terria
     terria.loadInitSources().then((result) => result.raiseError(terria));
 
     try {
-      viewState.searchState.locationSearchProviders = [
-        new BingMapsSearchProviderViewModel({
-          terria: terria,
-          key: terria.configParameters.bingMapsKey
-        })
-        // new GazetteerSearchProviderViewModel({terria}),
-        // new GnafSearchProviderViewModel({terria})
-      ];
-
       // Automatically update Terria (load new catalogs, etc.) when the hash part of the URL changes.
       updateApplicationOnHashChange(terria, window);
       updateApplicationOnMessageFromParentWindow(terria, window);

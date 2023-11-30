@@ -4,6 +4,13 @@
 
 - [The next improvement]
 
+### `0.0.9`
+
+**2023-11-24**
+
+- Updated TerriaJS to `8.3.9`.
+- Moved to new Search Provider model. Search Providers are now configured in `config.json` `searchProviders`. For example configuration see https://docs.terria.io/guide/customizing/search-providers/
+
 ### `0.0.8`
 
 **2023-08-11**
