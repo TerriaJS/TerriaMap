@@ -295,14 +295,14 @@ gulp.task("terriajs-server", function (done) {
     default: { terriajsServerArg: [] }
   });
 
-  const logFile = fs.openSync("./terriajs-server.log", "a");
+  const logFile = fs.openSync("./terriajs-server.log", "w");
   const serverArgs = Array.isArray(options.terriajsServerArg)
     ? options.terriajsServerArg
     : [options.terriajsServerArg];
   const child = spawn(
     "node",
     [
-      "./node_modules/.bin/terriajs-server",
+      require.resolve("terriajs-server/terriajs-server.js"),
       ...serverArgs.map((arg) => `--${arg}`)
     ],
     { detached: true, stdio: ["ignore", logFile, logFile] }
@@ -316,6 +316,9 @@ gulp.task("terriajs-server", function (done) {
           "\nCheck terriajs-server.log for more information."
       )
     );
+  });
+  child.on("spawn", () => {
+    console.log("terriajs-server started - see terriajs-server.log for logs");
   });
   // Intercept SIGINT, SIGTERM and SIGHUP, cleanup terriajs-server and re-send signal
   // May fail to catch some relevant signals on Windows
@@ -333,6 +336,9 @@ gulp.task("terriajs-server", function (done) {
   process.once("SIGHUP", () => {
     child.kill("SIGTERM");
     process.kill(process.pid, "SIGHUP");
+  });
+  process.on("exit", () => {
+    child.kill("SIGTERM");
   });
 });
 
