@@ -2,6 +2,8 @@
 
 ### The Next Release
 
+- Updated TerriaJS to `8.4.x`.
+- Replaced `node-sass` with `sass`. ("both packages expose the same JavaScript API", so no changes should be required)
 - [The next improvement]
 
 ### `0.0.9`

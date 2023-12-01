@@ -28,3 +28,4 @@ yarn-error.log
 .npmrc
 
 package-lock.json
+.nvmrc
