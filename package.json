@@ -24,6 +24,8 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^17.0.3",
     "terriajs-plugin-api": "0.0.1-alpha.6",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
     "terriajs-server": "^4.0.0"
