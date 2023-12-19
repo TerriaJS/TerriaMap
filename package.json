@@ -42,7 +42,7 @@
     "react-axios": "^2.0.6",
     "react-beautiful-dnd": "^13.1.1",
     "react-datepicker": "0.53.0",
-    "react-hook-form": "^7.43.9",
+    "react-hook-form": "7.43.9",
     "react-hook-form-mui": "^6.0.1",
     "react-vis": "^1.11.12",
     "terriajs-plugin-api": "0.0.1-alpha.6",
