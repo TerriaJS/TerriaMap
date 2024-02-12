@@ -9,7 +9,7 @@ COPY --chown=node:node . /app
 
 WORKDIR /app
 
-RUN yarn install
+RUN yarn install --network-timeout 1000000
 RUN yarn gulp release
 
 # deploy container
