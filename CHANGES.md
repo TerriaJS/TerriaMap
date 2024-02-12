@@ -2,9 +2,19 @@
 
 ### The Next Release
 
-- Updated TerriaJS to `8.4.x`.
-- Replaced `node-sass` with `sass`. ("both packages expose the same JavaScript API", so no changes should be required)
 - [The next improvement]
+
+### `0.1.0`
+
+**2024-02-08**
+
+- Updated TerriaJS to `8.5.0`.
+  - **Breaking changes:**
+    - **Upgraded Cesium to version 6.2.0**
+    - **Upgraded Typescript to version 5.2.x**
+  - For full list of changes, see [terriajs/CHANGES.md](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md)
+- Replaced `node-sass` with `sass`. (both packages expose the same JavaScript API, so no changes should be required)
+- Increase NodeJS minimum version to 16
 
 ### `0.0.9`
 
