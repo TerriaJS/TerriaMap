@@ -35,7 +35,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.23.5.tgz#ffb878728bb6bdcb6f4510aa51b1be9afb8cfd98"
   integrity sha512-uU27kfDRlhfKl+w1U6vp16IuvSLtjAxdArVXPa9BvLkrr7CYIsxH5adpHObeAGY/41+syctUWOZ140a2Rvkgjw==
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.2":
+"@babel/core@^7.0.0":
   version "7.23.6"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.23.6.tgz#8be77cd77c55baadcc1eae1c33df90ab6d2151d4"
   integrity sha512-FxpRyGjrMJXh7X3wGLGhNDCRiwpWEF74sKjTLDJSG5Kyvow3QZaG0Adbqzi9ZrVjTWpsX+2cxWXD71NMg93kdw==
@@ -2954,13 +2954,6 @@ babel-plugin-emotion@^10.0.27:
     escape-string-regexp "^1.0.5"
     find-root "^1.1.0"
     source-map "^0.5.7"
-
-babel-plugin-jsx-control-statements@^4.0.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-control-statements/-/babel-plugin-jsx-control-statements-4.1.2.tgz#eb90494109cad3ed1b88dc75416e2c056fca1462"
-  integrity sha512-GUEnED4GLxJnFGKidbdI0GNN5Ekih4wbAr7+ENkpUKWYxeg7UPcgwmYd7qrpxT7UWto4OZtyUJg+sm+QN4ZjkQ==
-  dependencies:
-    "@babel/core" "^7.1.2"
 
 babel-plugin-lodash@^3.3.4:
   version "3.3.4"

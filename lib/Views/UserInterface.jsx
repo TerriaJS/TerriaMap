@@ -45,14 +45,14 @@ export default function UserInterface(props) {
         ) : null}
       </MenuLeft>
       <ExperimentalMenu>
-        {/* <If condition={isBrowserSupportedAV()}>
+        {/* {isBrowserSupportedAV() && (
           <SplitPoint
             loadComponent={loadAugmentedVirtuality}
             viewState={props.viewState}
             terria={props.viewState.terria}
             experimentalWarning={true}
           />
-        </If> */}
+        )} */}
       </ExperimentalMenu>
     </StandardUserInterface>
   );
