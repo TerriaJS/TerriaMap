@@ -105,14 +105,14 @@ module.exports = function (devMode, hot) {
         {
           test: /loader\.css$/,
           include: [path.resolve(__dirname, "..", "lib", "Styles")],
-          loader: ["style-loader", "css-loader"]
+          use: [{ loader: "style-loader" }, { loader: "css-loader" }]
         },
         {
           test: /\.scss$/,
           include: [path.resolve(__dirname, "..", "lib")],
-          loader: hot
+          use: hot
             ? [
-                "style-loader",
+                { loader: "style-loader" },
                 {
                   loader: "css-loader",
                   options: {
@@ -129,10 +129,10 @@ module.exports = function (devMode, hot) {
                     sourceMap: false
                   }
                 },
-                "sass-loader?sourceMap"
+                { loader: "sass-loader?sourceMap" }
               ]
             : [
-                MiniCssExtractPlugin.loader,
+                { loader: MiniCssExtractPlugin.loader },
                 {
                   loader: "css-loader",
                   options: {
@@ -149,7 +149,7 @@ module.exports = function (devMode, hot) {
                     sourceMap: false
                   }
                 },
-                "sass-loader?sourceMap"
+                { loader: "sass-loader?sourceMap" }
               ]
         }
       ]
@@ -157,9 +157,9 @@ module.exports = function (devMode, hot) {
     plugins: [
       new MiniCssExtractPlugin({
         filename: "TerriaMap.css",
-        disable: hot,
-        ignoreOrder: true,
-        allChunks: true
+        // disable: hot,
+        ignoreOrder: true
+        // chunks: 'all'
       })
     ],
     resolve: {
