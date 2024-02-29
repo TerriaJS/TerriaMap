@@ -117,9 +117,10 @@ module.exports = function (devMode, hot) {
                   loader: "css-loader",
                   options: {
                     sourceMap: true,
-                    modules: true,
-                    camelCase: true,
-                    localIdentName: "tm-[name]__[local]",
+                    modules: {
+                      localIdentName: "tm-[name]__[local]",
+                      exportLocalsConvention: "camelCase"
+                    },
                     importLoaders: 2
                   }
                 },
@@ -129,7 +130,7 @@ module.exports = function (devMode, hot) {
                     sourceMap: false
                   }
                 },
-                { loader: "sass-loader?sourceMap" }
+                { loader: "sass-loader", options: { sourceMap: true } }
               ]
             : [
                 { loader: MiniCssExtractPlugin.loader },
@@ -137,9 +138,10 @@ module.exports = function (devMode, hot) {
                   loader: "css-loader",
                   options: {
                     sourceMap: true,
-                    modules: true,
-                    camelCase: true,
-                    localIdentName: "tm-[name]__[local]",
+                    modules: {
+                      localIdentName: "tm-[name]__[local]",
+                      exportLocalsConvention: "camelCase"
+                    },
                     importLoaders: 2
                   }
                 },
@@ -149,7 +151,7 @@ module.exports = function (devMode, hot) {
                     sourceMap: false
                   }
                 },
-                { loader: "sass-loader?sourceMap" }
+                { loader: "sass-loader", options: { sourceMap: true } }
               ]
         }
       ]
