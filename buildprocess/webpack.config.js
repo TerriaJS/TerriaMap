@@ -89,17 +89,21 @@ module.exports = function (devMode, hot) {
         {
           test: /\.(png|jpg|svg|gif)$/,
           include: path.resolve(__dirname, "..", "wwwroot", "images"),
-          loader: "url-loader",
-          options: {
-            limit: 8192
+          type: "asset",
+          parser: {
+            dataUrlCondition: {
+              maxSize: 8192
+            }
           }
         },
         {
           test: /globe\.gif$/,
           include: path.resolve(__dirname, "..", "lib", "Styles"),
-          loader: "url-loader",
-          options: {
-            limit: 65536
+          type: "asset",
+          parser: {
+            dataUrlCondition: {
+              maxSize: 65536
+            }
           }
         },
         {
