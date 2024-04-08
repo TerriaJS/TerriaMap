@@ -22,5 +22,4 @@ jobs:
       - run: rm -rf node_modules && yarn install --frozen-lockfile
       - run: yarn gulp lint release
         env:
-          # We need to use --openssl-legacy-provider for node 18.x and node 20.x
-          NODE_OPTIONS: ${{ matrix.node-version != '16.x' && '--max_old_space_size=4096 --openssl-legacy-provider' || '--max_old_space_size=4096'}}
+          NODE_OPTIONS: '--max_old_space_size=4096'
