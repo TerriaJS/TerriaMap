@@ -1,4 +1,0 @@
-registry:
-  host: docker-registry-docker-registry
-  port: 5000
-hostPort: 5000

@@ -2,4 +2,4 @@ global:
   rollingUpdate:
     maxUnavailable: 1
   image:
-    tag: "0.0.6"
+    tag: "0.1.1"
