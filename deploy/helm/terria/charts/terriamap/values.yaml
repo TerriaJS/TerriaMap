@@ -1,15 +1,17 @@
 nodePort:
 image:
-  #repository: ghcr.io/terriajs
-  #tag: latest
-  #full: terrimap:0.0.6
+  # By default this pulls ghcr.io/terriajs/terrimap:latest
+  # Set "full" to specify a custom terriamap image to be used
+  # Or you can set "repository" or "tag" if required
+  # full: "ghcr.io/terriajs/terriamap:0.1.1"
+  # repository: ghcr.io/terriajs
+  # tag: latest
   pullPolicy: Always
 clientConfig:
   initializationUrls:
     - helm
     - terria
   parameters:
-    bingMapsKey: AkaOmRFtjAb71cXgLwAGtLbj2RpkPKtVqAIroFQsocfurCBILxIeAWPkil7hhRy_
     disclaimer:
       text: "Disclaimer: This map must not be used for navigation or precise spatial analysis"
       url: "http://google.com"
