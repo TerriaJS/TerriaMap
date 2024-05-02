@@ -36,6 +36,7 @@
   },
   "resolutions": {
     "terser-webpack-plugin": "^4.2.3",
+    "underscore": "^1.12.1",
     "@types/react": "^17.0.3",
     "@types/lodash": "4.14.182",
     "@types/node": "^18.15.11"
@@ -49,7 +50,7 @@
     "@typescript-eslint/parser": "^6.12.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^2.1.0",
-    "ejs": "^2.5.2",
+    "ejs": "^3.1.10",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.19.0",
