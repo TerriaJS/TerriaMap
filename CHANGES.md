@@ -1,6 +1,10 @@
 # Change Log
 
-### The Next Release
+### `0.1.2`
+
+**2024-05-02**
+
+- Updated TerriaJS to `8.7.1`.
 
 ### `0.1.1`
 
