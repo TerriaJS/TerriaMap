@@ -85,14 +85,10 @@
     "url-loader": "^1.1.2",
     "webpack": "~4.47.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.1.14",
-    "yargs": "^11.0.0"
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "prepare": "husky install",
-    "docker-build-local": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto --local",
-    "docker-build-prod": "node ./deploy/docker/create-docker-context-for-node-components.js --build --push --tag auto",
-    "docker-build-ci": "node ./deploy/docker/create-docker-context-for-node-components.js --build",
     "start": "terriajs-server --config-file devserverconfig.json",
     "gulp": "gulp",
     "postinstall": "echo 'Installation successful. What to do next:\\n  yarn gulp dev   # Starts the server on port 3001, builds TerriaMap and dependencies, and rebuilds if files change.'",
