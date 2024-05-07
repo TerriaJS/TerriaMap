@@ -1306,12 +1306,12 @@
   dependencies:
     call-bind "^1.0.7"
 
-"@magda/docker-utils@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@magda/docker-utils/-/docker-utils-3.0.2.tgz#010a5e19d8e8bb36dde04a9d53c391b1297c6a8c"
-  integrity sha512-vKXUkR/AOR9H7MDWBDvYX1hUZR9F6IFomJu76M0Ciku0q6SRtyczhYuy42PXJCZGQr64U3Pb/jsl6/iyMl1zTw==
+"@magda/docker-utils@^2.1.0":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@magda/docker-utils/-/docker-utils-2.3.3.tgz#cfa9f1db8890200a04dd1564e393136f80c2ff8a"
+  integrity sha512-dxvCzrXQv4qoGCzvBYMBdAMDTESAvdSobvUlgu/Dk7wByubneTpS7EGKtTWNy2MRRFVGSunBlFiRpSl1nw7Zng==
   dependencies:
-    fs-extra "^11.2.0"
+    fs-extra "^2.1.2"
     is-subdir "^1.0.2"
     lodash "^4.17.5"
     yargs "^12.0.5"
@@ -5724,14 +5724,13 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==
 
-fs-extra@^11.2.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.2.0.tgz#e70e17dfad64232287d01929399e0ea7c86b0e5b"
-  integrity sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==
+fs-extra@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-2.1.2.tgz#046c70163cef9aad46b0e4a7fa467fb22d71de35"
+  integrity sha512-9ztMtDZtSKC78V8mev+k31qaTabbmuH5jatdvPBMikrFHvw5BqlYnQIn/WGK3WHeRooSTkRvLa2IPlaHjPq5Sg==
   dependencies:
-    graceful-fs "^4.2.0"
-    jsonfile "^6.0.1"
-    universalify "^2.0.0"
+    graceful-fs "^4.1.2"
+    jsonfile "^2.1.0"
 
 fs-extra@^7.0.1:
   version "7.0.1"
@@ -7250,6 +7249,13 @@ json5@^2.1.0, json5@^2.1.2, json5@^2.1.3, json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
+
+jsonfile@^2.1.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
+  integrity sha512-PKllAqbgLgxHaj8TElYymKCAgrASebJrWpTnEkOaTowt23VKXXN0sUeriJ+eh7y6ufb/CC5ap11pz71/cM0hUw==
+  optionalDependencies:
+    graceful-fs "^4.1.6"
 
 jsonfile@^4.0.0:
   version "4.0.0"
