@@ -30,7 +30,7 @@
   },
   "config": {
     "docker": {
-      "name": "data61/terria-terriamap",
+      "name": "terriajs/terriamap",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
     }
   },
@@ -46,6 +46,7 @@
     "@babel/eslint-parser": "^7.23.3",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
+    "@magda/docker-utils": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "babel-loader": "^8.2.3",
@@ -90,6 +91,9 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "docker-build-local": "create-docker-context-for-node-component --build --push --tag auto --local",
+    "docker-build-prod": "create-docker-context-for-node-component --build --push --tag auto --repository=ghcr.io/terriajs/terriamap",
+    "docker-build-ci": "create-docker-context-for-node-component --build",
     "start": "terriajs-server --config-file devserverconfig.json",
     "gulp": "gulp",
     "postinstall": "echo 'Installation successful. What to do next:\\n  yarn gulp dev   # Starts the server on port 3001, builds TerriaMap and dependencies, and rebuilds if files change.'",
