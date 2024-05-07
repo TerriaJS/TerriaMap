@@ -30,7 +30,7 @@
   },
   "config": {
     "docker": {
-      "name": "terriajs/terriamap",
+      "name": "terriamap",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
     }
   },
@@ -46,7 +46,7 @@
     "@babel/eslint-parser": "^7.23.3",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
-    "@magda/docker-utils": "^3.0.2",
+    "@magda/docker-utils": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "babel-loader": "^8.2.3",
@@ -92,7 +92,7 @@
   "scripts": {
     "prepare": "husky install",
     "docker-build-local": "create-docker-context-for-node-component --build --push --tag auto --local",
-    "docker-build-prod": "create-docker-context-for-node-component --build --push --tag auto --repository=ghcr.io/terriajs/terriamap",
+    "docker-build-prod": "create-docker-context-for-node-component --build --push --tag auto --repository=ghcr.io/terriajs",
     "docker-build-ci": "create-docker-context-for-node-component --build",
     "start": "terriajs-server --config-file devserverconfig.json",
     "gulp": "gulp",
