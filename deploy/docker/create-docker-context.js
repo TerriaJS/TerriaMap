@@ -156,6 +156,17 @@ if (argv.build) {
     wrapConsoleOutput(dockerPullProcess);
   }
 
+  const tarProcess = childProcess.spawn(
+    tar,
+    [...extraParameters, "--dereference", "-czf", "-", "*"],
+    {
+      cwd: dockerContextDir,
+      stdio: ["inherit", "pipe", "inherit"],
+      env: env,
+      shell: true
+    }
+  );
+
   const tags = getTags(
     argv.tag,
     argv.local,
@@ -180,11 +191,11 @@ if (argv.build) {
       ...(argv.noCache ? ["--no-cache"] : []),
       ...(argv.platform ? ["--platform", argv.platform, "--push"] : []),
       "-f",
-      path.resolve(componentDestDir, "Dockerfile"),
-      dockerContextDir
+      "./component/Dockerfile",
+      "-"
     ],
     {
-      stdio: ["inherit", "inherit", "inherit"],
+      stdio: ["pipe", "inherit", "inherit"],
       env: env
     }
   );
@@ -212,6 +223,14 @@ if (argv.build) {
       });
     }
     process.exit(code);
+  });
+
+  tarProcess.on("close", (code) => {
+    dockerProcess.stdin.end();
+  });
+
+  tarProcess.stdout.on("data", (data) => {
+    dockerProcess.stdin.write(data);
   });
 } else if (argv.output) {
   const outputPath = path.resolve(process.cwd(), argv.output);
