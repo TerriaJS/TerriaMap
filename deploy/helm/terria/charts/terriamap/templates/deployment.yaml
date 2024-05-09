@@ -30,6 +30,9 @@ spec:
             mountPath: /etc/config/client
           - name: terriamap-config-server
             mountPath: /etc/config/server
+          - name: terriamap-config-client
+            mountPath: /usr/src/app/component/wwwroot/config.json
+            subPath: config.json
       volumes:
         - name: terriamap-config-client
           configMap:
