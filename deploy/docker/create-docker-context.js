@@ -21,6 +21,7 @@ const {
 // --- cache dependencies data from package.json
 const packageDependencyDataCache = {};
 const argv = yargs
+  .version(false) // Because version is a default yargs thing we need to specifically override its normal parsing.
   .options({
     build: {
       description: "Pipe the Docker context straight to Docker.",
@@ -51,6 +52,8 @@ const argv = yargs
       type: "string",
       array: true,
       default: process.env.MAGDA_DOCKER_VERSION
+        ? [process.env.MAGDA_DOCKER_VERSION]
+        : []
     },
     output: {
       description:
@@ -85,9 +88,6 @@ const argv = yargs
       type: "string"
     }
   })
-  // Because 'version is a default yargs thing we need to specifically override its normal parsing.
-  .version(false)
-  .array("version")
   .help().argv;
 
 if (!argv.build && !argv.output) {

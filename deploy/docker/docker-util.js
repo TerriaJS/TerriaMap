@@ -1,11 +1,11 @@
 exports.getVersions = function getVersions(local, version) {
-  return (
-    version || [
-      !local && process.env.npm_package_version
-        ? process.env.npm_package_version
-        : "latest"
-    ]
-  );
+  return version.length > 0
+    ? version
+    : [
+        !local && process.env.npm_package_version
+          ? process.env.npm_package_version
+          : "latest"
+      ];
 };
 
 exports.getName = function getName(name) {
