@@ -3,7 +3,6 @@
 // Based off @magda/docker-utils@2.1.0 create-docker-context-for-node-component
 // Changes made:
 // - The Dockerfile path is configurable in package.json
-// - The build context is passed by path rather than being tarballed and piped into docker
 
 const childProcess = require("child_process");
 const fse = require("fs-extra");
