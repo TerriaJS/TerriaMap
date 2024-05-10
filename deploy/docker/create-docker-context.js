@@ -89,7 +89,7 @@ const argv = yargs
     },
     metadata: {
       description:
-        "Use tags and labels from https://github.com/docker/metadata-action v5. Utilises env.DOCKER_METADATA_OUTPUT_JSON. Overrides --tag",
+        "Use tags and annotations from https://github.com/docker/metadata-action v5. Utilises env.DOCKER_METADATA_OUTPUT_JSON. Overrides --tag",
       type: "boolean",
       default: false
     }
@@ -183,10 +183,10 @@ if (argv.build) {
     : getTags(argv.tag, argv.local, argv.repository, argv.version, argv.name);
   const tagArgs = tags.flatMap((tag) => ["-t", tag]);
 
-  const labels = metadata?.labels;
-  const labelArgs = labels
-    ? Object.entries(labels).flatMap(([key, value]) => [
-        "--label",
+  const annotations = metadata?.annotations;
+  const annotationArgs = annotations
+    ? Object.entries(annotations).flatMap(([key, value]) => [
+        "--annotation",
         `${key}=${value}`
       ])
     : [];
@@ -200,7 +200,7 @@ if (argv.build) {
       ...(argv.platform ? ["buildx"] : []),
       "build",
       ...tagArgs,
-      ...labelArgs,
+      ...annotationArgs,
       ...cacheFromArgs,
       ...(argv.noCache ? ["--no-cache"] : []),
       ...(argv.platform ? ["--platform", argv.platform, "--push"] : []),

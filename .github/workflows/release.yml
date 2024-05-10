@@ -58,4 +58,4 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: Build and push
-        run: yarn docker-build-prod --metadata ${{ steps.meta.outputs.json }}
+        run: yarn docker-build-prod --metadata
