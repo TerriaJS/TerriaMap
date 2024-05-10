@@ -86,6 +86,11 @@ const argv = yargs
       description:
         "Version to cache from when building, using the --cache-from field in docker. Will use the same repository and name. Using this options causes the image to be pulled before build.",
       type: "string"
+    },
+    metadata: {
+      description:
+        "Tags and labels as json from https://github.com/docker/metadata-action v5. Overrides --tag",
+      type: "string"
     }
   })
   .help().argv;
@@ -166,16 +171,21 @@ if (argv.build) {
     }
   );
 
-  const tags = getTags(
-    argv.tag,
-    argv.local,
-    argv.repository,
-    argv.version,
-    argv.name
-  );
-  const tagArgs = tags
-    .map((tag) => ["-t", tag])
-    .reduce((soFar, tagArgs) => soFar.concat(tagArgs), []);
+  // metadata json from GitHub Action docker/metadata-action@v5
+  const metadata = argv.metadata ? JSON.parse(argv.metadata) : undefined;
+
+  const tags = metadata
+    ? metadata.tags
+    : getTags(argv.tag, argv.local, argv.repository, argv.version, argv.name);
+  const tagArgs = tags.flatMap((tag) => ["-t", tag]);
+
+  const labels = metadata?.labels;
+  const labelArgs = labels
+    ? Object.entries(labels).flatMap(([key, value]) => [
+        "--label",
+        `${key}=${value}`
+      ])
+    : [];
 
   const cacheFromArgs = cacheFromImage ? ["--cache-from", cacheFromImage] : [];
 
@@ -186,6 +196,7 @@ if (argv.build) {
       ...(argv.platform ? ["buildx"] : []),
       "build",
       ...tagArgs,
+      ...labelArgs,
       ...cacheFromArgs,
       ...(argv.noCache ? ["--no-cache"] : []),
       ...(argv.platform ? ["--platform", argv.platform, "--push"] : []),
