@@ -183,13 +183,11 @@ if (argv.build) {
     : getTags(argv.tag, argv.local, argv.repository, argv.version, argv.name);
   const tagArgs = tags.flatMap((tag) => ["-t", tag]);
 
-  const annotations = metadata?.annotations;
-  const annotationArgs = annotations
-    ? Object.entries(annotations).flatMap(([key, value]) => [
-        "--annotation",
-        `${key}=${value}`
-      ])
-    : [];
+  const annotationArgs =
+    metadata?.annotations?.flatMap((annotation) => [
+      "--annotation",
+      annotation
+    ]) ?? [];
 
   const cacheFromArgs = cacheFromImage ? ["--cache-from", cacheFromImage] : [];
 
