@@ -89,8 +89,9 @@ const argv = yargs
     },
     metadata: {
       description:
-        "Tags and labels as json from https://github.com/docker/metadata-action v5. Overrides --tag",
-      type: "string"
+        "Use tags and labels from https://github.com/docker/metadata-action v5. Utilises env.DOCKER_METADATA_OUTPUT_JSON. Overrides --tag",
+      type: "boolean",
+      default: false
     }
   })
   .help().argv;
@@ -172,7 +173,10 @@ if (argv.build) {
   );
 
   // metadata json from GitHub Action docker/metadata-action@v5
-  const metadata = argv.metadata ? JSON.parse(argv.metadata) : undefined;
+  const metadata =
+    argv.metadata && env.DOCKER_METADATA_OUTPUT_JSON
+      ? JSON.parse(env.DOCKER_METADATA_OUTPUT_JSON)
+      : undefined;
 
   const tags = metadata
     ? metadata.tags
