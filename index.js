@@ -64,7 +64,7 @@ if (process.env.NODE_ENV !== "production" && module.hot) {
 module.exports = terria
   .start({
     applicationUrl: window.location,
-    configUrl: "config.json",
+    configUrl: "https://d3fr759o5520tk.cloudfront.net/config/test.json",
     shareDataService: new ShareDataService({
       terria: terria
     }),
