@@ -13,7 +13,7 @@
     ]
   },
   "name": "terriajs-map",
-  "version": "0.1.2",
+  "version": "0.2.0-alpha.4",
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
   "engines": {
@@ -96,7 +96,7 @@
   "scripts": {
     "prepare": "husky install",
     "docker-build-local": "node deploy/docker/create-docker-context.js --build --push --tag auto --local",
-    "docker-build-prod": "node deploy/docker/create-docker-context.js --build --push --tag auto --repository=ghcr.io/terriajs",
+    "docker-build-prod": "node deploy/docker/create-docker-context.js --build --push --platform=linux/amd64,linux/arm64",
     "docker-build-ci": "node deploy/docker/create-docker-context.js --build",
     "start": "terriajs-server --config-file serverconfig.json",
     "gulp": "gulp",
