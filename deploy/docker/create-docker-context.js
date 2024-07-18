@@ -1,8 +1,16 @@
 #!/usr/bin/env node
 
+// MAJOR ASSSUMPTION: build artifacts and node_modules content for all production
+// dependencies is cross-platform, or care is taken to only install dependencies,
+// run create-docker-context.js and create docker images on a compatible platform
+// See architecture/0002-docker-multi-arch-build.md
+
 // Based off @magda/docker-utils@2.1.0 create-docker-context-for-node-component
 // Changes made:
-// - The Dockerfile path is configurable in package.json
+// - The Dockerfile path is configurable in package.json (I don't want a dockerfile
+//    intended to be used only through a script to be in the top level directory)
+// - Can parse metadata from GitHub Action docker/metadata-action@v5 and add this
+//    to the created image
 
 const childProcess = require("child_process");
 const fse = require("fs-extra");
