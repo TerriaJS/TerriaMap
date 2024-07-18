@@ -1,9 +1,12 @@
 # Docker image for the primary terria map application server
+# Intended for use only with a "context" directory created by create-docker-context.js
 FROM node:16-slim
 
-RUN mkdir -p /usr/src/app && mkdir -p /etc/config/client
-WORKDIR /usr/src/app/component
-COPY . /usr/src/app
+RUN mkdir -p /etc/config/client
+
+USER node
+WORKDIR /usr/src/app
+COPY --chown=node:node component /usr/src/app
 
 EXPOSE 3001
 ENV NODE_ENV=production
