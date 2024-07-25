@@ -1,8 +1,16 @@
 #!/usr/bin/env node
 
+// MAJOR ASSSUMPTION: build artifacts and node_modules content for all production
+// dependencies is cross-platform, or care is taken to only install dependencies,
+// run create-docker-context.js and create docker images on a compatible platform
+// See architecture/0002-docker-multi-arch-build.md
+
 // Based off @magda/docker-utils@2.1.0 create-docker-context-for-node-component
 // Changes made:
-// - The Dockerfile path is configurable in package.json
+// - The Dockerfile path is configurable in package.json (I don't want a dockerfile
+//    intended to be used only through a script to be in the top level directory)
+// - Can parse metadata from GitHub Action docker/metadata-action@v5 and add this
+//    to the created image
 
 const childProcess = require("child_process");
 const fse = require("fs-extra");
@@ -42,7 +50,7 @@ const argv = yargs
     },
     name: {
       description:
-        "The package name to use in auto tag generation. Will default to ''. Used to override the docker nanme config in package.json during the auto tagging. Requires --tag=auto",
+        "The package name to use in auto tag generation. Will default to ''. Used to override the docker name config in package.json during the auto tagging. Requires --tag=auto",
       type: "string",
       default: process.env.MAGDA_DOCKER_NAME
     },
@@ -86,6 +94,12 @@ const argv = yargs
       description:
         "Version to cache from when building, using the --cache-from field in docker. Will use the same repository and name. Using this options causes the image to be pulled before build.",
       type: "string"
+    },
+    metadata: {
+      description:
+        "Use tags and annotations from https://github.com/docker/metadata-action v5. Utilises env.DOCKER_METADATA_OUTPUT_JSON. Overrides --tag",
+      type: "boolean",
+      default: false
     }
   })
   .help().argv;
@@ -166,16 +180,22 @@ if (argv.build) {
     }
   );
 
-  const tags = getTags(
-    argv.tag,
-    argv.local,
-    argv.repository,
-    argv.version,
-    argv.name
-  );
-  const tagArgs = tags
-    .map((tag) => ["-t", tag])
-    .reduce((soFar, tagArgs) => soFar.concat(tagArgs), []);
+  // metadata json from GitHub Action docker/metadata-action@v5
+  const metadata =
+    argv.metadata && env.DOCKER_METADATA_OUTPUT_JSON
+      ? JSON.parse(env.DOCKER_METADATA_OUTPUT_JSON)
+      : undefined;
+
+  const tags = metadata
+    ? metadata.tags
+    : getTags(argv.tag, argv.local, argv.repository, argv.version, argv.name);
+  const tagArgs = tags.flatMap((tag) => ["-t", tag]);
+
+  const annotationArgs =
+    metadata?.annotations?.flatMap((annotation) => [
+      "--annotation",
+      annotation
+    ]) ?? [];
 
   const cacheFromArgs = cacheFromImage ? ["--cache-from", cacheFromImage] : [];
 
@@ -186,6 +206,7 @@ if (argv.build) {
       ...(argv.platform ? ["buildx"] : []),
       "build",
       ...tagArgs,
+      ...annotationArgs,
       ...cacheFromArgs,
       ...(argv.noCache ? ["--no-cache"] : []),
       ...(argv.platform ? ["--platform", argv.platform, "--push"] : []),

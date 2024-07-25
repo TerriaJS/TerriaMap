@@ -4,7 +4,7 @@ Date: 2020-03-02
 
 ## Status
 
-Accepted
+Superseded 2021-10-09 by decision to use yarn everywhere.
 
 ## Context
 

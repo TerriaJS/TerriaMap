@@ -1,12 +1,20 @@
+global:
+  rollingUpdate:
+    maxUnavailable: 0
+  exposeNodePorts: false
+  image:
+    repository:
+    tags:
+    pullPolicy:
 nodePort:
 image:
   # By default this pulls ghcr.io/terriajs/terrimap:latest
   # Set "full" to specify a custom terriamap image to be used
   # Or you can set "repository" or "tag" if required
   # full: "ghcr.io/terriajs/terriamap:0.1.1"
-  # repository: ghcr.io/terriajs
+  repository: ghcr.io/terriajs
   # tag: latest
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 clientConfig:
   initializationUrls:
     - helm
