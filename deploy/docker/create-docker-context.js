@@ -50,7 +50,7 @@ const argv = yargs
     },
     name: {
       description:
-        "The package name to use in auto tag generation. Will default to ''. Used to override the docker nanme config in package.json during the auto tagging. Requires --tag=auto",
+        "The package name to use in auto tag generation. Will default to ''. Used to override the docker name config in package.json during the auto tagging. Requires --tag=auto",
       type: "string",
       default: process.env.MAGDA_DOCKER_NAME
     },

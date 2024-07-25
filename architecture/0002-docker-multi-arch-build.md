@@ -31,11 +31,11 @@ If instead we can (on the build machine/VM):
 3. copy build artifacts and only production dependencies to the multi-arch
    docker image
 
-then **as long as production dependencies are portable**, we have very little
-computation being run on emulated architectures. The `create-docker-context.js`
-script allows us to do this, copying build artifacts and only production
-dependencies to an intermediate "context" folder which is then used to create
-the
+then **as long as production dependencies are portable**, we have a working
+multi-arch docker image with very little computation being run on emulated
+architectures. The `create-docker-context.js` script allows us to do this,
+copying build artifacts and only production dependencies to an intermediate
+"context" folder which is then used to create the image.
 
 Currently none of our production dependencies install non-portable binaries.
 
