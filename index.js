@@ -20,6 +20,8 @@ import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registe
 import defined from "terriajs-cesium/Source/Core/defined";
 import loadPlugins from "./lib/Core/loadPlugins";
 import plugins from "./plugins";
+import SentryErrorProvider from "./lib/Core/SentryErrorProvider";
+import SentryErrorServiceProvider from "./lib/Core/SentryErrorProvider";
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -68,6 +70,7 @@ module.exports = terria
     shareDataService: new ShareDataService({
       terria: terria
     }),
+    errorService: new SentryErrorProvider(),
     beforeRestoreAppState: () => {
       // Load plugins before restoring app state because app state may
       // reference plugin components and catalog items.

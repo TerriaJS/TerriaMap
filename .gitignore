@@ -29,3 +29,6 @@ yarn-error.log
 
 package-lock.json
 .nvmrc
+
+# Sentry Config File
+.env.sentry-build-plugin

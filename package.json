@@ -78,6 +78,8 @@
     "sass": "^1.66.1",
     "sass-loader": "^10",
     "semver": "^5.0.0",
+    "@sentry/react": "^8.22.0",
+    "@sentry/webpack-plugin": "^2.21.1",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "^6.0.11",
     "terriajs": "8.7.5",

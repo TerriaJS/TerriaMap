@@ -5,6 +5,7 @@ var configureWebpackForTerriaJS = require("terriajs/buildprocess/configureWebpac
 var configureWebpackForPlugins = require("./configureWebpackForPlugins");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var path = require("path");
+const { sentryWebpackPlugin } = require("@sentry/webpack-plugin");
 
 module.exports = function (devMode, hot) {
   var config = {
@@ -18,7 +19,7 @@ module.exports = function (devMode, hot) {
       sourcePrefix: "", // to avoid breaking multi-line string literals by inserting extra tabs.
       globalObject: "(self || window)" // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
     },
-    devtool: devMode ? "eval-cheap-module-source-map" : false,
+    devtool: "source-map",
     module: {
       rules: [
         {
@@ -148,6 +149,12 @@ module.exports = function (devMode, hot) {
         ignoreOrder: true,
         allChunks: true
       })
+      // sentryWebpackPlugin({
+      //   authToken: process.env.SENTRY_AUTH_TOKEN,
+      //   org: "lawrence-at",
+      //   project: "terriamap-example",
+      //   telemetry: false
+      // })
     ],
     resolve: {
       alias: {},
