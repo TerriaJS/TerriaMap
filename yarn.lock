@@ -10720,7 +10720,32 @@ terriajs-cesium-widgets@5.0.0:
     nosleep.js "^0.12.0"
     terriajs-cesium "^8.0.0"
 
-terriajs-cesium@8.0.0, terriajs-cesium@^8.0.0:
+terriajs-cesium@8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-8.0.1.tgz#2f7fb10d8f2d54258022a650d19fb1afe1a3a7d7"
+  integrity sha512-99sEp1DKC2g67QwRueE+EZxbOrI9nAw+LP5AsGBtJqr6cD+20Whkx3kMDweE4tjeBMWPjDMZbsbFbILbbSqqVw==
+  dependencies:
+    "@tweenjs/tween.js" "^23.1.1"
+    "@zip.js/zip.js" "^2.7.34"
+    autolinker "^4.0.0"
+    bitmap-sdf "^1.0.3"
+    dompurify "^3.0.2"
+    draco3d "^1.5.1"
+    earcut "^2.2.4"
+    grapheme-splitter "^1.0.4"
+    jsep "^1.3.8"
+    kdbush "^4.0.1"
+    ktx-parse "^0.6.0"
+    lerc "^2.0.0"
+    mersenne-twister "^1.1.0"
+    meshoptimizer "^0.20.0"
+    pako "^2.0.4"
+    protobufjs "^7.1.0"
+    rbush "^3.0.1"
+    topojson-client "^3.1.0"
+    urijs "^1.19.7"
+
+terriajs-cesium@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/terriajs-cesium/-/terriajs-cesium-8.0.0.tgz#7f83b5fa12014c2803f8e2513be3f1779913dd99"
   integrity sha512-YpNZh1fmBaRuyVQP1R6/0C5CfwwuVAGvJGgXSD1rSskjpynQ3MmRNi+YfqzsHxkkyUBEOtLFnzPxRYDAy/Id0w==
@@ -10791,10 +10816,10 @@ terriajs-server@^4.0.0:
     request-promise "^4.0.1"
     yargs "^13.2.4"
 
-terriajs@8.7.5:
-  version "8.7.5"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.7.5.tgz#e98ad29ee6dda8911ad032f6f4b23bcd8a0f81ec"
-  integrity sha512-0Z+iovNf6jDn1eCP1W5aFDWPrrnbn64ZqYzkR4qIN7xpZ2TnLR2RnhZq91MgOZZFg1TXqKWbsXHOVThQdtml3w==
+terriajs@8.7.6:
+  version "8.7.6"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.7.6.tgz#a808c0e7a8c37ddbdd4d323b4fd77269d33ebfb3"
+  integrity sha512-H6nIIZH1Ls7/00GS+8iUu2ecuji2ifHyIvaj6hQaPDacN5Jfu9fdShvTotjvbqP4O4o0Vw5QHEX5pIYVIhnlUg==
   dependencies:
     "@babel/core" "^7.23.5"
     "@babel/parser" "^7.23.5"
@@ -10952,7 +10977,7 @@ terriajs@8.7.5:
     style-loader "^0.23.1"
     styled-components "^5.3.9"
     svg-sprite-loader "^6.0.11"
-    terriajs-cesium "8.0.0"
+    terriajs-cesium "8.0.1"
     terriajs-cesium-widgets "5.0.0"
     terriajs-html2canvas "1.0.0-alpha.12-terriajs-1"
     thredds-catalog-crawler "0.0.7"
