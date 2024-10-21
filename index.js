@@ -81,6 +81,13 @@ module.exports = terria
     terria.raiseErrorToUser(e);
   })
   .finally(function () {
+    // Override the default document title with appName. Check first for default
+    // title, because user might have already customized the title in
+    // index.ejs
+    if (document.title === "Terria Map") {
+      document.title = terria.appName;
+    }
+
     terria.loadInitSources().then((result) => result.raiseError(terria));
 
     try {
