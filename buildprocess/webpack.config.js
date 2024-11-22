@@ -141,14 +141,14 @@ module.exports = function (devMode, hot) {
         }
       ]
     },
-    plugins: [
-      new MiniCssExtractPlugin({
-        filename: "TerriaMap.css",
-        disable: hot,
-        ignoreOrder: true,
-        allChunks: true
-      })
-    ],
+    plugins: hot
+      ? []
+      : [
+          new MiniCssExtractPlugin({
+            filename: "TerriaMap.css",
+            ignoreOrder: true
+          })
+        ],
     resolve: {
       alias: {},
       modules: ["node_modules"]
