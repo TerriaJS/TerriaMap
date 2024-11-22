@@ -85,7 +85,6 @@
     "terriajs-cesium": "8.0.1",
     "terriajs-plugin-api": "0.0.1-alpha.16",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
-    "ts-loader": "^5.3.3",
     "typescript": "~5.2.0",
     "urijs": "^1.18.12",
     "url-loader": "^1.1.2",
