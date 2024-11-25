@@ -39,7 +39,7 @@
     "@types/react": "^17.0.3",
     "@types/lodash": "4.14.182",
     "@types/node": "^18.15.11",
-    "@types/css-font-loading-module": "^0.0.13"
+    "@types/css-font-loading-module": "^0.0.14"
   },
   "devDependencies": {
     "@babel/core": "^7.23.5",
@@ -86,7 +86,7 @@
     "terriajs-plugin-api": "0.0.1-alpha.16",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
     "ts-loader": "^5.3.3",
-    "typescript": "~5.2.0",
+    "typescript": "^5.6.2",
     "urijs": "^1.18.12",
     "url-loader": "^1.1.2",
     "webpack": "~4.47.0",
