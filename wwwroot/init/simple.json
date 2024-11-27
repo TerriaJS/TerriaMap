@@ -762,7 +762,7 @@
   ],
   "viewerMode": "3dSmooth",
   "baseMaps": {
-    "defaultBaseMapId": "basemap-positron",
-    "previewBaseMapId": "basemap-positron"
+    "defaultBaseMapId": "basemap-openstreetmap",
+    "previewBaseMapId": "basemap-natural-earth-II"
   }
 }
