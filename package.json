@@ -38,7 +38,6 @@
     "underscore": "^1.12.1",
     "@types/react": "^17.0.3",
     "@types/lodash": "4.14.182",
-    "@types/node": "^18.15.11",
     "@types/css-font-loading-module": "^0.0.14"
   },
   "devDependencies": {
