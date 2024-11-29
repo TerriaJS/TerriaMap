@@ -1,5 +1,25 @@
 # Change Log
 
+#### 0.2.3
+
+**2024-11-29**
+
+- Updated TerriaJS to `8.7.10`
+  - Added OpenStreetMap as a default map
+  - Upgraded gulp to version 5
+    - Gulp 5 defaults to encoding copied files as utf-8, had turn off encoding by setting `encoding: false` to correctly copy binary assets from dependencies.
+  - Bunch of other packages upgraded, [see CHANGES](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md#8710---2024-11-29).
+
+### `0.2.2`
+
+**2024-11-22**
+
+- Updated TerriaJS to `8.7.9`.
+  - **Breaking changes:**
+    - Removed the basemaps - positron, darkmatter and black-marble - from the default settings. The Carto ones are no longer free and requires an [Enterprise or Grantee license](https://carto.com/basemaps). If you have the appropriate license you can add them via your [initialization file](https://docs.terria.io/guide/customizing/initialization-files/#basemaps). [Example configuration](https://gist.github.com/na9da/ef7871afee7cbe3d0a95e5b6351834c9).
+  - Added [I3SCatalogItem](https://docs.terria.io/guide/connecting-to-data/catalog-type-details/i3s/)
+  - Added [CogCatalogItem](https://docs.terria.io/guide/connecting-to-data/catalog-type-details/cog/)
+
 ### `0.2.1`
 
 **2024-08-07**
