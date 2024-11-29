@@ -60,17 +60,6 @@ module.exports = function (devMode, hot) {
                 ]
               }
             }
-            // Re-enable this if we need to observe any differences in the
-            // transpilation via ts-loader, & babel's stripping of types,
-            // or if TypeScript has newer features that babel hasn't
-            // caught up with
-            // {
-            //     loader: require.resolve('ts-loader'),
-            //     options: {
-            //          transpileOnly: true
-            //         // configFile: path.resolve(__dirname, '..', 'node_modules', 'terriajs', 'tsconfig.json')
-            //     }
-            // }
           ]
         },
         {
