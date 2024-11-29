@@ -19,7 +19,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: rm -rf node_modules && yarn install --frozen-lockfile
+      - run: |
+          npm install -g yarn@^1.19.0
+          yarn install --frozen-lockfile
       - run: yarn gulp lint release
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
