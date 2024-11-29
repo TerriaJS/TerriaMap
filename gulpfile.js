@@ -164,7 +164,7 @@ gulp.task("copy-terriajs-assets", function () {
   var destPath = path.resolve(__dirname, "wwwroot", "build", "TerriaJS");
 
   return gulp
-    .src([sourceGlob], { base: terriaWebRoot })
+    .src([sourceGlob], { base: terriaWebRoot, encoding: false })
     .pipe(gulp.dest(destPath));
 });
 

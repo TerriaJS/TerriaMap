@@ -60,7 +60,7 @@
     "fork-ts-checker-notifier-webpack-plugin": "^6.0.0",
     "fork-ts-checker-webpack-plugin": "^6.0.0",
     "fs-extra": "^7.0.1",
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.0",
     "husky": "^8.0.3",
     "is-subdir": "^1.2.0",
     "json5": "^2.1.0",
