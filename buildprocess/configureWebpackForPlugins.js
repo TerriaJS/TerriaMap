@@ -9,7 +9,7 @@ const fs = require("fs");
  * "terriajs-plugin-sample", "terriajs-sample-plugin" as well as
  * "terriajs-some-plugin-for-something".
  */
-const PluginPackagePattern = /^terriajs-.*plugin/;
+const PluginPackagePattern = /(^@terriajs\/plugin-*|^terriajs-.*plugin)/;
 
 function configureWebpackForPlugins(config) {
   config.module.rules.push(createPluginIconsRule());
@@ -71,9 +71,10 @@ function readPackageName(packageFile) {
         ? packageJson.name
         : undefined;
       return packageJsonNames[packageFile];
-    } catch {}
+    } catch {
+      return;
+    }
   }
-  return undefined;
 }
 
 module.exports = configureWebpackForPlugins;
