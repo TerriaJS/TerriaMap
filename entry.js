@@ -1,28 +1,11 @@
 import globeGif from "./lib/Styles/globe.gif";
 import polyfill from "terriajs/lib/Core/polyfill";
+import "./lib/Styles/loader.css";
 
-require("./lib/Styles/loader.css");
-
-function loadMainScript() {
-  // load the main chunk
-  return new Promise((resolve, reject) => {
-    require.ensure(
-      ["terriajs/lib/Core/prerequisites"],
-      function (require) {
-        require("terriajs/lib/Core/prerequisites");
-        require.ensure(
-          ["./index"],
-          function (require) {
-            resolve(require("./index"));
-          },
-          reject,
-          "index"
-        );
-      },
-      reject,
-      "index"
-    );
-  });
+async function loadMainScript() {
+  return import("terriajs/lib/Core/prerequisites")
+    .then(() => import("./index"))
+    .then(({ default: terriaPromise }) => terriaPromise);
 }
 
 function createLoader() {
@@ -46,7 +29,7 @@ function createLoader() {
 
   polyfill(function () {
     loadMainScript()
-      .catch(() => {
+      .catch((err) => {
         // Ignore errors and try to show the map anyway
       })
       .then(() => {

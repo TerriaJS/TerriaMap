@@ -1,31 +1,21 @@
-"use strict";
-
-var terriaOptions = {
-  baseUrl: "build/TerriaJS"
-};
-
-import { runInAction } from "mobx";
 import ConsoleAnalytics from "terriajs/lib/Core/ConsoleAnalytics";
 import GoogleAnalytics from "terriajs/lib/Core/GoogleAnalytics";
-import ShareDataService from "terriajs/lib/Models/ShareDataService";
-// import registerAnalytics from 'terriajs/lib/Models/registerAnalytics';
-import registerCustomComponentTypes from "terriajs/lib/ReactViews/Custom/registerCustomComponentTypes";
-import Terria from "terriajs/lib/Models/Terria";
-import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplicationOnHashChange";
-import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
-import ViewState from "terriajs/lib/ReactViewModels/ViewState";
-import render from "./lib/Views/render";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
 import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registerSearchProviders";
-import defined from "terriajs-cesium/Source/Core/defined";
+import ShareDataService from "terriajs/lib/Models/ShareDataService";
+import Terria from "terriajs/lib/Models/Terria";
+import ViewState from "terriajs/lib/ReactViewModels/ViewState";
+import registerCustomComponentTypes from "terriajs/lib/ReactViews/Custom/registerCustomComponentTypes";
+import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplicationOnHashChange";
+import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
 import loadPlugins from "./lib/Core/loadPlugins";
+import render from "./lib/Views/render";
+import showGlobalDisclaimer from "./lib/Views/showGlobalDisclaimer";
 import plugins from "./plugins";
 
-// Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
-// (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
-// the code in the registerCatalogMembers function here instead.
-// registerCatalogMembers();
-// registerAnalytics();
+const terriaOptions = {
+  baseUrl: "build/TerriaJS"
+};
 
 // we check exact match for development to reduce chances that production flag isn't set on builds(?)
 if (process.env.NODE_ENV === "development") {
@@ -35,33 +25,31 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
-var terria = new Terria(terriaOptions);
-
-// Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
-// insert your custom version of the code in the registerCustomComponentTypes function here instead.
-registerCustomComponentTypes(terria);
+const terria = new Terria(terriaOptions);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
   terria: terria
 });
 
+// Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
+// (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
+// the code in the registerCatalogMembers function here instead.
 registerCatalogMembers();
+
 // Register custom search providers in the core TerriaJS. If you only want to register a subset of them, or to add your own,
 // insert your custom version of the code in the registerSearchProviders function here instead.
 registerSearchProviders();
+
+// Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
+// insert your custom version of the code in the registerCustomComponentTypes function here instead.
+registerCustomComponentTypes(terria);
 
 if (process.env.NODE_ENV === "development") {
   window.viewState = viewState;
 }
 
-// If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
-// Note that if the first stylesheet stops being nationalmap.css then this will have to change.
-if (process.env.NODE_ENV !== "production" && module.hot) {
-  document.styleSheets[0].disabled = true;
-}
-
-module.exports = terria
+export default terria
   .start({
     applicationUrl: window.location,
     configUrl: "config.json",
@@ -88,6 +76,7 @@ module.exports = terria
       document.title = terria.appName;
     }
 
+    // Load init sources like init files and share links
     terria.loadInitSources().then((result) => result.raiseError(terria));
 
     try {
@@ -96,48 +85,8 @@ module.exports = terria
       updateApplicationOnMessageFromParentWindow(terria, window);
 
       // Show a modal disclaimer before user can do anything else.
-      if (defined(terria.configParameters.globalDisclaimer)) {
-        var globalDisclaimer = terria.configParameters.globalDisclaimer;
-        var hostname = window.location.hostname;
-        if (
-          globalDisclaimer.enableOnLocalhost ||
-          hostname.indexOf("localhost") === -1
-        ) {
-          var message = "";
-          // Sometimes we want to show a preamble if the user is viewing a site other than the official production instance.
-          // This can be expressed as a devHostRegex ("any site starting with staging.") or a negative prodHostRegex ("any site not ending in .gov.au")
-          if (
-            (defined(globalDisclaimer.devHostRegex) &&
-              hostname.match(globalDisclaimer.devHostRegex)) ||
-            (defined(globalDisclaimer.prodHostRegex) &&
-              !hostname.match(globalDisclaimer.prodHostRegex))
-          ) {
-            message += require("./lib/Views/DevelopmentDisclaimerPreamble.html");
-          }
-          message += require("./lib/Views/GlobalDisclaimer.html");
-
-          var options = {
-            title:
-              globalDisclaimer.title !== undefined
-                ? globalDisclaimer.title
-                : "Warning",
-            confirmText: globalDisclaimer.buttonTitle || "Ok",
-            denyText: globalDisclaimer.denyText || "Cancel",
-            denyAction: globalDisclaimer.afterDenyLocation
-              ? function () {
-                  window.location = globalDisclaimer.afterDenyLocation;
-                }
-              : undefined,
-            width: 600,
-            height: 550,
-            message: message,
-            horizontalPadding: 100
-          };
-          runInAction(() => {
-            viewState.disclaimerSettings = options;
-            viewState.disclaimerVisible = true;
-          });
-        }
+      if (terria.configParameters.globalDisclaimer !== undefined) {
+        showGlobalDisclaimer(viewState);
       }
 
       // Add font-imports
