@@ -1,7 +1,6 @@
-const globeGif = require("./lib/Styles/globe.gif");
-const polyfill = require("terriajs/lib/Core/polyfill");
-
-require("./lib/Styles/loader.css");
+import polyfill from "terriajs/lib/Core/polyfill";
+import globeGif from "./lib/Styles/globe.gif";
+import "./lib/Styles/loader.css";
 
 function loadMainScript() {
   // load the main chunk
