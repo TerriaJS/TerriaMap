@@ -189,7 +189,7 @@ gulp.task("lint", function (done) {
 
   runExternalModule("eslint/bin/eslint.js", [
     "-c",
-    path.join(getPackageRoot("terriajs"), ".eslintrc"),
+    path.join(getPackageRoot("terriajs"), ".eslintrc.js"),
     "--ignore-pattern",
     "lib/ThirdParty",
     "--max-warnings",
