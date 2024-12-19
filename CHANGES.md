@@ -1,5 +1,13 @@
 # Change Log
 
+#### 0.2.4
+
+**2024-12-19**
+
+- Updated TerriaJS to `8.7.11`
+  - Add `clampToGround` to `KmlCatalogItemTraits`
+  - Add `dataSourceUri` to `KmlCatalogItemTraits`
+
 #### 0.2.3
 
 **2024-11-29**
