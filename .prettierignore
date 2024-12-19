@@ -17,7 +17,6 @@ datasources/00_National_Data_Sets.json
 
 /wwwroot/editor/
 /error.log
-/error.log
 /output.log
 privateserverconfig.json
 wwwroot/privateconfig.json
@@ -34,7 +33,6 @@ package-lock.json
 
 # Generated files
 yarn.lock
-.yarn/releases/
 
 # wwwroot
 wwwroot/help/
