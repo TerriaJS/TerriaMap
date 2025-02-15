@@ -43,7 +43,8 @@ registerCustomComponentTypes(terria);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
-  terria: terria
+  terria: terria,
+  catalogSearchProvider: undefined
 });
 
 registerCatalogMembers();
