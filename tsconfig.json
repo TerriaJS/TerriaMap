@@ -1,3 +1,20 @@
 {
-  "extends": "terriajs/tsconfig.json"
+  "extends": "./node_modules/terriajs/tsconfig",
+  "compilerOptions": {
+    "outDir": "ts-out",
+    "maxNodeModuleJsDepth": 5,
+    "typeRoots": [
+      "./node_modules/",
+      "./node_modules/@types/",
+      "./node_modules/terriajs/lib/ThirdParty",
+      "../node_modules/",
+      "../node_modules/@types/",
+      "../../node_modules/",
+      "../../node_modules/@types/",
+      "../../../node_modules/",
+      "../../../node_modules/@types/"
+    ],
+    "types": ["global", "terriajs-cesium", "terriajs-cesium-extra"]
+  },
+  "include": ["./lib/**/*", "./buildprocess/**/*"]
 }

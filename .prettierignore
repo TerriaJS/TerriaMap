@@ -20,6 +20,7 @@ datasources/00_National_Data_Sets.json
 /error.log
 /output.log
 privateserverconfig.json
+ts-out/
 wwwroot/privateconfig.json
 deploy/packages/
 deploy/work/
