@@ -47,7 +47,7 @@ module.exports = function (devMode) {
                     }
                   ],
                   ["@babel/preset-react", { runtime: "automatic" }],
-                  ["@babel/typescript", { allowNamespaces: true }]
+                  ["@babel/preset-typescript", { allowNamespaces: true }]
                 ],
                 plugins: [
                   ["@babel/plugin-proposal-decorators", { legacy: true }],
