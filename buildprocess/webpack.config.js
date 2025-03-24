@@ -24,39 +24,6 @@ module.exports = function (devMode) {
       // following rules are for terriamap source files
       // rules for building terriajs are configured in configureWebpackForTerriaJS
       rules: [
-        // build source files
-        {
-          test: /\.(ts|js)x?$/,
-          include: [
-            path.resolve(__dirname, "..", "index.js"),
-            path.resolve(__dirname, "..", "entry.js"),
-            path.resolve(__dirname, "..", "plugins.ts"),
-            path.resolve(__dirname, "..", "lib")
-          ],
-          use: [
-            {
-              loader: "babel-loader",
-              options: {
-                cacheDirectory: true,
-                presets: [
-                  [
-                    "@babel/preset-env",
-                    {
-                      corejs: 3,
-                      useBuiltIns: "usage"
-                    }
-                  ],
-                  ["@babel/preset-react", { runtime: "automatic" }],
-                  ["@babel/typescript", { allowNamespaces: true }]
-                ],
-                plugins: [
-                  ["@babel/plugin-proposal-decorators", { legacy: true }],
-                  "babel-plugin-styled-components"
-                ]
-              }
-            }
-          ]
-        },
         // import html file as string
         {
           test: /\.html$/,
@@ -146,9 +113,17 @@ module.exports = function (devMode) {
     "../lib/Styles/variables-overrides.scss"
   );
 
+  const terriaJSBasePath = path.dirname(require.resolve("terriajs/package.json"));
+  const jsExtraPaths = [
+    path.resolve(__dirname, "..", "index.js"),
+    path.resolve(__dirname, "..", "entry.js"),
+    path.resolve(__dirname, "..", "plugins.ts"),
+    path.resolve(__dirname, "..", "lib")
+  ];
   return configureWebpackForPlugins(
     configureWebpackForTerriaJS({
-      terriaJSBasePath: path.dirname(require.resolve("terriajs/package.json")),
+      terriaJSBasePath,
+      jsExtraPaths,
       config,
       devMode,
       MiniCssExtractPlugin
