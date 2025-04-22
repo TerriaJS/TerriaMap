@@ -4499,250 +4499,492 @@
       "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
       "members": [
         {
-          "id": "solar",
+          "id": "heatmaps_v1_group",
           "type": "group",
-          "name": "Solar",
+          "name": "Heatmaps V1",
           "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
           "members": [
             {
               "type": "group",
-              "id": "solar_australia",
+              "id": "heatmaps_v1_australia",
               "name": "Australia",
               "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
               "members": [
                 {
-                  "type": "wms",
-                  "info": [
+                  "id": "solar_australia",
+                  "type": "group",
+                  "name": "Solar",
+                  "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
+                  "members": [
                     {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia solar overhead low-cost",
+                      "id": "australia_overhead_solar_low-cost_heatmap",
+                      "layers": "australia_overhead_solar_low-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     },
                     {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia solar overhead medium-cost",
+                      "id": "australia_overhead_solar_medium-cost_heatmap",
+                      "layers": "australia_overhead_solar_medium-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     },
                     {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia solar overhead high-cost",
+                      "id": "australia_overhead_solar_high-cost_heatmap",
+                      "layers": "australia_overhead_solar_high-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    },
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia solar underground low-cost",
+                      "id": "australia_underground_solar_low-cost_heatmap",
+                      "layers": "australia_underground_solar_low-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    },
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia solar underground medium-cost",
+                      "id": "australia_underground_solar_medium-cost_heatmap",
+                      "layers": "australia_underground_solar_medium-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    },
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia solar underground high-cost",
+                      "id": "australia_underground_solar_high-cost_heatmap",
+                      "layers": "australia_underground_solar_high-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "Australia solar overhead low-cost",
-                  "id": "australia_overhead_solar_low-cost_heatmap",
-                  "layers": "australia_overhead_solar_low-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  ]
                 },
                 {
-                  "type": "wms",
-                  "info": [
+                  "id": "wind_australia",
+                  "type": "group",
+                  "name": "Wind",
+                  "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
+                  "members": [
                     {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia wind overhead low-cost",
+                      "id": "australia_overhead_wind_low-cost_heatmap",
+                      "layers": "australia_overhead_wind_low-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     },
                     {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia wind overhead medium-cost",
+                      "id": "australia_overhead_wind_medium-cost_heatmap",
+                      "layers": "australia_overhead_wind_medium-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     },
                     {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia wind overhead high-cost",
+                      "id": "australia_overhead_wind_high-cost_heatmap",
+                      "layers": "australia_overhead_wind_high-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    },
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia wind underground low-cost",
+                      "id": "australia_underground_wind_low-cost_heatmap",
+                      "layers": "australia_underground_wind_low-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    },
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia wind underground medium-cost",
+                      "id": "australia_underground_wind_medium-cost_heatmap",
+                      "layers": "australia_underground_wind_medium-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    },
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "Australia wind underground high-cost",
+                      "id": "australia_underground_wind_high-cost_heatmap",
+                      "layers": "australia_underground_wind_high-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "Australia solar overhead medium-cost",
-                  "id": "australia_overhead_solar_medium-cost_heatmap",
-                  "layers": "australia_overhead_solar_medium-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
-                },
-                {
-                  "type": "wms",
-                  "info": [
-                    {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
-                    },
-                    {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
-                    },
-                    {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
-                    }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "Australia solar overhead high-cost",
-                  "id": "australia_overhead_solar_high-cost_heatmap",
-                  "layers": "australia_overhead_solar_high-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
-                },
-                {
-                  "type": "wms",
-                  "info": [
-                    {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
-                    },
-                    {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
-                    },
-                    {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
-                    }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "Australia solar underground low-cost",
-                  "id": "australia_underground_solar_low-cost_heatmap",
-                  "layers": "australia_underground_solar_low-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
-                },
-                {
-                  "type": "wms",
-                  "info": [
-                    {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
-                    },
-                    {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
-                    },
-                    {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
-                    }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "Australia solar underground medium-cost",
-                  "id": "australia_underground_solar_medium-cost_heatmap",
-                  "layers": "australia_underground_solar_medium-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
-                },
-                {
-                  "type": "wms",
-                  "info": [
-                    {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
-                    },
-                    {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
-                    },
-                    {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
-                    }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "Australia solar underground high-cost",
-                  "id": "australia_underground_solar_high-cost_heatmap",
-                  "layers": "australia_underground_solar_high-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  ]
                 }
               ]
             },
             {
               "type": "group",
-              "id": "solar_tas",
-              "name": "TAS",
+              "id": "heatmaps_v1_tasmania",
+              "name": "Tasmania",
               "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
               "members": [
                 {
-                  "type": "wms",
-                  "info": [
+                  "id": "solar_tas",
+                  "type": "group",
+                  "name": "Solar",
+                  "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
+                  "members": [
                     {
-                      "name": "Description",
-                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
-                    },
-                    {
-                      "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
-                    },
-                    {
-                      "name": "Access and acknowledgements",
-                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "TAS solar overhead low-cost",
+                      "id": "tas_overhead_solar_low-cost_heatmap",
+                      "layers": "tas_overhead_solar_low-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
                     }
-                  ],
-                  "infoSectionOrder": [
-                    "Disclaimer",
-                    "Description",
-                    "Access and acknowledgements"
-                  ],
-                  "opacity": 0.7,
-                  "tileErrorHandlingOptions": {
-                    "ignoreUnknownTileErrors": true
-                  },
-                  "name": "TAS solar overhead low-cost",
-                  "id": "tas_overhead_solar_low-cost_heatmap",
-                  "layers": "tas_overhead_solar_low-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  ]
+                },
+                {
+                  "id": "wind_tas",
+                  "type": "group",
+                  "name": "Wind",
+                  "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
+                  "members": [
+                    {
+                      "type": "wms",
+                      "info": [
+                        {
+                          "name": "Description",
+                          "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                        },
+                        {
+                          "name": "Disclaimer",
+                          "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                        },
+                        {
+                          "name": "Access and acknowledgements",
+                          "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                        }
+                      ],
+                      "infoSectionOrder": [
+                        "Disclaimer",
+                        "Description",
+                        "Access and acknowledgements"
+                      ],
+                      "opacity": 0.7,
+                      "tileErrorHandlingOptions": {
+                        "ignoreUnknownTileErrors": true
+                      },
+                      "name": "TAS wind overhead low-cost",
+                      "id": "tas_overhead_wind_low-cost_heatmap",
+                      "layers": "tas_overhead_wind_low-cost_heatmap",
+                      "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "id": "wind",
+          "id": "heatmaps_v2_group",
           "type": "group",
-          "name": "Wind",
-          "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
+          "name": "Heatmaps V2",
+          "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in USD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas, including urban areas, national parks and native forests, are shown in green.\n\nHeatmaps were initially released in December 2022 and updated in October 2024. Heatmaps V2 are based on latest cost and transmission information. Heatmaps are currently available for Australia, Indonesia and South Korea, with Australian heatmaps also including land tenure and land use information at a higher resolution of 50 meters by 50 meters.\n",
           "members": [
             {
               "type": "group",
-              "id": "wind_australia",
+              "id": "heatmaps_v2_australia",
               "name": "Australia",
-              "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
+              "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in USD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas, including urban areas, national parks and native forests, are shown in green.\n\nHeatmaps were initially released in December 2022 and updated in October 2024. Heatmaps V2 are based on latest cost and transmission information. Heatmaps are currently available for Australia, Indonesia and South Korea, with Australian heatmaps also including land tenure and land use information at a higher resolution of 50 meters by 50 meters.\n",
               "members": [
                 {
                   "type": "wms",
@@ -4753,7 +4995,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4770,9 +5012,9 @@
                     "ignoreUnknownTileErrors": true
                   },
                   "name": "Australia wind overhead low-cost",
-                  "id": "australia_overhead_wind_low-cost_heatmap",
-                  "layers": "australia_overhead_wind_low-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  "id": "wind_overhead_low_LGA",
+                  "layers": "wind_overhead_low_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
                   "type": "wms",
@@ -4783,7 +5025,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4800,9 +5042,9 @@
                     "ignoreUnknownTileErrors": true
                   },
                   "name": "Australia wind overhead medium-cost",
-                  "id": "australia_overhead_wind_medium-cost_heatmap",
-                  "layers": "australia_overhead_wind_medium-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  "id": "wind_overhead_mid_LGA",
+                  "layers": "wind_overhead_mid_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
                   "type": "wms",
@@ -4813,7 +5055,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4830,9 +5072,9 @@
                     "ignoreUnknownTileErrors": true
                   },
                   "name": "Australia wind overhead high-cost",
-                  "id": "australia_overhead_wind_high-cost_heatmap",
-                  "layers": "australia_overhead_wind_high-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  "id": "wind_overhead_high_LGA",
+                  "layers": "wind_overhead_high_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
                   "type": "wms",
@@ -4843,7 +5085,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4860,9 +5102,9 @@
                     "ignoreUnknownTileErrors": true
                   },
                   "name": "Australia wind underground low-cost",
-                  "id": "australia_underground_wind_low-cost_heatmap",
-                  "layers": "australia_underground_wind_low-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  "id": "wind_underground_low_LGA",
+                  "layers": "wind_underground_low_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
                   "type": "wms",
@@ -4873,7 +5115,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4890,9 +5132,9 @@
                     "ignoreUnknownTileErrors": true
                   },
                   "name": "Australia wind underground medium-cost",
-                  "id": "australia_underground_wind_medium-cost_heatmap",
-                  "layers": "australia_underground_wind_medium-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  "id": "wind_underground_mid_LGA",
+                  "layers": "wind_underground_mid_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
                   "type": "wms",
@@ -4903,7 +5145,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4920,18 +5162,10 @@
                     "ignoreUnknownTileErrors": true
                   },
                   "name": "Australia wind underground high-cost",
-                  "id": "australia_underground_wind_high-cost_heatmap",
-                  "layers": "australia_underground_wind_high-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
-                }
-              ]
-            },
-            {
-              "type": "group",
-              "id": "wind_tas",
-              "name": "TAS",
-              "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
-              "members": [
+                  "id": "wind_underground_high_LGA",
+                  "layers": "wind_underground_high_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
                 {
                   "type": "wms",
                   "info": [
@@ -4941,7 +5175,7 @@
                     },
                     {
                       "name": "Disclaimer",
-                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
                     },
                     {
                       "name": "Access and acknowledgements",
@@ -4957,50 +5191,628 @@
                   "tileErrorHandlingOptions": {
                     "ignoreUnknownTileErrors": true
                   },
-                  "name": "TAS wind overhead low-cost",
-                  "id": "tas_overhead_wind_low-cost_heatmap",
-                  "layers": "tas_overhead_wind_low-cost_heatmap",
-                  "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+                  "name": "Australia solar overhead low-cost",
+                  "id": "solar_overhead_low_LGA",
+                  "layers": "solar_overhead_low_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Australia solar overhead medium-cost",
+                  "id": "solar_overhead_mid_LGA",
+                  "layers": "solar_overhead_mid_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Australia solar overhead high-cost",
+                  "id": "solar_overhead_high_LGA",
+                  "layers": "solar_overhead_high_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Australia solar underground low-cost",
+                  "id": "solar_underground_low_LGA",
+                  "layers": "solar_underground_low_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Australia solar underground medium-cost",
+                  "id": "solar_underground_mid_LGA",
+                  "layers": "solar_underground_mid_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Australia solar underground high-cost",
+                  "id": "solar_underground_high_LGA",
+                  "layers": "solar_underground_high_LGA",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "landuse",
-          "type": "group",
-          "name": "Landuse",
-          "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in AUD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The example below shows the area around Tamworth for the low-cost, overhead transmission line scenario for solar farms. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas within urban areas and the surrounding National Parks are shown in green.\n",
-          "members": [
+            },
             {
-              "type": "wms",
-              "info": [
+              "type": "group",
+              "id": "heatmaps_v2_indonesia",
+              "name": "Indonesia",
+              "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in USD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas, including urban areas, national parks and native forests, are shown in green.\n\nHeatmaps were initially released in December 2022 and updated in October 2024. Heatmaps V2 are based on latest cost and transmission information. Heatmaps are currently available for Australia, Indonesia and South Korea, with Australian heatmaps also including land tenure and land use information at a higher resolution of 50 meters by 50 meters.\n",
+              "members": [
                 {
-                  "name": "Description",
-                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Indonesia solar overhead low-cost",
+                  "id": "Indonesia_low_cost",
+                  "layers": "Indonesia_low_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
-                  "name": "Disclaimer",
-                  "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas (which are marked as \u201cUnsuitable\u201d and assigned a value of 0 in the maps), and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included except for Tasmania (220 kV).\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Indonesia solar overhead medium-cost",
+                  "id": "Indonesia_mid_cost",
+                  "layers": "Indonesia_mid_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 },
                 {
-                  "name": "Access and acknowledgements",
-                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "Indonesia solar overhead high-cost",
+                  "id": "Indonesia_high_cost",
+                  "layers": "Indonesia_high_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
                 }
-              ],
-              "infoSectionOrder": [
-                "Disclaimer",
-                "Description",
-                "Access and acknowledgements"
-              ],
-              "opacity": 0.7,
-              "tileErrorHandlingOptions": {
-                "ignoreUnknownTileErrors": true
-              },
-              "name": "Heatmaps V2",
-              "id": "heatmaps_v2",
-              "layers": "composite_3bands_clip",
-              "url": "https://re100.anu.edu.au/geoserver/TimTest/wms"
+              ]
+            },
+            {
+              "type": "group",
+              "id": "heatmaps_v2_southkorea",
+              "name": "South Korea",
+              "description": "\nSolar and wind play major roles in decarbonising the energy system. But where are the best sites?\n\nIn our high-resolution heat maps, an indicative cost of electricity (in USD/MWh) is calculated for each pixel (1km x 1km for solar and 250m x 250m for wind), comprising the cost of energy from a solar/wind farm PLUS an associated powerline connecting the solar/wind farm to the existing and planned high voltage transmission network.\n\nAccess to transmission is currently the largest constraint for solar/wind farms. Heat maps identify the potential of all prospective areas close to the transmission network and are much more useful than solar and wind data alone.\n\nOur heat maps provide detailed qualitative and quantitative information about prospective places for solar and wind farms. They balance knowledge between developers and landholders. They empower landholders and local Government to identify prospective area and facilitate collective bargaining with developers.\n\nThe maps use colours to show the lowest indicative costs for wind or solar. The lowest indicative cost is in red, pink shows the second lowest costs, and the unsuitable areas, including urban areas, national parks and native forests, are shown in green.\n\nHeatmaps were initially released in December 2022 and updated in October 2024. Heatmaps V2 are based on latest cost and transmission information. Heatmaps are currently available for Australia, Indonesia and South Korea, with Australian heatmaps also including land tenure and land use information at a higher resolution of 50 meters by 50 meters.\n",
+              "members": [
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea wind overhead low-cost",
+                  "id": "wind_low_cost",
+                  "layers": "wind_low_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea wind overhead medium-cost",
+                  "id": "wind_mid_cost",
+                  "layers": "wind_mid_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea wind overhead high-cost",
+                  "id": "wind_high_cost",
+                  "layers": "wind_high_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea wind underground low-cost",
+                  "id": "wind_low_cost_UG",
+                  "layers": "wind_low_cost_UG",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea wind underground medium-cost",
+                  "id": "wind_mid_cost_UG",
+                  "layers": "wind_low_cost_UG",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea wind underground high-cost",
+                  "id": "wind_high_cost_UG",
+                  "layers": "wind_high_cost_UG",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea solar overhead low-cost",
+                  "id": "solar_low_cost",
+                  "layers": "solar_low_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea solar overhead medium-cost",
+                  "id": "solar_mid_cost",
+                  "layers": "solar_mid_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea solar overhead high-cost",
+                  "id": "solar_high_cost",
+                  "layers": "solar_high_cost",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea solar underground low-cost",
+                  "id": "solar_low_cost_UG",
+                  "layers": "solar_low_cost_UG",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea solar underground medium-cost",
+                  "id": "solar_mid_cost_UG",
+                  "layers": "solar_low_cost_UG",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                },
+                {
+                  "type": "wms",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the solar or wind sites discussed in this study have been the subject of any other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy. The publicly available datasets used for this work contain inaccuracies \u2013 results should be viewed as indicative.\n\nThere has been no detailed investigation of land tenure and no discussions with land owners and managers. The heat maps do not imply any rights for development at any location. Accuracy of the sites depends on the accuracy of the source data. The indicative costs are assumed to be constant within a pixel, which is 1km x 1km for solar heat maps and 250m x 250m for wind heat maps. There may be pixels that are not marked as \u201cUnsuitable\u201d in the heat maps but fall into protected areas or urban areas that are not identified by the source data.\n\nOnly transmission lines with rating 275kV and higher were included.\nTransmission constraints were not included in the study. Substation costs were not included in\nindicative costs."
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements"
+                  ],
+                  "opacity": 0.7,
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "name": "South Korea solar underground high-cost",
+                  "id": "solar_high_cost_UG",
+                  "layers": "solar_high_cost_UG",
+                  "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+                }
+              ]
             }
           ]
         }
@@ -5155,12 +5967,424 @@
               "tileErrorHandlingOptions": {
                 "ignoreUnknownTileErrors": true
               },
-              "name": "Australia Transmission",
+              "name": "Australia Transmission (Heatmaps V1)",
               "id": "australia_transmission",
               "layers": "heat_map_transmission",
               "url": "https://re100.anu.edu.au/geoserver/heatmaps/wms"
+            },
+            {
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Description",
+                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                },
+                {
+                  "name": "Disclaimer",
+                  "content": ""
+                },
+                {
+                  "name": "Access and acknowledgements",
+                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                }
+              ],
+              "infoSectionOrder": [
+                "Disclaimer",
+                "Description",
+                "Access and acknowledgements"
+              ],
+              "opacity": 1,
+              "featureInfoTemplate": {
+                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "name": "Australia High Voltage Transmission (Heatmaps V2)",
+              "id": "australia_transmission_v2",
+              "layers": "AUS_transmission_network_v2",
+              "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+            },
+            {
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Description",
+                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                },
+                {
+                  "name": "Disclaimer",
+                  "content": ""
+                },
+                {
+                  "name": "Access and acknowledgements",
+                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                }
+              ],
+              "infoSectionOrder": [
+                "Disclaimer",
+                "Description",
+                "Access and acknowledgements"
+              ],
+              "opacity": 1,
+              "featureInfoTemplate": {
+                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "name": "Indonesia High Voltage Transmission (Heatmaps V2)",
+              "id": "indonesia_transmission_v2",
+              "layers": "IDN_transmission_network",
+              "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+            },
+            {
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Description",
+                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                },
+                {
+                  "name": "Disclaimer",
+                  "content": ""
+                },
+                {
+                  "name": "Access and acknowledgements",
+                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                }
+              ],
+              "infoSectionOrder": [
+                "Disclaimer",
+                "Description",
+                "Access and acknowledgements"
+              ],
+              "opacity": 1,
+              "featureInfoTemplate": {
+                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "name": "South Korea High Voltage Transmission (Heatmaps V2)",
+              "id": "kor_transmission_v2",
+              "layers": "KOR_transmission_network",
+              "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
             }
           ]
+        },
+        {
+          "id": "load_center",
+          "type": "group",
+          "name": "Load Centers (population > 250,000)",
+          "description": "",
+          "members": [
+            {
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Description",
+                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                },
+                {
+                  "name": "Disclaimer",
+                  "content": ""
+                },
+                {
+                  "name": "Access and acknowledgements",
+                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                }
+              ],
+              "infoSectionOrder": [
+                "Disclaimer",
+                "Description",
+                "Access and acknowledgements"
+              ],
+              "opacity": 1,
+              "featureInfoTemplate": {
+                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "name": "Australia Load Centers",
+              "id": "australia_load_center",
+              "layers": "AUS_load_centers_v2",
+              "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+            },
+            {
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Description",
+                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                },
+                {
+                  "name": "Disclaimer",
+                  "content": ""
+                },
+                {
+                  "name": "Access and acknowledgements",
+                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                }
+              ],
+              "infoSectionOrder": [
+                "Disclaimer",
+                "Description",
+                "Access and acknowledgements"
+              ],
+              "opacity": 1,
+              "featureInfoTemplate": {
+                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "name": "Indonesia Load Centers",
+              "id": "indonesia_load_center",
+              "layers": "IDN_load_centers",
+              "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+            },
+            {
+              "type": "wms",
+              "info": [
+                {
+                  "name": "Description",
+                  "content": "This information has been developed by the 100% Renewable Energy group from the School of Engineering at the Australia National University.  http://re100.eng.anu.edu.au"
+                },
+                {
+                  "name": "Disclaimer",
+                  "content": ""
+                },
+                {
+                  "name": "Access and acknowledgements",
+                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                }
+              ],
+              "infoSectionOrder": [
+                "Disclaimer",
+                "Description",
+                "Access and acknowledgements"
+              ],
+              "opacity": 1,
+              "featureInfoTemplate": {
+                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "name": "South Korea Load Centers",
+              "id": "korea_load_center",
+              "layers": "KOR_load_centers",
+              "url": "https://re100.anu.edu.au/geoserver/heatmaps_v2/wms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pvdeh",
+      "type": "group",
+      "name": "PV-DEH Atlas",
+      "description": "<strong>An Atlas of On-Site PV for Large-Scale Industrial Heat Supply</strong><br><br>This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description.",
+      "members": [
+        {
+          "type": "wms",
+          "info": [
+            {
+              "name": "Description",
+              "content": "This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description."
+            },
+            {
+              "name": "Disclaimer",
+              "content": ""
+            },
+            {
+              "name": "Access and acknowledgements",
+              "content": "In publications that use this information please acknowledge the Australian National University."
+            }
+          ],
+          "infoSectionOrder": [
+            "Disclaimer",
+            "Description",
+            "Access and acknowledgements"
+          ],
+          "opacity": 1,
+          "featureInfoTemplate": {
+            "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+          },
+          "tileErrorHandlingOptions": {
+            "ignoreUnknownTileErrors": true
+          },
+          "name": "An Atlas of On-Site PV for Large-Scale Industrial Heat Supply (high-density)",
+          "id": "pvdeh_200",
+          "layers": "PVDEH_atlas_200",
+          "url": "https://re100.anu.edu.au/geoserver/pvdeh/wms"
+        },
+        {
+          "type": "wms",
+          "info": [
+            {
+              "name": "Description",
+              "content": "This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description."
+            },
+            {
+              "name": "Disclaimer",
+              "content": ""
+            },
+            {
+              "name": "Access and acknowledgements",
+              "content": "In publications that use this information please acknowledge the Australian National University."
+            }
+          ],
+          "infoSectionOrder": [
+            "Disclaimer",
+            "Description",
+            "Access and acknowledgements"
+          ],
+          "opacity": 1,
+          "featureInfoTemplate": {
+            "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+          },
+          "tileErrorHandlingOptions": {
+            "ignoreUnknownTileErrors": true
+          },
+          "name": "An Atlas of On-Site PV for Large-Scale Industrial Heat Supply (low-density)",
+          "id": "pvdeh_60",
+          "layers": "PVDEH_atlas_60",
+          "url": "https://re100.anu.edu.au/geoserver/pvdeh/wms"
+        },
+        {
+          "type": "wms",
+          "info": [
+            {
+              "name": "Description",
+              "content": "This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description."
+            },
+            {
+              "name": "Disclaimer",
+              "content": ""
+            },
+            {
+              "name": "Access and acknowledgements",
+              "content": "In publications that use this information please acknowledge the Australian National University."
+            }
+          ],
+          "infoSectionOrder": [
+            "Disclaimer",
+            "Description",
+            "Access and acknowledgements"
+          ],
+          "opacity": 1,
+          "featureInfoTemplate": {
+            "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+          },
+          "tileErrorHandlingOptions": {
+            "ignoreUnknownTileErrors": true
+          },
+          "name": "Site boundary",
+          "id": "boundary",
+          "layers": "PVDEH_boundary",
+          "url": "https://re100.anu.edu.au/geoserver/pvdeh/wms"
+        },
+        {
+          "type": "wms",
+          "info": [
+            {
+              "name": "Description",
+              "content": "This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description."
+            },
+            {
+              "name": "Disclaimer",
+              "content": ""
+            },
+            {
+              "name": "Access and acknowledgements",
+              "content": "In publications that use this information please acknowledge the Australian National University."
+            }
+          ],
+          "infoSectionOrder": [
+            "Disclaimer",
+            "Description",
+            "Access and acknowledgements"
+          ],
+          "opacity": 1,
+          "featureInfoTemplate": {
+            "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+          },
+          "tileErrorHandlingOptions": {
+            "ignoreUnknownTileErrors": true
+          },
+          "name": "Building rooftop (OSM)",
+          "id": "building",
+          "layers": "PVDEH_building",
+          "url": "https://re100.anu.edu.au/geoserver/pvdeh/wms"
+        },
+        {
+          "type": "wms",
+          "info": [
+            {
+              "name": "Description",
+              "content": "This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description."
+            },
+            {
+              "name": "Disclaimer",
+              "content": ""
+            },
+            {
+              "name": "Access and acknowledgements",
+              "content": "In publications that use this information please acknowledge the Australian National University."
+            }
+          ],
+          "infoSectionOrder": [
+            "Disclaimer",
+            "Description",
+            "Access and acknowledgements"
+          ],
+          "opacity": 1,
+          "featureInfoTemplate": {
+            "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+          },
+          "tileErrorHandlingOptions": {
+            "ignoreUnknownTileErrors": true
+          },
+          "name": "Parking area (OSM)",
+          "id": "parking",
+          "layers": "PVDEH_parking",
+          "url": "https://re100.anu.edu.au/geoserver/pvdeh/wms"
+        },
+        {
+          "type": "wms",
+          "info": [
+            {
+              "name": "Description",
+              "content": "This dataset is produced as part of the ARENA-funded “Low-Cost Integration of On-Site PV for Large-Scale Industrial Heat Supply” (PV-DEH) project. Its main purpose is to identify and evaluate the potential for solar photovoltaic direct electric heating (PV-DEH) across Australian industrial facilities requiring process heat above 150 degrees.<br><br>The GIS dataset includes point features representing industrial sites sourced primarily from the Australian National Pollutant Inventory (NPI), supplemented with Scope1 emissions data from the Safeguard Mechanism for selected larger emitters.<br><br>Each site in this dataset is attributed with estimated onsite solar capacity (rooftops, carparks, and open land) as well as offsite PV resource potential within specified radii (e.g. 5km, 10km, 20km, and 50km). Where available, facility-level emissions and approximate process heat demand are included for assessing the feasibility and scale of transitioning to solar-driven industrial heating. Users should note that the data is high-level and approximate; it is intended to guide further investigation rather than serve as a definitive feasibility study.<br><br>Click <a href='https://www.dropbox.com/scl/fi/ao19tkl10w7ckv1p17spe/README.pdf?rlkey=vmh69ex2xcqlt718825f3d7yk&st=j3t0x24g&dl=0' target='_blank'>here</a> to view the detailed data description."
+            },
+            {
+              "name": "Disclaimer",
+              "content": ""
+            },
+            {
+              "name": "Access and acknowledgements",
+              "content": "In publications that use this information please acknowledge the Australian National University."
+            }
+          ],
+          "infoSectionOrder": [
+            "Disclaimer",
+            "Description",
+            "Access and acknowledgements"
+          ],
+          "opacity": 1,
+          "featureInfoTemplate": {
+            "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+          },
+          "tileErrorHandlingOptions": {
+            "ignoreUnknownTileErrors": true
+          },
+          "name": "Manual assessment (only available for selected sites)",
+          "id": "manual",
+          "layers": "PVDEH_manual",
+          "url": "https://re100.anu.edu.au/geoserver/pvdeh/wms"
         }
       ]
     }
