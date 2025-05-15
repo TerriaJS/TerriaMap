@@ -93,7 +93,7 @@
     "start": "terriajs-server --config-file serverconfig.json",
     "gulp": "gulp",
     "postinstall": "echo 'Installation successful. What to do next:\\n  yarn gulp dev   # Starts the server on port 3001, builds TerriaMap and dependencies, and rebuilds if files change.'",
-    "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
+    "hot": "webpack-dev-server --config buildprocess/webpack.config.js --hot --host 0.0.0.0",
     "prettier": "prettier --write .",
     "prettier-check": "prettier --check ."
   }

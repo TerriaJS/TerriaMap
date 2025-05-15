@@ -82,6 +82,7 @@
       {
         "id": "search-provider/cesium-ion",
         "type": "cesium-ion-search-provider",
+        "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiMDFhODNmNC01ZjdlLTQ1ZjEtYTJjZS1lMjE5NTA2MDRjNDUiLCJpZCI6Mjk0NDAyLCJpYXQiOjE3NDQ3NDg0MTd9.6yBrEwtWWI5z4TvV61YdGb_yePOWayqCZgI3LskV9Ao",
         "name": "translate#viewModels.searchLocations",
         "flightDurationSeconds": 1.5,
         "minCharacters": 3

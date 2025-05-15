@@ -19,7 +19,35 @@ module.exports = function (devMode) {
       globalObject: "(self || window)" // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
     },
     devtool: devMode ? "eval-cheap-module-source-map" : false,
-
+    devServer: {
+      static: {
+        directory: path.resolve(__dirname, "..", "wwwroot")
+      },
+      hot: true,
+      host: "0.0.0.0",
+      historyApiFallback: true, // Importante para SPAs y rutas de cliente
+      proxy: [
+        {
+          context: [
+            "/api",
+            "/init",
+            "/serverconfig.json",
+            "/upload",
+            "/shp",
+            "/terriajs-server",
+            // Directorios adicionales que podrían necesitar proxy en TerriaMap
+            "/data",
+            "/images",
+            "/fonts",
+            "/favicons",
+            "/help"
+          ],
+          target: "http://localhost:3001", // Puerto estándar para terriajs-server
+          secure: false,
+          changeOrigin: true
+        }
+      ]
+    },
     module: {
       // following rules are for terriamap source files
       // rules for building terriajs are configured in configureWebpackForTerriaJS
