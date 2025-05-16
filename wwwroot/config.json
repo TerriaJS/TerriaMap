@@ -41,7 +41,7 @@
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/twIN-logo-RGB-72-ppp-white.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"#\"><img src=\"images/twIN-logo-RGB-72-ppp-white.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     // Shown when things go wrong.
@@ -69,11 +69,12 @@
     // "showInAppGuides": false,
     // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
-      "enabled": false,
+      "enabled": true,
       "debug": false,
       "languages": {
         "en": "English",
-        "fr": "Français"
+        "fr": "Français",
+        "es": "Español"
       },
       "fallbackLanguage": "en"
     },
@@ -335,7 +336,7 @@
     //   {
     //       term: "dataset",
     //       aliases: ["data set", "data sets", "datasets"],
-    //       content: "A collection of related information, organised as one using a common data structure, e.g. \"average house prices in Sydney for 2019\" or \"minimum and maximum daily temperature\""
+    //       content: "A collection of related information, organised as one using a common data structure, e.g. \"average house prices in Pamplona for 2019\" or \"minimum and maximum daily temperature\""
     //   },
     //   {
     //       term: "time series",

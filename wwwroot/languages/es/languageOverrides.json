@@ -1,0 +1,158 @@
+{
+  "gettingstarted": {
+    "title": "Primeros pasos con el mapa",
+    "markdownText": "## Primeros pasos con el mapa\n\nSi es nuevo en el uso del mapa o de datos espaciales, nuestro video de introducción cubre rápidamente la funcionalidad básica que necesitará para agregar e interrogar conjuntos de datos.\n\nSi no tiene tiempo para ver el video, le sugerimos explorar las siguientes áreas:\n\n1. Busque una ubicación para encontrar rápidamente un área de interés\n2. Use 'Explorar datos del mapa' para ver el catálogo de conjuntos de datos disponibles y agregarlos al mapa\n3. Interactúe con la capa de datos, incluyendo la opacidad y activación/desactivación a la izquierda en su panel de trabajo\n4. Haga clic en los datos en el mapa para ver información más detallada, incluyendo los datos sin procesar\n5. Cambie su mapa base usando las opciones en 'Configuración del mapa' para ayudar a que algunos conjuntos de datos sean más visibles\n6. Haga zoom y cambie su vista, incluyendo la inclinación del ángulo de visión usando los controles en el lado derecho de la pantalla",
+    "videoUrl": "https://www.youtube-nocookie.com/embed/FjSxaviSLhc",
+    "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
+  },
+  "stepbystepguide": {
+    "title": "Guía paso a paso",
+    "markdownText": "## Guía paso a paso\n\nInicie una guía paso a paso para varios flujos de trabajo populares a continuación:",
+    "gettingstarted": {
+      "title": "Primeros pasos con el mapa",
+      "step1": {
+        "markdownDescription": "La búsqueda está en la parte superior del panel de trabajo, a la izquierda.",
+        "title": "Busque una ubicación para encontrar un área de interés"
+      },
+      "step2": {
+        "markdownDescription": "Puede ver el catálogo en cualquier momento",
+        "title": "Use \"Explorar\" para ver el catálogo de datos"
+      },
+      "step3": {
+        "markdownDescription": "Encuentre un conjunto de datos de interés",
+        "title": "Busque datos o navegue por el catálogo"
+      },
+      "step4": {
+        "title": "Agregue datos al mapa haciendo clic en el signo + o en el botón \"Agregar al mapa\" en la ventana de vista previa",
+        "markdownDescription": ""
+      },
+      "step5": {
+        "title": "Interactúe con los datos, incluyendo la opacidad y activación/desactivación a la izquierda en su panel de trabajo"
+      },
+      "step6": {
+        "title": "Haga clic en los datos del mapa para ver más detalles activando el panel de Información de Característica"
+      },
+      "step7": {
+        "title": "Cambie su mapa base usando las opciones en \"Configuración del mapa\" para mejorar el contraste"
+      },
+      "step8": {
+        "title": "Haga zoom y cambie la vista usando los controles en el lado derecho de la pantalla"
+      }
+    },
+    "satelliteimagery": {
+      "title": "Agregar imágenes satelitales",
+      "footnote": "Importante: Las imágenes satelitales pueden tardar un poco en cargarse, así que sea paciente. Si las imágenes no parecen cargarse, aleje un poco el zoom",
+      "step1": {
+        "title": "Encuentre la ubicación para ver imágenes satelitales",
+        "markdownDescription": "- Use la búsqueda de ubicación o haga zoom y desplácese por el mapa con el mouse o los controles de zoom"
+      },
+      "step2": {
+        "title": "Agregue las imágenes satelitales al mapa",
+        "markdownDescription": "- Abra el catálogo de datos usando el botón \"Explorar datos del mapa\"\n- Navegue por los conjuntos de datos para seleccionar su opción de satélite: Landsat o Sentinel, e imágenes diarias o compuestas. Esto puede depender de la resolución de la imagen que necesite (10m o 25m) y si desea imágenes diarias, compuestas de 16 días o promedio anual\n - Seleccione \"Agregar al mapa\" para ver las imágenes satelitales"
+      },
+      "step3": {
+        "title": "Filtre imágenes para encontrar imágenes satelitales",
+        "markdownDescription": "- Filtre imágenes por ubicación para encontrar rápidamente imágenes satelitales para esa ubicación\n - Los satélites orbitan el globo terráqueo muchas veces al día. Puede esperar que haya imágenes satelitales disponibles para una ubicación cada dos semanas\n - Si aún no ha seleccionado su punto de interés en el mapa, haga zoom para seleccionar uno. Verá el filtro aplicado en azul en el Panel de trabajo a la izquierda"
+      },
+      "step4": {
+        "title": "Seleccione una hora y fecha",
+        "markdownDescription": "- Use el selector de fecha para seleccionar una hora y fecha. Retroceda por años anteriores usando la flecha hacia atrás\n - Elija otra fecha si su imagen está oscurecida por nubes. Puede avanzar y retroceder rápidamente usando las flechas junto al selector de fecha"
+      }
+    },
+    "comparetimeseries": {
+      "title": "Ver y comparar diferentes momentos en el tiempo",
+      "footnote": "Importante: Cualquier dato de serie temporal se puede comparar usando el Modo Pantalla Dividida, no solo imágenes satelitales",
+      "step1": {
+        "title": "Agregue un conjunto de datos de serie temporal al mapa",
+        "markdownDescription": "- Las imágenes satelitales son un buen ejemplo de datos de series temporales, con muchos satélites que se remontan a décadas\n- Encuentre su ubicación de interés y filtre las imágenes disponibles por esta ubicación\n-Consulte nuestra guía Agregar Imágenes Satelitales al Mapa para más información"
+      },
+      "step2": {
+        "title": "Seleccione la hora y la fecha",
+        "markdownDescription": "- En el panel de trabajo a la izquierda, seleccione la hora y la fecha, lo que abrirá el selector de fecha\n- Seleccione un año, mes y día, o navegue hacia atrás a otros años e incluso siglos usando la flecha hacia atrás\n- Las fechas disponibles aparecen en azul"
+      },
+      "step3": {
+        "title": "Compare diferentes fechas en una ubicación",
+        "markdownDescription": "- Desde el menú desplegable de los 3 puntos en el panel de trabajo, presione \"Comparar\" para activar el Modo Pantalla Dividida\n- Aparecerá una copia duplicada de su conjunto de datos en el panel de trabajo\n- Elija las fechas que desea comparar a la izquierda y derecha de la pantalla\n- Arrastre el control deslizante usando el botón blanco para deslizar y comparar las dos fechas de las imágenes"
+      },
+      "step4": {
+        "title": "Cerrar Modo Pantalla Dividida",
+        "markdownDescription": "- Salga del Modo Pantalla Dividida presionando la \"x\" del título del Modo Pantalla Dividida en el panel de trabajo\n- Elimine la copia duplicada de su conjunto de datos en el panel de trabajo usando el menú desplegable de los 3 puntos"
+      }
+    }
+  },
+  "helpContentTerm1": {
+    "term": "conjunto de datos",
+    "aliases": ["set de datos", "datasets"],
+    "content": "Una colección de información relacionada, organizada como una unidad utilizando una estructura de datos común, p. ej., \"precios promedio de viviendas en Sídney para 2019\" o \"temperatura diaria mínima y máxima\""
+  },
+  "helpContentTerm2": {
+    "term": "serie temporal",
+    "aliases": ["series de tiempo"],
+    "content": "Una secuencia de datos recopilados en diferentes momentos, p. ej., datos de sensores de temperatura o una galería de imágenes de la misma ubicación"
+  },
+  "helpContentTerm3": {
+    "term": "panel de trabajo",
+    "content": "El panel en el lado izquierdo de la pantalla que muestra qué conjuntos de datos ha agregado al mapa"
+  },
+  "helpContentTerm4": {
+    "term": "4D",
+    "content": "Datos 3D que también tienen un componente de serie temporal"
+  },
+  "helpContentTerm5": {
+    "term": "catálogo",
+    "aliases": ["catalogo"],
+    "content": "el inventario de todos los conjuntos de datos disponibles para agregar al mapa"
+  },
+  "helpContentTerm6": {
+    "term": "mapas base",
+    "aliases": ["mapa base", "basemap", "basemaps"],
+    "content": "Diferentes opciones de mapa para el mapa base en blanco, como imágenes de Bing, carreteras, mapas oscuros o claros"
+  },
+  "helpContentTerm7": {
+    "term": "conjunto de datos de origen",
+    "content": "El conjunto de datos que agregó a su panel de trabajo que permite cálculos de diferencias"
+  },
+  "helpContentTerm8": {
+    "term": "estilo de vista previa",
+    "content": "La forma en que el conjunto de datos aparece en la ventana de vista previa. Recomendamos color verdadero para buscar imágenes sin nubes"
+  },
+  "emptyWorkbenchInfo": [
+    {
+      "heading": "Añade un conjunto de datos aquí",
+      "body": "Cuando añades un conjunto de datos, su leyenda y configuración aparecen aquí."
+    },
+    {
+      "heading": "Para empezar",
+      "list": [
+        "Haz clic en Explorar datos para ver los conjuntos de datos disponibles",
+        "Sube los tuyos propios mediante Subir datos",
+        "Encuentra los datos que has añadido en este panel"
+      ]
+    },
+    {
+      "heading": "Qué puedes hacer",
+      "list": [
+        "Mostrar u ocultar datos",
+        "Ajustar la transparencia (opacidad)",
+        "Comparar en paralelo",
+        "Cambiar estilos (colores, líneas, símbolos)",
+        "Ver diferentes fechas y horas (si es compatible)"
+      ]
+    },
+    {
+      "body": "Usa este panel para explorar datos, gestionar la configuración y construir tu escena o historia del mapa."
+    }
+  ],
+  "exploreMapDataButton": {
+    "content": "## Explora los datos del Gemelo Digital\n\nExplora el Catálogo de Datos de Terria con los datos disponibles y añádelos al gemelo digital aquí. Puedes agregar varios conjuntos de datos a la vez; los verás listados abajo, en el panel Datos del Gemelo Digital."
+  },
+  "menuBarStoryButton": {
+    "content": "## Historias\n\nLas historias te permiten añadir información contextual a un conjunto de datos para dar vida a una narrativa. Crea tu propia historia de datos con el Editor de Historias y compártela a través del panel \"Compartir\" una vez que hayas terminado."
+  },
+  "satelliteGuidance": {
+    "bodyIV": "Es posible que las imágenes satelitales no siempre estén disponibles en el momento y lugar que prefieras. Si solo quieres ver imágenes de una ubicación específica, haz clic en \"filtrar por ubicación\" en tu banco de datos."
+  },
+  "addData": {
+    "infoText": "<0>Arrastra y suelta un archivo aquí para verlo localmente en el mapa</0><1>(no se guardará ni se subirá a internet)</1>"
+  }
+}
