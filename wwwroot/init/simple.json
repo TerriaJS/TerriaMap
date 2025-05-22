@@ -7,6 +7,13 @@
   },
   "catalog": [
     {
+      "type": "esri-mapServer",
+      "name": "ESRI World Boundaries and Places",
+      "id": "esri-labels",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer",
+      "opacity": 1.0
+    },
+    {
       "id": "Greenfield",
       "type": "group",
       "name": "Global Greenfield",
@@ -6395,9 +6402,22 @@
       "basemap-bing-aerial",
       "basemap-bing-roads",
       "basemap-bing-aerial-with-labels",
-      "basemap-natural-earth-II"
+      "basemap-natural-earth-II",
+      "basemap-esri-world-imagery"
     ],
     "defaultBaseMapId": "basemap-bing-aerial-with-labels",
-    "previewBaseMapId": "basemap-bing-aerial-with-labels"
+    "previewBaseMapId": "basemap-bing-aerial-with-labels",
+    "items": [
+      {
+        "item": {
+          "id": "basemap-esri-world-imagery",
+          "type": "esri-mapServer",
+          "name": "ESRI World Imagery",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+          "opacity": 1.0
+        },
+        "image": "images/basemaps/esri_world.PNG"
+      }
+    ]
   }
 }
