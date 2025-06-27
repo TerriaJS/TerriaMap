@@ -297,12 +297,6 @@
             },
             {
               "type": "csv",
-              "name": "NEXIS NSW 2012 (LGA)",
-              "url": "test/NSW_LGA_NEXIS_201212.csv",
-              "id": "L1saxB"
-            },
-            {
-              "type": "csv",
               "name": "2011 Census AUST (STE)",
               "url": "test/2011Census_AUST_STE.csv",
               "id": "gdXiXM"
