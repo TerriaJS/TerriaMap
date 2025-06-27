@@ -19,7 +19,8 @@
 
     "useCesiumIonTerrain": false,
     //"cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNmI4MTk4ZC1hMTg5LTQyYjctYjhmOC0wMjNiOTg2MDM5ZDkiLCJpZCI6MTE4MDM4LCJpYXQiOjE2NzA4MjYxNjZ9.i0VTdbGUpnZd-jf7gcEg-S6CJgaemT9sotEcUDhlV-0",
-    "cesiumTerrainUrl": "https://api.maptiler.com/tiles/terrain-quantized-mesh-v2/?key=5wUtxlYCQDyW4cpv2ZQ2",
+    //"cesiumTerrainUrl": "https://api.maptiler.com/tiles/terrain-quantized-mesh-v2/?key=5wUtxlYCQDyW4cpv2ZQ2",
+    "cesiumTerrainUrl": "https://api.maptiler.com/tiles/terrain-quantized-mesh-v2/?key=Cw78lMBJgUeaCHbuzArc",
 
     // Log ConsoleAnalytics events to console
     // logToConsole: true,
