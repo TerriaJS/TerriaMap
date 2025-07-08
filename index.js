@@ -98,7 +98,7 @@ export default terria
         document.head.appendChild(styleSheet);
       }
 
-      render(terria, [], viewState);
+      render(terria, viewState);
     } catch (e) {
       console.error(e);
       console.error(e.stack);
