@@ -75,7 +75,7 @@
     "sass-loader": "^16.0.3",
     "style-loader": "^4.0.0",
     "svg-sprite-loader": "^6.0.11",
-    "terriajs": "8.9.5",
+    "terriajs": "8.10.0",
     "terriajs-cesium": "8.0.2",
     "terriajs-plugin-api": "0.0.1-alpha.17",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
