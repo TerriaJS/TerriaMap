@@ -1,10 +1,11 @@
+import { observer } from "mobx-react";
 import PropTypes from "prop-types";
-import React, { Suspense, useSyncExternalStore } from "react";
+import React, { Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import Variables from "../Styles/variables.scss";
 import "./global.scss";
 import { Loader } from "./Loader";
 import { terriaStore } from "./terriaStore";
-import Variables from "../Styles/variables.scss";
-import { createRoot } from "react-dom/client";
 
 // Lazy load the entire TerriaUserInterface component
 const LazyTerriaUserInterface = React.lazy(() =>
@@ -13,11 +14,8 @@ const LazyTerriaUserInterface = React.lazy(() =>
   }))
 );
 
-const Root = ({ themeOverrides }) => {
-  const { terria, viewState, status } = useSyncExternalStore(
-    terriaStore.subscribe,
-    terriaStore.getSnapshot
-  );
+const Root = observer(({ themeOverrides }) => {
+  const { terria, viewState, status } = terriaStore;
 
   if (status === "loading") {
     return <Loader />;
@@ -32,7 +30,7 @@ const Root = ({ themeOverrides }) => {
       />
     </Suspense>
   );
-};
+});
 
 Root.propTypes = {
   themeOverrides: PropTypes.object

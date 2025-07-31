@@ -1,59 +1,39 @@
+import { makeObservable, observable, action } from "mobx";
 import type Terria from "terriajs/lib/Models/Terria";
 import type ViewState from "terriajs/lib/ReactViewModels/ViewState";
 
-type State =
-  | {
-      terria: Terria;
-      viewState: ViewState;
-      status: "ready";
-    }
-  | {
-      terria: undefined;
-      viewState: undefined;
-      status: "loading";
-    };
+class TerriaStore {
+  terria: Terria | undefined = undefined;
+  viewState: ViewState | undefined = undefined;
+  status: "loading" | "ready" = "loading";
 
-let state: State = {
-  terria: undefined,
-  viewState: undefined,
-  status: "loading"
-};
-type Listener = () => void;
-let listeners: Listener[] = [];
+  constructor() {
+    makeObservable(this, {
+      terria: observable,
+      viewState: observable,
+      status: observable,
+      setReady: action
+    });
 
-const emitChange = () => {
-  for (const listener of listeners) {
-    listener();
+    this.init();
   }
-};
 
-export const terriaStore = {
   async init() {
+    //@ts-expect-error: need to convert to TS
     await import("terriajs/lib/Core/prerequisites");
 
     const { terria, viewState } = await import("../../index.js").then(
       (module) => module.default
     );
 
-    state = {
-      terria,
-      viewState,
-      status: "ready"
-    };
-
-    emitChange();
-  },
-  subscribe(listener: Listener) {
-    listeners = [...listeners, listener];
-
-    return () => {
-      listeners = listeners.filter((l) => l !== listener);
-    };
-  },
-
-  getSnapshot() {
-    return state;
+    this.setReady(terria, viewState);
   }
-};
 
-terriaStore.init();
+  setReady(terria: Terria, viewState: ViewState) {
+    this.terria = terria;
+    this.viewState = viewState;
+    this.status = "ready";
+  }
+}
+
+export const terriaStore = new TerriaStore();
