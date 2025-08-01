@@ -1,8 +1,8 @@
-@forward "~terriajs/lib/Sass/common/_default_variables.scss"; 
+@forward "~terriajs/lib/Sass/common/_default_variables.scss";
 /**
-// To customise the look of your map, uncomment and change values here and in lib/Views/global.scss
+// To customise the look of your map, uncomment and change values here (remove line above after uncommenting) and in lib/Views/global.scss
 
-with ( 
+@forward "~terriajs/lib/Sass/common/_default_variables.scss" with ( 
     // If your logo is big, set this to give it more room.
     //$logo-height: 120px;
     
