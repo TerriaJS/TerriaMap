@@ -7,50 +7,6 @@
   },
   "catalog": [
     {
-      "id": "ZIdekvc10z",
-      "type": "wms-group",
-      "name": "Test",
-      "url": "https://programs.communications.gov.au/geoserver/ows",
-      "members": [
-        {
-          "type": "wms",
-          "localId": "mybroadband%3AMyBroadband_ADSL_Availability",
-          "legends": [
-            {
-              "items": [
-                {
-                  "title": "A - Best",
-                  "color": "#6B0038"
-                },
-                {
-                  "title": "B",
-                  "color": "#F41911"
-                },
-                {
-                  "title": "C",
-                  "color": "#F67F00"
-                },
-                {
-                  "title": "D",
-                  "color": "#D78B6D"
-                },
-                {
-                  "title": "E - Worst",
-                  "color": "#ECD2BE"
-                },
-                {
-                  "title": "No data",
-                  "color": "rgba(0,0,0,0)",
-                  "outlineColor": "black",
-                  "addSpacingAbove": true
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "DL4Av6wY5h",
       "type": "geojson",
       "name": "GeoJSON Test",
