@@ -19,13 +19,6 @@
       "url": "https://gis.aremi.data61.io/bom/wms"
     },
     {
-      "type": "magda",
-      "url": "https://data.gov.au",
-      "name": "Magda Item",
-      "isMappable": true,
-      "recordId": "ds-ga-93e51355-f5b9-4219-8dc4-815732d9e869"
-    },
-    {
       "name": "CSV",
       "type": "group",
       "members": [
