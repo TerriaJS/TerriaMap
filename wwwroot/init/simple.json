@@ -13,12 +13,6 @@
       "url": "test/bike_racks.geojson"
     },
     {
-      "id": "FxPHcHvxoO",
-      "type": "wms-group",
-      "name": "Marine water quality grids for the Great Barrier Reef region - monthly data",
-      "url": "proxy/_0d/http://ereeftds.bom.gov.au/ereefs/tds/wms/ereefs/mwq_gridAgg_P1M"
-    },
-    {
       "id": "3chNzj13TB",
       "type": "wms-group",
       "name": "WMS layers for the Australian Renewable Energy Mapping Infrastructure project.",
