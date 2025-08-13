@@ -567,7 +567,7 @@
       "id": "lIvVnuKJA9",
       "name": "Sentinel-2 cloudless world 2016",
       "type": "wmts",
-      "url": "https://a.s2maps-tiles.eu/wmts/",
+      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
       "layer": "s2cloudless_3857",
       "style": "default",
       "opacity": 1
@@ -576,7 +576,7 @@
       "id": "jCJmccfll6",
       "name": "Sentinel-2 cloudless world 2018",
       "type": "wmts",
-      "url": "https://a.s2maps-tiles.eu/wmts/",
+      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
       "layer": "s2cloudless-2018_3857",
       "style": "default",
       "opacity": 1
@@ -585,7 +585,7 @@
       "id": "HrWLyyyo6V",
       "name": "Sentinel-2 cloudless world 2019",
       "type": "wmts",
-      "url": "https://a.s2maps-tiles.eu/wmts/",
+      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
       "layer": "s2cloudless-2019_3857",
       "style": "default",
       "opacity": 1
@@ -594,7 +594,7 @@
       "id": "B8gpm2I3gB",
       "name": "Sentinel-2 cloudless world 2020",
       "type": "wmts",
-      "url": "https://a.s2maps-tiles.eu/wmts/",
+      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
       "layer": "s2cloudless-2020_3857",
       "style": "default",
       "opacity": 1
