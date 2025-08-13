@@ -7,16 +7,211 @@
   },
   "catalog": [
     {
+      "id": "aB3dE4FgHi",
+      "type": "group",
+      "name": "Featured Examples",
+      "members": [
+        {
+          "type": "esri-mapServer-group",
+          "name": "Catchment Scale Land Use",
+          "id": "354db2f2",
+          "url": "https://www.asris.csiro.au/arcgis/rest/services/abares/clum_50m_2018/MapServer",
+          "forceProxy": true
+        },
+        {
+          "id": "5z6OTFssaW",
+          "name": "CSIRO Soil and Landscape Grid",
+          "url": "https://www.asris.csiro.au/arcgis/rest/services/TERN",
+          "type": "esri-group"
+        },
+        {
+          "id": "IaRi3Qn1pj",
+          "type": "group",
+          "name": "Hydro Energy Storage",
+          "members": [
+            {
+              "id": "uhsE72",
+              "type": "group",
+              "name": "ANU STORES Worldwide",
+              "members": [
+                {
+                  "type": "wms",
+                  "name": "Pumped hydro: 150GWh 18h",
+                  "id": "c855dca8",
+                  "info": [
+                    {
+                      "name": "Description",
+                      "content": "This information has been developed by the 100% Renewable Energy group from the Research School of Electrical, Energy and Materials Engineering at the Australia National University.  http://re100.eng.anu.edu.au<p>Potential sites for off-river PHES are identified using GIS algorithms with defined search criteria. The surveyed latitude range is up to 60 degrees north and south. Each identified site comprises an upper and lower reservoir pair plus a hypothetical tunnel route between the reservoirs, and includes data such as latitude, longitude, altitude, head, slope, water volume, water area, rock volume, dam wall length, water/rock ratio, energy storage potential and approximate relative cost (categories A-E).</p><p>Wall heights are adjusted for each reservoir in a pair to yield equal water volumes to achieve the targeted energy storage. Energy (= head * usable volume * g * efficiency) and storage-length combinations are provided in Table 1. The approximate number of people that a reservoirs could service for a 100% renewable electricity grid is listed in the third line.</p><style>  table, th, td {    border: 1px solid black;    padding: 5px;    text-align: center;  }</style><center><table>  <tr>    <th>Table 1</th> <th>2 GWh</th> <th>5 GWh</th> <th>15 GWh</th> <th>50 GWh</th> <th>150 GWh</th>  </tr>  <tr>    <th>6 hours</th> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>-</td>  </tr>  <tr>    <th>18 hours</th> <td>-</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td>  </tr>  <tr>    <th>Millions of people</th> <td>0.1</td> <td>0.25</td> <td>0.75</td> <td>2.5</td> <td>7.5</td>  </tr></table></center><p>Virtually all upper reservoirs are away from rivers, and none intrude on protected area or urban areas listed in the databases that we use below.  There may be local constraints that prevent use of a particular site that is not reflected in these databases. Please refer to the ANU 100% Renewable Energy website for additional information: http://re100.eng.anu.edu.au/global</p>"
+                    },
+                    {
+                      "name": "Disclaimer",
+                      "content": "None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental, heritage and other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.<p>There has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations. Accuracy of the sites depends on the accuracy of the source data. There may be sites that fall into local protected areas or urban areas that are not identified by the source data.</p>"
+                    },
+                    {
+                      "name": "Access and acknowledgements",
+                      "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
+                    },
+                    {
+                      "name": "Source Data",
+                      "content": "Digital Terrain Model (DTM) https://earthexplorer.usgs.gov/ <p>World Database Protected Areas: https://www.protectedplanet.net/</p> <p>Urban extent:  HBASE http://sedac.ciesin.columbia.edu/data/set/ulandsat-hbase-v1/data-download</p> "
+                    }
+                  ],
+                  "infoSectionOrder": [
+                    "Disclaimer",
+                    "Description",
+                    "Access and acknowledgements",
+                    "Source Data"
+                  ],
+                  "url": "https://gis.aremi.data61.io/anu/wms",
+                  "opacity": 1,
+                  "layers": "150gwh_18h",
+                  "featureInfoTemplate": {
+                    "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
+                  },
+                  "tileErrorHandlingOptions": {
+                    "ignoreUnknownTileErrors": true
+                  },
+                  "shareKeys": [
+                    "Root Group/Renewable Energy/Hydro/Storage/ANU STORES Worldwide/Pumped hydro: 150GWh 18h"
+                  ]
+                }
+              ],
+              "description": "As the proportion of wind and solar photovoltaics (PV) in an electrical grid extends into the 50-100% range a combination of additional long-distance high voltage transmission, demand management and local storage is required for stability. Pumped Hydro Energy Storage (PHES) constitutes 97% of electricity storage worldwide because of its low cost.<p>The <a href='http://re100.eng.anu.edu.au/global'>RE100 Group ANU</a> found about 530,000 potentially feasible PHES sites with storage potential of about 22 million Gigawatt-hours (GWh) by using geographic information system (GIS) analysis. This is about one hundred times greater than required to support a 100% global renewable electricity system. Brownfield sites (existing reservoirs, old mining sites) will be included in a future analysis.</p>This information has been developed by the 100% Renewable Energy group from the Research School of Electrical, Energy and Materials Engineering at the Australia National University.  http://re100.eng.anu.edu.au<p>Potential sites for off-river PHES are identified using GIS algorithms with defined search criteria. The surveyed latitude range is up to 60 degrees north and south. Each identified site comprises an upper and lower reservoir pair plus a hypothetical tunnel route between the reservoirs, and includes data such as latitude, longitude, altitude, head, slope, water volume, water area, rock volume, dam wall length, water/rock ratio, energy storage potential and approximate relative cost (categories A-E).</p><p>Wall heights are adjusted for each reservoir in a pair to yield equal water volumes to achieve the targeted energy storage. Energy (= head * usable volume * g * efficiency) and storage-length combinations are provided in Table 1. The approximate number of people that a reservoirs could service for a 100% renewable electricity grid is listed in the third line.</p><style>  table, th, td {    border: 1px solid black;    padding: 5px;    text-align: center;  }</style><center><table>  <tr>    <th>Table 1</th> <th>2 GWh</th> <th>5 GWh</th> <th>15 GWh</th> <th>50 GWh</th> <th>150 GWh</th>  </tr>  <tr>    <th>6 hours</th> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>-</td>  </tr>  <tr>    <th>18 hours</th> <td>-</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td>  </tr>  <tr>    <th>Millions of people</th> <td>0.1</td> <td>0.25</td> <td>0.75</td> <td>2.5</td> <td>7.5</td>  </tr></table></center><p>Virtually all upper reservoirs are away from rivers, and none intrude on protected area or urban areas listed in the databases that we use below.  There may be local constraints that prevent use of a particular site that is not reflected in these databases. Please refer to the ANU 100% Renewable Energy website for additional information: http://re100.eng.anu.edu.au/global</p><h4>DISCLAIMER</h4>None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental, heritage and other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.<p>There has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations. Accuracy of the sites depends on the accuracy of the source data. There may be sites that fall into local protected areas or urban areas that are not identified by the source data.</p>",
+              "shareKeys": [
+                "Root Group/Renewable Energy/Hydro/Storage/ANU STORES Worldwide"
+              ]
+            },
+            {
+              "type": "wms",
+              "name": "Australia Upper Reservoir Locations - ANU STORES",
+              "info": [
+                {
+                  "name": "Disclaimer",
+                  "content": "None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental and other studies, and it is not known whether any particular site would be suitable.<p>Please refer to the ANU 100% Renewable Energy website for additional information:</p><p><a href='http://re100.eng.anu.edu.au/'>http://re100.eng.anu.edu.au/</a></p><p>There has been no investigation of land tenure apart from exclusion of national parks and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations.</p><p>The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.</p>"
+                }
+              ],
+              "initialMessage": {
+                "title": "Australia Upper Reservoir Locations Disclaimer",
+                "content": "None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental and other studies, and it is not known whether any particular site would be suitable.<p>Please refer to the ANU 100% Renewable Energy website for additional information:</p><p><a href='http://re100.eng.anu.edu.au/'>http://re100.eng.anu.edu.au/</a></p><p>There has been no investigation of land tenure apart from exclusion of national parks and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations.</p><p>The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.</p>",
+                "confirmation": true,
+                "width": 600,
+                "height": 550,
+                "confirmText": "I Agree"
+              },
+              "url": "https://gis.aremi.data61.io/ANU_STORES/wms",
+              "opacity": 1,
+              "rectangle": {
+                "west": 112,
+                "south": -48,
+                "east": 155,
+                "north": -5
+              },
+              "layers": "all_reservoirs",
+              "featureInfoTemplate": {
+                "name": "{{Index}}{{#Dam_volume}}: {{Stored_Ene}} GWh {{/Dam_volume}}",
+                "template": "<h3>{{#Dam_volume}}Reservoir:{{/Dam_volume}} {{^Dam_volume}}Dam wall:{{/Dam_volume}} {{Index}}</h3><table>{{#Dam_volume}}  <tr>    <th>Stored energy:</th>    <td>{{Stored_Ene}} GWh</td>  </tr>{{/Dam_volume}}  <tr>    <th>Elevation:</th>    <td>{{Elevation_}} metres</td>  </tr>{{#Dam_volume}}  <tr>    <th>Water area:</th>    <td>{{Water_area}} hectares</td>  </tr>  <tr>    <th>Reservoir volume:&nbsp;</th>    <td>{{Reservoir_}} gigalitres</td>  </tr>  <tr>    <th>Dam length:</th>    <td>{{Dam_length}} metres</td>  </tr>  <tr>    <th>Dam area:</th>    <td>{{Dam_area_h}} hectares</td>  </tr>  <tr>    <th>Dam volume:</th>    <td>{{Dam_volume}} gigalitres</td>  </tr>  <tr>    <th>Water to rock ratio:</th>    <td>{{Water_rock}}</td>  </tr>{{/Dam_volume}}</table>"
+              },
+              "tileErrorHandlingOptions": {
+                "ignoreUnknownTileErrors": true
+              },
+              "id": "RqnKAv",
+              "shareKeys": [
+                "Root Group/Renewable Energy/Hydro/Storage/Australia Upper Reservoir Locations - ANU STORES"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "gtfs",
+          "url": "https://api.transport.nsw.gov.au/v1/gtfs/vehiclepos/buses",
+          "image": "build/TerriaJS/images/icons/sydney_bus_icon_smaller.png",
+          "name": "NSW Live Transport - Buses",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "apikey l4VnvZi4uQLSvD7lwN2ac7vIDJUJ3epYva4l"
+            }
+          ],
+          "refreshInterval": 5,
+          "featureInfoTemplate": {
+            "name": "{{vehicle_trip_bus_number}}",
+            "template": "<b>Bus:</b> {{route_short_name}}<br><b>Occupancy:</b> {{occupancy_status_str}}<br><b>Speed:</b> {{speed_km}} km/h<br><b style='padding-right: 5px'>Direction:</b> <span style='transform: rotate({{bearing}}deg); width: 10px; display: inline-block' aria-label='{{bearing}} degrees' role='img' title='{{bearing}} degrees'>&#x2B06;</div>"
+          },
+          "model": {
+            "url": "lowpoly_bus/scene.gltf",
+            "scale": 0.3048,
+            "maximumDistance": 500.0
+          }
+        },
+        {
+          "id": "QwErTyUiOp",
+          "type": "group",
+          "name": "Sentinel-2 cloudless world",
+          "members": [
+            {
+              "id": "lIvVnuKJA9",
+              "name": "Sentinel-2 cloudless world 2016",
+              "type": "wmts",
+              "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
+              "layer": "s2cloudless_3857",
+              "style": "default",
+              "opacity": 1
+            },
+            {
+              "id": "jCJmccfll6",
+              "name": "Sentinel-2 cloudless world 2018",
+              "type": "wmts",
+              "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
+              "layer": "s2cloudless-2018_3857",
+              "style": "default",
+              "opacity": 1
+            },
+            {
+              "id": "HrWLyyyo6V",
+              "name": "Sentinel-2 cloudless world 2019",
+              "type": "wmts",
+              "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
+              "layer": "s2cloudless-2019_3857",
+              "style": "default",
+              "opacity": 1
+            },
+            {
+              "id": "B8gpm2I3gB",
+              "name": "Sentinel-2 cloudless world 2020",
+              "type": "wmts",
+              "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
+              "layer": "s2cloudless-2020_3857",
+              "style": "default",
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
+          "type": "esri-mapServer",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "name": "Surface Geology",
+          "rectangle": { "west": 106, "south": -52, "east": 172, "north": -8 },
+          "info": [
+            {
+              "name": "Licence",
+              "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
+            }
+          ]
+        },
+        {
+          "id": "3chNzj13TB",
+          "type": "wms-group",
+          "name": "WMS layers for the Australian Renewable Energy Mapping Infrastructure project.",
+          "url": "https://gis.aremi.data61.io/bom/wms"
+        }
+      ]
+    },
+    {
       "id": "DL4Av6wY5h",
       "type": "geojson",
       "name": "GeoJSON Test",
       "url": "test/bike_racks.geojson"
-    },
-    {
-      "id": "3chNzj13TB",
-      "type": "wms-group",
-      "name": "WMS layers for the Australian Renewable Energy Mapping Infrastructure project.",
-      "url": "https://gis.aremi.data61.io/bom/wms"
     },
     {
       "name": "CSV",
@@ -483,19 +678,6 @@
       ]
     },
     {
-      "url": "http://services.ga.gov.au/gis/rest/services/GA_Surface_Geology/MapServer",
-      "type": "esri-mapServer",
-      "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-      "name": "Surface Geology",
-      "rectangle": { "west": 106, "south": -52, "east": 172, "north": -8 },
-      "info": [
-        {
-          "name": "Licence",
-          "content": "[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)"
-        }
-      ]
-    },
-    {
       "name": "Small glTF 3D Models",
       "description": "Demonstrations of adding 3D building data to the map using glTF.",
       "type": "group",
@@ -525,174 +707,6 @@
             "east": 144.358,
             "north": -38.15
           }
-        }
-      ]
-    },
-    {
-      "type": "gtfs",
-      "url": "https://api.transport.nsw.gov.au/v1/gtfs/vehiclepos/buses",
-      "image": "build/TerriaJS/images/icons/sydney_bus_icon_smaller.png",
-      "name": "NSW Live Transport - Buses",
-      "headers": [
-        {
-          "name": "Authorization",
-          "value": "apikey l4VnvZi4uQLSvD7lwN2ac7vIDJUJ3epYva4l"
-        }
-      ],
-      "refreshInterval": 5,
-      "featureInfoTemplate": {
-        "name": "{{vehicle_trip_bus_number}}",
-        "template": "<b>Bus:</b> {{route_short_name}}<br><b>Occupancy:</b> {{occupancy_status_str}}<br><b>Speed:</b> {{speed_km}} km/h<br><b style='padding-right: 5px'>Direction:</b> <span style='transform: rotate({{bearing}}deg); width: 10px; display: inline-block' aria-label='{{bearing}} degrees' role='img' title='{{bearing}} degrees'>&#x2B06;</div>"
-      },
-      "model": {
-        "url": "lowpoly_bus/scene.gltf",
-        "scale": 0.3048,
-        "maximumDistance": 500.0
-      }
-    },
-    {
-      "type": "esri-mapServer-group",
-      "name": "Catchment Scale Land Use",
-      "id": "354db2f2",
-      "url": "https://www.asris.csiro.au/arcgis/rest/services/abares/clum_50m_2018/MapServer",
-      "forceProxy": true
-    },
-    {
-      "id": "5z6OTFssaW",
-      "name": "CSIRO Soil and Landscape Grid",
-      "url": "https://www.asris.csiro.au/arcgis/rest/services/TERN",
-      "type": "esri-group"
-    },
-    {
-      "id": "lIvVnuKJA9",
-      "name": "Sentinel-2 cloudless world 2016",
-      "type": "wmts",
-      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
-      "layer": "s2cloudless_3857",
-      "style": "default",
-      "opacity": 1
-    },
-    {
-      "id": "jCJmccfll6",
-      "name": "Sentinel-2 cloudless world 2018",
-      "type": "wmts",
-      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
-      "layer": "s2cloudless-2018_3857",
-      "style": "default",
-      "opacity": 1
-    },
-    {
-      "id": "HrWLyyyo6V",
-      "name": "Sentinel-2 cloudless world 2019",
-      "type": "wmts",
-      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
-      "layer": "s2cloudless-2019_3857",
-      "style": "default",
-      "opacity": 1
-    },
-    {
-      "id": "B8gpm2I3gB",
-      "name": "Sentinel-2 cloudless world 2020",
-      "type": "wmts",
-      "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
-      "layer": "s2cloudless-2020_3857",
-      "style": "default",
-      "opacity": 1
-    },
-    {
-      "id": "IaRi3Qn1pj",
-      "type": "group",
-      "name": "Hydro Energy Storage",
-      "members": [
-        {
-          "id": "uhsE72",
-          "type": "group",
-          "name": "ANU STORES Worldwide",
-          "members": [
-            {
-              "type": "wms",
-              "name": "Pumped hydro: 150GWh 18h",
-              "id": "c855dca8",
-              "info": [
-                {
-                  "name": "Description",
-                  "content": "This information has been developed by the 100% Renewable Energy group from the Research School of Electrical, Energy and Materials Engineering at the Australia National University.  http://re100.eng.anu.edu.au<p>Potential sites for off-river PHES are identified using GIS algorithms with defined search criteria. The surveyed latitude range is up to 60 degrees north and south. Each identified site comprises an upper and lower reservoir pair plus a hypothetical tunnel route between the reservoirs, and includes data such as latitude, longitude, altitude, head, slope, water volume, water area, rock volume, dam wall length, water/rock ratio, energy storage potential and approximate relative cost (categories A-E).</p><p>Wall heights are adjusted for each reservoir in a pair to yield equal water volumes to achieve the targeted energy storage. Energy (= head * usable volume * g * efficiency) and storage-length combinations are provided in Table 1. The approximate number of people that a reservoirs could service for a 100% renewable electricity grid is listed in the third line.</p><style>  table, th, td {    border: 1px solid black;    padding: 5px;    text-align: center;  }</style><center><table>  <tr>    <th>Table 1</th> <th>2 GWh</th> <th>5 GWh</th> <th>15 GWh</th> <th>50 GWh</th> <th>150 GWh</th>  </tr>  <tr>    <th>6 hours</th> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>-</td>  </tr>  <tr>    <th>18 hours</th> <td>-</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td>  </tr>  <tr>    <th>Millions of people</th> <td>0.1</td> <td>0.25</td> <td>0.75</td> <td>2.5</td> <td>7.5</td>  </tr></table></center><p>Virtually all upper reservoirs are away from rivers, and none intrude on protected area or urban areas listed in the databases that we use below.  There may be local constraints that prevent use of a particular site that is not reflected in these databases. Please refer to the ANU 100% Renewable Energy website for additional information: http://re100.eng.anu.edu.au/global</p>"
-                },
-                {
-                  "name": "Disclaimer",
-                  "content": "None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental, heritage and other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.<p>There has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations. Accuracy of the sites depends on the accuracy of the source data. There may be sites that fall into local protected areas or urban areas that are not identified by the source data.</p>"
-                },
-                {
-                  "name": "Access and acknowledgements",
-                  "content": "In publications that use this information please acknowledge the RE100 Group, Australian National University, http://re100.eng.anu.edu.au/"
-                },
-                {
-                  "name": "Source Data",
-                  "content": "Digital Terrain Model (DTM) https://earthexplorer.usgs.gov/ <p>World Database Protected Areas: https://www.protectedplanet.net/</p> <p>Urban extent:  HBASE http://sedac.ciesin.columbia.edu/data/set/ulandsat-hbase-v1/data-download</p> "
-                }
-              ],
-              "infoSectionOrder": [
-                "Disclaimer",
-                "Description",
-                "Access and acknowledgements",
-                "Source Data"
-              ],
-              "url": "https://gis.aremi.data61.io/anu/wms",
-              "opacity": 1,
-              "layers": "150gwh_18h",
-              "featureInfoTemplate": {
-                "template": "<div>  <style>    tr {background-color: transparent; ! important;}  </style>  {{description}}</div>"
-              },
-              "tileErrorHandlingOptions": {
-                "ignoreUnknownTileErrors": true
-              },
-              "shareKeys": [
-                "Root Group/Renewable Energy/Hydro/Storage/ANU STORES Worldwide/Pumped hydro: 150GWh 18h"
-              ]
-            }
-          ],
-          "description": "As the proportion of wind and solar photovoltaics (PV) in an electrical grid extends into the 50-100% range a combination of additional long-distance high voltage transmission, demand management and local storage is required for stability. Pumped Hydro Energy Storage (PHES) constitutes 97% of electricity storage worldwide because of its low cost.<p>The <a href='http://re100.eng.anu.edu.au/global'>RE100 Group ANU</a> found about 530,000 potentially feasible PHES sites with storage potential of about 22 million Gigawatt-hours (GWh) by using geographic information system (GIS) analysis. This is about one hundred times greater than required to support a 100% global renewable electricity system. Brownfield sites (existing reservoirs, old mining sites) will be included in a future analysis.</p>This information has been developed by the 100% Renewable Energy group from the Research School of Electrical, Energy and Materials Engineering at the Australia National University.  http://re100.eng.anu.edu.au<p>Potential sites for off-river PHES are identified using GIS algorithms with defined search criteria. The surveyed latitude range is up to 60 degrees north and south. Each identified site comprises an upper and lower reservoir pair plus a hypothetical tunnel route between the reservoirs, and includes data such as latitude, longitude, altitude, head, slope, water volume, water area, rock volume, dam wall length, water/rock ratio, energy storage potential and approximate relative cost (categories A-E).</p><p>Wall heights are adjusted for each reservoir in a pair to yield equal water volumes to achieve the targeted energy storage. Energy (= head * usable volume * g * efficiency) and storage-length combinations are provided in Table 1. The approximate number of people that a reservoirs could service for a 100% renewable electricity grid is listed in the third line.</p><style>  table, th, td {    border: 1px solid black;    padding: 5px;    text-align: center;  }</style><center><table>  <tr>    <th>Table 1</th> <th>2 GWh</th> <th>5 GWh</th> <th>15 GWh</th> <th>50 GWh</th> <th>150 GWh</th>  </tr>  <tr>    <th>6 hours</th> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>-</td>  </tr>  <tr>    <th>18 hours</th> <td>-</td> <td>✓</td> <td>✓</td> <td>✓</td> <td>✓</td>  </tr>  <tr>    <th>Millions of people</th> <td>0.1</td> <td>0.25</td> <td>0.75</td> <td>2.5</td> <td>7.5</td>  </tr></table></center><p>Virtually all upper reservoirs are away from rivers, and none intrude on protected area or urban areas listed in the databases that we use below.  There may be local constraints that prevent use of a particular site that is not reflected in these databases. Please refer to the ANU 100% Renewable Energy website for additional information: http://re100.eng.anu.edu.au/global</p><h4>DISCLAIMER</h4>None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental, heritage and other studies, and it is not known whether any particular site would be suitable. The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.<p>There has been no investigation of land tenure apart from exclusion of some environmental areas and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations. Accuracy of the sites depends on the accuracy of the source data. There may be sites that fall into local protected areas or urban areas that are not identified by the source data.</p>",
-          "shareKeys": [
-            "Root Group/Renewable Energy/Hydro/Storage/ANU STORES Worldwide"
-          ]
-        },
-        {
-          "type": "wms",
-          "name": "Australia Upper Reservoir Locations - ANU STORES",
-          "info": [
-            {
-              "name": "Disclaimer",
-              "content": "None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental and other studies, and it is not known whether any particular site would be suitable.<p>Please refer to the ANU 100% Renewable Energy website for additional information:</p><p><a href='http://re100.eng.anu.edu.au/'>http://re100.eng.anu.edu.au/</a></p><p>There has been no investigation of land tenure apart from exclusion of national parks and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations.</p><p>The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.</p>"
-            }
-          ],
-          "initialMessage": {
-            "title": "Australia Upper Reservoir Locations Disclaimer",
-            "content": "None of the PHES sites discussed in this study have been the subject of geological, hydrological, environmental and other studies, and it is not known whether any particular site would be suitable.<p>Please refer to the ANU 100% Renewable Energy website for additional information:</p><p><a href='http://re100.eng.anu.edu.au/'>http://re100.eng.anu.edu.au/</a></p><p>There has been no investigation of land tenure apart from exclusion of national parks and urban areas, and no discussions with land owners and managers. Nothing in this list of potential site locations implies any rights for development of these locations.</p><p>The commercial feasibility of developing these sites is unknown. As with all major engineering projects, diligent attention to quality assurance would be required for safety and efficacy.</p>",
-            "confirmation": true,
-            "width": 600,
-            "height": 550,
-            "confirmText": "I Agree"
-          },
-          "url": "https://gis.aremi.data61.io/ANU_STORES/wms",
-          "opacity": 1,
-          "rectangle": {
-            "west": 112,
-            "south": -48,
-            "east": 155,
-            "north": -5
-          },
-          "layers": "all_reservoirs",
-          "featureInfoTemplate": {
-            "name": "{{Index}}{{#Dam_volume}}: {{Stored_Ene}} GWh {{/Dam_volume}}",
-            "template": "<h3>{{#Dam_volume}}Reservoir:{{/Dam_volume}} {{^Dam_volume}}Dam wall:{{/Dam_volume}} {{Index}}</h3><table>{{#Dam_volume}}  <tr>    <th>Stored energy:</th>    <td>{{Stored_Ene}} GWh</td>  </tr>{{/Dam_volume}}  <tr>    <th>Elevation:</th>    <td>{{Elevation_}} metres</td>  </tr>{{#Dam_volume}}  <tr>    <th>Water area:</th>    <td>{{Water_area}} hectares</td>  </tr>  <tr>    <th>Reservoir volume:&nbsp;</th>    <td>{{Reservoir_}} gigalitres</td>  </tr>  <tr>    <th>Dam length:</th>    <td>{{Dam_length}} metres</td>  </tr>  <tr>    <th>Dam area:</th>    <td>{{Dam_area_h}} hectares</td>  </tr>  <tr>    <th>Dam volume:</th>    <td>{{Dam_volume}} gigalitres</td>  </tr>  <tr>    <th>Water to rock ratio:</th>    <td>{{Water_rock}}</td>  </tr>{{/Dam_volume}}</table>"
-          },
-          "tileErrorHandlingOptions": {
-            "ignoreUnknownTileErrors": true
-          },
-          "id": "RqnKAv",
-          "shareKeys": [
-            "Root Group/Renewable Energy/Hydro/Storage/Australia Upper Reservoir Locations - ANU STORES"
-          ]
         }
       ]
     }
