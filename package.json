@@ -42,9 +42,9 @@
     "@types/node": "^22.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
-    "@babel/preset-env": "^7.23.5",
-    "@babel/preset-react": "^7.23.3",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
     "babel-loader": "^9.2.1",
@@ -80,7 +80,7 @@
     "terriajs-cesium": "8.0.2",
     "terriajs-plugin-api": "0.0.1-alpha.17",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
-    "typescript": "^5.7.3",
+    "typescript": "5.7.3",
     "urijs": "^1.18.12",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
