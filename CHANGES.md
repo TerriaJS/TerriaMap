@@ -1,5 +1,20 @@
 # Change Log
 
+#### 0.4.4
+
+**2025-12-04**
+
+- **Security fixes**
+
+  - Fixed a security bug in `/proxy` endpoint that allowed requests to a variation of domains in the `allowProxyFor` list. If `example.com` is in `allowProxyFor` setting, this allowed requests to a domain with a different prefix, like `badexample.com` to pass through. [#212](https://github.com/TerriaJS/terriajs-server/pull/212)
+
+- **Deprecations**
+
+  - Deprecates most of the proxy domains in the [default serverconfig.json](https://github.com/TerriaJS/TerriaMap/blob/d126a10a0625926762351b1b44b918fb03737836/serverconfig.json#L7-L25) file. These will be removed in a future release, so please add them through a [custom serverconfig.json](https://docs.terria.io/guide/getting-started/#customizing-terriamap) if you rely on terria proxying to any of these servers.
+
+- Upgrades TerriaJS to
+  [8.11.1](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md#8111---2025-12-04)
+
 #### 0.4.3
 
 **2025-10-09**
