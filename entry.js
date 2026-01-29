@@ -1,5 +1,6 @@
 import globeGif from "./lib/Styles/globe.gif";
 import "./lib/Styles/loader.css";
+import "terriajs-components/dist/styles.css";
 
 async function loadMainScript() {
   return import("terriajs/lib/Core/prerequisites")

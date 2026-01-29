@@ -1,0 +1,22 @@
+/* ShadCN Global Styles */
+
+@import "./themes/default.css";
+
+/* Define layer order - unlayered TerriaJS styles will have higher priority */
+@layer shadcn-base, shadcn-components, shadcn-utilities;
+
+/* Wrap all Tailwind in named layers for better cascade control */
+@layer shadcn-base {
+  @tailwind base;
+}
+
+@layer shadcn-components {
+  @tailwind components;
+}
+
+@layer shadcn-utilities {
+  @tailwind utilities;
+}
+
+/* Note: All ShadCN styles are now in CSS layers with lower priority than unlayered TerriaJS styles */
+/* Theme colors are applied via CSS variables scoped to .shadcn-theme */

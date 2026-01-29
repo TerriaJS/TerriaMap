@@ -19,6 +19,14 @@ module.exports = function (devMode) {
       globalObject: "(self || window)" // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
     },
     devtool: devMode ? "eval-cheap-module-source-map" : false,
+    // Watch options to include terriajs-components package (workspace package)
+    watchOptions: {
+      ignored: /node_modules[\\/](?!terriajs-components)/
+    },
+    // Ensure webpack doesn't treat terriajs-components as immutable
+    snapshot: {
+      managedPaths: []
+    },
 
     module: {
       // following rules are for terriamap source files
@@ -84,6 +92,14 @@ module.exports = function (devMode) {
         {
           test: /loader\.css$/,
           include: [path.resolve(__dirname, "..", "lib", "Styles")],
+          use: ["style-loader", "css-loader"]
+        },
+        // handle css files from terriajs-components - inject in html tag
+        {
+          test: /\.css$/,
+          include: [
+            path.resolve(__dirname, "..", "packages", "terriajs-components")
+          ],
           use: ["style-loader", "css-loader"]
         },
         // handle scss files
