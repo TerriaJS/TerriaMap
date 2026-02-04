@@ -5,8 +5,9 @@
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
+
     // Log ConsoleAnalytics events to console
-    // logToConsole: true,
+    "logToConsole": true,
     /* Text that appears at the bottom of the map */
     "disclaimer": {
       "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",

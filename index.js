@@ -9,6 +9,7 @@ import registerCustomComponentTypes from "terriajs/lib/ReactViews/Custom/registe
 import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplicationOnHashChange";
 import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
 import loadPlugins from "./lib/Core/loadPlugins";
+import { configureExternalResourceAnalytics } from "./lib/Core/registerAnalyticsServiceWorker";
 import showGlobalDisclaimer from "./lib/Views/showGlobalDisclaimer";
 import plugins from "./plugins";
 
@@ -68,6 +69,11 @@ export default terria
     terria.raiseErrorToUser(e);
   })
   .finally(function () {
+    // Configure external resource analytics tracking
+    configureExternalResourceAnalytics(terria, {
+      enabled: true
+    });
+
     // Override the default document title with appName. Check first for default
     // title, because user might have already customized the title in
     // index.ejs
