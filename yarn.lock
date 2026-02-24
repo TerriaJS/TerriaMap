@@ -8326,10 +8326,10 @@ terriajs-typings-for-css-modules-loader@^2.5.2:
   optionalDependencies:
     prettier "*"
 
-terriajs@8.11.2:
-  version "8.11.2"
-  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.11.2.tgz#e752797b5060296b4e02504e2be465fd9227850d"
-  integrity sha512-LD+d63FMCIPqo9RfVT3iRVHAy0co4aEa2MUFtRGT1fGc2BWD484yuSLzz1rLbeaaoIvljr1IkUqH6zKVz+lC5A==
+terriajs@8.11.3:
+  version "8.11.3"
+  resolved "https://registry.yarnpkg.com/terriajs/-/terriajs-8.11.3.tgz#b3a7a72b8d803befa80253723ab6e611df9a0869"
+  integrity sha512-2HX2QgOduL5i9m48wuxxUkiIJ09XhbK08o6C69ftpgkG3VMcv2mGxDwprdhSOl9utP3XSGLWSzy/2MZ5HHeqog==
   dependencies:
     "@babel/core" "^7.28.0"
     "@babel/plugin-proposal-decorators" "^7.28.0"
