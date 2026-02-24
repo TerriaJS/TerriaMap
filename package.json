@@ -13,7 +13,7 @@
     ]
   },
   "name": "terriajs-map",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
   "engines": {
@@ -71,7 +71,7 @@
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
     "style-loader": "^4.0.0",
-    "terriajs": "8.11.1",
+    "terriajs": "8.11.3",
     "terriajs-cesium": "21.0.1",
     "svg-sprite": "^2.0.4",
     "terriajs-plugin-api": "0.0.1-alpha.17",
