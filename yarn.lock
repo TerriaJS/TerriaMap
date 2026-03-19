@@ -3556,7 +3556,7 @@ chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chokidar@^3.5.3:
+chokidar@^3.5.3, chokidar@^3.6.0:
   version "3.6.0"
   resolved "http://localhost:4873/chokidar/-/chokidar-3.6.0.tgz#197c6cc669ef2a8dc5e7b4d97ee4e092c3eb0d5b"
   integrity sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==
@@ -7255,6 +7255,11 @@ p-locate@^5.0.0:
   dependencies:
     p-limit "^3.0.2"
 
+p-map@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/p-map/-/p-map-7.0.4.tgz#b81814255f542e252d5729dca4d66e5ec14935b8"
+  integrity sha512-tkAQEw8ysMzmkhgw8k+1U/iPhWNhykKnSk4Rd5zLoPJCuJaGRPo6YposrZgaxHKzDHdDWWZvE/Sk7hsL2X/CpQ==
+
 p-try@^2.0.0:
   version "2.2.0"
   resolved "http://localhost:4873/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
@@ -9632,6 +9637,16 @@ vite-css-modules@^1.14.0:
     postcss-modules-scope "^3.2.1"
     postcss-modules-values "^4.0.0"
     postcss-selector-parser "^7.1.1"
+
+vite-plugin-static-copy@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-static-copy/-/vite-plugin-static-copy-3.3.0.tgz#5a95b7b21f9a726b23cd5ca3d64cdcfa6d1b6bde"
+  integrity sha512-XiAtZcev7nppxNFgKoD55rfL+ukVp/RtrnTJONRwRuzv/B2FK2h2ZRCYjvxhwBV/Oarse83SiyXBSxMTfeEM0Q==
+  dependencies:
+    chokidar "^3.6.0"
+    p-map "^7.0.4"
+    picocolors "^1.1.1"
+    tinyglobby "^0.2.15"
 
 vite@^8.0.0:
   version "8.0.0"

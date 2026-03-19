@@ -3,15 +3,13 @@ import path from "node:path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { patchCssModules } from "vite-css-modules";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 import {
   momentLocalePlugin,
   xmlRawPlugin
 } from "./buildprocess/vite-plugins/assetPlugins";
-import {
-  cesiumDebugStripPlugin,
-  cesiumPlugin
-} from "./buildprocess/vite-plugins/cesiumPlugin";
+import { cesiumDebugStripPlugin } from "./buildprocess/vite-plugins/cesiumPlugin";
 import { scssCssModulesPlugin } from "./buildprocess/vite-plugins/scssCssModulesPlugin";
 import { svgSpritePlugin } from "./buildprocess/vite-plugins/svgSpritePlugin";
 
@@ -108,7 +106,26 @@ export default defineConfig(({ mode }) => {
       ]),
       xmlRawPlugin(),
       momentLocalePlugin(),
-      cesiumPlugin({ terriaJSBasePath, cesiumDir }),
+      viteStaticCopy({
+        targets: [
+          {
+            src: path.join(terriaJSBasePath, "wwwroot") + "/*",
+            dest: "TerriaJS"
+          },
+          {
+            src: path.join(cesiumDir, "Build", "Workers"),
+            dest: "cesiumAssets"
+          },
+          {
+            src: path.join(cesiumDir, "Source", "Assets"),
+            dest: "cesiumAssets"
+          },
+          {
+            src: path.join(cesiumDir, "Build", "ThirdParty"),
+            dest: "cesiumAssets"
+          }
+        ]
+      }),
       cesiumDebugStripPlugin(cesiumDir),
       react({
         babel: {

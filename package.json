@@ -74,6 +74,7 @@
     "urijs": "^1.18.12",
     "vite": "^8.0.0",
     "vite-css-modules": "^1.14.0",
+    "vite-plugin-static-copy": "^3.3.0",
     "yargs": "^17.7.2"
   },
   "scripts": {
