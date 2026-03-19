@@ -23,8 +23,8 @@ const getBaseHref = () => {
 
   return options.baseHref;
 };
-const viteBuildArgs = (mode) => {
-  const args = ["vite", "build", "--mode", mode];
+const viteBuildArgs = () => {
+  const args = ["vite", "build"];
   const baseHref = getBaseHref();
   if (baseHref !== "/") {
     args.push("--base", baseHref);
@@ -90,7 +90,7 @@ gulp.task(
     "write-version",
     function buildApp(done) {
       var spawn = require("child_process").spawn;
-      var proc = spawn("npx", viteBuildArgs("development"), {
+      var proc = spawn("npx", viteBuildArgs(), {
         stdio: "inherit",
         shell: true
       });
