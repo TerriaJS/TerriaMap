@@ -66,6 +66,7 @@ export default defineConfig(({ mode }) => {
       copyPublicDir: false,
       sourcemap: devMode ? "inline" : false,
       cssMinify: false,
+      minify: false,
       assetsInlineLimit: 8192,
       rolldownOptions: {
         input: path.resolve(__dirname, "index.html")
