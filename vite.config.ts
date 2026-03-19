@@ -108,16 +108,10 @@ export default defineConfig(({ mode }) => {
         ]
       }),
       react({
-        include: /\.[jt]sx?$/,
+        exclude: /node_modules\/(?!terriajs\b)/,
+        include: /\.[jt]sx$/,
         babel: {
-          plugins: [
-            ["@babel/plugin-proposal-decorators", { legacy: true }],
-            ["@babel/transform-class-properties"],
-            "babel-plugin-styled-components"
-          ],
-          assumptions: {
-            setPublicClassFields: false
-          }
+          plugins: ["babel-plugin-styled-components"]
         }
       })
     ]
