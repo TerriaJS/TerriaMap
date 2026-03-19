@@ -1,18 +1,12 @@
+import fs from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
 
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
-import { patchCssModules } from "vite-css-modules";
+import { defineConfig, mergeConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
-import {
-  momentLocalePlugin,
-  xmlRawPlugin
-} from "./buildprocess/vite-plugins/assetPlugins";
-import { cesiumDebugStripPlugin } from "./buildprocess/vite-plugins/cesiumPlugin";
-import { scssCssModulesPlugin } from "./buildprocess/vite-plugins/scssCssModulesPlugin";
-import { svgSpritePlugin } from "./buildprocess/vite-plugins/svgSpritePlugin";
+import { configureVite } from "terriajs/buildprocess/configureVite.ts";
 
 const require = createRequire(import.meta.url);
 
@@ -21,63 +15,70 @@ const terriaJSBasePath = path.dirname(
 );
 const cesiumDir = path.dirname(require.resolve("terriajs-cesium/package.json"));
 
+const PluginPackagePattern = /(^@terriajs\/plugin-|^terriajs-.*plugin)/;
+
+function discoverPluginIconDirs(): { dir: string; namespace: string }[] {
+  const dirs: { dir: string; namespace: string }[] = [];
+  const nodeModules = path.resolve(__dirname, "node_modules");
+
+  function scanDir(base: string) {
+    if (!fs.existsSync(base)) return;
+    for (const entry of fs.readdirSync(base)) {
+      if (entry.startsWith("@")) {
+        scanDir(path.join(base, entry));
+        continue;
+      }
+      const pkgName = base.endsWith("node_modules")
+        ? entry
+        : `${path.basename(base)}/${entry}`;
+      if (!PluginPackagePattern.test(pkgName)) continue;
+      const iconsDir = path.join(base, entry, "assets", "icons");
+      if (fs.existsSync(iconsDir)) {
+        dirs.push({ dir: iconsDir, namespace: pkgName });
+      }
+    }
+  }
+
+  scanDir(nodeModules);
+  return dirs;
+}
+
+const shared = configureVite({
+  terriaJSBasePath,
+  extraIconDirs: discoverPluginIconDirs(),
+  terriaVariablesPath: path.resolve(
+    __dirname,
+    "lib/Styles/variables-overrides.scss"
+  ),
+  buildOutputPath: "build"
+});
+
 export default defineConfig(({ mode }) => {
   const devMode = mode === "development";
 
-  return {
+  return mergeConfig(shared, {
     publicDir: "wwwroot",
 
     build: {
-      outDir: "wwwroot/build",
+      outDir: "wwwroot",
+      emptyOutDir: false,
+      assetsDir: "build/assets",
       copyPublicDir: false,
       sourcemap: devMode ? "inline" : false,
       cssMinify: false,
       assetsInlineLimit: 8192,
-      rollupOptions: {
+      rolldownOptions: {
         input: path.resolve(__dirname, "index.html")
       }
     },
 
     css: {
-      modules: {
-        localsConvention: "camelCase",
-        generateScopedName(name: string, filename: string) {
-          // Strip virtual .module extension added by scssCssModulesPlugin
-          let basename = path.basename(filename, path.extname(filename));
-          basename = basename.replace(/\.module$/, "");
-          return `tjs-${basename}__${name}`;
-        }
-      },
       preprocessorOptions: {
         scss: {
-          api: "modern",
-          loadPaths: [
-            path.resolve(terriaJSBasePath, "lib"),
-            path.resolve(terriaJSBasePath, "lib", "Sass"),
-            path.resolve(terriaJSBasePath, "node_modules"),
-            path.resolve(__dirname, "node_modules"),
-            terriaJSBasePath
-          ]
+          loadPaths: [path.resolve(__dirname, "node_modules")]
         }
       }
     },
-
-    resolve: {
-      extensions: [".ts", ".tsx", ".js", ".jsx"],
-      alias: {
-        "@cesium/engine": cesiumDir,
-        "terriajs-variables": path.resolve(
-          __dirname,
-          "lib/Styles/variables-overrides.scss"
-        ),
-        lodash: "lodash-es",
-        react: path.dirname(require.resolve("react")),
-        "react-dom": path.dirname(require.resolve("react-dom"))
-      }
-    },
-
-    // PBF and DAC files should be emitted as separate files (URL import)
-    assetsInclude: ["**/*.pbf", "**/*.DAC"],
 
     optimizeDeps: {
       exclude: ["terriajs"]
@@ -97,37 +98,14 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
-      patchCssModules(),
-      scssCssModulesPlugin(),
-      svgSpritePlugin([
-        {
-          dir: path.resolve(terriaJSBasePath, "lib/icons"),
-          namespace: "terriajs"
-        }
-      ]),
-      xmlRawPlugin(),
-      momentLocalePlugin(),
       viteStaticCopy({
         targets: [
           {
             src: path.join(terriaJSBasePath, "assets") + "/*",
-            dest: "assets"
-          },
-          {
-            src: path.join(cesiumDir, "Build", "Workers"),
-            dest: "cesiumAssets"
-          },
-          {
-            src: path.join(cesiumDir, "Source", "Assets"),
-            dest: "cesiumAssets"
-          },
-          {
-            src: path.join(cesiumDir, "Build", "ThirdParty"),
-            dest: "cesiumAssets"
+            dest: "./build"
           }
         ]
       }),
-      cesiumDebugStripPlugin(cesiumDir),
       react({
         babel: {
           plugins: [
@@ -141,5 +119,5 @@ export default defineConfig(({ mode }) => {
         }
       })
     ]
-  };
+  });
 });
