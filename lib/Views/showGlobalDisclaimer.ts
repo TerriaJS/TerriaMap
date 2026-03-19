@@ -1,7 +1,7 @@
 import { runInAction } from "mobx";
 import ViewState from "terriajs/lib/ReactViewModels/ViewState";
-// import devDisclaimerPreambleText from "./DevelopmentDisclaimerPreamble.html";
-// import globalDisclaimerText from "./GlobalDisclaimer.html";
+import devDisclaimerPreambleText from "./DevelopmentDisclaimerPreamble.html?raw";
+import globalDisclaimerText from "./GlobalDisclaimer.html?raw";
 
 /**
  * Show global disclaimer
@@ -23,9 +23,9 @@ export default function showGlobalDisclaimer(viewState: ViewState) {
       (globalDisclaimer.prodHostRegex !== undefined &&
         !hostname.match(globalDisclaimer.prodHostRegex))
     ) {
-      // message += devDisclaimerPreambleText;
+      message += devDisclaimerPreambleText;
     }
-    // message += globalDisclaimerText;
+    message += globalDisclaimerText;
 
     const options = {
       title:
