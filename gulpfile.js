@@ -13,6 +13,25 @@ var path = require("path");
 var PluginError = require("plugin-error");
 var terriajsServerGulpTask = require("terriajs/buildprocess/terriajsServerGulpTask");
 
+const getBaseHref = () => {
+  const minimist = require("minimist");
+  // Arguments written in skewer-case can cause problems (unsure why), so stick to camelCase
+  const options = minimist(process.argv.slice(2), {
+    string: ["baseHref"],
+    default: { baseHref: "/" }
+  });
+
+  return options.baseHref;
+};
+const viteBuildArgs = (mode) => {
+  const args = ["vite", "build", "--mode", mode];
+  const baseHref = getBaseHref();
+  if (baseHref !== "/") {
+    args.push("--base", baseHref);
+  }
+  return args;
+};
+
 gulp.task("check-terriajs-dependencies", function (done) {
   var appPackageJson = require("./package.json");
   var terriaPackageJson = require("terriajs/package.json");
@@ -71,7 +90,7 @@ gulp.task(
     "write-version",
     function buildApp(done) {
       var spawn = require("child_process").spawn;
-      var proc = spawn("npx", ["vite", "build", "--mode", "development"], {
+      var proc = spawn("npx", viteBuildArgs("development"), {
         stdio: "inherit",
         shell: true
       });
@@ -93,7 +112,7 @@ gulp.task(
     "write-version",
     function releaseApp(done) {
       var spawn = require("child_process").spawn;
-      var proc = spawn("npx", ["vite", "build", "--mode", "production"], {
+      var proc = spawn("npx", viteBuildArgs("production"), {
         stdio: "inherit",
         shell: true
       });
