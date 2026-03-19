@@ -6,7 +6,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig, mergeConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
-import { configureVite } from "terriajs/buildprocess/configureVite.ts";
+import { configureVite } from "terriajs/buildprocess/configureVite.mjs";
 
 const require = createRequire(import.meta.url);
 
