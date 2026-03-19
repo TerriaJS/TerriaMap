@@ -13,7 +13,7 @@ import showGlobalDisclaimer from "./lib/Views/showGlobalDisclaimer";
 import plugins from "./plugins";
 
 const terriaOptions = {
-  baseUrl: "build/TerriaJS",
+  baseUrl: "build/assets/",
   cesiumBaseUrl: "build/cesiumAssets"
 };
 

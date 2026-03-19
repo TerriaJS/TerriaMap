@@ -1,3 +1,4 @@
+import { createRequire } from "node:module";
 import path from "node:path";
 
 import react from "@vitejs/plugin-react";
@@ -13,12 +14,12 @@ import { cesiumDebugStripPlugin } from "./buildprocess/vite-plugins/cesiumPlugin
 import { scssCssModulesPlugin } from "./buildprocess/vite-plugins/scssCssModulesPlugin";
 import { svgSpritePlugin } from "./buildprocess/vite-plugins/svgSpritePlugin";
 
-const terriaJSBasePath = path.resolve(__dirname, "packages/terriajs");
-const cesiumDir = path.dirname(
-  require.resolve("terriajs-cesium/package.json", {
-    paths: [terriaJSBasePath]
-  })
+const require = createRequire(import.meta.url);
+
+const terriaJSBasePath = path.dirname(
+  require.resolve("terriajs/package.json", {})
 );
+const cesiumDir = path.dirname(require.resolve("terriajs-cesium/package.json"));
 
 export default defineConfig(({ mode }) => {
   const devMode = mode === "development";
@@ -100,7 +101,7 @@ export default defineConfig(({ mode }) => {
       scssCssModulesPlugin(),
       svgSpritePlugin([
         {
-          dir: path.resolve(terriaJSBasePath, "wwwroot/images/icons"),
+          dir: path.resolve(terriaJSBasePath, "lib/icons"),
           namespace: "terriajs"
         }
       ]),
@@ -109,8 +110,8 @@ export default defineConfig(({ mode }) => {
       viteStaticCopy({
         targets: [
           {
-            src: path.join(terriaJSBasePath, "wwwroot") + "/*",
-            dest: "TerriaJS"
+            src: path.join(terriaJSBasePath, "assets") + "/*",
+            dest: "assets"
           },
           {
             src: path.join(cesiumDir, "Build", "Workers"),
