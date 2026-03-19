@@ -107,6 +107,7 @@ export default defineConfig(({ mode }) => {
         ]
       }),
       react({
+        include: /\.[jt]sx?$/,
         babel: {
           plugins: [
             ["@babel/plugin-proposal-decorators", { legacy: true }],
