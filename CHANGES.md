@@ -1,5 +1,9 @@
 # Change Log
 
+#### 0.4.6
+
+- Upgrades TerriaJS to [8.12.2](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md#8120---2026-03-27)
+
 #### 0.4.5
 
 - Upgrades TerriaJS to [8.11.3](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md#8113---2026-02-02)
