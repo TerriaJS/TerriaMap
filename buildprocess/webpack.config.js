@@ -127,9 +127,8 @@ module.exports = function ({ devMode, baseHref = "/" }) {
       modules: ["node_modules"]
     }
   };
-  config.resolve.alias["terriajs-variables"] = require.resolve(
-    "../lib/Styles/variables-overrides.scss"
-  );
+  config.resolve.alias["terriajs-variables"] =
+    require.resolve("../lib/Styles/variables-overrides.scss");
 
   return configureWebpackForPlugins(
     configureWebpackForTerriaJS({
