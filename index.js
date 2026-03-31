@@ -1,5 +1,5 @@
-import ConsoleAnalytics from "terriajs/lib/Core/ConsoleAnalytics";
-import GoogleAnalytics from "terriajs/lib/Core/GoogleAnalytics";
+import ConsoleAnalytics from "terriajs/lib/Core/Analytics/ConsoleAnalytics";
+import GoogleAnalytics from "terriajs/lib/Core/Analytics/GoogleAnalytics";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
 import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registerSearchProviders";
 import ShareDataService from "terriajs/lib/Models/ShareDataService";
