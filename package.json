@@ -24,7 +24,7 @@
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "terriajs-server": "^4.0.3"
+    "terriajs-server": "^5.0.0-alpha.2"
   },
   "config": {
     "docker": {
