@@ -5,6 +5,10 @@ import { ServerConfig } from "terriajs/lib/Core/ServerConfig";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
 import { FeedbackService } from "terriajs/lib/Models/FeedbackService";
 import { parseHashParams } from "terriajs/lib/Models/HashParams";
+import {
+  buildInitSourcesFromConfig,
+  updateInitSourcesFromUrl
+} from "terriajs/lib/Models/InitSource";
 import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registerSearchProviders";
 import ShareDataService from "terriajs/lib/Models/ShareDataService";
 import Terria from "terriajs/lib/Models/Terria";
@@ -16,13 +20,6 @@ import URI from "urijs";
 import loadPlugins from "./lib/Core/loadPlugins";
 import showGlobalDisclaimer from "./lib/Views/showGlobalDisclaimer";
 import plugins from "./plugins";
-import {
-  buildInitSourcesFromConfig,
-  buildInitSourcesFromHash,
-  buildInitSourcesFromShare,
-  buildInitSourcesFromSpaRoutes,
-  buildInitSourcesFromStartData
-} from "terriajs/lib/Models/InitSource";
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -39,10 +36,12 @@ export default (async () => {
   const configUrl = hashParams.configUrl || "config.json";
   const config = await loadConfig(configUrl);
 
-  const serverConfig = await new ServerConfig().init(config.serverConfigUrl);
+  const serverConfig = await new ServerConfig().init(
+    config.parameters.serverConfigUrl
+  );
 
   const terria = new Terria({
-    config,
+    config: config.parameters,
     baseUrl: "build/TerriaJS"
   });
 
@@ -57,7 +56,7 @@ export default (async () => {
 
   await terria.setHashParams(hashParams).initLanguage();
 
-  if (config.feedbackUrl) {
+  if (config.parameters.feedbackUrl) {
     terria.setFeedbackService(
       new FeedbackService({
         terria,
@@ -73,12 +72,12 @@ export default (async () => {
   });
   terria.setShareDataService(shareDataService);
 
-  terria.initCorsProxy(
-    serverConfig?.proxyAllDomains,
-    serverConfig?.allowProxyFor,
-    config.corsProxyBaseUrl,
-    []
-  );
+  terria.initCorsProxy({
+    proxyAllDomains: serverConfig?.proxyAllDomains,
+    allowProxyFor: serverConfig?.allowProxyFor,
+    baseProxyUrl: config.parameters.corsProxyBaseUrl,
+    proxyDomains: []
+  });
 
   if (process.env.NODE_ENV === "development") {
     terria.setAnalyticsService(new ConsoleAnalytics());
@@ -86,36 +85,26 @@ export default (async () => {
     terria.setAnalyticsService(new GoogleAnalytics());
   }
 
-  terria.initCatalogIndex().init();
+  terria.initCatalogIndex().build();
 
   await loadPlugins(viewState, plugins);
 
   if (!hashParams.clean) {
-    const initSources = buildInitSourcesFromConfig(
-      config,
-      new URI(configUrl).filename(""),
-      config.initFragmentPaths
-    );
+    const initSources = buildInitSourcesFromConfig({
+      initializationUrls: config.initializationUrls,
+      v7initializationUrls: config.v7initializationUrls,
+      baseUri: new URI(configUrl).filename(""),
+      initFragmentPaths: config.parameters.initFragmentPaths
+    });
     terria.addInitSources(initSources);
   }
-  terria.addInitSources(
-    await buildInitSourcesFromHash(
-      window.location.toString(),
-      hashParams,
-      config.initFragmentPaths
-    )
-  );
-  terria.addInitSources(await buildInitSourcesFromStartData(hashParams.start));
-  terria.addInitSources(
-    await buildInitSourcesFromShare(hashParams.share, terria)
-  );
-  terria.addInitSources(
-    await buildInitSourcesFromSpaRoutes(
-      window.location.toString(),
-      config.storyRouteUrlPrefix
-    )
+
+  const baseUrl = `${window.location.origin}/${terria.baseUrl}`.replace(
+    /(\.\/|\/\.|\.)$/,
+    ""
   );
 
+  updateInitSourcesFromUrl(window.location.toString(), baseUrl, terria);
   (await terria.loadInitSources()).raiseError(terria);
 
   // Override the default document title with appName. Check first for default
@@ -135,12 +124,12 @@ export default (async () => {
   }
 
   // Show a modal disclaimer before user can do anything else.
-  if (config.globalDisclaimer) {
+  if (config.parameters.globalDisclaimer) {
     showGlobalDisclaimer(viewState);
   }
 
   // Add font-imports
-  const fontImports = config.theme?.fontImports;
+  const fontImports = config.parameters.theme?.fontImports;
   if (fontImports) {
     const styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
