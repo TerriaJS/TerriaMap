@@ -4,7 +4,10 @@ import { loadConfig } from "terriajs/lib/Core/loadConfig";
 import { ServerConfig } from "terriajs/lib/Core/ServerConfig";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
 import { FeedbackService } from "terriajs/lib/Models/FeedbackService";
-import { parseHashParams } from "terriajs/lib/Models/HashParams";
+import {
+  applyHashParamsToConfig,
+  parseHashParams
+} from "terriajs/lib/Models/HashParams";
 import {
   buildInitSourcesFromConfig,
   updateInitSourcesFromUrl
@@ -20,6 +23,8 @@ import URI from "urijs";
 import loadPlugins from "./lib/Core/loadPlugins";
 import showGlobalDisclaimer from "./lib/Views/showGlobalDisclaimer";
 import plugins from "./plugins";
+import { PersistedSettingsService } from "terriajs/lib/Models/PersistedSettings";
+import { ShareLinkService } from "terriajs/lib/ReactViews/Map/Panels/SharePanel/BuildShareLink";
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -54,7 +59,9 @@ export default (async () => {
   // insert your custom version of the code in the registerCustomComponentTypes function here instead.
   registerCustomComponentTypes(terria);
 
-  await terria.setHashParams(hashParams).initLanguage();
+  applyHashParamsToConfig(terria, hashParams);
+
+  await terria.initLanguage();
 
   if (config.parameters.feedbackUrl) {
     terria.setFeedbackService(
@@ -70,7 +77,9 @@ export default (async () => {
     shareMaxRequestSize: serverConfig?.shareMaxRequestSize,
     shareMaxRequestSizeBytes: serverConfig?.shareMaxRequestSizeBytes
   });
-  terria.setShareDataService(shareDataService);
+  terria.setShareLinkService(
+    new ShareLinkService(terria, shareDataService, hashParams)
+  );
 
   terria.initCorsProxy({
     proxyAllDomains: serverConfig?.proxyAllDomains,
@@ -84,6 +93,10 @@ export default (async () => {
   } else {
     terria.setAnalyticsService(new GoogleAnalytics());
   }
+
+  terria.setPersistedSettingsService(
+    new PersistedSettingsService(config.parameters)
+  );
 
   terria.initCatalogIndex().build();
 
