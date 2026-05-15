@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 const path = require("path");
 const fs = require("fs");
-
 /**
  * RegExp pattern used for matching plugin package names for applying various rules.
  *
@@ -9,7 +10,7 @@ const fs = require("fs");
  * "terriajs-plugin-sample", "terriajs-sample-plugin" as well as
  * "terriajs-some-plugin-for-something".
  */
-const PluginPackagePattern = /^terriajs-.*plugin/;
+const PluginPackagePattern = /(^@terriajs\/plugin-*|^terriajs-.*plugin)/;
 
 function configureWebpackForPlugins(config) {
   config.module.rules.push(createPluginIconsRule());
@@ -17,7 +18,7 @@ function configureWebpackForPlugins(config) {
 }
 
 /**
- * Creates a webpack rule for processing svg icons from terriajs plugins using `svg-sprite-loader`.
+ * Creates a webpack rule for processing svg icons from terriajs plugins using terriajs `svg-sprite-loader`.
  * We check two things to decide whether to include an icon:
  *   1. The icon belongs to assets/icons folder
  *   2. assets/icons/../../package.json has a name field with `terriajs-plugin-` prefix
@@ -46,15 +47,12 @@ function createPluginIconsRule() {
       packageNames[svgPath] = packageName;
       return isTerriaJsPlugin;
     },
-    loader: require.resolve("svg-sprite-loader"),
+    loader: require.resolve("terriajs/buildprocess/svgs/svg-sprite-loader.js"),
     options: {
-      esModule: false,
-      symbolId: (svgPath) => {
+      namespace: (svgPath) => {
         // Generate a symbolId by concatenating the package name and the icon name
-        const packageName = packageNames[svgPath] || "terriajs-plugin-";
-        const iconName = path.basename(svgPath, ".svg");
-        const symbolId = `${packageName}-${iconName}`;
-        return symbolId;
+        const packageName = packageNames[svgPath] || "terriajs-plugin";
+        return packageName;
       }
     }
   };
@@ -71,9 +69,10 @@ function readPackageName(packageFile) {
         ? packageJson.name
         : undefined;
       return packageJsonNames[packageFile];
-    } catch {}
+    } catch {
+      return;
+    }
   }
-  return undefined;
 }
 
 module.exports = configureWebpackForPlugins;

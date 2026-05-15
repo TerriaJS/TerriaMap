@@ -1,42 +1,48 @@
-import ReactDOM from "react-dom";
-import RedBox from "redbox-react";
-import React from "react";
+import { observer } from "mobx-react";
+import PropTypes from "prop-types";
+import React, { Suspense } from "react";
+import { createRoot } from "react-dom/client";
 import Variables from "../Styles/variables.scss";
+import "./global.scss";
+import { Loader } from "./Loader";
+import { terriaStore } from "./terriaStore";
 
-export default function renderUi(terria, allBaseMaps, viewState) {
-  let render = () => {
-    const UI = require("./UserInterface").default;
-    ReactDOM.render(
-      <UI
-        terria={terria}
-        allBaseMaps={allBaseMaps}
-        viewState={viewState}
-        themeOverrides={Variables}
-      />,
-      document.getElementById("ui")
-    );
-  };
+// Lazy load the entire TerriaUserInterface component
+const LazyTerriaUserInterface = React.lazy(() =>
+  import("./UserInterface").then((module) => ({
+    default: module.TerriaUserInterface
+  }))
+);
 
-  if (module.hot && process.env.NODE_ENV !== "production") {
-    // Support hot reloading of components
-    // and display an overlay for runtime errors
-    const renderApp = render;
-    const renderError = (error) => {
-      console.error(error);
-      console.error(error.stack);
-      ReactDOM.render(<RedBox error={error} />, document.getElementById("ui"));
-    };
-    render = () => {
-      try {
-        renderApp();
-      } catch (error) {
-        renderError(error);
-      }
-    };
-    module.hot.accept("./UserInterface", () => {
-      setTimeout(render);
-    });
+const Root = observer(({ themeOverrides }) => {
+  const { terria, viewState, status } = terriaStore;
+
+  if (status === "loading") {
+    return <Loader />;
   }
 
-  render();
-}
+  return (
+    <Suspense fallback={<Loader />}>
+      <LazyTerriaUserInterface
+        terria={terria}
+        viewState={viewState}
+        themeOverrides={themeOverrides}
+      />
+    </Suspense>
+  );
+});
+
+Root.propTypes = {
+  themeOverrides: PropTypes.object
+};
+
+export const renderUi = () => {
+  const container = document.getElementById("ui");
+  if (!container) {
+    console.error("Container element with id 'ui' not found.");
+    return;
+  }
+
+  const root = createRoot(container);
+  root.render(<Root themeOverrides={Variables} />);
+};

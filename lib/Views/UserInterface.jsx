@@ -1,37 +1,22 @@
 import PropTypes from "prop-types";
-import React from "react";
 import RelatedMaps from "terriajs/lib/ReactViews/RelatedMaps/RelatedMaps";
-import {
-  ExperimentalMenu,
-  MenuLeft
-} from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
+import { MenuLeft } from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
 import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
 import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface";
 import version from "../../version";
-import "./global.scss";
 
-// function loadAugmentedVirtuality(callback) {
-//   require.ensure(
-//     "terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool",
-//     () => {
-//       const AugmentedVirtualityTool = require("terriajs/lib/ReactViews/Map/Navigation/AugmentedVirtualityTool");
-//       callback(AugmentedVirtualityTool);
-//     },
-//     "AugmentedVirtuality"
-//   );
-// }
-
-// function isBrowserSupportedAV() {
-//   return /Android|iPhone|iPad/i.test(navigator.userAgent);
-// }
-
-export default function UserInterface(props) {
-  const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
+export const TerriaUserInterface = ({ terria, viewState, themeOverrides }) => {
+  const relatedMaps = viewState.terria.configParameters.relatedMaps;
   const aboutButtonHrefUrl =
-    props.viewState.terria.configParameters.aboutButtonHrefUrl;
+    viewState.terria.configParameters.aboutButtonHrefUrl;
 
   return (
-    <StandardUserInterface {...props} version={version}>
+    <StandardUserInterface
+      terria={terria}
+      viewState={viewState}
+      themeOverrides={themeOverrides}
+      version={version}
+    >
       <MenuLeft>
         {aboutButtonHrefUrl ? (
           <MenuItem
@@ -44,21 +29,12 @@ export default function UserInterface(props) {
           <RelatedMaps relatedMaps={relatedMaps} />
         ) : null}
       </MenuLeft>
-      <ExperimentalMenu>
-        {/* {isBrowserSupportedAV() && (
-          <SplitPoint
-            loadComponent={loadAugmentedVirtuality}
-            viewState={props.viewState}
-            terria={props.viewState.terria}
-            experimentalWarning={true}
-          />
-        )} */}
-      </ExperimentalMenu>
     </StandardUserInterface>
   );
-}
+};
 
-UserInterface.propTypes = {
-  terria: PropTypes.object,
-  viewState: PropTypes.object
+TerriaUserInterface.propTypes = {
+  terria: PropTypes.object.isRequired,
+  viewState: PropTypes.object.isRequired,
+  themeOverrides: PropTypes.object
 };

@@ -2,10 +2,12 @@
   "port": 3001,
 
   "allowProxyFor": [
+    "githubusercontent.com",
+
+    // NOTE: The following default entries are deprecated and will be removed in a future release. If you rely ony terria proxying to any of these servers, please add them through a custom serverconfig.json. See https://docs.terria.io/guide/getting-started/#customizing-terriamap
     "nicta.com.au",
     "gov.au",
     "csiro.au",
-    "arcgis.com",
     "argo.jcommops.org",
     "www.abc.net.au",
     "geoserver.aurin.org.au",
@@ -17,7 +19,6 @@
     "geoserver.imos.org.au",
     "nci.org.au",
     "static.nationalmap.nicta.com.au",
-    "githubusercontent.com",
     "gov",
     "gov.uk",
     "gov.nz",
