@@ -6,6 +6,10 @@ import Variables from "../Styles/variables.scss";
 import "./global.scss";
 import { Loader } from "./Loader";
 import { terriaStore } from "./terriaStore";
+import { ExplorerWindowComponents } from "terriajs/lib/ReactViews/ExplorerWindow/ExplorerWindowComponents";
+import { MapAiCatalogSearch } from "./DataCatalog/MapAiCatalogSearch";
+
+ExplorerWindowComponents.DataCatalogSearch = observer(MapAiCatalogSearch);
 
 // Lazy load the entire TerriaUserInterface component
 const LazyTerriaUserInterface = React.lazy(() =>
