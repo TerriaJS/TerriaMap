@@ -1,18 +1,18 @@
 {
   "private": true,
   "name": "terriajs-map",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 20.0.0"
+    "node": ">= 22"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/TerriaJS/TerriaMap"
   },
   "dependencies": {
-    "terriajs-server": "5.0.0-alpha.2"
+    "terriajs-server": "5.0.0-alpha.3"
   },
   "config": {
     "docker": {
@@ -55,8 +55,8 @@
     "sass-loader": "^16.0.7",
     "style-loader": "^4.0.0",
     "svg-sprite": "^2.0.4",
-    "terriajs": "8.12.4",
-    "terriajs-cesium": "23.0.2",
+    "terriajs": "8.12.5",
+    "terriajs-cesium": "26.0.0",
     "terriajs-plugin-api": "0.0.1-alpha.17",
     "terriajs-plugin-sample": "0.0.1-alpha.7",
     "typescript": "^5.9.2",
