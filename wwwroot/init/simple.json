@@ -129,7 +129,7 @@
           "headers": [
             {
               "name": "Authorization",
-              "value": "apikey l4VnvZi4uQLSvD7lwN2ac7vIDJUJ3epYva4l"
+              "value": "apikey YOUR_NSW_TRANSPORT_API_KEY_HERE"
             }
           ],
           "refreshInterval": 5,
