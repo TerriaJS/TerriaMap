@@ -316,8 +316,13 @@ function preparePackage(packageDir, destDir) {
         const env = Object.create(process.env);
         env.NODE_ENV = "production";
 
+        // Resolve the production dependency tree up to the workspace root. In a
+        // monorepo most of packageDir's deps are hoisted to the root node_modules
+        // (two levels up from packages/<pkg>), so the search root must reach it. In a
+        // standalone checkout the deps live in packageDir/node_modules and are found
+        // before any walk-up, so the wider search root is harmless there.
         const productionPackages = _.uniqBy(
-          getPackageList(packageDir, path.resolve(packageDir, "..")),
+          getPackageList(packageDir, path.resolve(packageDir, "..", "..")),
           (package) => package.path
         );
 
@@ -341,9 +346,18 @@ function preparePackage(packageDir, destDir) {
 
 function prepareNodeModules(packageDir, destDir, productionPackages) {
   productionPackages.forEach((src) => {
-    const relativePath = path.relative(packageDir, src.path);
+    // src.path is an absolute path like <root>/node_modules/<name>[/node_modules/<sub>].
+    // Re-root it under destDir from its FIRST node_modules segment so deps hoisted above
+    // packageDir (a monorepo workspace) still land inside the docker context, while
+    // preserving any nested node_modules. path.relative(packageDir, ...) would yield
+    // "../../node_modules/<name>" for a hoisted dep and escape the context. In a
+    // standalone checkout the dep is under packageDir/node_modules, so this is the same path.
+    const nmMarker = path.sep + "node_modules" + path.sep;
+    const idx = src.path.indexOf(nmMarker);
+    const relativePath =
+      idx >= 0 ? src.path.slice(idx + nmMarker.length) : src.name;
     const dest = path.resolve(destDir, relativePath);
-    const srcPath = path.resolve(packageDir, relativePath);
+    const srcPath = src.path;
 
     // console.log("src " + srcPath + " to " + dest);
 
