@@ -4,6 +4,7 @@
   "version": "0.4.7",
   "description": "Geospatial catalog explorer based on TerriaJS.",
   "license": "Apache-2.0",
+  "packageManager": "yarn@1.22.22",
   "engines": {
     "node": ">= 22"
   },
