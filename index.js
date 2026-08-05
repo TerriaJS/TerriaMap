@@ -28,7 +28,8 @@ const terria = new Terria(terriaOptions);
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
-  terria: terria
+  terria: terria,
+  catalogSearchProvider: undefined
 });
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
