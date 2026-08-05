@@ -1,6 +1,8 @@
 import globeGif from "../Styles/globe.gif";
 import Styles from "./loader.scss";
 
+const loadingStr = "Loading the globe";
+
 export const Loader = () => {
   return (
     <div
@@ -9,7 +11,10 @@ export const Loader = () => {
         backgroundColor: "#383F4D"
       }}
     >
-      <img src={globeGif} />
+      <div className={Styles.loaderUiContainer}>
+        <img src={globeGif} />
+        <div className={Styles.loaderUiText}>{loadingStr}</div>
+      </div>
     </div>
   );
 };
