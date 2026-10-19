@@ -18,7 +18,7 @@ async function loadPlugins(
   try {
     const pluginsList = getPluginsList();
     const loadPromises = pluginsList.map((promise) => {
-      const pluginContext = createPluginContext(viewState);
+      const pluginContext = createPluginContext(viewState, undefined);
       return promise
         .then(({ default: plugin }) => {
           try {
